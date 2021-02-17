@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 454d44eecd4eaa6d5c1f50edbd7edb1024ace041
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 0593d2b675da533035a70c66784812543909c9db
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99256887"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574192"
 ---
 # <a name="understand-how-provisioning-integrates-with-azure-monitor-logs"></a>Сведения о том, как подготовка интегрируется с журналами Azure Monitor
 
@@ -24,7 +24,7 @@ ms.locfileid: "99256887"
 
 ## <a name="enabling-provisioning-logs"></a>Включение журналов подготовки
 
-Вы уже должны быть знакомы с мониторингом и Log Analytics Azure. Если нет, перейдите к разделу, чтобы узнать о них, а затем вернитесь к сведениям о журналах подготовки приложений. Дополнительные сведения о мониторинге Azure см. в разделе [Azure Monitor обзор](../../azure-monitor/overview.md). Дополнительные сведения о Azure Monitor журналах и Log Analytics см. [в статье Обзор запросов журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+Вы уже должны быть знакомы с мониторингом и Log Analytics Azure. Если нет, перейдите к разделу, чтобы узнать о них, а затем вернитесь к сведениям о журналах подготовки приложений. Дополнительные сведения о мониторинге Azure см. в разделе [Azure Monitor обзор](../../azure-monitor/overview.md). Дополнительные сведения о Azure Monitor журналах и Log Analytics см. [в статье Обзор запросов журналов в Azure Monitor](../../azure-monitor/logs/log-query-overview.md).
 
 После настройки мониторинга Azure можно включить журналы для подготовки приложений. Параметр находится на странице **параметры диагностики** .
 
@@ -47,7 +47,7 @@ ms.locfileid: "99256887"
 
 ## <a name="azure-monitor-workbooks"></a>книги Azure Monitor;
 
-Azure Monitor книги предоставляют гибкий холст для анализа данных. Они также обеспечивают создание визуальных отчетов с широкими возможностями в портал Azure. Дополнительные сведения см. в разделе [Общие сведения о Azure Monitor книгах](../../azure-monitor/platform/workbooks-overview.md).
+Azure Monitor книги предоставляют гибкий холст для анализа данных. Они также обеспечивают создание визуальных отчетов с широкими возможностями в портал Azure. Дополнительные сведения см. в разделе [Общие сведения о Azure Monitor книгах](../../azure-monitor/visualize/workbooks-overview.md).
 
 Подготовка приложений поставляется с набором готовых книг. Их можно найти на странице книги. Для просмотра данных необходимо убедиться, что все фильтры (timeRange, jobID, appName) заполнены. Кроме того, необходимо убедиться, что приложение подготовлено, в противном случае данные в журналах отсутствуют.
 
@@ -57,7 +57,7 @@ Azure Monitor книги предоставляют гибкий холст дл
 
 ## <a name="custom-queries"></a>Пользовательские запросы
 
-Вы можете создавать пользовательские запросы и отображать данные на панелях мониторинга Azure. Дополнительные сведения см. в статье [Создание и совместное использование панелей мониторинга log Analytics данных](../../azure-monitor/log-query/get-started-queries.md). Кроме того, ознакомьтесь с [обзором запросов журналов в Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+Вы можете создавать пользовательские запросы и отображать данные на панелях мониторинга Azure. Дополнительные сведения см. в статье [Создание и совместное использование панелей мониторинга log Analytics данных](../../azure-monitor/logs/get-started-queries.md). Кроме того, ознакомьтесь с [обзором запросов журналов в Azure Monitor](../../azure-monitor/logs/log-query-overview.md).
 
 Ниже приведены некоторые примеры, которые помогут приступить к подготовке приложений.
 
@@ -96,7 +96,7 @@ AADProvisioningLogs
 
 Azure Monitor позволяет настроить пользовательские оповещения, чтобы получать уведомления о ключевых событиях, связанных с подготовкой. Например, может потребоваться получить предупреждение о пиковых нагрузках в сбоях. Или, возможно, пики в отключении или удалении. Еще один пример того, где может потребоваться оповещение, — отсутствие какой-либо подготовки, что указывает на неправильное назначение.
 
-Дополнительные сведения об оповещениях см. в статье [реагирование на события с помощью оповещений Azure Monitor](../../azure-monitor/learn/tutorial-response.md).
+Дополнительные сведения об оповещениях см. в статье [реагирование на события с помощью оповещений Azure Monitor](../../azure-monitor/alerts/tutorial-response.md).
 
 Оповещать при возникновении сбоев. Замените идентификатор jobID для приложения.
 
@@ -115,10 +115,10 @@ Azure Monitor позволяет настроить пользовательск
 
 Мы используем подход на основе открытого кода и сообщества для подготовки к работе запросов и панелей мониторинга приложений. Если вы создали запрос, оповещение или книгу, которые могут оказаться полезными для других пользователей, обязательно опубликуйте ее в [репозитории GitHub азуремониторкоммунити](https://github.com/microsoft/AzureMonitorCommunity). Затем прокрутить сообщение электронной почты со ссылкой. Мы будем просматривать и публиковать его в службе, чтобы другие могли воспользоваться преимуществами. Свяжитесь с нами по адресу provisioningfeedback@microsoft.com.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Log Analytics](../reports-monitoring/howto-analyze-activity-logs-log-analytics.md)
-- [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
-- [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md)
+- [Начало работы с запросами журналов Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
+- [Создание групп действий и управление ими на портале Azure](../../azure-monitor/alerts/action-groups.md)
 - [Установка и использование представлений Log Analytics для Azure Active Directory](../reports-monitoring/howto-install-use-log-analytics-views.md)
 - [API подготовки журналов](/graph/api/resources/provisioningobjectsummary?preserve-view=true&view=graph-rest-beta.md)

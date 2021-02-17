@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 05/03/2017
 ms.reviewer: mbullwin
-ms.openlocfilehash: f7f6155d3230d234e1163ee12cd7685817331b93
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 37de27e8dc707133595b71b39e45bdec554289e5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87323542"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583378"
 ---
 # <a name="user-retention-analysis-for-web-applications-with-application-insights"></a>Анализ удержания пользователей веб-приложений с помощью Application Insights
 
@@ -63,6 +63,6 @@ ms.locfileid: "87323542"
     - [Пользователи, сеансы, события](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
     - [Средство "Маршруты пользователей"](usage-flows.md)
-    - [книги](../platform/workbooks-overview.md)
+    - [книги](../visualize/workbooks-overview.md)
     - [Добавление контекста пользователей](usage-send-user-context.md)
 

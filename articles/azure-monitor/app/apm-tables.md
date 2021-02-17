@@ -3,16 +3,16 @@ title: Схема ресурсов на основе рабочей област
 description: Сведения о новой структуре и схеме таблицы для Azure Monitor Application Insights ресурсов на основе рабочих областей.
 ms.topic: conceptual
 ms.date: 05/09/2020
-ms.openlocfilehash: e63d4a680ad76ccd6895aed53f3276a5775b1226
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ef9d22cd2b45679928ee54778b2a521ea9ecab03
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100385971"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575611"
 ---
 # <a name="workspace-based-resource-changes"></a>Изменения ресурсов на основе рабочей области
 
-До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](../platform/data-platform-logs.md).
+До появления [Application Insights ресурсов на основе рабочей области](create-workspace-resource.md)Application Insights данные хранились отдельно от других данных журнала в Azure Monitor. Они основаны на обозреватель данных Azure и используют один и тот же язык запросов Kusto (ККЛ). Это описано в разделе [журналы в Azure Monitor](../logs/data-platform-logs.md).
 
 Данные ресурсов Application Insights на основе рабочих областей хранятся в Log Analytics рабочей области с другими данными мониторинга и данными приложений. Это упрощает настройку, позволяя более легко анализировать данные в нескольких решениях и использовать возможности рабочих областей.
 
@@ -75,7 +75,7 @@ ms.locfileid: "100385971"
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
 |size|real|Размер|real|
-|Успешное завершение|строка|Успешно|Bool|
+|Успешное завершение|строка|Успешное завершение|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
@@ -162,8 +162,8 @@ ms.locfileid: "100385971"
 |resultCode|строка|ResultCode|строка|
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
-|Успешное завершение|строка|Успешно|Bool|
-|target|строка|Назначение|строка|
+|Успешное завершение|строка|Успешное завершение|Bool|
+|target|строка|целевого объекта|строка|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |type|строка|DependencyType|строка|
 |user_AccountId|строка|UserAccountId|строка|
@@ -241,7 +241,7 @@ ms.locfileid: "100385971"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|значение|real|удален||
+|value|real|удален||
 |валуекаунт|INT|валуекаунт|INT|
 |валуемакс|real|валуемакс|real|
 |валуемин|real|валуемин|real|
@@ -326,7 +326,7 @@ ms.locfileid: "100385971"
 |user_AccountId|строка|UserAccountId|строка|
 |user_AuthenticatedId|строка|усераусентикатедид|строка|
 |user_Id|строка|UserId|строка|
-|значение|real|Значение|real|
+|value|real|Значение|real|
 
 ### <a name="apprequests"></a>AppRequests
 
@@ -365,7 +365,7 @@ ms.locfileid: "100385971"
 |sdkVersion|строка|SdkVersion|строка|
 |session_Id|строка|SessionId|строка|
 |source|строка|Источник|Строка|
-|Успешное завершение|строка|Успешно|Bool|
+|Успешное завершение|строка|Успешное завершение|Bool|
 |TIMESTAMP|DATETIME|TimeGenerated|DATETIME|
 |url|строка|Url|Строка|
 |user_AccountId|строка|UserAccountId|строка|
@@ -464,6 +464,6 @@ ms.locfileid: "100385971"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Изучение метрик](../platform/metrics-charts.md)
-* [Написание запросов аналитики](../log-query/log-query-overview.md)
+* [Изучение метрик](../essentials/metrics-charts.md)
+* [Написание запросов аналитики](../logs/log-query-overview.md)
 

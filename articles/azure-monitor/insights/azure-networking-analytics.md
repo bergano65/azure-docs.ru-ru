@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/21/2018
-ms.openlocfilehash: 19370eee9d9fa524de9beeaa85a15521580bd8e6
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: cdb43bd8b91881905b1734d0c0b36c33fb27d232
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707696"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577515"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения для мониторинга сетей Azure в Azure Monitor
 
@@ -113,11 +113,11 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 
 * Централизованная консоль для мониторинга и устранения неполадок с данными [метрик](../insights/network-insights-overview.md#resource-health-and-metrics) и журналов.
 
-* Гибкое полотно для поддержки создания пользовательских полнофункциональных [визуализаций](../platform/workbooks-overview.md#visualizations).
+* Гибкое полотно для поддержки создания пользовательских полнофункциональных [визуализаций](../visualize/workbooks-overview.md#visualizations).
 
-* Возможность использования и [совместного использования шаблонов книг](../platform/workbooks-overview.md#workbooks-versus-workbook-templates) с более широкими сообществом.
+* Возможность использования и [совместного использования шаблонов книг](../visualize/workbooks-overview.md#workbooks-versus-workbook-templates) с более широкими сообществом.
 
-Дополнительные сведения о возможностях нового решения для книги извлечь [книги — обзор](../platform/workbooks-overview.md)
+Дополнительные сведения о возможностях нового решения для книги извлечь [книги — обзор](../visualize/workbooks-overview.md)
 
 ## <a name="migrating-from-azure-gateway-analytics-solution-to-azure-monitor-workbooks"></a>Миграция из решения аналитики шлюза Azure в Azure Monitor книги
 
@@ -129,7 +129,7 @@ Set-AzDiagnosticSetting -ResourceId $gateway.ResourceId  -WorkspaceId $workspace
 > [!NOTE]
 > Все прошлые данные уже доступны в книге из параметров диагностики точек изначально были включены. Перенос данных не требуется.
 
-2. Получите доступ к [книге Insights по умолчанию](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) для ресурса шлюза приложений. Все существующие аналитические данные, поддерживаемые решением аналитики шлюза приложений, будут уже присутствовать в книге. Это можно расширить, добавив пользовательские [визуализации](../platform/workbooks-overview.md#visualizations) на основе метрик & данных журнала.
+2. Получите доступ к [книге Insights по умолчанию](#accessing-azure-application-gateway-analytics-via-azure-monitor-network-insights) для ресурса шлюза приложений. Все существующие аналитические данные, поддерживаемые решением аналитики шлюза приложений, будут уже присутствовать в книге. Это можно расширить, добавив пользовательские [визуализации](../visualize/workbooks-overview.md#visualizations) на основе метрик & данных журнала.
 
 3. После того как вы сможете просмотреть все данные метрик и журналов, чтобы очистить решение аналитики шлюза Azure из рабочей области, можно удалить решение на странице ресурсов решения.
 
@@ -232,5 +232,5 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 [!INCLUDE [log-analytics-troubleshoot-azure-diagnostics](../../../includes/log-analytics-troubleshoot-azure-diagnostics.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения об обновлении данных см. в статье [Общие сведения о запросах журналов в Azure Monitor](../log-query/log-query-overview.md).
+* Дополнительные сведения об обновлении данных см. в статье [Общие сведения о запросах журналов в Azure Monitor](../logs/log-query-overview.md).
 

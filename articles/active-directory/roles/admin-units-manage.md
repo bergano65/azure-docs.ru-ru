@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 537847d84b417814bddb16cf5b961bdb221af488
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 44faaa6f05a325c2c64040938a1c9d0eb3e864e7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740454"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574155"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Управление административными единицами в Azure Active Directory
 
@@ -29,7 +29,7 @@ ms.locfileid: "98740454"
 
 1. Чтобы выполнить запросы из следующих инструкций с помощью [Graph Explorer](https://aka.ms/ge), выполните следующие действия.
 
-    a. На портале Azure перейдите к Azure AD. 
+    а. На портале Azure перейдите к Azure AD. 
     
     b. В списке приложений выберите **Graph Explorer**.
     
@@ -38,7 +38,7 @@ ms.locfileid: "98740454"
     ![Снимок экрана, показывающий ссылку "предоставление согласия администратора для Graph Explorer".](./media/admin-units-manage/select-graph-explorer.png)
 
 
-1. Используйте предварительную версию Azure AD PowerShell.
+1. Используйте [Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/).
 
 ## <a name="add-an-administrative-unit"></a>Добавление административной единицы
 
@@ -58,7 +58,7 @@ ms.locfileid: "98740454"
 
 ### <a name="use-powershell"></a>Использование PowerShell
 
-Прежде чем пытаться выполнить следующие команды, установите Azure AD PowerShell (Предварительная версия):
+Перед запуском следующих команд установите [Azure AD PowerShell](https://www.powershellgallery.com/packages/AzureAD/) :
 
 ```powershell
 Connect-AzureAD
@@ -100,7 +100,7 @@ Remove-AzureADMSAdministrativeUnit -ObjectId $delau.ObjectId
 
 Можно изменить значения, заключенные в кавычки, в соответствии с требованиями конкретной среды.
 
-### <a name="use-the-graph-api"></a>Использование API Graph
+### <a name="use-the-graph-api"></a>Использование API Graph.
 
 ```http
 HTTP request
@@ -109,7 +109,7 @@ Request body
 {}
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Управление пользователями в административной единице](admin-units-add-manage-users.md)
 * [Управление группами в административной единице](admin-units-add-manage-groups.md)

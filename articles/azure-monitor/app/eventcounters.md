@@ -4,12 +4,12 @@ description: Мониторинг системных и пользователь
 ms.topic: conceptual
 ms.date: 09/20/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a9af36f3c81ee52b41a8eed875c1a286b95bf838
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d1ae0937c25a68798acd87fe8b2a0a54aa765b35
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91803649"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579529"
 ---
 # <a name="eventcounters-introduction"></a>Знакомство с объектами EventCounter
 
@@ -88,14 +88,14 @@ Application Insights поддерживает сбор `EventCounters` с пом
 
 ## <a name="event-counters-in-metric-explorer"></a>Счетчики событий в обозревателе метрик
 
-Чтобы просмотреть метрики EventCounter в [обозревателе метрик](../platform/metrics-charts.md), выберите ресурс Application Insights и в качестве пространства имен метрик выберите метрики на основе журнала. После этого метрики EventCounter отобразятся в пользовательской категории.
+Чтобы просмотреть метрики EventCounter в [обозревателе метрик](../essentials/metrics-charts.md), выберите ресурс Application Insights и в качестве пространства имен метрик выберите метрики на основе журнала. После этого метрики EventCounter отобразятся в пользовательской категории.
 
 > [!div class="mx-imgBorder"]
 > ![Счетчики событий, зарегистрированные в обозревателе метрик Application Insights](./media/event-counters/metrics-explorer-counter-list.png)
 
 ## <a name="event-counters-in-analytics"></a>Счетчики событий в службе аналитики
 
-Отчеты по счетчикам событий также можно искать и просматривать в [службе аналитики](../log-query/log-query-overview.md), в таблице **customMetrics**.
+Отчеты по счетчикам событий также можно искать и просматривать в [службе аналитики](../logs/log-query-overview.md), в таблице **customMetrics**.
 
 Выполните, к примеру, следующий запрос, чтобы посмотреть, какие счетчики собираются и доступны для запроса:
 
@@ -121,7 +121,7 @@ customMetrics
 Как и другие данные телеметрии, данные **customMetrics** также содержат столбец `cloud_RoleInstance`, который указывает идентификатор экземпляра сервера, на котором выполняется приложение. Приведенный выше запрос показывает значение счетчика для каждого экземпляра и может использоваться для сравнения производительности различных экземпляров сервера.
 
 ## <a name="alerts"></a>видны узлы
-Как и для других метрик, вы можете [задать оповещение](../platform/alerts-log.md), которое предупредит вас о том, что значение счетчика событий выходит за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
+Как и для других метрик, вы можете [задать оповещение](../alerts/alerts-log.md), которое предупредит вас о том, что значение счетчика событий выходит за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 

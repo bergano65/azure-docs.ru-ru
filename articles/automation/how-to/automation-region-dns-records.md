@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/25/2020
 ms.topic: conceptual
-ms.openlocfilehash: b4b8f48afc75c0a96937575bdad5bb884d0cb4d8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8630afa7410aad81a7a3c61540fc74702fc6481c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183725"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575999"
 ---
 # <a name="dns-records-for-azure-regions-used-by-azure-automation"></a>Записи DNS для регионов Azure, используемых службой автоматизации Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "96183725"
 * Веб-перехватчики
 
 >[!NOTE]
->При регистрации гибридной рабочей роли Runbook Linux новые записи будут завершаться ошибкой, если она не имеет версию 1.6.10.2 или выше. Необходимо выполнить обновление до более новой версии [агента log Analytics для Linux](../../azure-monitor/platform/agent-linux.md) , чтобы компьютер мог получить обновленную версию рабочей роли и использовать эти новые записи. Существующие компьютеры будут продолжать работать без каких бы то ни было проблем.  
+>При регистрации гибридной рабочей роли Runbook Linux новые записи будут завершаться ошибкой, если она не имеет версию 1.6.10.2 или выше. Необходимо выполнить обновление до более новой версии [агента log Analytics для Linux](../../azure-monitor/agents/agent-linux.md) , чтобы компьютер мог получить обновленную версию рабочей роли и использовать эти новые записи. Существующие компьютеры будут продолжать работать без каких бы то ни было проблем.  
 
 ## <a name="dns-records-per-region"></a>Записи DNS для каждого региона
 
@@ -107,7 +107,7 @@ ms.locfileid: "96183725"
 > [!NOTE]
 > Если вы используете Azure ExpressRoute, обратите внимание, что этот файл используется для того, чтобы обновлять объявление протокола BGP в пространстве Azure в первую неделю каждого месяца.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения см. в статье [Устранение неполадок с гибридными рабочими ролями Runbook](../troubleshoot/hybrid-runbook-worker.md#general).
 

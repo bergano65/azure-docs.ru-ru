@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3c2364eae0d04da8f8e6fe38ae80db7adb8666ce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae802038626a1fbf8d533800a0b8eb43c4565e8c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049423"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574167"
 ---
 # <a name="conditional-access-insights-and-reporting"></a>Аналитика и отчеты условного доступа
 
@@ -43,7 +43,7 @@ ms.locfileid: "89049423"
 
 Если журналы Azure AD не интегрированы с журналами Azure Monitor, необходимо выполнить следующие действия, прежде чем книга будет загружена.  
 
-1. [Создайте рабочую область Log Analytics в Azure Monitor](../../azure-monitor/learn/quick-create-workspace.md).
+1. [Создайте рабочую область Log Analytics в Azure Monitor](../../azure-monitor/logs/quick-create-workspace.md).
 1. [Интегрируйте журналы Azure AD с журналами Azure Monitor](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
 
 ## <a name="how-it-works"></a>Принцип работы 
@@ -113,14 +113,14 @@ ms.locfileid: "89049423"
 > [!TIP]
 > При изменении параметра **включить политику** для существующей политики из **в в** отчет отключается **только** существующее применение политики. 
 
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 ### <a name="why-are-queries-failing-due-to-a-permissions-error"></a>Почему происходит сбой запросов из-за ошибки в разрешениях?
 
 Чтобы получить доступ к книге, необходимы соответствующие разрешения Azure AD, а также разрешения Log Analytics рабочей области. Чтобы проверить, имеются ли нужные разрешения рабочей области, запустив пример запроса log Analytics:
 
 1. Войдите на **портал Azure**.
-1. Перейдите к **Azure Active Directory**  >  **журналам**Azure Active Directory.
+1. Перейдите к   >  **журналам** Azure Active Directory.
 1. Введите `SigninLogs` в поле запрос и выберите **выполнить**.
 1. Если запрос не возвращает никаких результатов, возможно, Рабочая область настроена неправильно. 
 

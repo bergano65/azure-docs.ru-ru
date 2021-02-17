@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/27/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3f4e855c52488652b88a3b14e9817f1755167b67
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 107380dabc9c163aab6d0347f6e6cc2c1a718c0b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806127"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576376"
 ---
 # <a name="azure-security-baseline-for-container-instances"></a>Базовые показатели безопасности Azure для экземпляров контейнеров
 
@@ -192,9 +192,9 @@ ms.locfileid: "99806127"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с вашими экземплярами контейнера. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -251,7 +251,7 @@ ms.locfileid: "99806127"
 
 **Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -263,9 +263,9 @@ ms.locfileid: "99806127"
 
 * [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](./container-instances-log-analytics.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -277,7 +277,7 @@ ms.locfileid: "99806127"
 
 * [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](./container-instances-log-analytics.md)
 
-* [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+* [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -596,7 +596,7 @@ ms.locfileid: "99806127"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в группах контейнеров и экземплярах контейнеров. 
 
-* [Как создать оповещения для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
@@ -750,9 +750,9 @@ ms.locfileid: "99806127"
 
 * [Ведение журнала группы контейнеров и экземпляра с Azure Monitor журналами](./container-instances-log-analytics.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 * [Вопросы безопасности для экземпляров контейнеров Azure](./container-instances-image-security.md)
 * [Интеграция реестра контейнеров Azure с центром безопасности](../security-center/defender-for-container-registries-introduction.md)

@@ -7,12 +7,12 @@ ms.reviewer: maghan
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 04/30/2018
-ms.openlocfilehash: 486f12c29c473d46e3aff73abe747f8aa5a2ef8d
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: c728654e868bcb8213e6a4039fa1e2e169b0078c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100380412"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576382"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -28,7 +28,7 @@ ms.locfileid: "100380412"
 > Приложение для мониторинга и управления предоставляет улучшенную поддержку мониторинга и управления конвейерами данных и усовершенствованное устранение проблем. Чтобы узнать больше об этом приложении, ознакомьтесь со статьей [Мониторинг конвейеров фабрики данных Azure и управление ими с помощью приложения для мониторинга и управления](data-factory-monitor-manage-app.md). 
 
 > [!IMPORTANT]
-> Фабрика данных Azure версии 1 теперь использует новую [инфраструктуру оповещения Azure Monitor](../../azure-monitor/platform/alerts-metric.md). Старая инфраструктура оповещения не рекомендуется к использованию. В результате существующие оповещения, настроенные для фабрик данных версии 1, больше не будут работать. Существующие оповещения для фабрик данных версии 1 не переносятся автоматически. Вы должны воссоздать эти оповещения в новой инфраструктуре оповещений. Войдите на портал Azure и выберите **Монитор**, чтобы создать оповещения о метриках (например, неудачные или успешные выполнения) для ваших фабрик данных версии 1.
+> Фабрика данных Azure версии 1 теперь использует новую [инфраструктуру оповещения Azure Monitor](../../azure-monitor/alerts/alerts-metric.md). Старая инфраструктура оповещения не рекомендуется к использованию. В результате существующие оповещения, настроенные для фабрик данных версии 1, больше не будут работать. Существующие оповещения для фабрик данных версии 1 не переносятся автоматически. Вы должны воссоздать эти оповещения в новой инфраструктуре оповещений. Войдите на портал Azure и выберите **Монитор**, чтобы создать оповещения о метриках (например, неудачные или успешные выполнения) для ваших фабрик данных версии 1.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
@@ -174,7 +174,7 @@ ms.locfileid: "100380412"
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Пример:
+Пример.
 
 ```powershell
 Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -185,7 +185,7 @@ Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrec
 ```powershell
 Resume-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Пример:
+Пример.
 
 ```powershell
 Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -218,7 +218,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```   
-   Пример:
+   Пример.
 
     ```powershell   
     Get-AzDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
@@ -232,7 +232,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     <DateTime> [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```
 
-    Пример:
+    Пример.
 
     ```powershell   
     Get-AzDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"

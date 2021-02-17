@@ -7,12 +7,12 @@ author: nikmd23
 ms.author: nimolnar
 ms.date: 09/17/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 2ee41fc9066aa4cf4775d4998b7e809e45519512
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: a47b41a8b7f4e18be58c32c97cf279b9229f26da
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904318"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579513"
 ---
 # <a name="what-is-distributed-tracing"></a>Что такое распределенная трассировка?
 
@@ -37,7 +37,7 @@ Application Insights агенты и (или) пакеты SDK для .NET, .NET
 * [.NET](asp-net.md)
 * [.NET Core](asp-net-core.md)
 * [Java](./java-in-process-agent.md)
-* [Node.js](../learn/nodejs-quick-start.md)
+* [Node.js](../app/nodejs-quick-start.md)
 * [JavaScript](./javascript.md)
 * [Python](opencensus-python.md)
 
@@ -53,9 +53,9 @@ Application Insights агенты и (или) пакеты SDK для .NET, .NET
 
 На веб-сайте OpenCensus поддерживается справочная документация по API для [Python](https://opencensus.io/api/python/trace/usage.html) и [Go](https://godoc.org/go.opencensus.io), а также несколько различных руководств по использованию OpenCensus. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Руководство по использованию OpenCensus для Python](https://opencensus.io/api/python/trace/usage.html)
 * [Сопоставление приложений](./app-map.md)
-* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../learn/tutorial-performance.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../app/tutorial-performance.md)
 

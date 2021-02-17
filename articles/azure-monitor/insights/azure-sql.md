@@ -7,12 +7,12 @@ author: danimir
 ms.author: danil
 ms.date: 09/19/2020
 ms.reviewer: carlrab
-ms.openlocfilehash: 0015138f4da9f66e2f9148e468dd1b5543ae0c4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fbe506dc3f5738f0ef639695ded980a24536993e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397085"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577470"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
 
@@ -33,11 +33,11 @@ ms.locfileid: "91397085"
 
 | Подключенный источник | Поддерживается | Описание |
 | --- | --- | --- |
-| [Параметры диагностики](../platform/diagnostic-settings.md) | **Да** | Данные метрик и журналов Azure отправляются в журналы Azure Monitor непосредственно в Azure. |
-| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Azure Monitor не считывает данные из учетной записи хранения. |
-| [Агенты Windows](../platform/agent-windows.md) | Нет | Непосредственные агенты Windows не используются Аналитика SQL Azure. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Непосредственные агенты Linux не используются Аналитика SQL Azure. |
-| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Нет | Прямое подключение от агента Operations Manager к Azure Monitor не используется Аналитика SQL Azure. |
+| [Параметры диагностики](../essentials/diagnostic-settings.md) | **Да** | Данные метрик и журналов Azure отправляются в журналы Azure Monitor непосредственно в Azure. |
+| [Учетная запись хранения Azure](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Нет | Azure Monitor не считывает данные из учетной записи хранения. |
+| [Агенты Windows](../agents/agent-windows.md) | Нет | Непосредственные агенты Windows не используются Аналитика SQL Azure. |
+| [Агенты Linux](../vm/quick-collect-linux-computer.md) | Нет | Непосредственные агенты Linux не используются Аналитика SQL Azure. |
+| [Группа управления System Center Operations Manager](../agents/om-agents.md) | Нет | Прямое подключение от агента Operations Manager к Azure Monitor не используется Аналитика SQL Azure. |
 
 ## <a name="azure-sql-analytics-options"></a>Параметры Аналитика SQL Azure
 
@@ -170,13 +170,13 @@ ms.locfileid: "91397085"
 
 ## <a name="analyze-data-and-create-alerts"></a>Анализ данных и создание оповещений
 
-Анализ данных в службе "Аналитика SQL Azure" основан на [языке Log Analytics](../log-query/get-started-queries.md), который используется для пользовательских запросов и отчетов. Найдите описание доступных данных, полученных из ресурса базы данных, для отправки пользовательских запросов к [доступным метрикам и журналам](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md#metrics-and-logs-available).
+Анализ данных в службе "Аналитика SQL Azure" основан на [языке Log Analytics](../logs/get-started-queries.md), который используется для пользовательских запросов и отчетов. Найдите описание доступных данных, полученных из ресурса базы данных, для отправки пользовательских запросов к [доступным метрикам и журналам](../../azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md#metrics-and-logs-available).
 
 Автоматическое оповещение в Аналитика SQL Azure основано на написании Log Analytics запроса, который запускает оповещение при выполнении условия. Ниже приведены несколько примеров Log Analytics запросов, на основе которых можно настроить оповещения в Аналитика SQL Azure.
 
 ### <a name="creating-alerts-for-azure-sql-database"></a>Создание оповещений для Базы данных SQL Azure
 
-[Оповещения можно легко создать](../platform/alerts-metric.md) с помощью данных, поступающих из ресурсов службы "База данных SQL Azure". Вот несколько полезных [запросов журналов](../log-query/log-query-overview.md), которые можно использовать с оповещениями журналов:
+[Оповещения можно легко создать](../alerts/alerts-metric.md) с помощью данных, поступающих из ресурсов службы "База данных SQL Azure". Вот несколько полезных [запросов журналов](../logs/log-query-overview.md), которые можно использовать с оповещениями журналов:
 
 #### <a name="high-cpu"></a>Высокая загрузка ЦП
 
@@ -297,7 +297,7 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Используйте [запросы журналов](../log-query/log-query-overview.md) в Azure Monitor для просмотра подробных данных SQL Azure.
-- [Создавайте пользовательские панели мониторинга](../learn/tutorial-logs-dashboards.md), отображающие данные SQL Azure.
-- [Создавайте оповещения](../platform/alerts-overview.md), предупреждающие о возникновении определенных событий SQL Azure.
+- Используйте [запросы журналов](../logs/log-query-overview.md) в Azure Monitor для просмотра подробных данных SQL Azure.
+- [Создавайте пользовательские панели мониторинга](../visualize/tutorial-logs-dashboards.md), отображающие данные SQL Azure.
+- [Создавайте оповещения](../alerts/alerts-overview.md), предупреждающие о возникновении определенных событий SQL Azure.
 

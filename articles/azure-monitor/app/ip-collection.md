@@ -4,12 +4,12 @@ description: Основные сведения об обработке IP-адр
 ms.topic: conceptual
 ms.date: 09/23/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 3a8969d5d0df2fdacf78815c6f47c7c6bfa73a37
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: 91b3aa07720e39aa8aeeceb9c35e38205e7d7c76
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100521923"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584081"
 ---
 # <a name="geolocation-and-ip-address-handling"></a>Обработка геолокации и IP-адресов
 
@@ -30,7 +30,7 @@ ms.locfileid: "100521923"
 
 Хотя по умолчанию не собираются IP-адреса. Мы по-прежнему предлагаем гибкость для переопределения этого поведения. Однако рекомендуется проверить, что коллекция не нарушает требования соответствия или локальные правила. 
 
-Дополнительные сведения об обработке персональных данных в Application Insights см. в [руководстве по личным данным](../platform/personal-data-mgmt.md).
+Дополнительные сведения об обработке персональных данных в Application Insights см. в [руководстве по личным данным](../logs/personal-data-mgmt.md).
 
 ## <a name="storing-ip-address-data"></a>Хранение данных IP-адреса
 
@@ -245,6 +245,6 @@ requests
 
 ## <a name="next-steps"></a>Next Steps
 
-* Дополнительные сведения о [сборе персональных данных](../platform/personal-data-mgmt.md) в Application Insights.
+* Дополнительные сведения о [сборе персональных данных](../logs/personal-data-mgmt.md) в Application Insights.
 
 * Узнайте больше о том, как работает [Коллекция IP-адресов](https://apmtips.com/posts/2016-07-05-client-ip-address/) в Application Insights. (Эта статья содержит старую внешнюю запись блога, написанную одним из наших инженеров. Он предварительно выполняет текущее поведение по умолчанию, где IP-адрес записывается как `0.0.0.0` , но он переходит в более глубокое описание механизма встроенной среды `ClientIpHeaderTelemetryInitializer` .)

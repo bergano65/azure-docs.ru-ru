@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: 66b10efb6ca93bc6b4dd67d700daaf1f9049de68
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ac9c8efbe29bf1420a94d486b650758cc22bec2f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183436"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575757"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
@@ -42,18 +42,18 @@ ms.locfileid: "96183436"
 
 ## <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 
-Прежде чем отправлять метрики или данные пользователя в Azure, необходимо убедиться, что в подписке Azure `Microsoft.AzureData` зарегистрирован поставщик ресурсов.
+Прежде чем отправлять метрики или данные пользователя в Azure, необходимо убедиться, что в подписке Azure `Microsoft.AzureArcData` зарегистрирован поставщик ресурсов.
 
 Чтобы проверить поставщик ресурсов, выполните следующую команду:
 
 ```azurecli
-az provider show -n Microsoft.AzureData -o table
+az provider show -n Microsoft.AzureArcData -o table
 ```
 
 Если поставщик ресурсов в настоящее время не зарегистрирован в вашей подписке, его можно зарегистрировать. Чтобы зарегистрировать его, выполните следующую команду.  Выполнение команды может занять одну-две минуты.
 
 ```azurecli
-az provider register -n Microsoft.AzureData --wait
+az provider register -n Microsoft.AzureArcData --wait
 ```
 
 ## <a name="create-service-principal"></a>Создание субъекта-службы
@@ -193,9 +193,9 @@ az role assignment create --assignee <appId> --role 'Contributor' --scope subscr
 
 Во время действия предварительной версии этот процесс происходит ночью. Общее руководство заключается в передаче сведений об использовании только один раз в день. Если сведения об использовании экспортируются и передаются несколько раз в течение одного 24-часового периода, то в портал Azure, но не на использование ресурсов обновляется только Инвентаризация ресурсов.
 
-Для отправки метрик Azure Monitor принимает только последние 30 минут данных (дополнительные[сведения](../../azure-monitor/platform/metrics-store-custom-rest-api.md#troubleshooting)). Рекомендации по передаче метрик можно передать сразу после создания файла экспорта, чтобы вы могли просмотреть весь набор данных в портал Azure. Например, если вы экспортировали метрики в 2:00 PM и выполнили команду upload в 2:50 РМ. Поскольку Azure Monitor принимает данные только за последние 30 минут, на портале могут не отображаться данные. 
+Для отправки метрик Azure Monitor принимает только последние 30 минут данных (дополнительные[сведения](../../azure-monitor/essentials/metrics-store-custom-rest-api.md#troubleshooting)). Рекомендации по передаче метрик можно передать сразу после создания файла экспорта, чтобы вы могли просмотреть весь набор данных в портал Azure. Например, если вы экспортировали метрики в 2:00 PM и выполнили команду upload в 2:50 РМ. Поскольку Azure Monitor принимает данные только за последние 30 минут, на портале могут не отображаться данные. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о субъектах-службах](/powershell/azure/azurerm/create-azure-service-principal-azureps#what-is-a-service-principal)
 

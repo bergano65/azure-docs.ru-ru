@@ -6,12 +6,12 @@ ms.service: hpc-cache
 ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: v-erkel
-ms.openlocfilehash: 067b12d4dcfd5ba2b730204ef680b900d79f1b72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 40d091782f37a32b75659cd274e49798dbe527cb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648078"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590791"
 ---
 # <a name="manage-your-cache"></a>Управление кэшем
 
@@ -198,7 +198,7 @@ $
 
 ---
 
-## <a name="collect-diagnostics"></a>Сбор диагностики
+## <a name="collect-diagnostics"></a>Сбор диагностических данных
 
 Кнопка " **получить диагностику** " вручную запускает процесс для получения сведений о системе и их передачи в службу Майкрософт и поддержки для устранения неполадок. Кэш автоматически собирает и отправляет одну и ту же диагностическую информацию, если возникает серьезная проблема с кэшем.
 
@@ -253,9 +253,9 @@ $
 
 ![снимок экрана: три графика с показанной выше статистикой для примера кэша](media/hpc-cache-overview-stats.png)
 
-Эти диаграммы являются частью встроенных средств мониторинга и анализа Azure. Дополнительные средства и оповещения можно найти на страницах под заголовком **мониторинг** на боковой панели портала. Дополнительные сведения см. в разделе "портал" [документации по Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md#monitoring-in-the-azure-portal).
+Эти диаграммы являются частью встроенных средств мониторинга и анализа Azure. Дополнительные средства и оповещения можно найти на страницах под заголовком **мониторинг** на боковой панели портала. Дополнительные сведения см. в разделе "портал" [документации по Azure Monitor](../azure-monitor/essentials/monitor-azure-resource.md#monitoring-in-the-azure-portal).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о [метриках и средствах статистики Azure](../azure-monitor/index.yml)
 * Получение [помощи по кэшу Azure HPC](hpc-cache-support-ticket.md)

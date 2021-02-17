@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 12/17/2019
 ms.author: wanl
-ms.openlocfilehash: 5ad40ca051677ced0c6d8b5c35e8563272ff598f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5650ff0e039d1e9211b8d0013726e101efdfab78
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183980"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572256"
 ---
 # <a name="resource-logs-for-azure-signalr-service"></a>Журналы ресурсов для службы SignalR Azure
 
@@ -20,8 +20,8 @@ ms.locfileid: "96183980"
 ## <a name="prerequisites"></a>Предварительные требования
 Чтобы включить журналы ресурсов, вам понадобится место для хранения данных журнала. В этом руководстве используется служба хранилища Azure и Log Analytics.
 
-* Служба [хранилища Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) — сохранение журналов ресурсов для аудита политики, статического анализа или резервного копирования.
-* [Log Analytics](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) — гибкий инструмент поиска по журналам и анализа, позволяющий анализировать необработанные журналы, созданные ресурсом Azure.
+* Служба [хранилища Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) — сохранение журналов ресурсов для аудита политики, статического анализа или резервного копирования.
+* [Log Analytics](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) — гибкий инструмент поиска по журналам и анализа, позволяющий анализировать необработанные журналы, созданные ресурсом Azure.
 
 ## <a name="set-up-resource-logs-for-an-azure-signalr-service"></a>Настройка журналов ресурсов для службы Azure SignalR
 
@@ -50,7 +50,7 @@ ms.locfileid: "96183980"
 
 Новые параметры вступят в силу в течение 10 минут. После этого журналы появятся в настроенной цели для архивирования на панели **Журналы диагностики**.
 
-Дополнительные сведения о настройке диагностики см. в [обзоре журналов ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
+Дополнительные сведения о настройке диагностики см. в [обзоре журналов ресурсов Azure](../azure-monitor/essentials/platform-logs-overview.md).
 
 ### <a name="resource-logs-categories"></a>Категории журналов ресурсов
 
@@ -122,7 +122,7 @@ message | Подробное сообщение о событии журнала
 
     ![Пункт меню Log Analytics](./media/signalr-tutorial-diagnostic-logs/log-analytics-menu-item.png)
 
-2. Введите `SignalRServiceDiagnosticLogs` и выберите диапазон времени для запроса журналов ресурсов. Дополнительные сведения см. в статье Начало [работы с log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md)
+2. Введите `SignalRServiceDiagnosticLogs` и выберите диапазон времени для запроса журналов ресурсов. Дополнительные сведения см. в статье Начало [работы с log Analytics в Azure Monitor](../azure-monitor/logs/log-analytics-tutorial.md)
 
     ![Журнал запросов в Log Analytics](./media/signalr-tutorial-diagnostic-logs/query-log-in-log-analytics.png)
 
@@ -134,7 +134,7 @@ TimeGenerated | Регистрировать время события
 Коллекция | Коллекция событий журнала. Допустимые значения: `Connection` `Authorization` и `Throttling`
 OperationName | Имя операции для события
 Расположение | Расположение службы Azure SignalR
-Level | Уровень событий Log
+Уровень | Уровень событий Log
 CallerIpAddress | IP-адрес сервера или клиента
 Сообщение | Подробное сообщение о событии журнала
 UserId | Удостоверение пользователя

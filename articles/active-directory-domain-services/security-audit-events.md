@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/06/2020
 ms.author: justinha
-ms.openlocfilehash: 13bdc8797af8facaa73d3e43ecfbe504a6bd1dc2
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: caf46850b3d8d6946225575b8a9a732a90847482
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618881"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574147"
 ---
 # <a name="enable-security-audits-for-azure-active-directory-domain-services"></a>Включение аудита безопасности для доменных служб Azure Active Directory
 
@@ -38,9 +38,9 @@ ms.locfileid: "96618881"
 
 | Целевой ресурс | Сценарий |
 |:---|:---|
-|Хранилище Azure| Этот целевой объект следует использовать, если основным необходимо хранить события аудита безопасности в целях архивирования. Другие целевые объекты можно использовать в целях архивирования, однако эти целевые объекты предоставляют возможности, которые выходят за пределы основного нужды в архивации. <br /><br />Прежде чем включать события аудита безопасности Azure AD DS, сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md).|
+|Служба хранилища Azure| Этот целевой объект следует использовать, если основным необходимо хранить события аудита безопасности в целях архивирования. Другие целевые объекты можно использовать в целях архивирования, однако эти целевые объекты предоставляют возможности, которые выходят за пределы основного нужды в архивации. <br /><br />Прежде чем включать события аудита безопасности Azure AD DS, сначала [Создайте учетную запись хранения Azure](../storage/common/storage-account-create.md).|
 |Центры событий Azure| Этот целевой объект следует использовать, когда основная потребность заключается в совместном использовании событий аудита безопасности с дополнительным программным обеспечением, например программным обеспечением анализа данных или программным обеспечением для управления & событий (SIEM).<br /><br />Прежде чем включать события аудита безопасности Azure AD DS, [Создайте концентратор событий с помощью портал Azure](../event-hubs/event-hubs-create.md)|
-|Рабочая область Azure Log Analytics| Этот целевой объект следует использовать, если необходимо проанализировать и проверить безопасные аудиты портал Azure напрямую.<br /><br />Прежде чем включать события аудита безопасности Azure AD DS, [Создайте рабочую область log Analytics в портал Azure.](../azure-monitor/learn/quick-create-workspace.md)|
+|Рабочая область Azure Log Analytics| Этот целевой объект следует использовать, если необходимо проанализировать и проверить безопасные аудиты портал Azure напрямую.<br /><br />Прежде чем включать события аудита безопасности Azure AD DS, [Создайте рабочую область log Analytics в портал Azure.](../azure-monitor/logs/quick-create-workspace.md)|
 
 ## <a name="enable-security-audit-events-using-the-azure-portal"></a>Включение событий аудита безопасности с помощью портал Azure
 
@@ -100,7 +100,7 @@ ms.locfileid: "96618881"
         > [!IMPORTANT]
         > Убедитесь, что правило авторизации задано для пространства имен концентратора событий, а не самого концентратора событий.
 
-    * **Рабочие области**  -  аналитики журналов Azure [Создайте рабочую область log Analytics с Azure PowerShell](../azure-monitor/platform/powershell-workspace-configuration.md).
+    * **Рабочие области**  -  аналитики журналов Azure [Создайте рабочую область log Analytics с Azure PowerShell](../azure-monitor/logs/powershell-workspace-configuration.md).
 
 1. Получите идентификатор ресурса для управляемого домена Azure AD DS с помощью командлета [Get-азресаурце](/powershell/module/Az.Resources/Get-AzResource) . Создайте переменную с именем *$aadds. ResourceId* для хранения значения:
 
@@ -141,9 +141,9 @@ ms.locfileid: "96618881"
 Аналитические рабочие области журналов позволяют просматривать и анализировать события аудита безопасности с помощью Azure Monitor и языка запросов Kusto. Этот язык запросов предназначен для использования только для чтения, может похвастаться возможности Power Analytics с простым и удобочитаемым синтаксисом. Дополнительные сведения о том, как приступить к работе с языками запросов Kusto, см. в следующих статьях:
 
 * [Документация по Azure Monitor](../azure-monitor/index.yml)
-* [Log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md);
-* [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
-* [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](../azure-monitor/learn/tutorial-logs-dashboards.md)
+* [Log Analytics в Azure Monitor](../azure-monitor/logs/log-analytics-tutorial.md);
+* [Начало работы с запросами к журналам Azure Monitor](../azure-monitor/logs/get-started-queries.md)
+* [Создание панелей мониторинга данных Log Analytics и предоставление общего доступа к ним](../azure-monitor/visualize/tutorial-logs-dashboards.md)
 
 Чтобы начать анализ событий аудита безопасности из AD DS Azure, можно использовать следующие примеры запросов.
 
@@ -245,7 +245,7 @@ AADDomainServicesAccountLogon
 |Безопасность использование привилегий|4985|
 |Безопасность системы|4612, 4621|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Конкретные сведения о Kusto см. в следующих статьях:
 

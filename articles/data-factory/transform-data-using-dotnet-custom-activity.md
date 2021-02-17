@@ -7,12 +7,12 @@ ms.author: abnarain
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/26/2018
-ms.openlocfilehash: ec1e7c77c44cf1969e472a6e7288d1af5d6640e1
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ab49c294fb8923c9a1a47af016e5224a8bba846c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100374802"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576346"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 
@@ -35,6 +35,9 @@ ms.locfileid: "100374802"
 * [Основные сведения о пакетной службе Azure](../batch/batch-technical-overview.md) — общие сведения о пакетной службе Azure.
 * Статья о командлете [New-AzBatchAccount](/powershell/module/az.batch/New-azBatchAccount) со сведениями о создании учетной записи пакетной службы Azure или статья о [портале Azure](../batch/batch-account-create-portal.md) со сведениями о создании учетной записи пакетной службы Azure с помощью портала Azure. Подробные инструкции по использованию этого командлета см. в статье [Using PowerShell to manage Azure Batch Account](/archive/blogs/windowshpc/using-azure-powershell-to-manage-azure-batch-account) (Использование PowerShell для управления учетной записью пакетной службы Azure).
 * [New-AzBatchPool](/powershell/module/az.batch/New-AzBatchPool) со сведениями о создании пула пакетной службы Azure.
+
+> [!IMPORTANT]
+> При создании нового пула пакетной службы Azure необходимо использовать "VirtualMachineConfiguration", а не "CloudServiceConfiguration". Дополнительные сведения см. в [руководстве по миграции пула пакетной службы Azure](https://docs.microsoft.com/azure/batch/batch-pool-cloud-service-to-virtual-machine-configuration). 
 
 ## <a name="azure-batch-linked-service"></a>Связанная пакетная служба Azure
 
@@ -307,7 +310,7 @@ Activity Error section:
 
 ## <a name="retrieve-securestring-outputs"></a>Получение выходных данные SecureString
 
-Значения свойств, обозначенные как тип *SecureString*, как показано в некоторых примерах в этой статье, замаскированы на вкладке "Мониторинг" в пользовательском интерфейсе "Data Factory".  Однако при фактическом выполнении конвейера свойство *SecureString* сериализуется как JSON в файле `activity.json` в виде обычного текста. Пример:
+Значения свойств, обозначенные как тип *SecureString*, как показано в некоторых примерах в этой статье, замаскированы на вкладке "Мониторинг" в пользовательском интерфейсе "Data Factory".  Однако при фактическом выполнении конвейера свойство *SecureString* сериализуется как JSON в файле `activity.json` в виде обычного текста. Пример.
 
 ```json
 "extendedProperties": {
@@ -339,7 +342,7 @@ Activity Error section:
 |Способ определения настраиваемой логики      |Путем предоставления исполняемого файла.      |Путем реализации библиотеки DLL .NET      |
 |Среда выполнения настраиваемой логики      |Windows или Linux      |Windows (платформа .NET Framework 4.5.2)      |
 |Выполнение скриптов      |Поддерживает выполнение сценариев напрямую (например, "cmd /c echo hello world" на виртуальной машине Windows)      |Требуется реализация в библиотеке DLL .NET      |
-|Обязательный набор данных      |Необязательный      |Является обязательным для создания цепочки действий и передачи данных      |
+|Обязательный набор данных      |Необязательно      |Является обязательным для создания цепочки действий и передачи данных      |
 |Передача данных из действия в настраиваемую логику      |С помощью ReferenceObjects (LinkedServices и Datasets) и ExtendedProperties (пользовательские свойства)      |С помощью ExtendedProperties (пользовательские свойства), входных и выходных наборов данных      |
 |Извлечение данных в настраиваемой логике      |Анализ файлов activity.json, linkedServices.json и datasets.json, которые хранятся в одной папке с исполняемым файлом.      |С помощью пакета SDK для .NET (.NET Frame 4.5.2)      |
 |Ведение журнала      |Запись непосредственно в STDOUT      |Реализация средства ведения журнала в библиотеке DLL .NET      |

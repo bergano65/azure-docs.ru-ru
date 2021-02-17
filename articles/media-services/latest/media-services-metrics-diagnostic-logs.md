@@ -13,26 +13,26 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.author: inhenkel
-ms.openlocfilehash: 35b0d9c2937024341be6183ac1438b7c4500d6ef
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: cd8c6ca67a1e475279cba8ccc3f4cb8cc7412d66
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954992"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590764"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs-with-azure-monitor"></a>Мониторинг метрик и журналов диагностики служб мультимедиа с помощью Azure Monitor
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Все данные, собираемые службой Azure Monitor, соответствуют одному из двух основных типов, то есть представляют собой метрики или журналы. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Данные метрик можно визуализировать и анализировать с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/), экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
+[Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Все данные, собираемые службой Azure Monitor, соответствуют одному из двух основных типов, то есть представляют собой метрики или журналы. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Данные метрик можно визуализировать и анализировать с помощью [обозревателя метрик](../../azure-monitor/essentials/metrics-getting-started.md). Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/), экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/platform-logs-overview.md).
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/essentials/platform-logs-overview.md).
 
 В этом разделе обсуждаются поддерживаемые [метрики служб мультимедиа](#media-services-metrics) и [журналы диагностики служб мультимедиа](#media-services-diagnostic-logs).
 
 ## <a name="media-services-metrics"></a>Метрики служб мультимедиа
 
-Метрики собираются через регулярные промежутки времени независимо от того, изменяется ли значение. Метрики удобно использовать для создания оповещений, так можно часто делать их выборку и быстро создавать оповещения с использованием относительно простой логики. Сведения о создании оповещений метрик см. в статье [Создание, просмотр и Управление оповещениями метрик с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md).
+Метрики собираются через регулярные промежутки времени независимо от того, изменяется ли значение. Метрики удобно использовать для создания оповещений, так можно часто делать их выборку и быстро создавать оповещения с использованием относительно простой логики. Сведения о создании оповещений метрик см. в статье [Создание, просмотр и Управление оповещениями метрик с помощью Azure Monitor](../../azure-monitor/alerts/alerts-metric.md).
 
 Службы мультимедиа поддерживают метрики мониторинга для следующих ресурсов:
 
@@ -89,7 +89,7 @@ ms.locfileid: "98954992"
 
 ## <a name="media-services-diagnostic-logs"></a>Журналы диагностики служб мультимедиа
 
-Журналы диагностики предоставляют обширные и часто встречающиеся данные о работе ресурсов Azure. Дополнительные сведения см. в статье получение [и использование данных журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md).
+Журналы диагностики предоставляют обширные и часто встречающиеся данные о работе ресурсов Azure. Дополнительные сведения см. в статье получение [и использование данных журнала из ресурсов Azure](../../azure-monitor/essentials/platform-logs-overview.md).
 
 Службы мультимедиа поддерживают следующие журналы диагностики:
 
@@ -97,7 +97,7 @@ ms.locfileid: "98954992"
 
 ### <a name="key-delivery"></a>Доставка ключей
 
-|Название|Описание|
+|Имя|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, отображающие сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 
@@ -114,9 +114,9 @@ ms.locfileid: "98954992"
 
 См. раздел [мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
-* [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-metric.md)
+* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/essentials/platform-logs-overview.md)
+* [Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor](../../azure-monitor/alerts/alerts-metric.md)
 * [Мониторинг метрик служб мультимедиа](media-services-metrics-howto.md)
 * [Мониторинг журналов диагностики службы мультимедиа](media-services-diagnostic-logs-howto.md)

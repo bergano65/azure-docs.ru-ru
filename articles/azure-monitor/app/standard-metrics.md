@@ -5,12 +5,12 @@ services: azure-monitor
 ms.topic: reference
 ms.date: 07/03/2019
 ms.subservice: application-insights
-ms.openlocfilehash: 8da719f399c0c49efd478f05a0114d85233c880f
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0a18088fa434efa76007607c067feec107bdae57
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98732634"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572355"
 ---
 # <a name="application-insights-standard-metrics"></a>Application Insights стандартных метрик
 
@@ -56,31 +56,31 @@ ms.locfileid: "98732634"
 
 |Единица измерения|Поддерживаемые агрегаты| Поддерживаемые измерения|
 |---|---|---|
-|Миллисекунды|Average, min, Max|Нет|
+|Миллисекунды|Average, min, Max|None|
 
 ### <a name="client-processing-time-browsertimingprocessingduration"></a>Время обработки клиента (Бровсертиминг/Процессингдуратион)
 
 |Единица измерения|Поддерживаемые агрегаты|Поддерживаемые измерения|
 |---|---|---|
-|Миллисекунды|Average, min, Max|Нет|
+|Миллисекунды|Average, min, Max|None|
 
 ### <a name="page-load-network-connect-time-browsertimingsnetworkduration"></a>Время подключения к сети на странице (Бровсертимингс/Нетворкдуратион)
 
 |Единица измерения|Поддерживаемые агрегаты| Поддерживаемые измерения|
 |---|---|---|
-|Миллисекунды|Average, min, Max|Нет|
+|Миллисекунды|Average, min, Max|None|
 
 ### <a name="receiving-response-time-browsertimingsreceiveduration"></a>Получение времени ответа (Бровсертимингс/Рецеиведуратион)
 
 |Единица измерения|Поддерживаемые агрегаты| Поддерживаемые измерения|
 |---|---|---|
-|Миллисекунды|Average, min, Max|Нет|
+|Миллисекунды|Average, min, Max|None|
 
 ### <a name="send-request-time-browsertimingssendduration"></a>Время запроса на отправку (Бровсертимингс/Сенддуратион)
 
 |Единица измерения|Поддерживаемые агрегаты| Поддерживаемые измерения|
 |---|---|---|
-|Миллисекунды|Average, min, Max|Нет|
+|Миллисекунды|Average, min, Max|None|
 
 ## <a name="failure-metrics"></a>Метрики сбоев
 
@@ -218,7 +218,7 @@ ms.locfileid: "98732634"
 
 |Единица измерения|Поддерживаемые агрегаты|Поддерживаемые измерения|
 |---|---|---|
-| Время | Average, min, Max | `Cloud role instance`, `Cloud role name`, `Dependency performance`, `Dependency type`, `Is traffic synthetic`, `Result code`, `Successful call`, `Target of a dependency call` |
+| время; | Average, min, Max | `Cloud role instance`, `Cloud role name`, `Dependency performance`, `Dependency type`, `Is traffic synthetic`, `Result code`, `Successful call`, `Target of a dependency call` |
 
 
 ### <a name="server-request-rate-requestscount"></a>Частота запросов сервера (запросов/подсчетов)
@@ -241,7 +241,7 @@ ms.locfileid: "98732634"
 
 |Единица измерения|Поддерживаемые агрегаты|Поддерживаемые измерения|
 |---|---|---|
-| Время | Average, min, Max | `Cloud role instance`, `Cloud role name`, `Is traffic synthetic`, `Result performance` `Result code`, `Successful request` |
+| время; | Average, min, Max | `Cloud role instance`, `Cloud role name`, `Is traffic synthetic`, `Result performance` `Result code`, `Successful request` |
 
 ## <a name="usage-metrics"></a>Метрики использования
 
@@ -251,7 +251,7 @@ ms.locfileid: "98732634"
 
 |Единица измерения|Поддерживаемые агрегаты|Поддерживаемые измерения|
 |---|---|---|
-| Время | Average, min, Max | `Cloud role name`, `Is traffic synthetic` |
+| время; | Average, min, Max | `Cloud role name`, `Is traffic synthetic` |
 
 ### <a name="page-views-pageviewscount"></a>Просмотры страниц (pageViews/Count)
 
@@ -270,7 +270,7 @@ ms.locfileid: "98732634"
 | Count | Count | `Cloud role instance`, `Cloud role name`,  `Is traffic synthetic`, `Severity level` |
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об [метриках на основе журналов и предварительно агрегированных](./pre-aggregated-metrics-log-metrics.md)данных.
-* [Запросы и определения метрик на основе журнала](../platform/app-insights-metrics.md).
+* [Запросы и определения метрик на основе журнала](../essentials/app-insights-metrics.md).

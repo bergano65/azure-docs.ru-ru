@@ -3,18 +3,18 @@ title: Поиск в Azure Application Insights | Документация Ма
 description: Поиск и фильтрация необработанных данных телеметрии, отправляемых веб-приложением.
 ms.topic: conceptual
 ms.date: 07/30/2019
-ms.openlocfilehash: f87a972b417bf6074de1c10b7a54bd2416f88daa
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f7c2229a2e497fb052db79d61fcfeff140897798
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187023"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579544"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
 
 Поиск — это функция [Application Insights](./app-insights-overview.md), которая позволяет искать и изучать отдельные элементы телеметрии, например просмотры страниц, исключения и веб-запросы. Также можно просматривать журнал трассировки и события, которые были закодированы.
 
-(Для более сложных запросов к данным используйте [Analytics](../log-query/log-analytics-tutorial.md).)
+(Для более сложных запросов к данным используйте [Analytics](../logs/log-analytics-tutorial.md).)
 
 ## <a name="where-do-you-see-search"></a>Как найти функцию поиска?
 
@@ -81,7 +81,7 @@ ms.locfileid: "96187023"
 ## <a name="search-the-data"></a>Поиск данных
 
 > [!NOTE]
-> Чтобы написать более сложные запросы, откройте [**журналы (Analytics)**](../log-query/log-analytics-tutorial.md) в верхней части колонки поиска.
+> Чтобы написать более сложные запросы, откройте [**журналы (Analytics)**](../logs/log-analytics-tutorial.md) в верхней части колонки поиска.
 >
 
 В любом из значений свойств можно искать слова. Это полезно, если вы написали [пользовательские события](./api-custom-events-metrics.md) со значениями свойств.
@@ -145,7 +145,7 @@ ms.locfileid: "96187023"
 
 ## <a name="next-steps"></a><a name="add"></a>Следующие шаги
 
-* [Создание сложных запросов в Analytics](../log-query/log-analytics-tutorial.md)
+* [Создание сложных запросов в Analytics](../logs/log-analytics-tutorial.md)
 * [Журналы, исключения и пользовательские средства диагностики для ASP.NET в Application Insights](./asp-net-trace-logs.md)
 * [Наблюдение за доступностью и скоростью реагирования веб-сайта](./monitor-web-app-availability.md)
 * [Устранение неполадок](../faq.md)

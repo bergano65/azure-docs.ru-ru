@@ -9,12 +9,12 @@ ms.workload: identity
 ms.topic: how-to
 ms.date: 07/09/2020
 ms.author: justinha
-ms.openlocfilehash: 3067388265fb69b916fe0e179cb896401b7c2dc4
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 9a126fe4676f340fb45677382a3aeeed79291f0b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618167"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574206"
 ---
 # <a name="review-security-audit-events-in-azure-active-directory-domain-services-using-azure-monitor-workbooks"></a>Проверка событий аудита безопасности в Azure Active Directory доменных служб с помощью Azure Monitor книг
 
@@ -46,7 +46,7 @@ AD DS Azure содержит два следующих шаблона книги
 * Отчет "Обзор безопасности"
 * Отчет "действия учетной записи"
 
-Дополнительные сведения об изменении книг и управлении ими см. в разделе [Общие сведения о Azure Monitor книгах](../azure-monitor/platform/workbooks-overview.md).
+Дополнительные сведения об изменении книг и управлении ими см. в разделе [Общие сведения о Azure Monitor книгах](../azure-monitor/visualize/workbooks-overview.md).
 
 ## <a name="use-the-security-overview-report-workbook"></a>Использование книги "Обзор безопасности"
 
@@ -108,7 +108,7 @@ AD DS Azure содержит два следующих шаблона книги
 
 Все диаграммы и таблицы в Azure Monitor книгах создаются с помощью запросов Kusto. Дополнительные сведения о создании собственных запросов см. в руководстве по [Azure Monitor журнала запросов][azure-monitor-queries] и [запросов Kusto][kusto-queries].
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если необходимо настроить политики паролей и блокировки, см. статью [политики блокировки паролей и учетных записей в управляемых доменах][password-policy].
 

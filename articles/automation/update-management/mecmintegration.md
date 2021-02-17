@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 07/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5bfa4bf8a9d20cc1a7baf1b5432e68501d65a509
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: a848c7c15bf786ba26b8a1fdb1dab41b9aa20b8d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222843"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575781"
 ---
 # <a name="integrate-update-management-with-microsoft-endpoint-configuration-manager"></a>Интеграция Управление обновлениями с конечной точкой Майкрософт Configuration Manager
 
@@ -25,7 +25,7 @@ ms.locfileid: "92222843"
 
 * Необходимо добавить [Управление обновлениями службы автоматизации Azure](overview.md) в учетную запись службы автоматизации.
 * Серверы Windows, которые в настоящее время управляются вашей средой Configuration Manager Майкрософт, также должны сообщить в рабочую область Log Analytics, в которой также включено Управление обновлениями.
-* Эта функция включена в конечной точке Microsoft Endpoint Configuration Manager версии 1606 и выше. Чтобы интегрировать конечную точку Майкрософт Configuration Manager сайт центра администрирования или автономный первичный сайт с Azure Monitor журналами и импортом коллекций, проверьте [Configuration Manager подключения к журналам Azure Monitor](../../azure-monitor/platform/collect-sccm.md).  
+* Эта функция включена в конечной точке Microsoft Endpoint Configuration Manager версии 1606 и выше. Чтобы интегрировать конечную точку Майкрософт Configuration Manager сайт центра администрирования или автономный первичный сайт с Azure Monitor журналами и импортом коллекций, проверьте [Configuration Manager подключения к журналам Azure Monitor](../../azure-monitor/logs/collect-sccm.md).  
 * Агенты Windows должны быть настроены для взаимодействия с сервером Windows Server Update Services (WSUS) или иметь доступ к Центр обновления Майкрософт, если они не получают обновления для системы безопасности от Configuration Manager конечной точки Майкрософт.
 
 Управление клиентами, размещенными в Azure IaaS, с помощью существующей конечной Configuration Manager среды Майкрософт в основном зависит от подключения между центрами обработки данных Azure и вашей инфраструктурой. Это подключение влияет на любые изменения структуры, которые, возможно, потребуется внести в конечную точку Майкрософт Configuration Manager инфраструктуру, а также связанные затраты для поддержки этих необходимых изменений. Чтобы понять, какие аспекты планирования вам необходимо оценить, прежде чем продолжить, ознакомьтесь с разделом [Что следует знать о требованиях к сети? Необходимо использовать ExpressRoute или VPN-шлюз Azure?](/configmgr/core/understand/configuration-manager-on-azure#networking).
@@ -38,7 +38,7 @@ ms.locfileid: "92222843"
 
 2. В службе автоматизации Azure выберите **Управление обновлениями**. Создайте новое развертывание, выполнив действия, описанные в разделе [Создание развертывания обновлений](deploy-updates.md#schedule-an-update-deployment) , и выберите **Импортированные группы** в раскрывающемся списке **тип** , чтобы выбрать соответствующую коллекцию Configuration Manager конечных точек Майкрософт. Помните следующие важные моменты:
 
-    a. Если период обслуживания определен в выбранной конечной точке Майкрософт Configuration Manager коллекции устройств, члены коллекции учитывают его, а не параметр **Duration** , определенный в запланированном развертывании.
+    а. Если период обслуживания определен в выбранной конечной точке Майкрософт Configuration Manager коллекции устройств, члены коллекции учитывают его, а не параметр **Duration** , определенный в запланированном развертывании.
 
     b. У участников целевой коллекции должно быть подключение к Интернету (прямое, через прокси-сервер или через шлюз Log Analytics).
 

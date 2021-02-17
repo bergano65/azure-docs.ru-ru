@@ -5,18 +5,18 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020, devx-track-azurecli, devx-track-azurepowershell
 ms.date: 05/13/2020
-ms.openlocfilehash: 5f849248021de3c17b69517d214f6f3fd6e4ee3a
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: b81a2021cabefd9587d448aa236e7e87bc254741
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98945633"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590824"
 ---
 # <a name="use-azure-monitor-logs-to-monitor-hdinsight-clusters"></a>Мониторинг кластеров HDInsight с помощью журналов Azure Monitor
 
 Узнайте, как использовать журналы Azure Monitor для мониторинга операций кластера Hadoop в HDInsight. А также узнайте, как добавить решение для мониторинга HDInsight.
 
-[Журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md) — это служба Azure Monitor, которая наблюдает за облачными и локальными средами. Мониторинг помогает поддерживать их доступность и производительность. Эта служба собирает данные, создаваемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга. На основе этих данных служба предоставляет аналитические сведения, используя несколько источников.
+[Журналы Azure Monitor](../azure-monitor/logs/log-query-overview.md) — это служба Azure Monitor, которая наблюдает за облачными и локальными средами. Мониторинг помогает поддерживать их доступность и производительность. Эта служба собирает данные, создаваемые ресурсами в облачных и локальных средах, а также другими средствами мониторинга. На основе этих данных служба предоставляет аналитические сведения, используя несколько источников.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -24,7 +24,7 @@ ms.locfileid: "98945633"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Рабочая область Log Analytics. Рабочую область можно представить как уникальную среду журналов Azure Monitor с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/learn/quick-collect-azurevm.md#create-a-workspace).
+* Рабочая область Log Analytics. Рабочую область можно представить как уникальную среду журналов Azure Monitor с собственным репозиторием данных, источниками данных и решениями. С инструкциями можно ознакомиться в разделе [Создание рабочей области](../azure-monitor/vm/quick-collect-azurevm.md#create-a-workspace).
 
 * Кластер Azure HDInsight. Сейчас вы можете использовать журналы Azure Monitor со следующими типами кластеров HDInsight:
 
@@ -144,7 +144,7 @@ HDInsight предоставляет решения по управлению к
 
 ## <a name="configuring-performance-counters"></a>Настройка счетчиков производительности
 
-Azure Monitor поддерживает сбор и анализ метрик производительности для узлов в кластере. Дополнительные сведения см. в разделе [Источники данных о производительности Windows и Linux в Azure Monitor](../azure-monitor/platform/data-sources-performance-counters.md#linux-performance-counters).
+Azure Monitor поддерживает сбор и анализ метрик производительности для узлов в кластере. Дополнительные сведения см. в разделе [Источники данных о производительности Windows и Linux в Azure Monitor](../azure-monitor/agents/data-sources-performance-counters.md#linux-performance-counters).
 
 ## <a name="cluster-auditing"></a>Аудит кластеров
 

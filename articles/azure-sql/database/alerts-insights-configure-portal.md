@@ -11,12 +11,12 @@ author: aamalvea
 ms.author: aamalvea
 ms.reviewer: wiassaf, sstein
 ms.date: 05/04/2020
-ms.openlocfilehash: 86ac0f64a6a797b1bc702597ed30e6417f2efe14
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c7f72a9b140c68320e221a4cfb20cbf107a5f531
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500977"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572268"
 ---
 # <a name="create-alerts-for-azure-sql-database-and-azure-synapse-analytics-using-the-azure-portal"></a>Создание оповещений для базы данных SQL Azure и Azure синапсе Analytics с помощью портал Azure
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -42,9 +42,9 @@ ms.locfileid: "96500977"
 
 Для настройки правил генерации оповещений и получении сведений о них можно использовать:
 
-* [Портал Azure](../../azure-monitor/platform/alerts-classic-portal.md)
-* [PowerShell](../../azure-monitor/platform/alerts-classic-portal.md)
-* [Интерфейс командной строки (CLI)](../../azure-monitor/platform/alerts-classic-portal.md)
+* [Портал Azure](../../azure-monitor/alerts/alerts-classic-portal.md)
+* [PowerShell](../../azure-monitor/alerts/alerts-classic-portal.md)
+* [Интерфейс командной строки (CLI)](../../azure-monitor/alerts/alerts-classic-portal.md)
 * [REST API Azure Monitor](/rest/api/monitor/alertrules)
 
 ## <a name="create-an-alert-rule-on-a-metric-with-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики с помощью портала Azure
@@ -71,6 +71,6 @@ ms.locfileid: "96500977"
 
 В течение 10 минут оповещение активно и активируется, как описано выше.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../../azure-monitor/platform/alerts-webhooks.md).
+* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../../azure-monitor/alerts/alerts-webhooks.md).

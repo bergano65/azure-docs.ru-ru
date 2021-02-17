@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1d9252a5fdf7b1c68c1bb64bd22ede8640184a0c
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 3093d20fbe0a1ded68e34e816b7fc865a237ad92
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953960"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576324"
 ---
 # <a name="monitor-media-services-diagnostic-logs"></a>Мониторинг журналов диагностики служб мультимедиа
 
@@ -52,7 +52,7 @@ ms.locfileid: "98953960"
 
    ![Раздел параметров диагностики](media/media-services-diagnostic-logs/logs02.png)
 1. Задайте для ползунка **Хранение (в днях)** значение 30. Этот ползунок задает количество дней хранения данных мониторинга в учетной записи хранения. Azure Monitor автоматически удаляет данные, которые хранятся дольше заданного количества дней. Нулевое значение для периода хранения означает, что данные будут храниться неограниченно долго.
-1. Нажмите **Сохранить**.
+1. Выберите команду **Сохранить**.
 
 Данные мониторинга из ресурса теперь поступают в учетную запись хранения.
 
@@ -76,7 +76,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     }]'
 ```
 
-Пример:
+Пример.
 
 ```azurecli-interactive
 az monitor diagnostic-settings create --name amsv3diagnostic \
@@ -183,10 +183,10 @@ az monitor diagnostic-settings create --name amsv3diagnostic \
 
 ## <a name="see-also"></a>См. также
 
-* [Метрики Azure Monitor](../../azure-monitor/platform/data-platform.md)
-* [Журналы диагностики Azure Monitor](../../azure-monitor/platform/platform-logs-overview.md)
-* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/platform/platform-logs-overview.md)
+* [Метрики Azure Monitor](../../azure-monitor/data-platform.md)
+* [Журналы диагностики Azure Monitor](../../azure-monitor/essentials/platform-logs-overview.md)
+* [Как получить и использовать данные журнала из ресурсов Azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Метрики мониторинга](media-services-metrics-howto.md)

@@ -3,12 +3,12 @@ title: Анализ использования с помощью Azure Applicati
 description: Получение сведений о пользователях и их действиях с веб-приложением.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 633d35ec16f5eb9de664421c38cd4c824dc240cf
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 0888b6743a10c9934ab85a6f2b3b637b857f643a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233854"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583404"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Анализ использования с помощью Application Insights
 
@@ -38,7 +38,7 @@ ms.locfileid: "98233854"
 
     Чтобы узнать о более сложных настройках для мониторинга веб-сайтов, ознакомьтесь со статьей [о работе с пакетом SDK для JavaScript](./javascript.md).
 
-3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../learn/mobile-center-quickstart.md).
+3. **Код мобильного приложения.** Используйте пакет SDK для Центра приложений, чтобы собирать события из приложения, а затем отправлять копии этих событий в Application Insights для анализа, следуя инструкциям в [этом руководстве](../app/mobile-center-quickstart.md).
 
 4. **Получение данных телеметрии.** Запустите проект в режиме отладки на несколько минут, а затем просмотрите результаты в колонке "Обзор" в Application Insights.
 
@@ -179,6 +179,6 @@ ms.locfileid: "98233854"
    - [Воронки](usage-funnels.md)
    - [Сохранение](usage-retention.md)
    - [Средство "Маршруты пользователей"](usage-flows.md)
-   - [книги](../platform/workbooks-overview.md)
+   - [книги](../visualize/workbooks-overview.md)
    - [Добавление контекста пользователей](usage-send-user-context.md)
 

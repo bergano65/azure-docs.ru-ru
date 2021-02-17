@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 01/03/2019
 ms.reviewer: abgreg;mbullwin
-ms.openlocfilehash: 46b7479df6d087915cfe81895a786a528da6b9bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 021c76bcd03bbe35eabec5611fe0cc1e2c7c4427
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87327911"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583333"
 ---
 # <a name="send-user-context-ids-to-enable-usage-experiences-in-azure-application-insights"></a>Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights
 
@@ -22,7 +22,7 @@ Application Insights позволяет отслеживать пользова�
 - [Пользователи, сеансы, события](./usage-segmentation.md)
 - [Воронки](./usage-funnels.md)
 - Когорты [удержания](./usage-retention.md)
-- [книги](../platform/workbooks-overview.md)
+- [книги](../visualize/workbooks-overview.md)
 
 Для отслеживания действий пользователя за определенный период Application Insights требуется идентификатор для каждого пользователя или сеанса. Добавьте приведенные идентификаторы в каждое пользовательское событие или представление страницы.
 
@@ -134,5 +134,5 @@ namespace MvcWebRole.Telemetry
     - [Анализ пользователей, сеансов и событий в Application Insights](usage-segmentation.md)
     - [Воронки](usage-funnels.md)
     - [Сохранение](usage-retention.md)
-    - [книги](../platform/workbooks-overview.md)
+    - [книги](../visualize/workbooks-overview.md)
 

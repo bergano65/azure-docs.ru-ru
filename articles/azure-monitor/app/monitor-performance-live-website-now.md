@@ -4,12 +4,12 @@ description: Мониторинг производительности веб-с
 ms.topic: conceptual
 ms.date: 08/26/2019
 ms.custom: devx-track-dotnet
-ms.openlocfilehash: 53dbcc341fdd4bc194d34d40cdd2a975df496376
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 79e14c171adde89c43c5ea82a60db39133157293
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186309"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576442"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-codeless-attach"></a>Инструментирование веб-приложений во время выполнения с помощью Application Insights бескодового подключения
 
@@ -93,7 +93,7 @@ ms.locfileid: "96186309"
 
 - Убедитесь, что файл applicationinsights.config находится в целевом каталоге приложения и содержит ikey.
 
-- Если вы считаете, что данные отсутствуют, можно выполнить запрос в [аналитике](../log-query/log-analytics-tutorial.md) , чтобы получить список всех облачных ролей, отправляющих данные телеметрии.
+- Если вы считаете, что данные отсутствуют, можно выполнить запрос в [аналитике](../logs/log-analytics-tutorial.md) , чтобы получить список всех облачных ролей, отправляющих данные телеметрии.
   ```Kusto
   union * | summarize count() by cloud_RoleName, cloud_RoleInstance
   ```
@@ -178,12 +178,12 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
-* Windows Server 2008 R2
-* Windows Server 2012
+* Windows Server 2008 R2
+* Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
-с последней версией SP и .NET Framework 4,5 (монитор состояния построена на основе этой версии платформы)
+с последней версией SP и платформа .NET Framework 4,5 (монитор состояния построена на основе этой версии платформы)
 
 На клиентских компьютерах должна быть установлена ОС Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
 
@@ -304,7 +304,7 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
  * вызовы зависимостей (.NET 4.5) и возвращаемые значения в вызовах зависимостей (.NET 4.6);
  * значения трассировки стека исключений.
 
-[Дополнительные сведения](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
+[Подробнее](https://apmtips.com/posts/2016-11-18-how-application-insights-status-monitor-not-monitors-dependencies/)
 
 ## <a name="video"></a>Видео
 
@@ -320,9 +320,9 @@ Import-Module 'C:\Program Files\Microsoft Application Insights\Status Monitor\Po
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../platform/metrics-charts.md), чтобы отслеживать производительность и использование.
+* [Изучите метрики](../essentials/metrics-charts.md), чтобы отслеживать производительность и использование.
 * [Выполняйте поиск событий и журналов][diagnostic] для диагностики неполадок.
-* [Аналитика](../log-query/log-query-overview.md) для создания расширенных запросов.
+* [Аналитика](../logs/log-query-overview.md) для создания расширенных запросов.
 
 Добавление данных телеметрии:
 

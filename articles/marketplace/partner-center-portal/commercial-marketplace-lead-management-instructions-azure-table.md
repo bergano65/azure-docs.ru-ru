@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 08/25/2020
-ms.openlocfilehash: 71b9c96c1855180106f7dfa9a31f0ee8b06ceb67
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 3c8b9444344e5bae414145e2b3367c265114a423
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347869"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586837"
 ---
 # <a name="use-azure-table-storage-to-manage-commercial-marketplace-leads"></a>Использование хранилища таблиц Azure для управления потенциальными клиентами на Marketplace для коммерческих клиентов
 
@@ -203,3 +203,7 @@ ms.locfileid: "97347869"
 >Прежде чем вы сможете получать сведения о потенциальных клиентах для своего предложения необходимо завершить настройку его остальной части и опубликовать его.
 
 При создании потенциальных клиентов Microsoft отправляет их в таблицу Azure. Если вы настроили поток, на указанный вами адрес электронной почты также будет отправлено письмо.
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+- [Вопросы и ответы по управлению интересами](../lead-management-faq.md)

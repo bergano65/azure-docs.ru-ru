@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 09/24/2020
 ms.reviewer: mbullwin
 ms.custom: devx-track-python
-ms.openlocfilehash: 1e6376cd8389a4f1f0defebce0a2c7b6d0f9deed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f50628395526783face11fcb1438e2716135b640
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91323271"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584034"
 ---
 # <a name="set-up-azure-monitor-for-your-python-application"></a>Настройка Azure Monitor для приложения Python
 
@@ -33,7 +33,7 @@ python -m pip install opencensus-ext-azure
 > [!NOTE]
 > Команда `python -m pip install opencensus-ext-azure` предполагает, что для установки Python у вас задана переменная среды `PATH`. Если эта переменная не настроена, необходимо предоставить полный путь каталога к расположению исполняемого файла Python. Результатом будет команда вроде следующей: `C:\Users\Administrator\AppData\Local\Programs\Python\Python37-32\python.exe -m pip install opencensus-ext-azure`.
 
-Пакет SDK использует три Azure Monitor экспорта для отправки различных типов телеметрии в Azure Monitor. Они отслеживаются, метрики и журналы. Дополнительные сведения об этих типах телеметрии см. в [обзоре платформы данных](../platform/data-platform.md). Используйте следующие инструкции для отправки этих типов телеметрии с помощью трех средств экспорта.
+Пакет SDK использует три Azure Monitor экспорта для отправки различных типов телеметрии в Azure Monitor. Они отслеживаются, метрики и журналы. Дополнительные сведения об этих типах телеметрии см. в [обзоре платформы данных](../data-platform.md). Используйте следующие инструкции для отправки этих типов телеметрии с помощью трех средств экспорта.
 
 ## <a name="telemetry-type-mappings"></a>Сопоставление типов данных телеметрии
 
@@ -438,7 +438,7 @@ exporter = metrics_exporter.new_metrics_exporter(
 Каждый из этих средств экспорта принимает те же аргументы для конфигурации, которые передаются через конструкторы. Сведения о каждой из них можно просмотреть здесь:
 
 - `connection_string`: Строка подключения, используемая для подключения к ресурсу Azure Monitor. Имеет приоритет над `instrumentation_key` .
-- `enable_standard_metrics`: Используется для `AzureMetricsExporter` . Оповещает средство экспорта о том, что метрики [счетчиков производительности](../platform/app-insights-metrics.md#performance-counters) автоматически отправляются Azure Monitor. По умолчанию — `True`.
+- `enable_standard_metrics`: Используется для `AzureMetricsExporter` . Оповещает средство экспорта о том, что метрики [счетчиков производительности](../essentials/app-insights-metrics.md#performance-counters) автоматически отправляются Azure Monitor. По умолчанию — `True`.
 - `export_interval`: Используется для указания частоты экспорта в секундах.
 - `instrumentation_key`— Ключ инструментирования, используемый для подключения к ресурсу Azure Monitor.
 - `logging_sampling_rate`: Используется для `AzureLogHandler` . Предоставляет частоту выборки [0, 1.0] для экспорта журналов. Значение по умолчанию — 1,0.
@@ -458,7 +458,7 @@ exporter = metrics_exporter.new_metrics_exporter(
 - Для данных телеметрии, отправляемых с помощью средства экспорта метрик Azure Monitor, отправленные метрики отображаются в разделе `customMetrics`.
 - Для данных телеметрии, отправляемых с помощью средства экспорта журналов Azure Monitor, журналы отображаются в разделе `traces`. Исключения отображаются в `exceptions`.
 
-Более подробные сведения об использовании запросов и журналов см. в [Журналы в Azure Monitor](../platform/data-platform-logs.md).
+Более подробные сведения об использовании запросов и журналов см. в [Журналы в Azure Monitor](../logs/data-platform-logs.md).
 
 ## <a name="learn-more-about-opencensus-for-python"></a>Дополнительные сведения об OpenCensus для Python
 
@@ -473,11 +473,11 @@ exporter = metrics_exporter.new_metrics_exporter(
 * [Отслеживание входящих запросов](./opencensus-python-dependency.md)
 * [Отслеживание исходящих запросов](./opencensus-python-request.md)
 * [Сопоставление приложений](./app-map.md)
-* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../learn/tutorial-performance.md)
+* [Поиск и диагностика проблем производительности с помощью Azure Application Insights](../app/tutorial-performance.md)
 
 ### <a name="alerts"></a>видны узлы
 
 * [Тесты доступности](./monitor-web-app-availability.md). Создавайте тесты, позволяющие проверить, доступен ли ваш сайт в Интернете.
 * [Интеллектуальная диагностика](./proactive-diagnostics.md). Эти тесты выполняются автоматически, поэтому вам не нужно их настраивать. Благодаря ей вы узнаете о необычном количестве неудачных запросов.
-* [Оповещения о метриках](../platform/alerts-log.md). Настройте оповещения, чтобы получать уведомления в случае, если метрика превысила пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
+* [Оповещения о метриках](../alerts/alerts-log.md). Настройте оповещения, чтобы получать уведомления в случае, если метрика превысила пороговое значение. Их можно настроить для пользовательских метрик, добавляемых в код приложения.
 
