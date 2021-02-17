@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 8/11/2020
 ms.author: lajanuar
-ms.openlocfilehash: 021a65ba69b9d1909df4a86d92b660c0c1033a3b
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: bdfb1ac03ea6f896725d5c86cefe41021204359c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98895464"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582209"
 ---
 # <a name="translator-v30"></a>Переводчик версии 3.0
 
@@ -230,7 +230,7 @@ curl -X POST "https://<your-custom-domain>.cognitiveservices.azure.com/translato
 | 503000| Служба временно недоступна. Повторите попытку. Если ошибка сохраняется, передайте отчет о ней, включив следующие данные: дата и время ошибки, идентификатор запроса из заголовка ответа X-RequestId и идентификатор клиента из заголовка запроса X-ClientTraceId.|
 
 ## <a name="metrics"></a>Метрики 
-Метрики позволяют просматривать сведения об использовании и доступности транслятора в портал Azure в разделе метрики, как показано на снимке экрана ниже. Дополнительные сведения см. в статье [метрики данных и платформы](../../../azure-monitor/platform/data-platform-metrics.md).
+Метрики позволяют просматривать сведения об использовании и доступности транслятора в портал Azure в разделе метрики, как показано на снимке экрана ниже. Дополнительные сведения см. в статье [метрики данных и платформы](../../../azure-monitor/essentials/data-platform-metrics.md).
 
 ![Метрики переводчиков](../media/translatormetrics.png)
 

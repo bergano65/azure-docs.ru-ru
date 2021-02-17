@@ -4,12 +4,12 @@ description: Узнайте, как использовать журналы Azur
 ms.service: hdinsight
 ms.topic: how-to
 ms.date: 08/12/2020
-ms.openlocfilehash: d52cb1c5f3b1dd1b23adb39f2f65d0e66968e482
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 3bc5c659d9871cb8f1d49d2a3bfde2ce03faea86
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946953"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571904"
 ---
 # <a name="how-to-monitor-cluster-availability-with-azure-monitor-logs-in-hdinsight"></a>Как отслеживать доступность кластера с помощью журналов Azure Monitor в HDInsight
 
@@ -19,7 +19,7 @@ ms.locfileid: "98946953"
 
 Журналы Azure Monitor позволяют собирать и объединять данные, созданные несколькими ресурсами, например кластеры HDInsight, в одном месте для обеспечения единого мониторинга.
 
-В качестве необходимого компонента для хранения собранных данных потребуется Log Analytics рабочей области. Если вы еще не создали его, выполните инструкции здесь: [создание log Analytics рабочей области](../azure-monitor/learn/quick-create-workspace.md).
+В качестве необходимого компонента для хранения собранных данных потребуется Log Analytics рабочей области. Если вы еще не создали его, выполните инструкции здесь: [создание log Analytics рабочей области](../azure-monitor/logs/quick-create-workspace.md).
 
 ## <a name="enable-hdinsight-azure-monitor-logs-integration"></a>Включение интеграции журналов Azure Monitor HDInsight
 
@@ -81,7 +81,7 @@ ms.locfileid: "98946953"
 
 В разделе **оценено на основе** задайте **период** и **частоту** в зависимости от частоты проверки на наличие недоступных узлов.
 
-В целях этого оповещения необходимо проверить **период = Frequency.** Дополнительные сведения о периоде, частоте и других параметрах оповещений можно найти [здесь](../azure-monitor/platform/alerts-unified-log.md#alert-logic-definition).
+В целях этого оповещения необходимо проверить **период = Frequency.** Дополнительные сведения о периоде, частоте и других параметрах оповещений можно найти [здесь](../azure-monitor/alerts/alerts-unified-log.md#alert-logic-definition).
 
 По завершении настройки логики сигнала нажмите кнопку **Готово** .
 
@@ -94,7 +94,7 @@ ms.locfileid: "98946953"
 Откроется **Группа добавить действие**. Выберите **имя группы действий**, **Краткое имя**, **подписку** и **группу ресурсов.** В разделе **действия** выберите **имя действия** и выберите **адрес электронной почты, SMS/Push/Voice** в качестве **типа действия.**
 
 > [!NOTE]
-> Существует несколько других действий, которые можно активировать с помощью предупреждения, помимо электронной почты, SMS/Push/Voice, например функции Azure, LogicApp, веб-перехватчика, ITSM и модуля Runbook службы автоматизации. [Подробнее.](../azure-monitor/platform/action-groups.md#action-specific-information)
+> Существует несколько других действий, которые можно активировать с помощью предупреждения, помимо электронной почты, SMS/Push/Voice, например функции Azure, LogicApp, веб-перехватчика, ITSM и модуля Runbook службы автоматизации. [Подробнее.](../azure-monitor/alerts/action-groups.md#action-specific-information)
 
 Откроется **Электронная почта, SMS, Push/Voice**. Выберите **имя** получателя, **Проверьте** поле адреса **электронной** почты и введите адрес электронной почты, по которому должно быть отправлено оповещение. Нажмите кнопку **ОК** в окне  **Электронная почта, SMS/Push/Voice**, а затем в **группе Добавить действие** , чтобы завершить настройку группы действий.
 
@@ -119,7 +119,7 @@ ms.locfileid: "98946953"
 
 ![Log Analytics рабочей области уровень серьезности одно оповещение](media/cluster-availability-monitor-logs/portal-oms-alerts-sev1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Доступность кластера — Apache Ambari](./hdinsight-cluster-availability.md)
 * [Использование журналов Azure Monitor](hdinsight-hadoop-oms-log-analytics-tutorial.md)

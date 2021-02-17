@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/05/2021
 author: lgayhardt
 ms.author: lagayhar
-ms.openlocfilehash: 11e21f376ea3b5cf580d54780509529b4536718b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 6276527230cf889b471887fdb3da70e06a2fc8d6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734180"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582350"
 ---
 # <a name="azure-monitor-for-azure-data-explorer-preview"></a>Azure Monitor для обозреватель данных Azure (Предварительная версия)
 
@@ -162,4 +162,4 @@ Azure Monitor для Azure обозреватель данных объедин�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).
+Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../visualize/workbooks-overview.md).

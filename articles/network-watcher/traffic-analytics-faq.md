@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
-ms.openlocfilehash: a5fdde954d2826f34c671552a88365f9276b89a0
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: f4d97b81bf8f11b8380f04dcbfdb72bd658805ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895229"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579249"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -126,7 +126,7 @@ ms.locfileid: "97895229"
 
 ## <a name="can-i-use-an-existing-workspace"></a>Можно ли использовать имеющуюся рабочую область?
 
-Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в разделе [Azure Monitor журналы обновление до нового поиска по журналам](../azure-monitor/log-query/log-query-overview.md).
+Да. При выборе такой рабочей области убедитесь, что она переведена на использование нового языка запросов. Если вы не хотите обновлять имеющуюся рабочую область, необходимо создать другую. Дополнительные сведения о новом языке запросов см. в разделе [Azure Monitor журналы обновление до нового поиска по журналам](../azure-monitor/logs/log-query-overview.md).
 
 ## <a name="can-my-azure-storage-account-be-in-one-subscription-and-my-log-analytics-workspace-be-in-a-different-subscription"></a>Возможен ли сценарий, когда учетная запись службы хранилища Azure и рабочая область Log Analytics работают на разных подписках?
 
@@ -262,7 +262,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 - Вы можете использовать шортлинк для Log Analytics в Аналитика трафика. 
 - Используйте [схему, описанную здесь](traffic-analytics-schema.md) для написания запросов 
 - Щелкните "создать правило генерации оповещений", чтобы создать оповещение.
-- Сведения о создании оповещения см. в [документации по оповещениям журнала](../azure-monitor/platform/alerts-log.md) .
+- Сведения о создании оповещения см. в [документации по оповещениям журнала](../azure-monitor/alerts/alerts-log.md) .
 
 ## <a name="how-do-i-check-which-vms-are-receiving-most-on-premises-traffic"></a>Разделы справки проверить, какие виртуальные машины получают наибольший объем локального трафика?
 
@@ -403,4 +403,4 @@ destIPs = iif(isempty(DestIP_s), split(DestPublicIPs_s," ") , pack_array(DestIP_
 - При выборе любых подобных узлов можно просмотреть все их подключения, одно за одним, нажимая клавиши `Shift+Left arrow`. Фокус перемещается на **панель элементов "Информация"** этого подключения. В любой момент фокус можно сдвинуть обратно на узел, нажав клавиши `Shift+Right arrow` еще раз.
 
 ## <a name="are-classic-nsgs-supported"></a>Поддерживаются ли классические группы безопасности сети?
-Нет, Аналитика трафика не поддерживает классическую NSG. Рекомендуется перенести ресурсы IaaS из классической модели в Azure Resource Manager как классические ресурсы будут считаться [устаревшими](https://docs.microsoft.com/azure/virtual-machines/classic-vm-deprecation). Сведения [о миграции](https://docs.microsoft.com/azure/virtual-machines/migration-classic-resource-manager-overview)см. в этой статье.
+Нет, Аналитика трафика не поддерживает классическую NSG. Рекомендуется перенести ресурсы IaaS из классической модели в Azure Resource Manager как классические ресурсы будут считаться [устаревшими](../virtual-machines/classic-vm-deprecation.md). Сведения [о миграции](../virtual-machines/migration-classic-resource-manager-overview.md)см. в этой статье.

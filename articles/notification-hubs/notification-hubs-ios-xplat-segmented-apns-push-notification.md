@@ -14,12 +14,12 @@ ms.date: 11/07/2019
 ms.author: sethm
 ms.reviewer: jowargo
 ms.lastreviewed: 11/07/2019
-ms.openlocfilehash: 585bdfdd7033f75e5beeba7246c8fbdd03a5e6e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2cb979491e247a4d44b9ae9ae27c433fb3f436d1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86530038"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579232"
 ---
 # <a name="tutorial-send-push-notifications-to-specific-ios-devices-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений на определенные устройства с iOS с помощью центров уведомлений Azure
 
@@ -125,8 +125,6 @@ ms.locfileid: "86530038"
 
     - (void)subscribeWithCategories:(NSSet *)categories completion:(void (^)(NSError *))completion
     {
-        //[hub registerNativeWithDeviceToken:self.deviceToken tags:categories completion: completion];
-
         NSString* templateBodyAPNS = @"{\"aps\":{\"alert\":\"$(messageParam)\"}}";
 
         [hub registerTemplateWithDeviceToken:self.deviceToken name:@"simpleAPNSTemplate" 
@@ -349,7 +347,7 @@ ms.locfileid: "86530038"
 
 3. Каждое устройство с подпиской на экстренные новости получает отправленные вами уведомления об экстренных новостях.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве вы отправили широковещательные уведомления на конкретные устройства iOS, зарегистрированные для получения уведомлений по категориям. Чтобы узнать, как отправлять локализованные push-уведомления, перейдите к следующему руководству.
 

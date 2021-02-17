@@ -3,12 +3,12 @@ title: Подключение сервера с поддержкой дуги Az
 description: Узнайте, как добавить серверы с поддержкой ARC в Azure Sentinel и заблаговременно отслеживать их состояние безопасности.
 ms.date: 11/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 60018e710613a27bcb5c00f38ee90be6ff46c61d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 2364ba72ac5b10ec4e1f433cc6d591c3ca389ecd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94811109"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584742"
 ---
 # <a name="onboard-azure-arc-enabled-servers-to-azure-sentinel"></a>Подключение серверов с поддержкой дуги Azure к Azure Sentinel
 
@@ -18,7 +18,7 @@ ms.locfileid: "94811109"
 
 Прежде чем начать, убедитесь, что выполнены следующие требования:
 
-- [Рабочая область Log Analytics](../../azure-monitor/platform/data-platform-logs.md). Дополнительные сведения о рабочих областях Log Analytics см. в статье [Designing your Azure Monitor Logs deployment](../../azure-monitor/platform/design-logs-deployment.md) (Планирование развертывания журналов Azure Monitor).
+- [Рабочая область Log Analytics](../../azure-monitor/logs/data-platform-logs.md). Дополнительные сведения о рабочих областях Log Analytics см. в статье [Designing your Azure Monitor Logs deployment](../../azure-monitor/logs/design-logs-deployment.md) (Планирование развертывания журналов Azure Monitor).
 
 - [В вашей подписке включен](../../sentinel/quickstart-onboard.md)Sentinel Azure.
 

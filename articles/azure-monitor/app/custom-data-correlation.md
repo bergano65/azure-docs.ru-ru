@@ -6,12 +6,12 @@ author: eternovsky
 ms.author: evternov
 ms.date: 08/08/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 17de697686485d695586ffa798196efb4a34c251
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 933280b5d3b81098f18f22a72bd2c7f942869e6a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092921"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578329"
 ---
 # <a name="correlating-application-insights-data-with-custom-data-sources"></a>Корреляция данных Application Insights с пользовательскими источниками данных
 
@@ -31,19 +31,19 @@ Application Insights собирает несколько разных типов
 
 В этом разделе мы рассмотрим, как получить данные в журналах Azure Monitor.
 
-Если у вас ее еще нет, подготавливает новую рабочую область Log Analytics, следуя [этим инструкциям](../learn/quick-collect-azurevm.md) , включая шаг "Создание рабочей области".
+Если у вас ее еще нет, подготавливает новую рабочую область Log Analytics, следуя [этим инструкциям](../vm/quick-collect-azurevm.md) , включая шаг "Создание рабочей области".
 
 Начните отправку данных журнала Azure Monitor. Существует несколько вариантов.
 
-- Для синхронного механизма можно либо напрямую вызвать [API сборщика данных](../platform/data-collector-api.md) , либо использовать наш соединитель приложения логики — просто найдите "Azure log Analytics" и выберите параметр "отправить данные":
+- Для синхронного механизма можно либо напрямую вызвать [API сборщика данных](../logs/data-collector-api.md) , либо использовать наш соединитель приложения логики — просто найдите "Azure log Analytics" и выберите параметр "отправить данные":
 
   ![Снимок экрана "Выбор и действие"](./media/custom-data-correlation/01-logic-app-connector.png)  
 
-- Для асинхронного варианта используйте API сборщика данных для сборки конвейера обработки. Дополнительные сведения см. в [этой статье](../platform/create-pipeline-datacollector-api.md) .
+- Для асинхронного варианта используйте API сборщика данных для сборки конвейера обработки. Дополнительные сведения см. в [этой статье](../logs/create-pipeline-datacollector-api.md) .
 
 ## <a name="correlating-data"></a>Корреляция данных
 
-Служба Application Insights основана на платформе журнала Azure Monitor. Поэтому можете использовать [межресурсные соединения](../log-query/cross-workspace-query.md), чтобы сопоставить любые данные, которые мы приняли в Azure Monitor, с вашими данными Application Insights.
+Служба Application Insights основана на платформе журнала Azure Monitor. Поэтому можете использовать [межресурсные соединения](../logs/cross-workspace-query.md), чтобы сопоставить любые данные, которые мы приняли в Azure Monitor, с вашими данными Application Insights.
 
 Например, можно принять данные инвентаризации и расположения лаборатории в таблицу с именем "LabLocations_CL" в Log Analytics рабочей области с именем "Мила". Если затем нужно проверить наши запросы, которые отправляются в Application Insights приложении с именем "Мяи", и сопоставить имена компьютеров, обслуживающих запросы к расположениям этих компьютеров, хранящимся в упомянутой выше пользовательской таблице, можно выполнить следующий запрос из Application Insights или контекста Azure Monitor:
 
@@ -55,7 +55,7 @@ app('myAI').requests
 ) on $left.cloud_RoleInstance == $right.Computer
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Next Steps
 
-- Дополнительные сведения см. по ссылке [​​API сборщика данных](../platform/data-collector-api.md).
-- Дополнительные сведения о [межресурсном соединении](../log-query/cross-workspace-query.md).
+- Дополнительные сведения см. по ссылке [​​API сборщика данных](../logs/data-collector-api.md).
+- Дополнительные сведения о [межресурсном соединении](../logs/cross-workspace-query.md).

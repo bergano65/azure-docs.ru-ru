@@ -3,12 +3,12 @@ title: Подключение гибридных компьютеров к Azure
 description: Из этой статьи вы узнаете, как установить агент и подключить компьютер к Azure с помощью серверов, поддерживающих дугу Azure. Для этого мы воспользуемся PowerShell.
 ms.date: 10/28/2020
 ms.topic: conceptual
-ms.openlocfilehash: 0218235179e1a8a883360d0061e685c04079cbf4
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 07a00de9077378ce3e3f7a7578b66e93d1b04f2b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95492947"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584935"
 ---
 # <a name="connect-hybrid-machines-to-azure-by-using-powershell"></a>Подключение гибридных компьютеров к Azure с помощью PowerShell
 
@@ -99,10 +99,10 @@ Install-Module -Name Az.ConnectedMachine
 
 ![Снимок экрана панели мониторинга "серверы" с успешным подключением к серверу.](./media/onboard-portal/arc-for-servers-successful-onboard.png)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * При необходимости ознакомьтесь с [руководством по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).
 
-* Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md). Вы можете использовать [гостевую конфигурацию](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, убедиться, что компьютер сообщает о предполагаемой log Analytics рабочей области, и включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md).
+* Узнайте, как управлять компьютером с помощью [политики Azure](../../governance/policy/overview.md). Вы можете использовать [гостевую конфигурацию](../../governance/policy/concepts/guest-configuration.md)виртуальной машины, убедиться, что компьютер сообщает о предполагаемой log Analytics рабочей области, и включить мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/vm/vminsights-enable-policy.md).
 
-* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, а также управлять ими с помощью модулей Runbook или таких функций службы автоматизации Azure, как Управление обновлениями. Этот агент также необходим для использования других служб Azure, таких как [Центр безопасности Azure](../../security-center/security-center-introduction.md).
+* Узнайте больше об [агенте Log Analytics](../../azure-monitor/agents/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется получить данные мониторинга операционной системы и рабочей нагрузки, а также управлять ими с помощью модулей Runbook или таких функций службы автоматизации Azure, как Управление обновлениями. Этот агент также необходим для использования других служб Azure, таких как [Центр безопасности Azure](../../security-center/security-center-introduction.md).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/11/2021
 ms.author: memildin
-ms.openlocfilehash: 205f92d4282f0cad00c1dd136636da319e107f3f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 96af34b5b68fca5ab8061c8c99f03bee094dc175
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100391084"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590374"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Защитник Azure для серверов SQL Server на компьютерах 
 
@@ -55,7 +55,7 @@ ms.locfileid: "100391084"
     
     - **Развертывание Arc Azure** . Вы можете подключить любой компьютер Windows к центру безопасности. Тем не менее Azure Arc обеспечивает более глубокую интеграцию во *всей* среде Azure. Если вы настроили дугу Azure, вы увидите страницу **SQL Server — Azure Arc** на портале, и ваши оповещения системы безопасности будут отображаться на выделенной вкладке **безопасности** на этой странице. Поэтому первым и рекомендуемым вариантом является [Настройка дуги Azure на узле](../azure-arc/servers/onboard-portal.md#install-and-validate-the-agent-on-windows) и следуйте инструкциям по **SQL Server в Azure**, приведенном выше.
         
-    - **Подключение компьютера Windows без дуги Azure** . Если вы решили подключить SQL Server, работающую на компьютере Windows, без использования дуги Azure, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](../azure-monitor/platform/agent-windows.md).
+    - **Подключение компьютера Windows без дуги Azure** . Если вы решили подключить SQL Server, работающую на компьютере Windows, без использования дуги Azure, следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](../azure-monitor/agents/agent-windows.md).
 
 
 ### <a name="step-2-enable-the-optional-plan-in-security-centers-pricing-and-settings-page"></a>Шаг 2. Включите необязательный план на странице цен и настроек центра безопасности:
@@ -75,7 +75,7 @@ ms.locfileid: "100391084"
     Этот план будет включен на всех серверах SQL Server, подключенных к выбранной рабочей области. Защита будет полностью активна после первого перезапуска экземпляра SQL Server.
 
     >[!TIP] 
-    > Чтобы создать новую рабочую область, следуйте инструкциям в разделе [создание log Analytics рабочей области](../azure-monitor/learn/quick-create-workspace.md).
+    > Чтобы создать новую рабочую область, следуйте инструкциям в разделе [создание log Analytics рабочей области](../azure-monitor/logs/quick-create-workspace.md).
 
 
 1. При необходимости настройте уведомления по электронной почте для оповещений системы безопасности. 
@@ -124,7 +124,7 @@ ms.locfileid: "100391084"
     [Дополнительные сведения об управлении оповещениями и реагировании на них](security-center-managing-and-responding-alerts.md).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Связанные материалы см. в следующих статьях.
 

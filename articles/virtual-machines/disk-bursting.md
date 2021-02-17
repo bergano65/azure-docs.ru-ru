@@ -3,17 +3,17 @@ title: Ускорение операций управляемого диска
 description: Сведения о ускоренном использовании дисков для дисков Azure и виртуальных машин Azure.
 author: albecker1
 ms.author: albecker
-ms.date: 09/22/2020
+ms.date: 01/27/2021
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: dcdbf94e547581cb9ff885ac5896467abdf316ae
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: 1cedac5814d1c547a28e9b1c894f416af5a924b5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99576199"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585077"
 ---
 # <a name="managed-disk-bursting"></a>Ускорение операций управляемого диска
 [!INCLUDE [managed-disks-bursting](../../includes/managed-disks-bursting.md)]
@@ -30,3 +30,7 @@ ms.locfileid: "99576199"
 Ускорение операций также доступно для наших [дисков SSD цен. категории "Премиум"](disks-types.md#premium-ssd) с размером вплоть до P20 во всех регионах общедоступного облака Azure, облака для государственных учреждений и облака для Китая. По умолчанию для всех новых и существующих развертываний размеров дисков, поддерживающих эту возможность, включена Ускоренная работа диска. 
 
 [!INCLUDE [managed-disks-bursting](../../includes/managed-disks-bursting-2.md)]
+
+## <a name="next-steps"></a>Дальнейшие шаги
+
+Сведения о том, как получить представление о пакетных ресурсах, см. в разделе [метрики ускорения работы диска](disks-metrics.md).

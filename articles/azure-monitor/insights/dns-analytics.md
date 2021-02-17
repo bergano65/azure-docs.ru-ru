@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/20/2018
-ms.openlocfilehash: 7bdea9239faa4ec66fffa236bea40afd5e628e62
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: c3934af1af040b8b45175bacde43237802ab82cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607149"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582394"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
 
@@ -35,20 +35,20 @@ ms.locfileid: "96607149"
 
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
-| [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
-| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
+| [Агенты Windows](../agents/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
+| [Агенты Linux](../vm/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Группа управления System Center Operations Manager](../agents/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
+| [Учетная запись хранения Azure](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
 Решение собирает данные, связанные с инвентаризацией и событиями DNS, с DNS-серверов, на которых установлен агент Log Analytics. Затем эти данные передаются в службу Azure Monitor и отображаются на панели мониторинга решения. Данные, связанные с инвентаризацией, такие как количество DNS-серверов, зон и записей ресурсов, собираются с помощью командлетов PowerShell для DNS. Эти данные обновляются каждые два дня. Данные, связанные с событиями, собираются практически в реальном времени из [журналов аналитики и аудита](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn800669(v=ws.11)#enhanc), которые обеспечиваются расширенными функциями диагностики и ведения журнала DNS в Windows Server 2012 R2.
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 Для настройки решения используйте указанные ниже данные.
 
-- Агент [Windows](../platform/agent-windows.md) или [Operations Manager](../platform/om-agents.md) должен быть установлен на каждом DNS-сервере, который вы хотите отслеживать.
+- Агент [Windows](../agents/agent-windows.md) или [Operations Manager](../agents/om-agents.md) должен быть установлен на каждом DNS-сервере, который вы хотите отслеживать.
 - Решение "Аналитика DNS" можно добавить в рабочую область Log Analytics из [Azure Marketplace](https://aka.ms/dnsanalyticsazuremarketplace). Вы также можете использовать процесс, описанный в статье [Решения мониторинга в Azure Monitor](solutions.md).
 
 Чтобы решение начало сбор данных, никакие дополнительные настройки не требуются. Однако можно использовать описанные ниже действия, чтобы настроить процесс сбора данных.
@@ -76,7 +76,7 @@ ms.locfileid: "96607149"
 - Пакет сбора данных Microsoft DNS (Microsoft.IntelligencePacks.Dns)
 - Конфигурация аналитики DNS для Microsoft System Center Advisor (Microsoft.IntelligencePack.Dns.Configuration)
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../platform/om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../agents/om-agents.md).
 
 ## <a name="use-the-dns-analytics-solution"></a>Использование решения аналитики DNS
 
@@ -163,7 +163,7 @@ ms.locfileid: "96607149"
 
     ![Поиск по журналу событий DNS](./media/dns-analytics/log-search-dnsevents.png)  
 
-    a. Чтобы просмотреть данные журнала о запросах поиска, отфильтруйте **подтип** по значению **LookUpQuery**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события запросов поиска за выбранный период времени.
+    а. Чтобы просмотреть данные журнала о запросах поиска, отфильтруйте **подтип** по значению **LookUpQuery**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события запросов поиска за выбранный период времени.
 
     b. Чтобы просмотреть данные журнала о динамических регистрациях, отфильтруйте **подтип** по значению **DynamicRegistration**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события динамической регистрации за выбранный период времени.
 
@@ -173,7 +173,7 @@ ms.locfileid: "96607149"
 
     ![Поиск по журналу инвентаризации DNS](./media/dns-analytics/log-search-dnsinventory.png)
     
-## <a name="troubleshooting"></a>Диагностика
+## <a name="troubleshooting"></a>Устранение неполадок
 
 Общие действия по устранению неполадок:
 
@@ -183,6 +183,6 @@ ms.locfileid: "96607149"
 
 Чтобы отправить отзыв, посетите [страницу log Analytics UserVoice](https://aka.ms/dnsanalyticsuservoice) , чтобы опубликовать идеи для работы с аналитика DNS функциями. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../log-query/log-query-overview.md) (Анализ данных журналов в Azure Monitor).
+Чтобы получить дополнительные сведения о записях журнала DNS, см. статью [Analyze log data in Azure Monitor](../logs/log-query-overview.md) (Анализ данных журналов в Azure Monitor).

@@ -5,12 +5,12 @@ services: automation
 ms.date: 01/25/2021
 ms.topic: troubleshooting
 ms.subservice: update-management
-ms.openlocfilehash: 2fd92d79a3322b17f528194b9d39c26bf4c93b0c
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: da7c0ea670b4c4201930ce5d0f01e7bd9d9835e9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896263"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581038"
 ---
 # <a name="troubleshoot-linux-update-agent-issues"></a>Устранение неполадок с агентом обновления Linux
 
@@ -62,7 +62,7 @@ ms.locfileid: "98896263"
 
 ### <a name="log-analytics-agent"></a>Агент Log Analytics
 
-Проверка позволяет убедиться, что агент Log Analytics для Linux установлен. Инструкции по его установке см. в разделе [Установка агента для Linux](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux).
+Проверка позволяет убедиться, что агент Log Analytics для Linux установлен. Инструкции по его установке см. в разделе [Установка агента для Linux](../../azure-monitor/vm/quick-collect-linux-computer.md#install-the-agent-for-linux).
 
 ### <a name="log-analytics-agent-status"></a>Состояние агента Log Analytics
 

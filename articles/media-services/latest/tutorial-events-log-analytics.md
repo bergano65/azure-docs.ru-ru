@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: tutorial
 ms.date: 08/24/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2bfd1064a02f0fb4982c9d2747b85707e98b5bcd
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: c481daf73f916ede2e7063c75448ba4d09e553cc
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98954535"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571865"
 ---
 # <a name="tutorial-store-azure-media-services-events-in-azure-log-analytics"></a>Руководство по хранению событий Служб мультимедиа Azure в Azure Log Analytics
 
@@ -42,11 +42,11 @@ ms.locfileid: "98954535"
 > * [Подписка Azure](how-to-set-azure-subscription.md)
 > * Учетная запись [Служб мультимедиа](create-account-howto.md) и группа ресурсов.
 > * Установка [FFmpeg](https://ffmpeg.org/download.html) для вашей ОС.
-> * Рабочая область [Log Analytics](../../azure-monitor/learn/quick-create-workspace.md) .
+> * Рабочая область [Log Analytics](../../azure-monitor/logs/quick-create-workspace.md) .
 
 ## <a name="subscribe-to-a-media-services-event-with-logic-app"></a>Подписка на событие Служб мультимедиа с помощью приложения логики
 
-1. На портале Azure создайте рабочую область [Log Analytics](../../azure-monitor/learn/quick-create-workspace.md), если это еще не сделано. Вам потребуется идентификатор рабочей области и один из ключей, поэтому не закрывайте окно браузера. Затем откройте портал на другой вкладке или в новом окне.
+1. На портале Azure создайте рабочую область [Log Analytics](../../azure-monitor/logs/quick-create-workspace.md), если это еще не сделано. Вам потребуется идентификатор рабочей области и один из ключей, поэтому не закрывайте окно браузера. Затем откройте портал на другой вкладке или в новом окне.
 
 1. Перейдите к учетной записи Служб мультимедиа Azure и щелкните раздел **События**. Будут показаны все методы подписки на события Служб мультимедиа Azure.
     > [!div class="mx-imgBorder"]
@@ -230,4 +230,4 @@ ms.locfileid: "98954535"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Вы можете создать различные запросы и сохранить их. Их можно добавить на [Панель мониторинга Azure](../../azure-monitor/learn/tutorial-logs-dashboards.md).
+Вы можете создать различные запросы и сохранить их. Их можно добавить на [Панель мониторинга Azure](../../azure-monitor/visualize/tutorial-logs-dashboards.md).

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 01/08/2021
 ms.topic: conceptual
-ms.openlocfilehash: 40405607e7f7198f190f621121022537ac3b3171
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: f2ce8d482231b4a95c322e9d495a75f89953c32a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046045"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581104"
 ---
 # <a name="management-of-azure-automation-data"></a>Управление данными службы автоматизации Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "98046045"
 
 Более старые версии протоколов TLS/SSL оказались уязвимы. Хотя они все еще используются для обеспечения обратной совместимости, применять их **не рекомендуется**. Рекомендуем по возможности не настраивать в агенте работу только с протоколом TLS 1.2, так как это может на уровне платформы нарушить работу функций безопасности, которые позволяют автоматически обнаруживать и использовать новые, более безопасные протоколы по мере их появления, например TLS 1.3.
 
-Сведения о поддержке TLS 1,2 с помощью агента Log Analytics для Windows и Linux, который является зависимостью от роли гибридного рабочего процесса Runbook, см. в разделе [Обзор агента log Analytics-TLS 1,2](..//azure-monitor/platform/log-analytics-agent.md#tls-12-protocol).
+Сведения о поддержке TLS 1,2 с помощью агента Log Analytics для Windows и Linux, который является зависимостью от роли гибридного рабочего процесса Runbook, см. в разделе [Обзор агента log Analytics-TLS 1,2](..//azure-monitor/agents/log-analytics-agent.md#tls-12-protocol).
 
 ### <a name="platform-specific-guidance"></a>Поиск руководств в соответствии с платформой
 

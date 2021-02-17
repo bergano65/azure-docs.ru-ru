@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/10/2019
 ms.author: yelevin
-ms.openlocfilehash: ca483d993290e4d66ba257d4cb5de7fc3c952405
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b88185a09e69b1c7bd6c6c58b8e22190b4a2e394
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660837"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576752"
 ---
 # <a name="hunt-for-threats-with-azure-sentinel"></a>Поиск угроз с помощью Azure Sentinel
 
@@ -66,7 +66,7 @@ ms.locfileid: "94660837"
 
 ## <a name="query-language"></a>Язык запросов 
 
-Поиск в Azure Sentinel основан на языке запросов Kusto. Дополнительные сведения о языке запросов и поддерживаемых операторах см. в разделе [Справочник по языку запросов](../azure-monitor/log-query/get-started-queries.md).
+Поиск в Azure Sentinel основан на языке запросов Kusto. Дополнительные сведения о языке запросов и поддерживаемых операторах см. в разделе [Справочник по языку запросов](../azure-monitor/logs/get-started-queries.md).
 
 ## <a name="public-hunting-query-github-repository"></a>Общий репозиторий GitHub для запросов поиска
 
@@ -138,7 +138,7 @@ ms.locfileid: "94660837"
 
    ![Пользовательский запрос](./media/tutorial-hunting/custom-query.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этой статье вы узнали, как выполнить поиск с помощью Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 
 

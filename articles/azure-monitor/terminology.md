@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2019
-ms.openlocfilehash: 819ef7e61045c0ed4205eeaf0094fec706b0b9da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99592544d97793f82db36e1d2cb33ba8c6af1c9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86498616"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586970"
 ---
 # <a name="azure-monitor-naming-and-terminology-changes"></a>Изменения терминологии и именования Azure Monitor
 Недавно в Azure Monitor были внесены значительные изменения, а также произошло слияние различных служб, для того чтобы упростить мониторинг для клиентов Azure. В этой статье описываются недавние изменения имени и терминологии в документации Azure Monitor.
@@ -23,12 +23,12 @@ ms.locfileid: "86498616"
 Чтобы лучше описать службу Azure Monitor и ее различные компоненты после слияния различных служб в Azure Monitor, мы делаем следующий шаг, изменяя терминологию в нашей документации. 
 
 ### <a name="log-analytics"></a>Log Analytics
-Данные журнала Azure Monitor по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой, но мы меняем термин _Log Analytics_ во многих местах на _журналы Azure Monitor_. Этот термин лучше отражает свою роль в Azure Monitor и обеспечивает лучшую согласованность с [метриками в Azure Monitor](platform/data-platform-metrics.md).
+Данные журнала Azure Monitor по-прежнему хранятся в рабочей области Log Analytics, собираются и анализируются той же службой, но мы меняем термин _Log Analytics_ во многих местах на _журналы Azure Monitor_. Этот термин лучше отражает свою роль в Azure Monitor и обеспечивает лучшую согласованность с [метриками в Azure Monitor](essentials/data-platform-metrics.md).
 
-Термин _log analytics_ теперь в первую очередь применяется к странице на портале Azure, которая используется для записи и выполнения запросов, а также для анализа данных журнала. Это функциональный эквивалент [обозревателя метрик](platform/metrics-charts.md), который является страницей на портале Azure, используемой для анализа данных метрик.
+Термин _log analytics_ теперь в первую очередь применяется к странице на портале Azure, которая используется для записи и выполнения запросов, а также для анализа данных журнала. Это функциональный эквивалент [обозревателя метрик](essentials/metrics-charts.md), который является страницей на портале Azure, используемой для анализа данных метрик.
 
 ### <a name="log-analytics-workspaces"></a>Рабочие области Log Analytics
-[Рабочие области](platform/manage-access.md), которые содержат данные журнала в Azure Monitor, по-прежнему называются рабочими областями Log Analytics. Меню **Log Analytics** на портале Azure было переименовано в **Рабочие области Log Analytics**. Здесь вы [создаете новые рабочие области](learn/quick-create-workspace.md) и настраиваете источники данных. Анализ журналов и других данных мониторинга в **Azure Monitor** и настройка **рабочих областей Log Analytics**.
+[Рабочие области](logs/manage-access.md), которые содержат данные журнала в Azure Monitor, по-прежнему называются рабочими областями Log Analytics. Меню **Log Analytics** на портале Azure было переименовано в **Рабочие области Log Analytics**. Здесь вы [создаете новые рабочие области](logs/quick-create-workspace.md) и настраиваете источники данных. Анализ журналов и других данных мониторинга в **Azure Monitor** и настройка **рабочих областей Log Analytics**.
 
 ### <a name="management-solutions"></a>Решения для управления
 [Решения для управления](insights/solutions.md) были переименованы на _Решения для мониторинга_, что лучше описывает их функциональность.
@@ -56,7 +56,7 @@ Log Analytics и Application Insights были объединены в Azure Mon
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором Azure Monitor](overview.md), в котором описаны его различные компоненты и функции.
-- Дополнительные сведения о [перемещении портала OMS](./platform/oms-portal-transition.md).
+- Дополнительные сведения о [перемещении портала OMS](./logs/oms-portal-transition.md).

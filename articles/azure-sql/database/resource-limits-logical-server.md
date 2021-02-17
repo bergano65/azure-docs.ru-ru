@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
 ms.date: 02/02/2021
-ms.openlocfilehash: e8f18f56c746f0d12f43cc2fb6ce9088a9b82b45
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: aa18baf9739663c7132a49d3d07434b9d187f02b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99492388"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588744"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Ограничения ресурсов для базы данных SQL Azure и серверов Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -106,11 +106,11 @@ ms.locfileid: "99492388"
 
 ## <a name="resource-consumption-by-user-workloads-and-internal-processes"></a>Потребление ресурсов по рабочим нагрузкам пользователей и внутренним процессам
 
-Использование ЦП и памяти пользовательскими рабочими нагрузками в каждой базе данных сообщается в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях `avg_cpu_percent` в `avg_memory_usage_percent` столбцах и. Для эластичных пулов в представлении [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) отображается отчет о потреблении ресурсов на уровне пула. Загрузка ЦП пользовательской рабочей нагрузки также сообщается по `cpu_percent` метрике Azure Monitor для [отдельных баз данных](../../azure-monitor/platform/metrics-supported.md#microsoftsqlserversdatabases) и [эластичных пулов](../../azure-monitor/platform/metrics-supported.md#microsoftsqlserverselasticpools) на уровне пула.
+Использование ЦП и памяти пользовательскими рабочими нагрузками в каждой базе данных сообщается в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях `avg_cpu_percent` в `avg_memory_usage_percent` столбцах и. Для эластичных пулов в представлении [sys.elastic_pool_resource_stats](/sql/relational-databases/system-catalog-views/sys-elastic-pool-resource-stats-azure-sql-database) отображается отчет о потреблении ресурсов на уровне пула. Загрузка ЦП пользовательской рабочей нагрузки также сообщается по `cpu_percent` метрике Azure Monitor для [отдельных баз данных](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserversdatabases) и [эластичных пулов](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserverselasticpools) на уровне пула.
 
 Базе данных SQL Azure требуются ресурсы вычислений для реализации основных функций службы, таких как высокий уровень доступности и аварийное восстановление, резервное копирование и восстановление баз данных, мониторинг, хранилище запросов, автоматическая настройка и т. д. Система устанавливает ограниченную часть общих ресурсов для этих внутренних процессов с помощью механизмов управления [ресурсами](#resource-governance) , делая оставшуюся часть ресурсов доступной для пользовательских рабочих нагрузок. Иногда, когда внутренние процессы не используют ресурсы вычислений, система делает их доступными для пользовательских рабочих нагрузок.
 
-Общее использование ЦП и памяти рабочими нагрузками пользователей и внутренними процессами сообщается в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях в `avg_instance_cpu_percent` `avg_instance_memory_percent` столбцах и. Эти данные также сообщаются по `sqlserver_process_core_percent` `sqlserver_process_memory_percent` метрикам и Azure Monitor для [отдельных баз данных](../../azure-monitor/platform/metrics-supported.md#microsoftsqlserversdatabases) и [эластичных пулов](../../azure-monitor/platform/metrics-supported.md#microsoftsqlserverselasticpools) на уровне пула.
+Общее использование ЦП и памяти рабочими нагрузками пользователей и внутренними процессами сообщается в [sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database) и [sys.resource_stats](/sql/relational-databases/system-catalog-views/sys-resource-stats-azure-sql-database) представлениях в `avg_instance_cpu_percent` `avg_instance_memory_percent` столбцах и. Эти данные также сообщаются по `sqlserver_process_core_percent` `sqlserver_process_memory_percent` метрикам и Azure Monitor для [отдельных баз данных](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserversdatabases) и [эластичных пулов](../../azure-monitor/essentials/metrics-supported.md#microsoftsqlserverselasticpools) на уровне пула.
 
 Более подробные сведения о последнем потреблении ресурсов по рабочим нагрузкам пользователей и внутренним процессам сообщается в представлениях [sys.dm_resource_governor_resource_pools_history_ex](/sql/relational-databases/system-dynamic-management-views/sys-dm-resource-governor-resource-pools-history-ex-azure-sql-database) и [sys.dm_resource_governor_workload_groups_history_ex](/sql/relational-databases/system-dynamic-management-views/sys-dm-resource-governor-workload-groups-history-ex-azure-sql-database) . Дополнительные сведения о пулах ресурсов и группах рабочей нагрузки, на которые имеются ссылки в этих представлениях, см. в разделе [Управление ресурсами](#resource-governance). Эти представления сообщают об использовании ресурсов пользовательскими рабочими нагрузками и конкретными внутренними процессами в связанных пулах ресурсов и группах рабочей нагрузки.
 
@@ -183,7 +183,7 @@ ms.locfileid: "99492388"
 
 Поскольку данные физически копируются на другой компьютер, перемещение больших баз данных может потребовать значительного времени. В течение этого времени, если локальное использование пространства большой пользовательской базой данных или эластичным пулом или `tempdb` база данных растет очень быстро, риск возникновения нехватки пространства увеличится. Система инициирует перемещение базы данных в сбалансированном виде, чтобы предотвратить ошибки нехватки пространства и избежать ненужных отработок отказа.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Сведения об общих ограничениях Azure см. в разделе [Подписка Azure, границы, квоты и ограничения службы](../../azure-resource-manager/management/azure-subscription-service-limits.md).
 - Сведения о DTU и eDTU см. в разделе [Общие сведения об обычных единицах передачи данных (DTU) и единицах передачи данных в эластичной базе данных (eDTU)](purchasing-models.md#dtu-based-purchasing-model).

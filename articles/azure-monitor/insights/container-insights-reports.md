@@ -3,15 +3,15 @@ title: Отчеты в Azure Monitor для контейнеров
 description: Описывает отчеты, доступные для анализа данных, собранных Azure Monitor для контейнеров.
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 3cc2f8fb9bfaa278ce06b4a8cd6d379397b7129a
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 94709cf4a8b579447c11f91f9bc6863ab4b4fe08
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96907604"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582321"
 ---
 # <a name="reports-in-azure-monitor-for-containers"></a>Отчеты в Azure Monitor для контейнеров
-Отчеты в Azure Monitor для контейнеров рекомендуются готовыми [книгами Azure](../platform/workbooks-overview.md). В этой статье описываются различные доступные отчеты и способы доступа к ним.
+Отчеты в Azure Monitor для контейнеров рекомендуются готовыми [книгами Azure](../visualize/workbooks-overview.md). В этой статье описываются различные доступные отчеты и способы доступа к ним.
 
 ## <a name="viewing-reports"></a>Просмотр отчетов
 В меню **Azure Monitor** в портал Azure выберите **контейнеры**. Выберите **Insights** в разделе **мониторинг** , выберите конкретный кластер, а затем щелкните страницу **отчеты (Предварительная версия)** . 
@@ -19,7 +19,7 @@ ms.locfileid: "96907604"
 [![Страница «отчеты»](media/container-insights-reports/reports-page.png)](media/container-insights-reports/reports-page.png#lightbox)
 
 ## <a name="create-a-custom-workbook"></a>Создание пользовательской книги
-Чтобы создать пользовательскую книгу на основе любой из этих книг, выберите раскрывающееся меню **Просмотр книг** , а затем **перейдите в коллекцию AKS** в нижней части раскрывающегося списка. Дополнительные сведения о книгах и использовании шаблонов книг см. в разделе [книги Azure Monitor](../platform/workbooks-overview.md) .
+Чтобы создать пользовательскую книгу на основе любой из этих книг, выберите раскрывающееся меню **Просмотр книг** , а затем **перейдите в коллекцию AKS** в нижней части раскрывающегося списка. Дополнительные сведения о книгах и использовании шаблонов книг см. в разделе [книги Azure Monitor](../visualize/workbooks-overview.md) .
 
 [![Коллекция AKS](media/container-insights-reports/aks-gallery.png)](media/container-insights-reports/aks-gallery.png#lightbox)
 
@@ -76,6 +76,6 @@ ms.locfileid: "96907604"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о книгах в Azure Monitor см. в [Azure Monitor книгах](../platform/workbooks-overview.md) .
+- Дополнительные сведения о книгах в Azure Monitor см. в [Azure Monitor книгах](../visualize/workbooks-overview.md) .

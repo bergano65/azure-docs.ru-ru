@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 07/22/2020
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: d59d5de0d98380be215747c7daa33721fcebf33c
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: dccb99c43e53231c15fbf158411c87e91bc96f84
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533831"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576748"
 ---
 # <a name="set-up-autoscale-for-microservice-applications"></a>Настройка автомасштабирования для приложений, состоящих из микрослужб
 
@@ -70,5 +70,5 @@ ms.locfileid: "96533831"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Общие сведения об автомасштабировании в Microsoft Azure](../azure-monitor/platform/autoscale-overview.md)
+* [Общие сведения об автомасштабировании в Microsoft Azure](../azure-monitor/autoscale/autoscale-overview.md)
 * [Автомасштабирование Azure Monitor](/cli/azure/monitor/autoscale?preserve-view=true&view=azure-cli-latest)

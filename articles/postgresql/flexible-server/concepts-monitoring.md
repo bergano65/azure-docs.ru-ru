@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: 1519e0b5cef6055cf8d8b0aded0d8ad323d548a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5e7063cd1ae560fa077bd0b1b1279e4515e70464
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91707852"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579021"
 ---
 # <a name="monitor-metrics-on-azure-database-for-postgresql---flexible-server"></a>Мониторинг метрик в базе данных Azure для PostgreSQL — гибкого сервера
 
@@ -21,7 +21,7 @@ ms.locfileid: "91707852"
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для PostgreSQL предоставляет различные параметры мониторинга, дающие возможность получить полезные сведения о поведении сервера.
 
 ## <a name="metrics"></a>Метрики
-База данных Azure для PostgreSQL предоставляет различные метрики, позволяющие понять действия ресурсов, поддерживающих сервер PostgreSQL. Каждая метрика создается с частотой в одну минуту и имеет объем [истории до 93 дней](../../azure-monitor/platform/data-platform-metrics.md#retention-of-metrics). Вы можете настроить оповещения на основе метрик. К другим параметрам относятся Настройка автоматизированных действий, выполнение расширенной аналитики и журнал архивации. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../../azure-monitor/platform/data-platform-metrics.md).
+База данных Azure для PostgreSQL предоставляет различные метрики, позволяющие понять действия ресурсов, поддерживающих сервер PostgreSQL. Каждая метрика создается с частотой в одну минуту и имеет объем [истории до 93 дней](../../azure-monitor/essentials/data-platform-metrics.md#retention-of-metrics). Вы можете настроить оповещения на основе метрик. К другим параметрам относятся Настройка автоматизированных действий, выполнение расширенной аналитики и журнал архивации. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../../azure-monitor/essentials/data-platform-metrics.md).
 
 ### <a name="list-of-metrics"></a>Список метрик
 Для гибкого сервера PostgreSQL доступны следующие метрики.

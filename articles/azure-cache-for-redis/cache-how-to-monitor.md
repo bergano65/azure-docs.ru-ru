@@ -6,12 +6,12 @@ ms.author: yegu
 ms.service: cache
 ms.topic: conceptual
 ms.date: 02/08/2021
-ms.openlocfilehash: ea99c34f03cd74185840767605c17ee6c65eb701
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0ff11c9601fb55e27d8780185d77c177e9d9201b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100389711"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584645"
 ---
 # <a name="monitor-azure-cache-for-redis"></a>Мониторинг кэша Azure для Redis
 
@@ -52,13 +52,13 @@ ms.locfileid: "100389711"
 
 ![В левой области навигации contoso55 метрики — это параметр в разделе Мониторинг и который выделяется. На метриках имеется список метрик. Выбраны попадания в кэш и промахи кэша.](./media/cache-how-to-monitor/redis-cache-monitor.png)
 
-Дополнительные сведения о работе с метриками в Azure Monitor см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
+Дополнительные сведения о работе с метриками в Azure Monitor см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/data-platform.md).
 
 <a name="how-to-view-metrics-and-customize-chart"></a>
 <a name="enable-cache-diagnostics"></a>
 ## <a name="export-cache-metrics"></a>Экспорт метрик кэша
 
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) и укажите для них политику **Хранение (дни)**. 
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/essentials/data-platform-metrics.md), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) и укажите для них политику **Хранение (дни)**. 
 
 Чтобы настроить учетную запись хранения для метрик кэша, сделайте следующее:
 
@@ -68,16 +68,16 @@ ms.locfileid: "100389711"
 4. Установите флажок **Архивировать в учетной записи хранения**. При отправке диагностических данных в учетную запись хранения действуют обычные тарифы на хранение и передачу данных.
 4. Выберите **настроить** , чтобы выбрать учетную запись хранения, в которой должны храниться метрики кэша.
 5. В разделе **Метрика** заголовка таблицы установите флажок рядом с элементами строки, которые необходимо сохранить, например **аллметрикс**. Укажите политику **хранения (в днях)** . Срок хранения в днях, который можно указать, составляет **365 дней**. Однако если вы хотите постоянно хранить данные метрик, задайте для параметра **период хранения (в днях)** значение **0**.
-6. Нажмите кнопку **Сохранить**.
+6. Выберите команду **Сохранить**.
 
 
 ![Диагностика Redis](./media/cache-how-to-monitor/redis-cache-diagnostics.png)
 
 >[!NOTE]
->Помимо архивации метрик кэша в хранилище, их также можно передать [в концентратор событий или отправить в журналы Azure Monitor](../azure-monitor/platform/rest-api-walkthrough.md#retrieve-metric-values).
+>Помимо архивации метрик кэша в хранилище, их также можно передать [в концентратор событий или отправить в журналы Azure Monitor](../azure-monitor/essentials/rest-api-walkthrough.md#retrieve-metric-values).
 >
 
-Чтобы просмотреть метрики, их можно открыть на портале Azure, как описано выше в этой статье, или же обратиться к ним с помощью [REST API для метрик Azure Monitor](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+Чтобы просмотреть метрики, их можно открыть на портале Azure, как описано выше в этой статье, или же обратиться к ним с помощью [REST API для метрик Azure Monitor](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 
 > [!NOTE]
 > В случае ее смены данные из прежней учетной записи хранения можно будет скачать, однако они не будут отображаться на портале Azure.  
@@ -129,7 +129,7 @@ ms.locfileid: "100389711"
 
 ![Наблюдение](./media/cache-how-to-monitor/redis-cache-monitoring.png)
 
-Дополнительные сведения о настройке и использовании оповещений см. в статье [Создание оповещений метрик в Azure Monitor для служб Azure с помощью портала Azure](../azure-monitor/platform/alerts-classic-portal.md).
+Дополнительные сведения о настройке и использовании оповещений см. в статье [Создание оповещений метрик в Azure Monitor для служб Azure с помощью портала Azure](../azure-monitor/alerts/alerts-classic-portal.md).
 
 ## <a name="activity-logs"></a>Журналы действий
 Журналы действий позволяют подробно проанализировать операции, выполненные с экземплярами кэша Azure для Redis. Ранее они назывались журналами аудита или журналами операций. С помощью журналов действий можно получить ответы на вопросы "что? кто? когда?" в отношении любой операции записи (PUT, POST, DELETE), выполненной с экземплярами кэша Azure для Redis. 
@@ -140,4 +140,4 @@ ms.locfileid: "100389711"
 
 Чтобы просмотреть журналы действий для кэша, щелкните **Журналы действий** в меню **Ресурсы**.
 
-Дополнительные сведения о журналах действий см. в статье [Общие сведения о журнале действий Azure](../azure-monitor/platform/platform-logs-overview.md).
+Дополнительные сведения о журналах действий см. в статье [Общие сведения о журнале действий Azure](../azure-monitor/essentials/platform-logs-overview.md).

@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: srrengar
-ms.openlocfilehash: c1d118fa1fb65663f37e33f739bf4a72a14e1c52
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6539815875b87a0d0f525d7e89464fa7d2505746
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95998229"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570200"
 ---
 # <a name="monitor-containers-with-azure-monitor-logs"></a>Мониторинг контейнеров с помощью журналов Azure Monitor
  
@@ -45,8 +45,8 @@ ms.locfileid: "95998229"
 
 
 
-## <a name="next-steps"></a>Следующие шаги
-* Дополнительные сведения о [решении "контейнеры журналов Azure Monitor](../azure-monitor/insights/containers.md)".
+## <a name="next-steps"></a>Дальнейшие шаги
+* Дополнительные сведения о [решении "контейнеры журналов Azure Monitor](../azure-monitor/containers/containers.md)".
 * Дополнительные сведения об оркестрации контейнера в Service Fabric см. в статье [Service Fabric и контейнеры](service-fabric-containers-overview.md)
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/log-query/log-query-overview.md), которые являются частью журналов Azure Monitor
-* Настройка журналов Azure Monitor для настройки правил [автоматического оповещения](../azure-monitor/platform/alerts-overview.md) , помогающих в обнаружении и диагностике
+* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/logs/log-query-overview.md), которые являются частью журналов Azure Monitor
+* Настройка журналов Azure Monitor для настройки правил [автоматического оповещения](../azure-monitor/alerts/alerts-overview.md) , помогающих в обнаружении и диагностике

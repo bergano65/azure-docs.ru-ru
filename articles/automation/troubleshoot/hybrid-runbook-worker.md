@@ -7,12 +7,12 @@ author: mgoedtel
 ms.author: magoedte
 ms.date: 02/11/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: af432d9c6323bd2328eb8dd84d8572a8a5ae05a7
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 15a18cbfc3a80bbfea0b92e5b616104dc0f593af
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388011"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581000"
 ---
 # <a name="troubleshoot-hybrid-runbook-worker-issues"></a>Устранение неполадок с гибридной рабочей ролью runbook
 
@@ -128,7 +128,7 @@ ms.locfileid: "100388011"
 #### <a name="resolution"></a>Решение
 
 ##### <a name="mistyped-workspace-id-or-key"></a>Неправильно введенный ключ или идентификатор рабочей области
-Чтобы проверить, не был ли неправильно введен ключ или идентификатор рабочей области, см. раздел [Добавление или удаление рабочей области — агент Windows](../../azure-monitor/platform/agent-manage.md#windows-agent) для агента Windows или [Добавление или удаление рабочей области — агент Linux ](../../azure-monitor/platform/agent-manage.md#linux-agent) для агента Linux. Обязательно выберите полную строку на портале Azure, а затем скопируйте и вставьте ее с особой тщательностью.
+Чтобы проверить, не был ли неправильно введен ключ или идентификатор рабочей области, см. раздел [Добавление или удаление рабочей области — агент Windows](../../azure-monitor/agents/agent-manage.md#windows-agent) для агента Windows или [Добавление или удаление рабочей области — агент Linux ](../../azure-monitor/agents/agent-manage.md#linux-agent) для агента Linux. Обязательно выберите полную строку на портале Azure, а затем скопируйте и вставьте ее с особой тщательностью.
 
 ##### <a name="configuration-not-downloaded"></a>Конфигурация не скачана
 
@@ -169,7 +169,7 @@ ms.locfileid: "100388011"
 
 ## <a name="linux"></a>Linux
 
-Гибридная рабочая роль Runbook для Linux зависит от [агента Log Analytics для Linux](../../azure-monitor/platform/log-analytics-agent.md), который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий runbook и передачи сведений о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
+Гибридная рабочая роль Runbook для Linux зависит от [агента Log Analytics для Linux](../../azure-monitor/agents/log-analytics-agent.md), который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий runbook и передачи сведений о состоянии. Если при регистрации рабочей роли произошла ошибка, это могло произойти по следующим причинам:
 
 ### <a name="scenario-linux-hybrid-runbook-worker-receives-prompt-for-a-password-when-signing-a-runbook"></a><a name="prompt-for-password"></a>Сценарий. Гибридная рабочая роль Runbook для Linux получает запрос на ввод пароля при подписании модуля runbook
 
@@ -225,7 +225,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 ## <a name="windows"></a>Windows
 
-Гибридная рабочая роль Runbook для Windows зависит от [агента Log Analytics для Windows](../../azure-monitor/platform/log-analytics-agent.md), который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий runbook и передачи сведений о состоянии. В случае сбоя регистрации рабочей роли этот раздел содержит некоторые возможные причины.
+Гибридная рабочая роль Runbook для Windows зависит от [агента Log Analytics для Windows](../../azure-monitor/agents/log-analytics-agent.md), который используется для взаимодействия с учетной записью службы автоматизации с целью регистрации рабочей роли, получения заданий runbook и передачи сведений о состоянии. В случае сбоя регистрации рабочей роли этот раздел содержит некоторые возможные причины.
 
 ### <a name="scenario-the-log-analytics-agent-for-windows-isnt-running"></a><a name="mma-not-running"></a>Сценарий. Агент Log Analytics для Windows не работает
 
@@ -253,7 +253,7 @@ wget https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/inst
 
 #### <a name="resolution"></a>Решение
 
-Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Можно проверить, зарегистрированы ли в журналах событий в папках **Application and Services Logs\Microsoft-SMA\Operations** и **Application and Services Logs\Operations Manager** какие-либо предупреждения или ошибки. Эти журналы указывают на проблемы подключения или другие проблемы, влияющие на включение роли в службе автоматизации Azure, или на проблему, возникающую при нормальных условиях работы. Дополнительные сведения об устранении неполадок агента Log Analytics см. в разделе [Устранение неполадок агента Log Analytics для Windows](../../azure-monitor/platform/agent-windows-troubleshoot.md).
+Журналы сохраняются локально в каждом гибридном компоненте Worker по адресу C:\ProgramData\Microsoft\System Center\Orchestrator\7.2\SMA\Sandboxes. Можно проверить, зарегистрированы ли в журналах событий в папках **Application and Services Logs\Microsoft-SMA\Operations** и **Application and Services Logs\Operations Manager** какие-либо предупреждения или ошибки. Эти журналы указывают на проблемы подключения или другие проблемы, влияющие на включение роли в службе автоматизации Azure, или на проблему, возникающую при нормальных условиях работы. Дополнительные сведения об устранении неполадок агента Log Analytics см. в разделе [Устранение неполадок агента Log Analytics для Windows](../../azure-monitor/agents/agent-windows-troubleshoot.md).
 
 Гибридные рабочие роли отправляют [выходные данные и сообщения Runbook](../automation-runbook-output-and-messages.md) в службу автоматизации Azure так же, как задания runbook, выполняемые в облаке, отправляют выходные данные и сообщения. Вы можете включить потоки Verbose и Progress точно так же, как и для модулей runbook.
 
@@ -351,7 +351,7 @@ Start-Service -Name HealthService
 
 #### <a name="resolution"></a>Решение
 
-Чтобы устранить эту проблему, выполните следующие действия.
+Для разрешения этой проблемы:
 
 1. Удалите агент `sudo sh onboard_agent.sh --purge` .
 
