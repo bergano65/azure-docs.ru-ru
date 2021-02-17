@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: tutorial
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 9ac616ddf1c3475f2ca3b3e8097bb74da72faa77
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 33eaa1ea928cc0650c91948c70d46daf499f3b4b
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95500277"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831221"
 ---
 # <a name="tutorial-connect-an-iot-plug-and-play-module-c"></a>Руководство по подключению модуля IoT Plug and Play (C#)
 
@@ -20,7 +20,12 @@ ms.locfileid: "95500277"
 
 Устройство — это устройство IoT Plug and Play, если оно публикует свой идентификатор модели при подключении к центру Интернета вещей и реализует свойства и методы, описанные в модели DTDL, определяемой идентификатором модели. Дополнительные сведения о том, как устройства используют DTDL и идентификатор модели, см. в статье [Руководство разработчика IoT Plug and Play](./concepts-developer-guide-device.md). Модули используют идентификаторы моделей и модели DTDL одинаковым образом.
 
-Чтобы продемонстрировать реализацию модуля Plug and Play IoT, в этом руководстве показано, как преобразовать пример (C#) устройства термостата в универсальный модуль.
+Для демонстрации того, как реализовать модуль IoT Plug and Play, в этом учебнике описывается следующее:
+
+> [!div class="checklist"]
+> * добавление устройства с помощью модуля я в центр Интернета вещей;
+> * преобразование примера устройства термостата на C# в общий модуль;
+> * использование пакета SDK службы для взаимодействия с модулем.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -232,6 +237,10 @@ git clone https://github.com/Azure-Samples/azure-iot-samples-csharp.git
 * Данные телеметрии с устройства IoT Edge.
 * Свойство двойника модуля IoT Edge обновляет активацию уведомлений IoT Plug and Play.
 * Модуль IoT Edge реагирует на команды IoT Plug and Play.
+
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+[!INCLUDE [iot-pnp-clean-resources](../../includes/iot-pnp-clean-resources.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

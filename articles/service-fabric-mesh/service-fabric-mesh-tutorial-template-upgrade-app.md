@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 331830c50206d14f7894aa837b483656de4222f2
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 8a71e854f03bee75b757e0a0aa02e7aa2c24469b
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747849"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99626566"
 ---
 # <a name="tutorial-upgrade-a-service-fabric-application-running-in-service-fabric-mesh"></a>Руководство. Обновление приложения Service Fabric, работающего в Сетке Service Fabric
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Сетки Azure Service Fabric была прекращена. Новые развертывания больше не будут разрешены через API Сетки Service Fabric. Поддержка существующих развертываний будет продолжена до 28 апреля 2021 г. включительно.
+> 
+> Дополнительные сведения см. в статье [Прекращение поддержки предварительной версии Сетки Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Это руководство представляет собой первую часть цикла. Вы узнаете, как обновить приложение Service Fabric, которое было [ранее развернуто в Сетке Service Fabric](service-fabric-mesh-tutorial-template-deploy-app.md), увеличив выделенные ресурсы ЦП.  По завершении вы получите службу веб-интерфейса с большим количеством ресурсов ЦП.
 
@@ -25,8 +30,8 @@ ms.locfileid: "92747849"
 
 Из этого цикла руководств вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
-> * [развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md);
-> * [масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md);
+> * [Развертывание приложения в Сетке Service Fabric с помощью шаблона](service-fabric-mesh-tutorial-template-deploy-app.md)
+> * [Масштабирование приложения, работающего в Сетке Service Fabric](service-fabric-mesh-tutorial-template-scale-services.md)
 > * обновление приложения, работающего в Сетке Service Fabric;
 > * [Удаление приложения](service-fabric-mesh-tutorial-template-remove-app.md)
 
@@ -50,7 +55,7 @@ ms.locfileid: "92747849"
 az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-name todolistapp
 ```
 
-В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu* , с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu* , развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpue* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
+В шаблоне развертывания ресурса приложения для каждой службы определено свойство *cpu*, с помощью которого можно установить запрашиваемые ресурсы ЦП. Приложение может состоять из нескольких служб с уникальными параметрами *cpu*, развертывание и управление которыми осуществляется совместно. Чтобы увеличить ресурсы ЦП службы веб-интерфейса, измените значение *cpue* в шаблоне развертывания или файле параметров.  Затем обновите приложение.
 
 ### <a name="modify-the-deployment-template-parameters"></a>Изменение параметров шаблона развертывания
 
@@ -80,7 +85,7 @@ az mesh service show --resource-group myResourceGroup --name WebFrontEnd --app-n
 }
 ```
 
-Свойство службы WebFrontEnd *codePackages -> resources -> requests-> cpu* ссылается на параметр *frontEndCpu* :
+Свойство службы WebFrontEnd *codePackages -> resources -> requests-> cpu* ссылается на параметр *frontEndCpu*:
 
 ```json
     "services": [

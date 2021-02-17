@@ -2,19 +2,19 @@
 title: Аутентификация в службах связи Azure
 titleSuffix: An Azure Communication Services concept document
 description: Узнайте о различных способах проверки подлинности приложения или службы в службах связи.
-author: matthewrobertson
+author: GrantMeStrength
 manager: jken
 services: azure-communication-services
-ms.author: marobert
+ms.author: jken
 ms.date: 07/24/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 4d6e02852dcd2d30a764417a4b5e0e012a1d2ab5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e20c822c2e792c67ed655080385a3c90794d53fd
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96571102"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545145"
 ---
 # <a name="authenticate-to-azure-communication-services"></a>Аутентификация в службах связи Azure
 
@@ -48,7 +48,7 @@ Authorization: "HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signatur
 
 ### <a name="sign-an-http-request"></a>Подписывание HTTP-запроса
 
-Если вы не используете клиентскую библиотеку для выполнения HTTP-запросов к интерфейсам API службы связи Azure, вам потребуется программно создавать HMAC для каждого HTTP-запроса. Следующие шаги описывают создание заголовка авторизации.
+Если вы не используете клиентскую библиотеку для выполнения HTTP-запросов к интерфейсам API службы связи Azure, вам потребуется программно создавать HMAC для каждого HTTP-запроса. Ниже описано, как создать заголовок авторизации:
 
 1. Укажите отметку времени в формате UTC для запроса в `x-ms-date` заголовке или в стандартном `Date` заголовке HTTP. Служба проверяет это для защиты от определенных атак, в том числе атак с помощью воспроизведения.
 1. Выполните хэширование текста HTTP-запроса с помощью алгоритма SHA256, а затем передайте его с запросом через `x-ms-content-sha256` заголовок.
@@ -72,11 +72,11 @@ Authorization: "HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signatur
 
 Маркеры доступа пользователей позволяют клиентским приложениям проходить проверку подлинности непосредственно в службах связи Azure. Для этого необходимо настроить надежную службу, которая проверяет подлинность пользователей приложения и выдает маркеры доступа пользователей с помощью клиентской библиотеки администрирования. См. общую документацию по [архитектуре клиента и сервера](./client-and-server-architecture.md) , чтобы узнать больше о наших архитектурных вопросах.
 
-`CommunicationUserCredential`Класс содержит логику предоставления учетных данных маркера доступа пользователя для клиентских библиотек и управления жизненным циклом.
+`CommunicationTokenCredential`Класс содержит логику предоставления учетных данных маркера доступа пользователя для клиентских библиотек и управления жизненным циклом.
 
 ### <a name="initialize-the-client-libraries"></a>Инициализация клиентских библиотек
 
-Чтобы инициализировать клиентские библиотеки служб связи Azure, требующие проверки подлинности маркера доступа пользователя, сначала необходимо создать экземпляр `CommunicationUserCredential` класса, а затем использовать его для инициализации клиента API.
+Чтобы инициализировать клиентские библиотеки служб связи Azure, требующие проверки подлинности маркера доступа пользователя, сначала необходимо создать экземпляр `CommunicationTokenCredential` класса, а затем использовать его для инициализации клиента API.
 
 В следующих фрагментах кода показано, как инициализировать клиентскую библиотеку чата с помощью маркера доступа пользователя:
 
@@ -86,8 +86,8 @@ Authorization: "HMAC-SHA256 SignedHeaders=date;host;x-ms-content-sha256&Signatur
 // user access tokens should be created by a trusted service using the Administration client library
 var token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-var userCredential = new CommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance
+var userCredential = new CommunicationTokenCredential(token);
 
 // initialize the chat client library with the credential
 var chatClient = new ChatClient(ENDPOINT_URL, userCredential);
@@ -99,8 +99,8 @@ var chatClient = new ChatClient(ENDPOINT_URL, userCredential);
 // user access tokens should be created by a trusted service using the Administration client library
 const token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance with the AzureCommunicationUserCredential class
-const userCredential = new AzureCommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance with the AzureCommunicationTokenCredential class
+const userCredential = new AzureCommunicationTokenCredential(token);
 
 // initialize the chat client library with the credential
 let chatClient = new ChatClient(ENDPOINT_URL, userCredential);
@@ -112,8 +112,8 @@ let chatClient = new ChatClient(ENDPOINT_URL, userCredential);
 // user access tokens should be created by a trusted service using the Administration client library
 let token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-let userCredential = try CommunicationUserCredential(token: token)
+// create a CommunicationTokenCredential instance
+let userCredential = try CommunicationTokenCredential(token: token)
 
 // initialize the chat client library with the credential
 let chatClient = try CommunicationChatClient(credential: userCredential, endpoint: ENDPOINT_URL)
@@ -125,8 +125,8 @@ let chatClient = try CommunicationChatClient(credential: userCredential, endpoin
 // user access tokens should be created by a trusted service using the Administration client library
 String token = "<valid-user-access-token>";
 
-// create a CommunicationUserCredential instance
-CommunicationUserCredential userCredential = new CommunicationUserCredential(token);
+// create a CommunicationTokenCredential instance
+CommunicationTokenCredential userCredential = new CommunicationTokenCredential(token);
 
 // Initialize the chat client
 final ChatClientBuilder builder = new ChatClientBuilder();
@@ -140,12 +140,12 @@ ChatClient chatClient = builder.buildClient();
 
 ### <a name="refreshing-user-access-tokens"></a>Обновление маркеров доступа пользователей
 
-Маркеры доступа пользователей — это кратковременные учетные данные, которые необходимо повторно выдать, чтобы предотвратить сбои в работе служб. `CommunicationUserCredential`Конструктор принимает функцию обратного вызова обновления, которая позволяет обновлять маркеры доступа пользователей до истечения срока их действия. Этот обратный вызов следует использовать для получения нового маркера доступа пользователя из доверенной службы.
+Маркеры доступа пользователей — это кратковременные учетные данные, которые необходимо повторно выдать, чтобы предотвратить сбои в работе служб. `CommunicationTokenCredential`Конструктор принимает функцию обратного вызова обновления, которая позволяет обновлять маркеры доступа пользователей до истечения срока их действия. Этот обратный вызов следует использовать для получения нового маркера доступа пользователя из доверенной службы.
 
 #### <a name="c"></a>[C#](#tab/csharp)
 
 ```csharp
-var userCredential = new CommunicationUserCredential(
+var userCredential = new CommunicationTokenCredential(
     initialToken: token,
     refreshProactively: true,
     tokenRefresher: cancellationToken => fetchNewTokenForCurrentUser(cancellationToken)
@@ -155,7 +155,7 @@ var userCredential = new CommunicationUserCredential(
 #### <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 ```javascript
-const userCredential = new AzureCommunicationUserCredential({
+const userCredential = new AzureCommunicationTokenCredential({
   tokenRefresher: async () => fetchNewTokenForCurrentUser(),
   refreshProactively: true,
   initialToken: token
@@ -165,7 +165,7 @@ const userCredential = new AzureCommunicationUserCredential({
 #### <a name="swift"></a>[Swift](#tab/swift)
 
 ```swift
- let userCredential = try CommunicationUserCredential(initialToken: token, refreshProactively: true) { |completionHandler|
+ let userCredential = try CommunicationTokenCredential(initialToken: token, refreshProactively: true) { |completionHandler|
    let updatedToken = fetchTokenForCurrentUser()
    completionHandler(updatedToken, nil)
  }
@@ -181,13 +181,13 @@ TokenRefresher tokenRefresher = new TokenRefresher() {
     }
 }
 
-CommunicationUserCredential credential = new CommunicationUserCredential(tokenRefresher, token, true);
+CommunicationTokenCredential credential = new CommunicationTokenCredential(tokenRefresher, token, true);
 ```
 ---
 
 `refreshProactively`Параметр позволяет выбрать способ управления жизненным циклом маркера. По умолчанию, когда маркер устарел, обратный вызов блокирует запросы API и пытается обновить его. Если для параметра задано значение `refreshProactively` `true` обратного вызова, оно планируется и выполняется асинхронно до истечения срока действия маркера.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 > [!div class="nextstepaction"]
 > [Создание маркеров доступа пользователей](../quickstarts/access-tokens.md)

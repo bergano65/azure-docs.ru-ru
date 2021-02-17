@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 12/16/2020
 ms.author: rolyon
-ms.openlocfilehash: 1444ee3643222ceebc67298bdb580955b1432104
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: d58398c42cdc6faed758e5dba3431e0841fc0b03
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526421"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555569"
 ---
 # <a name="best-practices-for-azure-rbac"></a>Рекомендации по использованию Azure RBAC
 
@@ -30,7 +30,7 @@ ms.locfileid: "99526421"
 
 ![Azure RBAC и наименьшие права доступа](./media/best-practices/rbac-least-privilege.png)
 
-Дополнительные сведения о добавлении назначений ролей см. [в разделе Добавление или удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md).
+Сведения о назначении ролей см. в статье [назначение ролей Azure с помощью портал Azure](role-assignments-portal.md).
 
 ## <a name="limit-the-number-of-subscription-owners"></a>Ограничение числа владельцев подписки
 
@@ -46,6 +46,6 @@ ms.locfileid: "99526421"
 
 Чтобы сделать назначения ролей более управляемыми, не назначайте роли непосредственно пользователям. Вместо этого назначьте роли группам. Назначение ролей группам, а не пользователям, также помогает сократить количество назначений ролей, которое имеет [ограничение в 2 000 назначений ролей на подписку](troubleshooting.md#azure-role-assignments-limit). 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Устранение неполадок в Azure RBAC](troubleshooting.md)

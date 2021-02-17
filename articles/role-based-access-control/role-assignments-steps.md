@@ -1,5 +1,5 @@
 ---
-title: Действия по добавлению назначения ролей в Azure RBAC
+title: Действия по назначению роли Azure в Azure RBAC
 description: Узнайте, как назначать роли Azure пользователям, группам, субъектам-службам или управляемым удостоверениям с помощью управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 author: rolyon
@@ -7,18 +7,18 @@ manager: mtillman
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 09/30/2020
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: e746c7d09bb568d457ab1037b56c7c2973b29ad7
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 081335779ffc4b3a6ddf09e56b773c6d34b210be
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117254"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556039"
 ---
-# <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
+# <a name="steps-to-assign-an-azure-role"></a>Действия по назначению роли Azure
 
-[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описываются общие действия по добавлению назначения ролей с помощью [портал Azure](role-assignments-portal.md), [Azure PowerShell](role-assignments-powershell.md), [Azure CLI](role-assignments-cli.md)или [REST API](role-assignments-rest.md).
+[!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описаны общие действия по назначению ролей Azure с помощью [портал Azure](role-assignments-portal.md), [Azure PowerShell](role-assignments-powershell.md), [Azure CLI](role-assignments-cli.md)или [REST API](role-assignments-rest.md).
 
 ## <a name="step-1-determine-who-needs-access"></a>Шаг 1. Определение пользователей, которым требуется доступ
 
@@ -79,16 +79,16 @@ ms.locfileid: "98117254"
 
 Если ваша учетная запись пользователя не позволяет назначать роли в вашей подписке, вы увидите сообщение об ошибке о том, что ваша учетная запись не авторизована для выполнения действия Microsoft.Authorization/roleAssignments/write. В этом случае обратитесь к администраторам подписки, так как они могут назначать разрешения от вашего имени.
 
-## <a name="step-5-add-role-assignment"></a>Шаг 5. Добавление назначения роли
+## <a name="step-5-assign-role"></a>Шаг 5. Назначение роли
 
-Зная субъект безопасности, роль и область, можно назначить роль. Назначения ролей можно добавить с помощью портал Azure, Azure PowerShell, Azure CLI, пакетов SDK для Azure или интерфейсов API. В каждой подписке вы можете назначить до **2000** ролей. Это ограничение распространяется на назначения ролей в пределах подписки, группы ресурсов и ресурсов. В каждой группе управления можно назначить до **500** ролей.
+Зная субъект безопасности, роль и область, можно назначить роль. Роли можно назначать с помощью портал Azure, Azure PowerShell, Azure CLI, пакетов SDK для Azure или интерфейсов API. В каждой подписке вы можете назначить до **2000** ролей. Это ограничение распространяется на назначения ролей в пределах подписки, группы ресурсов и ресурсов. В каждой группе управления можно назначить до **500** ролей.
 
-Подробные инструкции по добавлению назначений ролей см. в следующих статьях.
+Подробные инструкции по назначению ролей см. в следующих статьях.
 
-- [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)
-- [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](role-assignments-powershell.md)
-- [Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md)
-- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Назначение ролей Azure с помощью портал Azure](role-assignments-portal.md)
+- [Назначение ролей Azure с помощью Azure PowerShell](role-assignments-powershell.md)
+- [Назначение ролей Azure с помощью Azure CLI](role-assignments-cli.md)
+- [Назначение ролей Azure с помощью REST API](role-assignments-rest.md)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

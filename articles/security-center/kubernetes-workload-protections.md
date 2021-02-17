@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 09/12/2020
+ms.date: 02/16/2021
 ms.author: memildin
-ms.openlocfilehash: 99e217c6d8065d19f7b03419306f4992735cb587
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: f024457ed9f20e6bab0852a53ab6a60ac85ed25a
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526740"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546267"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Защита рабочих нагрузок Kubernetes
 
@@ -21,7 +21,7 @@ ms.locfileid: "99526740"
 
 Дополнительные сведения об этих функциях см. в статье [рекомендации по защите рабочих нагрузок с помощью управления допуском Kubernetes](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
-Центр безопасности предлагает больше функций безопасности контейнеров, если вы включаете защитник Azure. В частности, внесены следующие изменения.
+Центр безопасности предлагает больше функций безопасности контейнеров, если вы включаете защитник Azure. В частности:
 
 - Проверка реестров контейнеров на наличие уязвимостей с помощью [защитника Azure для реестров контейнеров](defender-for-container-registries-introduction.md)
 - Получение оповещений об обнаружении угроз в реальном времени для вашего кластера K8s в [защитнике Azure для Kubernetes](defender-for-kubernetes-introduction.md)
@@ -39,7 +39,7 @@ ms.locfileid: "99526740"
 |Цены|Free|
 |Требуемые роли и разрешения|**Владелец** или **администратор безопасности** для изменения назначения<br>**Читатель** для просмотра рекомендаций|
 |Требования к среде:|Требуется Kubernetes v 1.14 (или более поздняя версия)<br>Нет ресурса Подсекуритиполици (старая модель PSP) в кластерах<br>Узлы Windows не поддерживаются|
-|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Нет](./media/icons/no-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
+|Облако.|![Да](./media/icons/yes-icon.png) Коммерческие облака<br>![Да](./media/icons/yes-icon.png) Национальные и независимые (US Gov, China Gov, другие правительственные облака)|
 |||
 
 
@@ -247,7 +247,7 @@ spec:
 
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье вы узнали, как настроить защиту рабочей нагрузки Kubernetes. 
 

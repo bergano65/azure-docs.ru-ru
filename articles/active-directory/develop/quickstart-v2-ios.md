@@ -13,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: ef2ab6511d80f7f1f836805055e7cc7f48a488e7
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: d2c5af6aeccfbae0851513ff575bde3c39e3ca5f
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754300"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103793"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Краткое руководство. Вход пользователей и вызов Microsoft API Graph из приложения iOS или macOS
 
@@ -46,7 +46,7 @@ ms.locfileid: "98754300"
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-the-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода.
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Регистрация приложения:
-> 1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/IosQuickstartPage/sourceType/docs" target="_blank">регистрации приложений на портале Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/IosQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
@@ -55,7 +55,7 @@ ms.locfileid: "98754300"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
-> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. Найдите и выберите **Azure Active Directory**.    
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
@@ -69,7 +69,7 @@ ms.locfileid: "98754300"
 > [!div renderon="portal" class="sxs-lookup"]
 >
 > #### <a name="step-1-configure-your-application"></a>Шаг 1. Настройка приложения
-> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления, совместимый с брокером авторизации.
+> Для работы примера кода, приведенного в этом кратком руководстве, необходимо добавить **URI перенаправления**, совместимый с брокером авторизации.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести это изменение для меня]()
 >
@@ -118,7 +118,7 @@ ms.locfileid: "98754300"
 >     ```
 > 1. Откройте параметры проекта. В разделе **Идентификатор** введите **идентификатор пакета**, введенный на портале.
 > 1. Щелкните **Info.plist**, а затем выберите **Открыть как** > **Исходный код**.
-> 1. В корневом узле словаря замените `Enter_the_bundle_Id_Here` **_идентификатором пакета_* _, который вы использовали на портале.
+> 1. В корневом узле словаря замените `Enter_the_bundle_Id_Here` на ***идентификатор пакета***, использованный на портале.
 >
 >    ```xml
 >    <key>CFBundleURLTypes</key>
@@ -180,7 +180,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 
 > |Где: | Описание |
 > |---------|---------|
-> | `clientId` | Идентификатор зарегистрированного приложения на сайте _portal.azure.com* |
+> | `clientId` | Идентификатор зарегистрированного приложения на *portal.azure.com* |
 > | `authority` | Платформа удостоверений Майкрософт. Как правило, это `https://login.microsoftonline.com/common`. |
 > | `redirectUri` | URI перенаправления приложения. Можете передать нуль, чтобы использовать значение по умолчанию, или ваш пользовательский URI перенаправления. |
 
@@ -214,7 +214,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
     }
  ```
 
-Наконец, ваше приложение должно содержать запись `LSApplicationQueriesSchemes` в файле ***Info.plist** _ вместе с элементом `CFBundleURLTypes`. Пример уже содержит эту запись.
+Наконец, ваше приложение должно содержать запись `LSApplicationQueriesSchemes` в файле ***Info.plist*** вместе с элементом `CFBundleURLTypes`. Пример уже содержит эту запись.
 
    ```xml
    <key>LSApplicationQueriesSchemes</key>
@@ -232,7 +232,7 @@ MSAL имеет два метода получения маркеров безо
 
 Иногда требуется взаимодействие пользователей с платформой удостоверений Майкрософт. В таких случаях пользователю может потребоваться выбрать свою учетную запись, ввести учетные данные или предоставить согласие на разрешения приложения. Например,
 
-_ первый вход пользователей в приложение.
+* первый вход пользователей в приложение;
 * Если пользователь сбрасывает пароль, то потребуется вводить свои учетные данные.
 * Когда ваше приложение впервые запрашивает доступ к ресурсу.
 * Когда требуются политики условного доступа или MFA.
