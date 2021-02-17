@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/29/2021
+ms.date: 02/09/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 159c7eae7dc69dbe4543ee16dc21d6767154b290
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: a4f16067fa8837fa0f1062ba4cc8c2c1daf5d22b
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99096090"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100091302"
 ---
 ## <a name="azure-security-benchmark"></a>Тестирование безопасности Azure
 
@@ -147,6 +147,20 @@ ms.locfileid: "99096090"
 |Безопасность сетевых служб |0837.09.n2Organizational.2 — 09.n |Формальные соглашения с внешними поставщиками информационных систем предусматривают определенные обязательства по обеспечению безопасности и конфиденциальности. |[Необходимо включить Наблюдатель за сетями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
 |Безопасность сетевых служб |0886.09n2Organizational.4 — 09.n |Организация применяет и документирует в официальном соглашении или другом документе политику 1) "Разрешено все, кроме запрещенного исключениями" или 2) "Запрещено все, кроме разрешенного исключениями", позволяющую определенным информационным системам подключаться к внешним информационным системам. |[Необходимо включить Наблюдатель за сетями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
 |Безопасность сетевых служб |0888.09n2Organizational.6 — 09.n |Контракт с внешним поставщиком или аутсорсером услуг включает положение о том, что поставщик услуг несет ответственность за защиту соответствующей информации, к которой ему предоставлен общий доступ. |[Необходимо включить Наблюдатель за сетями](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb6e2945c-0b7b-40f5-9233-7a5323b5cdc6) |[1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/NetworkWatcher_Enabled_Audit.json) |
+
+## <a name="new-zealand-ism"></a>ISM в Новой Зеландии
+
+Дополнительную информацию о том, как доступные встроенные компоненты Политики Azure для всех служб Azure сопоставляются с этим стандартом соответствия, см. в статье [Подробные сведения о встроенной инициативе о соответствии нормативным требованиям Information Security Manual в Новой Зеландии](../../../../articles/governance/policy/samples/new-zealand-ism.md).
+Дополнительные сведения об этом стандарте соответствия см. в статье об [Information Security Manual в Новой Зеландии](https://www.nzism.gcsb.govt.nz/).
+
+|Домен |Идентификатор элемента управления |Заголовок элемента управления |Политика<br /><sub>(портал Azure)</sub> |Версия политики<br /><sub>(GitHub)</sub>  |
+|---|---|---|---|---|
+|Безопасность сети |NS-5 |18.3.19 Содержимое плана реагирования на атаки типа "отказ в обслуживании" (DoS) |[Защита от атак DDoS Azure уровня "Стандартный" должна быть включена](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fa7aca53f-2ed4-4466-a25e-0b45ade68efd) |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_EnableDDoSProtection_Audit.json) |
+|Безопасность сети |NS-7 |18.4.10 Меры противодействия запуску вредоносного кода |[Весь интернет-трафик должен направляться через развернутую службу "Брандмауэр Azure"](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Ffc5e4038-4584-4632-8c85-c0448d374b2c) |[3.0.0 (предварительная версия)](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/ASC_All_Internet_traffic_should_be_routed_via_Azure_Firewall.json) |
+|Безопасность сети |NS-7 |18.4.10 Меры противодействия запуску вредоносного кода |[Для Шлюза приложений должен быть включен брандмауэр веб-приложения (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F564feb30-bf6a-4854-b4bb-0d2d2d1e6c66) |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayEnabled_Audit.json) |
+|Безопасность сети |NS-7 |18.4.10 Меры противодействия запуску вредоносного кода |[Для службы Azure Front Door Service должен быть включен Брандмауэр веб-приложений (WAF)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F055aa869-bc98-4af8-bafc-23f1ab6ffe2c) |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Enabled_Audit.json) |
+|Безопасность сети |NS-7 |18.4.10 Меры противодействия запуску вредоносного кода |[Брандмауэр веб-приложения (WAF) должен использовать указанный режим для Шлюза приложений](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F12430be1-6cc8-4527-a9a8-e3d38f250096) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AppGatewayMode_Audit.json) |
+|Безопасность сети |NS-7 |18.4.10 Меры противодействия запуску вредоносного кода |[Брандмауэр веб-приложения (WAF) должен использовать указанный режим для Azure Front Door Service](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F425bea59-a659-4cbb-8d31-34499bd030b8) |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Network/WAF_AFD_Mode_Audit.json) |
 
 ## <a name="nist-sp-800-171-r2"></a>NIST SP 800-171 R2
 

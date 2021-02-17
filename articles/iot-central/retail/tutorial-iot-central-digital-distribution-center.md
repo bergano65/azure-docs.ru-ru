@@ -7,22 +7,21 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: 59b688803260220866fc331506429a5990c8760a
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 9d7c4d2afa8eaf197ec05bcb0aed654153fb8f0d
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346203"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99831303"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-digital-distribution-center-application-template"></a>Руководство по развертыванию шаблона приложения цифрового центра дистрибуции и его использованию
-
-
 
 В этом руководстве показано, как приступить к работе, развернув шаблон приложения **цифрового центра дистрибуции** для IoT Central. Вы узнаете, как развернуть шаблон, который готов к использованию, и что можно будет сделать дальше.
 
 Из этого руководства вы узнаете, как: 
-* создать приложение цифрового центра дистрибуции; 
-* ознакомиться с этим приложением. 
+
+> [!div class="checklist"]
+> создать приложение цифрового центра дистрибуции; ознакомиться с этим приложением. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 * Для развертывания этого приложения не требуется выполнять какие-либо предварительные требования.
@@ -110,8 +109,8 @@ ms.locfileid: "97346203"
 > ![Снимок экрана: удаление приложения после завершения работы с ним](./media/tutorial-iot-central-ddc/ddc-cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* См. сведения об архитектуре решения цифрового центра дистрибуции. 
+
+См. сведения об архитектуре решения цифрового центра дистрибуции:
+
 > [!div class="nextstepaction"]
 > [Понятия, связанные с цифровым центром дистрибуции](./architecture-digital-distribution-center.md)
-* Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail.md).
-* См. сведения об [IoT Central](../core/overview-iot-central.md).
