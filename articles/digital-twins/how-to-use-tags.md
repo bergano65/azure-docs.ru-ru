@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/22/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 9a1a55bdf21b74116450ca32f66d891f1aa206d3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 70bf46de072a97eca810dda60a5331df14172ed6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045416"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555147"
 ---
 # <a name="add-tags-to-digital-twins"></a>Добавление тегов в цифровые двойников 
 
@@ -91,7 +91,7 @@ ms.locfileid: "98045416"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте больше о проектировании моделей цифровых двойника и управлении ими:
-* [*Практическое руководство. Управление настраиваемыми моделями*](how-to-manage-model.md).
+* [*Руководство. Управление моделями ДТДЛ*](how-to-manage-model.md)
 
 Дополнительные сведения о запросах к графу двойника:
 * [*Пошаговое руководство. запрос графа двойника*](how-to-query-graph.md)

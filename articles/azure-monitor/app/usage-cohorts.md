@@ -6,12 +6,12 @@ author: NumberByColors
 ms.author: daviste
 ms.date: 04/10/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: f8edeb452f01af88f0305cd0a3e3a2332ec09e4e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 2c35356951560b11a605334aba4c26dbc38086de
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186955"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583556"
 ---
 # <a name="application-insights-cohorts"></a>Когорты Application Insights
 
@@ -49,7 +49,7 @@ ms.locfileid: "96186955"
 
     Теперь эта когорта представляет все идентификаторы пользователей, отправленные с любым пользовательским событием или просмотром страницы в течение 5 отдельных дней за последние 28 дней.
 
-5. Щелкните **Сохранить**.
+5. Нажмите кнопку **Сохранить**.
 
    > [!TIP]
    > Назовите свою когорту, например "Активные пользователи (5+ дней)". Сохраните ее в "Мои отчеты" или "Общие отчеты", в зависимости от того, хотите ли вы предоставить другим пользователям доступ к ресурсу Application Insights для просмотра этой когорты.
@@ -131,7 +131,7 @@ _Я определил когорту пользователей из опред
 
 ## <a name="learn-more"></a>Дополнительные сведения
 
-* [Язык запросов Analytics](../log-query/log-analytics-tutorial.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
+* [Язык запросов Analytics](../logs/log-analytics-tutorial.md?toc=%2fazure%2fazure-monitor%2ftoc.json)
 * [Пользователи, сеансы, события](usage-segmentation.md)
-* [Маршруты пользователей](usage-flows.md)
+* [Потоки пользователей](usage-flows.md)
 * [Общие сведения об использовании](usage-overview.md)

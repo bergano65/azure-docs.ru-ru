@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 771cf97a5c938fb987c66555c92c23f42b302a10
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 3b2d1bbe2de0ae72087fdf3debeaf42f8745fed9
+ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134234"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99576487"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Функции Apache Cassandra, поддерживаемые API Cassandra для Azure Cosmos DB 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -43,7 +43,7 @@ API Cassandra для Azure Cosmos DB поддерживает следующие
 
 API Cassandra для Azure Cosmos DB поддерживает следующие типы данных CQL:
 
-|Get-Help  |Поддерживаются: |
+|Тип  |Поддерживаются: |
 |---------|---------|
 | ascii  | Да |
 | BIGINT  | Да |
@@ -82,13 +82,14 @@ API Cassandra для Azure Cosmos DB поддерживает следующие
 |Get-Help  |Поддерживаются: |
 |---------|---------|
 | Токен * | Да |
-| ttl | Да |
-| writetime | Да |
+| ttl *** | Да |
+| writetime *** | Да |
 | cast ** | Да |
 
 > [!NOTE] 
 > \* API Cassandra поддерживает токен в качестве проекции или селектора и разрешает параметр token(pk) в левой части предложения WHERE. Например, `WHERE token(pk) > 1024` поддерживается, но `WHERE token(pk) > token(100)` — **нет**.  
-> \*\* Функция `cast()` не может иметь вложенные элементы в API Cassandra. Например, `SELECT cast(count as double) FROM myTable` поддерживается, но `SELECT avg(cast(count as double)) FROM myTable` — **нет**.
+> \*\* Функция `cast()` не может иметь вложенные элементы в API Cassandra. Например, `SELECT cast(count as double) FROM myTable` поддерживается, но `SELECT avg(cast(count as double)) FROM myTable` — **нет**.    
+> \*\*\* Пользовательские метки времени и срок жизни, заданный с помощью параметра `USING`, применяются на уровне строк (а не ячейки).
 
 
 
@@ -159,7 +160,6 @@ Azure Cosmos DB поддерживает следующие команды ба�
 | CREATE ROLE | Нет |
 | CREATE USER (не рекомендуется во встроенном Cassandra Apache) | Нет |
 | DELETE | Да |
-| DELETE (упрощенные транзакции с условием IF)| Да |
 | DISTINCT | Нет |
 | DROP AGGREGATE | Нет |
 | .DROP FUNCTION | Нет |
@@ -173,17 +173,25 @@ Azure Cosmos DB поддерживает следующие команды ба�
 | DROP USER (не рекомендуется во встроенном Cassandra Apache) | Нет |
 | GRANT | Нет |
 | INSERT | Да |
-| INSERT (упрощенные транзакции с условием IF)| Да |
 | LIST PERMISSIONS | Нет |
 | LIST ROLES | Нет |
 | LIST USERS (не рекомендуется во встроенном Cassandra Apache) | Нет |
 | REVOKE | Нет |
 | SELECT | Да |
-| SELECT (упрощенные транзакции с условием IF)| Нет |
 | UPDATE | Да |
-| UPDATE (упрощенные транзакции с условием IF)| Нет |
 | TRUNCATE | Нет |
 | USE | Да |
+
+## <a name="lightweight-transactions-lwt"></a>Упрощенные транзакции (LWT)
+
+| Компонент  |Поддерживается |
+|---------|---------|
+| DELETE IF EXISTS | Да |
+| Условия DELETE | Нет |
+| INSERT IF NOT EXISTS | Да |
+| UPDATE IF EXISTS | Да |
+| UPDATE IF NOT EXISTS | Да |
+| Условия UPDATE | Нет |
 
 ## <a name="cql-shell-commands"></a>Команды оболочки CQL
 

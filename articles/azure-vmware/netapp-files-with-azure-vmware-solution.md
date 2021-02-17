@@ -3,12 +3,12 @@ title: Azure NetApp Files с помощью решения VMware для Azure
 description: Используйте Azure NetApp Files с виртуальными машинами Azure VMware для переноса и синхронизации данных между локальными серверами, виртуальными машинами Azure VMware и облачными инфраструктурами.
 ms.topic: how-to
 ms.date: 02/10/2021
-ms.openlocfilehash: db7d8eb05e5bd70f6a2397b3017924093218e78e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 2f2e8fdeb777e7e4b2b4e89c1bb36b51c3083257
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371572"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575428"
 ---
 # <a name="azure-netapp-files-with-azure-vmware-solution"></a>Azure NetApp Files с помощью решения VMware для Azure
 
@@ -18,10 +18,10 @@ ms.locfileid: "100371572"
 
 [Azure NetApp Files](../azure-netapp-files/azure-netapp-files-introduction.md) — это служба Azure для миграции и запуска самых требовательных корпоративных рабочих нагрузок файлов в облаке: баз данных, SAP и высокопроизводительных вычислительных приложений без изменения кода.
 
-### <a name="features"></a>Компоненты
+### <a name="features"></a>Возможности
 (Службы, где используются Azure NetApp Files.)
 
-- **Active Directory подключения**: Azure NetApp Files поддерживает [службы домен Active Directory и Azure Active Directory доменных служб](../azure-netapp-files/azure-netapp-files-create-volumes-smb.md#decide-which-domain-services-to-use).
+- **Active Directory подключения**: Azure NetApp Files поддерживает [службы домен Active Directory и Azure Active Directory доменных служб](../azure-netapp-files/create-active-directory-connections.md#decide-which-domain-services-to-use).
 
 - **Общий протокол**: Azure NetApp Files поддерживает протоколы SMB и Network File System (NFS). Такая поддержка означает, что тома могут быть подключены к клиенту Linux и могут быть сопоставлены в клиенте Windows.
 
@@ -103,7 +103,7 @@ Azure NetApp Files доступен во многих регионах Azure и 
 - Управление профилем службы удаленных рабочих столов
 - Общие файловые ресурсы в решении VMware для Azure
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как интегрировать Azure NetApp Files с рабочими нагрузками решения Azure VMware, вам может потребоваться изучить следующие темы:
 

@@ -1,10 +1,10 @@
 ---
-title: Краткое руководство. Изучение рекомендаций по обеспечению безопасности
+title: Изучение рекомендаций по обеспечению безопасности
 description: Изучите рекомендации по безопасности с помощью службы "Defender для Интернета вещей".
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
-ms.author: mlottner
-ms.openlocfilehash: 66b5694823096f0747ea099b631a53198a819816
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.author: shhazam
+ms.openlocfilehash: 0e902db38e4145bf94ab6a235bc1210b520327a1
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835046"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809190"
 ---
 # <a name="quickstart-investigate-security-recommendations"></a>Краткое руководство. Изучение рекомендаций по обеспечению безопасности
 
@@ -46,22 +46,19 @@ ms.locfileid: "97835046"
 
 Откройте каждую агрегированную рекомендацию, чтобы отобразить ее подробное описание, шаги для исправления и идентификатор каждого устройства, которое активировало отображение рекомендации. Здесь также отображается уровень важности рекомендации и предоставляется возможность перейти непосредственно к исследованию с помощью Log Analytics.
 
-1.  Выберите и откройте любую рекомендацию по безопасности из списка **Центр Интернета вещей** \> **Безопасность** \> **Рекомендации**.
+1.  Выберите и откройте любую рекомендацию по безопасности из списка **Центр Интернета вещей** > **Безопасность** > **Рекомендации**.
 
 1.  Для каждой из них изучите **описание**, **серьезность** и **сведения о каждом устройстве**, выдавшем эту рекомендацию в период агрегирования. 
 
 1.  После просмотра сведений о рекомендации воспользуйтесь **инструкциями по исправлению вручную**, которые помогут устранить проблему, вызвавшую эту рекомендацию. 
 
-    [ :::image type="content" source="media/quickstart/remediate-security-recommendations-expanded.png#lightbox" alt-text="Применение рекомендаций по безопасности с помощью ASC для Интернета вещей](media/quickstart/remediate-security-recommendations-inline.png)":::
-
+    :::image type="content" source="media/quickstart/remediate-security-recommendations-inline.png" alt-text="Исправление в соответствии с рекомендациями по обеспечению безопасности с помощью ASC для Интернета вещей" lightbox="media/quickstart/remediate-security-recommendations-expanded.png":::
 
 1.  Выбрав нужное устройство на странице детализации, можно просмотреть сведения в рекомендации для определенного устройства.
 
-    [ :::image type="content" source="media/quickstart/explore-security-recommendation-detail-expanded.png#lightbox" alt-text="Изучение определенных рекомендаций по безопасности для устройства с помощью ASC для Интернета вещей](media/quickstart/explore-security-recommendation-detail-inline.png)":::
-
+    :::image type="content" source="media/quickstart/explore-security-recommendation-detail-inline.png" alt-text="Изучение конкретных рекомендаций по безопасности для устройства с помощью ASC для Интернета вещей" lightbox="media/quickstart/explore-security-recommendation-detail-expanded.png":::
 
 1.  Если требуется дальнейшее исследование,**проанализируйте рекомендацию в Log Analytics**, используя приведенную в ней ссылку. 
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

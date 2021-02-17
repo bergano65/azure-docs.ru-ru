@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a106455ea9d7b7a64fecd7c4255c294d0bd62db8
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: cfc980fdabdb9c6e7085088db12754243f133d89
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562622"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581391"
 ---
 # <a name="security-best-practices"></a>Лучшие методики обеспечения безопасности
 
@@ -80,10 +80,10 @@ ms.locfileid: "97562622"
 
 Включение сбора журналов аудита позволяет просматривать действия пользователя и администратора, связанные с виртуальным рабочим столом Windows. Ниже приведены некоторые примеры основных журналов аудита.
 
--   [Журнал действий Azure](../azure-monitor/platform/activity-log.md)
+-   [Журнал действий Azure](../azure-monitor/essentials/activity-log.md)
 -   [Журнал действий Azure Active Directory](../active-directory/reports-monitoring/concept-activity-logs-azure-monitor.md)
 -   [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)
--   [Узлы сеансов](../azure-monitor/platform/agent-windows.md)
+-   [Узлы сеансов](../azure-monitor/agents/agent-windows.md)
 -   [Журнал диагностики виртуальных рабочих столов Windows](../virtual-desktop/diagnostics-log-analytics.md)
 -   [Журналы Key Vault](../key-vault/general/logging.md)
 

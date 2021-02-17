@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: cd90043c8f03361244d3500f83f6df5347f1d867
-ms.sourcegitcommit: 44188608edfdff861cc7e8f611694dec79b9ac7d
+ms.openlocfilehash: 526c3d2d85a3f2877f82b3b764f395c51f7c05c0
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99539405"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99805235"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Автоматизация смены секретов для ресурсов с одним набором учетных данных для аутентификации
 
@@ -213,7 +213,7 @@ az keyvault secret set --name sqlPassword --vault-name akvrotation-kv --value "S
 
 Чтобы убедиться в ротации секрета, перейдите в раздел **Key Vault** > **Секреты**:
 
-:::image type="content" source="../media/rotate-8.png" alt-text="Переход к секретам":::
+:::image type="content" source="../media/rotate-8.png" alt-text="Снимок экрана: как выбрать [хранилище ключей] > &quot;Секреты&quot;.":::
 
 Откройте секрет **sqlPassword** и просмотрите исходную и измененную версию.
 

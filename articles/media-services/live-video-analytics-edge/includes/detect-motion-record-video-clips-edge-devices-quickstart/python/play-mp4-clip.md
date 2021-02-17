@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: f4a1cc432a50a555fe6e050ca318b4cfaf1092d4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: dfb887004cd29b5bd9f1d9886b7dfa5f43c83dbe
+ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88682364"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "99530901"
 ---
-MP4-файлы записываются в каталог на пограничном устройстве, указанном в файле *.env* с помощью ключа OUTPUT_VIDEO_FOLDER_ON_DEVICE. Если использовано значение по умолчанию, результаты должны находиться в папке */var/media/* .
+MP4-файлы записываются в каталог на пограничном устройстве, указанном в файле *.env* с помощью ключа VIDEO_OUTPUT_FOLDER_ON_DEVICE. Если использовано значение по умолчанию, результаты должны находиться в папке */var/media/* .
 
 Чтобы воспроизвести MP4-файл:
 

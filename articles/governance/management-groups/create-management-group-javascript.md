@@ -1,15 +1,15 @@
 ---
 title: Краткое руководство. Создание группы управления с помощью JavaScript
 description: В этом кратком руководстве показано, как с помощью JavaScript создать группу управления для организации ресурсов в иерархию ресурсов.
-ms.date: 11/18/2020
+ms.date: 02/05/2021
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: c1b800f150cebacf8d17785feb1bded5189f1574
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 99a2ed406d4837f6fc346e68b3b400003feed38c
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886606"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099155"
 ---
 # <a name="quickstart-create-a-management-group-with-javascript"></a>Краткое руководство. Создание группы управления с помощью JavaScript
 
@@ -29,7 +29,7 @@ ms.locfileid: "94886606"
 
 ## <a name="application-setup"></a>Настройка приложения
 
-Чтобы обеспечить отправку запросов JavaScript к Azure Resource Graph, необходимо настроить среду. Эта настройка подойдет для всех сред, где можно использовать JavaScript, в том числе [Bash в Windows 10](/windows/wsl/install-win10).
+Чтобы обеспечить управление группами управления с помощью JavaScript, необходимо настроить среду. Эта настройка подойдет для всех сред, где можно использовать JavaScript, в том числе [Bash в Windows 10](/windows/wsl/install-win10).
 
 1. Настройте новый проект Node.js, выполнив следующую команду.
 

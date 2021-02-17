@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/17/2021
 ms.author: yelevin
-ms.openlocfilehash: 152fee2e4e72cee6a7bc1c768c0a8ca7b031ec39
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 1efd91d92bac1bc1f39d82aaa0cc71daa0275f8e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878924"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570529"
 ---
 # <a name="connect-your-salesforce-service-cloud-to-azure-sentinel"></a>Подключение облака службы Salesforce к Azure Sentinel
 
@@ -35,7 +35,7 @@ ms.locfileid: "98878924"
 
 - У вас должно быть разрешение на чтение и запись в рабочей области "Sentinel" Azure.
 
-- Необходимо иметь разрешения на чтение общих ключей для рабочей области. Дополнительные [сведения о ключах рабочих областей](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+- Необходимо иметь разрешения на чтение общих ключей для рабочей области. Дополнительные [сведения о ключах рабочих областей](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 - Чтобы создать приложение-функция, необходимо иметь разрешения на чтение и запись для функций Azure. Дополнительные [сведения о функциях Azure](../azure-functions/index.yml).
 
@@ -61,7 +61,7 @@ ms.locfileid: "98878924"
 
 После того, как журналы начнут отображаться в Log Analytics, может пройти до 20 минут.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить облако службы Salesforce к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

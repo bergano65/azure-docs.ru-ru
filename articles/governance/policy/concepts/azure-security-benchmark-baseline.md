@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e8915e1c15972341befd176b412925f4e87c94f6
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: fadbed5607c7ebdd61a42ae054f431840c529d69
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201456"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573067"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Базовый план безопасности политики Azure для производительности системы безопасности Azure
 
@@ -31,9 +31,9 @@ ms.locfileid: "98201456"
 
 **Руководство**. Политика Azure использует журналы действий, которые включаются автоматически, для включения источника событий, даты, пользователя, метки времени, исходных адресов, адресов назначения и других полезных элементов.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](../../../azure-monitor/platform/diagnostic-settings.md)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../../../azure-monitor/essentials/diagnostic-settings.md)
 
-* [Общие сведения о ведении журналов и различных типах журналов в Azure](../../../azure-monitor/platform/platform-logs-overview.md)
+* [Общие сведения о ведении журналов и различных типах журналов в Azure](../../../azure-monitor/essentials/platform-logs-overview.md)
 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
@@ -89,7 +89,7 @@ ms.locfileid: "98201456"
 
 **Руководство**. Использование Azure Monitor с журналами действий для создания оповещений о том, когда изменения выполняются в политике Azure.
 
-* [Создание оповещений для событий журнала действий Azure](../../../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../../../azure-monitor/alerts/alerts-activity-log.md)
 
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.

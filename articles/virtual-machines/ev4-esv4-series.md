@@ -9,12 +9,12 @@ ms.service: virtual-machines
 ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 7d0e3f8c55a2c8eff40c196719213390e96efb0a
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 08df5e92f7dfd86aedd1c5fbf17f8bda1cfb8508
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99089314"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558780"
 ---
 # <a name="ev4-and-esv4-series"></a>Серии Ev4 и Esv4
 
@@ -35,7 +35,7 @@ ms.locfileid: "99089314"
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1<br>
-[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается (*требуется не менее 4 виртуальных ЦП*)<br>
 [Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 
@@ -61,7 +61,7 @@ ms.locfileid: "99089314"
 [Динамическая миграция](maintenance-and-updates.md): поддерживается<br>
 [Обновления с сохранением памяти](maintenance-and-updates.md): поддерживается<br>
 [Поддержка создания виртуальных машин](generation-2.md): поколение 1 и 2<br>
-[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается<br>
+[Ускоренная сеть](../virtual-network/create-vm-accelerated-networking-cli.md): поддерживается (*требуется не менее 4 виртуальных ЦП*)<br>
 [Временные диски ОС](ephemeral-os-disks.md): не поддерживаются <br>
 <br>
 

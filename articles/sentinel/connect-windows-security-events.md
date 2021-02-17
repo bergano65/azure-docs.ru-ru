@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 226d5a46482d6611fdecf214d040fc27af9ac586
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: bc75ee64174957ad6486146b4da6f8a66a2120e5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632052"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570555"
 ---
 # <a name="connect-windows-security-events"></a>Подключение событий безопасности Windows 
 
@@ -56,7 +56,7 @@ ms.locfileid: "98632052"
 
 1. Убедитесь, что у вас есть необходимые разрешения, как описано в разделе **Предварительные требования** на странице соединителя.
 
-1. Скачайте и установите [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) (также известный как Microsoft MONITORING Agent или MMA) на компьютерах, для которых необходимо выполнить потоковую передачу событий безопасности в метку Azure.
+1. Скачайте и установите [агент log Analytics](../azure-monitor/agents/log-analytics-agent.md) (также известный как Microsoft MONITORING Agent или MMA) на компьютерах, для которых необходимо выполнить потоковую передачу событий безопасности в метку Azure.
 
     Для виртуальных машин Azure:
     
@@ -73,9 +73,9 @@ ms.locfileid: "98632052"
     >
     > Чтобы разрешить системам Windows без необходимого подключения к Интернету выполнять потоковую передачу событий в Azure Sentinel, скачайте и установите **шлюз OMS** на отдельном компьютере, используя ссылку в правом нижнем углу, чтобы действовать в качестве прокси-сервера.  Вам по-прежнему потребуется установить агент Log Analytics в каждой системе Windows, события которой требуется получить.
     >
-    > Дополнительные сведения об этом сценарии см. в документации по [ **шлюзу log Analytics**](../azure-monitor/platform/gateway.md).
+    > Дополнительные сведения об этом сценарии см. в документации по [ **шлюзу log Analytics**](../azure-monitor/agents/gateway.md).
 
-    Дополнительные параметры установки и дополнительные сведения см. в документации по [ **log Analytics Agent**](../azure-monitor/platform/agent-windows.md).
+    Дополнительные параметры установки и дополнительные сведения см. в документации по [ **log Analytics Agent**](../azure-monitor/agents/agent-windows.md).
 
 1. Выберите набор событий ([все, общие или минимальные](#event-sets)), который требуется передать в поток.
 
@@ -111,7 +111,7 @@ Sentinel Azure может применить машинное обучение (
     > [!NOTE]
     > Так как алгоритм машинного обучения требует наличия данных в течение 30 дней для создания базового профиля поведения пользователя, необходимо разрешить сбор данных событий безопасности за 30 дней, прежде чем можно будет обнаружить инциденты.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 В этом документе вы узнали, как подключить события безопасности Windows к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).
 - Приступите к обнаружению угроз с помощью Azure Sentinel, используя [встроенные](tutorial-detect-threats-built-in.md) или [Настраиваемые](tutorial-detect-threats-custom.md) правила.

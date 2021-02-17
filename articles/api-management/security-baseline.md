@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8a572221ca8899c5e4f4cf76e4b89c995952a2f3
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.openlocfilehash: 6f82114874c9e85e44df6684d0b0cf624903a50f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99258563"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582518"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Базовый план безопасности Azure для Управления API
 
@@ -210,9 +210,9 @@ ms.locfileid: "99258563"
 
 **Руководство**. Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений в сетевых ресурсах, связанных с развертываниями Управления API Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -238,7 +238,7 @@ ms.locfileid: "99258563"
 
 Кроме того, можно включить и подключить данные к Azure Sentinel или сторонним системам управления информационной безопасностью и событиями безопасности (SIEM).
 
-* [Как настроить параметры диагностики](../azure-monitor/platform/diagnostic-settings.md#create-in-azure-portal)
+* [Как настроить параметры диагностики](../azure-monitor/essentials/diagnostic-settings.md#create-in-azure-portal)
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -258,7 +258,7 @@ ms.locfileid: "99258563"
 
 Для ведения журнала аудита на уровне управления журналы диагностики предоставляют подробные сведения об операциях и ошибках, которые важны для аудита, а также для устранения неполадок. Журналы диагностики отличаются от журналов действий. Журналы действий позволяют подробно проанализировать операции, выполненные с ресурсами Azure. Журналы диагностики дают представление об операциях, выполняемых ресурсом.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Как включить параметры диагностики для Управления API Azure](./api-management-howto-use-azure-monitor.md#activity-logs)
 
@@ -278,9 +278,9 @@ ms.locfileid: "99258563"
 
 **Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-* [Архивация журналов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+* [Архивация журналов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -294,9 +294,9 @@ ms.locfileid: "99258563"
 
 * [Мониторинг и проверка журналов для службы Управления API Azure](./api-management-howto-use-azure-monitor.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
 * [Интеграция с Azure Application Insights](./api-management-howto-app-insights.md)
 
@@ -314,7 +314,7 @@ ms.locfileid: "99258563"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Как включить параметры диагностики для Управления API Azure](./api-management-howto-use-azure-monitor.md#activity-logs)
 
@@ -669,7 +669,7 @@ ms.locfileid: "99258563"
 
 **Руководство**. Используйте Azure Monitor с журналом действий Azure для создания оповещений об изменениях в приложениях Функций Azure и других важных и связанных с ними ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Использование Azure Monitor и журнала действий Azure в службе Управления API Azure](./api-management-howto-use-azure-monitor.md)
 

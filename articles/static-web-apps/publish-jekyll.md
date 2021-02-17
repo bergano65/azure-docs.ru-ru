@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 06/08/2020
 ms.author: cshoe
-ms.openlocfilehash: 673852f8f9aa81c838a7c1db68681bb9ee0b7e0b
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 8c6764ad5b63aa2fde07326ab986404ea4312316
+ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862013"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99585182"
 ---
 # <a name="tutorial-publish-a-jekyll-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Jekyll в службе "Статические веб-приложения Azure" — предварительный просмотр
 
@@ -79,8 +79,11 @@ ms.locfileid: "97862013"
 1. Отправьте локальный репозиторий на сайт GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
+
+   > [!NOTE]
+   > Ваша ветвь git может называться иначе, чем `main`. Замените `main` в этой команде правильным значением.
 
 ## <a name="deploy-your-web-app"></a>Развертывание веб-приложения
 
@@ -116,7 +119,7 @@ ms.locfileid: "97862013"
 
 1. Выберите **jekyll-static-app** в качестве _репозитория_.
 
-1. В поле _Ветвь_ выберите **главная**.
+1. В поле _Ветвь_ выберите **main**.
 
     :::image type="content" source="./media/publish-jekyll/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 
@@ -146,7 +149,7 @@ ms.locfileid: "97862013"
 
 1. Откройте приложение Jekyll в текстовом редакторе и откройте файл _.github/workflows/azure-pages-<WORKFLOW_NAME>.yml_.
 
-1. После строки `- uses: actions/checkout@v2` добавьте следующий блок параметров.
+1. Перед строкой `- name: Build And Deploy` добавьте следующий блок параметров.
 
     ```yml
     - name: Set up Ruby

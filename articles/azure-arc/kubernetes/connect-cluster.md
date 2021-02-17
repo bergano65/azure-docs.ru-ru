@@ -2,23 +2,23 @@
 title: Подключение кластера Kubernetes с поддержкой дуги Azure (Предварительная версия)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/09/2021
+ms.date: 02/15/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Подключение кластера Kubernetes с поддержкой дуги Azure с помощью дуги Azure
 keywords: Kubernetes, Arc, Azure, K8s, контейнеры
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: e68eccf998592aa7d1ebfea51e4ca66d577b3c7f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 5e2058c5128075de4c37eb9768b204532cd09ffa
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100390561"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558560"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Подключение кластера Kubernetes с поддержкой дуги Azure (Предварительная версия)
 
-В этой статье описывается процесс подключения любого Kubernetes кластера, сертифицированного для машинного кода (КНКФ), например, AKS Engine в Azure, AKS-Engine в центре Azure Stack, ГКЕ, ЕКС и VMware vSphere кластера в дугу Azure.
+В этой статье приводятся пошаговые инструкции по подключению любого существующего кластера Kubernetes к службе "Дуга Azure". Концептуальный обзор такого же можно найти [здесь](./conceptual-agent-architecture.md).
 
 ## <a name="before-you-begin"></a>Перед началом
 
@@ -29,9 +29,9 @@ ms.locfileid: "100390561"
   * Создайте кластер Kubernetes с помощью DOCKER для [Mac](https://docs.docker.com/docker-for-mac/#kubernetes) или [Windows](https://docs.docker.com/docker-for-windows/#kubernetes).
 * Kubeconfig-файл для доступа к кластеру и роли администратора кластера в кластере для развертывания с помощью Arc с включенными агентами Kubernetes.
 * Пользователь или субъект-служба, которые будут указаны в командах `az login` и `az connectedk8s connect`, имеют разрешения на чтение и запись для типа ресурса Microsoft.Kubernetes/connectedclusters. Роль "кластер Kubernetes с подключением ARC в Azure" имеет эти разрешения и может использоваться для назначений ролей пользователя или субъекта-службы.
-* Helm 3 для адаптации кластера с помощью расширения connectedk8s. [Установите последнюю версию Helm 3](https://helm.sh/docs/intro/install) для удовлетворения этого требования.
+* Helm 3 для адаптации кластера с помощью `connectedk8s` расширения. [Установите последнюю версию Helm 3](https://helm.sh/docs/intro/install) для удовлетворения этого требования.
 * Azure CLI версии 2.15 + для установки расширений CLI Kubernetes для службы "Дуга Azure". [Установите Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) или обновите последнюю версию.
-* Установите расширения CLI Kubernetes с поддержкой ARC:
+* Установите расширения CLI для Kubernetes с включенной службой Arc Azure.
   
   * Установите расширение `connectedk8s`, которое поможет подключить кластеры Kubernetes к Azure.
   
@@ -72,7 +72,7 @@ ms.locfileid: "100390561"
 | `https://mcr.microsoft.com`                                                                            | Требуется для извлечения образов контейнеров для агентов Arc Azure.                                                                  |
 | `https://eus.his.arc.azure.com`, `https://weu.his.arc.azure.com`                                                                            |  Требуется для извлечения назначенных системой сертификатов управляемых удостоверений.                                                                  |
 
-## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Регистрация двух поставщиков для Kubernetes с поддержкой Azure Arc:
+## <a name="register-the-two-providers-for-azure-arc-enabled-kubernetes"></a>Регистрация двух поставщиков для Kubernetes с включенной службой "Дуга Azure"
 
 ```console
 az provider register --namespace Microsoft.Kubernetes
@@ -134,20 +134,28 @@ Helm release deployment succeeded
     "serverAppId": "",
     "tenantId": ""
   },
-  "agentPublicKeyCertificate": "...",
-  "agentVersion": "0.1.0",
-  "id": "/subscriptions/57ac26cf-a9f0-4908-b300-9a4e9a0fb205/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1",
+  "agentPublicKeyCertificate": "xxxxxxxxxxxxxxxxxxx",
+  "agentVersion": null,
+  "connectivityStatus": "Connecting",
+  "distribution": "gke",
+  "id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/AzureArcTest/providers/Microsoft.Kubernetes/connectedClusters/AzureArcTest1",
   "identity": {
-    "principalId": null,
-    "tenantId": null,
-    "type": "None"
+    "principalId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "type": "SystemAssigned"
   },
-  "kubernetesVersion": "v1.15.0",
+  "infrastructure": "gcp",
+  "kubernetesVersion": null,
+  "lastConnectivityTime": null,
   "location": "eastus",
+  "managedIdentityCertificateExpirationTime": null,
   "name": "AzureArcTest1",
+  "offering": null,
+  "provisioningState": "Succeeded",
   "resourceGroup": "AzureArcTest",
   "tags": {},
-  "totalNodeCount": 1,
+  "totalCoreCount": null,
+  "totalNodeCount": null,
   "type": "Microsoft.Kubernetes/connectedClusters"
 }
 ```
@@ -175,7 +183,7 @@ AzureArcTest1  eastus      AzureArcTest
 
 ## <a name="connect-using-an-outbound-proxy-server"></a>Подключение с использованием исходящего прокси-сервера
 
-Если кластер находится за исходящим прокси-сервером, Azure CLI и Kubernetes агенты должны маршрутизировать запросы через исходящий прокси-сервер:
+Если кластер находится за исходящим прокси-сервером, Azure CLI и агенты Kubernetes, включенные в службу "Дуга Azure", должны маршрутизировать свои запросы через исходящий прокси-сервер:
 
 1. Проверьте версию расширения, `connectedk8s` установленного на компьютере:
 
@@ -212,9 +220,9 @@ AzureArcTest1  eastus      AzureArcTest
 > [!NOTE]
 > * Указание `excludedCIDR` в разделе `--proxy-skip-range` важно для того, чтобы обеспечить передачу данных в кластере для агентов не разбивается.
 > * Несмотря на то, что `--proxy-http` `--proxy-https` `--proxy-skip-range` для большинства сред исходящих прокси-серверов ожидается, и, `--proxy-cert` требуется только в том случае, если доверенные сертификаты от прокси-сервера необходимо внедрить в хранилище доверенных сертификатов модулей Pod агента.
-> * Приведенная выше спецификация прокси-сервера в настоящее время применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги активно работает над этой функцией, и вскоре она будет доступна.
+> * Приведенная выше спецификация прокси-сервера в настоящее время применяется только для агентов Arc, а не для модулей Flux Pod, используемых в Саурцеконтролконфигуратион. Группа Kubernetes с поддержкой дуги Azure активно работает над этой функцией, и вскоре она будет доступна.
 
-## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Azure Arc для Kubernetes
+## <a name="azure-arc-agents-for-kubernetes"></a>Агенты Arc Azure для Kubernetes
 
 Kubernetes с поддержкой Azure Arc развертывает в пространстве имен `azure-arc` ряд операторов. Для просмотра этих развертываний и модулей Pod можно использовать:
 
@@ -244,17 +252,7 @@ pod/metrics-agent-58b765c8db-n5l7k              2/2     Running  0       16h
 pod/resource-sync-agent-5cf85976c7-522p5        3/3     Running  0       16h
 ```
 
-Kubernetes с поддержкой Azure Arc состоит из нескольких агентов (операторов), которые выполняются в кластере, развернутом в пространстве имен `azure-arc`.
-
-| Агенты (операторы)                                                                                               | Описание                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |
-| `deployment.apps/config-agent`                                                                                 | Наблюдает за подключенным кластером для ресурсов конфигурации системы управления версиями, применяемых в кластере, и обновляет состояние соответствия.                                                        |
-| `deployment.apps/controller-manager` | Оператор операторов, который управляет взаимодействием между компонентами дуги Azure.                                      |
-| `deployment.apps/metrics-agent`                                                                            | Собирает метрики производительности других агентов ARC.                                                                                    |
-| `deployment.apps/cluster-metadata-operator`                                                                            | Собирает метаданные кластера, такие как версия кластера, число узлов и версия агента Arc Azure.                                                                  |
-| `deployment.apps/resource-sync-agent`                                                                            |  Синхронизирует упомянутые выше метаданные кластера с Azure.                                                                  |
-| `deployment.apps/clusteridentityoperator`                                                                            |  В настоящее время Kubernetes с поддержкой дуги Azure поддерживает назначенное системой удостоверение. `clusteridentityoperator` хранит сертификат управляемого удостоверения службы (MSI), используемый другими агентами для взаимодействия с Azure.                                                                  |
-| `deployment.apps/flux-logs-agent`                                                                            |  Собирает журналы из операторов Flux, развернутых в составе конфигурации системы управления версиями.                                                                  |
+Убедитесь, что все модули Pod находятся в `Running` состоянии.
 
 ## <a name="delete-a-connected-cluster"></a>Удаление подключенного кластера
 

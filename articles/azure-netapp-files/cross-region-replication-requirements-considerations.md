@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 4a4fff18d21ccb0c729ecb1f79df17225c8086bc
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: ed03e20f7a1a24d1a38e023b958959fdc6fdc326
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632679"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579344"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Требования и рекомендации по использованию репликации между регионами 
 
@@ -29,7 +29,7 @@ ms.locfileid: "98632679"
 
 * Функция репликации между регионами в настоящее время доступна в общедоступной предварительной версии. Чтобы получить доступ к этой Azure NetApp Files функции, необходимо отправить запрос ваитлист на [странице отправки ваитлист репликации между регионами](https://aka.ms/anfcrrpreviewsignup). Перед использованием функции репликации между регионами дождитесь официального сообщения электронной почты от команды Azure NetApp Files.
 * Репликация Azure NetApp Files доступна только в определенных парах областей фиксированного региона. См. раздел [Поддерживаемые пары регионов](cross-region-replication-introduction.md#supported-region-pairs). 
-* Тома SMB поддерживаются вместе с томами NFS. Для репликации томов SMB требуется подключение Active Directory в исходных и целевых учетных записях NetApp. Конечное подключение к Active Directory должно иметь доступ к DNS-серверам или добавить контроллеры домена, доступные из делегированной подсети в регионе назначения. Дополнительные сведения см. в разделе [требования к Active Directoryным подключениям](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections). 
+* Тома SMB поддерживаются вместе с томами NFS. Для репликации томов SMB требуется подключение Active Directory в исходных и целевых учетных записях NetApp. Конечное подключение к Active Directory должно иметь доступ к DNS-серверам или добавить контроллеры домена, доступные из делегированной подсети в регионе назначения. Дополнительные сведения см. в разделе [требования к Active Directoryным подключениям](create-active-directory-connections.md#requirements-for-active-directory-connections). 
 * Целевая учетная запись должна находиться в другом регионе, отличном от региона исходного тома. Вы также можете выбрать существующую учетную запись NetApp в другом регионе.  
 * Целевой том репликации доступен только для чтения, пока вы не [перейдете в целевой регион](cross-region-replication-manage-disaster-recovery.md#fail-over-to-destination-volume) , чтобы включить целевой том для чтения и записи. 
 * Azure NetApp Files репликация в настоящее время не поддерживает несколько подписок. все репликации должны выполняться в рамках одной подписки.
@@ -41,7 +41,7 @@ ms.locfileid: "98632679"
 * Вы можете удалить моментальные снимки вручную на исходном томе отношения репликации, если отношение репликации активно или разорвано, а также после удаления отношения репликации. Нельзя удалить моментальные снимки вручную для целевого тома, пока не будет нарушена связь репликации.
 * Нельзя вернуться к моментальному снимку, сделанному до создания тома назначения репликации.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Создание репликации тома](cross-region-replication-create-peering.md)
 * [Отображение состояния работоспособности отношения репликации](cross-region-replication-display-health-status.md)
 * [Управление аварийным восстановлением](cross-region-replication-manage-disaster-recovery.md)

@@ -1,26 +1,26 @@
 ---
-title: Краткое руководство. Создание двойника модуля безопасности
+title: Создание двойника модуля безопасности
 description: В этом кратком руководстве объясняется, как создать двойник модуля для использования с решением "Defender для Интернета вещей".
 services: defender-for-iot
 ms.service: defender-for-iot
 documentationcenter: na
-author: mlottner
+author: shhazam-ms
 manager: rkarlin
 editor: ''
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/08/2019
-ms.author: mlottner
-ms.openlocfilehash: 3e48ed870bf405a82441678b5e8c01d199e7ebff
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.date: 1/21/2021
+ms.author: shhazam
+ms.openlocfilehash: 35195ea5d66bcf27764fa889e5f2e8ebb6a2bae1
+ms.sourcegitcommit: 4784fbba18bab59b203734b6e3a4d62d1dadf031
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835012"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99809105"
 ---
-# <a name="quickstart-create-an-azureiotsecurity-module-twin"></a>Краткое руководство. Создание двойника модуля azureiotsecurity
+# <a name="create-an-azureiotsecurity-module-twin"></a>Создание двойника модуля azureiotsecurity
 
 В этом кратком руководстве объясняется, как создать экземпляр двойника модуля _azureiotsecurity_ для новых устройств, а также создать двойники модуля для всех устройств Центра Интернета вещей в пакетном режиме.
 
@@ -51,23 +51,30 @@ ms.locfileid: "97835012"
 
 Дополнительные сведения о том, как изменять настройки существующего модуля безопасности, см. в статье о [конфигурации агента](how-to-agent-configuration.md).
 
-Чтобы создать двойник модуля _azureiotsecurity_ для устройства вручную, сделайте следующее:
+Чтобы вручную создать двойник модуля _azureiotsecurity_ для устройства, выполните следующие действия:
 
 1. В своем Центре Интернета вещей найдите и выберите устройство, для которого вы хотите создать двойник модуля безопасности.
+
 1. Выберите устройство, а затем щелкните **Добавить удостоверение модуля**.
+
 1. В поле **Имя удостоверения модуля** введите **azureiotsecurity**.
 
-1. Выберите команду **Сохранить**.
+1. Щелкните **Сохранить**.
 
 ## <a name="verify-creation-of-a-module-twin"></a>Проверка создания двойника модуля
 
 Чтобы проверить, существует ли двойник модуля безопасности у определенного устройства, сделайте следующее:
 
 1. В Центре Интернета вещей выберите **Устройства IoT** в меню **Обозреватели**.
+
 1. Введите идентификатор устройства или выберите один из вариантов в **поле запроса устройств** и щелкните **Запрос устройств**.
+
     :::image type="content" source="./media/quickstart/verify-security-module-twin.png" alt-text="Запрос устройств":::
+
 1. Выберите устройство или дважды щелкните его, чтобы открыть страницу сведений об устройстве.
+
 1. Выберите меню **Удостоверения модулей** и подтвердите существование модуля **azureiotsecurity** в списке удостоверений модулей, связанных с устройством.
+
     :::image type="content" source="./media/quickstart/verify-security-module-twin-3.png" alt-text="Модули, связанные с устройством":::
 
 Дополнительные сведения о настройке свойств двойников модуля Defender для Интернета вещей см. в руководстве по [настройке агента](how-to-agent-configuration.md).
