@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: subject-armqs
 ms.author: sumuth
 ms.date: 10/23/2020
-ms.openlocfilehash: a7dc6a6b11d3bfacf0aac5472a872ffaa7acc92b
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 5be0bf21514dd92c2f980081bb57d873895bbb91
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748711"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100099937"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql---flexible-server-preview"></a>Краткое руководство. Создание Базы данных Azure для MySQL (Гибкий сервер) (предварительная версия) с помощью шаблона ARM
 
@@ -97,7 +97,7 @@ ms.locfileid: "96748711"
       "location": "[parameters('location')]",
       "sku": {
         "name": "Standard_D4ds_v4",
-        "tier": "[parameters('serverEdition')]"        
+        "tier": "[parameters('serverEdition')]"
       },
       "tags": "[parameters('tags')]",
       "properties": {
@@ -204,6 +204,22 @@ read serverName &&
 echo "Enter the resource group where the Azure Database for MySQL server exists:" &&
 read resourcegroupName &&
 az resource show --resource-group $resourcegroupName --name $serverName --resource-type "Microsoft.DbForMySQL/flexibleServers"
+```
+## <a name="exporting-arm-template-from-the-portal"></a>Экспорт шаблона ARM с портала
+Вы можете [экспортировать шаблон ARM](../../azure-resource-manager/templates/export-template-portal.md) с портала Azure. Шаблон можно экспортировать двумя способами:
+
+- [Экспорт из группы ресурсов или ресурса.](../../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource) В этом варианте создается новый шаблон из существующих ресурсов. Экспортированный шаблон — это "моментальный снимок" текущего состояния группы ресурсов. Вы можете экспортировать всю группу ресурсов или определенные ресурсы в ней.
+- [Экспорт до развертывания или из журнала.](../../azure-resource-manager/templates/export-template-portal.md#export-template-before-deployment) В этом варианте выполняется получение точной копии шаблона, используемой для развертывания.
+
+При экспорте шаблона в разделе ```"parameters":{ }``` шаблона вы увидите, что ```administratorLogin``` и ```administratorLoginPassword``` не включены по соображениям безопасности. **ОБЯЗАТЕЛЬНО** добавьте эти параметры в свой шаблон, прежде чем развертывать его. В противном случае возникнет ошибка шаблона.
+
+```
+"administratorLogin": {
+      "type": "String"
+    },
+"administratorLoginPassword": {
+      "type": "SecureString"
+    },
 ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

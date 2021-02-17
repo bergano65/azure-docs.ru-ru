@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/25/2021
 ms.author: allensu
-ms.openlocfilehash: d5d2f83ddb4f37e1379bb7d60a76ddc70d61f99a
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 6f83df22465a2dc5fb871ae4e2c6dedd75e00075
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98785843"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834227"
 ---
 # <a name="what-is-azure-load-balancer"></a>Что такое Azure Load Balancer?
 
@@ -56,7 +56,7 @@ C помощью Load Balancer (цен. категория "Стандартны
 
 - Включение поддержки **[балансировки нагрузки](../virtual-network/virtual-network-ipv4-ipv6-dual-stack-standard-load-balancer-powershell.md)** **[IPv6](../virtual-network/ipv6-overview.md)** .
 
-- Load Balancer уровня "Стандартный" предоставляет многомерные метрики через [Azure Monitor](../azure-monitor/overview.md).  Эти метрики можно отфильтровать, сгруппировать и разбить по предоставленным измерениям.  Они предоставляют текущие и исторические сведения о производительности и работоспособности службы. [Аналитика для Azure Load Balancer] (https://docs.microsoft.com/azure/load-balancer/load-balancer-insights) предоставляет предварительно настроенную панель мониторинга с полезными визуализациями для этих метрик.  Также поддерживается служба "Работоспособность ресурсов". Дополнительные сведения см. **[Диагностика Load Balancer (цен. категория "Стандартный") с помощью метрик, оповещений и сведений о работоспособности ресурсов](load-balancer-standard-diagnostics.md)** .
+- Load Balancer уровня "Стандартный" предоставляет многомерные метрики через [Azure Monitor](../azure-monitor/overview.md).  Эти метрики можно отфильтровать, сгруппировать и разбить по предоставленным измерениям.  Они предоставляют текущие и исторические сведения о производительности и работоспособности службы. [Аналитика для Azure Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-insights) предоставляет предварительно настроенную панель мониторинга с полезными визуализациями для этих метрик.  Также поддерживается служба "Работоспособность ресурсов". Дополнительные сведения см. **[Диагностика Load Balancer (цен. категория "Стандартный") с помощью метрик, оповещений и сведений о работоспособности ресурсов](load-balancer-standard-diagnostics.md)** .
 
 - Службы балансировки нагрузки на **[нескольких портах, нескольких IP-адресах или обоих](./load-balancer-multivip-overview.md)** .
 

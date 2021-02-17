@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 26c4e154deec02b0642e6c131ced50acb02f9899
-ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.openlocfilehash: d69675d7ab07e4097556d269c97c3ecb66dc2fc6
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98951545"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545840"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Настройка регистрации и входа с учетной записью Weibo через Azure Active Directory B2C
 
@@ -32,19 +32,19 @@ ms.locfileid: "98951545"
 
 ## <a name="create-a-weibo-application"></a>Создание приложения Weibo
 
-Чтобы включить вход для пользователей с учетной записью Weibo в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на [портале разработчика Weibo](https://open.weibo.com/). Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по адресу [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
+Чтобы включить вход для пользователей с учетной записью Weibo в Azure Active Directory B2C (Azure AD B2C), необходимо создать приложение на портале разработчика Weibo. Если у вас еще нет учетной записи Weibo, вы можете зарегистрироваться по адресу [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
 
-1. Выполните вход на [портал разработчиков Weibo](https://open.weibo.com/) с учетными данными от учетной записи Weibo.
+1. Выполните вход на портал разработчиков Weibo с учетными данными от учетной записи Weibo.
 1. После входа щелкните отображаемое имя в правом верхнем углу.
 1. Из раскрывающегося списка выберите **编辑开发者信息** (Изменить информацию о разработчике).
 1. Введите необходимые сведения и щелкните **提交** (Передать).
 1. Выполните проверку по электронной почте.
-1. Перейдите на [страницу проверки удостоверения](https://open.weibo.com/developers/identity/edit).
+1. Перейдите на страницу проверки удостоверения.
 1. Введите необходимые сведения и щелкните **提交** (Передать).
 
 ### <a name="register-a-weibo-application"></a>Регистрация приложения Weibo
 
-1. Перейдите на [новую страницу регистрации приложения Weibo](https://open.weibo.com/apps/new).
+1. Перейдите на новую страницу регистрации приложения Weibo.
 1. Введите необходимые сведения о приложении.
 1. Выберите **创建** (Создать).
 1. Скопируйте значения **ключа приложения** и **секрета приложения**. Оба этих значения потребуются при добавлении поставщика удостоверений для вашего клиента.

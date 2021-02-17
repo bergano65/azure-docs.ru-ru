@@ -6,12 +6,12 @@ author: baanders
 ms.author: baanders
 ms.topic: troubleshooting
 ms.date: 7/20/2020
-ms.openlocfilehash: 1517c066fe20d478094f57d85d6e27f355a93601
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: ad28b3300e9107c7f6d4b1987205583ef60ed658
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049819"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545706"
 ---
 # <a name="service-request-failed-status-403-forbidden"></a>Сбой запроса на обслуживание. Состояние: 403 (запрещено)
 
@@ -26,8 +26,6 @@ ms.locfileid: "98049819"
 ### <a name="cause-1"></a>Причина #1
 
 Чаще всего эта ошибка означает, что разрешения на управление доступом на основе ролей Azure (Azure RBAC) для службы настроены неправильно. Во многих действиях для экземпляра Digital двойников для Azure требуется роль *владельца данных Digital двойников* **на экземпляре, которым вы пытаетесь управлять**. 
-
-[!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
 ### <a name="cause-2"></a>Причина #2
 
@@ -90,7 +88,7 @@ az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --ass
 
 Если какой-либо из них отличается от описанного, следуйте инструкциям по настройке регистрации приложения в разделе [*инструкции. Создание регистрации приложения*](how-to-create-app-registration.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с шагами по настройке создания и аутентификации нового экземпляра Digital двойников в Azure.
 * [*Пошаговое руководство. Настройка экземпляра и проверки подлинности (CLI)*](how-to-set-up-instance-cli.md)

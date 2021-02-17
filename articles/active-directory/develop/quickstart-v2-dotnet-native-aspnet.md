@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: ec8fd05c0661178cc07b9165793c9f34f2463948
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9dc787c57ef3ab84d9a2b90cfe059594b0a31d08
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754311"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102518"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Краткое руководство. Вызов веб-API ASP.NET, защищенного с помощью платформы удостоверений Майкрософт
 
@@ -48,16 +48,15 @@ ms.locfileid: "98754311"
 
 Чтобы зарегистрировать приложения вручную, выберите арендатор Azure Active Directory (Azure AD), в котором вы хотите создать приложения.
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a> с личной учетной записью Майкрософт либо рабочей или учебной учетной записью.
-1. Если ваша учетная запись принадлежит к нескольким арендаторам Azure AD, выберите профиль в правом верхнем углу, а затем **переключите каталог**.
-1. Смените сеанс портала на арендатор Azure AD, который необходимо использовать.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
+1. Если у вас есть доступ к нескольким арендаторам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать нужный арендатор.
 
 ### <a name="register-the-todolistservice-app"></a>Регистрация приложения TodoListService
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 1. Найдите и выберите **Azure Active Directory**.
-1. В разделе **Управление** выберите **Регистрация приложений** > **Новая регистрация**.
+1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
 1. Введите **имя** приложения, например `AppModelv2-NativeClient-DotNet-TodoListService`. Пользователи приложения могут видеть это имя. Вы можете изменить его позже.
 1. Для параметра **Поддерживаемые типы учетных записей** выберите **Учетные записи в любом каталоге организации**.
 1. Выберите **Зарегистрировать**, чтобы создать приложение.

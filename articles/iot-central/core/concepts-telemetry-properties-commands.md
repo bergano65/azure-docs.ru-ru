@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 5a9f6fa79da59425e4972dddd21ffdea15af73e7
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: f027b2d41f63b5aa7ea3df87e06224abd629799b
+ms.sourcegitcommit: b513b0becf878eb9a1554c26da53aa48d580bb22
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127912"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100535320"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Полезные данные телеметрии, свойств и команд
 
@@ -1068,7 +1068,7 @@ IoT Central ждет от устройства отклика на записы�
                 "displayName": {
                   "en": "Bank3"
                 },
-                "enumValue": 2,
+                "enumValue": 3,
                 "name": "Bank3"
               }
             ],
@@ -1088,6 +1088,6 @@ IoT Central ждет от устройства отклика на записы�
 | `custom_properties` | `{'method-name': 'GenerateDiagnostics'}` |
 | `data` | `{"StartTime":"2021-01-05T08:00:00.000Z","Bank":2}` |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда разработчик устройства изучили шаблоны устройств, мы рекомендуем ознакомиться с разработкой " [Подключение к Azure IOT Central](./concepts-get-connected.md) ", чтобы узнать больше о том, как регистрировать устройства в IOT Central и как IOT Central защищает подключения устройств.

@@ -7,22 +7,21 @@ ms.service: iot-central
 ms.subservice: iot-central-retail
 ms.topic: tutorial
 ms.date: 10/20/2019
-ms.openlocfilehash: b1b7069cb723bffd758c3603cc957329dd6d2a9b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4bade4cfe5bf82aefcc967d86362e27605a005f3
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463272"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99832187"
 ---
 # <a name="tutorial-deploy-and-walk-through-a-smart-inventory-management-application-template"></a>Руководство по развертыванию шаблона приложения для интеллектуального управления запасами для IoT Central и его использованию
 
-
-
 В этом руководстве показано, как приступить к работе, развернув шаблон приложения **для интеллектуального управления запасами** для IoT Central. Вы узнаете, как развернуть шаблон, который готов к использованию, и что можно будет сделать дальше.
 
-Из этого руководства вы узнаете, как: 
-* создать приложение для интеллектуального управления запасами; 
-* ознакомиться с этим приложением. 
+Из этого руководства вы узнаете, как:
+
+> [!div class="checklist"]
+> создать приложение интеллектуального управления запасами; ознакомиться с этим приложением. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -110,8 +109,8 @@ ms.locfileid: "96463272"
 > ![Снимок экрана: удаление приложения после завершения работы с ним](./media/tutorial-iot-central-smart-inventory-management/smart_inventory_management_cleanup.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* См. сведения об интеллектуальном управлении запасами 
+
+См. сведения об интеллектуальном управлении запасами:
+
 > [!div class="nextstepaction"]
 > [Понятия, связанные с интеллектуальным управлением запасами](./architecture-smart-inventory-management.md)
-* Узнайте больше о других [шаблонах IoT Central для розничной торговли](./overview-iot-central-retail.md).
-* См. сведения об [IoT Central](../core/overview-iot-central.md).

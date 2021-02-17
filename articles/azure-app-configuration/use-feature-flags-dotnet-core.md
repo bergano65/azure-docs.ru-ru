@@ -13,20 +13,22 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 2f141b896ef11fecdf156d062a78252ce6f7ffb3
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: bf0df4cc6e686b553baf8c2439c807d2f07ef440
+ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98734988"
+ms.lasthandoff: 02/07/2021
+ms.locfileid: "99807484"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
-Библиотеки управления функциями .NET Core обеспечивают идиоматическую поддержку реализации флагов функций в приложении .NET или ASP.NET Core. Эти библиотеки позволяют декларативно добавлять флаги функций в код, чтобы вам не пришлось записывать все операторы `if` для них вручную.
+Библиотеки управления функциями .NET Core обеспечивают идиоматическую поддержку реализации флагов функций в приложении .NET или ASP.NET Core. Эти библиотеки позволяют декларативно добавлять в код флаги компонентов, чтобы вам не нужно было вручную писать код для включения и отключения функций с помощью операторов `if`.
 
 Библиотеки управления функциями также управляют жизненным циклом флагов функций в фоновом режиме. Например, библиотеки отвечают за обновление и кэширование состояний флагов или гарантируют неизменность состояния флага во время вызова запроса. Кроме того, библиотека ASP.NET Core предоставляет готовое решение по интеграции, включая действия контроллера MVC, представления, маршруты и ПО промежуточного слоя.
 
-В [кратком руководстве по добавлению флагов функций в приложение ASP.NET Core](./quickstart-feature-flag-aspnet-core.md) описано несколько использующихся при этом методов. В нашем руководстве такие методы рассматриваются более подробно. Полную справочную документацию см. в [документации по управлению функциями ASP.NET Core](/dotnet/api/microsoft.featuremanagement).
+В [этом кратком руководстве](./quickstart-feature-flag-aspnet-core.md) показано несколько способов использования флагов компонентов в приложении ASP.NET Core. В этом руководстве показаны дополнительные параметры и возможности настройки библиотек управления компонентами. Вы можете использовать пример приложения, созданный с помощью этого краткого руководства, чтобы испытать пример кода, приведенный в этом руководстве. 
+
+Справочную документацию по API управления компонентами ASP.NET Core см. в статье [Пространство имен Microsoft.FeatureManagement](/dotnet/api/microsoft.featuremanagement).
 
 В этом учебнике рассматривается следующее.
 
@@ -36,8 +38,12 @@ ms.locfileid: "98734988"
 
 ## <a name="set-up-feature-management"></a>Настройка управления функциями
 
-Чтобы использовать диспетчер функций .NET Core, добавьте ссылку на пакеты NuGet `Microsoft.FeatureManagement.AspNetCore` и `Microsoft.FeatureManagement`.
-Диспетчер функций .NET Core `IFeatureManager` возвращает флаги функций из собственной системы конфигурации платформы. Таким образом, вы можете определить флаги функций приложения, используя любой источник конфигурации, поддерживаемый .NET Core, включая локальный файл *appsettings.json* или переменные среды. В `IFeatureManager` используется внедрение зависимостей .NET Core. Вы можете зарегистрировать службы управления функциями с помощью стандартных соглашений:
+Чтобы получить доступ к диспетчеру компонентов .NET Core, в приложении должны быть ссылки на пакет NuGet `Microsoft.FeatureManagement.AspNetCore`.
+
+Диспетчер компонентов .NET Core настраивается из собственной системы конфигурации платформы. Таким образом, вы можете определить параметры флагов компонентов приложения, используя любой источник конфигурации, поддерживаемый .NET Core, включая локальный файл *appsettings.json* или переменные среды.
+
+По умолчанию диспетчер компонентов извлекает конфигурацию флагов компонентов из раздела `"FeatureManagement"` данных конфигурации .NET Core. Чтобы использовать расположение конфигурации по умолчанию, вызовите метод [AddFeatureManagement](/dotnet/api/microsoft.featuremanagement.servicecollectionextensions.addfeaturemanagement) **IServiceCollection**, переданный в метод **ConfigureServices** класса **Startup**.
+
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -46,12 +52,13 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
+        ...
         services.AddFeatureManagement();
     }
 }
 ```
 
-По умолчанию диспетчер функций извлекает флаги функций из раздела `"FeatureManagement"` данных конфигурации .NET Core. В следующем примере диспетчер функций считывает данные из другого раздела под названием `"MyFeatureFlags"`:
+Можно указать, чтобы конфигурация управления компонентами была получена из другого раздела конфигурации, вызвав [Configuration.GetSection](/dotnet/api/microsoft.web.administration.configuration.getsection) и передав имя нужного раздела. В следующем примере диспетчер функций считывает данные из другого раздела под названием `"MyFeatureFlags"`:
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -60,15 +67,18 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddFeatureManagement(options =>
-        {
-                options.UseConfiguration(Configuration.GetSection("MyFeatureFlags"));
-        });
+        ...
+        services.AddFeatureManagement(Configuration.GetSection("MyFeatureFlags"));
     }
 }
 ```
 
-При использовании фильтров в флагах функций вам необходимо включить дополнительную библиотеку и зарегистрировать ее. В следующем примере показано, как использовать встроенный фильтр функций под названием `PercentageFilter`:
+
+При использовании фильтров во флагах компонентов необходимо включить пространство имен [Microsoft.FeatureManagement.FeatureFilters](/dotnet/api/microsoft.featuremanagement.featurefilters) и добавить вызов [AddFeatureFilters](/dotnet/api/microsoft.featuremanagement.ifeaturemanagementbuilder.addfeaturefilter), указав имя типа фильтра, который будет использоваться в качестве универсального типа метода. Дополнительные сведения об использовании фильтров компонентов для динамического включения и отключения возможностей см. в статье [Включение промежуточного развертывания компонентов для целевых аудиторий](/azure/azure-app-configuration/howto-targetingfilter-aspnet-core).
+
+В следующем примере показано, как использовать встроенный фильтр функций под названием `PercentageFilter`:
+
+
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -78,42 +88,79 @@ public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
     {
+        ...
         services.AddFeatureManagement()
                 .AddFeatureFilter<PercentageFilter>();
     }
 }
 ```
 
-Рекомендуем хранить флаги функций вне приложения и управлять ими отдельно. Так вы можете изменять состояния флагов в любое время и немедленно применять эти изменения в приложении. Конфигурация приложений — это централизованное расположение для организации всех флагов функций и управления такими флагами с помощью выделенного пользовательского интерфейса портала. Конфигурация приложений также предоставляет приложению флаги непосредственно через клиентские библиотеки .NET Core.
+Вместо того, чтобы прописывать флаги компонентов в коде приложения, рекомендуется хранить их за пределами приложения и управлять ими отдельно. Так вы можете изменять состояния флагов в любое время и немедленно применять эти изменения в приложении. Служба Конфигурации приложений Azure предоставляет выделенный пользовательский интерфейс портала для управления всеми флагами компонентов. Служба Конфигурации приложений Azure также предоставляет приложению флаги компонентов непосредственно через клиентские библиотеки .NET Core.
 
-Самый простой способ подключить приложение ASP.NET Core к Конфигурации приложений — использовать поставщика конфигураций `Microsoft.Azure.AppConfiguration.AspNetCore`. Чтобы использовать этот пакет NuGet, выполните следующие действия.
+Самый простой способ подключить приложение ASP.NET Core к Конфигурации приложений — использование поставщика конфигураций, включенного в пакет NuGet `Microsoft.Azure.AppConfiguration.AspNetCore`. После включения ссылки на пакет выполните описанные ниже действия, чтобы использовать этот пакет NuGet.
 
 1. Откройте файл *Program.cs* и добавьте следующий код:
+    > [!IMPORTANT]
+    > `CreateHostBuilder` заменяет `CreateWebHostBuilder` в .NET Core 3.x. Выберите правильный синтаксис в зависимости от среды.
 
-   ```csharp
-   using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+    ### <a name="net-5x"></a>[.NET 5.x](#tab/core5x)
+    
+    ```csharp
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
 
-   public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-       WebHost.CreateDefaultBuilder(args)
-              .ConfigureAppConfiguration((hostingContext, config) => {
-                  var settings = config.Build();
-                  config.AddAzureAppConfiguration(options => {
-                      options.Connect(settings["ConnectionStrings:AppConfig"])
-                             .UseFeatureFlags();
-                   });
-              })
-              .UseStartup<Startup>();
-   ```
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+                webBuilder.ConfigureAppConfiguration(config =>
+                {
+                    var settings = config.Build();
+                    config.AddAzureAppConfiguration(options =>
+                        options.Connect(settings["ConnectionStrings:AppConfig"]).UseFeatureFlags());
+                }).UseStartup<Startup>());
+    ```
+
+    ### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
+    
+    ```csharp
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+            webBuilder.ConfigureAppConfiguration(config =>
+            {
+                var settings = config.Build();
+                config.AddAzureAppConfiguration(options =>
+                    options.Connect(settings["ConnectionStrings:AppConfig"]).UseFeatureFlags());
+            }).UseStartup<Startup>());
+    ```
+        
+    ### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
+    
+    ```csharp
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
+                    .ConfigureAppConfiguration(config =>
+                    {
+                        var settings = config.Build();
+                        config.AddAzureAppConfiguration(options =>
+                            options.Connect(settings["ConnectionStrings:AppConfig"]).UseFeatureFlags());
+                    }).UseStartup<Startup>();
+    ```
+    ---
 
 2. Откройте файл *Startup.cs* и обновите метод `Configure` и `ConfigureServices`, чтобы добавить ПО промежуточного слоя с именем `UseAzureAppConfiguration`. Это ПО позволяет периодически обновлять значения флагов функций, пока веб-приложение ASP.NET Core продолжает получать запросы.
 
-   ```csharp
-   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-   {
-       app.UseAzureAppConfiguration();
-       app.UseMvc();
-   }
-   ```
+
+
+    ```csharp
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        app.UseAzureAppConfiguration();
+    }
+    ```
 
    ```csharp
    public void ConfigureServices(IServiceCollection services)
@@ -122,20 +169,22 @@ public class Startup
    }
    ```
    
-Значения флагов функций должны изменяться со временем. По умолчанию значения флагов функций кэшируются на 30 секунд, поэтому операция обновления, запущенная в тот момент, когда ПО промежуточного слоя получает запрос, не обновит значение, пока не истечет срок действия кэшированного значения. В приведенном ниже коде показано, как изменить срок действия кэша или интервал опроса на 5 минут в вызове `options.UseFeatureFlags()`.
+В типичном сценарии значения флагов компонентов периодически обновляются при развертывании и включении различных компонентов приложения. По умолчанию значения флагов функций кэшируются на 30 секунд, поэтому операция обновления, запущенная в тот момент, когда ПО промежуточного слоя получает запрос, не обновит значение, пока не истечет срок действия кэшированного значения. В приведенном ниже коде показано, как изменить срок действия кэша или интервал опроса на 5 минут, установив [CacheExpirationInterval](/dotnet/api/microsoft.extensions.configuration.azureappconfiguration.featuremanagement.featureflagoptions.cacheexpirationinterval) в вызове **UseFeatureFlags**.
 
+
+    
 ```csharp
-config.AddAzureAppConfiguration(options => {
-    options.Connect(settings["ConnectionStrings:AppConfig"])
-           .UseFeatureFlags(featureFlagOptions => {
-                featureFlagOptions.CacheExpirationTime = TimeSpan.FromMinutes(5);
-           });
+config.AddAzureAppConfiguration(options =>
+    options.Connect(settings["ConnectionStrings:AppConfig"]).UseFeatureFlags(featureFlagOptions => {
+        featureFlagOptions.CacheExpirationInterval = TimeSpan.FromMinutes(5);
+    }));
 });
 ```
 
+
 ## <a name="feature-flag-declaration"></a>Объявление флага функции
 
-Каждый флаг функции состоит из двух частей: имени и списка из одного или нескольких фильтров, использующихся, чтобы оценить, *включена* ли функция (то есть, если его значение равно `True`). Фильтр определяет вариант использования, при котором должна быть включена функция.
+Каждая декларация флага компонентов состоит из двух частей: имени и списка из одного или нескольких фильтров, использующихся для оценки того, *включена* ли функция (то есть, если его значение равно `True`). Фильтр определяет критерий, при котором должна быть включена функция.
 
 Если флаг функции имеет несколько фильтров, список фильтров проходится по порядку, пока один из фильтров не определит, что функция должна быть включена. На этом этапе флаг функции *включен*, и все остальные результаты фильтрации пропускаются. Если фильтр не указывает, что эта функция должна быть включена, флаг функции остается *отключенным*.
 
@@ -162,37 +211,48 @@ config.AddAzureAppConfiguration(options => {
 
 * Флаг `FeatureA`*включен*.
 * Флаг `FeatureB`*отключен*.
-* `FeatureC` указывает фильтр с именем `Percentage` и свойством `Parameters`. `Percentage` — это настраиваемый фильтр. В этом примере `Percentage` задает 50-процентную вероятность того, что флаг `FeatureC` может быть *включен*.
+* `FeatureC` указывает фильтр с именем `Percentage` и свойством `Parameters`. `Percentage` — это настраиваемый фильтр. В этом примере `Percentage` задает 50-процентную вероятность того, что флаг `FeatureC` может быть *включен*. Инструкции по использованию фильтров компонентов см. в статье [Использование фильтров компонентов для включения условных флагов компонентов](/azure/azure-app-configuration/howto-feature-filters-aspnet-core).
 
-## <a name="feature-flag-references"></a>Ссылки на флаги функций
 
-Чтобы можно было без труда ссылаться на флаги функций в коде, нужно определить их в виде переменных `enum`:
 
+
+## <a name="use-dependency-injection-to-access-ifeaturemanager"></a>Внедрение зависимостей для доступа к IFeatureManager 
+
+Для некоторых операций, таких как проверка значений флагов компонентов вручную, необходимо получить экземпляр [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanage). В MVC ASP.NET Core можно получить доступ к диспетчеру компонентов `IFeatureManager` путем внедрения зависимостей. В следующем примере аргумент типа `IFeatureManager` добавляется в сигнатуру конструктора для контроллера. Среда выполнения автоматически разрешает ссылку и предоставляет интерфейс при вызове конструктора. Если вы используете шаблон приложения, в котором у контроллера уже есть один или несколько аргументов внедрения зависимостей в конструкторе, например `ILogger`, можно просто добавить `IFeatureManager` в качестве дополнительного аргумента:
+
+### <a name="net-5x"></a>[.NET 5.x](#tab/core5x)
+    
 ```csharp
-public enum MyFeatureFlags
+using Microsoft.FeatureManagement;
+
+public class HomeController : Controller
 {
-    FeatureA,
-    FeatureB,
-    FeatureC
+    private readonly IFeatureManager _featureManager;
+
+    public HomeController(ILogger<HomeController> logger, IFeatureManager featureManager)
+    {
+        _featureManager = featureManager;
+    }
 }
 ```
 
-## <a name="feature-flag-checks"></a>Проверка флага функции
-
-В базовой схеме управления функциями сначала проверяется, *включен* ли флаг функции. Если это так, диспетчер функций выполняет действия, содержащиеся в функции. Пример:
+### <a name="net-core-3x"></a>[.NET Core 3.x](#tab/core3x)
 
 ```csharp
-IFeatureManager featureManager;
-...
-if (await featureManager.IsEnabledAsync(nameof(MyFeatureFlags.FeatureA)))
+using Microsoft.FeatureManagement;
+
+public class HomeController : Controller
 {
-    // Run the following code
+    private readonly IFeatureManager _featureManager;
+
+    public HomeController(ILogger<HomeController> logger, IFeatureManager featureManager)
+    {
+        _featureManager = featureManager;
+    }
 }
 ```
-
-## <a name="dependency-injection"></a>Внедрение зависимостей
-
-В MVC ASP.NET Core можно получить доступ к диспетчеру функций `IFeatureManager` с помощью внедрения зависимостей:
+    
+### <a name="net-core-2x"></a>[.NET Core 2.x](#tab/core2x)
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -208,9 +268,37 @@ public class HomeController : Controller
 }
 ```
 
+---
+
+## <a name="feature-flag-references"></a>Ссылки на флаги функций
+
+Определите флаги компонентов как строковые переменные, чтобы ссылаться на них из кода:
+
+```csharp
+public static class MyFeatureFlags
+{
+    public const string FeatureA = "FeatureA";
+    public const string FeatureB = "FeatureB";
+    public const string FeatureC = "FeatureC";
+}
+```
+
+## <a name="feature-flag-checks"></a>Проверка флага функции
+
+Распространенный шаблон управления компонентами — проверка того, задано ли флагу компонента значение *on*. Если значение задано, выполните раздел кода. Например:
+
+```csharp
+IFeatureManager featureManager;
+...
+if (await featureManager.IsEnabledAsync(MyFeatureFlags.FeatureA))
+{
+    // Run the following code
+}
+```
+
 ## <a name="controller-actions"></a>Действия контроллера
 
-В контроллерах MVC с помощью атрибута `FeatureGate` можно управлять объектом включения: весь класс контроллера или определенное действие. Для указанного ниже контроллера `HomeController` необходимо, чтобы флаг `FeatureA` был *включен*, прежде чем любое содержащееся в классе контроллера действие будет выполнено.
+В контроллерах MVC с помощью атрибута `FeatureGate` можно управлять тем, что именно будет включено: весь класс контроллера или определенное действие. Для указанного ниже контроллера `HomeController` необходимо, чтобы флаг `FeatureA` был *включен*, прежде чем любое содержащееся в классе контроллера действие будет выполнено.
 
 ```csharp
 using Microsoft.FeatureManagement.Mvc;
@@ -234,7 +322,7 @@ public IActionResult Index()
 }
 ```
 
-Когда контроллер MVC или действие блокируется из-за того, что флаг функции контроллера *отключен*, вызывается зарегистрированный интерфейс `IDisabledFeaturesHandler`. Интерфейс `IDisabledFeaturesHandler` по умолчанию возвращает клиенту код состояния 404 без текста ответа.
+Когда контроллер MVC или действие блокируется из-за того, что флагу компонента контроллера присвоено значение *off*, вызывается зарегистрированный интерфейс [IDisabledFeaturesHandler](/dotnet/api/microsoft.featuremanagement.mvc.idisabledfeatureshandler?view=azure-dotnet-preview). Интерфейс `IDisabledFeaturesHandler` по умолчанию возвращает клиенту код состояния 404 без текста ответа.
 
 ## <a name="mvc-views"></a>Представления MVC
 
@@ -273,7 +361,7 @@ public IActionResult Index()
 
 ## <a name="mvc-filters"></a>Фильтры MVC
 
-Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. С помощью приведенного ниже кода добавляется фильтр MVC с именем `SomeMvcFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `FeatureA` включен. Эта возможность ограничена `IAsyncActionFilter`. 
+Фильтры MVC можно настроить таким образом, чтобы они активировались в зависимости от состояния флага функции. Эта возможность ограничена фильтрами, которые реализуют [IAsyncActionFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncactionfilter). С помощью приведенного ниже кода добавляется фильтр MVC с именем `ThirdPartyActionFilter`. Этот фильтр активируется в пределах конвейера MVC, только если флаг `FeatureA` включен.  
 
 ```csharp
 using Microsoft.FeatureManagement.FeatureFilters;
@@ -283,7 +371,7 @@ IConfiguration Configuration { get; set;}
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc(options => {
-        options.Filters.AddForFeature<SomeMvcFilter>(nameof(MyFeatureFlags.FeatureA));
+        options.Filters.AddForFeature<ThirdPartyActionFilter>(MyFeatureFlags.FeatureA);
     });
 }
 ```
@@ -293,7 +381,7 @@ public void ConfigureServices(IServiceCollection services)
 Кроме того, флаги функций позволяют добавлять ветви приложений и ПО промежуточного слоя в случае выполнения условия. С помощью приведенного ниже кода компонент ПО промежуточного слоя вставляется в конвейер запроса, только если флаг `FeatureA` включен.
 
 ```csharp
-app.UseMiddlewareForFeature<ThirdPartyMiddleware>(nameof(MyFeatureFlags.FeatureA));
+app.UseMiddlewareForFeature<ThirdPartyMiddleware>(MyFeatureFlags.FeatureA);
 ```
 
 Следующий код представляет более общую возможность разветвления всего приложения на основе флага функции:

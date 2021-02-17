@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 06/09/2020
 ms.author: rolyon
-ms.openlocfilehash: 850d50bc9e427ff559782d587d74b33089332a8d
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: 30c7e6b1412373cf3bfe1c511206aa4b916bf1ee
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99091669"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557508"
 ---
 # <a name="elevate-access-to-manage-all-azure-subscriptions-and-management-groups"></a>Повышение прав доступа для управления всеми подписками Azure и группами управления
 
@@ -80,7 +80,7 @@ Azure AD и ресурсы Azure защищены независимо друг 
 
 1. Внесите необходимые изменения при повышенном доступе.
 
-    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью портал Azure](role-assignments-portal.md). Если вы используете управление привилегированными пользователями, см. статью [обнаружение ресурсов Azure для управления](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [назначения ролей ресурсов Azure](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
+    Сведения о назначении ролей см. [в статье назначение ролей Azure с помощью портал Azure](role-assignments-portal.md). Если вы используете управление привилегированными пользователями, см. статью [обнаружение ресурсов Azure для управления](../active-directory/privileged-identity-management/pim-resource-roles-discover-resources.md) и [назначения ролей ресурсов Azure](../active-directory/privileged-identity-management/pim-resource-roles-assign-roles.md).
 
 1. Выполните действия, описанные в следующем разделе, чтобы удалить доступ с повышенными правами.
 
@@ -149,7 +149,7 @@ CanDelegate        : False
 
 Выполните следующие основные действия, чтобы повысить уровень доступа для глобального администратора с помощью Azure CLI.
 
-1. Используйте команду [AZ RESTful](/cli/azure/reference-index?view=azure-cli-latest#az-rest) , чтобы вызвать `elevateAccess` конечную точку, которая предоставляет роль администратора доступа пользователей в корневой области ( `/` ).
+1. Используйте команду [AZ RESTful](/cli/azure/reference-index#az_rest) , чтобы вызвать `elevateAccess` конечную точку, которая предоставляет роль администратора доступа пользователей в корневой области ( `/` ).
 
     ```azurecli
     az rest --method post --url "/providers/Microsoft.Authorization/elevateAccess?api-version=2016-07-01"
@@ -157,7 +157,7 @@ CanDelegate        : False
 
 1. Внесите необходимые изменения при повышенном доступе.
 
-    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью Azure CLI](role-assignments-cli.md).
+    Сведения о назначении ролей см. [в статье назначение ролей Azure с помощью Azure CLI](role-assignments-cli.md).
 
 1. Выполните действия, описанные в следующем разделе, чтобы удалить доступ с повышенными правами.
 
@@ -199,7 +199,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
     az role assignment delete --assignee username@example.com --role "User Access Administrator" --scope "/"
     ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>API-интерфейсы REST
 
 ### <a name="elevate-access-for-a-global-administrator"></a>Повышение прав доступа глобального администратора
 
@@ -213,7 +213,7 @@ az role assignment list --role "User Access Administrator" --scope "/"
 
 1. Внесите необходимые изменения при повышенном доступе.
 
-    Сведения о назначении ролей см. [в статье Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md).
+    Сведения о назначении ролей см. [в статье назначение ролей Azure с помощью REST API](role-assignments-rest.md).
 
 1. Выполните действия, описанные в следующем разделе, чтобы удалить доступ с повышенными правами.
 
@@ -330,4 +330,4 @@ az role assignment list --role "User Access Administrator" --scope "/"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Общие сведения о различных ролях](rbac-and-directory-admin-roles.md)
-- [Добавление и удаление назначений ролей Azure с помощью REST API](role-assignments-rest.md)
+- [Назначение ролей Azure с помощью REST API](role-assignments-rest.md)

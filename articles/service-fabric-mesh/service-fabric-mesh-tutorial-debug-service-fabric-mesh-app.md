@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 10/31/2018
 ms.author: gwallace
 ms.custom: mvc, devcenter
-ms.openlocfilehash: 56cc8b4010dc17cf2b723a72898034de8d6a7175
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9e3dc16481340c0266cd398d0970e2147648e17f
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843300"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625454"
 ---
 # <a name="tutorial-debug-a-service-fabric-mesh-application-running-in-your-local-development-cluster"></a>Руководство по отладке приложения Сетки Service Fabric, выполняющегося в локальном кластере разработки.
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Сетки Azure Service Fabric была прекращена. Новые развертывания больше не будут разрешены через API Сетки Service Fabric. Поддержка существующих развертываний будет продолжена до 28 апреля 2021 г. включительно.
+> 
+> Дополнительные сведения см. в статье [Прекращение поддержки предварительной версии Сетки Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Это руководство является вторым из серии руководств. Здесь показано, как создать и отладить приложение Сетки Azure Service Fabric в локальном кластере разработки.
 
@@ -33,7 +38,7 @@ ms.locfileid: "91843300"
 
 [!INCLUDE [preview note](./includes/include-preview-note.md)]
 
-## <a name="prerequisites"></a>предварительные требования
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед началом работы с этим руководством выполните следующие действия:
 
@@ -75,7 +80,7 @@ git clone https://github.com/azure-samples/service-fabric-mesh
 2. Выберите в диспетчере локального кластера Service Fabric **Остановить локальный кластер** и **Запустить локальный кластер**.
 3. Повторно разверните приложение (в Visual Studio нажмите **F5**).
 
-Если обнаружилось, что  **локальный кластер Service Fabric не работает**, убедитесь, что диспетчер локального кластера Service Fabric запущен. Для этого на панели задач щелкните правой кнопкой мыши соответствующий значок, затем нажмите **Запустить Локальный кластер**. После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
+Если обнаружилось, что **локальный кластер Service Fabric не работает**, убедитесь, что диспетчер локального кластера Service Fabric запущен. Для этого на панели задач щелкните правой кнопкой мыши соответствующий значок, затем нажмите **Запустить Локальный кластер**. После запуска службы возвращайтесь к Visual Studio и нажмите клавишу **F5**.
 
 Если при запуске приложения появится ошибка **404**, это может значить, что переменные среды в **service.yaml** неправильные. Убедитесь, что `ApiHostPort`и `ToDoServiceName` установлены соответственно инструкциям из руководства по [созданию переменных среды](./service-fabric-mesh-tutorial-create-dotnetcore.md#create-environment-variables).
 

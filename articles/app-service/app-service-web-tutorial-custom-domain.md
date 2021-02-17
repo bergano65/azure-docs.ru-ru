@@ -7,12 +7,12 @@ ms.devlang: nodejs
 ms.topic: tutorial
 ms.date: 08/25/2020
 ms.custom: mvc, seodec18
-ms.openlocfilehash: b45e1fbaf912cc045ba51a79db434baecbabdf43
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: eea42ab17311b85bdce429e22e8d0ed694e2f0ec
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608271"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100096350"
 ---
 # <a name="tutorial-map-an-existing-custom-dns-name-to-azure-app-service"></a>Руководство по Сопоставление существующего настраиваемого DNS-имени со Службой приложений Azure
 
@@ -309,17 +309,20 @@ ms.locfileid: "96608271"
 - На настроенном личном домене отсутствует запись A и запись CNAME.
 - В кэше клиента браузера сохранен старый IP-адрес вашего домена. Выполните очистку кэша и еще раз проверьте разрешение DNS. На компьютере Windows кэш можно очистить с помощью команды `ipconfig /flushdns`.
 
-<a name="virtualdir" aria-hidden="true"></a>
-
 ## <a name="migrate-an-active-domain"></a>Перенос активного домена
 
 Сведения о том, как перенести активный веб-сайт и его DNS-имя домена в службу приложений без простоев, см. в статье [Перенос активного DNS-имени в службу приложений Azure](manage-custom-dns-migrate-domain.md).
+
+<a name="virtualdir" aria-hidden="true"></a>
 
 ## <a name="redirect-to-a-custom-directory"></a>Перенаправление к пользовательскому каталогу
 
 По умолчанию служба приложений направляет веб-запросы в корневой каталог кода приложения. Однако некоторые веб-платформы не запускаются в корневом каталоге. Например, [Laravel](https://laravel.com/) запускается в подкаталоге `public`. Чтобы продолжить пример DNS `contoso.com`, такое приложение будет доступно по адресу `http://contoso.com/public`, но вместо этого вам потребуется направлять `http://contoso.com` в каталог `public`. Этот шаг включает в себя не разрешение имен DNS, а настройку виртуального каталога.
 
-Чтобы настроить виртуальный каталог, выберите **Параметры приложения** в левой области страницы веб-приложения.
+Чтобы настроить виртуальный каталог для приложений Windows, выберите **Параметры приложения** в левой области страницы веб-приложения. 
+
+> [!NOTE]
+> В приложениях Linux эта страница отсутствует. Чтобы изменить корень сайта для приложений Linux, см. инструкции по настройке для конкретного языка (например, [PHP](configure-language-php.md?pivots=platform-linux#change-site-root)).
 
 В нижней части страницы корневой виртуальный каталог `/` указывает на `site\wwwroot` по умолчанию. Это корневой каталог кода вашего приложения. Измените его, например, указав `site\wwwroot\public`, и сохраните изменения.
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 10/15/2020
+ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro R so I can use it to transfer data to Azure.
-ms.openlocfilehash: ad0010a1885c1e9bac8fa2341771cedc12115adc
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 11c1d76b5784587f234455f81595778897569eb1
+ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464621"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99594355"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-pro-r"></a>Руководство по настройке параметров сети для Azure Stack Edge Pro R
 
@@ -72,6 +72,7 @@ ms.locfileid: "96464621"
    * Если в среде включен DHCP, сетевые интерфейсы настраиваются автоматически. IP-адрес, подсеть, шлюз и DNS назначаются автоматически.
    * Если протокол DHCP не включен, при необходимости вы можете назначить статические IP-адреса.
    * Сетевой интерфейс можно настроить как IPv4.
+   * Объединение сетевых адаптеров или агрегирование ссылок не поддерживается в Azure Stack Edge.
    * Серийный номер для любого порта совпадает с серийным номером узла.
     <!--* On the 25-Gbps interfaces, you can set the RDMA (Remote Direct Access Memory) mode to iWarp or RoCE (RDMA over Converged Ethernet). Where low latencies are the primary requirement and scalability is not a concern, use RoCE. When latency is a key requirement, but ease-of-use and scalability are also high priorities, iWARP is the best candidate.-->
     После настройки сети для устройства эта страница обновится, как показано ниже.
@@ -84,7 +85,7 @@ ms.locfileid: "96464621"
      > * Мы советуем не переключать локальный IP-адрес сетевого интерфейса со статического на DCHP при отсутствии другого IP-адреса для подключения к устройству. Если, используя один сетевой интерфейс, вы переключитесь на DHCP, вы не сможете определить адрес DHCP. Если вы хотите переключиться на адрес DHCP, дождитесь, пока устройство завершит подключение к службе, а затем измените адрес. Затем вы сможете просмотреть IP-адреса всех адаптеров в **свойствах устройства** на портале Azure для службы.
 
 
-    Завершив настройку и применение параметров сети, выберите **Далее: вычислительная среда**, чтобы настроить сеть вычислений.
+    Завершив настройку и применение параметров сети, щелкните **Next: Compute** (Далее: вычислительная среда), чтобы настроить сеть вычислений.
 
 ## <a name="enable-compute-network"></a>Включение сети вычислений
 
@@ -149,7 +150,7 @@ ms.locfileid: "96464621"
 Из этого учебника вы узнали, как выполнять такие задачи:
 
 > [!div class="checklist"]
-> * Предварительные требования
+> * Предварительные условия
 > * настройка сети;
 > * включение сети вычислений;
 > * Настройка веб-прокси

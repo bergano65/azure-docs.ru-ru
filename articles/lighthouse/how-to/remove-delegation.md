@@ -1,14 +1,14 @@
 ---
 title: Удаление доступа к делегированию
 description: Узнайте, как удалить доступ к ресурсам, которые были делегированы поставщику услуг для Azure Лигхсаусе.
-ms.date: 12/03/2020
+ms.date: 02/16/2021
 ms.topic: how-to
-ms.openlocfilehash: 7218c8829c9b2500e8311fbb3d5e9ff4eb986529
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: c53b678ba6e37ece1bcaf2860abceb9eea980532
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791362"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555791"
 ---
 # <a name="remove-access-to-a-delegation"></a>Удаление доступа к делегированию
 
@@ -21,7 +21,7 @@ ms.locfileid: "98791362"
 
 ## <a name="customers"></a>Клиенты
 
-Пользователи в клиенте клиента, у которых есть [Встроенная роль владельца](../../role-based-access-control/built-in-roles.md#owner) подписки, могут удалить доступ поставщика услуг к этой подписке (или группам ресурсов в этой подписке). Для этого пользователь в клиенте клиента может попасть на [страницу поставщики услуг](view-manage-service-providers.md#add-or-remove-service-provider-offers) портал Azure, найти предложение на экране **предложения поставщика услуг** и выбрать значок корзины в строке для этого предложения.
+Пользователи в клиенте клиента, имеющие роль с `Microsoft.Authorization/roleAssignments/write` разрешением, например [владелец](../../role-based-access-control/built-in-roles.md#owner), могут удалить доступ поставщика услуг к этой подписке (или группам ресурсов в этой подписке). Для этого пользователь может открыть [страницу поставщики услуг](view-manage-service-providers.md#add-or-remove-service-provider-offers) портал Azure, найти предложение на экране **предложения поставщика услуг** и выбрать значок корзины в строке для этого предложения.
 
 После подтверждения удаления пользователи из клиента поставщика услуг не смогут получить доступ к ресурсам, которые были ранее делегированы.
 

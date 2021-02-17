@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 02/09/2021
 ms.author: dech
 ms.custom: references_regions
-ms.openlocfilehash: b8ce745a0a0db96e7f6b9e3a0140d46364246e4a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: fd7f663ee5b6ceb49e6f1a393fc30919d5b245e9
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100379613"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547831"
 ---
 # <a name="enable-notebooks-for-azure-cosmos-db-accounts-preview"></a>Включение записных книжек для учетных записей Azure Cosmos DB (Предварительная версия)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -95,20 +95,20 @@ ms.locfileid: "100379613"
 - Центрально-Западная Германия
 - Западная Япония
 - Республика Корея, южный регион
-- Северо — центральная часть США
+- Центрально-северная часть США
 - Северная Европа
-- Юго-Центральный регион США
+- Центрально-южная часть США
 - Southeast Asia
 - Северная Швейцария
 - Центральная часть ОАЭ.
 - южная часть Соединенного Королевства
 - западная часть Соединенного Королевства
-- Западная Центральная часть США
+- центрально-западная часть США
 - Западная Европа
 - Западная Индия
 - Западная часть США 2
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Узнайте о преимуществах [записных книжек Azure Cosmos DB Jupyter](cosmosdb-jupyter-notebooks.md)
 * [Обзор коллекции примеров записных книжек](https://cosmos.azure.com/gallery.html)

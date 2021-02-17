@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 06/17/2020
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 9dad8ffc9971894a2777e8bda9bcf6d78eee00a9
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 3c9018322c9e5075ff59024f9d791e7431035e3d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369282"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555946"
 ---
 # <a name="list-azure-role-definitions"></a>Вывод списка определений ролей Azure
 
@@ -329,7 +329,7 @@ az role definition list --name "Virtual Machine Contributor" --output json --que
 ]
 ```
 
-## <a name="rest-api"></a>REST API
+## <a name="rest-api"></a>API-интерфейсы REST
 
 ### <a name="list-role-definitions"></a>Вывод списка определений роли
 
@@ -356,7 +356,7 @@ az role definition list --name "Virtual Machine Contributor" --output json --que
 1. Замените *{Filter}* условием, которое необходимо применить для фильтрации списка определений ролей.
 
     > [!div class="mx-tableFixed"]
-    > | Фильтр | Описание |
+    > | Filter | Описание |
     > | --- | --- |
     > | `$filter=atScopeAndBelow()` | Перечисляет определения ролей для указанной области и всех ее подобластей. |
     > | `$filter=type+eq+'{type}'` | Перечисляет определения ролей указанного типа. Тип роли может быть `CustomRole` или `BuiltInRole` . |
@@ -478,5 +478,5 @@ GET https://management.azure.com/providers/Microsoft.Authorization/roleDefinitio
 
 - [Встроенные роли Azure](built-in-roles.md)
 - [Настраиваемые роли Azure](custom-roles.md)
-- [Вывод списка назначений ролей Azure с помощью портал Azure](role-assignments-list-portal.md)
-- [Добавление и удаление назначений ролей Azure с помощью портала Azure](role-assignments-portal.md)
+- [Вывод списка назначений ролей Azure с помощью портала Azure](role-assignments-list-portal.md).
+- [Назначение ролей Azure с помощью портал Azure](role-assignments-portal.md)

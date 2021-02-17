@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.workload: identity
 ms.date: 03/18/2020
 ms.author: janutter
-ms.openlocfilehash: 56359ba07513ac648c682b8114001e251b0ee44c
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 95747bb68a904212e7e075fc29b2497932d66e5f
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99225805"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100103861"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-an-angular-single-page-application"></a>Краткое руководство. Вход пользователей и получение маркера доступа в одностраничное приложение Angular
 
@@ -35,9 +35,7 @@ ms.locfileid: "99225805"
 >
 > ### <a name="option-1-express-register-and-automatically-configure-the-app-and-then-download-the-code-sample"></a>Вариант 1 (экспресс-способ). Регистрация и автоматическая настройка приложения, а затем скачивание примера кода.
 >
-> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-> 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, в правом верхнем углу щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure Active Directory.
-> 1. Откройте новую панель [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs) на портале Azure.
+> 1. Откройте страницу <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Перейдите на панель быстрого запуска и просмотрите сведения по началу работы с Angular. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
@@ -45,15 +43,15 @@ ms.locfileid: "99225805"
 >
 > #### <a name="step-1-register-the-application"></a>Шаг 1. Регистрация приложения
 >
-> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
-> 1. Если ваша учетная запись предоставляет доступ к нескольким клиентам, в правом верхнем углу щелкните свою учетную запись и выберите для текущего сеанса работы нужный клиент Azure AD.
+> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
+> 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. Следуйте инструкциям, чтобы [зарегистрировать одностраничное приложение](./scenario-spa-app-registration.md) на портале Azure.
 > 1. Добавьте новую платформу в область **Проверка подлинности** регистрации приложения и зарегистрируйте URI перенаправления: `http://localhost:4200/`.
 > 1. В этом кратком руководстве используется [поток неявного предоставления разрешений](v2-oauth2-implicit-grant-flow.md). В разделе **Неявное предоставление разрешения и гибридные потоки** выберите **Токены идентификации** и **Маркеры доступа**. Маркеры идентификатора и маркеры доступа необходимы, так как это приложение поддерживает вход пользователей и вызов API.
 
 > [!div class="sxs-lookup" renderon="portal"]
 > #### <a name="step-1-configure-the-application-in-the-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Для работы примера кода в этом кратком руководстве необходимо добавить URI перенаправления **http://localhost:4200/** и включить ****неявное предоставление разрешения**.
+> Чтобы пример кода, приведенный в этом кратком руководстве, работал, добавьте URI перенаправления **http://localhost:4200/** и включите **неявное предоставление разрешений**.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
 >

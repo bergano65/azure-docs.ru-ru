@@ -1,7 +1,7 @@
 ---
 title: Настройка аттестации Azure для логического сервера Azure SQL
 description: Настройте аттестацию Azure для Always Encrypted с помощью Secure енклавес в базе данных SQL Azure.
-keywords: Шифрование данных, шифрование SQL, шифрование базы данных, конфиденциальные данные, Always Encrypted, безопасный енклавес, SGX, аттестация
+keywords: шифрование данных, шифрование SQL, шифрование базы данных, конфиденциальные данные, Always Encrypted, безопасные анклавы, SGX, аттестация
 services: sql-database
 ms.service: sql-database
 ms.subservice: security
@@ -11,19 +11,19 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 51431bf0da9145e1b61da708942b675e4c3eea78
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 664733f3d4c4e4bf17440db0323580c5d2c8c2ce
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733829"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555664"
 ---
 # <a name="configure-azure-attestation-for-your-azure-sql-logical-server"></a>Настройка аттестации Azure для логического сервера Azure SQL
 
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
 
 > [!NOTE]
-> Always Encrypted с безопасным енклавес для базы данных SQL Azure в настоящее время находится в **общедоступной предварительной версии**.
+> Always Encrypted с безопасными анклавами для Базы данных SQL Azure в настоящее время предоставляется в **общедоступной предварительной версии**.
 
 [Microsoft Azure аттестация](../../attestation/overview.md) — это решение для подтверждения доверенных сред выполнения (TEEs), включая расширения Intel Software Guard (Intel SGX) енклавес. 
 
@@ -31,7 +31,7 @@ ms.locfileid: "98733829"
 
 1. Создайте [поставщик аттестации](../../attestation/basic-concepts.md#attestation-provider) и настройте его с помощью рекомендованной политики аттестации.
 
-2. Предоставьте логическому серверу SQL Azure доступ к поставщику аттестации.
+2. Предоставьте логическому серверу Azure SQL доступ к своему поставщику аттестации.
 
 > [!NOTE]
 > Настройка аттестации несет ответственность за администратора аттестации. Ознакомьтесь с [ролями и обязанностями при настройке енклавес и аттестации SGX](always-encrypted-enclaves-plan.md#roles-and-responsibilities-when-configuring-sgx-enclaves-and-attestation).
@@ -76,7 +76,7 @@ authorizationrules
 
 Инструкции по созданию поставщика аттестации и его настройке с помощью политики аттестации:
 
-- [Краткое руководство. Настройка аттестации Azure с помощью портал Azure](../../attestation/quickstart-portal.md)
+- [Краткое руководство. Настройка Аттестации Azure с помощью портала Azure](../../attestation/quickstart-portal.md)
     > [!IMPORTANT]
     > При настройке политики аттестации с портал Azure установите для параметра Тип аттестации значение `SGX-IntelSDK` .
 - [Краткое руководство. Настройка службы "Аттестация Azure" с помощью Azure PowerShell](../../attestation/quickstart-powershell.md)
@@ -114,7 +114,7 @@ Write-Host "Your attestation URL is: " $attestationUrl
 
 ### <a name="use-azure-portal-to-assign-permission"></a>Назначение разрешения с помощью портал Azure
 
-Чтобы назначить удостоверение сервера Azure SQL Server роли читателя аттестации для поставщика аттестации, следуйте указаниям в разделе [Добавление и удаление назначений ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md). В области **Добавление назначения ролей** выполните следующие действия.
+Чтобы назначить удостоверение сервера Azure SQL Server роли читателя аттестации для поставщика аттестации, следуйте общим инструкциям в разделе [назначение ролей Azure с помощью портал Azure](../../role-based-access-control/role-assignments-portal.md). В области **Добавление назначения ролей** выполните следующие действия.
 
 1. В раскрывающемся списке **роль** выберите роль **читатель аттестации** .
 1. В поле **Выбор** введите имя сервера Azure SQL Server для поиска.
@@ -143,7 +143,7 @@ $attestationResourceGroupName = "<attestation provider resource group name>"
 New-AzRoleAssignment -ObjectId $server.Identity.PrincipalId -RoleDefinitionName "Attestation Reader" -ResourceGroupName $attestationResourceGroupName
 ```
 
-Дополнительные сведения см. в статье [Добавление и удаление назначений ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#add-role-assignment-examples).
+Дополнительные сведения см. в статье [назначение ролей Azure с помощью Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#assign-role-examples).
 
 ## <a name="next-steps"></a>Next Steps
 
@@ -151,4 +151,4 @@ New-AzRoleAssignment -ObjectId $server.Identity.PrincipalId -RoleDefinitionName 
 
 ## <a name="see-also"></a>См. также раздел
 
-- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)
+- [Учебник. Начало работы с Always Encrypted и безопасными анклавами в Базе данных SQL Azure](always-encrypted-enclaves-getting-started.md)

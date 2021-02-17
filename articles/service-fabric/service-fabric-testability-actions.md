@@ -1,17 +1,17 @@
 ---
 title: Имитация сбоев в микрослужбах Azure
 description: В этой статье рассматриваются действия по тестированию, доступные в Microsoft Azure Service Fabric.
-author: motanv
+author: georgewallace
 ms.topic: conceptual
 ms.date: 06/07/2017
-ms.author: motanv
+ms.author: gwallace
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8b1d4ae42fa033c03bd82ae5cee5794d98c23c65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aea918f75ad9c8aa58b5201d2fdd967794085438
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89022179"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100547083"
 ---
 # <a name="testability-actions"></a>Действия, доступные благодаря Testability
 Для моделирования ненадежной инфраструктуры платформа Azure Service Fabric предоставляет разработчику несколько способов имитации различных реалистичных ошибок и переходов. Такие действия доступны благодаря компоненту Testability. Эти действия представляют из себя интерфейсы API низкого уровня, которые вызывают определенную ошибку, смену состояния или проверку. Сочетая эти действия, вы можете создать комплексные сценарии тестирования своих служб.
@@ -31,7 +31,7 @@ ms.locfileid: "89022179"
 ## <a name="testability-actions-list"></a>Список действий, доступных благодаря Testability
 | Действие | Описание | Управляемый API | Командлет PowerShell | Нормальная или ненормальная ошибка |
 | --- | --- | --- | --- | --- |
-| CleanTestState |Удаляет все данные о состоянии тестирования из кластера в случае неправильного завершения работы тестового драйвера. |CleanTestStateAsync |Remove-ServiceFabricTestState |Неприменимо |
+| CleanTestState |Удаляет все данные о состоянии тестирования из кластера в случае неправильного завершения работы тестового драйвера. |CleanTestStateAsync |Remove-ServiceFabricTestState |Не применяются |
 | InvokeDataLoss |Приводит к потере данных в разделе службы. |InvokeDataLossAsync |Invoke-ServiceFabricPartitionDataLoss |Нормальная |
 | InvokeQuorumLoss |Приводит к потере кворума в указанном разделе службы с отслеживанием состояния. |InvokeQuorumLossAsync |Invoke-ServiceFabricQuorumLoss |Нормальная |
 | MovePrimary |Перемещает заданную первичную реплику службы с отслеживанием состояния на указанный узел кластера. |MovePrimaryAsync |Move-ServiceFabricPrimaryReplica |Нормальная |
@@ -41,10 +41,10 @@ ms.locfileid: "89022179"
 | RestartNode |Имитирует ошибку узла кластера Service Fabric путем перезапуска узла. |RestartNodeAsync |Restart-ServiceFabricNode |Ненормальная |
 | RestartPartition |Имитирует сценарий отключения центра обработки данных или кластера путем перезапуска некоторых или всех реплик раздела. |RestartPartitionAsync |Restart-ServiceFabricPartition |Нормальная |
 | RestartReplica |Имитирует ошибку реплики путем перезапуска материализованной реплики в кластере с последующим закрытием и открытием реплики. |RestartReplicaAsync |Restart-ServiceFabricReplica |Нормальная |
-| StartNode |Запускает узел в кластере, который уже остановлен. |StartNodeAsync |Start-ServiceFabricNode |Неприменимо |
+| StartNode |Запускает узел в кластере, который уже остановлен. |StartNodeAsync |Start-ServiceFabricNode |Не применяются |
 | StopNode |Имитирует ошибку узла, останавливая его работу в кластере. Узел начнет работу только после вызова StartNode. |StopNodeAsync |Stop-ServiceFabricNode |Ненормальная |
-| ValidateApplication |Проверяет доступность и работоспособность всех служб Service Fabric в приложении обычно после инициирования ошибки в системе. |ValidateApplicationAsync |Test-ServiceFabricApplication |Неприменимо |
-| ValidateService |Проверяет доступность и работоспособность службы Service Fabric обычно после инициирования ошибки в системе. |ValidateServiceAsync |Test-ServiceFabricService |Неприменимо |
+| ValidateApplication |Проверяет доступность и работоспособность всех служб Service Fabric в приложении обычно после инициирования ошибки в системе. |ValidateApplicationAsync |Test-ServiceFabricApplication |Не применяются |
+| ValidateService |Проверяет доступность и работоспособность службы Service Fabric обычно после инициирования ошибки в системе. |ValidateServiceAsync |Test-ServiceFabricService |Не применяются |
 
 ## <a name="running-a-testability-action-using-powershell"></a>Выполнение действия тестирования с помощью PowerShell
 В этом учебнике показано, как выполнить действие, доступное благодаря Testability, с помощью PowerShell. Вы узнаете, как выполнить такое действие для тестирования локального (содержащего одно поле) кластера или кластера Azure. Microsoft.Fabric.Powershell.dll — модуль PowerShell Service Fabric — устанавливается автоматически при установке MSI Microsoft Service Fabric. Этот модуль автоматически загружается при открытии командной строки PowerShell.

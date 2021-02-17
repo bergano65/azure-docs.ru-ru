@@ -1,22 +1,22 @@
 ---
-title: Добавление или удаление назначений ролей Azure с помощью Azure PowerShell — Azure RBAC
+title: Назначение ролей Azure с помощью Azure PowerShell — Azure RBAC
 description: Узнайте, как предоставить доступ к ресурсам Azure для пользователей, групп, субъектов-служб или управляемых удостоверений с помощью Azure PowerShell и управления доступом на основе ролей Azure (Azure RBAC).
 services: active-directory
 author: rolyon
-manager: mtillman
+manager: daveba
 ms.service: role-based-access-control
 ms.topic: how-to
 ms.workload: identity
-ms.date: 11/25/2020
+ms.date: 02/15/2021
 ms.author: rolyon
-ms.openlocfilehash: 3bb09133ba6991554072b4bf68b5306c78f868a7
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 00f663b90f34f3b557329692f844bbbc1bf3207d
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964292"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556798"
 ---
-# <a name="add-or-remove-azure-role-assignments-using-azure-powershell"></a>Добавление и удаление назначений ролей Azure с помощью Azure PowerShell
+# <a name="assign-azure-roles-using-azure-powershell"></a>Назначение ролей Azure с помощью Azure PowerShell
 
 [!INCLUDE [Azure RBAC definition grant access](../../includes/role-based-access-control/definition-grant.md)] В этой статье описывается назначение ролей с помощью Azure PowerShell.
 
@@ -24,19 +24,19 @@ ms.locfileid: "97964292"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для добавления или удаления назначений ролей необходимо иметь следующее:
+Для назначения ролей необходимо иметь следующее:
 
-- `Microsoft.Authorization/roleAssignments/write` и `Microsoft.Authorization/roleAssignments/delete`, такие как [Администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [Владелец](built-in-roles.md#owner).
+- `Microsoft.Authorization/roleAssignments/write` разрешения, такие как [администратор доступа пользователей](built-in-roles.md#user-access-administrator) или [владелец](built-in-roles.md#owner)
 - [PowerShell в Azure Cloud Shell](../cloud-shell/overview.md) или [Azure PowerShell](/powershell/azure/install-az-ps)
 - Учетная запись, используемая для выполнения команды PowerShell, должна иметь `Directory.Read.All` разрешение Microsoft Graph.
 
-## <a name="steps-to-add-a-role-assignment"></a>Шаги для добавления назначения роли
+## <a name="steps-to-assign-an-azure-role"></a>Действия по назначению роли Azure
 
-Чтобы предоставить доступ в Azure RBAC, нужно добавить назначение ролей. Назначение ролей состоит из трех элементов: субъект безопасности, определение роли и область действия. Чтобы добавить назначение ролей, выполните следующие действия.
+Назначение роли состоит из трех элементов: субъекта безопасности, определения роли и области.
 
 ### <a name="step-1-determine-who-needs-access"></a>Шаг 1. Определение пользователей, которым требуется доступ
 
-Роль можно назначить пользователю, группе, субъекту-службе или управляемому удостоверению. Чтобы добавить назначение ролей, может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
+Роль можно назначить пользователю, группе, субъекту-службе или управляемому удостоверению. Чтобы назначить роль, может потребоваться указать уникальный идентификатор объекта. Идентификатор имеет следующий формат: `11111111-1111-1111-1111-111111111111`. Идентификатор можно получить с помощью портал Azure или Azure PowerShell.
 
 **Пользователь**
 
@@ -74,7 +74,7 @@ Get-AzADServicePrincipal -SearchString <principalName>
 (Get-AzADServicePrincipal -DisplayName <principalName>).id
 ```
     
-### <a name="step-2-find-the-appropriate-role"></a>Шаг 2. поиск соответствующей роли
+### <a name="step-2-select-the-appropriate-role"></a>Шаг 2. Выбор соответствующей роли
 
 Разрешения объединяются в роли. Вы можете выбрать из списка несколько [встроенных ролей Azure](built-in-roles.md) или использовать собственные пользовательские роли. Рекомендуется предоставлять доступ с минимальными необходимыми привилегиями, поэтому не следует назначать более широкие роли.
 
@@ -128,9 +128,9 @@ Get-AzSubscription
 Get-AzManagementGroup
 ```
     
-### <a name="step-4-add-role-assignment"></a>Шаг 4. Добавление назначения ролей
+### <a name="step-4-assign-role"></a>Шаг 4. Назначение роли
 
-Чтобы добавить назначение роли, используйте команду [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) . В зависимости от области команда обычно имеет один из следующих форматов.
+Чтобы назначить роль, используйте команду [New-азролеассигнмент](/powershell/module/az.resources/new-azroleassignment) . В зависимости от области команда обычно имеет один из следующих форматов.
 
 **Область ресурса**
 
@@ -190,9 +190,9 @@ New-AzRoleAssignment -ObjectId <objectId> `
 -Scope /providers/Microsoft.Management/managementGroups/<groupName>
 ``` 
     
-## <a name="add-role-assignment-examples"></a>Добавление примеров назначения ролей
+## <a name="assign-role-examples"></a>Примеры назначения ролей
 
-#### <a name="add-role-assignment-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Добавление назначения ролей для всех контейнеров больших двоичных объектов в области ресурсов учетной записи хранения
+#### <a name="assign-a-role-for-all-blob-containers-in-a-storage-account-resource-scope"></a>Назначение роли для всех контейнеров больших двоичных объектов в области ресурсов учетной записи хранения
 
 Назначает роль [участника данных большого двоичного объекта хранилища](built-in-roles.md#storage-blob-data-contributor) субъекту-службе с идентификатором объекта *55555555-5555-5555-5555-555555555555* в области действия ресурса для учетной записи хранения с именем *storage12345*.
 
@@ -212,7 +212,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-specific-blob-container-resource-scope"></a>Добавление назначения ролей для определенной области ресурсов контейнера больших двоичных объектов
+#### <a name="assign-a-role-for-a-specific-blob-container-resource-scope"></a>Назначение роли для определенной области ресурсов контейнера больших двоичных объектов
 
 Назначает роль [участника данных большого двоичного объекта хранилища](built-in-roles.md#storage-blob-data-contributor) субъекту-службе с идентификатором объекта *55555555-5555-5555-5555-555555555555* в области действия ресурса для контейнера больших двоичных объектов с именем *BLOB-Container-01*.
 
@@ -233,7 +233,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Добавление назначения ролей для группы в определенной области ресурсов виртуальной сети
+#### <a name="assign-a-role-for-a-group-in-a-specific-virtual-network-resource-scope"></a>Назначение роли для группы в определенной области ресурсов виртуальной сети
 
 Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) группе *"Администраторы продаж Pharma"* с идентификатором аааааааа-АААА-АААА-АААА-аааааааааааа в области ресурсов для виртуальной сети с именем *Pharma-Sales-Project-Network*.
 
@@ -258,7 +258,7 @@ ObjectType         : Group
 CanDelegate        : False
 ```
 
-#### <a name="add-a-role-assignment-for-a-user-at-a-resource-group-scope"></a>Добавление назначения роли для пользователя в области группы ресурсов
+#### <a name="assign-a-role-for-a-user-at-a-resource-group-scope"></a>Назначение роли для пользователя в области группы ресурсов
 
 Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) пользователю *патлонг \@ contoso.com* в области группы ресурсов *Pharma-Sales* .
 
@@ -297,7 +297,7 @@ ObjectType         : User
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Добавление назначения ролей для пользователя с помощью уникального идентификатора роли в области группы ресурсов
+#### <a name="assign-a-role-for-a-user-using-the-unique-role-id-at-a-resource-group-scope"></a>Назначение роли для пользователя с помощью уникального идентификатора роли в области группы ресурсов
 
 Существует несколько случаев, когда имя роли может измениться, например:
 
@@ -324,7 +324,7 @@ ObjectType         : User
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-an-application-at-a-resource-group-scope"></a>Добавление назначения ролей для приложения в области группы ресурсов
+#### <a name="assign-a-role-for-an-application-at-a-resource-group-scope"></a>Назначение роли для приложения в области группы ресурсов
 
 Назначает роль [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) приложению с идентификатором объекта субъекта-службы 77777777-7777-7777-7777-777777777777 в области группы ресурсов *Pharma — Sales* .
 
@@ -344,7 +344,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-at-a-subscription-scope"></a>Добавление назначения ролей для пользователя в области подписки
+#### <a name="assign-a-role-for-a-user-at-a-subscription-scope"></a>Назначение роли для пользователя в области действия подписки
 
 Назначает роль [читателя](built-in-roles.md#reader) пользователю *аннм \@ example.com* в области действия подписки.
 
@@ -364,7 +364,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-#### <a name="add-role-assignment-for-a-user-at-a-management-group-scope"></a>Добавление назначения ролей для пользователя в области группы управления
+#### <a name="assign-a-role-for-a-user-at-a-management-group-scope"></a>Назначение роли для пользователя в области группы управления
 
 Назначает роль [читателя выставления счетов](built-in-roles.md#billing-reader) пользователю *(Alain \@ example.com* в области группы управления.
 
@@ -383,36 +383,6 @@ ObjectId           : 44444444-4444-4444-4444-444444444444
 ObjectType         : User
 CanDelegate        : False
 ```
-
-## <a name="remove-a-role-assignment"></a>Удаление назначения ролей
-
-Чтобы удалить доступ в Azure RBAC, необходимо удалить назначение роли с помощью [Remove-азролеассигнмент](/powershell/module/az.resources/remove-azroleassignment).
-
-В следующем примере удаляется назначение роли [участника виртуальной машины](built-in-roles.md#virtual-machine-contributor) из пользователя *патлонг \@ contoso.com* в группе ресурсов *Pharma-Sales* .
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -SignInName patlong@contoso.com `
--RoleDefinitionName "Virtual Machine Contributor" `
--ResourceGroupName pharma-sales
-```
-
-Удаляет роль [читателя](built-in-roles.md#reader) из группы группы *Анна Mack* с идентификатором 22222222-2222-2222-2222-222222222222 в области действия подписки.
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -ObjectId 22222222-2222-2222-2222-222222222222 `
--RoleDefinitionName "Reader" `
--Scope "/subscriptions/00000000-0000-0000-0000-000000000000"
-```
-
-Удаляет роль [читателя выставления счетов](built-in-roles.md#billing-reader) из пользователя *(Alain \@ example.com* в области группы управления.
-
-```azurepowershell
-PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com `
--RoleDefinitionName "Billing Reader" `
--Scope "/providers/Microsoft.Management/managementGroups/marketing-group"
-```
-
-При появление сообщения об ошибке "предоставленные сведения не сопоставляются с назначением ролей" убедитесь, что также указаны `-Scope` `-ResourceGroupName` Параметры или. Дополнительные сведения см. в разделе [Устранение неполадок в Azure RBAC](troubleshooting.md#role-assignments-with-identity-not-found).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

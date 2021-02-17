@@ -13,12 +13,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: fdaaf935dc458a6a5b2a87a81bb98a1392f1034a
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: bd6acc5d3b7cd6e88b56e4a922e777adca031538
+ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012127"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100102569"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
@@ -42,7 +42,7 @@ ms.locfileid: "98012127"
 
 После регистрации клиентского приложения и веб-API и предоставления API путем создания областей можно настроить клиентские разрешения для API, выполнив следующие действия.
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, содержащий регистрацию клиентского приложения.
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем выберите свое клиентское приложение (а *не* свой веб-API).
 1. Выберите **Разрешения API** > **Добавить разрешение** > **Мои API**.
@@ -71,7 +71,7 @@ ms.locfileid: "98012127"
 
 Настройте делегированное разрешение для Microsoft Graph, чтобы разрешить клиентскому приложению выполнять операции от имени вошедшего в систему пользователя, например читать электронную почту или изменять профиль. По умолчанию у пользователя клиентского приложения при входе в систему запрашивается согласие на делегированные разрешения, которые вы настроили для него.
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, содержащий регистрацию клиентского приложения.
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем выберите свое клиентское приложение.
 1. Выберите **Разрешения API** > **Добавить разрешение** > **Microsoft Graph**
@@ -96,7 +96,7 @@ ms.locfileid: "98012127"
 
 В последующих шагах в качестве примера вы предоставляете разрешение *Files.Read.All* Microsoft Graph.
 
-1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, содержащий регистрацию клиентского приложения.
 1. Выберите **Azure Active Directory** > **Регистрация приложений**, а затем выберите свое клиентское приложение.
 1. Выберите **Разрешения API** > **Добавить разрешение** > **Microsoft Graph** > **Разрешения приложения**.

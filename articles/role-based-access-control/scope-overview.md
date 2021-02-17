@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 10/08/2020
 ms.author: rolyon
-ms.openlocfilehash: ad906e3665c6ffc354cf6292c2559d1184037594
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: deee42c46c9b08bb265c972695b9319413d4fcb1
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91856162"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555914"
 ---
 # <a name="understand-scope-for-azure-rbac"></a>Общие сведения об области для Azure RBAC
 
@@ -32,7 +32,7 @@ ms.locfileid: "91856162"
 
 ## <a name="scope-format"></a>Формат области
 
-При добавлении назначений ролей с помощью командной строки необходимо указать область. Для программ командной строки область является потенциально длинной строкой, определяющей точную область назначения роли. В портал Azure эта область обычно указывается как *идентификатор ресурса*.
+При назначении ролей с помощью командной строки необходимо указать область. Для программ командной строки область является потенциально длинной строкой, определяющей точную область назначения роли. В портал Azure эта область обычно указывается как *идентификатор ресурса*.
 
 Область состоит из последовательности идентификаторов, разделенных символом косой черты (/). Эту строку можно представить как выражение следующей иерархии, где текстом без заполнителей (`{}`) являются фиксированные идентификаторы:
 
@@ -120,8 +120,8 @@ ms.locfileid: "91856162"
       }
     ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
-- [Шаги для добавления назначения роли](role-assignments-steps.md)
+- [Действия по назначению роли Azure](role-assignments-steps.md)
 - [Поставщики ресурсов для служб Azure](../azure-resource-manager/management/azure-services-resource-providers.md)
 - [Что такое группы управления Azure?](../governance/management-groups/overview.md)

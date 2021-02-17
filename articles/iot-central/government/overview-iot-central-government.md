@@ -1,5 +1,5 @@
 ---
-title: Создание решений для государственных организаций с помощью Azure IoT Central
+title: Что собой представляют решения для государственных организаций в Azure IoT Central
 description: Сведения о создании решений для интеллектуальных городов с помощью шаблонов приложений Azure IoT Central.
 author: miriambrus
 ms.author: miriamb
@@ -7,14 +7,14 @@ ms.date: 12/11/2020
 ms.topic: overview
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 72b0e3c3cee0ed9131fe6ee1f50cee10ec03a7b7
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: a903622f698107f7f1a593946f083fca1573d53e
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590823"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99834346"
 ---
-# <a name="building-government-solutions-with-azure-iot-central"></a>Создание решений для государственных организаций с помощью Azure IoT Central
+# <a name="what-are-the-iot-central-government-solutions"></a>Что собой представляют решения для государственных организаций в IoT Central?
 
 Начните создавать решения для "интеллектуальных городов", используя шаблоны приложений Azure IoT Central. Начните сейчас с решений для **мониторинга качества воды**, **мониторинга потребления воды** и **интерактивного управления отходами**.
 
@@ -71,8 +71,6 @@ ms.locfileid: "97590823"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Воспользуйтесь одним из шаблонов приложения для государственных организаций в IoT Central, чтобы бесплатно [создать приложение](https://apps.azureiotcentral.com/build/government).
 * [Эталонная архитектура решения для мониторинга качества воды](./concepts-waterqualitymonitoring-architecture.md)
 * [Эталонная архитектура решения для мониторинга потребления воды](./concepts-waterconsumptionmonitoring-architecture.md)
 * [Эталонная архитектура решения для интеллектуального мониторинга отходов](./concepts-connectedwastemanagement-architecture.md)  
-* [Общие сведения об IoT Central](../core/overview-iot-central.md)
