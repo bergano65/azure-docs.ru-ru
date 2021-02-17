@@ -5,15 +5,15 @@ services: storsimple
 author: alkohli
 ms.service: storsimple
 ms.topic: include
-ms.date: 06/08/2018
+ms.date: 02/09/2021
 ms.author: alkohli
 ms.custom: include file
-ms.openlocfilehash: 30bbd06e36ed1e03caa391165a8abc275f1899a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 386a39d76bf47da45f07054124886e174104849e
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87102946"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545413"
 ---
 Чтобы удалить контейнер томов, нужно
  - удалить тома в контейнере томов. Если с контейнером связаны тома, сначала потребуется перевести их в автономный режим. Следуйте указаниям по [отключению тома](../articles/storsimple/storsimple-8000-manage-volumes-u2.md#take-a-volume-offline). После перевода томов в автономный режим их можно удалить. 
@@ -22,20 +22,19 @@ ms.locfileid: "87102946"
 Если с контейнером томов не связаны тома, политики резервного копирования и облачные моментальные снимки, его можно удалить. Чтобы удалить контейнер томов, выполните следующую процедуру.
 
 #### <a name="to-delete-a-volume-container"></a>Удаление контейнера томов
+
 1. В службе диспетчера устройств StorSimple выберите **Устройства**. Выберите устройство, а затем щелкните **Параметры > Управление > Контейнеры томов**.
 
-    ![Колонка "Контейнеры томов"](./media/storsimple-8000-create-volume-container/createvolumecontainer2.png)
+    ![Колонка "Контейнеры томов"](./media/storsimple-8000-delete-volume-container/create-volume-container.png)
 
 2. В таблице со списком контейнеров томов выберите тот, который требуется удалить. Щелкните правой кнопкой мыши **...**, а затем выберите **Удалить**.
 
-    ![Удаление контейнера томов](./media/storsimple-8000-delete-volume-container/deletevolumecontainer1.png)
+    ![Удаление контейнера томов](./media/storsimple-8000-delete-volume-container/delete-volume-container-01.png)
 
 3. Если с контейнером томов не связаны тома, политики резервного копирования и облачные моментальные снимки, то его можно удалить. При появлении запроса на подтверждение просмотрите уведомление и установите флажок с указанием влияния удаления контейнера томов. Щелкните **Удалить** для удаления контейнера томов.
 
-    ![Подтверждение удаления](./media/storsimple-8000-delete-volume-container/deletevolumecontainer2.png)
+    ![Подтверждение удаления](./media/storsimple-8000-delete-volume-container/delete-volume-container-02.png)
 
 Список контейнеров томов будет обновлен с учетом удаленного контейнера томов.
 
-![Снимок экрана со страницей контейнера томов. Табличный список контейнеров томов больше не содержит удаленный контейнер.](./media/storsimple-8000-delete-volume-container/deletevolumecontainer5.png)
-
-
+![Снимок экрана со страницей контейнера томов. Табличный список контейнеров томов больше не содержит удаленный контейнер.](./media/storsimple-8000-delete-volume-container/delete-volume-container-05.png)

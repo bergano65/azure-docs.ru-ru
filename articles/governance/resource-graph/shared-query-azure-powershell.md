@@ -4,12 +4,12 @@ description: В этом кратком руководстве показано,
 ms.date: 01/11/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: d7efc02cad3aaa67c639a319f1a7bb455d6e04b0
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 2b771253b1dea4bd1d2913bf7c48062112019a19
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98128085"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99981550"
 ---
 # <a name="quickstart-create-a-resource-graph-shared-query-using-azure-powershell"></a>Краткое руководство. Создание общего запроса к Resource Graph с помощью Azure PowerShell
 
@@ -36,7 +36,7 @@ ms.locfileid: "98128085"
 
 ## <a name="create-a-resource-graph-shared-query"></a>Создание общего запроса к Resource Graph
 
-Теперь, когда модуль `Az.ResourceGraph` PowerShell добавлен в выбранную среду, создадим общий запрос к Resource Graph. Общий запрос представляет собой объект Azure Resource Manager, которому можно предоставить разрешения на доступ к обозревателю Azure Resource Graph или на выполнение в нем. Этот запрос вычисляет общее количество ресурсов с группировкой по _расположению_.
+Теперь, когда модуль **Az.ResourceGraph** PowerShell добавлен в выбранную среду, создадим общий запрос к Resource Graph. Общий запрос представляет собой объект Azure Resource Manager, которому можно предоставить разрешения на доступ к обозревателю Azure Resource Graph или на выполнение в нем. Этот запрос вычисляет общее количество ресурсов с группировкой по _расположению_.
 
 1. Создайте группу ресурсов с помощью командлета [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup), чтобы сохранить общий запрос к Azure Resource Graph. Эта группа ресурсов имеет имя `resource-graph-queries` и расположение `westus2`.
 
@@ -47,7 +47,7 @@ ms.locfileid: "98128085"
    New-AzResourceGroup -Name resource-graph-queries -Location westus2
    ```
 
-1. Создайте общий запрос к Azure Resource Graph с помощью модуля `Az.ResourceGraph` PowerShell и командлета [New-AzResourceGraphQuery](/powershell/module/az.resourcegraph/new-azresourcegraphquery).
+1. Создайте общий запрос к Azure Resource Graph с помощью модуля **Az.ResourceGraph** PowerShell и командлета [New-AzResourceGraphQuery](/powershell/module/az.resourcegraph/new-azresourcegraphquery):
 
    ```azurepowershell-interactive
    # Create the Azure Resource Graph shared query
@@ -80,7 +80,7 @@ ms.locfileid: "98128085"
 Чтобы удалить общий запрос к Resource Graph и группу ресурсов из среды Azure, воспользуйтесь следующими командами:
 
 - [Remove-AzResourceGraphQuery](/powershell/module/az.resourcegraph/remove-azresourcegraphquery)
-- [Remove-AzResourceGroup](/cli/azure/group#az_group_delete)
+- [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup)
 
 ```azurepowershell-interactive
 # Delete the Azure Resource Graph shared query

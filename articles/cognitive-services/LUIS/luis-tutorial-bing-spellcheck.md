@@ -9,18 +9,41 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 01/12/2021
-ms.openlocfilehash: f416fe8ef4f6e89d07e6065d4c9435642d9bacb9
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ef9cb083c9bbe6eae5c34cd3799debde771231b6
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179645"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100558222"
 ---
-# <a name="correct-misspelled-words-with-bing-search-resource"></a>Исправление слов с ошибками в Поиск Bing ресурсе
+# <a name="correct-misspelled-words-with-bing-resource"></a>Исправление слов с ошибками в ресурсе Bing
 
-Приложение LUIS можно интегрировать с [Поиск Bing](https://ms.portal.azure.com/#create/Microsoft.BingSearch) , чтобы исправить слова с ошибками в фразы продолжительностью перед тем, как Luis прогнозирует оценку и сущности utterance.
+API прогнозирования версии 3 теперь поддерживает [API Bing для проверки орфографии](https://docs.microsoft.com/bing/search-apis/bing-spell-check/overview). Добавьте проверку орфографии в приложение, включив ключ к ресурсу поиска Bing в заголовке запросов. Вы можете использовать существующий ресурс Bing, если вы уже являетесь его владельцем, или [создать новый](https://portal.azure.com/#create/Microsoft.BingSearch) , чтобы использовать эту функцию. 
 
-## <a name="create-endpoint-key"></a>Создание ключа конечной точки
+Пример результата прогнозирования для запроса с ошибками:
+
+```json
+{
+  "query": "bouk me a fliht to kayro",
+  "prediction": {
+    "alteredQuery": "book me a flight to cairo",
+    "topIntent": "book a flight",
+    "intents": {
+      "book a flight": {
+        "score": 0.9480589
+      }
+      "None": {
+        "score": 0.0332136229
+      }
+    },
+    "entities": {}
+  }
+}
+```
+
+Исправления для проверки орфографии выполняются до прогнозирования utterance пользователя LUIS. В ответе можно увидеть любые изменения в исходном utterance, включая проверку орфографии.
+
+## <a name="create-bing-search-resource"></a>Создание Поиск Bing ресурса
 
 Чтобы создать Поиск Bing ресурс в портал Azure, выполните следующие действия.
 
@@ -32,7 +55,8 @@ ms.locfileid: "98179645"
 
 4. Справа появится информационная панель, содержащая сведения, включая юридическое уведомление. Выберите **Создать**, чтобы начать процесс создания подписки.
 
-    :::image type="content" source="./media/luis-tutorial-bing-spellcheck/bing-search-resource-portal.png" alt-text="Ресурс API Bing для проверки орфографии версии 7":::
+> [!div class="mx-imgBorder"]
+> ![Ресурс API Bing для проверки орфографии версии 7](./media/luis-tutorial-bing-spellcheck/bing-search-resource-portal.png)
 
 5. На следующей панели введите параметры службы. Дождитесь завершения процесса создания службы.
 
@@ -40,15 +64,23 @@ ms.locfileid: "98179645"
 
 7. Скопируйте один из ключей, которые будут добавлены в заголовок прогнозирующего запроса. Вам потребуется только один из двух ключей.
 
-8. Добавьте ключ в `mkt-bing-spell-check-key` заголовок прогнозирующего запроса.
-
 <!--
 ## Using the key in LUIS test panel
 There are two places in LUIS to use the key. The first is in the [test panel](luis-interactive-test.md#view-bing-spell-check-corrections-in-test-panel). The key isn't saved into LUIS but instead is a session variable. You need to set the key every time you want the test panel to apply the Bing Spell Check API v7 service to the utterance. See [instructions](luis-interactive-test.md#view-bing-spell-check-corrections-in-test-panel) in the test panel for setting the key.
 -->
+## <a name="enable-spell-check-from-ui"></a>Включить проверку орфографии в пользовательском интерфейсе 
+Вы можете включить функцию проверкой орфографии для примера запроса с помощью [портала Luis](https://www.luis.ai). Выберите **Управление** в верхней части экрана, а **ресурсы Azure** — в левой области навигации. После привязки к приложению прогнозирующего ресурса можно выбрать **параметр изменить параметры запроса** в нижней части страницы и вставить ключ ресурса в поле **включить проверку орфографии** .
+    
+   > [!div class="mx-imgBorder"]
+   > ![Включить проверку орфографии](./media/luis-tutorial-bing-spellcheck/spellcheck-query-params.png)
+
+
 ## <a name="adding-the-key-to-the-endpoint-url"></a>Добавление ключа в URL-адрес конечной точки
 Для каждого запроса, для которого необходимо применить исправление орфографии, запросу конечной точки требуется ключ ресурса Bing проверки орфографии, переданный в параметре заголовка запроса. Можно настроить чат-бот, вызывающий LUIS, или вызывать API конечной точки LUIS напрямую. Независимо от того, как вызывается конечная точка, каждый и каждый вызов должен включать в запрос заголовка необходимые сведения для правильной работы исправлений правописания. Значение ключа необходимо задать с помощью **МКТ-Bing-правописания-Check-Key** .
 
+|Ключ заголовка|Значение заголовка|
+|--|--|
+|`mkt-bing-spell-check-key`|Ключи, найденные в колонке " **ключи и конечная точка** " вашего ресурса|
 
 ## <a name="send-misspelled-utterance-to-luis"></a>Отправка фрагментов речи с орфографическими ошибками в LUIS
 1. Добавьте в прогнозирующий запрос с ошибкой utterance, который будет отправляться, например "насколько далеко маунтаинн?". В английском языке правильное написание `mountain` — с одной буквой `n`.

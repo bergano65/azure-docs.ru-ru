@@ -7,12 +7,12 @@ ms.service: mysql
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/19/2020
-ms.openlocfilehash: 0e7fcf51d9c663ca4a289f54972f00ef037cb323
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 983bda94af9b8595bfb3ce24b7437a35db70efe8
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542275"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100098560"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mysql-server"></a>Краткое руководство. Создание сервера базы данных Azure для MySQL с помощью шаблона Resource Manager
 
@@ -180,6 +180,23 @@ az resource show --resource-group $resourcegroupName --name $serverName --resour
 ```
 
 ---
+
+## <a name="exporting-arm-template-from-the-portal"></a>Экспорт шаблона ARM с портала
+Вы можете [экспортировать шаблон ARM](../azure-resource-manager/templates/export-template-portal.md) с портала Azure. Шаблон можно экспортировать двумя способами:
+
+- [Экспорт из группы ресурсов или ресурса.](../azure-resource-manager/templates/export-template-portal.md#export-template-from-a-resource) В этом варианте создается новый шаблон из существующих ресурсов. Экспортированный шаблон — это "моментальный снимок" текущего состояния группы ресурсов. Вы можете экспортировать всю группу ресурсов или определенные ресурсы в ней.
+- [Экспорт до развертывания или из журнала.](../azure-resource-manager/templates/export-template-portal.md#export-template-before-deployment) В этом варианте выполняется получение точной копии шаблона, используемой для развертывания.
+
+При экспорте шаблона в разделе ```"parameters":{ }``` шаблона вы увидите, что ```administratorLogin``` и ```administratorLoginPassword``` не включены по соображениям безопасности. **ОБЯЗАТЕЛЬНО** добавьте эти параметры в свой шаблон, прежде чем развертывать его. В противном случае возникнет ошибка шаблона.
+
+```json
+"administratorLogin": {
+      "type": "String"
+    },
+"administratorLoginPassword": {
+      "type": "SecureString"
+    },  
+```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

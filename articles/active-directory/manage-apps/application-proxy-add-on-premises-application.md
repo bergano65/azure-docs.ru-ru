@@ -1,5 +1,5 @@
 ---
-title: Учебник. Добавление локального приложения с помощью прокси приложения в Azure AD
+title: Учебник. Добавление локального приложения с помощью Application Proxy в Azure Active Directory
 description: Azure Active Directory (Azure AD) содержит службу прокси приложения, которая позволяет пользователям получать доступ к локальным приложениям при входе с использованием своей учетной записи Azure AD. В этом учебнике описано, как подготовить среду для использования с Application Proxy. Затем используется портал Azure для добавления локального приложения в клиент Azure AD.
 services: active-directory
 author: kenwith
@@ -8,22 +8,26 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/20/2021
+ms.date: 02/09/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: contperf-fy21q3
-ms.openlocfilehash: 04b3dd51aab9686d102b6b94324f89396a268e7d
-ms.sourcegitcommit: d49bd223e44ade094264b4c58f7192a57729bada
+ms.custom: contperf-fy21q3-portal
+ms.openlocfilehash: 6bd44ea0217f11a156598a1a6f3703e528dd82d4
+ms.sourcegitcommit: 24f30b1e8bb797e1609b1c8300871d2391a59ac2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/02/2021
-ms.locfileid: "99260084"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "100095177"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Руководство по Добавление локального приложения для удаленного доступа через Application Proxy в Azure Active Directory
 
-Azure Active Directory (Azure AD) содержит службу прокси приложения, которая позволяет пользователям получать доступ к локальным приложениям при входе с использованием своей учетной записи Azure AD. В руководстве подготавливается среда для использования с прокси приложения. После подготовки среды вы будете использовать портал Azure для добавления локального приложения в свой клиент Azure AD.
+Azure Active Directory (Azure AD) содержит службу прокси приложения, которая позволяет пользователям получать доступ к локальным приложениям при входе с использованием своей учетной записи Azure AD. Дополнительные сведения об Application Proxy см. в [этой статье](what-is-application-proxy.md). В руководстве подготавливается среда для использования с прокси приложения. После подготовки среды вы будете использовать портал Azure для добавления локального приложения в свой клиент Azure AD. 
 
 :::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Экран &quot;Обзорная схема Application Proxy&quot;" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
+
+Прежде чем приступить к работе, ознакомьтесь с концепциями управления приложениями и **единого входа**. Ознакомьтесь со следующими ресурсами:
+- [Цикл кратких руководств по управлению приложениями в Azure AD](view-applications-portal.md)
+- [Что собой представляет единый вход?](what-is-single-sign-on.md)
 
 Соединители являются важной составляющей Application Proxy. Дополнительные сведения о соединителях см. в статье [Сведения о соединителях Application Proxy Azure AD](application-proxy-connectors.md).
 

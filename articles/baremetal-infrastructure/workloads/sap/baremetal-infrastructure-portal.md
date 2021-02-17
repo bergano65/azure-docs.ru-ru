@@ -2,13 +2,13 @@
 title: Единицы экземпляра BareMetal в Azure
 description: Узнайте, как обнаруживать единицы экземпляра BareMetal и взаимодействовать с ними с помощью портал Azure.
 ms.topic: how-to
-ms.date: 1/4/2021
-ms.openlocfilehash: b089b45c35ff05f10ae59f8ce793645361be1e9b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 02/17/2021
+ms.openlocfilehash: 076e84473a7d067712625dd12a2d5cae42bfa91a
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733269"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548171"
 ---
 # <a name="manage-baremetal-instances-through-the-azure-portal"></a>Управление экземплярами BareMetal на портале Azure
  
@@ -17,25 +17,9 @@ ms.locfileid: "98733269"
 ## <a name="register-the-resource-provider"></a>Регистрация поставщика ресурсов
 Поставщик ресурсов Azure для экземпляров BareMetal обеспечивает видимость экземпляров в портал Azure, в настоящее время в общедоступной предварительной версии. По умолчанию в подписке Azure, используемой для развертываний экземпляров BareMetal, регистрируется поставщик ресурсов *бареметалинфраструктуре* . Если вы не видите развернутых единиц экземпляра BareMetal, необходимо зарегистрировать поставщик ресурсов в подписке. 
 
-Существует два способа регистрации поставщика ресурсов экземпляра BareMetal.
- 
-* [Azure CLI](#azure-cli)
- 
-* [Портал Azure](#azure-portal)
- 
-### <a name="azure-cli"></a>Azure CLI
- 
-Войдите в подписку Azure, которая используется для развертывания экземпляра BareMetal, с помощью Azure CLI. Поставщик ресурсов Бареметалинфраструктуре можно зарегистрировать с помощью:
+Поставщик ресурсов экземпляра BareMetal можно зарегистрировать с помощью портал Azure или Azure CLI.
 
-```azurecli-interactive
-az provider register --namespace Microsoft.BareMetalInfrastructure
-```
- 
-Дополнительные сведения см. в статье [поставщики и типы ресурсов Azure](../../../azure-resource-manager/management/resource-providers-and-types.md#azure-powershell).
- 
-### <a name="azure-portal"></a>Портал Azure
- 
-Поставщик ресурсов Бареметалинфраструктуре можно зарегистрировать с помощью портал Azure.
+### <a name="portal"></a>[Портал](#tab/azure-portal)
  
 Вам потребуется получить список подписок в портал Azure а затем дважды щелкнуть подписку, используемую для развертывания единиц экземпляра BareMetal.
  
@@ -53,12 +37,32 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
 >Если поставщик ресурсов не зарегистрирован, выберите **Зарегистрировать**.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/register-resource-provider-azure-portal.png" alt-text="Снимок экрана, на котором показана зарегистрированная единица экземпляра BareMetal":::
- 
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Начало использования Azure CLI:
+
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+Войдите в подписку Azure, которая используется для развертывания экземпляра BareMetal, с помощью Azure CLI. Зарегистрируйте `BareMetalInfrastructure` поставщик ресурсов с помощью команды [AZ Provider Register](/cli/azure/provider#az_provider_register) :
+
+```azurecli
+az provider register --namespace Microsoft.BareMetalInfrastructure
+```
+
+Для просмотра всех доступных поставщиков можно использовать команду [AZ Provider List](/cli/azure/provider#az_provider_list) .
+
+---
+
+Дополнительные сведения о поставщиках ресурсов см. в статье [поставщики и типы ресурсов Azure](../../../azure-resource-manager/management/resource-providers-and-types.md).
+
 ## <a name="baremetal-instance-units-in-the-azure-portal"></a>Единицы экземпляра BareMetal в портал Azure
  
 При отправке запроса на развертывание экземпляра BareMetal вы указываете подписку Azure, которую вы подключаете к экземплярам BareMetal. Используйте ту же подписку, которая используется для развертывания уровня приложения, который работает с единицами экземпляра BareMetal.
  
 Во время развертывания экземпляров BareMetal Новая [Группа ресурсов Azure](../../../azure-resource-manager/management/manage-resources-portal.md) создается в подписке Azure, которая использовалась в запросе на развертывание. В этой новой группе ресурсов перечислены все единицы экземпляра BareMetal, развернутые в конкретной подписке.
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
 
 1. В подписке BareMetal в портал Azure выберите **группы ресурсов**.
  
@@ -75,10 +79,27 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
    
    >[!NOTE]
    >Если вы развернули несколько клиентов экземпляра BareMetal в одной подписке Azure, вы увидите несколько групп ресурсов Azure.
- 
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы просмотреть все экземпляры BareMetal, выполните команду [AZ бареметалинстанце List](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_list) для группы ресурсов:
+
+```azurecli
+az baremetalinstance list --resource-group DSM05A-T550 –output table
+```
+
+> [!TIP]
+> Параметр `--output` является глобальным, то есть доступным для всех команд. Значение **table** позволяет получить выходные данные в удобном формате. Дополнительные сведения см. в статье [Форматы выходных данных для команд Azure CLI](/cli/azure/format-output-azure-cli).
+
+---
+
 ## <a name="view-the-attributes-of-a-single-instance"></a>Просмотр атрибутов одного экземпляра
- 
-Вы можете просмотреть сведения об одном единице. В списке экземпляра BareMetal выберите единственный экземпляр, который необходимо просмотреть.
+
+Вы можете просмотреть сведения об одном единице.
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
+В списке экземпляра BareMetal выберите единственный экземпляр, который необходимо просмотреть.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/view-attributes-single-baremetal-instance.png" alt-text="Снимок экрана, на котором показаны атрибуты единицы экземпляра BareMetal одного экземпляра" lightbox="media/baremetal-infrastructure-portal/view-attributes-single-baremetal-instance.png":::
  
@@ -101,6 +122,18 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
  
 >[!TIP]
 >Чтобы найти слой приложения в том же центре обработки данных Azure, что и версия 4. x, см. раздел [группы размещения службы "близость" для оптимальной сетевой задержки](../../../virtual-machines/workloads/sap/sap-proximity-placement-scenarios.md).
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы просмотреть сведения об экземпляре BareMetal, выполните команду [AZ бареметалинстанце Показать](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_show) :
+
+```azurecli
+az baremetalinstance show --resource-group DSM05A-T550 --instance-name orcllabdsm01
+```
+
+Если имя экземпляра не определено, выполните `az baremetalinstance list` команду, описанную выше.
+
+---
  
 ## <a name="check-activities-of-a-single-instance"></a>Проверка активности одного экземпляра
  
@@ -113,11 +146,31 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
 Другое записываемое действие — это добавление или удаление [тега](../../../azure-resource-manager/management/tag-resources.md) в экземпляре.
  
 ## <a name="add-and-delete-an-azure-tag-to-an-instance"></a>Добавление и удаление тега Azure в экземпляре
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
  
 Вы можете добавить теги Azure в единицу экземпляра BareMetal или удалить их. Способ назначения тегов не отличается от назначения тегов для виртуальных машин. Как и в случае с виртуальными машинами, Теги существуют в метаданных Azure, а для экземпляров BareMetal они имеют те же ограничения, что и теги для виртуальных машин.
  
 Удаление тегов работает так же, как с виртуальными машинами. Применение и удаление тега перечислены в журнале действий единицы экземпляра BareMetal.
- 
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Назначение тегов для экземпляров BareMetal выполняется так же, как и для виртуальных машин. Теги существуют в метаданных Azure, а для экземпляров BareMetal они имеют те же ограничения, что и теги для виртуальных машин.
+
+Чтобы добавить теги в единицу экземпляра BareMetal, выполните команду [AZ бареметалинстанце Update](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_update) :
+
+```azurecli
+az baremetalinstance update --resource-group DSM05a-T550 --instance-name orcllabdsm01 --set tags.Dept=Finance tags.Status=Normal
+```
+
+Для удаления тега используйте ту же команду:
+
+```azurecli
+az baremetalinstance update --resource-group DSM05a-T550 --instance-name orcllabdsm01 --remove tags.Dept
+```
+
+---
+
 ## <a name="check-properties-of-an-instance"></a>Проверка свойств экземпляра
  
 При получении экземпляров можно перейти к разделу свойства, чтобы просмотреть данные, собранные об экземплярах. Собранные данные включают в себя подключение Azure, серверную часть хранилища, идентификатор цепи ExpressRoute, уникальный идентификатор ресурса и идентификатор подписки. Эти сведения будут использоваться в запросах на поддержку или при настройке конфигурации моментальных снимков хранилища.
@@ -127,15 +180,29 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
 :::image type="content" source="media/baremetal-infrastructure-portal/baremetal-instance-properties.png" alt-text="Снимок экрана, на котором показаны параметры свойства экземпляра BareMetal" lightbox="media/baremetal-infrastructure-portal/baremetal-instance-properties.png":::
  
 ## <a name="restart-a-unit-through-the-azure-portal"></a>Перезапустите модуль с помощью портал Azure
- 
-Существуют различные ситуации, когда ОС не завершает перезагрузку, что требует перезапуска блока BareMetal экземпляра. Вы можете выполнить перезагрузку блока питания непосредственно из портал Azure:
+
+Существуют различные ситуации, когда ОС не завершает перезагрузку, что требует перезапуска блока BareMetal экземпляра.
+
+### <a name="portal"></a>[Портал](#tab/azure-portal)
+
+Вы можете выполнить перезагрузку блока питания непосредственно из портал Azure:
  
 Выберите **перезапустить** , а затем **Да** , чтобы подтвердить перезагрузку единицы измерения.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/baremetal-instance-restart.png" alt-text="Снимок экрана, показывающий, как перезапустить единицу экземпляра BareMetal":::
  
 При перезапуске единицы экземпляра BareMetal возникает задержка. В течение этой задержки состояние электропитания перемещается с **начала** до **начала**, что означает, что ОС полностью запущена. В результате после перезагрузки вы не сможете войти в модуль, как только начнется переход в состояние " **запущено**".
- 
+
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+
+Чтобы перезапустить единицу экземпляра BareMetal, используйте команду [AZ бареметалинстанце Restart](/cli/azure/ext/baremetal-infrastructure/baremetalinstance#ext_baremetal_infrastructure_az_baremetalinstance_restart) :
+
+```azurecli
+az baremetalinstance restart --resource-group DSM05a-T550 --instance-name orcllabdsm01
+```
+
+---
+
 >[!IMPORTANT]
 >В зависимости от объема памяти в единице экземпляра BareMetal перезапуск и перезагрузка оборудования и операционной системы могут занять до одного часа.
  
@@ -170,6 +237,6 @@ az provider register --namespace Microsoft.BareMetalInfrastructure
  
 Для подтверждения вашего запроса специалистом службы поддержки требуется до пяти рабочих дней.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы хотите узнать больше о рабочих нагрузках, см. раздел [типы рабочих нагрузок BareMetal](../../../virtual-machines/workloads/sap/get-started.md).

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
 manager: abjork
-ms.openlocfilehash: a95f1befcdc9b59293eb97330ba7ceae3034a74b
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: d9b5af45ab9a1003cc25e8b1ea2059b83bc715c4
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516768"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833309"
 ---
 # <a name="tutorial-create-and-walk-through-the-smart-meter-monitoring-app-template"></a>Руководство по Создание и пошаговое руководство по шаблону приложения "умных счетчиков" 
 
@@ -102,8 +102,7 @@ Adatum — это вымышленная компания, которая от�
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об архитектуре приложений "умных счетчиков" 
+Дополнительные сведения об архитектуре приложений "умных счетчиков" см. в следующих ресурсах:
+
 > [!div class="nextstepaction"]
-> см. в статье [концепции](./concept-iot-central-smart-meter-app.md).
-* Бесплатное создание приложений "умных счетчиков" см. в разделе [Приложения "умных счетчиков"](https://apps.azureiotcentral.com/build/new/smart-meter-monitoring)
-* Дополнительные сведения об IoT Central, см. в разделе [Общие сведения об IoT Central](../index.yml).
+> [Архитектура приложения "умного счетчика"](./concept-iot-central-smart-meter-app.md)

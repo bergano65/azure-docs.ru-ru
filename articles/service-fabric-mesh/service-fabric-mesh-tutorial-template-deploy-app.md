@@ -6,14 +6,19 @@ ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: gwallace
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: 54ac7b27ada62a969dd40428fd9a753bb5a99530
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 589e881eb48daf7da9cd2a934b14acfcc76dc5f9
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499838"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625421"
 ---
 # <a name="tutorial-deploy-an-application-to-service-fabric-mesh-using-a-template"></a>Руководство. Развертывание приложения в Сетке Service Fabric с помощью шаблона
+
+> [!IMPORTANT]
+> Поддержка предварительной версии Сетки Azure Service Fabric была прекращена. Новые развертывания больше не будут разрешены через API Сетки Service Fabric. Поддержка существующих развертываний будет продолжена до 28 апреля 2021 г. включительно.
+> 
+> Дополнительные сведения см. в статье [Прекращение поддержки предварительной версии Сетки Azure Service Fabric](https://azure.microsoft.com/updates/azure-service-fabric-mesh-preview-retirement/).
 
 Это руководство представляет первую часть цикла. Вы узнаете, как развернуть приложение сетки Azure Service Fabric с помощью шаблона.  Приложение состоит из службы веб-интерфейса ASP.NET и службы серверной части веб-API ASP.NET Core, которые находятся в Docker Hub.  Вы извлечете образы двух контейнеров из Docker Hub и затем отправите их в свой частный реестр. Затем вы создадите шаблон Azure RM для приложения и развернете приложение из реестра контейнеров в Сетку Service Fabric. Когда вы закончите, у вас будет простое приложение списка дел в Сетке Service Fabric.
 

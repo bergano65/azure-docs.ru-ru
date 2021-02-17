@@ -12,15 +12,15 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.tgt_pltfrm: multiple
 ms.workload: na
-ms.date: 08/31/2020
+ms.date: 02/16/2021
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6f3c5fa41150f5df2b0e89c4253cb0bb55b1d625
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 3923394e76d5ce4001d3652ae9cbc263df08e4e2
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98955823"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100545621"
 ---
 # <a name="create-an-asset"></a>Создание ресурса
 
@@ -52,16 +52,12 @@ ms.locfileid: "98955823"
 
 [!INCLUDE [media-services-cli-instructions.md](./includes/task-create-asset-curl.md)]
 
-## <a name="using-postman"></a>Использование Postman
-
-[!INCLUDE[Create an asset with Postman](./includes/task-create-asset-postman.md)]
-
 ## <a name="net"></a>[.NET](#tab/net/)
 
 [!INCLUDE [media-services-cli-instructions.md](./includes/task-create-asset-dotnet.md)]
 
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)

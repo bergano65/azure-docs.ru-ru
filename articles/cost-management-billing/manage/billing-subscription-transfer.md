@@ -8,15 +8,15 @@ tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 01/06/2021
+ms.date: 02/05/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: ae588708a41c1259628b726a3a471034dba7d131
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 87f29395e716ad3f06a99d6243b080acf86e4310
+ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601535"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "99979439"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения на выставление счетов для подписки Azure другой учетной записи
 
@@ -80,7 +80,7 @@ ms.locfileid: "98601535"
 Чтобы отменить запрос на передачу, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com).
-1. Перейдите в раздел **Подписки**, выберите подписку, для которой вы отправили запрос на передачу, щелкните **Передача прав на выставление счетов**.
+1. Перейдите в раздел **Подписки**, выберите подписку, для которой вы отправили запрос на передачу, потом щелкните **Передача прав на выставление счетов**.
 1. В нижней части страницы выберите **Отменить запрос на передачу**.
 
 :::image type="content" source="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" alt-text="Пример: окно &quot;Передача прав на выставление счетов&quot; с параметром &quot;Отменить запрос на передачу&quot;" lightbox="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" :::
@@ -88,6 +88,20 @@ ms.locfileid: "98601535"
 ## <a name="troubleshooting"></a>Диагностика
 
 При возникновении проблем с передачей подписок воспользуйтесь приведенными ниже сведениями по устранению неполадок.
+
+### <a name="original-azure-subscription-billing-owner-leaves-your-organization"></a>Первоначальный владелец выставления счетов для подписки Azure уходит из вашей организации
+
+Возможно, первоначальный владелец выставления счетов, создавший учетную запись Azure и подписку Azure, ушел из вашей организации. В этом случае удостоверение пользователя больше не будет находиться в Azure Active Directory организации. У подписки Azure нет владельца выставления счетов. Это позволяет избежать выполнения операций выставления счетов, а также просмотра и оплаты счетов другими пользователями. Возможно, подписка переведена в состояние "Просрочена". Со временем подписка может быть отключена из-за неуплаты. В конечном итоге подписка может быть удалена, что повлияет на все службы, выполняющиеся в подписке.
+
+Если у подписки нет действующего владельца выставления счетов, Azure будет отправлять сообщение электронной почты другим владельцам выставления счетов, администраторам служб, соадминистраторам и владельцам подписки. В этом сообщении будет предоставлена ссылка для принятия прав собственности на выставление счетов за подписку. Перейти по ссылке, чтобы принять право владения выставлением счетов, может любой пользователь. Дополнительные сведения о ролях выставления счетов см. в разделах о [ролях выставления счетов,](understand-mca-roles.md) [классических ролях и ролях RBAC Azure](../../role-based-access-control/rbac-and-directory-admin-roles.md).
+
+Ниже вы можете увидеть пример такого сообщения электронной почты.
+
+:::image type="content" source="./media/billing-subscription-transfer/orphaned-subscription-email.png" alt-text="Снимок экрана: пример сообщения электронной почты для принятия владения выставлением счетов." lightbox="./media/billing-subscription-transfer/orphaned-subscription-email.png" :::
+
+Кроме того, в окне сведений о подписке на портале Azure для владельцев выставления счетов, администраторов служб, соадминистраторов и владельцев подписок будет показан баннер. Перейдите по ссылке в баннере, чтобы принять владение выставлением счетов.
+
+:::image type="content" source="./media/billing-subscription-transfer/orphaned-subscription-example.png" alt-text="Снимок экрана: пример подписки без действующего владельца выставления счетов." lightbox="./media/billing-subscription-transfer/orphaned-subscription-example.png" :::
 
 ### <a name="the-transfer-subscription-option-is-unavailable"></a>Действие "Перенос подписки" недоступно
 
