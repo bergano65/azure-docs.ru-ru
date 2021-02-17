@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 02/08/2021
+ms.date: 02/16/2021
 ms.author: memildin
-ms.openlocfilehash: 7034d1b5f06fcbcead79d85df10042eee3581b0b
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 0e1f669b6955d5c5b70f2f29ff39ba5aef0a9a56
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100369362"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100544822"
 ---
 # <a name="feature-coverage-for-machines"></a>Поддерживаемые функции для виртуальных машин
 
@@ -118,7 +118,7 @@ ms.locfileid: "100369362"
 |[Подключение учетной записи AWS](quickstart-onboard-aws.md) (1)|-|-|
 |[Подключение учетной записи GCP](quickstart-onboard-gcp.md) (1)|-|-|
 |[непрерывный экспорт.](continuous-export.md)|✔|✔ (2)|
-|[Автоматизация рабочих процессов](workflow-automation.md)|✔ (2)|✔|
+|[Автоматизация рабочих процессов](workflow-automation.md)|✔|✔|
 |[Правила исключения рекомендаций](exempt-resource.md)|-|-|
 |[Правила подавления оповещений](alerts-suppression-rules.md)|✔|✔|
 |[Отправки по электронной почте уведомлений об оповещениях системы безопасности](security-center-provide-security-contact-details.md)|✔|✔|
@@ -130,8 +130,8 @@ ms.locfileid: "100369362"
 |[Azure Defender для Resource Manager](defender-for-resource-manager-introduction.md)|-|-|
 |[Azure Defender для DNS](defender-for-dns-introduction.md)|-|-|
 |[Azure Defender для реестров контейнеров](defender-for-container-registries-introduction.md)|✔ (2)|✔ (2)|
-|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔ (2)|✔|
-|[Защита рабочих нагрузок Kubernetes](kubernetes-workload-protections.md)|-|-|
+|[Azure Defender для Kubernetes](defender-for-kubernetes-introduction.md)|✔|✔|
+|[Защита рабочих нагрузок Kubernetes](kubernetes-workload-protections.md)|✔|✔|
 |||
 
 (1) Требуется **Azure Defender для серверов**.

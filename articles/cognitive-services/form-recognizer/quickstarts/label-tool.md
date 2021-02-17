@@ -11,12 +11,12 @@ ms.date: 01/29/2021
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: Обработка документов
-ms.openlocfilehash: 0405ea116a1867ec75beff21637f18fb37565627
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: 9642f9ce51cd3eb90344f96bc099da7adea93022
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584725"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100364808"
 ---
 # <a name="train-a-form-recognizer-model-with-labels-using-the-sample-labeling-tool"></a>Обучение модели Распознавателя документов по примерам с метками с помощью средства маркировки данных
 
@@ -228,7 +228,7 @@ ms.locfileid: "99584725"
 При необходимости можно задать ожидаемый тип данных для каждого тега. Откройте контекстное меню справа от тега и выберите тип. Эта функция позволяет алгоритму обнаружения выполнять определенные предположения, которые улучшат точность обнаружения текста. Так обнаруженные значения гарантированно будут возвращены в стандартизованном формате в окончательных выходных данных JSON. Сведения о типе значения сохраняются в файле *fields.json* по тому же пути, что и файлы меток.
 
 > [!div class="mx-imgBorder"]
-> ![Выбор типа значения с помощью примера средства создания меток](../media/whats-new/formre-value-type.png)
+> ![Выбор типа значения с помощью примера средства создания меток](../media/whats-new/value-type.png)
 
 Сейчас поддерживаются следующие типы и разновидности значений:
 * `string`

@@ -1,5 +1,5 @@
 ---
-title: Создание решений для здравоохранения в Azure IoT Central | Документация Майкрософт
+title: Что собой представляют решения для здравоохранения в Azure IoT Central | Документация Майкрософт
 description: Сведения о создании решений для здравоохранения с помощью шаблонов приложений Azure IoT Central.
 author: philmea
 ms.author: philmea
@@ -8,16 +8,14 @@ ms.topic: overview
 ms.service: iot-central
 services: iot-central
 manager: eliotgra
-ms.openlocfilehash: 2aee5c56b267f9243b69a48dfd0f5f64196c5f23
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e8a72195f0fcacce2c994e8770157b05b65d70ee
+ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "77021497"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99833156"
 ---
-# <a name="building-healthcare-solutions-with-azure-iot-central"></a>Создание решений для здравоохранения с помощью Azure IoT Central 
-
-
+# <a name="what-are-the-iot-central-healthcare-solutions"></a>Что собой представляют решения для здравоохранения в IoT Central?
 
 Сведения о создании решений для здравоохранения с помощью шаблонов приложений в Azure IoT Central.
 

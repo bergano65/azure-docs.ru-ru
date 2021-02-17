@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: overview
 ms.date: 10/23/2020
-ms.openlocfilehash: 2dd60d1962734f7a4264587fd1b5b0d2a03c9ff0
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 37ba5fc7ce118e2e8532ea4db18634265aaacb64
+ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359750"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "99556860"
 ---
 # <a name="welcome-to-azure-cosmos-db"></a>Вас приветствует Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -46,7 +46,7 @@ Azure Cosmos DB является полностью управляемой ба
 - Создавайте приложения на основе API Core (SQL), используя нужный язык с пакетом SDK для .NET, Java, Node.js и Python или драйвер на ваш выбор для любого из других API базы данных.
 - Запустите аналитику без ETL для операционных данных, близких к реальному времени, хранящихся в Azure Cosmos DB, с помощью Azure Synapse Analytics.
 - Канал изменений упрощает отслеживание и администрирование изменений в контейнерах баз данных, а также создание активированных событий с помощью Функций Azure.
-- Служба для обработки данных без схемы Azure Cosmos DB автоматически индексирует все ваши данные, независимо от их модели, предоставляя невероятно быструю обработку запросов.
+- Служба для обработки данных без схемы Azure Cosmos DB автоматически индексирует все ваши данные, независимо от их модели, обеспечивая невероятно быструю обработку запросов.
 
 ### <a name="mission-critical-ready"></a>Критически важная доступность
 

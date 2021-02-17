@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: b239cf6d253c1c2d2e36d213e92e0b218add3f8c
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: dcd8222b46262f6ec70459ec670789ae4a433c1d
+ms.sourcegitcommit: 59cfed657839f41c36ccdf7dc2bee4535c920dd4
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94885994"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "99625270"
 ---
 # <a name="chat-client-library-overview"></a>Общие сведения о клиентской библиотеке для чата
 
@@ -53,6 +53,17 @@ ms.locfileid: "94885994"
 | Наблюдение        | Мониторинг использования с точки зрения отправленных сообщений                                                                               | ✔️   | ✔️  | ✔️    | ✔️  |
 |                    | Отслеживание качества и состояния запросов API, выполненных приложением, и настройка оповещений с помощью портала                                                          | ✔️   | ✔️  | ✔️    | ✔️  |
 |Дополнительные функции | Используйте [API-интерфейсы Cognitive Services](../../../cognitive-services/index.yml) вместе с клиентской библиотекой для чата, чтобы включить интеллектуальные функции — *перевод языка и анализ тональности входящего сообщения на клиенте, преобразование речи в текст для создания сообщения, пока участник разговаривает и т. д.*                                                                                         | ✔️   | ✔️  | ✔️    | ✔️  |
+
+## <a name="javascript-chat-client-library-support-by-os-and-browser"></a>Поддержка клиентской библиотеки чата JavaScript для ОС и браузера
+
+В следующей таблице представлен набор поддерживаемых браузеров и доступных в настоящее время версий.
+
+|                                  | Windows          | MacOS          | Ubuntu | Linux  | Android | iOS    | ОС iPad|
+| -------------------------------- | ---------------- | -------------- | ------- | ------ | ------ | ------ | -------|
+| **Клиентская библиотека чата** | Firefox *, Chrome*, новый Edge | Firefox *, Chrome*, Safari* | Chrome*  | Chrome* | Chrome* | Safari* | Safari* |
+
+
+* Обратите внимание, что поддерживается также последняя версия (кроме двух предыдущих выпусков).<br/>
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

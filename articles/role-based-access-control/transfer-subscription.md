@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 12/10/2020
 ms.author: rolyon
-ms.openlocfilehash: 81224b5e16f3bca5da641bbb2e9c82dd59000e79
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 5a4be6052e72c27ad83b5af64f1acb3ad8d4e3be
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185892"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100555903"
 ---
 # <a name="transfer-an-azure-subscription-to-a-different-azure-ad-directory"></a>Перенос подписки Azure в другой каталог Azure AD
 
@@ -307,9 +307,9 @@ ms.locfileid: "98185892"
     az role definition create --role-definition <role_definition>
     ```
 
-### <a name="create-role-assignments"></a>Создание назначений ролей
+### <a name="assign-roles"></a>Назначение ролей
 
-- Используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) , чтобы создать назначения ролей для пользователей, групп и субъектов-служб. Дополнительные сведения см. в статье [Добавление и удаление назначений ролей с помощью Azure RBAC и Azure CLI](role-assignments-cli.md).
+- Чтобы назначить роли пользователям, группам и субъектам-службам, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) . Дополнительные сведения см. в статье [назначение ролей Azure с помощью Azure CLI](role-assignments-cli.md).
 
     ```azurecli
     az role assignment create --role <role_name_or_id> --assignee <assignee> --resource-group <resource_group>
@@ -325,7 +325,7 @@ ms.locfileid: "98185892"
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#system-assigned-managed-identity) |
     | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md) |
 
-1. Чтобы создать назначения ролей для управляемых удостоверений, назначенных системой, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
+1. Чтобы назначить роли управляемым удостоверениям, назначенным системой, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>
@@ -341,7 +341,7 @@ ms.locfileid: "98185892"
     | Масштабируемые наборы виртуальных машин | [Настройка управляемых удостоверений для ресурсов Azure в масштабируемом наборе виртуальных машин с помощью Azure CLI](../active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vmss.md#user-assigned-managed-identity) |
     | Другие службы | [Службы с поддержкой управляемых удостоверений для ресурсов Azure](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)<br/>[Создание, перечисление или удаление назначенного пользователем управляемого удостоверения с помощью Azure CLI](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-cli.md) |
 
-1. Используйте команду [AZ Role Identity Create](/cli/azure/role/assignment#az_role_assignment_create) , чтобы создать назначения ролей для назначаемых пользователем управляемых удостоверений. Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
+1. Чтобы назначить роли управляемым удостоверениям, назначенным пользователем, используйте команду [AZ Role назначение Create](/cli/azure/role/assignment#az_role_assignment_create) . Дополнительные сведения см. в статье [назначение управляемому удостоверению доступа к ресурсу с помощью Azure CLI](../active-directory/managed-identities-azure-resources/howto-assign-access-cli.md).
 
     ```azurecli
     az role assignment create --assignee <objectid> --role '<role_name_or_id>' --scope <scope>

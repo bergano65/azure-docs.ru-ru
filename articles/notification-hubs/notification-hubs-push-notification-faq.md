@@ -11,16 +11,16 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-multiple
 ms.devlang: multiple
 ms.topic: article
-ms.date: 11/13/2019
+ms.date: 02/12/2021
 ms.author: sethm
-ms.reviewer: jowargo
+ms.reviewer: thsomasu
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: 9d476b1db645ed1f91b62fcf11464f7077a8fb3c
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: e34fbdca51e7680a80c768e49bae891cb56dfa9d
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491432"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546454"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 
@@ -102,6 +102,10 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 ### <a name="is-there-any-latency-guarantee"></a>Предоставляются ли какие-либо гарантии по задержкам?
 
 Из-за характера доставки push-уведомлений (они доставляются внешней службой PNS для определенной платформы) гарантии по задержкам не предоставляются. Как правило, большая часть рush-уведомлений доставляется в течение нескольких минут.
+
+### <a name="where-does-azure-notification-hubs-store-data"></a>Где центры уведомлений Azure хранят данные?
+
+Центры уведомлений Azure сохраняют данные регистрации клиентов в регионе, выбранном клиентом. Центры уведомлений обеспечивают покрытие аварийного восстановления метаданных (имя концентраторов уведомлений, строка подключения и другие важные сведения). Для всех регионов, кроме Южная Бразилия и Юго-Восточной Азии, резервная копия метаданных размещается в другом регионе (обычно в парном регионе Azure). Для регионов Южная Бразилия и Юго-Восточной Азии резервные копии хранятся в том же регионе, что и требования к местонахождение данных для этих регионов.
 
 ### <a name="what-do-i-need-to-consider-when-designing-a-solution-with-namespaces-and-notification-hubs"></a>Что следует учитывать при разработке решения в пространствах имен и Центрах уведомлений?
 

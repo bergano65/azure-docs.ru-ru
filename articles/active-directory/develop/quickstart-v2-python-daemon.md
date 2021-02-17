@@ -12,19 +12,19 @@ ms.workload: identity
 ms.date: 10/22/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, devx-track-python, scenarios:getting-started, languages:Python
-ms.openlocfilehash: 04c3497e41aba301d5cf16cd6cc723409d1f4175
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 734fad7d3f4fb7a2a816d9ad10fb6b15e2faf9e2
+ms.sourcegitcommit: 2501fe97400e16f4008449abd1dd6e000973a174
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98754076"
+ms.lasthandoff: 02/08/2021
+ms.locfileid: "99820415"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-python-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения Python с помощью удостоверения приложения
 
 При работе с этим кратким руководством вы скачаете и выполните пример кода. Такой пример кода демонстрирует, как приложение Python может получить маркер доступа с помощью удостоверения приложения для вызова API Microsoft Graph и отобразить [список пользователей](/graph/api/user-list) в каталоге, а также как автоматическое задание или служба Windows могут выполняться с удостоверением приложения, а не пользователя. 
 
 > [!div renderon="docs"]
-> ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-netcore-daemon/netcore-daemon-intro.svg)
+> ![Схема работы приложения, создаваемого в этом кратком руководстве](media/quickstart-v2-python-daemon/python-console-daemon.svg)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -42,7 +42,7 @@ ms.locfileid: "98754076"
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Вариант 1. Регистрация и автоматическая настройка приложения, а затем скачивание примера кода
 >
-> 1. Перейдите к интерфейсу быстрого запуска <a href="https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonDaemonQuickstartPage/sourceType/docs" target="_blank">Портал Azure > Регистрация приложений<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Откройте страницу <a href="https://portal.azure.com/?Microsoft_AAD_RegisteredApps=true#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/PythonDaemonQuickstartPage/sourceType/docs" target="_blank">регистрации приложений</a> на портале Azure и приступите к работе.
 > 1. Введите имя приложения и нажмите кнопку **Зарегистрировать**.
 > 1. Следуйте инструкциям, чтобы быстро скачать и автоматически настроить новое приложение.
 >
@@ -52,7 +52,7 @@ ms.locfileid: "98754076"
 > #### <a name="step-1-register-your-application"></a>Шаг 1. Регистрация приложения
 > Чтобы зарегистрировать приложение и добавить сведения о его регистрации в решение вручную, сделайте следующее:
 >
-> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Войдите на <a href="https://portal.azure.com/" target="_blank">портал Azure</a>.
 > 1. Если у вас есть доступ к нескольким клиентам, в верхнем меню используйте фильтр **Каталог и подписка** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false":::, чтобы выбрать клиент, в котором следует зарегистрировать приложение.
 > 1. Найдите и выберите **Azure Active Directory**.
 > 1. В разделе **Управление** выберите **Регистрация приложений** > **Создать регистрацию**.
@@ -65,17 +65,17 @@ ms.locfileid: "98754076"
 > 1. В узле **Пользователь** выберите **User.Read.All**, а затем щелкните **Добавить разрешения**.
 
 > [!div class="sxs-lookup" renderon="portal"]
-> ### <a name="download-and-configure-your-quickstart-app"></a>Скачивание и настройка приложения, используемого в этом кратком руководстве
+> ### <a name="download-and-configure-the-quickstart-app"></a>Скачивание и настройка приложения, используемого в этом кратком руководстве
 >
 > #### <a name="step-1-configure-your-application-in-azure-portal"></a>Шаг 1. Настройка приложения на портале Azure
-> Для работы примера кода в этом кратком руководстве необходимо создать секрет клиента и добавить разрешение приложения API Graph **User.Read.All**.
+> Для работы примера кода, приведенного в этом кратком руководстве, необходимо создать секрет клиента и добавить разрешение приложения API Graph **User.Read.All**.
 > > [!div renderon="portal" id="makechanges" class="nextstepaction"]
 > > [Внести эти изменения для меня]()
 >
 > > [!div id="appconfigured" class="alert alert-info"]
 > > ![Уже настроено](media/quickstart-v2-netcore-daemon/green-check.png). Ваше приложение настроено с помощью этих атрибутов.
 
-#### <a name="step-2-download-your-python-project"></a>Шаг 2. Скачайте ваш проект Python
+#### <a name="step-2-download-the-python-project"></a>Шаг 2. Скачивание проекта Python
 
 > [!div renderon="docs"]
 > [Скачивание проекта управляющей программы Python](https://github.com/Azure-Samples/ms-identity-python-daemon/archive/master.zip)
@@ -89,10 +89,10 @@ ms.locfileid: "98754076"
 
 
 > [!div renderon="docs"]
-> #### <a name="step-3-configure-your-python-project"></a>Шаг 3. Настройте ваш проект Python
+> #### <a name="step-3-configure-the-python-project"></a>Шаг 3. Настройка проекта Python
 >
 > 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корню диска (например, **C:\Azure-Samples**).
-> 1. Перейдите к вложенной папке **1-Call-MsGraph-WithSecret"** .
+> 1. Перейдите к вложенной папке **1-Call-MsGraph-WithSecret**.
 > 1. Измените файл **parameters.json**, заменив значения полей `authority`, `client_id` и `secret` следующим фрагментом кода:
 >
 >    ```json
@@ -119,16 +119,16 @@ ms.locfileid: "98754076"
 ##### <a name="global-tenant-administrator"></a>Глобальный администратор клиента
 
 > [!div renderon="docs"]
-> Если вы являетесь глобальным администратором клиента, перейдите на страницу **Разрешения API** в разделе регистрации приложения (предварительная версия) на портале Azure и выберите **Предоставить согласие администратора для {имя каталога}** .
+> Если вы являетесь глобальным администратором арендатора, перейдите на страницу **Разрешения API** в разделе **Регистрации приложений** на портале Azure и выберите **Предоставить согласие администратора для {имя арендатора}** (где {имя арендатора} — это имя вашего каталога).
 
 > [!div renderon="portal" class="sxs-lookup"]
-> Если вы являетесь глобальным администратором, перейдите на страницу **Разрешения API** и выберите **Предоставить согласия администратора для имя_клиента**.
+> Если вы являетесь глобальным администратором, перейдите на страницу **Разрешения API** и выберите **Предоставить согласия администратора для имя_арендаторр**.
 > > [!div id="apipermissionspage"]
 > > [Переход на страницу "Разрешения API"]()
 
 ##### <a name="standard-user"></a>Обычный пользователь
 
-Если вы являетесь обычным пользователем клиента, попросите глобального администратора предоставить согласие администратора для вашего приложения. Чтобы сделать это, предоставьте следующий URL-адрес администратору:
+Если вы являетесь обычным пользователем арендатора, попросите глобального администратора предоставить согласие администратора для вашего приложения. Чтобы сделать это, предоставьте следующий URL-адрес администратору:
 
 ```url
 https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_id=Enter_the_Application_Id_Here
@@ -145,7 +145,7 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 > [!div renderon="docs"]
 > #### <a name="step-5-run-the-application"></a>Шаг 5. Выполнение приложения
 
-Зависимости этого образца необходимо установить один раз
+Зависимости этого образца необходимо установить один раз.
 
 ```console
 pip install -r requirements.txt
@@ -160,7 +160,7 @@ python confidential_client_secret_sample.py parameters.json
 Вы должны увидеть на консоли фрагмент Json, представляющий список пользователей в вашем каталоге Azure AD.
 
 > [!IMPORTANT]
-> В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, из соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения об использовании сертификата см. в [этих инструкциях](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/README.md) в том же репозитории GitHub для этого примера, но во второй папке **2-Call-MsGraph-WithCertificate**
+> В этом кратком руководстве приложение использует секрет клиента для собственной идентификации в качестве конфиденциального клиента. Так как секрет клиента добавляется в качестве обычного текста в файлы проекта, из соображениям безопасности рекомендуется использовать сертификат вместо секрета клиента, прежде чем использовать приложение в качестве рабочего. Дополнительные сведения об использовании сертификата см. в [этих инструкциях](https://github.com/Azure-Samples/ms-identity-python-daemon/blob/master/2-Call-MsGraph-WithCertificate/README.md) в том же репозитории GitHub для этого примера, но во второй папке **2-Call-MsGraph-WithCertificate**.
 
 ## <a name="more-information"></a>Дополнительные сведения
 
@@ -213,7 +213,7 @@ if not result:
 
 > |Где:| Описание |
 > |---------|---------|
-> | `config["scope"]` | Содержит запрошенные области. Для конфиденциальных клиентов следует использовать формат, аналогичный `{Application ID URI}/.default`, который указывает, что запрашиваемые области — это те, которые статически определены в объекте приложения, заданном на портале Azure (для Microsoft Graph `{Application ID URI}` указывает на `https://graph.microsoft.com`). Для пользовательских веб-API `{Application ID URI}` определяется в разделе **Предоставление API** в разделе регистрации приложения (предварительная версия) на портале Azure. |
+> | `config["scope"]` | Содержит запрошенные области. Для конфиденциальных клиентов следует использовать формат, аналогичный `{Application ID URI}/.default`, который указывает, что запрашиваемые области — это те, которые статически определены в объекте приложения, заданном на портале Azure (для Microsoft Graph `{Application ID URI}` указывает на `https://graph.microsoft.com`). Для пользовательских веб-API `{Application ID URI}` определяется в разделе **Предоставление API** в разделе **Регистрации приложений** на портале Azure.|
 
 Дополнительные сведения см. в [справочной документации по `AcquireTokenForClient`](https://msal-python.readthedocs.io/en/latest/#msal.ConfidentialClientApplication.acquire_token_for_client).
 
@@ -221,7 +221,7 @@ if not result:
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения об управляющих программы см. на главной странице сценария.
+Дополнительные сведения об управляющих программах см. на главной странице сценария.
 
 > [!div class="nextstepaction"]
 > [Создание управляющей программы, которая вызывает веб-API](scenario-daemon-overview.md)

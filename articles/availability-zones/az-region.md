@@ -8,12 +8,12 @@ ms.date: 01/26/2021
 ms.author: prsandhu
 ms.reviewer: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 3916cd43a42ef273a45a9992b45d8b9f043c9364
-ms.sourcegitcommit: 2dd0932ba9925b6d8e3be34822cc389cade21b0d
+ms.openlocfilehash: 16bb173bdbe390da46f2dc105baa9bc73d25a3dc
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99226630"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100557029"
 ---
 # <a name="azure-services-that-support-availability-zones"></a>Службы Azure с поддержкой Зон доступности
 
@@ -55,7 +55,7 @@ Microsoft Azure Глобальная инфраструктура разраба
 | Восточная часть США            | Северная Европа         |                     | Восточная Австралия |
 | восточная часть США 2          | южная часть Соединенного Королевства             |                     |                |
 | Юго-Центральный регион США | Западная Европа          |                     |                |
-| US Gov (Вирджиния) * |                      |                     |                |
+| US Gov (Вирджиния)    |                      |                     |                |
 | Западная часть США 2        |                      |                     |                |
 
 
@@ -132,7 +132,7 @@ Microsoft Azure Глобальная инфраструктура разраба
 | Реестр контейнеров                              |      : large_blue_diamond:  |
 | Сетка событий Azure                                      |      : large_blue_diamond:  |
 | Наблюдатель за сетями                                 |      : large_blue_diamond:  |
-| Power BI Embedded                               |      : large_blue_diamond:  |
+| Power BI Embedded                               |      : large_blue_diamond:  |
 | Хранилище BLOB-объектов класса Premium                            |      : large_blue_diamond:  |
 | Виртуальные машины: Ddsv4-Series                  |      : large_blue_diamond:  |
 | Виртуальные машины: Ddv4-Series                   |      : large_blue_diamond:  |
