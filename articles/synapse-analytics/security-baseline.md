@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5e2f6d8ca1f3911959f396eb1ed77ce8377c0e3c
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 9831f70a88aba497eb7d6a759233c3d7d7be62c6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807841"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585119"
 ---
 # <a name="azure-security-baseline-for-azure-synapse-analytics"></a>Базовый план безопасности Azure для аналитики Azure синапсе
 
@@ -167,9 +167,9 @@ ms.locfileid: "99807841"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с выделенным пулом SQL. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -237,7 +237,7 @@ ms.locfileid: "99807841"
 
 * [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](../storage/blobs/storage-lifecycle-management-concepts.md?tabs=azure-portal)
 
-* [Настройка параметров хранения журнала в Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Настройка параметров хранения журнала в Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 * [Запись потоковых событий в концентраторах событий](../event-hubs/event-hubs-capture-overview.md)
 
@@ -629,7 +629,7 @@ ms.locfileid: "99807841"
 
 Кроме того, вы можете настроить оповещения для баз данных в пуле синапсе SQL с помощью портал Azure. Оповещения могут отправить электронное сообщение или вызвать веб-перехватчик, когда какая-либо метрика достигает порога (например, размер базы данных или использование ЦП).
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Создание оповещений для Azure SQL синапсе](../azure-sql/database/alerts-insights-configure-portal.md)
 

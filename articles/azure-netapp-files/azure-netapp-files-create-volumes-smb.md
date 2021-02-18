@@ -14,22 +14,21 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 02/16/2021
 ms.author: b-juche
-ms.openlocfilehash: 6bb787084d4396737d3002bb98fe50e283c5764a
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 91f4f90658281282cdcb01b091bd9c9647d8d702
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100582888"
+ms.locfileid: "100635495"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Создание тома SMB для Azure NetApp Files
 
 Azure NetApp Files поддерживает создание томов с помощью NFS (NFSv3 и Нфсв 4.1), SMB3 или двойного протокола (NFSv3 и SMB). Потребление емкости тома зависит от подготовленной емкости пула. В этой статье показано, как создать том SMB3.
 
 ## <a name="before-you-begin"></a>Перед началом 
-Перед началом необходимо настроить пул емкости.   
-[Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md)   
-Подсеть должна быть делегирована службе Azure NetApp Files.  
-[Делегирование подсети службе Azure NetApp Files](azure-netapp-files-delegate-subnet.md)
+
+* Перед началом необходимо настроить пул емкости. См. раздел [Настройка пула емкости](azure-netapp-files-set-up-capacity-pool.md).     
+* Подсеть должна быть делегирована службе Azure NetApp Files. См. раздел [Делегирование подсети для Azure NetApp Files](azure-netapp-files-delegate-subnet.md).
 
 ## <a name="configure-active-directory-connections"></a>Настройка подключений Active Directory 
 

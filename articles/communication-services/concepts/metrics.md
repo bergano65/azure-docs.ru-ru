@@ -9,16 +9,16 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: e7ed4ba181d3730ebbea7725451567c93433afb8
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: edbf29b103a84240299f4a9f389a8c7a90012821
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251103"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572062"
 ---
 # <a name="metrics-overview"></a>Общие сведения о метриках
 
-Службы коммуникации Azure в настоящее время предоставляют метрики для чата и SMS. [Обозреватель метрик Azure](../../azure-monitor/platform/metrics-getting-started.md) можно использовать для построения собственных графиков, выявления нестандартных значений метрик и анализа трафика API с помощью данных метрик, порождаемых запросами чатов и SMS.
+Службы коммуникации Azure в настоящее время предоставляют метрики для чата и SMS. [Обозреватель метрик Azure](../../azure-monitor/essentials/metrics-getting-started.md) можно использовать для построения собственных графиков, выявления нестандартных значений метрик и анализа трафика API с помощью данных метрик, порождаемых запросами чатов и SMS.
 
 ## <a name="where-to-find-metrics"></a>Где найти метрики
 
@@ -30,7 +30,7 @@ ms.locfileid: "98251103"
 
 Метрики запросов API чата и SMS содержат три измерения, которые можно использовать для фильтрации данных метрик. Эти измерения можно объединить вместе, используя тип статистической обработки `Count` и поддерживать все стандартные временные ряды статистической обработки Azure, в том числе `Sum`, `Average`, `Min` и `Max`.
 
-Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](../../azure-monitor/platform/metrics-charts.md#aggregation)
+Дополнительные сведения о поддерживаемых типах агрегирования и агрегированиях временных рядов можно найти в статье [Дополнительные функции обозревателя метрик Azure](../../azure-monitor/essentials/metrics-charts.md#aggregation)
 
 - **Operation**. Все операции или маршруты, которые могут быть вызваны в шлюзе чата ACS.
 - **Status Code**. Ответ кода состояния, отправленный после запроса.
@@ -90,4 +90,4 @@ ms.locfileid: "98251103"
 
 ## <a name="next-steps"></a>Next Steps
 
-- Дополнительные сведения о [метриках платформы данных](../../azure-monitor/platform/data-platform-metrics.md)
+- Дополнительные сведения о [метриках платформы данных](../../azure-monitor/essentials/data-platform-metrics.md)

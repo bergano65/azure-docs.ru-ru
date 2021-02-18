@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c922ae19c496d9f377b47ec43d38807f494593bc
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 59eef7654e677ccfef79445f4a9cab26800bdfc5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789134"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589139"
 ---
 # <a name="azure-security-baseline-for-azure-front-door"></a>Базовый план безопасности Azure для передней дверцы Azure
 
@@ -222,9 +222,9 @@ ms.locfileid: "98789134"
 
 Включите журналы ресурсов Azure для передней дверцы Azure. Для включения журналов ресурсов и сбора данных журналов можно использовать центр безопасности Azure и политику Azure. Эти журналы могут быть критически важными для дальнейшего изучения инцидентов безопасности и проведения судебных упражнений.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md) 
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md) 
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md)
 

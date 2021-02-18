@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 175c00440fe9723bbd389db39616f525c2b7f436
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b2d86083077b95312415099f64a13509ed60091b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805484"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582638"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Базовый план безопасности Azure для Service Fabric
 
@@ -178,9 +178,9 @@ ms.locfileid: "99805484"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с развертываниями Service Fabric Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -224,7 +224,7 @@ ms.locfileid: "99805484"
 
 * [Развертывание агента Log Analytics на узлах](./service-fabric-diagnostics-oms-agent.md)
 
-* [Log Analytics Поиск по журналам](../azure-monitor/log-query/log-query-overview.md)
+* [Log Analytics Поиск по журналам](../azure-monitor/logs/log-query-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -240,7 +240,7 @@ ms.locfileid: "99805484"
 
 * [Развертывание агента Log Analytics на узлах](./service-fabric-diagnostics-oms-agent.md)
 
-* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
+* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -256,7 +256,7 @@ ms.locfileid: "99805484"
 
 * [Развертывание агента Log Analytics на узлах](./service-fabric-diagnostics-oms-agent.md)
 
-* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
+* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -266,7 +266,7 @@ ms.locfileid: "99805484"
 
 **Руководство**. Использование запросов к рабочей области Azure log Analytics для запроса журналов Service Fabric Azure.
 
-* [Log Analytics Поиск по журналам](../azure-monitor/log-query/log-query-overview.md)
+* [Log Analytics Поиск по журналам](../azure-monitor/logs/log-query-overview.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -278,7 +278,7 @@ ms.locfileid: "99805484"
 
 * [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+* [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -586,7 +586,7 @@ ms.locfileid: "99805484"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются с важными ресурсами Azure.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

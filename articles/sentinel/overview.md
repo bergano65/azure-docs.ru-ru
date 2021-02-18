@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 773cf5cc6755a4f094eb676992364eea07a795ea
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 4bc5732c1b2349f34297ecaacc7eb3176fdba611
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94654666"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570483"
 ---
 # <a name="what-is-azure-sentinel"></a>Что собой представляет Azure Sentinel?
 
@@ -51,7 +51,7 @@ Azure Sentinel предоставляет комплексную картину 
 
 ## <a name="workbooks"></a>Workbooks
 
-После [подключения ваших источников данных](quickstart-onboard.md) к Azure Sentinel, вы сможете отслеживать данные с помощью интеграции Azure Sentinel с книгами Azure Monitor, что обеспечивает универсальность при создании пользовательских книг. Поскольку в Azure Sentinel книги отображаются по-разному, вам может быть полезно узнать, см. статью [Создание интерактивных отчетов с книгами Azure Monitor](../azure-monitor/platform/workbooks-overview.md). Azure Sentinel позволяет создавать пользовательские книги для данных, а также встроенные шаблоны книг, позволяющие быстро получать ценные сведения по данным сразу после подключения к источнику данных.
+После [подключения ваших источников данных](quickstart-onboard.md) к Azure Sentinel, вы сможете отслеживать данные с помощью интеграции Azure Sentinel с книгами Azure Monitor, что обеспечивает универсальность при создании пользовательских книг. Поскольку в Azure Sentinel книги отображаются по-разному, вам может быть полезно узнать, см. статью [Создание интерактивных отчетов с книгами Azure Monitor](../azure-monitor/visualize/workbooks-overview.md). Azure Sentinel позволяет создавать пользовательские книги для данных, а также встроенные шаблоны книг, позволяющие быстро получать ценные сведения по данным сразу после подключения к источнику данных.
 
 ![Панели мониторинга](./media/tutorial-monitor-data/access-workbooks.png)
 

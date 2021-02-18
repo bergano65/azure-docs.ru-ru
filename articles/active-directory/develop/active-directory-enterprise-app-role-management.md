@@ -10,14 +10,14 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 02/15/2021
 ms.author: jeedes
-ms.openlocfilehash: 38673df29dd50e77acc4b4d106d69a82cad9c040
-ms.sourcegitcommit: 126ee1e8e8f2cb5dc35465b23d23a4e3f747949c
+ms.openlocfilehash: aab1f99984ed5286692cbf9dae39fb4f7d28599c
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "100104354"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652468"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Узнайте как настроить утверждения роли, выдаваемые в токене SAML для корпоративных приложений
 
@@ -27,6 +27,9 @@ ms.locfileid: "100104354"
 
 - Подписка Azure AD с настроенным каталогом.
 - Подписка с поддержкой единого входа (SSO). Настроенный единый вход в приложении.
+
+> [!NOTE]
+> В этой статье объясняется, как создать, обновить или удалить роли приложения в субъекте-службе с помощью API в Azure AD. Если вы хотите использовать новый пользовательский интерфейс для ролей приложений, ознакомьтесь [с подробными](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps)сведениями.
 
 ## <a name="when-to-use-this-feature"></a>Когда следует использовать эту функцию
 
@@ -167,7 +170,7 @@ ms.locfileid: "100104354"
 
     1. В списке **Атрибут источника** введите значение атрибута, отображаемое для этой строки.
 
-    1. Щелкните **Сохранить**.
+    1. Нажмите кнопку **Сохранить**.
 
 10. Чтобы протестировать в вашем приложении единый вход, инициированный поставщиком удостоверений, войдите в [панель доступа](https://myapps.microsoft.com) и выберите плитку приложения. Должен отобразиться токен SAML с полным списком ролей, назначенных пользователю, и с указанным вами именем утверждения.
 
@@ -255,7 +258,7 @@ ms.locfileid: "100104354"
 
     Прежде чем роль можно будет удалить, ее необходимо отключить.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные инструкции см. в [документации по приложениям](../saas-apps/tutorial-list.md).
 

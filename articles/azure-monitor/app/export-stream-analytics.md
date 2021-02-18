@@ -3,12 +3,12 @@ title: Экспорт из Azure Application Insights с помощью Stream A
 description: Stream Analytics может непрерывно преобразовывать, фильтровать и маршрутизировать данные, экспортируемые из Application Insights.
 ms.topic: conceptual
 ms.date: 01/08/2019
-ms.openlocfilehash: e90daf2516b00f7a27ac47e34cfc4ace03fee6e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c8486d7e5656a7770aec4a50739d3a9160e123e3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90979182"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584332"
 ---
 # <a name="use-stream-analytics-to-process-exported-data-from-application-insights"></a>Обработка данных, экспортированных из Application Insights, при помощи Stream Analytics
 [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) — идеальное средство для обработки данных, [экспортированных из Application Insights](export-telemetry.md). Stream Analytics может извлекать данные из различных источников. Это средство может преобразовывать и фильтровать данные и затем отправлять их в различные приемники.
@@ -55,7 +55,7 @@ ms.locfileid: "90979182"
 
     ![Выберите типы событий.](./media/export-stream-analytics/080.png)
 
-1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../platform/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](./diagnostic-search.md) — отдельные события. 
+1. Пусть данные накопятся. Предоставьте пользователям возможность поработать с приложением на протяжении некоторого времени. После получения данных телеметрии в [обозревателе метрик](../essentials/metrics-charts.md) отобразятся статистические диаграммы, а в разделе [поиска по журналу диагностики](./diagnostic-search.md) — отдельные события. 
    
     Данные также будут экспортированы в хранилище. 
 2. Проверьте экспортированные данные. В Visual Studio откройте меню **"Вид" или "Обозреватель облака"** и выберите элемент "Azure" или "Хранилище". Если эти пункты меню не отображаются, установите пакет SDK для Azure. Откройте диалоговое окно "Новый проект" и выберите Visual C# / Cloud / Get Microsoft Azure SDK for .NET. (Visual C# / Облако / Получить пакет Microsoft Azure SDK для .NET.)

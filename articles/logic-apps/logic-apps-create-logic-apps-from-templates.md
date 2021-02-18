@@ -8,12 +8,12 @@ ms.author: klam
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 10/15/2017
-ms.openlocfilehash: 7eca9b4a8cf09f2f35d56dc22fc25169be192f47
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 42c592e6aede4537dc983fd2cff043a878f81f1c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87066236"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593108"
 ---
 # <a name="create-logic-app-workflows-from-prebuilt-templates"></a>Создание рабочих процессов приложения логики на основе предварительно созданных шаблонов
 
@@ -50,7 +50,7 @@ ms.locfileid: "87066236"
    | **Подписка** | *Имя вашей подписки Azure* | Выберите подписку Azure, которую нужно использовать. | 
    | **Группа ресурсов** | *Имя вашей группы ресурсов Azure* | Создайте или выберите [группу ресурсов Azure](../azure-resource-manager/management/overview.md) для этого приложения логики, а также организуйте все ресурсы, связанные с этим приложением. | 
    | **Расположение** | *Ваш регион центра обработки данных Azure* | Выберите регион центра обработки данных для развертывания приложения логики, например западная часть США. | 
-   | **Служба Log Analytics** | **Выкл.** (по умолчанию) или **Вкл.** | Настройте [ведение журнала диагностики](../logic-apps/monitor-logic-apps-log-analytics.md) для приложения логики с помощью [журналов Azure Monitor](../azure-monitor/log-query/log-query-overview.md). Требуется наличие рабочей области Log Analytics. | 
+   | **Служба Log Analytics** | **Выкл.** (по умолчанию) или **Вкл.** | Настройте [ведение журнала диагностики](../logic-apps/monitor-logic-apps-log-analytics.md) для приложения логики с помощью [журналов Azure Monitor](../azure-monitor/logs/log-query-overview.md). Требуется наличие рабочей области Log Analytics. | 
    |||| 
 
 4. Когда вы будете готовы, установите флажок **Закрепить на панели мониторинга**. Таким образом приложение логики автоматически отобразится на панели мониторинга Azure и откроется после развертывания. Выберите **Создать**.

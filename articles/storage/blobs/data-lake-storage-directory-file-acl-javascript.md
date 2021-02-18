@@ -1,33 +1,36 @@
 ---
-title: Использование JavaScript для файлов & ACL в Azure Data Lake Storage 2-го поколения
-description: Используйте клиентскую библиотеку службы хранилища Azure Data Lake для JavaScript, чтобы управлять каталогами и списками управления доступом к файлам и каталогам (ACL) в учетных записях хранения с включенным иерархическое пространством имен (HNS).
+title: Использование JavaScript для управления данными в Azure Data Lake Storage 2-го поколения
+description: Используйте клиентскую библиотеку службы хранилища Azure Data Lake для JavaScript, чтобы управлять каталогами и файлами в учетных записях хранения с включенным иерархическим пространством имен.
 author: normesta
 ms.service: storage
-ms.date: 03/20/2020
+ms.date: 02/17/2021
 ms.author: normesta
 ms.topic: how-to
 ms.subservice: data-lake-storage-gen2
 ms.reviewer: prishet
 ms.custom: devx-track-js
-ms.openlocfilehash: a929fcbc87a1ce11b226e9def46354c24a151a0c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8ce5df805ddce6cdb52e4225bb77e2d8dfa9b9b0
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913374"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650173"
 ---
-# <a name="use-javascript-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование JavaScript для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
+# <a name="use-javascript-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Использование JavaScript для управления каталогами и файлами в Azure Data Lake Storage 2-го поколения
 
-В этой статье показано, как использовать JavaScript для создания каталогов, файлов и разрешений в учетных записях хранения с включенным иерархическое пространством имен (HNS) и управления ими. 
+В этой статье показано, как использовать JavaScript для создания каталогов и файлов в учетных записях хранения с иерархическим пространством имен и управления ими.
+
+Сведения о том, как получить, задать и обновить списки управления доступом (ACL) для каталогов и файлов, см. в разделе [использование JavaScript для управления списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-acl-javascript.md).
 
 [Пакет (диспетчер пакетов node)](https://www.npmjs.com/package/@azure/storage-file-datalake)  |  [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples)  |  [Отправить отзыв](https://github.com/Azure/azure-sdk-for-java/issues)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-> [!div class="checklist"]
-> * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * В учетной записи хранения включено иерархическое пространство имен. Выполните [эти](../common/storage-account-create.md) инструкции, чтобы создать учетную запись.
-> * Если вы используете этот пакет в Node.js приложении, потребуется Node.js 8.0.0 или более поздней версии.
+- Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+- Учетная запись хранения с включенным иерархическим пространством имен. Выполните [эти](create-data-lake-storage-account.md) инструкции, чтобы создать учетную запись.
+
+- Если вы используете этот пакет в Node.js приложении, потребуется Node.js 8.0.0 или более поздней версии.
 
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -67,10 +70,11 @@ function GetDataLakeServiceClient(accountName, accountKey) {
 }      
 
 ```
-> [!NOTE]
-> Этот метод авторизации работает только для приложений Node.js. Если вы планируете выполнять код в браузере, можно авторизовать с помощью Azure Active Directory (AD). 
 
-### <a name="connect-by-using-azure-active-directory-ad"></a>Подключение с помощью Azure Active Directory (AD)
+> [!NOTE]
+> Этот метод авторизации работает только для приложений Node.js. Если вы планируете выполнять код в браузере, можно авторизовать с помощью Azure Active Directory (Azure AD).
+
+### <a name="connect-by-using-azure-active-directory-azure-ad"></a>Подключение с помощью Azure Active Directory (Azure AD)
 
 Вы можете использовать [клиентскую библиотеку Azure Identity для JS](https://www.npmjs.com/package/@azure/identity) для проверки подлинности приложения в Azure AD.
 
@@ -166,8 +170,6 @@ async function DeleteDirectory(fileSystemClient) {
 }
 ```
 
-
-
 ## <a name="upload-a-file-to-a-directory"></a>Отправка файла в каталог
 
 Сначала Считайте файл. В этом примере используется `fs` модуль Node.js. Затем создайте ссылку на файл в целевом каталоге, создав экземпляр **филеклиент** , а затем вызвав метод **филеклиент. Create** . Отправьте файл, вызвав метод **филеклиент. append** . Обязательно завершите передачу, вызвав метод **филеклиент. Flush** .
@@ -201,7 +203,7 @@ async function UploadFile(fileSystemClient) {
 Сначала создайте экземпляр **филесистемклиент** , представляющий файл, который требуется скачать. Для чтения файла используйте метод **филесистемклиент. Read** . Затем запишите файл. В этом примере `fs` для этого используется модуль Node.js. 
 
 > [!NOTE]
-> Этот метод загрузки файла работает только для приложений Node.js. Если вы планируете выполнять код в браузере, см. пример того, как это сделать в браузере, с помощью файла сведений о [библиотеке Data Lake клиентской библиотеки для JavaScript](https://www.npmjs.com/package/@azure/storage-file-datalake) . 
+> Этот метод загрузки файла работает только для приложений Node.js. Если вы планируете выполнять код в браузере, см. пример того, как это сделать в браузере, с помощью файла сведений о [библиотеке Data Lake клиентской библиотеки для JavaScript](https://www.npmjs.com/package/@azure/storage-file-datalake) .
 
 ```javascript
 async function DownloadFile(fileSystemClient) {
@@ -253,125 +255,8 @@ async function ListFilesInDirectory(fileSystemClient) {
 }
 ```
 
-## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
+## <a name="see-also"></a>См. также
 
-Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
-
-> [!NOTE]
-> Если вы используете Azure Active Directory (Azure AD) для авторизации доступа, убедитесь, что участнику безопасности назначена [роль владельца данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
-
-### <a name="manage-a-directory-acl"></a>Управление ACL каталога
-
-В этом примере получается и затем задается список ACL для каталога с именем `my-directory` . В этом примере предоставляются права владельца «чтение», «запись» и «выполнение», которая предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ для чтения.
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
-
-```javascript
-async function ManageDirectoryACLs(fileSystemClient) {
-
-    const directoryClient = fileSystemClient.getDirectoryClient("my-directory"); 
-    const permissions = await directoryClient.getAccessControl();
-
-    console.log(permissions.acl);
-
-    const acl = [
-    {
-      accessControlType: "user",
-      entityId: "",
-      defaultScope: false,
-      permissions: {
-        read: true,
-        write: true,
-        execute: true
-      }
-    },
-    {
-      accessControlType: "group",
-      entityId: "",
-      defaultScope: false,
-      permissions: {
-        read: true,
-        write: false,
-        execute: true
-      }
-    },
-    {
-      accessControlType: "other",
-      entityId: "",
-      defaultScope: false,
-      permissions: {
-        read: true,
-        write: true,
-        execute: false
-      }
-
-    }
-
-  ];
-
-  await directoryClient.setAccessControl(acl);
-}
-```
-
-Также можно получить и задать список управления доступом для корневого каталога контейнера. Чтобы получить корневой каталог, передайте в `/` метод **Даталакефилесистемклиент. жетдиректориклиент** пустую строку ().
-
-### <a name="manage-a-file-acl"></a>Управление ACL файла
-
-Этот пример получает и затем задает список управления доступом для файла с именем `upload-file.txt` . В этом примере предоставляются права владельца «чтение», «запись» и «выполнение», которая предоставляет группе-владельцу только разрешения на чтение и выполнение, а также предоставляет всем остальным доступ для чтения.
-
-> [!NOTE]
-> Если приложение разрешает доступ с помощью Azure Active Directory (Azure AD), убедитесь, что участнику безопасности, используемому приложением для авторизации доступа, назначена [роль владельца данных BLOB-объекта хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
-
-```javascript
-async function ManageFileACLs(fileSystemClient) {
-
-  const fileClient = fileSystemClient.getFileClient("my-directory/uploaded-file.txt"); 
-  const permissions = await fileClient.getAccessControl();
-
-  console.log(permissions.acl);
-
-  const acl = [
-  {
-    accessControlType: "user",
-    entityId: "",
-    defaultScope: false,
-    permissions: {
-      read: true,
-      write: true,
-      execute: true
-    }
-  },
-  {
-    accessControlType: "group",
-    entityId: "",
-    defaultScope: false,
-    permissions: {
-      read: true,
-      write: false,
-      execute: true
-    }
-  },
-  {
-    accessControlType: "other",
-    entityId: "",
-    defaultScope: false,
-    permissions: {
-      read: true,
-      write: true,
-      execute: false
-    }
-
-  }
-
-];
-
-await fileClient.setAccessControl(acl);        
-}
-```
-
-## <a name="see-also"></a>См. также раздел
-
-* [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-file-datalake)
-* [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples)
-* [Отправить отзыв](https://github.com/Azure/azure-sdk-for-java/issues)
+- [Пакет (диспетчер пакетов узла)](https://www.npmjs.com/package/@azure/storage-file-datalake)
+- [Примеры](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage/storage-file-datalake/samples)
+- [Отправить отзыв](https://github.com/Azure/azure-sdk-for-java/issues)
