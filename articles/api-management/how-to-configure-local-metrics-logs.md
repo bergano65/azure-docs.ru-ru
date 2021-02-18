@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 02/01/2021
 ms.author: apimpm
-ms.openlocfilehash: e34c25b2e3bfa845e258dc5d9699497d7ffcb004
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: 2b66663c9ee8033bcb12bfac57964ea0eafecdac
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99526676"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594165"
 ---
 # <a name="configure-local-metrics-and-logs-for-azure-api-management-self-hosted-gateway"></a>Настройка локальных метрик и журналов для самостоятельно размещенного шлюза службы управления API Azure
 
@@ -152,9 +152,9 @@ sputnik-metrics-statsd       NodePort       10.0.41.179   <none>          8125:3
 | Поле  | Значение по умолчанию | Описание |
 | ------------- | ------------- | ------------- |
 | данные телеметрии. метрики. локальные  | `none` | Включает ведение журнала с использованием статистики. Значение может быть равно `none` , `statsd` . |
-| телеметрии. метрики. Локальные. statsd. Конечная точка  | Недоступно | Указывает статистику конечной точки. |
-| данные телеметрии. метрики. Локальные. statsd. выборка  | Недоступно | Задает частоту выборки метрик. Значение может находиться в диапазоне от 0 до 1. Например, `0.5`|
-| данные телеметрии. метрики. local. statsed. Tag-Format  | Недоступно | [Формат расстановки тегов](https://github.com/prometheus/statsd_exporter#tagging-extensions)в статистике. Значение может быть `none` , `librato` , `dogStatsD` , `influxDB` . |
+| телеметрии. метрики. Локальные. statsd. Конечная точка  | Н/Д | Указывает статистику конечной точки. |
+| данные телеметрии. метрики. Локальные. statsd. выборка  | Н/Д | Задает частоту выборки метрик. Значение может находиться в диапазоне от 0 до 1. Например, `0.5`|
+| данные телеметрии. метрики. local. statsed. Tag-Format  | Н/Д | [Формат расстановки тегов](https://github.com/prometheus/statsd_exporter#tagging-extensions)в статистике. Значение может быть `none` , `librato` , `dogStatsD` , `influxDB` . |
 
 Ниже приведен пример конфигурации.
 
@@ -204,7 +204,7 @@ kubectl rollout restart deployment/<deployment-name>
 kubectl logs <pod-name>
 ```
 
-Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) , собирающих и исключающих `stdout` `stderr` рабочие нагрузки, а также просматривать журналы в log Analytics. 
+Если собственный шлюз развернут в службе Azure Kubernetes, можно включить [Azure Monitor для контейнеров](../azure-monitor/containers/container-insights-overview.md) , собирающих и исключающих `stdout` `stderr` рабочие нагрузки, а также просматривать журналы в log Analytics. 
 
 Шлюз, размещенный на собственном сервере, также поддерживает ряд протоколов `localsyslog` , включая, `rfc5424` и `journal` . В таблице ниже приведены все поддерживаемые параметры. 
 
@@ -212,11 +212,11 @@ kubectl logs <pod-name>
 | ------------- | ------------- | ------------- |
 | данные телеметрии. Logs. STD  | `text` | Включает ведение журнала для стандартных потоков. Значение может быть равно `none` , `text` , `json` |
 | данные телеметрии. Logs. local  | `none` | Включает локальное ведение журнала. Значение может быть `none` , `auto` , `localsyslog` , `rfc5424` , `journal`  |
-| данные телеметрии. Logs. local. локалсислог. Endpoint  | Недоступно | Указывает конечную точку локалсислог.  |
-| данные телеметрии. Logs. local. локалсислог. помещений  | Недоступно | Указывает [код устройства](https://en.wikipedia.org/wiki/Syslog#Facility)локалсислог. Например, `7` 
-| данные телеметрии. Logs. local. rfc5424. Endpoint  | Недоступно | Указывает конечную точку rfc5424.  |
-| данные телеметрии. Logs. local. rfc5424. помещений  | Недоступно | Указывает код устройства для каждого [rfc5424](https://tools.ietf.org/html/rfc5424). Например, `7`  |
-| данные телеметрии. Logs. local. журнал. Endpoint  | Недоступно | Указывает конечную точку журнала.  |
+| данные телеметрии. Logs. local. локалсислог. Endpoint  | Н/Д | Указывает конечную точку локалсислог.  |
+| данные телеметрии. Logs. local. локалсислог. помещений  | Н/Д | Указывает [код устройства](https://en.wikipedia.org/wiki/Syslog#Facility)локалсислог. Например, `7` 
+| данные телеметрии. Logs. local. rfc5424. Endpoint  | Н/Д | Указывает конечную точку rfc5424.  |
+| данные телеметрии. Logs. local. rfc5424. помещений  | Н/Д | Указывает код устройства для каждого [rfc5424](https://tools.ietf.org/html/rfc5424). Например, `7`  |
+| данные телеметрии. Logs. local. журнал. Endpoint  | Н/Д | Указывает конечную точку журнала.  |
 
 Ниже приведен пример конфигурации локального ведения журнала.
 
@@ -232,7 +232,7 @@ kubectl logs <pod-name>
         telemetry.logs.local.localsyslog.facility: "7"
 ```
  
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о самостоятельно размещенном шлюзе см. в статье [Обзор самостоятельного размещения шлюза в службе управления API Azure](self-hosted-gateway-overview.md) .
 * Сведения о [настройке и сохранении журналов в облаке](how-to-configure-local-metrics-logs.md)

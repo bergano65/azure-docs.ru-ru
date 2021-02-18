@@ -7,18 +7,18 @@ ms.author: baanders
 ms.date: 7/28/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 057a1b08095a71e2fca6119f5b63bfdc787eea88
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: 461d7a82854ce62ee99eef1227c13c7a8f0371e2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616608"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594874"
 ---
 # <a name="troubleshooting-azure-digital-twins-alerts"></a>Устранение неполадок в Azure Digital двойников: оповещения
 
 Azure Digital двойников собирает [метрики](troubleshoot-metrics.md) для экземпляра службы, которые предоставляют сведения о состоянии ресурсов. Эти метрики можно использовать для оценки общей работоспособности службы цифровых двойников Azure и подключенных к ней ресурсов.
 
-**Оповещения** заблаговременно уведомляют Вас при обнаружении важных условий в данных метрик. Они позволяют выявить и устранить проблемы, прежде чем пользователи системы обнаружат их. Дополнительные сведения об оповещениях см. в статье [*Общие сведения о предупреждениях в Microsoft Azure*](../azure-monitor/platform/alerts-overview.md).
+**Оповещения** заблаговременно уведомляют Вас при обнаружении важных условий в данных метрик. Они позволяют выявить и устранить проблемы, прежде чем пользователи системы обнаружат их. Дополнительные сведения об оповещениях см. в статье [*Общие сведения о предупреждениях в Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md).
 
 ## <a name="turn-on-alerts"></a>Включить предупреждения
 
@@ -38,7 +38,7 @@ Azure Digital двойников собирает [метрики](troubleshoot-
 
 :::image type="content" source="media/troubleshoot-alerts/create-alert-rule.png" alt-text="Снимок экрана, показывающий страницу создания правила генерации оповещений с разделами для области, условия, группы действий и сведений о правиле генерации оповещений" lightbox="media/troubleshoot-alerts/create-alert-rule.png":::
 
-Пошаговое руководство по заполнению этих полей см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/platform/alerts-overview.md). Ниже приведены некоторые примеры того, как будут выглядеть шаги для Azure Digital двойников.
+Пошаговое руководство по заполнению этих полей см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md). Ниже приведены некоторые примеры того, как будут выглядеть шаги для Azure Digital двойников.
 
 ### <a name="select-conditions"></a>Выбор условий
 
@@ -56,8 +56,8 @@ Azure Digital двойников собирает [метрики](troubleshoot-
  
 :::image type="content" source="media/troubleshoot-alerts/alerts-post.png" alt-text="Снимок экрана, показывающий страницу предупреждений и добавляемую кнопку. Настроено одно оповещение" lightbox="media/troubleshoot-alerts/alerts-post.png":::
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения о предупреждениях с Azure Monitor см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/platform/alerts-overview.md).
+* Дополнительные сведения о предупреждениях с Azure Monitor см. [*в разделе Обзор оповещений в Microsoft Azure*](../azure-monitor/alerts/alerts-overview.md).
 * Сведения о метриках цифровых двойников Azure см. в разделе [*Устранение неполадок: Просмотр метрик с помощью Azure Monitor*](troubleshoot-metrics.md).
 * Чтобы узнать, как включить ведение журнала диагностики для метрик, см. раздел [*Устранение неполадок: Настройка диагностики*](troubleshoot-diagnostics.md).

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/10/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ba15deed98af16b9b501439082ee6c9237fe20b7
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d95a2318d94f52352c9546aedc24d0111c5ba0a4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807213"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571656"
 ---
 # <a name="azure-security-baseline-for-azure-sentinel"></a>Базовый план безопасности Azure для Azure Sentinel
 
@@ -37,9 +37,9 @@ ms.locfileid: "99807213"
 
 - [Включение аудита в Azure Sentinel](resources.md)
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -73,7 +73,7 @@ ms.locfileid: "99807213"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с рабочими областями Sentinel Azure, в соответствии с правилами соответствия вашей организации.
 
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -341,7 +341,7 @@ Log Analytics роли включают Log Analytics участника и ср
 
 **Руководство**. для шифрования неактивных данных в рабочих областях Azure Sentinel и Azure Monitor log Analytics используются ключи, управляемые корпорацией Майкрософт. Возможность использовать собственный ключ пока не полностью поддерживается для Sentinel, но будет в ближайшем будущем.
 
-- [Обзор ключа, управляемого клиентом Azure Monitor](../azure-monitor/platform/customer-managed-keys.md#customer-managed-key-overview)
+- [Обзор ключа, управляемого клиентом Azure Monitor](../azure-monitor/logs/customer-managed-keys.md#customer-managed-key-overview)
 
 - [Общие сведения о ключах, управляемых клиентом, в Azure Sentinel (Предварительная версия)](customer-managed-keys.md)
 

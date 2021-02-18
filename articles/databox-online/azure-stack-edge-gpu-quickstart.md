@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 01/27/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to quickly deploy Azure Stack Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 642ab348cd2bb5cd2cedd2b481b0d06fb6c4b425
-ms.sourcegitcommit: 4e70fd4028ff44a676f698229cb6a3d555439014
+ms.openlocfilehash: 4f3ecb6c9aa4ec200cd1a53b82d7c81a2c8d4dcd
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98953943"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546794"
 ---
 # <a name="quickstart-get-started-with-azure-stack-edge-pro-with-gpu"></a>Краткое руководство. Начало работы с Azure Stack Edge Pro с GPU 
 
@@ -64,7 +64,7 @@ ms.locfileid: "98953943"
 10. **Настройка сертификатов**. Если вы изменили имя устройства и (или) домен DNS, необходимо создать или добавить сертификаты для активации устройства. 
 
     - Чтобы протестировать рабочие нагрузки в непроизводственной среде, используйте [параметр создания сертификатов](azure-stack-edge-gpu-deploy-configure-certificates.md#generate-device-certificates). 
-    - Если вы будете использовать собственные сертификаты, в том числе цепочки подписывания, [добавьте сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) в соответствующем формате. Сначала необходимо отправить цепочку подписывания. См. статьи о [создании сертификатов](azure-stack-edge-j-series-create-certificates-tool.md) и [их отправке через локальный пользовательский интерфейс](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates).
+    - Если вы будете использовать собственные сертификаты, в том числе цепочки подписывания, [добавьте сертификаты](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates) в соответствующем формате. Сначала необходимо отправить цепочку подписывания. См. статьи о [создании сертификатов](azure-stack-edge-gpu-create-certificates-tool.md) и [их отправке через локальный пользовательский интерфейс](azure-stack-edge-gpu-deploy-configure-certificates.md#bring-your-own-certificates).
 
 11. **Включить**. Получение ключа активации 
 
@@ -73,7 +73,7 @@ ms.locfileid: "98953943"
 
 12. **Настройка вычислений**. На портале Azure последовательно выберите **Обзор > Устройство**. Убедитесь, что устройство **подключено**. На панели слева последовательно выберите **Вычисления Edge > Начало работы > Настройка вычислений Edge > Вычисление**. Укажите существующую или новую службу Центра Интернета вещей и подождите около 20 минут завершения настройки вычислений. Дополнительные сведения см. в [учебнике по настройке вычислений на устройстве Azure Stack Edge Pro с GPU](azure-stack-edge-gpu-deploy-configure-compute.md)
 
-Теперь вы готовы к развертыванию вычислительных рабочих нагрузок на устройстве с помощью [IoT Edge](azure-stack-edge-gpu-deploy-sample-module-marketplace.md),[ `kubectl`](azure-stack-edge-gpu-create-kubernetes-cluster.md) или [Kubernetes с поддержкой Azure Arc](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md)! Если во время установки возникнут какие либо проблемы, просмотрите статьи об устранении [неполадок устройства](), а также [проблем с заказом](azure-stack-edge-gpu-troubleshoot.md), [сертификатами](azure-stack-edge-j-series-certificate-troubleshooting.md) или Kubernetes. 
+Теперь вы готовы к развертыванию вычислительных рабочих нагрузок на устройстве с помощью [IoT Edge](azure-stack-edge-gpu-deploy-sample-module-marketplace.md),[ `kubectl`](azure-stack-edge-gpu-create-kubernetes-cluster.md) или [Kubernetes с поддержкой Azure Arc](azure-stack-edge-gpu-deploy-arc-kubernetes-cluster.md)! Если во время установки возникнут какие либо проблемы, просмотрите статьи об устранении [неполадок устройства](), а также [проблем с заказом](azure-stack-edge-gpu-troubleshoot.md), [сертификатами](azure-stack-edge-gpu-certificate-troubleshooting.md) или Kubernetes. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

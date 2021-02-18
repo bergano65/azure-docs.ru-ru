@@ -3,12 +3,12 @@ title: Просмотр метрик сетки событий Azure и Наст
 description: В этой статье описывается, как использовать портал Azure для просмотра метрик для разделов и подписок службы "Сетка событий Azure", а также для создания оповещений.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 518d34d39e6fbecc408fe9a44d899fe4745d60d0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8f8d7e15475ce74dc1af55dc7f6116d5d8b79cc8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008962"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577404"
 ---
 # <a name="monitor-event-grid-message-delivery"></a>Мониторинг доставки сообщений Сетки событий 
 В этой статье описывается, как использовать портал для просмотра метрик для разделов и подписок сетки событий, а также для создания на них оповещений. 
@@ -52,7 +52,7 @@ ms.locfileid: "96008962"
 
 :::image type="content" source="./media/monitor-event-delivery/topics-metrics-page.png" alt-text="Раздел — страница метрик":::
 
-Дополнительные сведения о метриках см. [в разделе метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md)
+Дополнительные сведения о метриках см. [в разделе метрики в Azure Monitor](../azure-monitor/essentials/data-platform-metrics.md)
 
 Например, см. диаграмму метрики для метрики **опубликованных событий** .
 
@@ -63,7 +63,7 @@ ms.locfileid: "96008962"
 1. Перейдите на страницу **раздела сетки событий** , выполнив действия из предыдущего раздела. 
 2. Выберите подписку в нижней области, как показано в следующем примере. 
 
-    :::image type="content" source="./media/monitor-event-delivery/select-event-subscription.png" alt-text="Выберите подписку на событие.":::    
+    :::image type="content" source="./media/monitor-event-delivery/select-event-subscription.png" alt-text="Выбор подписки на события":::    
 
     Можно также выполнить поиск **подписок на сетку событий** в строке поиска в портал Azure выберите **тип раздела**, **Подписка** и **Расположение** , чтобы просмотреть подписку на события. 
 
@@ -91,7 +91,7 @@ ms.locfileid: "96008962"
 
 :::image type="content" source="./media/monitor-event-delivery/system-topic-metrics-page.png" alt-text="Системный раздел — страница «метрики»":::
 
-Дополнительные сведения о метриках см. [в разделе метрики в Azure Monitor](../azure-monitor/platform/data-platform-metrics.md)
+Дополнительные сведения о метриках см. [в разделе метрики в Azure Monitor](../azure-monitor/essentials/data-platform-metrics.md)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

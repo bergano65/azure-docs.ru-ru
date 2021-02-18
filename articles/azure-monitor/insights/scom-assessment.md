@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 06/25/2018
-ms.openlocfilehash: 97d7d21374062462248e1b86f2bde2fef2d25331
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 685bf35bfb6d6e85d70bd1f1b446370d66a320f2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004914"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573388"
 ---
 # <a name="optimize-your-environment-with-the-system-center-operations-manager-health-check-preview-solution"></a>Оптимизация среды с помощью решения для проверки работоспособности System Center Operations Manager (предварительная версия)
 
@@ -33,7 +33,7 @@ ms.locfileid: "96004914"
 
 ## <a name="installing-and-configuring-the-solution"></a>Установка и настройка решения
 
-Решение работает с Microsoft System Center 2012 Operations Manager с пакетом обновления 1 (SP1), Microsoft System Center 2012 R2 Operations Manager, Microsoft System Center 2016 Operations Manager, Microsoft System Center 2016 Operations Manager и Microsoft System Center Operations Manager 1807. Поддерживаемая версия .NET Framework 4.6.2 должна быть установлена на каждом сервере управления.
+Решение работает с Microsoft System Center 2012 Operations Manager с пакетом обновления 1 (SP1), Microsoft System Center 2012 R2 Operations Manager, Microsoft System Center 2016 Operations Manager, Microsoft System Center 2016 Operations Manager и Microsoft System Center Operations Manager 1807. Поддерживаемая версия платформа .NET Framework 4.6.2 должна быть установлена на каждом сервере управления.
 
 Для установки и настройки решений используйте указанные ниже данные.
 
@@ -229,7 +229,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../logs/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Failed" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -254,7 +254,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
     ```
 
     >[!NOTE]
-    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../log-query/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
+    > Если ваша рабочая область переведена на [язык запросов Log Analytics](../logs/log-query-overview.md), приведенный выше запрос будет изменен следующим образом.
     >
     > `SCOMAssessmentRecommendationRecommendation | where RecommendationResult == "Ignore" | sort by Computer asc | project Computer, RecommendationId, Recommendation`
 
@@ -293,7 +293,7 @@ ALTER ROLE [db_owner] ADD MEMBER [UserName]
 *Можно ли игнорировать рекомендации?* Да, ознакомьтесь с разделом [Игнорирование рекомендаций](#ignore-recommendations).
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Выполняйте [поиск по журналам](../log-query/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.
+- Выполняйте [поиск по журналам](../logs/log-query-overview.md), чтобы просмотреть подробные данные проверки работоспособности System Center Operations Manager и соответствующие рекомендации.
 

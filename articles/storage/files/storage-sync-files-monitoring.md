@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/28/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 1cc2cd1a7c5c16b1f9d1542e3f2d14dc030bb090
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: d1e51552acdd869a3f304a6d48e18e9d2aa6c782
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586556"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576777"
 ---
 # <a name="monitor-azure-file-sync"></a>Мониторинг службы "Синхронизация файлов Azure"
 
@@ -56,7 +56,7 @@ ms.locfileid: "97586556"
 
 ### <a name="alerts"></a>видны узлы
 
-С помощью оповещений можно заранее получать уведомления о важных условиях, обнаруженных в ваших данных мониторинга. Дополнительные сведения о настройке оповещений в Azure Monitor см. в разделе [Обзор оповещений в Microsoft Azure](../../azure-monitor/platform/alerts-overview.md).
+С помощью оповещений можно заранее получать уведомления о важных условиях, обнаруженных в ваших данных мониторинга. Дополнительные сведения о настройке оповещений в Azure Monitor см. в разделе [Обзор оповещений в Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md).
 
 **Создание оповещений для Синхронизация файлов Azure**
 
@@ -282,7 +282,7 @@ ms.locfileid: "97586556"
 9. Заполните **сведения о предупреждении** , такие как **имя правила оповещения**, **Описание** и **серьезность**.
 10. Щелкните элемент **Создать правило генерации оповещений**. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - [Планирование развертывания службы синхронизации файлов Azure (предварительная версия)](storage-sync-files-planning.md)
 - [Параметры брандмауэра и прокси-сервера Синхронизации файлов Azure](storage-sync-files-firewall-and-proxy.md)
 - [Развертывание Синхронизации файлов Azure](storage-sync-files-deployment-guide.md)

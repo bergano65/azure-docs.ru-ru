@@ -17,12 +17,12 @@ ms.date: 04/09/2020
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dbf14b1816d367f864cc3a2977497b34111df3f
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 73130c906d4d9f0da51db1b666e8562570cce40f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586199"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571271"
 ---
 # <a name="azure-ad-activity-logs-in-azure-monitor"></a>Журналы действий Azure AD в Azure Monitor
 
@@ -103,7 +103,7 @@ ms.locfileid: "97586199"
 | Категория журнала | Количество пользователей | Событий за секунду | Событий за пятиминутный интервал | Объем каждого интервала | Сообщений за интервал | Сообщений за месяц | Затраты в месяц (прим.) |
 |--------------|-----------------|-------------------------|----------------------------------------|---------------------|---------------------------------|------------------------------|----------------------------|
 | Аудит | 100 000 | 18 | 5 400 | 10,8 МБ | 43 | 371 520 | 10,83 долл. США |
-| Аудит | 1000 | 0,1 | 52 | 104 КБ | 1 | 8 640 | 10,80 долл. США |
+| Аудит | 1000 | 0.1 | 52 | 104 КБ | 1 | 8 640 | 10,80 долл. США |
 | Вход в систему | 100 000 | 18000 | 5 400 000 | 10,8 ГБ | 42188 | 364 504 320 | $23,9 |  
 | Вход в систему | 1000 | 178 | 53 400 | 106,8&nbsp;MB | 418 | 3 611 520 | 11,06 долл. США |  
 
@@ -126,7 +126,7 @@ ms.locfileid: "97586199"
 
 
 
-Чтобы просмотреть затраты, связанные с управлением журналами Azure Monitor, изучите статью о том, как [контролировать затраты, управляя объемом и сроком хранения данных в журналах Azure Monitor](../../azure-monitor/platform/manage-cost-storage.md).
+Чтобы просмотреть затраты, связанные с управлением журналами Azure Monitor, изучите статью о том, как [контролировать затраты, управляя объемом и сроком хранения данных в журналах Azure Monitor](../../azure-monitor/logs/manage-cost-storage.md).
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -180,7 +180,7 @@ ms.locfileid: "97586199"
 
 **Вопрос: Какие средства SIEM поддерживаются в настоящее время?** 
 
-Ответ.  **ответ. в** настоящее время Azure Monitor поддерживается [Splunk](./howto-integrate-activity-logs-with-splunk.md), IBM QRadar, [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory), [ArcSight](./howto-integrate-activity-logs-with-arcsight.md), логрхисм и Logz.IO. Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+Ответ.  **ответ. в** настоящее время Azure Monitor поддерживается [Splunk](./howto-integrate-activity-logs-with-splunk.md), IBM QRadar, [Sumo Logic](https://help.sumologic.com/Send-Data/Applications-and-Other-Data-Sources/Azure_Active_Directory), [ArcSight](./howto-integrate-activity-logs-with-arcsight.md), логрхисм и Logz.IO. Дополнительные сведения о работе соединителей см. в статье [Потоковая передача данных мониторинга Azure в концентратор событий для потребления внешним инструментом](../../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 
 ---
 
@@ -203,7 +203,7 @@ ms.locfileid: "97586199"
 ---
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Руководство. Архивация журналов Azure Active Directory в учетной записи хранения Azure (предварительная версия)](quickstart-azure-monitor-route-logs-to-storage-account.md)
 * [Руководство. Потоковая передача журналов Azure Active Directory в концентратор событий Azure (предварительная версия)](./tutorial-azure-monitor-stream-logs-to-event-hub.md)

@@ -2,19 +2,19 @@
 title: Общие сведения о Kubernetes с поддержкой Azure Arc
 services: azure-arc
 ms.service: azure-arc
-ms.date: 05/19/2020
+ms.date: 02/15/2021
 ms.topic: overview
 author: mlearned
 ms.author: mlearned
 description: В этой статье представлен обзор Kubernetes с поддержкой Azure Arc.
 keywords: Kubernetes, Arc, Azure, контейнеры
 ms.custom: references_regions
-ms.openlocfilehash: 7e48ebf98f12e79cb154fb50d8e6dbdfaea1cd95
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 54b439d73ed5dfb0709d33dea1f588b8bdf4489f
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92371313"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100560263"
 ---
 # <a name="what-is-azure-arc-enabled-kubernetes-preview"></a>Что собой представляет Kubernetes с поддержкой Azure Arc (предварительная версия)?
 
@@ -60,22 +60,6 @@ Kubernetes с поддержкой Azure Arc в настоящее время д
 
 * Восточная часть США 
 * Западная Европа
-
-## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
-
-* В чем разница между Kubernetes с поддержкой Azure Arc и Службой Azure Kubernetes (AKS)?
-
-    Служба Azure Kubernetes (AKS) — это управляемая среда Kubernetes, которую предлагает Azure. AKS упрощает развертывание управляемого кластера Kubernetes в Azure. AKS снижает сложность управления службой Kubernetes и связанные временные затраты, делегируя ответственность за большую их часть облаку Azure. Azure управляет мастером Kubernetes. Управление и обслуживание приходится вести только для узлов агентов.
-
-    Kubernetes с поддержкой Azure Arc позволяет подключать кластеры Kubernetes к Azure для расширения возможностей управления Azure, таких как Azure Monitor и Политика Azure. Обслуживание базового кластера Kubernetes выполняется вами.
-
-* Нужно ли подключать к Azure Arc кластеры Службы Azure Kubernetes?
-
-    Нет. Все функции Kubernetes с поддержкой Azure Arc, такие как Azure Monitor, Политика Azure (Gatekeeper), изначально доступны в службе AKS, у которой уже есть представление ресурсов в Azure.
-    
-* Следует ли подключить мой кластер AKS на Azure Stack HCI к Azure Arc? Как насчет кластеров Kubernetes, выполняющихся в Azure Stack Hub или Azure Stack Edge?
-
-    Да, подключение этих кластеров к Azure Arc дает определенные преимущества. Оно обеспечивает представление ресурса для этих кластеров Kubernetes в Azure Resource Manager. Используя это представление, такие функции, как конфигурация кластера, Azure Monitor, Политика Azure (Gatekeeper) можно расширить на эти кластеры Kubernetes.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

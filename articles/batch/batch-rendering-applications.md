@@ -3,12 +3,12 @@ title: Приложения для рендеринга
 description: Вы можете использовать в пакетной службе Azure любые приложения для рендеринга Но некоторые распространенные версии уже включены в образы виртуальных машин Azure Marketplace.
 ms.date: 02/12/2021
 ms.topic: how-to
-ms.openlocfilehash: e296ab09498b6bb7ee21e3d88c9c416c66368d69
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 18fc142d2fa9c819b9872c64ef7aae4c73cc2428
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100362239"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100635342"
 ---
 # <a name="pre-installed-applications-on-batch-rendering-vm-images"></a>Предварительно установленные приложения при пакетной отрисовке образов виртуальных машин
 
@@ -20,7 +20,7 @@ ms.locfileid: "100362239"
 
 ## <a name="applications-on-latest-centos-7-rendering-image"></a>Приложения на последнем изображении для подготовки к просмотру CentOS 7
 
-Следующий список относится к образу подготовки к просмотру CentOS версии 1.1.7.
+Следующий список относится к образу подготовки к просмотру CentOS версии 1.2.0.
 
 * Обновление Autodesk Maya ввода-вывода 2020 4,6
 * Autodesk Arnold для Maya 2020 (Arnold версии 6.2.0.0) Мтоа-4.2.0-2020

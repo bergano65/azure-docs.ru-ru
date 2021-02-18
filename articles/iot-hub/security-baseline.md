@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/03/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 862e8f07e321975ec5b673cfe5c86de85c9d160b
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 2947faa8c7b56fdbe4cf549529b63d506b810750
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202306"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570866"
 ---
 # <a name="azure-security-baseline-for-azure-iot-hub"></a>Базовый план безопасности Azure для центра Интернета вещей Azure
 
@@ -148,9 +148,9 @@ ms.locfileid: "98202306"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с центром Интернета вещей Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -185,9 +185,9 @@ ms.locfileid: "98202306"
 
 - [Настройка журналов центра Интернета вещей Azure](monitor-iot-hub-reference.md#resource-logs)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -205,7 +205,7 @@ ms.locfileid: "98202306"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для log Analytics рабочих областей, связанных с экземплярами центра Интернета вещей Azure, в соответствии с нормативными требованиями вашей организации.
 
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -220,9 +220,9 @@ ms.locfileid: "98202306"
 - [Мониторинг работоспособности Azure IoT](monitor-iot-hub.md)
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
   
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md)
    
-- [ Как выполнять пользовательские запросы в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [ Как выполнять пользовательские запросы в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -236,7 +236,7 @@ ms.locfileid: "98202306"
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 - [Центр безопасности Azure для оповещений IoT](../defender-for-iot/concept-security-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -527,7 +527,7 @@ ms.locfileid: "98202306"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах центра Интернета вещей Azure и других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

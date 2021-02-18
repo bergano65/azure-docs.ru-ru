@@ -7,16 +7,16 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 06/06/2020
 ms.author: surmb
-ms.openlocfilehash: be629d9f8441ad40fe15f005f4aeb0ec5565a7ec
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 9faa3a284aa7151880526c1ee70cfadc3dbf3089
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96437071"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576105"
 ---
 # <a name="metrics-for-application-gateway"></a>Метрики для шлюза приложений
 
-Шлюз приложений публикует точки данных, называемые метриками, для [Azure Monitor](../azure-monitor/overview.md) производительности шлюзов приложений и серверных экземпляров. Эти метрики представляют собой числовые значения в упорядоченном наборе данных временных рядов, которые описывают некоторые аспекты шлюза приложений в определенный момент времени. При наличии запросов, передаваемых через шлюз приложений, он измеряет и отправляет его метрики через 60-секундный интервал. Если нет запросов, передаваемых через шлюз приложений, или нет данных для метрики, метрика не сообщается. Дополнительные сведения см. в разделе [метрики Azure Monitor](../azure-monitor/platform/data-platform-metrics.md).
+Шлюз приложений публикует точки данных, называемые метриками, для [Azure Monitor](../azure-monitor/overview.md) производительности шлюзов приложений и серверных экземпляров. Эти метрики представляют собой числовые значения в упорядоченном наборе данных временных рядов, которые описывают некоторые аспекты шлюза приложений в определенный момент времени. При наличии запросов, передаваемых через шлюз приложений, он измеряет и отправляет его метрики через 60-секундный интервал. Если нет запросов, передаваемых через шлюз приложений, или нет данных для метрики, метрика не сообщается. Дополнительные сведения см. в разделе [метрики Azure Monitor](../azure-monitor/essentials/data-platform-metrics.md).
 
 ## <a name="metrics-supported-by-application-gateway-v2-sku"></a>Метрики, поддерживаемые SKU шлюза приложений версии 2
 
@@ -200,7 +200,7 @@ ms.locfileid: "96437071"
 
 :::image type="content" source="media/application-gateway-diagnostics/figure5.png" alt-text="Представление метрик." lightbox="media/application-gateway-diagnostics/figure5-lb.png":::
 
-Текущий список метрик доступен на странице [Метрики, поддерживаемые Azure Monitor](../azure-monitor/platform/metrics-supported.md).
+Текущий список метрик доступен на странице [Метрики, поддерживаемые Azure Monitor](../azure-monitor/essentials/metrics-supported.md).
 
 ### <a name="alert-rules-on-metrics"></a>Правила генерации оповещений для метрик
 
@@ -230,11 +230,11 @@ ms.locfileid: "96437071"
 
 ![Список оповещений и правил][9]
 
-Дополнительные сведения об уведомлениях для оповещений см. в статье [Что такое оповещения в Microsoft Azure?](../azure-monitor/platform/alerts-overview.md)
+Дополнительные сведения об уведомлениях для оповещений см. в статье [Что такое оповещения в Microsoft Azure?](../azure-monitor/alerts/alerts-overview.md)
 
-Чтобы лучше понять, как действуют веб-перехватчики и как их использовать с оповещениями, см. статью [Настройка веб-перехватчиков для оповещений на основе метрик Azure](../azure-monitor/platform/alerts-webhooks.md).
+Чтобы лучше понять, как действуют веб-перехватчики и как их использовать с оповещениями, см. статью [Настройка веб-перехватчиков для оповещений на основе метрик Azure](../azure-monitor/alerts/alerts-webhooks.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * См. сведения о визуализации журналов счетчиков и событий с помощью [журналов Azure Monitor](../azure-monitor/insights/azure-networking-analytics.md).
 * [Визуализируйте журнал действий Azure с помощью Power BI](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) записи блога.

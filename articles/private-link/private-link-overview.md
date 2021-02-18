@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 01/28/2021
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 681e4efc8a9edda896249fdc939d19b4f644f246
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: 34223298dbf0dad9d9214676a5190bef063a8228
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986487"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577039"
 ---
 # <a name="what-is-azure-private-link"></a>Что собой представляет Приватный канал Azure? 
 Приватный канал Azure обеспечивает доступ к службам Azure PaaS (например, к службе хранилища Azure и Базе данных SQL), а также размещенным в Azure службам, которые принадлежат клиенту или партнеру, через [частную конечную точку](private-endpoint-overview.md) виртуальной сети.
@@ -70,7 +70,7 @@ ms.locfileid: "98986487"
 | Служба автоматизации Azure  | Все общедоступные регионы<br/> Регионы для государственных организаций |  | Preview (Предварительный просмотр) </br> [Создание частной конечной точки для службы автоматизации Azure](../automation/how-to/private-link-security.md).| |
 | Центр Интернета вещей Azure | Все общедоступные регионы    |  | GA   <br/> [Создание частной конечной точки для Центра Интернета вещей Azure](../iot-hub/virtual-network-support.md). |
 | Azure SignalR | ВОСТОЧНАЯ ЧАСТЬ США, ЦЕНТРАЛЬНО-ЮЖНАЯ ЧАСТЬ США,<br/>ЗАПАДНАЯ ЧАСТЬ США 2, все регионы Китая      |  | Preview (Предварительный просмотр)   <br/> [Создание частной конечной точки для Службы Azure SignalR](../azure-signalr/howto-private-endpoints.md).   |
-| Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |  | GA   <br/> [Создание частной конечной точки для Azure Monitor](../azure-monitor/platform/private-link-security.md).   | 
+| Azure Monitor <br/>(Log Analytics и Application Insights) | Все общедоступные регионы      |  | GA   <br/> [Создание частной конечной точки для Azure Monitor](../azure-monitor/logs/private-link-security.md).   | 
 | Пакетная служба Azure | Все общедоступные регионы, кроме: ЦЕНТРАЛЬНАЯ ГЕРМАНИЯ, СЕВЕРО-ВОСТОЧНАЯ ГЕРМАНИЯ <br/> Регионы для государственных организаций  | | GA <br/> [Создание частной конечной точки для пакетной службы Azure](../batch/private-connectivity.md). |
 |Фабрика данных Azure | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | Учетные данные должны храниться в хранилище ключей Azure| GA   <br/> [Создание частной конечной точки для Фабрики данных Azure](../data-factory/data-factory-private-link.md).   |
 |управляемые диски Azure. | Все общедоступные регионы<br/> Регионы для государственных организаций<br/>Все регионы Китая    | [Щелкните здесь, чтобы узнать об известных ограничениях](../virtual-machines/disks-enable-private-links-for-import-export-portal.md#limitations) | GA   <br/> [Создание частной конечной точки для Управляемых дисков Azure.](../virtual-machines/disks-enable-private-links-for-import-export-portal.md)   |

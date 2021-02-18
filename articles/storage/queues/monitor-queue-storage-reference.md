@@ -9,12 +9,12 @@ ms.topic: reference
 ms.service: azure-monitor
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: ba8a82ed1113bfb3e71560ca9a6c713602df21f2
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 95f20737b044140fe12ea939e71cd2397cb4826d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97590653"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576684"
 ---
 # <a name="azure-queue-storage-monitoring-data-reference"></a>Справочник по данным мониторинга хранилища очередей Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "97590653"
 
 #### <a name="queue-storage-metrics"></a>Метрики хранилища очередей
 
-В этой таблице показаны [метрики хранилища очередей](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsqueueservices).
+В этой таблице показаны [метрики хранилища очередей](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsqueueservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
@@ -80,4 +80,4 @@ ms.locfileid: "97590653"
 ## <a name="see-also"></a>См. также
 
 - Описание мониторинга хранилища очередей Azure см. в статье [мониторинг хранилища очередей Azure](monitor-queue-storage.md) .
-- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md).
+- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md).
