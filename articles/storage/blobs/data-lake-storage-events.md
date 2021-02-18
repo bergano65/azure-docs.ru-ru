@@ -9,18 +9,18 @@ ms.date: 08/20/2019
 ms.author: normesta
 ms.reviewer: sumameh
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 738ed3b819a62760408341184daca8a8ba555029
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f5fa4ad357e937fed7df5be24a1fc78409a0259b
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913680"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100516402"
 ---
 # <a name="tutorial-implement-the-data-lake-capture-pattern-to-update-a-databricks-delta-table"></a>Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta
 
 В этом руководстве описана обработка событий в учетной записи хранения с иерархическим пространством имен.
 
-Вы создадите небольшое решение, которое позволяет пользователю заполнить таблицу Databricks Delta, загружая файл разделенных запятыми значений (CSV) с описанием заказа на продажу. Чтобы создать это решение, вы объедините подписку на Сетку событий, функцию Azure и [задание](https://docs.azuredatabricks.net/user-guide/jobs.html) в Azure Databricks.
+Вы создадите небольшое решение, которое позволяет пользователю заполнить таблицу Databricks Delta, загружая файл разделенных запятыми значений (CSV) с описанием заказа на продажу. Чтобы создать это решение, вы объедините подписку на Сетку событий, функцию Azure и [задание](/azure/databricks/jobs) в Azure Databricks.
 
 Выполняя данное руководство, вы сделаете следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "95913680"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+* Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 * Создайте учетную запись хранения, которая использует иерархическое пространство имен (Azure Data Lake Storage 2-го поколения). В рамках этого руководства используется учетная запись хранения с именем `contosoorders`. Убедитесь, что учетная запись пользователя содержит назначенную ей [роль участника для данных хранилища BLOB-объектов](../common/storage-auth-aad-rbac-portal.md).
 
@@ -116,7 +116,7 @@ ms.locfileid: "95913680"
 
 4. Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
-Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
+Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](/azure/databricks/clusters/create).
 
 ### <a name="create-a-notebook"></a>Создание записной книжки
 
@@ -153,7 +153,7 @@ ms.locfileid: "95913680"
     Этот код позволяет создать мини-приложение с именем **source_file**. Позже вы создадите функцию Azure, которая вызывает этот код и передает мини-приложению путь к файлу.  Этот код также позволяет выполнить аутентификацию субъекта-службы в учетной записи хранения, а затем создать переменные для использования в других ячейках.
 
     > [!NOTE]
-    > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. <br><br>Например, вместо использования строки кода `spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")` следует использовать строку `spark.conf.set("fs.azure.account.oauth2.client.secret", dbutils.secrets.get(scope = "<scope-name>", key = "<key-name-for-service-credential>"))`. <br><br>Выполнив инструкции из этого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
+    > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. <br><br>Например, вместо использования строки кода `spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")` следует использовать строку `spark.conf.set("fs.azure.account.oauth2.client.secret", dbutils.secrets.get(scope = "<scope-name>", key = "<key-name-for-service-credential>"))`. <br><br>Выполнив инструкции из этого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) на веб-сайте Azure Databricks.
 
 2. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 

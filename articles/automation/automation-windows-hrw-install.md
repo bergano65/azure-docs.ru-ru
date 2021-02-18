@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 09c86e23379cf9ccecf77d88a99ad6b3a7019a87
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: f6858c7350e6c72a096b2f2bd5f4a4ff606bf023
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100006995"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651363"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
-Вы можете использовать функцию гибридной рабочей роли Runbook пользователя в службе автоматизации Azure для запуска модулей Runbook непосредственно на компьютере с Azure или без Azure, включая серверы, зарегистрированные на [серверах с поддержкой Arc Azure](../azure-arc/servers/overview.md). С компьютера или сервера, на котором размещается роль, можно запускать модули Runbook напрямую и для ресурсов в среде, чтобы управлять этими локальными ресурсами.
+Вы можете использовать функцию гибридной рабочей роли Runbook пользователя в службе автоматизации Azure для запуска модулей Runbook непосредственно на компьютере с Azure или без Azure, включая серверы, зарегистрированные на [серверах с поддержкой Arc Azure](../azure-arc/servers/overview.md). С компьютера или сервера, на котором размещается роль, можно выполнять модули Runbook непосредственно для нее и для ресурсов в среде, чтобы управлять этими локальными ресурсами.
 
 Служба автоматизации Azure хранит и управляет модулями Runbook, а затем доставляет их на один или несколько определенных компьютеров. В этой статье описывается развертывание гибридной рабочей роли Runbook пользователя на компьютере Windows, удаление рабочей роли и удаление группы гибридных рабочих ролей Runbook.
 
@@ -26,13 +26,13 @@ ms.locfileid: "100006995"
 
 ### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics .
 
-Гибридная Рабочая роль Runbook зависит от Azure Monitor Log Analytics рабочей области для установки и настройки роли. Его можно создать с помощью [Azure Resource Manager](../azure-monitor/samples/resource-manager-workspace.md#create-a-log-analytics-workspace), с помощью [PowerShell](../azure-monitor/scripts/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)или в [портал Azure](../azure-monitor/learn/quick-create-workspace.md).
+Гибридная Рабочая роль Runbook зависит от Azure Monitor Log Analytics рабочей области для установки и настройки роли. Его можно создать с помощью [Azure Resource Manager](../azure-monitor/logs/resource-manager-workspace.md#create-a-log-analytics-workspace), с помощью [PowerShell](../azure-monitor/logs/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)или в [портал Azure](../azure-monitor/logs/quick-create-workspace.md).
 
-Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/platform/design-logs-deployment.md) перед созданием рабочей области.
+Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/logs/design-logs-deployment.md) перед созданием рабочей области.
 
 ### <a name="log-analytics-agent"></a>Агент Log Analytics
 
-Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) для поддерживаемой операционной системы Windows. Для серверов или компьютеров, размещенных за пределами Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md).
+Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/agents/log-analytics-agent.md) для поддерживаемой операционной системы Windows. Для серверов или компьютеров, размещенных за пределами Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md).
 
 ### <a name="supported-windows-operating-system"></a>Поддерживаемая операционная система Windows
 

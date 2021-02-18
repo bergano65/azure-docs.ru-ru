@@ -7,20 +7,20 @@ ms.service: machine-learning
 ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
-ms.date: 09/23/2020
+ms.date: 02/16/2020
 ms.topic: conceptual
 ms.reviewer: larryfr
 ms.custom: deploy
-ms.openlocfilehash: c5db04a673c1cdc0c0f24e128f340f4ae55fea81
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 3d2e01b645c1661d4b44520193b9c4557cbc1ea0
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825525"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652180"
 ---
 # <a name="high-performance-serving-with-triton-inference-server-preview"></a>Высокопроизводительный обслуживание с помощью сервера вывода Тритон (Предварительная версия) 
 
-Узнайте, как использовать [сервер вывода NVIDIA Тритон](https://developer.nvidia.com/nvidia-triton-inference-server) для повышения производительности веб-службы, используемой для определения модели.
+Узнайте, как использовать [сервер вывода NVIDIA Тритон](https://aka.ms/nvidia-triton-docs) для повышения производительности веб-службы, используемой для определения модели.
 
 Одним из способов развертывания модели для вывода является веб-служба. Например, развертывание в службу Azure Kubernetes или служба "экземпляры контейнеров Azure". По умолчанию Машинное обучение Azure использует однопотоковую веб-платформу *общего назначения* для развертываний веб-служб.
 
@@ -30,7 +30,7 @@ ms.locfileid: "97825525"
 > Использование тритон для развертывания из Машинное обучение Azure в настоящее время находится на __этапе предварительной версии__. Функции предварительной версии могут не быть охвачены службой поддержки клиентов. Дополнительные сведения см. в дополнительных [условиях использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
 > [!TIP]
-> Фрагменты кода в этом документе предназначены для наглядных целей и могут не показывать законченное решение. Рабочий пример кода см. в разделе [комплексные примеры Тритон в машинное обучение Azure](https://github.com/Azure/azureml-examples/tree/main/tutorials).
+> Фрагменты кода в этом документе предназначены для наглядных целей и могут не показывать законченное решение. Рабочий пример кода см. в разделе [комплексные примеры Тритон в машинное обучение Azure](https://aka.ms/triton-aml-sample).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -47,48 +47,45 @@ ms.locfileid: "97825525"
 
 * Несколько рабочих ролей [гуникорн](https://gunicorn.org/) запущены для параллельной обработки входящих запросов.
 * Эти работники управляют предварительной обработкой, вызовом модели и последующей обработкой. 
-* Для запросов вывода используется __URI оценки__. Например, `https://myserevice.azureml.net/score`.
+* Клиенты используют __URI оценки машинного обучения Azure__. Например, `https://myservice.azureml.net/score`.
 
 :::image type="content" source="./media/how-to-deploy-with-triton/normal-deploy.png" alt-text="Схема архитектуры развертывания &quot;Стандартный&quot;, Тритон":::
 
-### <a name="setting-the-number-of-workers"></a>Задание количества рабочих ролей
+**Прямое развертывание с помощью Тритон**
 
-Чтобы задать число рабочих ролей в развертывании, задайте переменную среды `WORKER_COUNT` . При наличии объекта [среды](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) с именем `env` можно выполнить следующие действия.
+* Запросы переходят непосредственно на сервер Тритон.
+* Тритон обрабатывает запросы в пакетах, чтобы обеспечить максимальную загрузку GPU.
+* Клиент использует __универсальный код ресурса (URI) Тритон__ для выполнения запросов. Например, `https://myservice.azureml.net/v2/models/${MODEL_NAME}/versions/${MODEL_VERSION}/infer`.
 
-```{py}
-env.environment_variables["WORKER_COUNT"] = "1"
-```
-
-Это укажет Azure ML, что будет вычислено указанное количество рабочих ролей.
-
+:::image type="content" source="./media/how-to-deploy-with-triton/triton-deploy.png" alt-text="Инференцеконфиг развертывание только с Тритон, без по промежуточного слоя Python":::
 
 **Развертывание конфигурации определения с помощью Тритон**
 
 * Несколько рабочих ролей [гуникорн](https://gunicorn.org/) запущены для параллельной обработки входящих запросов.
 * Запросы перенаправляются на **сервер Тритон**. 
 * Тритон обрабатывает запросы в пакетах, чтобы обеспечить максимальную загрузку GPU.
-* Клиент использует __универсальный код ресурса (URI) оценки__ для выполнения запросов. Например, `https://myserevice.azureml.net/score`.
+* Клиент использует __универсальный код ресурса (URI) оценки машинного обучения Azure__ для выполнения запросов. Например, `https://myservice.azureml.net/score`.
 
-:::image type="content" source="./media/how-to-deploy-with-triton/inferenceconfig-deploy.png" alt-text="Развертывание инференцеконфиг с помощью Тритон":::
+:::image type="content" source="./media/how-to-deploy-with-triton/inference-config-deploy.png" alt-text="Развертывание с использованием Тритон и по промежуточного слоя Python":::
 
 Рабочий процесс для использования Тритон в развертывании модели:
 
-1. Убедитесь, что Тритон может обслуживать вашу модель.
+1. Обслуживание модели с помощью Тритон напрямую.
 1. Убедитесь, что вы можете отправить запросы к модели, развернутой в Тритон.
-1. Внедрите код, относящийся к Тритон, в развертывание AML.
+1. Используемых Создание слоя по промежуточного слоя Python для выполнения до и после обработки на стороне сервера
 
-## <a name="verify-that-triton-can-serve-your-model"></a>Убедитесь, что Тритон может обслуживать вашу модель
+## <a name="deploying-triton-without-python-pre--and-post-processing"></a>Развертывание Тритон без выполнения предварительной и последующей обработки Python
 
 Сначала выполните следующие действия, чтобы убедиться, что сервер вывода Тритон может обслуживать модель.
 
 ### <a name="optional-define-a-model-config-file"></a>Используемых Определение файла конфигурации модели
 
-Файл конфигурации модели сообщает Тритон, сколько входных данных должно рассчитываться и какие измерения будут такими входными данными. Дополнительные сведения о создании файла конфигурации см. в разделе [Конфигурация модели](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html) в документации по NVIDIA.
+Файл конфигурации модели сообщает Тритон, сколько входных данных должно рассчитываться и какие измерения будут такими входными данными. Дополнительные сведения о создании файла конфигурации см. в разделе [Конфигурация модели](https://aka.ms/nvidia-triton-docs) в документации по NVIDIA.
 
 > [!TIP]
 > Мы используем `--strict-model-config=false` параметр при запуске сервера вывода Тритон, что означает, что вам не нужно указывать `config.pbtxt` файл для моделей ONNX или TensorFlow.
 > 
-> Дополнительные сведения об этом параметре см. в разделе [Создание конфигурации модели](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_configuration.html#generated-model-configuration) в документации по NVIDIA.
+> Дополнительные сведения об этом параметре см. в разделе [Создание конфигурации модели](https://aka.ms/nvidia-triton-docs) в документации по NVIDIA.
 
 ### <a name="use-the-correct-directory-structure"></a>Использовать правильную структуру каталогов
 
@@ -106,92 +103,128 @@ models
 ```
 
 > [!IMPORTANT]
-> Эта структура каталогов является репозиторием модели Тритон и требуется для работы ваших моделей с Тритон. Дополнительные сведения см. в статье [Тритон Model репозитория](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/model_repository.html) в документации по NVIDIA.
+> Эта структура каталогов является репозиторием модели Тритон и требуется для работы ваших моделей с Тритон. Дополнительные сведения см. в статье [Тритон Model репозитория](https://aka.ms/nvidia-triton-docs) в документации по NVIDIA.
 
-### <a name="test-with-triton-and-docker"></a>Тестирование с помощью Тритон и DOCKER
+### <a name="register-your-triton-model"></a>Регистрация модели Тритон
 
-Чтобы проверить модель, чтобы убедиться, что она работает с Тритон, можно использовать DOCKER. Следующие команды запрашивают контейнер Тритон на локальном компьютере, а затем запускают сервер Тритон:
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
-1. Чтобы извлечь образ для сервера Тритон на локальный компьютер, используйте следующую команду:
+```azurecli-interactive
+az ml model register -n my_triton_model -p models --model-framework=Multi
+```
 
-    ```bash
-    docker pull nvcr.io/nvidia/tritonserver:20.09-py3
-    ```
+Дополнительные сведения о `az ml model register` см. в [справочной документации](/cli/azure/ext/azure-cli-ml/ml/model).
 
-1. Чтобы запустить сервер Тритон, используйте следующую команду. Замените на `<path-to-models/triton>` путь к репозиторию модели Тритон, который содержит модели:
+# <a name="python"></a>[Python](#tab/python)
 
-    ```bash
-    docker run --rm -ti -v<path-to-models/triton>:/models nvcr.io/nvidia/tritonserver:20.09-py3 tritonserver --model-repository=/models --strict-model-config=false
-    ```
 
-    > [!IMPORTANT]
-    > Если вы используете Windows, вам может быть предложено разрешить сетевые подключения к этому процессу при первом выполнении команды. Если это так, установите флажок, чтобы разрешить доступ.
+```python
 
-    После запуска в командной строке заносится информация следующего вида:
+from azureml.core.model import Model
 
-    ```bash
-    I0923 19:21:30.582866 1 http_server.cc:2705] Started HTTPService at 0.0.0.0:8000
-    I0923 19:21:30.626081 1 http_server.cc:2724] Started Metrics Service at 0.0.0.0:8002
-    ```
+model_path = "models"
 
-    Первая строка указывает адрес веб-службы. В этом случае, то же, что и `0.0.0.0:8000` `localhost:8000` .
+model = Model.register(
+    model_path=model_path,
+    model_name="bidaf-9-tutorial",
+    tags={"area": "Natural language processing", "type": "Question-answering"},
+    description="Question answering from ONNX model zoo",
+    workspace=ws,
+    model_framework=Model.Framework.MULTI,  # This line tells us you are registering a Triton model
+)
 
-1. Используйте служебную программу, например, для доступа к конечной точке работоспособности.
+```
+Дополнительные сведения см. в документации по [классу Model](/python/api/azureml-core/azureml.core.model.model?preserve-view=true&view=azure-ml-py).
 
-    ```bash
-    curl -L -v -i localhost:8000/v2/health/ready
-    ```
+---
 
-    Эта команда возвращает сведения, аналогичные приведенным ниже. Примечание `200 OK` . это состояние означает, что веб-сервер работает.
+### <a name="deploy-your-model"></a>Развертывание модели
 
-    ```bash
-    *   Trying 127.0.0.1:8000...
-    * Connected to localhost (127.0.0.1) port 8000 (#0)
-    > GET /v2/health/ready HTTP/1.1
-    > Host: localhost:8000
-    > User-Agent: curl/7.71.1
-    > Accept: */*
-    >
-    * Mark bundle as not supporting multiuse
-    < HTTP/1.1 200 OK
-    HTTP/1.1 200 OK
-    ```
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
-Помимо базовой проверки работоспособности, можно создать клиент для отправки данных в Тритон для вывода. Дополнительные сведения о создании клиента см. в [примерах клиента](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/client_example.html) в документации по NVIDIA. Также доступны [примеры Python на Тритон GitHub](https://github.com/triton-inference-server/server/tree/master/src/clients/python/examples).
+Если вы используете кластер службы Kubernetes Azure с поддержкой GPU с именем "AKS-GPU", созданный с помощью Машинное обучение Azure, для развертывания модели можно использовать следующую команду.
 
-Дополнительные сведения о запуске Тритон с помощью DOCKER см. в разделе [Запуск Тритон в системе с графическим процессором](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-with-a-gpu) и [Запуск Тритон в системе без GPU](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/run.html#running-triton-on-a-system-without-a-gpu).
-
-### <a name="register-your-model"></a>Регистрация модели
-
-Теперь, убедившись, что модель работает с Тритон, зарегистрируйте ее с помощью Машинное обучение Azure. Регистрация модели хранит файлы модели в рабочей области Машинное обучение Azure и используется при развертывании с помощью пакета SDK для Python и Azure CLI.
-
-В следующих примерах показано, как зарегистрировать модели:
+```azurecli
+az ml model deploy -n triton-webservice -m triton_model:1 --dc deploymentconfig.json --compute-target aks-gpu
+```
 
 # <a name="python"></a>[Python](#tab/python)
 
 ```python
-from azureml.core.model import Model
+from azureml.core.webservice import AksWebservice
+from azureml.core.model import InferenceConfig
+from random import randint
 
-model = Model.register(
-    model_path=os.path.join("..", "triton"),
-    model_name="bidaf_onnx",
-    tags={'area': "Natural language processing", 'type': "Question answering"},
-    description="Question answering model from ONNX model zoo",
-    workspace=ws
-```
+service_name = "triton-webservice"
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+config = AksWebservice.deploy_configuration(
+    compute_target_name="aks-gpu",
+    gpu_cores=1,
+    cpu_cores=1,
+    memory_gb=4,
+    auth_enabled=True,
+)
 
-```azurecli
-az ml model register --model-path='triton' \
---name='bidaf_onnx' \
---workspace-name='<my_workspace>'
+service = Model.deploy(
+    workspace=ws,
+    name=service_name,
+    models=[model],
+    deployment_config=config,
+    overwrite=True,
+)
 ```
 ---
 
-<a id="processing"></a>
+[Дополнительные сведения о развертывании моделей см. в этой документации](how-to-deploy-and-where.md).
 
-## <a name="verify-you-can-call-into-your-model"></a>Проверка возможности вызова модели
+### <a name="call-into-your-deployed-model"></a>Вызов в развернутой модели
+
+Сначала получите URI оценки и токены носителя.
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+
+```azurecli
+az ml service show --name=triton-webservice
+```
+# <a name="python"></a>[Python](#tab/python)
+
+```python
+import requests
+
+print(service.scoring_uri)
+print(service.get_keys())
+
+```
+
+---
+
+Затем убедитесь, что служба работает, выполнив следующие действия. 
+
+```{bash}
+!curl -v $scoring_uri/v2/health/ready -H 'Authorization: Bearer '"$service_key"''
+```
+
+Эта команда возвращает сведения, аналогичные приведенным ниже. Примечание `200 OK` . это состояние означает, что веб-сервер работает.
+
+```{bash}
+*   Trying 127.0.0.1:8000...
+* Connected to localhost (127.0.0.1) port 8000 (#0)
+> GET /v2/health/ready HTTP/1.1
+> Host: localhost:8000
+> User-Agent: curl/7.71.1
+> Accept: */*
+>
+* Mark bundle as not supporting multiuse
+< HTTP/1.1 200 OK
+HTTP/1.1 200 OK
+```
+
+После выполнения проверки работоспособности можно создать клиент для отправки данных в Тритон для вывода. Дополнительные сведения о создании клиента см. в [примерах клиента](https://aka.ms/nvidia-client-examples) в документации по NVIDIA. Также доступны [примеры Python на Тритон GitHub](https://aka.ms/nvidia-triton-docs).
+
+Если вы не хотите добавлять предварительную и последующую обработку Python в развернутую веб-службу, это может быть сделано. Если вы хотите добавить эту логику до и после обработки, прочтите статью.
+
+## <a name="optional-re-deploy-with-a-python-entry-script-for-pre--and-post-processing"></a>Используемых Повторное развертывание с помощью скрипта записи Python для предварительной и последующей обработки
 
 Убедившись, что Тритон способен обслуживать модель, можно добавить предварительную и последующей обработку кода, определив _сценарий записи_. Этот файл называется `score.py` . Дополнительные сведения о сценариях входа см. в разделе [Определение записи](how-to-deploy-and-where.md#define-an-entry-script).
 
@@ -236,7 +269,7 @@ res = triton_client.infer(model_name,
 
 <a id="redeploy"></a>
 
-## <a name="redeploy-with-an-inference-configuration"></a>Повторное развертывание с конфигурацией вывода
+### <a name="redeploy-with-an-inference-configuration"></a>Повторное развертывание с конфигурацией вывода
 
 Конфигурация вывода позволяет использовать скрипт записи, а также процесс развертывания Машинное обучение Azure с помощью пакета SDK Python или Azure CLI.
 
@@ -244,6 +277,19 @@ res = triton_client.infer(model_name,
 > Необходимо указать `AzureML-Triton` [проверенную среду](./resource-curated-environments.md).
 >
 > Пример кода Python копирует `AzureML-Triton` в другую среду с именем `My-Triton` . Код Azure CLI также использует эту среду. Дополнительные сведения о клонировании среды см. в справочнике по [среде. Clone ()](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py#clone-new-name-) .
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+> [!TIP]
+> Дополнительные сведения о создании конфигурации вывода см. в разделе [Схема конфигурации вывода](./reference-azure-machine-learning-cli.md#inference-configuration-schema).
+
+```azurecli
+az ml model deploy -n triton-densenet-onnx \
+-m densenet_onnx:1 \
+--ic inference-config.json \
+-e My-Triton --dc deploymentconfig.json \
+--overwrite --compute-target=aks-gpu
+```
 
 # <a name="python"></a>[Python](#tab/python)
 
@@ -283,48 +329,47 @@ print(local_service.state)
 print(local_service.scoring_uri)
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-> [!TIP]
-> Дополнительные сведения о создании конфигурации вывода см. в разделе [Схема конфигурации вывода](./reference-azure-machine-learning-cli.md#inference-configuration-schema).
-
-```azurecli
-az ml model deploy -n triton-densenet-onnx \
--m densenet_onnx:1 \
---ic inference-config.json \
--e My-Triton --dc deploymentconfig.json \
---overwrite --compute-target=aks-gpu
-```
-
 ---
 
 После завершения развертывания отображается URI оценки. Для этого локального развертывания это будет `http://localhost:6789/score` . При развертывании в облаке можно использовать команду [AZ ML Service показывать](/cli/azure/ext/azure-cli-ml/ml/service?view=azure-cli-latest#ext_azure_cli_ml_az_ml_service_show) CLI для получения URI оценки.
 
 Сведения о создании клиента, отправляющего запросы вывода в URI оценки, см. в разделе [Использование модели, развернутой в качестве веб-службы](how-to-consume-web-service.md).
 
+### <a name="setting-the-number-of-workers"></a>Задание количества рабочих ролей
+
+Чтобы задать число рабочих ролей в развертывании, задайте переменную среды `WORKER_COUNT` . При наличии объекта [среды](/python/api/azureml-core/azureml.core.environment.environment?preserve-view=true&view=azure-ml-py) с именем `env` можно выполнить следующие действия.
+
+```{py}
+env.environment_variables["WORKER_COUNT"] = "1"
+```
+
+Это укажет Azure ML, что будет вычислено указанное количество рабочих ролей.
+
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы планируете продолжить использование рабочей области Машинное обучение Azure, но хотите избавиться от развернутой службы, используйте один из следующих вариантов:
 
+
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+
+```azurecli
+az ml service delete -n triton-densenet-onnx
+```
 # <a name="python"></a>[Python](#tab/python)
 
 ```python
 local_service.delete()
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
-
-```azurecli
-az ml service delete -n triton-densenet-onnx
-```
 
 ---
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Ознакомьтесь с комплексными примерами Тритон в Машинное обучение Azure](https://aka.ms/aml-triton-sample)
-* [Примеры клиента Тритон](https://github.com/triton-inference-server/server/tree/master/src/clients/python/examples)
-* Ознакомьтесь с [документацией по серверу вывода Тритон](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/index.html)
+* [Примеры клиента Тритон](https://aka.ms/nvidia-client-examples)
+* Ознакомьтесь с [документацией по серверу вывода Тритон](https://aka.ms/nvidia-triton-docs)
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).
 * [Обновление веб-службы](how-to-deploy-update-web-service.md)

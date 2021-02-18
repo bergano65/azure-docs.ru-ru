@@ -7,12 +7,12 @@ ms.assetid: 51cd331a-a3fa-438f-90ef-385e755e50d5
 ms.topic: article
 ms.date: 07/06/2016
 ms.custom: seodec18
-ms.openlocfilehash: 6dd67ff4f7346daf7a590ab4fb45a32d227f1c3e
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 801f4840d0d1447f839e5c2c4bc3168741b62b63
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92147543"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586258"
 ---
 # <a name="troubleshoot-http-errors-of-502-bad-gateway-and-503-service-unavailable-in-azure-app-service"></a>Устранение ошибок HTTP "502 — недопустимый шлюз" и "503 — служба недоступна" в Службе приложений Azure
 "502 — недопустимый шлюз" и "503 — служба недоступна" — распространенные ошибки, возникающие при работе приложения, размещенного в [Службе приложений Azure](./overview.md). Эта статья поможет вам устранить эти ошибки.
@@ -60,7 +60,7 @@ Microsoft Azure информирует о каждом случае прерыв
 Дополнительные сведения см. в разделе:
 
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
-* [Создание оповещений для служб Azure с помощью портала Azure](../azure-monitor/platform/alerts-overview.md)
+* [Создание оповещений для служб Azure с помощью портала Azure](../azure-monitor/alerts/alerts-overview.md)
 
 <a name="collect"></a>
 

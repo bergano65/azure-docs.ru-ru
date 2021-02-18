@@ -4,12 +4,12 @@ description: Мониторинг системных и пользователь
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f772b129e20fbaaade7305d84064a713dd734199
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 5f1bd3ac4542dcce0d41f69a9c1664b747214554
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937396"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583883"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
@@ -110,7 +110,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 ```
 
 ## <a name="performance-counters-in-analytics"></a>Счетчики производительности в службе аналитики
-В [службе аналитики](../log-query/log-query-overview.md) можно выполнять поиск отчетов по счетчикам производительности и отображать их.
+В [службе аналитики](../logs/log-query-overview.md) можно выполнять поиск отчетов по счетчикам производительности и отображать их.
 
 Схема **PerformanceCounters** предоставляет `category`, имя `counter` и имя `instance` каждого счетчика производительности.  В данных телеметрии для каждого приложения вы увидите только счетчики для этого приложения. Например, вот как можно увидеть, какие счетчики доступны. 
 
@@ -148,7 +148,7 @@ using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
 * Пакеты SDK версии 2.8.0 и более поздних поддерживают счетчик ЦП/памяти в Linux. В Linux не поддерживаются никакие другие счетчики. Для получения системных счетчиков в Linux (и других средах, отличных от Windows) рекомендуется использовать [EventCounters](eventcounters.md).
 
 ## <a name="alerts"></a>видны узлы
-Как и для других метрик, вы можете [установить оповещение](../platform/alerts-log.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
+Как и для других метрик, вы можете [установить оповещение](../alerts/alerts-log.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="next-steps"></a><a name="next"></a>Следующие шаги
 

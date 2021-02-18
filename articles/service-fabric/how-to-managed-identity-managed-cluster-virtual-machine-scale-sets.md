@@ -4,12 +4,12 @@ description: В этой статье показано, как добавить 
 ms.topic: how-to
 ms.date: 11/24/2020
 ms.custom: references_regions
-ms.openlocfilehash: 9edcf75451f43f2a00cd01d5ca7f385704b1ea7f
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 3ff5d66160ddbb037469378634826fd9eeae0c54
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878432"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651652"
 ---
 # <a name="add-a-managed-identity-to-a-service-fabric-managed-cluster-node-type-preview"></a>Добавление управляемого удостоверения в тип узла управляемого кластера Service Fabric (Предварительная версия)
 
@@ -57,7 +57,7 @@ az identity create --name <userAssignedIdentityName> --resource-group <resourceG
 |Имя|Соответствующее значение поставщика ресурсов Service Fabric|
 |----|-------------------------------------|
 |Идентификатор приложения|74cb6831-0dbb-4be1-8206-fd4df301cdc2|
-|Идентификатор объекта.|fbc587f2-66f5-4459-a027-bcd908b9d278|
+|Идентификатор объекта|fbc587f2-66f5-4459-a027-bcd908b9d278|
 
 
 |Имя определения роли|Идентификатор определения роли|
@@ -99,23 +99,28 @@ New-AzRoleAssignment -PrincipalId fbc587f2-66f5-4459-a027-bcd908b9d278 -RoleDefi
 
 ## <a name="add-managed-identity-properties-to-node-type-definition"></a>Добавление свойств управляемого удостоверения в определение типа узла
 
-Наконец, добавьте `vmManagedIdentity` Свойства и `userAssignedIdentities` в определение типа узла управляемого кластера:
+Наконец, добавьте `vmManagedIdentity` Свойства и `userAssignedIdentities` в определение типа узла управляемого кластера. Обязательно используйте **2021-01-01-Preview** или более поздней версии для `apiVersion` .
 
 ```json
 
-"properties": {
-    "isPrimary" : true,
-    "vmInstanceCount": 5,
-    "dataDiskSizeGB": 100,
-    "vmSize": "Standard_D2",
-    "vmImagePublisher" : "MicrosoftWindowsServer",
-    "vmImageOffer" : "WindowsServer",
-    "vmImageSku" : "2019-Datacenter",
-    "vmImageVersion" : "latest",
-    "vmManagedIdentity": {
-        "userAssignedIdentities": [
-            "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentityName'))]"
-        ]
+ {
+    "type": "Microsoft.ServiceFabric/managedclusters/nodetypes",
+    "apiVersion": "2021-01-01-preview",
+    ...
+    "properties": {
+        "isPrimary" : true,
+        "vmInstanceCount": 5,
+        "dataDiskSizeGB": 100,
+        "vmSize": "Standard_D2_v2",
+        "vmImagePublisher" : "MicrosoftWindowsServer",
+        "vmImageOffer" : "WindowsServer",
+        "vmImageSku" : "2019-Datacenter",
+        "vmImageVersion" : "latest",
+        "vmManagedIdentity": {
+            "userAssignedIdentities": [
+                "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', parameters('userAssignedIdentityName'))]"
+            ]
+        }
     }
 }
 ```

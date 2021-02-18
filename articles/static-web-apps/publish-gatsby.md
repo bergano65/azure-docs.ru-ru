@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.custom: devx-track-js
-ms.openlocfilehash: e24a2a19eb39e2c6c7612631ad98f95cb4c5b9ef
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4430ed34858077b13b4fec69756c1c7e9f3ef7ac
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250170"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652385"
 ---
 # <a name="tutorial-publish-a-gatsby-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Gatsby в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -75,7 +75,7 @@ ms.locfileid: "91250170"
 1. Отправьте локальный репозиторий на сайт GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
 
 ## <a name="deploy-your-web-app"></a>Развертывание веб-приложения
@@ -98,11 +98,11 @@ ms.locfileid: "91250170"
 
 1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
-1. В поле _Регион_выберите ближайший доступный регион.
+1. В поле _Регион_ выберите ближайший доступный регион.
 
 1. В поле _Номер SKU_ выберите **Бесплатный**.
 
-   :::image type="content" source="./media/publish-gatsby/basic-app-details.png" alt-text="Создание ресурса &quot;Статические веб-приложения (предварительная версия)&quot; на портале":::
+   :::image type="content" source="./media/publish-gatsby/basic-app-details.png" alt-text="Заполненные сведениями поля":::
 
 1. Нажмите кнопку **Войти по учетным данным GitHub**.
 
@@ -110,9 +110,9 @@ ms.locfileid: "91250170"
 
 1. Выберите **gatsby-static-web-app** в качестве _репозитория_.
 
-1. В поле _Ветвь_ выберите **главная**.
+1. В поле _Ветвь_ выберите **main**.
 
-   :::image type="content" source="./media/publish-gatsby/completed-github-info.png" alt-text="Создание ресурса &quot;Статические веб-приложения (предварительная версия)&quot; на портале":::
+   :::image type="content" source="./media/publish-gatsby/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 
 ### <a name="build"></a>Сборка
 
@@ -126,7 +126,7 @@ ms.locfileid: "91250170"
 
    Поле _API location_ (Расположения API) заполнять не требуется, так как вы в данный момент не развертываете API.
 
-   :::image type="content" source="./media/publish-gatsby/build-details.png" alt-text="Создание ресурса &quot;Статические веб-приложения (предварительная версия)&quot; на портале":::
+   :::image type="content" source="./media/publish-gatsby/build-details.png" alt-text="Параметры сборки":::
 
 ### <a name="review-and-create"></a>Просмотр и создание
 
@@ -138,7 +138,7 @@ ms.locfileid: "91250170"
 
 1. На экране ресурсов щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение. Для завершения действия GitHub может потребоваться подождать одну или две минуты.
 
-   :::image type="content" source="./media/publish-gatsby/deployed-app.png" alt-text="Создание ресурса &quot;Статические веб-приложения (предварительная версия)&quot; на портале":::
+   :::image type="content" source="./media/publish-gatsby/deployed-app.png" alt-text="Развернутое приложение":::
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

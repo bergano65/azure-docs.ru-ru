@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 01/04/2021
 ms.author: damendo
 ms.custom: mvc
-ms.openlocfilehash: a4f3e0bbd282fb1253e206e71c2eb1667773248e
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: b734c4cdec022f2bf43ee7123b06331f67c10390
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99834091"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570836"
 ---
 # <a name="tutorial-monitor-network-communication-between-two-virtual-machines-using-the-azure-portal"></a>Руководство. Мониторинг сетевого взаимодействия между двумя виртуальными машинами с помощью портала Azure
 
@@ -137,7 +137,7 @@ ms.locfileid: "99834091"
 2. Щелкните **Выбор цели**, а затем выберите целевые ресурсы. Выберите **Подписка** и задайте **тип ресурса**, чтобы отобразился монитор подключений, который вы хотите использовать.
 
     ![экран оповещения с выбранной целью](./media/connection-monitor/set-alert-rule.png)
-1. После выбора целевого ресурса выберите **Добавить критерии**. Наблюдатель за сетями имеет [метрики, для которых вы можете создавать оповещения](../azure-monitor/platform/alerts-metric-near-real-time.md#metrics-and-dimensions-supported). Задайте для **доступных сигналов** метрики ProbesFailedPercent и AverageRoundtripMs:
+1. После выбора целевого ресурса выберите **Добавить критерии**. Наблюдатель за сетями имеет [метрики, для которых вы можете создавать оповещения](../azure-monitor/alerts/alerts-metric-near-real-time.md#metrics-and-dimensions-supported). Задайте для **доступных сигналов** метрики ProbesFailedPercent и AverageRoundtripMs:
 
     ![страница оповещений с выбранными сигналами](./media/connection-monitor/set-alert-signals.png)
 1. Укажите сведения об оповещении, такие как имя правила генерации оповещений, описание и степень серьезности. Вы также можете добавить для оповещения группу действий, чтобы автоматизировать и настроить ответ оповещения.

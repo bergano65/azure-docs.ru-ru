@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 46c41a4868c80bf9ba1c2c6d4a8286c3a8f47c3d
-ms.sourcegitcommit: 7ec45b7325e36debadb960bae4cf33164176bc24
+ms.openlocfilehash: cbab73a2fb3aecaacdfc92950c0d0b86edf775af
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100530439"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653352"
 ---
 # <a name="manage-digital-twins"></a>Управление цифровыми двойниками
 
@@ -23,7 +23,7 @@ ms.locfileid: "100530439"
 > [!TIP]
 > Все функции пакета SDK имеют синхронные и асинхронные версии.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
@@ -72,7 +72,7 @@ API создания двойника принимает объект, кото�
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_sample.cs" id="CreateTwin_withHelper":::
 
 >[!NOTE]
-> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Пример:
+> `BasicDigitalTwin` объекты поступают с `Id` полем. Это поле можно оставить пустым, но если добавить значение идентификатора, оно должно соответствовать параметру идентификатора, переданному в `CreateOrReplaceDigitalTwinAsync()` вызов. Пример.
 >
 >```csharp
 >twin.Id = "myRoomId";
@@ -160,7 +160,7 @@ API создания двойника принимает объект, кото�
 
 :::code language="json" source="~/digital-twins-docs-samples/models/patch.json":::
 
-Вы можете создавать исправления с помощью `JsonPatchDocument` в [пакете SDK](how-to-use-apis-sdks.md). Ниже приведен пример.
+Вы можете создавать исправления с помощью [жсонпатчдокумент](/dotnet/api/azure.jsonpatchdocument?view=azure-dotnet&preserve-view=true)пакета SDK для Azure .NET. Ниже приведен пример.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/twin_operations_other.cs" id="UpdateTwin":::
 

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/29/2021
 ms.topic: conceptual
-ms.openlocfilehash: 8ea668ab2266a1deae108542687c89f3a221568e
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: a6827f8629423b9ed3adc362d3d05fd740e25a65
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220979"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633314"
 ---
 # <a name="run-runbooks-on-a-hybrid-runbook-worker"></a>Запуск модулей Runbook в гибридной рабочей роли Runbook
 
@@ -96,7 +96,7 @@ Restart-Computer -ComputerName $Computer -Credential $Cred
 В ходе автоматизированного процесса сборки для развертывания ресурсов в Azure вам может потребоваться доступ к локальным системам для выполнения задачи или набора действий, входящих в последовательность развертывания. Чтобы обеспечить поддержку аутентификации в Azure с использованием учетной записи запуска от имени, необходимо установить соответствующий сертификат.
 
 >[!NOTE]
->Сейчас Runbook PowerShell не выполняется на компьютерах LInux. Она выполняется только на компьютерах Windows.
+>Сейчас Runbook PowerShell не выполняется на компьютерах Linux. Она выполняется только на компьютерах Windows.
 >
 
 Следующий runbook PowerShell с именем **Export-RunAsCertificateToHybridWorker** экспортирует сертификат запуска от имени из учетной записи службы автоматизации Azure. Также этот runbook скачивает сертификат и импортирует его в хранилище сертификатов локального компьютера, относящегося к гибридной рабочей роли Runbook, которая подключена к той же учетной записи. После этого runbook проверяет, может ли рабочая роль успешно выполнять аутентификацию в Azure с использованием учетной записи запуска от имени.

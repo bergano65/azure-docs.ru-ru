@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: bf0df4cc6e686b553baf8c2439c807d2f07ef440
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 701fe4ffc6147086dde740bfdb2dc7db92508e28
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807484"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100380242"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Руководство по использованию флагов функций в приложении ASP.NET Core
 
@@ -218,7 +218,7 @@ config.AddAzureAppConfiguration(options =>
 
 ## <a name="use-dependency-injection-to-access-ifeaturemanager"></a>Внедрение зависимостей для доступа к IFeatureManager 
 
-Для некоторых операций, таких как проверка значений флагов компонентов вручную, необходимо получить экземпляр [IFeatureManager](/dotnet/api/microsoft.featuremanagement.ifeaturemanage). В MVC ASP.NET Core можно получить доступ к диспетчеру компонентов `IFeatureManager` путем внедрения зависимостей. В следующем примере аргумент типа `IFeatureManager` добавляется в сигнатуру конструктора для контроллера. Среда выполнения автоматически разрешает ссылку и предоставляет интерфейс при вызове конструктора. Если вы используете шаблон приложения, в котором у контроллера уже есть один или несколько аргументов внедрения зависимостей в конструкторе, например `ILogger`, можно просто добавить `IFeatureManager` в качестве дополнительного аргумента:
+Для некоторых операций, таких как проверка значений флагов компонентов вручную, необходимо получить экземпляр [IFeatureManager](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement.ifeaturemanager?view=azure-dotnet-preview). В MVC ASP.NET Core можно получить доступ к диспетчеру компонентов `IFeatureManager` путем внедрения зависимостей. В следующем примере аргумент типа `IFeatureManager` добавляется в сигнатуру конструктора для контроллера. Среда выполнения автоматически разрешает ссылку и предоставляет интерфейс при вызове конструктора. Если вы используете шаблон приложения, в котором у контроллера уже есть один или несколько аргументов внедрения зависимостей в конструкторе, например `ILogger`, можно просто добавить `IFeatureManager` в качестве дополнительного аргумента:
 
 ### <a name="net-5x"></a>[.NET 5.x](#tab/core5x)
     

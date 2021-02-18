@@ -6,12 +6,12 @@ author: gundarev
 ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: denisgun
-ms.openlocfilehash: c1cdafe2929502293aada32dbae06e342761862b
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 295a46f6d1074ddf8422233ea3ccfa4d65c28fd8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98876704"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571584"
 ---
 # <a name="windows-virtual-desktop-rdp-shortpath-preview"></a>Виртуальный рабочий стол RDP Шортпас (Предварительная версия)
 
@@ -151,7 +151,8 @@ Save-NetGPO -GPOSession $gpoSession
 Следуйте указаниям в [документации по группе безопасности сети](../virtual-machines/windows/nsg-quickstart-portal.md) , чтобы создать правило безопасности для входящего трафика, разрешающее трафик со следующими параметрами:
 
 * **Исходный код**  -  **Любой** или диапазон IP-адресов, в которых направляются клиенты
-* **Диапазоны исходных портов** -* *\** _ _ **назначение**  -  **ANY**
+* **Диапазоны исходных портов** - **\***
+* **Назначение**  -  **Любой**
 * **Диапазоны**  -  целевых портов **3390**
 * **Протокол**  -  **UDP-порт**
 * **Действие**  -  **Разрешить**
@@ -188,7 +189,7 @@ Save-NetGPO -GPOSession $gpoSession
 * **0** — подключение пользователя не использует RDP шортпас
 * **1** — подключение пользователя использует RDP шортпас
   
-Следующий список запросов позволяет просматривать сведения о подключении. Этот запрос можно выполнить в [редакторе запросов log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md#write-a-query). Для каждого запроса замените `userupn` именем участника-пользователя, которого требуется найти.
+Следующий список запросов позволяет просматривать сведения о подключении. Этот запрос можно выполнить в [редакторе запросов log Analytics](../azure-monitor/logs/log-analytics-tutorial.md#write-a-query). Для каждого запроса замените `userupn` именем участника-пользователя, которого требуется найти.
 
 ```kusto
 let Events = WVDConnections | where UserName == "userupn" ;
@@ -253,7 +254,7 @@ Get-Process -id (Get-NetUDPEndpoint  -LocalPort 3390 -LocalAddress 0.0.0.0).Owni
 Мы хотели бы узнать о своих впечатлениях в этой общедоступной предварительной версии!
 * Для вопросов, запросов, комментариев и других отзывов [Используйте эту форму обратной связи](https://aka.ms/RDPShortpathFeedback).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о сетевом подключении к виртуальным рабочим столам Windows [см.](network-connectivity.md)
 * Чтобы приступить к работе со службой QoS для виртуальных рабочих столов Windows, см. статью [Реализация качества обслуживания (QoS) для виртуальных рабочих столов Windows](rdp-quality-of-service-qos.md).

@@ -4,26 +4,37 @@ description: Как использовать службу сообщений Jav
 ms.topic: article
 ms.date: 07/17/2020
 ms.custom: seo-java-july2019, seo-java-august2019, seo-java-september2019
-ms.openlocfilehash: 8363011187a4c2ef77681ece4bb8b1de73ec7a63
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7e4bf0ad69b6cd183296a7245ad3f720ced76c5
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87801649"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652623"
 ---
-# <a name="use-java-message-service-20-api-with-azure-service-bus-premium-preview"></a>Использование API службы сообщений Java 2,0 с помощью служебной шины Azure Premium (Предварительная версия)
+# <a name="use-java-message-service-20-api-with-azure-service-bus-premium"></a>Использование API службы сообщений Java 2,0 с помощью служебной шины Azure Premium
 
 В этой статье объясняется, как использовать популярный API **2,0 службы сообщений Java (JMS)** для взаимодействия с служебной шиной Azure по протоколу расширенного протокола очередей сообщений (AMQP 1,0).
 
 > [!NOTE]
-> Поддержка API службы сообщений Java (JMS) 2,0 доступна только на уровне "Премиум" служебной **шины Azure** и сейчас находится на **этапе предварительной версии**.
+> Поддержка API службы сообщений Java (JMS) 2,0 доступна только на **уровне Premium служебной шины Azure**.
 >
 
-## <a name="get-started-with-service-bus"></a>Приступая к работе со служебной шиной
+## <a name="pre-requisites"></a>Предварительные требования
+
+### <a name="get-started-with-service-bus"></a>Приступая к работе со служебной шиной
 
 В этом учебнике предполагается, что у вас уже есть пространство имен служебной шины. Если этого не сделать, то можно [создать пространство имен и очередь](service-bus-create-namespace-portal.md) с помощью [портал Azure](https://portal.azure.com). 
 
 Дополнительные сведения о создании пространств имен и очередей служебной шины см. в разделе Начало [работы с очередями служебной шины с помощью портал Azure](service-bus-quickstart-portal.md).
+
+### <a name="set-up-a-java-development-environment"></a>Настройка среды разработки Java
+
+Для разработки приложений Java необходимо настроить соответствующую среду разработки. 
+   * Установлен либо JDK (пакет средств разработки Java), либо JRE (среда выполнения Java).
+   * JDK или JRE добавляется в путь сборки и соответствующие системные переменные.
+   * Для использования JDK или JRE устанавливается Java IDE. Например, Eclipse или IntelliJ.
+
+Чтобы узнать больше о том, как подготовить среду разработки для Java в Azure, используйте [это руководство](https://docs.microsoft.com/azure/developer/java/fundamentals/).
 
 ## <a name="what-jms-features-are-supported"></a>Какие функции JMS поддерживаются?
 
@@ -72,11 +83,19 @@ ms.locfileid: "87801649"
     JMSContext jmsContext = factory.createContext();
     ```
 
+    >[!IMPORTANT]
+    > Несмотря на то, что аналогично именованию, сеанс JMS и служебная шина "сеанс" полностью независимы друг от друга.
+    >
+    > В JMS 1,1 сеанс — это важный Стандартный блок API, который позволяет создавать MessageProducer, MessageConsumer и само сообщение. Дополнительные сведения см. в [модели программирования JMS API](https://docs.oracle.com/javaee/6/tutorial/doc/bnceh.html) .
+    >
+    > В служебной шине [сеансы](message-sessions.md) — это клиентские конструкции служб и на стороне клиента, позволяющие выполнять обработку FIFO в очередях и подписках.
+    >
+
 ### <a name="write-the-jms-application"></a>Написание приложения JMS
 
 После `Session` `JMSContext` создания экземпляра или, приложение может использовать знакомые API-интерфейсы JMS для выполнения операций управления и работы с данными.
 
-Ознакомьтесь со списком [поддерживаемых функций JMS](how-to-use-java-message-service-20.md#what-jms-features-are-supported) , чтобы узнать, какие API поддерживаются в рамках этой предварительной версии.
+Сведения о поддерживаемых интерфейсах API см. в списке [поддерживаемых функций JMS](how-to-use-java-message-service-20.md#what-jms-features-are-supported) .
 
 Ниже приведены примеры фрагментов кода, которые помогут приступить к работе с JMS-
 
@@ -124,17 +143,17 @@ JMSConsumer sharedDurableConsumer = jmsContext.createSharedDurableConsumer(topic
 Message msg = (Message) sharedDurableConsumer.receive();
 ```
 
-## <a name="summary"></a>Итоги
+## <a name="summary"></a>Сводка
 
 В этом руководство показано, как клиентские приложения Java, использующие службу сообщений Java (JMS) через AMQP 1,0, могут взаимодействовать с служебной шиной Azure.
 
 Протокол AMQP 1.0 Service Bus можно также использовать из других языков, в числе которых .NET, C, Python и PHP. Компоненты, созданные с помощью этих языков, могут надежно и точно обмениваться сообщениями, используя AMQP 1.0 в Service Bus.
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о служебной шине Azure и сведения о сущностях службы сообщений Java (JMS) см. по ссылкам ниже. 
 * [Служебная шина — очереди, разделы и подписки](service-bus-queues-topics-subscriptions.md)
-* [Служебная шина — сущности службы сообщений Java](service-bus-queues-topics-subscriptions.md#java-message-service-jms-20-entities-preview)
+* [Служебная шина — сущности службы сообщений Java](service-bus-queues-topics-subscriptions.md#java-message-service-jms-20-entities)
 * [Поддержка AMQP 1.0 в служебной шине](service-bus-amqp-overview.md)
 * [Инструкции для разработчиков служебной шины AMQP 1,0](service-bus-amqp-dotnet.md)
 * [Начало работы с очередями служебной шины](service-bus-dotnet-get-started-with-queues.md)
