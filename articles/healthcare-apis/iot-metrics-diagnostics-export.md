@@ -8,16 +8,16 @@ ms.subservice: iomt
 ms.topic: how-to
 ms.date: 11/13/2020
 ms.author: jasteppe
-ms.openlocfilehash: 14fd5378f37ebfc20b2d7084c08f15ea8f7a00b2
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 00abad784048b67e9d89c12b9be3f631f586fb07
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94630538"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574533"
 ---
 # <a name="export-azure-iot-connector-for-fhir-preview-metrics-through-diagnostic-settings"></a>Экспорт метрик соединителя Интернета вещей Azure для FHIR (предварительная версия) с помощью параметров диагностики
 
-В этой статье вы узнаете, как экспортировать соединитель Azure IoT для быстрого получения ресурсов о взаимодействии здравоохранения (FHIR&#174;) * журналы метрик. Функция, позволяющая вести журнал метрик, — это [**параметры диагностики**](../azure-monitor/platform/diagnostic-settings.md) в портал Azure. 
+В этой статье вы узнаете, как экспортировать соединитель Azure IoT для быстрого получения ресурсов о взаимодействии здравоохранения (FHIR&#174;) * журналы метрик. Функция, позволяющая вести журнал метрик, — это [**параметры диагностики**](../azure-monitor/essentials/diagnostic-settings.md) в портал Azure. 
 
 > [!TIP]
 > Следуйте указаниям в статье [Включение ведения журнала диагностики в Azure API для FHIR и соединителя Azure IOT для FHIR](enable-diagnostic-logging.md#enable-diagnostic-logging-in-azure-api-for-fhir) , чтобы настроить ведение журнала аудита.
@@ -48,16 +48,16 @@ ms.locfileid: "94630538"
 > [!Note] 
 > Для того чтобы первые журналы метрик отображались в выбранном репозитории, может потребоваться до 15 минут.  
  
-Дополнительные сведения о работе с журналами диагностики см. в [документации по журналу ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md) .
+Дополнительные сведения о работе с журналами диагностики см. в [документации по журналу ресурсов Azure](../azure-monitor/essentials/platform-logs-overview.md) .
 
 ## <a name="conclusion"></a>Заключение 
 Наличие доступа к журналам метрик очень важно для мониторинга и устранения неполадок.  Соединитель Azure IoT для FHIR позволяет выполнять эти действия с помощью журналов метрик. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с часто задаваемыми вопросами о соединителе Azure IoT для FHIR.
 
 >[!div class="nextstepaction"]
 >[Вопросы и ответы о соединителе Azure IoT для FHIR](fhir-faq.md)
 
-* В портал Azure соединитель Azure IoT для FHIR называется соединителем IoT (Предварительная версия). FHIR является охраняемым товарным знаком HL7 и используется с разрешением HL7.
+*На портале Azure соединитель Azure IoT для FHIR называется соединителем IoT (предварительная версия). FHIR — это зарегистрированная торговая марка организации HL7, которая используется с разрешения HL7.

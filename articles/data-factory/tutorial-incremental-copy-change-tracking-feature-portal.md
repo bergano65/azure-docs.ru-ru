@@ -1,22 +1,18 @@
 ---
 title: Добавочное копирование данных с помощью решения "Отслеживание изменений" и портала Azure
 description: Из этого руководства вы узнаете, как создать фабрику данных Azure с конвейером, который загружает в Хранилище BLOB-объектов Azure разностные данные на основе сведений об отслеживании изменений из базы данных-источника в службе "База данных SQL Azure".
-services: data-factory
 ms.author: yexu
 author: dearandyxu
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/12/2018
-ms.openlocfilehash: 3ea231258f7a60ce90ec119803b5abc8b6e525fe
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 42ca5b2c58568a6b38ed71bcd54badbac603cf16
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510623"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100378729"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-change-tracking-information-using-the-azure-portal"></a>Добавочная загрузка данных из Базы данных SQL Azure в хранилище BLOB-объектов Azure с использованием сведений об отслеживания изменений и портала Azure
 

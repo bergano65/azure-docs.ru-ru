@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Mini R  so I can use it to transfer data to Azure.
-ms.openlocfilehash: 1e81ab61b04f9cca6aff57de1736eac25a871c97
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c3a09242b895234c96c64d9e23449d980e47e387
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96465071"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546743"
 ---
 # <a name="tutorial-configure-certificates-vpn-encryption-for-your-azure-stack-edge-mini-r"></a>Руководство по Настройка сертификатов, VPN и шифрования для Azure Stack Edge Mini R
 
@@ -38,10 +38,10 @@ ms.locfileid: "96465071"
 * Установлено физическое устройство, как описано в статье об [установке Azure Stack Edge Mini R](azure-stack-edge-mini-r-deploy-install.md).
 
 * Если вы планируете применить собственные сертификаты:
-    - эти сертификаты должны быть подготовлены в соответствующем формате, включая сертификат цепочки подписывания. Дополнительные сведения о сертификате см. в статье [Управление сертификатами](azure-stack-edge-j-series-manage-certificates.md).
+    - эти сертификаты должны быть подготовлены в соответствующем формате, включая сертификат цепочки подписывания. Дополнительные сведения о сертификате см. в статье [Управление сертификатами](azure-stack-edge-gpu-manage-certificates.md).
 
     - Если ваше устройство развернуто в Azure для государственных организаций, Azure Government Secret или Azure Government Top Secret, а не в общедоступном облаке Azure, перед активацией устройства необходимо получить сертификат цепочки подписывания. 
-    Дополнительные сведения см. в статье об [управлении сертификатами](azure-stack-edge-j-series-manage-certificates.md).
+    Дополнительные сведения см. в статье об [управлении сертификатами](azure-stack-edge-gpu-manage-certificates.md).
 
 
 ## <a name="configure-certificates-for-device"></a>Настройка сертификатов для устройства

@@ -1,22 +1,19 @@
 ---
 title: Пакетное копирование данных с помощью портала Azure
 description: Использование Фабрики данных Azure и действия копирования для копирования данных из исходного хранилища данных в целевое хранилище в пакетном режиме.
-services: data-factory
 ms.author: jingwang
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 01/29/2021
-ms.openlocfilehash: cb5ea99223b803435ecd8716a7a57152266878a8
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 4807d1d5e97f7f95521df054d1a71f8925ac4ebb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223374"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100367611"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-in-the-azure-portal"></a>Копирование нескольких таблиц в пакетном режиме с помощью Фабрики данных Azure на портале Azure
 

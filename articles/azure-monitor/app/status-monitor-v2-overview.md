@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: TimothyMothra
 ms.author: tilee
 ms.date: 09/16/2019
-ms.openlocfilehash: f0ce969a4ab016d6a036d33a0e9bf027bb580a20
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 69f80856150e461c6edfafdf0aa89de77c4ab0fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186224"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100583808"
 ---
 # <a name="deploy-azure-monitor-application-insights-agent-for-on-premises-servers"></a>Развертывание агента Application Insights Azure Monitor для локальных серверов
 
@@ -67,18 +67,18 @@ Application Insights агент расположен здесь: https://www.pow
   - Командлет [Get-аппликатионинсигхтсмониторингстатус](./status-monitor-v2-api-reference.md#get-applicationinsightsmonitoringstatus) можно использовать для проверки успешности выполнения включения.
   - Мы рекомендуем использовать [динамические метрики](./live-stream.md) , чтобы быстро определить, отправляет ли приложение данные телеметрии.
 
-  - Вы также можете использовать [log Analytics](../log-query/log-analytics-tutorial.md) для перечисления всех облачных ролей, отправляющих данные телеметрии:
+  - Вы также можете использовать [log Analytics](../logs/log-analytics-tutorial.md) для перечисления всех облачных ролей, отправляющих данные телеметрии:
       ```Kusto
       union * | summarize count() by cloud_RoleName, cloud_RoleInstance
       ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../platform/metrics-charts.md) для мониторинга производительности и использования.
+* [Изучите метрики](../essentials/metrics-charts.md) для мониторинга производительности и использования.
 * [Поиск событий и журналов](./diagnostic-search.md) для диагностики проблем.
-* [Используйте аналитику](../log-query/log-query-overview.md) для более сложных запросов.
+* [Используйте аналитику](../logs/log-query-overview.md) для более сложных запросов.
 * [Создание панелей мониторинга](./overview-dashboard.md).
 
 Добавление данных телеметрии:

@@ -1,22 +1,19 @@
 ---
 title: Ветвление в конвейере службы "Фабрика данных Azure"
 description: Узнайте, как контролировать поток данных в фабрике данных Azure с помощью ветвления и создания цепочки действий.
-services: data-factory
 author: dcstwh
 ms.author: weetok
-manager: anandsub
 ms.reviewer: maghan
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
 ms.date: 9/27/2019
-ms.openlocfilehash: ab7d17ee61d733483b6d3573e9bd69b1628c7940
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 111fff6e35bed9c2af9c638549362039f25def12
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496965"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100386022"
 ---
 # <a name="branching-and-chaining-activities-in-a-data-factory-pipeline"></a>Ветвления и создание цепочки действий в конвейере фабрики данных
 
@@ -610,7 +607,7 @@ Creating linked service AzureStorageLinkedService...
 {
   "type": "AzureStorage",
   "typeProperties": {
-    "connectionString": "DefaultEndpointsProtocol=https;AccountName=***;AccountKey=**_"
+    "connectionString": "DefaultEndpointsProtocol=https;AccountName=***;AccountKey=***"
   }
 }
 Creating dataset SourceStorageDataset...
@@ -753,7 +750,7 @@ Press any key to exit...
 В этом руководстве описано, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> _ Создание фабрики данных
+> * Создание фабрики данных
 > * Создание связанной службы хранилища Azure
 > * Создание набора данных больших двоичных объектов Azure
 > * Создание конвейера, содержащего действия копирования и веб-действие.

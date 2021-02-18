@@ -1,23 +1,18 @@
 ---
 title: Создание конвейера Фабрики данных Azure с помощью частных конечных точек
 description: В этом руководстве описано, как с помощью портала Azure создать фабрику данных с конвейером. Этот конвейер использует действие копирования для копирования данных из хранилища BLOB-объектов Azure в базу данных SQL Azure.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.reviewer: douglasl
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
 ms.date: 01/15/2021
 ms.author: jingwang
-ms.openlocfilehash: dfd2ed47c3fd963d7e119d235719771b25bdaf34
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 002ceba60853908e381f084e95ec1ee58e8580cb
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98249522"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100375822"
 ---
 # <a name="copy-data-securely-from-azure-blob-storage-to-a-sql-database-by-using-private-endpoints"></a>Безопасное копирование данных из Хранилища BLOB-объектов Azure в Базу данных SQL с помощью частных конечных точек
 

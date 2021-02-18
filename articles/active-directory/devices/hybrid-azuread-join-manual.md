@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5316a1647c96076696b14de157e74e2155a6b368
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 651e7156faf8305edb0a1541e957dd2abf3a71b8
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860020"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100365758"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-joined-devices-manually"></a>Руководство по Настройка устройств с гибридным присоединением к Azure Active Directory
 
@@ -75,7 +75,7 @@ Azure AD Connect выполняет следующие функции:
 
 Начиная с Windows 10 версии 1803, если попытка гибридного присоединения к Azure AD для федеративного домена (такого как AD FS) завершается ошибкой, а в Azure AD Connect настроена синхронизация объекта-устройства или компьютера с Azure AD, устройство попытается выполнить это присоединение с помощью синхронизированного компьютера или устройства.
 
-Проверить, имеет ли устройство доступ к указанным выше ресурсам Майкрософт под системной учетной записью, можно с помощью [скрипта для проверки подключения при регистрации устройств](https://gallery.technet.microsoft.com/Test-Device-Registration-3dc944c0).
+Проверить, имеет ли устройство доступ к указанным выше ресурсам Майкрософт под системной учетной записью, можно с помощью [скрипта для проверки подключения при регистрации устройств](https://docs.microsoft.com/samples/azure-samples/testdeviceregconnectivity/testdeviceregconnectivity/).
 
 ## <a name="verify-configuration-steps"></a>Проверка шагов конфигурации
 

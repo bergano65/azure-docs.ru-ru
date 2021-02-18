@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 09/10/2020
-ms.openlocfilehash: 35f575410caa7a8a8ffbda35bdfa876418db8945
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: fee454073c50b9542e140576ef0629a39b8f4294
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210381"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573462"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis"></a>Изучение Azure Monitor кэша Azure для Redis
 
@@ -186,6 +186,6 @@ ms.locfileid: "98210381"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Настройте [оповещения метрик](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
+* Настройте [оповещения метрик](../alerts/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
 
-* Узнайте, в каких ситуациях можно применять книги, как создавать и настраивать отчеты и др., изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).
+* Узнайте, в каких ситуациях можно применять книги, как создавать и настраивать отчеты и др., изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../visualize/workbooks-overview.md).

@@ -6,12 +6,12 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/28/2020
-ms.openlocfilehash: 4c6d8fabbd236a2653fff8168ad73c0b45f09d64
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 4970cacb0995678bdad87f14ba971b8fb88ffa09
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98027848"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593642"
 ---
 # <a name="react-plugin-for-application-insights-javascript-sdk"></a>Подключаемый модуль реагирования для Application Insights SDK JavaScript
 
@@ -30,7 +30,7 @@ npm install @microsoft/applicationinsights-react-js
 
 ```
 
-## <a name="basic-usage"></a>Базовое использование
+## <a name="basic-usage"></a>Основное использование
 
 Инициализация подключения к Application Insights:
 
@@ -75,7 +75,7 @@ class MyComponent extends React.Component {
 export default withAITracking(reactPlugin, MyComponent);
 ```
 
-## <a name="configuration"></a>Параметр Configuration
+## <a name="configuration"></a>Конфигурация
 
 | Имя    | По умолчанию | Описание                                                                                                    |
 |---------|---------|----------------------------------------------------------------------------------------------------------------|
@@ -223,7 +223,7 @@ const App = () => {
 
 Ознакомьтесь с [демонстрацией Application Insights реагировать](https://github.com/Azure-Samples/application-insights-react-demo).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о пакете SDK для JavaScript см. в [документации по Application Insights JavaScript SDK](javascript.md).
-- Дополнительные сведения о языке запросов Kusto и запросе данных в Log Analytics см. в разделе [Общие сведения о запросе журнала](../../azure-monitor/log-query/log-query-overview.md).
+- Дополнительные сведения о языке запросов Kusto и запросе данных в Log Analytics см. в разделе [Общие сведения о запросе журнала](../../azure-monitor/logs/log-query-overview.md).

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/24/2019
 ms.author: yelevin
-ms.openlocfilehash: 7701fc6d90fd9ebc7ec29f0ffdd7d050c58c036c
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: abecddb6f5469cb4ef463e65d6c74149bf34dca9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655669"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590234"
 ---
 # <a name="connect-your-domain-name-server"></a>Подключение сервера доменных имен
 
@@ -43,10 +43,10 @@ ms.locfileid: "94655669"
 
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
-| [Агенты Windows](../azure-monitor/platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
-| [Группа управления System Center Operations Manager](../azure-monitor/platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
+| [Агенты Windows](../azure-monitor/agents/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
+| [Агенты Linux](../azure-monitor/vm/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Группа управления System Center Operations Manager](../azure-monitor/agents/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
+| [Учетная запись хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) | Нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
@@ -82,7 +82,7 @@ ms.locfileid: "94655669"
 4. В Azure DNS Analytics в разделе **Конфигурация** измените любые параметры, сохраните его, а затем измените его обратно, если нужно, а затем сохраните его снова.
 5. Проверьте Azure DNS аналитику, чтобы убедиться, что запросы отображаются.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом документе вы узнали, как подключить локальные устройства DNS к Azure Sentinel. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 - Узнайте, как [отслеживать свои данные и потенциальные угрозы](quickstart-get-visibility.md).

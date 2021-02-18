@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 50d78e83bbbeb4b0252c83f9f52e94599ea6946c
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 2f68452bed69e4e174f126d259e8df6d2283e6cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787966"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585229"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -94,7 +94,7 @@ ms.locfileid: "98787966"
 ## <a name="monitoring-your-storage-service"></a><a name="monitoring-your-storage-service"></a>Мониторинг службы хранилища
 Если вы знакомы с системным монитором Windows, то можете считать, что метрики хранилища — эквивалент счетчиков службы хранилища Azure. Они предоставляют полный набор метрик (счетчиков в терминологии системного монитора Windows), позволяющих оценить, например, доступность службы, общее количество запросов к службе, а также процент успешно обработанных запросов. Полный список доступных метрик см. в статье [Storage Analytics Metrics Table Schema](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema) (Схема таблицы метрик аналитики хранилища). Вы можете настроить службу хранилища так, чтобы она собирала и агрегировала метрики каждый час или каждую минуту. Дополнительные сведения о том, как включить метрики и отслеживать учетные записи хранения, см. в статье [Enabling storage metrics and viewing metrics data](../blobs/monitor-blob-storage.md) (Включение метрик хранилища и просмотр данных метрик).
 
-Вы можете выбрать, какие ежечасные метрики должны отображаться на [портале Azure](https://portal.azure.com), и настроить правила для уведомления администраторов по электронной почте обо всех случаях, когда эти метрики превышают пороговые уровни. Дополнительные сведения см. в статье [Создание оповещений для служб Azure с помощью портала Azure](../../azure-monitor/platform/alerts-overview.md).
+Вы можете выбрать, какие ежечасные метрики должны отображаться на [портале Azure](https://portal.azure.com), и настроить правила для уведомления администраторов по электронной почте обо всех случаях, когда эти метрики превышают пороговые уровни. Дополнительные сведения см. в статье [Создание оповещений для служб Azure с помощью портала Azure](../../azure-monitor/alerts/alerts-overview.md).
 
 Рекомендуем ознакомиться со статьей [Azure Monitor для хранилищ](../../azure-monitor/insights/storage-insights-overview.md) (предварительная версия). Это функция Azure Monitor, которая обеспечивает комплексный мониторинг ваших учетных записей службы хранилища Azure, создавая единое представление данных о производительности, ресурсах и доступности ваших служб хранилища Azure. Для этого вам не требуется ничего включать или настраивать. Кроме того, вы можете мгновенно просматривать эти метрики в предварительно определенных интерактивных диаграммах и прочих доступных визуализациях.
 
