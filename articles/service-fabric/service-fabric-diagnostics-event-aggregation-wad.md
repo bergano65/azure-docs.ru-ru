@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 04/03/2018
 ms.author: srrengar
-ms.openlocfilehash: bcb9ca9e73c0898dc778202eca036a5ae92bebf8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87fc8e30274f0a11b7ddfc5eeb184f1a45a5351d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87076138"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588383"
 ---
 # <a name="event-aggregation-and-collection-using-windows-azure-diagnostics"></a>Агрегирование и сбор событий с помощью Диагностики Azure для Windows
 > [!div class="op_single_selector"]
@@ -346,12 +346,12 @@ Service Fabric настраивает несколько [стандартных
 
 В обоих приведенных выше фрагментах кода для указания приемника использовано имя applicationInsights. Это не является обязательным. Если имя приемника включено в элемент sinks, именем может быть любая строка.
 
-Сейчас журналы кластера отображаются в средстве просмотра журналов Application Insights как **трассировки**. Так как большинство трассировок, поступающих от платформы, имеют уровень "информационное", можно также рассмотреть возможность изменения конфигурации приемника, чтобы она отправляла только журналы типа "warning" или "Error". Для этого в приемник можно добавить каналы, как показано в [этой статье](../azure-monitor/platform/diagnostics-extension-to-application-insights.md).
+Сейчас журналы кластера отображаются в средстве просмотра журналов Application Insights как **трассировки**. Так как большинство трассировок, поступающих от платформы, имеют уровень "информационное", можно также рассмотреть возможность изменения конфигурации приемника, чтобы она отправляла только журналы типа "warning" или "Error". Для этого в приемник можно добавить каналы, как показано в [этой статье](../azure-monitor/agents/diagnostics-extension-to-application-insights.md).
 
 >[!NOTE]
 >Если вы укажете на портале или в шаблоне Resource Manager неправильный ключ Application Insights, придется вручную заменить его, а затем обновить или повторно развернуть кластер.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы правильно настроили диагностику Azure, данные из журнала трассировки событий Windows и журнала EventSource станут появляться в таблице хранилища. Если вы решили использовать Azure Monitor журналы, Kibana или любую другую платформу аналитики и визуализации данных, которая не настроена непосредственно в шаблоне диспетчер ресурсов, обязательно настройте платформу для чтения данных из этих таблиц хранилища. Сделать это для журналов Azure Monitor довольно тривиальное, и оно объясняется в [анализе событий и журнала](service-fabric-diagnostics-event-analysis-oms.md). В этом смысле Application Insights — это особый случай, так как это решение можно настроить при настройке расширения диагностики. Дополнительные сведения об Application Insights см. в [этой статье](service-fabric-diagnostics-event-analysis-appinsights.md).
 

@@ -7,16 +7,16 @@ ms.topic: conceptual
 ms.date: 05/19/2020
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: d5537079341823275ba521c9d44139a0e0305286
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 2bee856adef1208aabbe65ecd5fd11235579bb82
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92014954"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582700"
 ---
 # <a name="setup-diagnostic-logging"></a>Настройка журнала ведения диагностики
 
-Важной частью любого решения Analysis Services является мониторинг работы серверов. Службы Azure Analysis Services интегрированы с Azure Monitor. С помощью [журналов ресурсов Azure Monitor](../azure-monitor/platform/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [журналы Azure Monitor](../azure-monitor/overview.md).
+Важной частью любого решения Analysis Services является мониторинг работы серверов. Службы Azure Analysis Services интегрированы с Azure Monitor. С помощью [журналов ресурсов Azure Monitor](../azure-monitor/essentials/platform-logs-overview.md) вы можете отслеживать и отправлять журналы в [службу хранилища Azure](https://azure.microsoft.com/services/storage/), выполнять их потоковую передачу в [Центры событий Azure](https://azure.microsoft.com/services/event-hubs/) и экспортировать их в [журналы Azure Monitor](../azure-monitor/overview.md).
 
 ![Ведение журнала ресурсов в хранилище, Центрах событий и журналах Azure Monitor](./media/analysis-services-logging/aas-logging-overview.png)
 
@@ -82,7 +82,7 @@ ms.locfileid: "92014954"
 
     * **Archive to a storage account** (Архивировать в учетной записи хранения). Чтобы использовать этот параметр, необходима учетная запись хранения для подключения. Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-account-create.md). Следуйте указаниям для создания диспетчера ресурсов и учетной записи общего назначения, а затем выберите учетную запись хранения, вернувшись к этой странице портала. Возможно, потребуется подождать несколько минут, пока созданная учетная запись хранения отобразится в раскрывающемся меню.
     * **Stream to an event hub** (Потоковая передача в концентратор событий). Чтобы использовать этот параметр, вам понадобится пространство имен концентратора событий и концентратор событий для подключения. Дополнительные сведения см. в статье [Создание пространства имен Центров событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md). Затем на портале вернитесь на эту страницу, чтобы выбрать пространство имен концентратора событий и имя политики.
-    * **Отправка в Azure Monitor (рабочую область Log Analytics)** . Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/learn/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
+    * **Отправка в Azure Monitor (рабочую область Log Analytics)** . Чтобы использовать этот параметр, воспользуйтесь одной из имеющихся рабочих областей или [создайте новый ресурс рабочей области](../azure-monitor/logs/quick-create-workspace.md) на портале. См. дополнительные сведения о [просмотре журналов в рабочей области Log Analytics](#view-logs-in-log-analytics-workspace).
 
     * **Подсистема**. Выберите этот параметр для ведения журнала xEvents. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов ресурсов. По окончании периода хранения журналы удаляются автоматически.
     * **Служба**. Выберите этот параметр, чтоб вести журнал событий уровня службы. Если выполняется архивация в учетную запись хранения, можно выбрать период хранения журналов ресурсов. По окончании периода хранения журналы удаляются автоматически.
@@ -90,7 +90,7 @@ ms.locfileid: "92014954"
 
 3. Выберите команду **Сохранить**.
 
-    Если появится сообщение об ошибке "не удалось обновить диагностику для \<workspace name> . Подписка \<subscription id> не зарегистрирована для использования Microsoft. Insights. " следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](../azure-monitor/platform/resource-logs.md), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
+    Если появится сообщение об ошибке "не удалось обновить диагностику для \<workspace name> . Подписка \<subscription id> не зарегистрирована для использования Microsoft. Insights. " следуйте инструкциям статьи [Устранение неполадок Диагностики Azure](../azure-monitor/essentials/resource-logs.md), чтобы зарегистрировать учетную запись, а затем повторите процедуру.
 
     Если вы хотите изменить способ сохранения журналов ресурсов в дальнейшем, можно в любое время вернуться на эту страницу, чтобы изменить параметры.
 
@@ -140,7 +140,7 @@ ms.locfileid: "92014954"
 
 ### <a name="resource-manager-template"></a>Шаблон Resource Manager
 
-Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/samples/resource-manager-diagnostic-settings.md). 
+Узнайте, как [включить параметры диагностики при создании ресурса из шаблона Resource Manager](../azure-monitor/essentials/resource-manager-diagnostic-settings.md). 
 
 ## <a name="manage-your-logs"></a>Управление журналами
 
@@ -208,7 +208,7 @@ window
 | order by TimeGenerated asc 
 ```
 
-Можно использовать сотни запросов. Дополнительные сведения о запросах см. в статье [Начало работы с запросами журналов Azure Monitor](../azure-monitor/log-query/get-started-queries.md).
+Можно использовать сотни запросов. Дополнительные сведения о запросах см. в статье [Начало работы с запросами журналов Azure Monitor](../azure-monitor/logs/get-started-queries.md).
 
 
 ## <a name="turn-on-logging-by-using-powershell"></a>Включение ведения журнала с помощью PowerShell
@@ -326,6 +326,6 @@ Set-AzDiagnosticSetting -ResourceId $account.ResourceId`
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. сведения [о ведении журнала ресурсов Azure Monitor](../azure-monitor/platform/platform-logs-overview.md).
+См. сведения [о ведении журнала ресурсов Azure Monitor](../azure-monitor/essentials/platform-logs-overview.md).
 
 Ознакомьтесь с описанием [Set-AzDiagnosticSetting](/powershell/module/az.monitor/set-azdiagnosticsetting) в справке PowerShell.

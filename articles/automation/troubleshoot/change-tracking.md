@@ -3,18 +3,63 @@ title: Устранение неполадок службы автоматиза
 description: В этой статье рассказывается, как устранять неполадки и разрешать проблемы функции "Отслеживание и инвентаризации изменений" службы автоматизации Azure.
 services: automation
 ms.subservice: change-inventory-management
-ms.date: 01/31/2019
+ms.date: 02/15/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 516f1a4e5e7c677b17a2941ee3c300db44d49a3b
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 9fe53a343a9f6675519b60d37d077886adaf8a9d
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896551"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651171"
 ---
 # <a name="troubleshoot-change-tracking-and-inventory-issues"></a>Устранение неполадок с Отслеживанием изменений и инвентаризации
 
 В этой статье описывается, как устранять неполадки и устранять проблемы с отслеживанием и инвентаризацией изменений в службе автоматизации Azure. Общие сведения о функциях отслеживания изменений и инвентаризации см. в [Обзор функции "Отслеживание и инвентаризация изменений"](../change-tracking/overview.md).
+
+## <a name="general-errors"></a>Общие ошибки
+
+### <a name="scenario-machine-is-already-registered-to-a-different-account"></a><a name="machine-already-registered"></a>Сценарий. Компьютер уже зарегистрирован в другой учетной записи
+
+### <a name="issue"></a>Проблема
+
+Отображается следующее сообщение об ошибке:
+
+```error
+Unable to Register Machine for Change Tracking, Registration Failed with Exception System.InvalidOperationException: {"Message":"Machine is already registered to a different account."}
+```
+
+### <a name="cause"></a>Причина
+
+Компьютер уже был развернут в другой рабочей области для Отслеживание изменений.
+
+### <a name="resolution"></a>Решение
+
+1. Убедитесь, что компьютер отправляет отчеты в правильную рабочую область. Инструкции по проверке см. в разделе [Проверка подключения агента к Azure Monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor). Также убедитесь, что эта рабочая область связана с учетной записью службы автоматизации Azure. Для подтверждения перейдите на страницу учетной записи службы автоматизации и в разделе **Связанные ресурсы** выберите **Связанная рабочая область**.
+
+1. Убедитесь, что компьютеры отображаются в рабочей области Log Analytics, связанной с вашей учетной записью службы автоматизации. Выполните следующий запрос в рабочей области Log Analytics.
+
+   ```kusto
+   Heartbeat
+   | summarize by Computer, Solutions
+   ```
+
+   Если компьютер не отображается в результатах запроса, он не был возвращен в последнее время. Возможно, есть проблемы с локальной конфигурацией. Необходимо переустановить агент Log Analytics.
+
+   Если компьютер указан в результатах запроса, проверьте свойство Solutions, которое **отслеживания изменений** в списке. Он проверяет, зарегистрирован ли он в Отслеживание изменений и инвентаризации. Если это не так, проверьте наличие проблем с конфигурацией области. Конфигурация области определяет, какие компьютеры настроены для Отслеживание изменений и инвентаризации. Чтобы настроить конфигурацию области для целевого компьютера, см. статью [включение отслеживание изменений и инвентаризации из учетной записи службы автоматизации](../change-tracking/enable-from-automation-account.md).
+
+   В рабочей области выполните этот запрос.
+
+   ```kusto
+   Operation
+   | where OperationCategory == 'Data Collection Status'
+   | sort by TimeGenerated desc
+   ```
+
+1. Если получен такой результат: ```Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota```, значит достигнута квота, определенная в рабочей области, которая не позволяет сохранить данные. В рабочей области выберите **использование и оценочные затраты**. Выберите новую **ценовую категорию** , которая позволит использовать больше данных, или щелкните **ежедневное ограничение** и снимите ограничение.
+
+:::image type="content" source="./media/change-tracking/change-tracking-usage.png" alt-text="Использование и предполагаемые затраты." lightbox="./media/change-tracking/change-tracking-usage.png":::
+
+Если проблема по прежнему не решена, следуйте инструкциям статьи [Развертывание гибридной рабочей роли Runbook для Windows](../automation-windows-hrw-install.md), чтобы переустановить гибридную рабочую роль для Windows. Для Linux выполните действия, описанные в статье  [развертывание гибридной рабочей роли Runbook для Linux](../automation-linux-hrw-install.md).
 
 ## <a name="windows"></a>Windows
 
@@ -96,11 +141,11 @@ Heartbeat
 | summarize by Computer, Solutions
 ```
 
-Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо переустановить агент. Сведения об установке и настройке см. в статье [Сбор данных журнала с помощью агента Службы анализа журналов](../../azure-monitor/platform/log-analytics-agent.md).
+Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо переустановить агент. Сведения об установке и настройке см. в статье [Сбор данных журнала с помощью агента Службы анализа журналов](../../azure-monitor/agents/log-analytics-agent.md).
 
 Если компьютер отображается в результатах запроса, проверьте конфигурацию области. См. [Определение решений мониторинга в Azure Monitor](../../azure-monitor/insights/solution-targeting.md).
 
-Дополнительные сведения об устранении этой проблемы см. в разделе [Проблема: не отображаются данные Linux](../../azure-monitor/platform/agent-linux-troubleshoot.md#issue-you-are-not-seeing-any-linux-data).
+Дополнительные сведения об устранении этой проблемы см. в разделе [Проблема: не отображаются данные Linux](../../azure-monitor/agents/agent-linux-troubleshoot.md#issue-you-are-not-seeing-any-linux-data).
 
 ##### <a name="log-analytics-agent-for-linux-not-configured-correctly"></a>Агент Службы анализа журналов для Linux неправильно настроен
 

@@ -6,12 +6,12 @@ author: renatosalas
 ms.author: regutier
 ms.date: 01/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: f82432c1dd8c66e8ce845831ff35d534a34e3e04
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 9c3ff91cbfb6423099040a6ea46eeb66f5461f48
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202544"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589673"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Настройка собственного хранилища (BYOS) для Application Insights Profiler и Snapshot Debugger
 
@@ -21,9 +21,9 @@ ms.locfileid: "98202544"
 Используя свое собственное хранилище, эти артефакты отправляются в учетную запись хранения, которую вы контролируете. Это означает, что вы управляете политикой шифрования неактивных объектов, политикой управления жизненным циклом и доступом к сети. При этом вы несете ответственность за затраты, связанные с этой учетной записью хранения.
 
 > [!NOTE]
-> При включении закрытой ссылки необходимо использовать собственное хранилище. Дополнительные сведения о закрытой ссылке для Application Insights [см. в документации.](../platform/private-link-security.md)
+> При включении закрытой ссылки необходимо использовать собственное хранилище. Дополнительные сведения о закрытой ссылке для Application Insights [см. в документации.](../logs/private-link-security.md)
 >
-> Если вы включаете ключи Customer-Managed, необходимо использовать собственное хранилище. Дополнительные сведения о ключах Customer-Managed для Application Insights [см. в документации.](../platform/customer-managed-keys.md)
+> Если вы включаете ключи Customer-Managed, необходимо использовать собственное хранилище. Дополнительные сведения о ключах Customer-Managed для Application Insights [см. в документации.](../logs/customer-managed-keys.md)
 
 ## <a name="how-will-my-storage-account-be-accessed"></a>Как будет осуществляться доступ к учетной записи хранения?
 1. Агенты, выполняющиеся на виртуальных машинах или в службе приложений, будут отправлять артефакты (профили, моментальные снимки и символы) в контейнеры больших двоичных объектов в вашей учетной записи. Этот процесс включает связь со службой Application Insights Profiler или Snapshot Debugger, чтобы получить маркер SAS (подписанный URL-адрес) для нового большого двоичного объекта в учетной записи хранения.

@@ -3,16 +3,16 @@ title: Миграция из Azure Red Hat OpenShift 3.11 в Azure Red Hat OpenS
 description: Миграция из Azure Red Hat OpenShift 3.11 в Azure Red Hat OpenShift 4
 author: sakthi-vetrivel
 ms.author: suvetriv
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 08/13/2020
 keywords: миграция, АТО, openshift, Red Hat
-ms.openlocfilehash: f9bfc924581d5dbe33c7c2683a0f6083cb2abc23
-ms.sourcegitcommit: dd24c3f35e286c5b7f6c3467a256ff85343826ad
+ms.openlocfilehash: 371672de83a6d745d7b367f8327a64e11059923e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99071041"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653284"
 ---
 # <a name="migrate-from-azure-red-hat-openshift-311-to-azure-red-hat-openshift-4"></a>Миграция из Azure Red Hat OpenShift 3,11 в Azure Red Hat OpenShift 4
 
@@ -25,7 +25,7 @@ Azure Red Hat OpenShift в OpenShift 4 включает Kubernetes 1,16 в ОС 
 > [!NOTE]
 > Средства миграции Red Hat OpenShift, такие как средство поддержки миграции плоскости управления и средство переноса приложений кластера (камера), не могут использоваться с кластерами Azure Red Hat OpenShift 3,11.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что у вас уже есть кластер Azure Red Hat OpenShift 3,11.
 
@@ -71,7 +71,7 @@ az aro create \
 
 ## <a name="configure-the-target-openshift-4-cluster"></a>Настройка целевого кластера OpenShift 4
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Чтобы пользователи могли взаимодействовать с Azure Red Hat OpenShift, они должны сначала пройти проверку подлинности в кластере. Уровень проверки подлинности определяет пользователя, связанного с запросами к API-интерфейсу Azure Red Hat OpenShift. Затем уровень авторизации использует сведения о запрашивающем пользователе, чтобы определить, разрешен ли запрос.
 
@@ -100,13 +100,13 @@ Azure Red Hat OpenShift 4 поддерживает следующие подкл
 
 Azure Red Hat OpenShift 4 может создавать образы из исходного кода, развертывать их и управлять жизненным циклом. Для этого Azure Red Hat OpenShift предоставляет 4 [внутренний встроенный реестр образов контейнеров](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html) , который можно развернуть в среде Azure Red Hat OpenShift для локального управления образами.
 
-Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](../container-registry/index.yml), [Red Hat Quay](ttps://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
+Если вы используете такие внешние реестры, как [Реестр контейнеров Azure](../container-registry/index.yml), [Red Hat Quay](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-quay-overview_registry-options)или [Реестр Red Hat с поддержкой проверки подлинности](https://docs.openshift.com/container-platform/4.6/registry/registry-options.html#registry-authentication-enabled-registry-overview_registry-options), выполните действия по предоставлению учетных данных в кластер, чтобы разрешить кластеру доступ к репозиториям.
 
 ### <a name="monitoring"></a>Наблюдение
 
 Azure Red Hat OpenShift включает предварительно настроенный, предварительно установленный и самообновляемый стек мониторинга, основанный на проекте с открытым исходным кодом Prometheus и его более широкой системе. Он обеспечивает мониторинг компонентов кластера и включает набор предупреждений для немедленного уведомления администратора кластера о возникших проблемах и наборе панелей мониторинга Grafana. Стек мониторинга кластера поддерживается только для мониторинга кластеров Azure Red Hat OpenShift. Дополнительные сведения см. в статье [мониторинг кластера для Azure Red Hat OpenShift](https://docs.openshift.com/container-platform/4.6/monitoring/understanding-the-monitoring-stack.html).
 
-Если вы используете [Azure Monitor для контейнеров для Azure Red Hat OpenShift 3,11](../azure-monitor/insights/container-insights-azure-redhat-setup.md), можно также включить Azure Monitor для контейнеров для [кластеров Azure Red Hat OpenShift 4](../azure-monitor/insights/container-insights-azure-redhat4-setup.md) и продолжить использовать ту же log Analytics рабочую область.
+Если вы используете [Azure Monitor для контейнеров для Azure Red Hat OpenShift 3,11](../azure-monitor/containers/container-insights-azure-redhat-setup.md), можно также включить Azure Monitor для контейнеров для [кластеров Azure Red Hat OpenShift 4](../azure-monitor/containers/container-insights-azure-redhat4-setup.md) и продолжить использовать ту же log Analytics рабочую область.
 
 ## <a name="move-your-dns-or-load-balancer-configuration-to-the-new-cluster"></a>Перемещение конфигурации DNS или подсистемы балансировки нагрузки в новый кластер
 

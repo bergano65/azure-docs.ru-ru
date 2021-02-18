@@ -3,12 +3,12 @@ title: Установка агента подключенного компьют
 description: Из этой статьи вы узнаете, как подключить компьютеры к Azure с помощью серверов с поддержкой ARC в Azure с помощью Windows PowerShell DSC.
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: b351aa8e989bd36c135271d3adafca6eb64ccf39
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: c0ae9c97afe14559aa36c1b8387f07897aa4c43b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107561"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587639"
 ---
 # <a name="how-to-install-the-connected-machine-agent-using-windows-powershell-dsc"></a>Установка агента подключенного компьютера с помощью Windows PowerShell DSC
 
@@ -84,10 +84,10 @@ ms.locfileid: "92107561"
 
 Модуль [компоситересаурце](https://www.powershellgallery.com/packages/compositeresource) из коллекция PowerShell можно использовать для создания [составного ресурса](/powershell/scripting/dsc/resources/authoringResourceComposite) в примере конфигурации для дальнейшего упрощения объединения конфигураций.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Сведения об устранении неполадок можно найти в разделе [руководство по устранению неполадок подключенного компьютера](troubleshoot-agent-onboard.md).
 
-* Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/insights/vminsights-enable-policy.md) и т. д.
+* Узнайте, как управлять компьютером с помощью [Политики Azure](../../governance/policy/overview.md), например для [гостевой конфигурации](../../governance/policy/concepts/guest-configuration.md) виртуальной машины, проверять отправку отчетов с компьютера в ожидаемую рабочую область Log Analytics, включать мониторинг с помощью [Azure Monitor с виртуальными машинами](../../azure-monitor/vm/vminsights-enable-policy.md) и т. д.
 
-* Узнайте больше об [агенте Log Analytics](../../azure-monitor/platform/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-introduction.md).
+* Узнайте больше об [агенте Log Analytics](../../azure-monitor/agents/log-analytics-agent.md). Агент Log Analytics для Windows и Linux необходим, если требуется упреждающе отслеживать ОС и рабочие нагрузки на компьютере, выполнять управление с помощью runbook службы автоматизации или с помощью решений, таких как Управление обновлениями, или использовать другие службы Azure, например, [Центр безопасности Azure](../../security-center/security-center-introduction.md).

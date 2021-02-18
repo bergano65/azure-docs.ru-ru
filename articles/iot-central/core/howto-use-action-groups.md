@@ -8,18 +8,18 @@ ms.date: 12/06/2019
 ms.topic: how-to
 ms.service: iot-central
 manager: philmea
-ms.openlocfilehash: b447f44d0c95693e560fd5bbfbff8c8daeec964e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 84a723023bf8614b837ba9783bae987403921c06
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80157693"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585483"
 ---
 # <a name="group-multiple-actions-to-run-from-one-or-more-rules"></a>Группирование нескольких действий для запуска из одного или нескольких правил
 
 *Эта статья относится к сборщикам и администраторам.*
 
-В IoT Central Azure вы создаете правила для выполнения действий при выполнении условия. Правила основаны на телеметрии или событиях устройства. Например, можно уведомить оператора, когда температура устройства превышает пороговое значение. В этой статье описывается, как использовать *группы действий* [Azure Monitor](../../azure-monitor/overview.md) для присоединения нескольких действий к правилу IOT Central. Группу действий можно подключить к нескольким правилам. [Группа действий](../../azure-monitor/platform/action-groups.md) — это набор параметров уведомлений, определенных владельцем подписки Azure.
+В IoT Central Azure вы создаете правила для выполнения действий при выполнении условия. Правила основаны на телеметрии или событиях устройства. Например, можно уведомить оператора, когда температура устройства превышает пороговое значение. В этой статье описывается, как использовать *группы действий* [Azure Monitor](../../azure-monitor/overview.md) для присоединения нескольких действий к правилу IOT Central. Группу действий можно подключить к нескольким правилам. [Группа действий](../../azure-monitor/alerts/action-groups.md) — это набор параметров уведомлений, определенных владельцем подписки Azure.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -28,7 +28,7 @@ ms.locfileid: "80157693"
 
 ## <a name="create-action-groups"></a>Создание групп действий
 
-Вы можете [создавать группы действий и управлять ими в портал Azure](../../azure-monitor/platform/action-groups.md) или с помощью [шаблона Azure Resource Manager](../../azure-monitor/platform/action-groups-create-resource-manager-template.md).
+Вы можете [создавать группы действий и управлять ими в портал Azure](../../azure-monitor/alerts/action-groups.md) или с помощью [шаблона Azure Resource Manager](../../azure-monitor/alerts/action-groups-create-resource-manager-template.md).
 
 Группа действий может:
 
@@ -51,7 +51,7 @@ ms.locfileid: "80157693"
 
 ![Выбор группы действий](media/howto-use-action-groups/chooseactiongroup.png)
 
-Щелкните **Сохранить**. Группа действий теперь отображается в списке действий, выполняемых при активации правила.
+Нажмите кнопку **Сохранить**. Группа действий теперь отображается в списке действий, выполняемых при активации правила.
 
 ![Группа действий сохранена](media/howto-use-action-groups/savedactiongroup.png)
 
@@ -59,7 +59,7 @@ ms.locfileid: "80157693"
 
 | Тип действия | Формат вывода |
 | ----------- | -------------- |
-| Адрес электронной почты       | Шаблон электронной почты "Стандартный IoT Central" |
+| Email       | Шаблон электронной почты "Стандартный IoT Central" |
 | SMS         | Оповещение Azure IoT Central: $ {applicationName}-"$ {ruleName}" активировано на "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме} |
 | Голосовая связь       | Основное оповещение Azure I. O. T: правило "$ {ruleName}", запущенное на устройстве "$ {deviceName}" в $ {Тригжердате} $ {Тригжертиме}, в приложении $ {applicationName} |
 | webhook     | {"Счемаид": "Азуреиотцентралрулевебхук", "Data": {[Обычная полезная нагрузка веб-перехватчика](howto-create-webhooks.md#payload)}} |
@@ -68,6 +68,6 @@ ms.locfileid: "80157693"
 
 `iotcentral: Azure IoT Central alert: Contoso - "Low pressure alert" triggered on "Motion sensor 2" at March 20, 2019 10:12 UTC`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как использовать группы действий с правилами, предлагаем следующий шаг — Узнайте, как [управлять устройствами](howto-manage-devices.md).
