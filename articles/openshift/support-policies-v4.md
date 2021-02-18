@@ -6,12 +6,12 @@ ms.author: suvetriv
 ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 11/23/2020
-ms.openlocfilehash: fced0cfb1836be0f90c606b9a9753dad4200670d
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 8de819fc5444146f40a6a052cd51e6164cdfb230
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100635631"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653063"
 ---
 # <a name="azure-red-hat-openshift-support-policy"></a>Политика поддержки Azure Red Hat OpenShift
 
@@ -23,7 +23,7 @@ ms.locfileid: "100635631"
 ## <a name="cluster-configuration-requirements"></a>Требования к настройке кластеров
 
 * Все операторы кластеров OpenShift должны оставаться в управляемом состоянии. Список операторов кластеров можно получить, выполнив команду `oc get clusteroperators`.
-* Кластер должен содержать не менее двух рабочих узлов. Не масштабировать рабочие роли кластера в ноль или попытаться корректно завершить работу кластера.
+* Кластер должен содержать не менее двух рабочих узлов. Не таинтс, препятствующие планированию компонентов OpenShift. Не масштабировать рабочие роли кластера в ноль или попытаться корректно завершить работу кластера.
 * Не удаляйте и не изменяйте службы кластеров Prometheus и Alertmanager.
 * Не удаляйте правила службы Alertmanager.
 * Не удаляйте и не изменяйте группы безопасности сети.

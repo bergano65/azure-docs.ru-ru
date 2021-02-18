@@ -7,12 +7,12 @@ ms.service: static-web-apps
 ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
-ms.openlocfilehash: e49a84f5ac507ac80481313c103701a88934083a
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 4539c32a367bb0974212d989176a96b530da21a4
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900780"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652361"
 ---
 # <a name="tutorial-publish-a-hugo-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта Hugo в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -88,7 +88,7 @@ ms.locfileid: "97900780"
 1. Отправьте локальный репозиторий на сайт GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
 
 ## <a name="deploy-your-web-app"></a>Развертывание веб-приложения
@@ -123,7 +123,7 @@ ms.locfileid: "97900780"
 
 1. Выберите **hugo-static-app** в качестве _репозитория_.
 
-1. В поле _Ветвь_ выберите **главная**.
+1. В поле _Ветвь_ выберите **main**.
 
    :::image type="content" source="./media/publish-hugo/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 

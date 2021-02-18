@@ -12,12 +12,12 @@ ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
 adobe-target: true
-ms.openlocfilehash: da47967b719b5ce601d8049f54597c207ea732c8
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: d8c6a9cc000d307490745b923a1f1ba6c93abf53
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100372040"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652230"
 ---
 # <a name="deploy-machine-learning-models-to-azure"></a>Развертывание моделей машинного обучения в Azure
 
@@ -52,7 +52,7 @@ ms.locfileid: "100372040"
 
 ## <a name="connect-to-your-workspace"></a>Подключение к рабочей области
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 Следуйте указаниям в документации по Azure CLI для [настройки контекста подписки](/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-subscription).
 
@@ -92,7 +92,7 @@ ws = Workspace.from_config(path=".file-path/ws_config.json")
 
 В следующих примерах показано, как зарегистрировать модель.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ### <a name="register-a-model-from-an-azure-ml-training-run"></a>Регистрация модели из запуска обучения Azure ML
 
@@ -187,7 +187,7 @@ az ml model register -n onnx_mnist -p mnist/model.onnx
 
 Конфигурация вывода описывает, как настроить веб-службу, содержащую модель. Он используется позже при развертывании модели.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 Минимальная конфигурация вывода может быть записана следующим образом:
 
@@ -240,7 +240,7 @@ inference_config = InferenceConfig(entry_script='path-to-score.py',
 
 ## <a name="define-a-deployment-configuration"></a>Определение конфигурации развертывания
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 Параметры, доступные для конфигурации развертывания, зависят от выбранного целевого объекта вычислений.
 
@@ -274,7 +274,7 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 Теперь вы готовы к развертыванию модели. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 ### <a name="using-a-registered-model"></a>Использование зарегистрированной модели
 
@@ -326,6 +326,14 @@ print(service.state)
 > [!TIP]
 > При развертывании образы DOCKER для целевых объектов вычислений создаются и загружаются из реестра контейнеров Azure (запись контроля доступа). По умолчанию Машинное обучение Azure создает запись контроля доступа, которая использует уровень служб " *базовый* ". Изменение записи контроля доступа для рабочей области на уровень "Стандартный" или "Премиум" может сократить время, затрачиваемое на сборку и развертывание образов в целевых объектах вычислений. Дополнительные сведения см в статье [Уровни службы Реестра контейнеров Azure](../container-registry/container-registry-skus.md).
 
+> [!NOTE]
+> При развертывании модели в службе Kubernetes Azure (AKS) мы рекомендуем включить [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-enable-existing-clusters) для этого кластера. Это поможет понять общую работоспособность кластера и использование ресурсов. Вы также можете найти следующие полезные ресурсы:
+>
+> * [Проверка событий Работоспособность ресурсов, влияющих на кластер AKS](https://docs.microsoft.com/azure/aks/aks-resource-health)
+> * [Диагностика службы Kubernetes Azure](https://docs.microsoft.com/azure/aks/concepts-diagnostics)
+>
+> Если вы пытаетесь развернуть модель в неработоспособном или перегруженном кластере, то ожидается проблема. Если вам нужна помощь в устранении неполадок с кластером AKS, обратитесь в службу поддержки AKS.
+
 ### <a name="batch-inference"></a><a id="azuremlcompute"></a> Вывод пакета
 Машинное обучение Azure целевые объекты вычислений создаются и управляются с помощью Машинное обучение Azure. Их можно использовать для прогнозирования пакетной службы из Машинное обучение Azure конвейеров.
 
@@ -336,7 +344,7 @@ print(service.state)
 
 ## <a name="delete-resources"></a>Удаление ресурсов
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli);
+# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
 
 Чтобы удалить развернутую WebService, используйте `az ml service <name of webservice>` .
 
@@ -353,7 +361,7 @@ print(service.state)
 
 ---
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Устранение неполадок при развертывании](how-to-troubleshoot-deployment.md)
 * [развертывание в Службе Azure Kubernetes](how-to-deploy-azure-kubernetes-service.md).

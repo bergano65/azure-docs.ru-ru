@@ -5,22 +5,22 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 02/16/2021
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: b014f81354b2f7eb2fb06de540f16b08206d583e
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: cc9431d08823bd3bfba423fcc5e9dc14d2a37faa
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706800"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652961"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
 Эта статья содержит пошаговые инструкции по использованию службы "Импорт и экспорт Azure" для безопасного импорта больших объемов данных в хранилище BLOB-объектов Azure. Чтобы служба осуществила импорт данных в большие двоичные объекты Azure, нужно отправить в центр обработки данных Azure зашифрованные диски с данными.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Прежде чем создавать задание импорта для передачи данных в хранилище BLOB-объектов Azure, внимательно просмотрите и выполните описанные ниже предварительные требования для этой службы.
 Необходимо сделать следующее:
@@ -101,13 +101,13 @@ ms.locfileid: "98706800"
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 
 1. Войдите в систему по адресу https://portal.azure.com/.
-2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
+2. Выполните поиск **заданий импорта и экспорта**.
 
-    ![Перейдите к разделу "Задания импорта или экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
+    ![Поиск по заданиям импорта и экспорта](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
 
-3. Щелкните **создать задание импорта и экспорта**.
+3. Выберите **+ Создать**.
 
-    ![Нажмите кнопку "Создание задания импорта и экспорта".](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
+    ![Выберите Создать, чтобы создать новый ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
 
 4. В разделе **Основные сведения**:
 
@@ -118,7 +118,7 @@ ms.locfileid: "98706800"
    * Выберите подписку.
    * Укажите или выберите группу ресурсов.
 
-     ![Создание задания импорта — шаг 1](./media/storage-import-export-data-to-blobs/import-to-blob3.png)
+     ![Создание задания импорта — шаг 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
 
 5. В разделе **Сведения о задании** сделайте следующее:
 
@@ -126,7 +126,7 @@ ms.locfileid: "98706800"
    * Выберите целевую учетную запись хранения, где будут храниться данные.
    * Расположение места назначения автоматически заполняется с учетом выбранного региона учетной записи хранения.
 
-   ![Создание задания импорта — шаг 2](./media/storage-import-export-data-to-blobs/import-to-blob4.png)
+   ![Создание задания импорта — шаг 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
 
 6. В разделе **Сведения о возврате** сделайте следующее:
 
@@ -137,14 +137,14 @@ ms.locfileid: "98706800"
        > [!TIP]
        > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
 
-     ![Создание задание импорта – шаг 3](./media/storage-import-export-data-to-blobs/import-to-blob5.png)
+     ![Создание задание импорта – шаг 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
 
 7. В разделе **Сводка** сделайте следующее:
 
    * Просмотрите сведения о задании, предоставленные в сводке. Запишите имя задания и адрес центра обработки данных Azure для отправки дисков обратно в Azure. Эта информация указывается позже на транспортной этикетке.
    * Нажмите кнопку **ОК**, чтобы создать задание импорта.
 
-     ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
+     ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob-6.png)
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -337,7 +337,7 @@ Install-Module -Name Az.ImportExport
 
 Отслеживание задания до завершения. После завершения задания убедитесь, что данные переданы в Azure. Удалите локальные данные только после подтверждения, что загрузка прошла успешно.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

@@ -8,19 +8,23 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: conceptual
-ms.date: 01/27/2021
+ms.date: 02/16/2021
 ms.author: aahi
 ms.custom: references_regions
-ms.openlocfilehash: 45b52f98f9f3670f2a68c22cfe9e27a86b2a74cc
-ms.sourcegitcommit: 54e1d4cdff28c2fd88eca949c2190da1b09dca91
+ms.openlocfilehash: 3205e96bca6ce13afdfe06fede1112e6ddb1ab39
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2021
-ms.locfileid: "99220706"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653923"
 ---
 # <a name="whats-new-in-the-text-analytics-api"></a>Новые возможности в API "Анализ текста"
 
 API анализа текста обновляется на постоянной основе. В этой статье содержатся сведения о новых выпусках и функциях, чтобы оставаться в курсе последних нововведений.
+
+## <a name="february-2021"></a>Февраль 2021 года
+
+* Ценовые категории S0 – S4 выводятся на 8 марта 2021 г. Если у вас есть ресурс Анализ текста с использованием ценовой категории S0 – S4, необходимо обновить его для использования стандартной [ценовой категории](how-tos/text-analytics-how-to-call-api.md#change-your-pricing-tier)(S).
 
 ## <a name="january-2021"></a>Январь 2021 г.
 
@@ -142,7 +146,7 @@ API анализа текста обновляется на постоянной
 * Связывание сущностей
 * Отрицание
 
-## <a name="may-2020"></a>Май 2020 г.
+## <a name="may-2020"></a>Май 2020 г.
 
 ### <a name="text-analytics-api-v3-general-availability"></a>Общая доступность API анализа текста v3
 
@@ -213,7 +217,7 @@ API анализа текста v3 теперь общедоступен со с
     * План
     * Возраст в качестве подтипа по количеству
     * Дата в качестве подтипа в разделе DateTime
-    * Электронная почта 
+    * Email 
     * Номер телефона (только США)
     * URL-адрес
     * IP-адрес

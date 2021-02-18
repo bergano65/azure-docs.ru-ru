@@ -1,19 +1,19 @@
 ---
 title: Создание восстановления приложения кластера Azure Red Hat OpenShift 4 с помощью Велеро
 description: Узнайте, как создать восстановление кластерных приложений Azure Red Hat OpenShift с помощью Велеро.
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: article
 ms.date: 06/22/2020
 author: troy0820
 ms.author: b-trconn
 keywords: aro, openshift, az aro, red hat, cli
 ms.custom: mvc
-ms.openlocfilehash: a4b22036612aac3d2b67e299881ba11b896979e5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 6a4c226527f94a9fca4c8106df3827c9222657a1
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492409"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633229"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-cluster-application-restore"></a>Создание восстановления приложения кластера Azure Red Hat OpenShift 4
 

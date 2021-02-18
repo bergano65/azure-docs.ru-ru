@@ -5,15 +5,15 @@ author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
-ms.date: 08/05/2020
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: 0dd011d6c1ff631d537dbcadf9a77bbe6d89aa45
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 36e1a8a288e1f9b2a8d65ab966b607b594d66f4e
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100518805"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653607"
 ---
 # <a name="azure-services-that-support-azure-data-lake-storage-gen2"></a>Службы Azure, поддерживающие Azure Data Lake Storage 2-го поколения
 
@@ -29,17 +29,17 @@ ms.locfileid: "100518805"
 |Служба Azure |Уровень поддержки |Azure AD |Общий ключ| Связанные статьи |
 |---------------|-------------------|---|---|---|
 |Фабрика данных Azure|Общедоступная версия|Да|Да|[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../../data-factory/load-azure-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
-|Azure Databricks|Общедоступная версия|Да|Да|[Использование с Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) <br> [Краткое руководство. анализ данных в Azure Data Lake Storage 2-го поколения с помощью Azure Databricks](data-lake-storage-quickstart-create-databricks-account.md) <br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Учебник. доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks с использованием Spark](data-lake-storage-use-databricks-spark.md)|
+|Azure Databricks|Общедоступная версия|Да|Да|[Использование с Azure Databricks](/azure/databricks/data/data-sources/azure/azure-datalake-gen2) <br> [Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse) <br>[Учебник. доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks с использованием Spark](data-lake-storage-use-databricks-spark.md)|
 |концентратору событий Azure|Общедоступная версия|Нет|Да|[Сбор событий из Центров событий Azure в хранилище BLOB-объектов Azure или Azure Data Lake Storage](../../event-hubs/event-hubs-capture-overview.md)|
 |Сетка событий Azure|Общедоступная версия|Да|Да|[Руководство по Реализация шаблона сохранения озера данных для обновления таблицы Databricks Delta](data-lake-storage-events.md)|
 |Azure Logic Apps|Общедоступная версия|Нет|Да|[Обзор: Azure Logic Apps](../../logic-apps/logic-apps-overview.md)|
 |Машинное обучение Azure|Общедоступная версия|Да|Да|[Доступ к данным в службах хранилища Azure](../../machine-learning/how-to-access-data.md)|
 |Azure Stream Analytics|Общедоступная версия|Да|Да|[Краткое руководство. по созданию задания Stream Analytics с помощью портала Azure](../../stream-analytics/stream-analytics-quick-create-portal.md) <br> [Исходящий трафик в Azure Data Lake Gen2](../../stream-analytics/stream-analytics-define-outputs.md)|
 |Data Box|Общедоступная версия|Нет|Да|[Использование Azure Data Box для переноса данных из локального хранилища HDFS в службу хранилища Azure](data-lake-storage-migrate-on-premises-hdfs-cluster.md)|
-|HDInsight |Общедоступная версия|Да|Да|[Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)<br>[Использование HDFS CLI в Data Lake Storage Gen2](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)|
+|HDInsight |Общедоступная версия|Да|Да|[Использование Azure Data Lake Storage Gen2 с кластерами Azure HDInsight](../../hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2.md)<br>[Использование HDFS CLI в Data Lake Storage Gen2](data-lake-storage-use-hdfs-data-lake-storage.md) <br>[Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight](data-lake-storage-tutorial-extract-transform-load-hive.md)|
 |Центр Интернета вещей |Общедоступная версия|Да|Да|[Использование маршрутизации сообщений в Центре Интернета вещей для отправки с устройства в облако в разные конечные точки](../../iot-hub/iot-hub-devguide-messages-d2c.md)|
-|В Power BI.|Общедоступная версия|Да|Да|[Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](/power-query/connectors/datalakestorage)|
-|Azure Synapse Analytics (прежнее название — Хранилище данных SQL)|Общедоступная версия|Да|Да|[Анализируйте данные в учетной записи хранения](../../synapse-analytics/get-started-analyze-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)|
+|Power BI|Общедоступная версия|Да|Да|[Анализ данных в Data Lake Storage 2-го поколения с помощью Power BI](/power-query/connectors/datalakestorage)|
+|Azure Synapse Analytics (прежнее название — Хранилище данных SQL)|Общедоступная версия|Да|Да|[Анализируйте данные в учетной записи хранения](../../synapse-analytics/get-started-analyze-storage.md)|
 |SQL Server Integration Services (SSIS);|Общедоступная версия|Да|Да|[Диспетчер подключений службы хранилища Azure](/sql/integration-services/connection-manager/azure-storage-connection-manager)|
 |Azure Data Explorer|Общедоступная версия|Да|Да|[Запрос данных в Azure Data Lake с помощью Azure Data Explorer](/azure/data-explorer/data-lake-query-data)|
 |Когнитивный поиск Azure|Preview (Предварительный просмотр)|Да|Да|[Индексирование и поиск Azure Data Lake Storage 2-го поколения документов (Предварительная версия)](../../search/search-howto-index-azure-data-lake-storage.md)|

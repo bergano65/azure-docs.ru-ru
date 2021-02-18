@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: db21f1170dacbfa1e4367e7f22143ec3d0b0f6e4
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a43a27a8e880c76ba21639437c0c20f583620d50
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737342"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653624"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>Установка и запуск контейнера пространственного анализа (Предварительная версия)
 
@@ -181,7 +181,7 @@ sudo apt-get -y install cuda
 nvidia-smi
 ```
 
-Вы должны увидеть следующие выходные данные:
+Вы должны увидеть следующие выходные данные.
 
 ![Выходные данные драйвера NVIDIA](media/spatial-analysis/nvidia-driver-output.png)
 
@@ -249,7 +249,7 @@ sudo systemctl --now enable nvidia-mps.service
 
 ## <a name="configure-azure-iot-edge-on-the-host-computer"></a>Настройка Azure IoT Edge на главном компьютере
 
-Чтобы развернуть контейнер пространственного анализа на главном компьютере, создайте экземпляр службы [центра Интернета вещей Azure](../../iot-hub/iot-hub-create-through-portal.md) с помощью стандартной ценовой категории (S1) или бесплатной (F0). Если главный компьютер является Azure Stackным ребром, используйте ту же подписку и группу ресурсов, которая используется ресурсом Azure Stackного периметра.
+Чтобы развернуть контейнер пространственного анализа на главном компьютере, создайте экземпляр службы [центра Интернета вещей Azure](../../iot-hub/iot-hub-create-through-portal.md) с помощью стандартной ценовой категории (S1) или бесплатной (F0). 
 
 Используйте Azure CLI, чтобы создать экземпляр центра Интернета вещей Azure. Замените необходимые параметры. Кроме того, центр Интернета вещей Azure можно создать на [портал Azure](https://portal.azure.com/).
 
@@ -264,7 +264,7 @@ sudo az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test
 sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
 ```
 
-Если главный компьютер не является Azure Stack пограничным устройством, необходимо установить [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) версии 1.0.9. Чтобы скачать правильную версию, выполните следующие действия.
+Необходимо установить [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) версии 1.0.9. Чтобы скачать правильную версию, выполните следующие действия.
 
 Ubuntu Server 18.04:
 ```bash
@@ -345,7 +345,7 @@ sudo systemctl restart iotedge
 nvidia-smi
 ```
 
-Вы должны увидеть следующие выходные данные:
+Вы должны увидеть следующие выходные данные.
 
 ![Выходные данные драйвера NVIDIA](media/spatial-analysis/nvidia-driver-output.png)
 
@@ -396,7 +396,73 @@ sudo apt-get install -y docker-ce nvidia-docker2
 sudo systemctl restart docker
 ```
 
-После настройки и настройки виртуальной машины выполните следующие действия, чтобы развернуть контейнер пространственного анализа. 
+После настройки и настройки виртуальной машины выполните следующие действия, чтобы настроить Azure IoT Edge. 
+
+## <a name="configure-azure-iot-edge-on-the-vm"></a>Настройка Azure IoT Edge на виртуальной машине
+
+Чтобы развернуть контейнер пространственного анализа на виртуальной машине, создайте экземпляр службы [центра Интернета вещей Azure](../../iot-hub/iot-hub-create-through-portal.md) с помощью стандартной ценовой категории (S1) или бесплатной (F0).
+
+Используйте Azure CLI, чтобы создать экземпляр центра Интернета вещей Azure. Замените необходимые параметры. Кроме того, центр Интернета вещей Azure можно создать на [портал Azure](https://portal.azure.com/).
+
+```bash
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+sudo az login
+sudo az account set --subscription <name or ID of Azure Subscription>
+sudo az group create --name "test-resource-group" --location "WestUS"
+
+sudo az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test-resource-group"
+
+sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
+```
+
+Необходимо установить [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) версии 1.0.9. Чтобы скачать правильную версию, выполните следующие действия.
+
+Ubuntu Server 18.04:
+```bash
+curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
+```
+
+Скопируйте созданный список.
+```bash
+sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
+```
+
+Установите открытый ключ Microsoft GPG.
+
+```bash
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo cp ./microsoft.gpg /etc/apt/trusted.gpg.d/
+```
+
+Обновите списки пакетов на устройстве.
+
+```bash
+sudo apt-get update
+```
+
+Установите выпуск 1.0.9:
+
+```bash
+sudo apt-get install iotedge=1.0.9* libiothsm-std=1.0.9*
+```
+
+Затем зарегистрируйте виртуальную машину в качестве устройства IoT Edge в экземпляре центра Интернета вещей, используя [строку подключения](../../iot-edge/how-to-manual-provision-symmetric-key.md?view=iotedge-2018-06).
+
+Необходимо подключить устройство IoT Edge к центру Интернета вещей Azure. Необходимо скопировать строку подключения с IoT Edgeного устройства, созданного ранее. Кроме того, можно выполнить приведенную ниже команду в Azure CLI.
+
+```bash
+sudo az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
+```
+
+На виртуальной машине, открытой  `/etc/iotedge/config.yaml` для редактирования. Замените на `ADD DEVICE CONNECTION STRING HERE` строку подключения. Сохраните файл и закройте его. Выполните эту команду, чтобы перезапустить службу IoT Edge на виртуальной машине.
+
+```bash
+sudo systemctl restart iotedge
+```
+
+Разверните контейнер пространственного анализа как модуль IoT на виртуальной машине либо из [портал Azure](../../iot-edge/how-to-deploy-modules-portal.md) , либо из [Azure CLI](../cognitive-services-apis-create-account-cli.md?tabs=windows). Если вы используете портал, укажите в URI образа расположение реестра контейнеров Azure. 
+
+Выполните следующие действия, чтобы развернуть контейнер с помощью Azure CLI.
 
 ---
 
@@ -406,7 +472,7 @@ sudo systemctl restart docker
 
 В следующей таблице показаны различные переменные среды, используемые модулем IoT Edge. Их также можно задать в манифесте развертывания, связанном выше, с помощью `env` атрибута в `spatialanalysis` :
 
-| Имя параметра | Применение | Описание|
+| Имя параметра | Значение | Описание|
 |---------|---------|---------|
 | ARCHON_LOG_LEVEL | Контактные Verbose | Уровень ведения журнала выберите одно из двух значений|
 | ARCHON_SHARED_BUFFER_LIMIT | 377487360 | Не изменять|
@@ -518,7 +584,7 @@ sudo az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge 
 * Образы контейнеров запускаются как модули IoT в Azure IoT Edge.
 * Как настроить контейнер и развернуть его на размещающем компьютере.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание веб-приложения инвентаризации людей](spatial-analysis-web-app.md)
 * [Настройка операций пространственного анализа](spatial-analysis-operations.md)

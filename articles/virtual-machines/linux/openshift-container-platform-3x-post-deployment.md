@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2019
 ms.author: haroldw
 ms.custom: devx-track-ansible, devx-track-azurecli
-ms.openlocfilehash: dd967ad08b628f9073edfe548033f7e97845d047
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9a28c47493f0f775c9e489daf3232371a65d4a7e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016069"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581450"
 ---
 # <a name="post-deployment-tasks"></a>Задачи, выполняемые после развертывания
 
@@ -68,7 +68,7 @@ az ad app create --display-name OCPAzureAD --homepage https://masterdns343khhde.
 
 Запишите свойство appId, возвращенное из команды. Оно понадобится в дальнейшем.
 
-На портале Azure выполните следующие действия.
+На портале Azure выполните следующие действия:
 
 1. Выберите **Azure Active Directory**  >  **Регистрация приложения**.
 2. Найдите зарегистрированное приложение (например, OCPAzureAD).
@@ -160,7 +160,7 @@ sudo /usr/local/bin/master-restart controllers
 - Включение Azure Monitor расширения виртуальной машины на каждом узле OpenShift
 - Установка агента Log Analytics как набора управляющих программ OpenShift
 
-Дополнительные сведения см. в полной [инструкции](../../azure-monitor/insights/containers.md#configure-a-log-analytics-agent-for-red-hat-openshift) .
+Дополнительные сведения см. в полной [инструкции](../../azure-monitor/containers/containers.md#configure-a-log-analytics-agent-for-red-hat-openshift) .
 
 ## <a name="configure-metrics-and-logging"></a>Настройка метрик и ведения журнала
 
@@ -202,6 +202,6 @@ Open Service Broker для Azure (OSBA) позволяет подготавли�
 > [!NOTE]
 > Выполните только шаги, описанные в разделе Шаблон проекта OpenShift, а не во всем разделе установки.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Overview](https://docs.openshift.com) (Обзор)

@@ -2,22 +2,22 @@
 title: Развертывание конфигураций с помощью GitOps в кластерах Kubernetes с поддержкой Arc (предварительная версия)
 services: azure-arc
 ms.service: azure-arc
-ms.date: 02/15/2021
+ms.date: 02/17/2021
 ms.topic: article
 author: mlearned
 ms.author: mlearned
 description: Использование Гитопс для настройки кластера Kubernetes с поддержкой дуги Azure (Предварительная версия)
 keywords: Гитопс, Kubernetes, K8s, Azure, Arc, служба Kubernetes Azure, AKS, контейнеры
-ms.openlocfilehash: 3cadcdf80abd997ec10aeb9521680944d455898f
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: b30ecde0e128a955967638828dcb7bec008205ea
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100560167"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652485"
 ---
 # <a name="deploy-configurations-using-gitops-on-an-arc-enabled-kubernetes-cluster-preview"></a>Развертывание конфигураций с помощью Гитопс на кластере Kubernetes с поддержкой ARC (Предварительная версия)
 
-В этой статье демонстрируется применение конфигураций в кластере Kubernetes с включенной службой "Дуга Azure". Концептуальный обзор такого же можно найти [здесь](./conceptual-configurations.md).
+В этой статье демонстрируется применение конфигураций в кластере Kubernetes с включенной службой "Дуга Azure". Для концептуального выполнения этого процесса см. [статью конфигурации и гитопс-Kubernetes с поддержкой ARC в Azure](./conceptual-configurations.md).
 
 ## <a name="before-you-begin"></a>Подготовка к работе
 
@@ -85,13 +85,13 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
   "type": "Microsoft.KubernetesConfiguration/sourceControlConfigurations"
   ```
 
-#### <a name="use-a-public-git-repo"></a>Использование общедоступного репозитория Git
+#### <a name="use-a-public-git-repository"></a>Использование общедоступного репозитория Git
 
 | Параметр | Формат |
 | ------------- | ------------- |
 | `--repository-url` | HTTP [s]://сервер/репо [. git] или Git://сервер/репо [. git]
 
-#### <a name="use-a-private-git-repo-with-ssh-and-flux-created-keys"></a>Использование закрытого репозитория Git с ключами, созданными с помощью SSH и Flux
+#### <a name="use-a-private-git-repository-with-ssh-and-flux-created-keys"></a>Использование закрытого репозитория Git с ключами, созданными с помощью SSH и Flux
 
 | Параметр | Формат | Примечания
 | ------------- | ------------- | ------------- |
@@ -100,7 +100,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > Открытый ключ, созданный Flux, должен быть добавлен в учетную запись пользователя в поставщике службы Git. Если ключ добавляется в репозиторий, а не в учетную запись пользователя, используйте вместо `git@` `user@` в URL-адресе. Для получения дополнительных сведений перейдите к разделу [Применение конфигурации из закрытого репозитория Git](#apply-configuration-from-a-private-git-repository) .
 
-#### <a name="use-a-private-git-repo-with-ssh-and-user-provided-keys"></a>Использование закрытого репозитория Git с ключами SSH и пользователями
+#### <a name="use-a-private-git-repository-with-ssh-and-user-provided-keys"></a>Использование закрытого репозитория Git с ключами SSH и пользователями
 
 | Параметр | Формат | Примечания |
 | ------------- | ------------- | ------------- |
@@ -122,7 +122,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > Для проверки подлинности репозитория Git перед установкой SSH-подключения оператор Flux сохраняет список общих узлов Git в известном файле hosts. Если вы используете нестандартный репозиторий Git или собственный узел Git, может потребоваться указать ключ узла, чтобы Flux мог опознать ваш репозиторий. Вы можете предоставить содержимое known_hosts непосредственно или в файле. Используйте [спецификации формата содержимого known_hosts](https://aka.ms/KnownHostsFormat) в сочетании с одним из описанных выше сценариев использования ключей SSH при предоставлении собственного содержимого.
 
-#### <a name="use-a-private-git-repo-with-https"></a>Использование частного репозитория Git с HTTPS
+#### <a name="use-a-private-git-repository-with-https"></a>Использование закрытого репозитория Git с HTTPS
 
 | Параметр | Формат | Примечания |
 | ------------- | ------------- | ------------- |
@@ -133,7 +133,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > Закрытая проверка подлинности HTTPS Helm поддерживается только с помощью Helm оператора версии 1.2.0 + (по умолчанию).
 > Частная проверка подлинности HTTPS Helm Release не поддерживается в настоящее время для кластеров, управляемых в Azure Kubernetes Services.
-> Если вам требуется Flux для доступа к репозиторию Git через прокси-сервер, вам потребуется обновить агенты Arc Azure с помощью параметров прокси-сервера. Дополнительные сведения см. в разделе [подключение с использованием исходящего прокси-сервера](./connect-cluster.md#connect-using-an-outbound-proxy-server).
+> Если вам требуется Flux для доступа к репозиторию Git через прокси-сервер, вам потребуется обновить агенты ARC для Azure с помощью параметров прокси-сервера. Дополнительные сведения см. в разделе [подключение с использованием исходящего прокси-сервера](./connect-cluster.md#connect-using-an-outbound-proxy-server).
 
 #### <a name="additional-parameters"></a>Дополнительные параметры
 
@@ -153,15 +153,15 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 | ------------- | ------------- |
 | `--git-branch`  | Ветвь репозитория Git, используемая для манифестов Kubernetes. Значение по умолчанию — master. В новых репозиториях есть корневая ветвь с именем `main` . в этом случае необходимо задать `--git-branch=main` . |
 | `--git-path`  | Относительный путь в репозитории Git для Flux для поиска манифестов Kubernetes. |
-| `--git-readonly` | Репозиторий Git будет считаться доступным только для чтения. Flux не будет пытаться выполнить запись в него. |
+| `--git-readonly` | Репозиторий Git будет считаться доступен только для чтения. Flux не будет пытаться выполнить запись в него. |
 | `--manifest-generation`  | Если параметр включен, Flux будет искать .flux.yaml и запустит Kustomize или другие генераторы манифестов. |
-| `--git-poll-interval`  | Период опроса репозитория Git на наличие новых фиксаций. Значение по умолчанию — `5m` (5 минут). |
+| `--git-poll-interval`  | Период опроса репозитория Git для новых фиксаций. Значение по умолчанию — `5m` (5 минут). |
 | `--sync-garbage-collection`  | Если этот флажок установлен, Flux удалит ресурсы, которые были созданы, но теперь отсутствуют в Git. |
 | `--git-label`  | Метка для отслеживания хода выполнения синхронизации. Используется для добавления тега в ветвь Git.  Значение по умолчанию — `flux-sync`. |
 | `--git-user`  | Имя пользователя для фиксации Git. |
 | `--git-email`  | Электронная почта, используемая для фиксации Git. 
 
-Если вы не хотите, чтобы Flux записи в репозиторий `--git-user` и `--git-email` не были заданы, `--git-readonly` будет автоматически задано значение.
+Если вы не хотите, чтобы Flux записывал данные в репозиторий и `--git-user` `--git-email` не заданы, `--git-readonly` будет автоматически задано значение.
 
 Дополнительные сведения см. в [документации по Flux](https://aka.ms/FluxcdReadme).
 
@@ -266,7 +266,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 
 Используйте один из следующих методов.
 
-* Вариант 1. Добавьте открытый ключ в учетную запись пользователя (применяется ко всем репозиториев в вашей учетной записи):  
+* Вариант 1. Добавьте открытый ключ в учетную запись пользователя (применяется ко всем репозиториям в учетной записи):  
     1. Откройте GitHub и щелкните значок профиля в правом верхнем углу страницы.
     2. Щелкните **Параметры**.
     3. Щелкните **ключи SSH и GPG**.
@@ -275,7 +275,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
     6. Вставьте открытый ключ без окружающих кавычек.
     7. Щелкните **Добавить ключ SSH**.
 
-* Вариант 2. Добавьте открытый ключ как ключ развертывания в репозиторий Git (применяется только к этому репозиторию):  
+* Вариант 2. Добавьте открытый ключ в качестве ключа развертывания в репозиторий Git (применяется только к этому репозиторию):  
     1. Откройте GitHub и перейдите в свой репозиторий.
     1. Щелкните **Параметры**.
     1. Щелкните **развернуть ключи**.
@@ -349,7 +349,7 @@ kubectl -n itops get all
 
 > [!NOTE]
 > После `sourceControlConfiguration` `namespace` создания области с областью действия пользователи с `edit` привязкой ролей в пространстве имен могут развертывать рабочие нагрузки в этом пространстве имен. При `sourceControlConfiguration` удалении этой области с пространством имен пространство имен остается неизменным и не будет удалено во избежание разрыва данных других рабочих нагрузок. При необходимости это пространство имен можно удалить вручную с помощью `kubectl` .  
-> Любые изменения в кластере, которые были результатом развертывания из репозитория отслеживаний Git, не удаляются при `sourceControlConfiguration` удалении.
+> Любые изменения в кластере, которые были результатом развертывания из репозитория с отслеживанием Git, не удаляются при `sourceControlConfiguration` удалении.
 
 ```azurecli
 az k8sconfiguration delete --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters

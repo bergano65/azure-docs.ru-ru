@@ -5,16 +5,16 @@ tags: billing
 ms.assetid: 86697fdf-3499-4cab-ab3f-10d40d3c1f70
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 8110f87401da1352309fb55615093d49981c754d
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: d6c68dd341e0794a690b41b73ecc4be954db7359
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504820"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653855"
 ---
 # <a name="manage-an-azure-support-request"></a>Управление запросом на поддержку Azure
 
-После [создания запроса на поддержку Azure](how-to-create-azure-support-request.md)вы можете управлять им в [портал Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно с помощью [интерфейса REST API запросов в службу поддержки Azure](/rest/api/support).
+После [создания запроса на поддержку Azure](how-to-create-azure-support-request.md)вы можете управлять им в [портал Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно, используя запрос в службу [поддержки Azure REST API](/rest/api/support)или с помощью [Azure CLI](/cli/azure/azure-cli-support-request).
 
 ## <a name="view-support-requests"></a>Просмотр запросов на поддержку
 

@@ -6,14 +6,14 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.topic: how-to
-ms.date: 06/15/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 2b5dc30de19704b5e8950515cfa6224b4bbdbaf0
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 722a508679c74f9d62df07575ffa1006528f4398
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341352"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652112"
 ---
 # <a name="manage-security-incidents-in-azure-security-center"></a>Управление инцидентами безопасности в центре безопасности Azure
 
@@ -29,11 +29,19 @@ ms.locfileid: "92341352"
 
 ## <a name="managing-security-incidents"></a>Управление инцидентами
 
-1. На странице Обзор центра безопасности выберите плитку **оповещения системы безопасности** . Будут перечислены инциденты и оповещения. Обратите внимание, что инциденты безопасности имеют другой значок для оповещений системы безопасности.
+1. На странице Оповещения центра безопасности используйте кнопку **Добавить фильтр** , чтобы отфильтровать по имени предупреждения с именем предупреждения **безопасность, обнаруженное в нескольких ресурсах**. 
 
-    ![Просмотр инцидентов безопасности](./media/security-center-managing-and-responding-alerts/security-center-manage-alerts.png)
+    :::image type="content" source="media/security-center-incident/locating-incidents.png" alt-text="Поиск инцидентов на странице &quot;оповещения&quot; в центре безопасности Azure":::
 
-1. Чтобы просмотреть сведения, выберите инцидент. На странице **инцидент безопасности** отображаются дополнительные сведения. 
+    Теперь список отфильтрован, чтобы отображались только инциденты. Обратите внимание, что инциденты безопасности имеют другой значок для оповещений системы безопасности.
+
+    :::image type="content" source="media/security-center-incident/incidents-list.png" alt-text="Список инцидентов на странице &quot;оповещения&quot; в центре безопасности Azure":::
+
+1. Чтобы просмотреть сведения об инциденте, выберите его из списка. Появится Боковая область с дополнительными сведениями об инциденте.
+
+    :::image type="content" source="media/security-center-incident/incident-quick-peek.png" alt-text="Боковая область, показывающая сведения об инциденте":::
+
+1. Чтобы просмотреть дополнительные сведения, выберите **Просмотр полных сведений**.
 
     [![Реагирование на инциденты безопасности в центре безопасности Azure](media/security-center-incident/incident-details.png)](media/security-center-incident/incident-details.png#lightbox)
 
@@ -58,7 +66,7 @@ ms.locfileid: "92341352"
 1. Чтобы устранить угрозы в инциденте, выполните действия по исправлению, предоставленные вместе с каждым оповещением.
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 На этой странице описаны возможности по инцидентам безопасности центра безопасности. Связанные сведения см. на следующих страницах:
 

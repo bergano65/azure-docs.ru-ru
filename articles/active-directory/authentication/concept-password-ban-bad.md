@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b019c12103a0324e21ef7c06b0c7a5d7fe14e6ec
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 740201b84323f5a01ab01bb21ec458a19832e499
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743893"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652026"
 ---
 # <a name="eliminate-bad-passwords-using-azure-active-directory-password-protection"></a>Устранение неверных паролей с помощью Azure Active Directory защиты паролем
 
@@ -174,7 +174,7 @@ ms.locfileid: "96743893"
 Следующим шагом является идентификация всех экземпляров запрещенных паролей в новом нормализованном пароле пользователя. Точки назначаются на основе следующих критериев:
 
 1. Каждый запрещенный пароль, найденный в пароле пользователя, предоставляется одной точкой.
-1. Каждый оставшийся уникальный символ получает один балл.
+1. Каждый оставшийся символ, который не является частью запрещенного пароля, предоставляется одной точкой.
 1. Пароль должен быть не менее пяти (5) баллов, которые должны быть приняты.
 
 В следующих двух примерах сценариев Contoso использует защиту паролем Azure AD и содержит "contoso" в списке настраиваемых паролей с запрещенными паролями. Также предположим, что "blank" находится в глобальном списке.

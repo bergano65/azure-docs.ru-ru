@@ -4,12 +4,12 @@ description: Отслеживайте вызовы зависимостей из
 ms.topic: conceptual
 ms.date: 08/26/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: df13042656aa077b30bf144aab0a47d9fc0a0662
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 05b6c29b121cbf42cf0ebe12b2879e50735db7ea
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91263935"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652009"
 ---
 # <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
@@ -21,7 +21,7 @@ Application Insights пакеты SDK для .NET и .NET Core входят в �
 
  `DependencyTrackingTelemetryModule` в настоящее время отслеживает следующие зависимости автоматически:
 
-|Зависимости |Подробнее|
+|Зависимости |Сведения|
 |---------------|-------|
 |HTTP/HTTPS | Локальные или удаленные вызовы HTTP/HTTPS |
 |Вызовы WCF| Отслеживание выполняется автоматически только при использовании привязок на основе HTTP.|
@@ -109,9 +109,10 @@ services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o)
 В дополнение к описанным выше действиям для платформы, **необходимо явно включить коллекцию команд SQL** , изменив файл applicationInsights.config следующим образом:
 
 ```xml
-<Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
-<EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
-</Add>
+<TelemetryModules>
+  <Add Type="Microsoft.ApplicationInsights.DependencyCollector.DependencyTrackingTelemetryModule, Microsoft.AI.DependencyCollector">
+    <EnableSqlCommandTextInstrumentation>true</EnableSqlCommandTextInstrumentation>
+  </Add>
 ```
 
 В приведенных выше случаях правильный способ проверки правильности установки модуля инструментирования — проверка того, что собранная версия пакета SDK `DependencyTelemetry` — "рддп". "рдддсд" или "рддф" указывает, что зависимости собираются через обратные вызовы DiagnosticSource или EventSource, поэтому полный запрос SQL не будет записан.
@@ -144,7 +145,7 @@ services.ConfigureTelemetryModule<DependencyTrackingTelemetryModule>((module, o)
 
 Не имеете представления, куда девается время? [Application Insights Profiler](../../azure-monitor/app/profiler.md) ОТСЛЕЖИВАЕТ вызовы HTTP на ваш активный сайт и показывает функции в коде, которые заняли самое длинное время.
 
-## <a name="failed-requests"></a>Failed requests (Неудачные запросы)
+## <a name="failed-requests"></a>Неудачные запросы
 
 Неудачно завершенные запросы также могут быть связаны с неудачными вызовами зависимостей.
 
@@ -214,7 +215,7 @@ dependencies
 ## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
 Как и каждый Application Insights пакет SDK, модуль коллекции зависимостей также является открытым исходным кодом. Прочтите код и догляните в него или сообщите о проблемах в [официальном репозитории GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet-server).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Исключения](./asp-net-exceptions.md)
 * [Данные пользователей и страниц](./javascript.md)

@@ -4,16 +4,16 @@ description: Клиенты, которым нужна помощь, могут 
 ms.assetid: fd6841ea-c1d5-4bb7-86bd-0c708d193b89
 ms.topic: how-to
 ms.date: 06/25/2020
-ms.openlocfilehash: 11ca7925ce1664b5586ab8ec0fb523a2d562ee80
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 71aba8f2769a75805f47d90b71a8db4eeb26a97a
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745593"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100652400"
 ---
 # <a name="create-an-azure-support-request"></a>Создание запроса на поддержку Azure
 
-Azure позволяет создавать запросы на поддержку и управлять ими. Вы можете создавать запросы и управлять ими в [портале Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно с помощью [интерфейса REST API запросов в службу поддержки Azure](/rest/api/support).
+Azure позволяет создавать запросы на поддержку и управлять ими. Вы можете создавать запросы и управлять ими в [портале Azure](https://portal.azure.com), как описано в этой статье. Вы также можете создавать запросы и управлять ими программно, используя запрос в службу [поддержки Azure REST API](/rest/api/support)или с помощью [Azure CLI](/cli/azure/azure-cli-support-request).
 
 > [!NOTE]
 > URL-адрес портала Azure зависит от облака Azure, в котором развернута ваша организация.

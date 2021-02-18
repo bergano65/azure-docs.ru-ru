@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: conceptual
 ms.service: azure-communication-services
-ms.openlocfilehash: 8b63ce25d6839e8672027240099859dc7aad96c5
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 2cc7e1d0c108d45383a68258fb6f62fcab87d1f7
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886079"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653821"
 ---
 # <a name="client-and-server-architecture"></a>Архитектура клиента и сервера
 
@@ -60,7 +60,7 @@ ms.locfileid: "94886079"
 
 :::image type="content" source="../media/scenarios/archdiagram-pstn.png" alt-text="Схема, показывающая архитектуру PSTN служб связи.":::
 
-Дополнительные сведения о решениях PSTN и SMS см. в статье [Планирование решения PSTN и SMS](../concepts/telephony-sms/plan-solution.md) .
+Дополнительные сведения о телефонных номерах PSTN см. в статье [типы телефонных номеров](../concepts/telephony-sms/plan-solution.md) .
 
 ## <a name="humans-communicating-with-bots-and-other-services"></a>Люди взаимодействуют с программы-роботы и другими службами
 
@@ -83,7 +83,7 @@ ms.locfileid: "94886079"
 Дополнительные сведения см. в следующих статьях:
 
 - Дополнительные сведения о [проверке подлинности](../concepts/authentication.md)
-- Сведения о [решениях PSTN и SMS](../concepts/telephony-sms/plan-solution.md)
+- Дополнительные сведения о [типах телефонных номеров](../concepts/telephony-sms/plan-solution.md)
 
 - [Добавление чата в приложение](../quickstarts/chat/get-started.md)
 - [Добавление функции голосового вызова в приложение](../quickstarts/voice-video-calling/getting-started-with-calling.md)
