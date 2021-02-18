@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
-ms.date: 11/13/2019
-ms.openlocfilehash: 51cf4a4d3aa3cb4654b141a98064460a7152fcec
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.date: 02/16/2021
+ms.openlocfilehash: f1761851f91e6d0c0aadb3315dbb7980a00bba5b
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737461"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633824"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Преимущество гибридного использования Azure — база данных SQL Azure & SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -85,16 +85,16 @@ ms.locfileid: "98737461"
 
 #### <a name="what-are-the-specific-rights-of-the-azure-hybrid-benefit-for-sql-server"></a>Что представляют собой права программы "Преимущество гибридного использования Azure для SQL Server"?
 
-Клиенты базы данных SQL имеют следующие права, связанные с Преимущество гибридного использования Azure для SQL Server:
+Клиенты базы данных SQL и SQL Управляемый экземпляр имеют следующие права, связанные с Преимущество гибридного использования Azure для SQL Server:
 
 |Лицензионное соглашение|Что Преимущество гибридного использования Azure для SQL Server получить?|
 |---|---|
 |Основные клиенты SQL Server Enterprise Edition с Software Assurance|<li>Можно ли платить по базовому тарифу на масштабирование, общего назначения или критически важный для бизнеса SKU</li><br><li>1 ядро в локальной среде = 4 ядра в номере SKU для масштабирования</li><br><li>1 ядро в локальной среде = 4 ядра в номере SKU общего назначения</li><br><li>1 ядро в локальной среде = 1 ядро в номере SKU "Критически важный для бизнеса"</li>|
-|Основные клиенты SQL Server Standard Edition с Software Assurance|<li>Можно платить базовую ставку только по масштабированию и общего назначения только SKU</li><br><li>1 ядро в локальной среде = 1 ядро в ЕДИНИЦах масштабирования</li><br><li>1 ядро в локальной среде = 1 ядро в номере SKU общего назначения</li>|
+|Основные клиенты SQL Server Standard Edition с Software Assurance|<li>Можно ли платить по базовому тарифу на масштабирование, общего назначения или критически важный для бизнеса SKU</li><br><li>1 ядро в локальной среде = 1 ядро в ЕДИНИЦах масштабирования</li><br><li>1 ядро в локальной среде = 1 ядро в номере SKU общего назначения</li><br><li>4 ядро в локальной среде = 1 ядро в критически важный для бизнеса SKU</li>|
 |||
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Сведения о выборе варианта развертывания Azure SQL см. в разделе [Выбор правильного развертывания в SQL Azure](azure-sql-iaas-vs-paas-what-is-overview.md).
 - Сравнение функций базы данных SQL и Управляемый экземпляр SQL см. в разделе [SQL database & sql управляемый экземпляр Features](database/features-comparison.md).
