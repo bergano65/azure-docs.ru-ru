@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 01/13/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 9ccaddec73a9c74123471c34b1b973b78eacfff8
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: c16b032502401b633532ab0fcf9518aa85a1b8d6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98890787"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579738"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Устранение неполадок с Управлением обновлениями
 
@@ -135,7 +135,7 @@ Error details: Failed to enable the Update solution
 
 1. Запустите средство устранения неполадок для [Windows](update-agent-issues.md#troubleshoot-offline) или [Linux](update-agent-issues-linux.md#troubleshoot-offline) в зависимости от операционной системы.
 
-2. Убедитесь, что компьютер отправляет отчеты в правильную рабочую область. Инструкции по проверке этого аспекта см. в разделе [Проверка подключения агента к Azure Monitor](../../azure-monitor/platform/agent-windows.md#verify-agent-connectivity-to-azure-monitor). Также убедитесь, что эта рабочая область связана с учетной записью службы автоматизации Azure. Для подтверждения перейдите на страницу учетной записи службы автоматизации и в разделе **Связанные ресурсы** выберите **Связанная рабочая область**.
+2. Убедитесь, что компьютер отправляет отчеты в правильную рабочую область. Инструкции по проверке этого аспекта см. в разделе [Проверка подключения агента к Azure Monitor](../../azure-monitor/agents/agent-windows.md#verify-agent-connectivity-to-azure-monitor). Также убедитесь, что эта рабочая область связана с учетной записью службы автоматизации Azure. Для подтверждения перейдите на страницу учетной записи службы автоматизации и в разделе **Связанные ресурсы** выберите **Связанная рабочая область**.
 
 3. Убедитесь, что компьютеры отображаются в рабочей области Log Analytics, связанной с вашей учетной записью службы автоматизации. Выполните следующий запрос в рабочей области Log Analytics.
 
@@ -144,7 +144,7 @@ Error details: Failed to enable the Update solution
    | summarize by Computer, Solutions
    ```
 
-    Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо [переустановить агент](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
+    Если компьютер не отображается в результатах запроса, он давно не синхронизировался. Вероятно, существует ошибка локальной конфигурации и необходимо [переустановить агент](../../azure-monitor/vm/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
     Если компьютер указан в результатах запроса, проверьте свойство **Solutions** , которое присутствует в списке **обновлений** . Он проверяет, зарегистрирован ли он в Управление обновлениями. Если это не так, проверьте наличие проблем с конфигурацией области. [Конфигурация области](../update-management/scope-configuration.md) определяет, какие компьютеры настроены для Управления обновлениями. Чтобы настроить конфигурацию области для целевого компьютера, см. раздел [Включение компьютеров в рабочей области](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace).
 

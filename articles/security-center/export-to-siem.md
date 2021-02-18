@@ -8,14 +8,14 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 10/06/2020
 ms.author: memildin
-ms.openlocfilehash: 6ffb6ced6fc828733dd627943a3d4b54e8293ad2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 3ddc385b9d489e0c2ab4abf35a6ade011970342b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791908"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572958"
 ---
-# <a name="stream-alerts-to-a-siem-soar-or-it-service-management-solution"></a>Потоковая передача оповещений в SIEM, ВЗЛЕТЕЛ или решение для управления ИТ-службами
+# <a name="stream-alerts-to-a-siem-soar-or-it-service-management-solution"></a>Потоковая передача оповещений в решение SIEM, SOAR или решение для управления ИТ-услугами
 
 Центр безопасности Azure может выполнять потоковую передачу оповещений системы безопасности в наиболее популярные решения по безопасности и управлению событиями (SIEM), автоматизированного реагирования на безопасность (ВЗЛЕТЕЛ) и управления ИТ-службами (ITSM).
 
@@ -63,31 +63,31 @@ Azure Sentinel включает встроенные соединители дл
 - **Power BI**  -  [Подключение к API Microsoft Graph безопасности в Power BI Desktop](/power-bi/connect-data/desktop-connect-graph-security)
 - **ServiceNow**  -  [Следуйте инструкциям по установке и настройке приложения API Microsoft Graph Security из магазина ServiceNow](https://docs.servicenow.com/bundle/orlando-security-management/page/product/secops-integration-sir/secops-integration-ms-graph/task/ms-graph-install.html) .
 - **QRadar**  -  [Модуль поддержки устройств IBM для центра безопасности Azure через API Microsoft Graph](https://www.ibm.com/support/knowledgecenter/SS42VS_DSM/com.ibm.dsm.doc/c_dsm_guide_ms_azure_security_center_overview.html) 
-- **Palo Alto Networks** , **аномали** , **Lookout** , **Spark** и более [Microsoft Graph API безопасности](https://www.microsoft.com/security/business/graph-security-api#office-MultiFeatureCarousel-09jr2ji)
+- **Palo Alto Networks**, **аномали**, **Lookout**, **Spark** и более [Microsoft Graph API безопасности](https://www.microsoft.com/security/business/graph-security-api#office-MultiFeatureCarousel-09jr2ji)
 
 Дополнительные [сведения об API Microsoft Graph безопасности](https://www.microsoft.com/security/business/graph-security-api).
 
 
 ## <a name="stream-alerts-with-azure-monitor"></a>Потоковая передача предупреждений с Azure Monitor 
 
-Для потоковой передачи предупреждений в **ArcSight** , **Splunk** , **SumoLogic** , Syslog Servers, **логрхисм** , **Logz.IO Cloud** Monitoring Platform и других решениях для мониторинга. подключение к центру безопасности с помощью Azure Monitor через концентраторы событий Azure:
+Для потоковой передачи предупреждений в **ArcSight**, **Splunk**, **SumoLogic**, Syslog Servers, **логрхисм**, **Logz.IO Cloud** Monitoring Platform и других решениях для мониторинга. подключение к центру безопасности с помощью Azure Monitor через концентраторы событий Azure:
 
 1. Включите [непрерывный экспорт](continuous-export.md) для потоковой передачи оповещений центра безопасности в выделенный концентратор событий Azure на уровне подписки. 
     > [!TIP]
     > Чтобы сделать это на уровне группы управления с помощью политики Azure, см. раздел [Создание конфигураций автоматизации непрерывного экспорта в масштабе](continuous-export.md?tabs=azure-policy#configure-continuous-export-at-scale-using-the-supplied-policies)
 
-1. [Подключите концентратор событий Azure к предпочтительному решению, используя встроенные соединители Azure Monitor](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration).
+1. [Подключите концентратор событий Azure к предпочтительному решению, используя встроенные соединители Azure Monitor](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md#partner-tools-with-azure-monitor-integration).
 
-1. При необходимости можно выполнить потоковую передачу необработанных журналов в концентратор событий Azure и подключиться к предпочтительному решению. Дополнительные сведения см. в статье [мониторинг доступных данных](../azure-monitor/platform/stream-monitoring-data-event-hubs.md#monitoring-data-available).
+1. При необходимости можно выполнить потоковую передачу необработанных журналов в концентратор событий Azure и подключиться к предпочтительному решению. Дополнительные сведения см. в статье [мониторинг доступных данных](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md#monitoring-data-available).
 
 > [!TIP]
 > Чтобы просмотреть схемы событий экспортируемых типов данных, посетите страницу [схемы событий концентратора событий](https://aka.ms/ASCAutomationSchemas).
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-На этой странице описано, как обеспечить доступность данных оповещений центра безопасности Azure в средстве SIEM, ВЗЛЕТЕЛ или ITSM. Связанные материалы см. в следующих статьях:
+На этой странице описано, как обеспечить доступность данных оповещений центра безопасности Azure в средстве SIEM, ВЗЛЕТЕЛ или ITSM. Дополнительные материалы:
 
 - [Что собой представляет Azure Sentinel?](../sentinel/overview.md)
 - [Проверка предупреждений в центре безопасности Azure](security-center-alert-validation.md) — Проверьте правильность настройки оповещений.
-- [Непрерывный экспорт данных центра безопасности](continuous-export.md)
+- [Непрерывный экспорт данных Центра безопасности](continuous-export.md)

@@ -17,12 +17,12 @@ ms.date: 04/18/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 427cf2614f81a086dcb174db06cd636df4876c7e
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 763e628183e5f6ad7b7bdbb8ee7ce6db572f44ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778501"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577780"
 ---
 # <a name="what-is-azure-active-directory-monitoring"></a>Мониторинг в Azure Active Directory
 
@@ -79,7 +79,7 @@ ms.locfileid: "96778501"
 
 ## <a name="send-logs-to-azure-monitor-logs"></a>Отправка данных в журналы Azure Monitor
 
-[Журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) — это решение, которое консолидирует данные мониторинга из различных источников, а также предоставляет язык запросов и аналитическую систему для получения сведений о работе приложений и ресурсов. Отправляя журналы действий Azure AD в Azure Monitor Logs вы можете быстро извлекать и отслеживать собранные данные, а также создавать на их основе оповещения. См. дополнительные сведения об [отправке данных в журналы Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md).
+[Журналы Azure Monitor](../../azure-monitor/logs/log-query-overview.md) — это решение, которое консолидирует данные мониторинга из различных источников, а также предоставляет язык запросов и аналитическую систему для получения сведений о работе приложений и ресурсов. Отправляя журналы действий Azure AD в Azure Monitor Logs вы можете быстро извлекать и отслеживать собранные данные, а также создавать на их основе оповещения. См. дополнительные сведения об [отправке данных в журналы Azure Monitor](howto-integrate-activity-logs-with-log-analytics.md).
 
 Вы также можете установить готовые представления для журналов действий Azure AD, чтобы отслеживать распространенные сценарии, связанные со входом в систему и событиями аудита. См. сведения об [установке и использовании предоставлений анализа журналов для журналов действий Azure AD](howto-install-use-log-analytics-views.md).
 

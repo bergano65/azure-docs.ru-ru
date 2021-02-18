@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: 412556f3bd517539fc8ccad94c4de52226f16597
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: bb078b9738e995a1c507f7934a7dd64f075d5fe0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98946224"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596541"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Ведение журнала ресурсов для группы безопасности сети
 
@@ -28,7 +28,7 @@ ms.locfileid: "98946224"
 
 Журналы ресурсов доступны только для группы безопасности сети, развернутых с помощью модели развертывания Azure Resource Manager. Вы не можете включить ведение журнала ресурсов для группы безопасности сети, развернутых с помощью классической модели развертывания. Чтобы получить более полное представление об этих двух моделях, прочитайте статью [Развертывание с помощью Azure Resource Manager и классическое развертывание: сведения о моделях развертывания и состоянии ресурсов](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-Ведение журнала ресурсов включается отдельно для *каждого* NSG, для которого требуется сбор диагностических данных. Если вы заинтересованы в журналах активности (операционных), см. статью [ведение журнала действий](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)Azure.
+Ведение журнала ресурсов включается отдельно для *каждого* NSG, для которого требуется сбор диагностических данных. Если вы заинтересованы в журналах активности (операционных), см. статью [ведение журнала действий](../azure-monitor/essentials/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)Azure.
 
 ## <a name="enable-logging"></a>Включение ведения журналов
 
@@ -47,7 +47,7 @@ ms.locfileid: "98946224"
 
     | Параметр                                                                                     | Значение                                                          |
     | ---------                                                                                   |---------                                                       |
-    | Название                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
+    | Имя                                                                                        | Имя на ваш выбор.  Например: *myNsgDiagnostics*.      |
     | **Архивировать в учетной записи хранения**, **Передать в концентратор событий** и **Отправить в Log Analytics** | Можно выбрать любые назначения. Узнайте больше в разделе [Целевое расположение для журналов](#log-destinations).                                                                                                                                           |
     | LOG                                                                                         | Выберите одну или обе категории журналов. Чтобы узнать больше о данных, записываемых в каждую категорию, ознакомьтесь с разделом [Категории журналов](#log-categories).                                                                                                                                             |
 6. Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
@@ -87,7 +87,7 @@ Set-AzDiagnosticSetting `
   -Enabled $true
 ```
 
-Если требуется записывать данные только одной из категорий, добавьте в предыдущую команду параметр `-Categories` и *NetworkSecurityGroupEvent* или *NetworkSecurityGroupRuleCounter*. Если вы хотите записывать журналы не в рабочую область Log Analytics, а в другое [назначение](#log-destinations), используйте соответствующие параметры [учетной записи хранения](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) или [концентратора событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) Azure.
+Если требуется записывать данные только одной из категорий, добавьте в предыдущую команду параметр `-Categories` и *NetworkSecurityGroupEvent* или *NetworkSecurityGroupRuleCounter*. Если вы хотите записывать журналы не в рабочую область Log Analytics, а в другое [назначение](#log-destinations), используйте соответствующие параметры [учетной записи хранения](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) или [концентратора событий](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) Azure.
 
 Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
 
@@ -120,18 +120,18 @@ az monitor diagnostic-settings create \
   --resource-group myWorkspaces
 ```
 
-Если у вас нет существующей рабочей области, ее можно создать с помощью [портала Azure](../azure-monitor/learn/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [PowerShell](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace). Существуют две категории, для которых можно включить журналы.
+Если у вас нет существующей рабочей области, ее можно создать с помощью [портала Azure](../azure-monitor/logs/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [PowerShell](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace). Существуют две категории, для которых можно включить журналы.
 
-Если вы хотите регистрировать данные только для какой-то из категорий, удалите ненужную категорию с помощью предыдущей команды. Если вы хотите записывать журналы не в рабочую область Log Analytics, а в другое [назначение](#log-destinations), используйте соответствующие параметры [учетной записи хранения](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) или [концентратора событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) Azure.
+Если вы хотите регистрировать данные только для какой-то из категорий, удалите ненужную категорию с помощью предыдущей команды. Если вы хотите записывать журналы не в рабочую область Log Analytics, а в другое [назначение](#log-destinations), используйте соответствующие параметры [учетной записи хранения](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) или [концентратора событий](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) Azure.
 
 Просмотрите и проанализируйте журналы. Дополнительные сведения см. в разделе [Просмотр и анализ журналов](#view-and-analyze-logs).
 
 ## <a name="log-destinations"></a>Целевое расположение для журналов
 
 Назначения данных диагностики:
-- [Запись в учетную запись хранения](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
-- [Потоковая передача журнала в концентратор событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
-- [Записывается в журналы Azure Monitor](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
+- [Запись в учетную запись хранения](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) для аудита или проверки вручную. В параметрах диагностики ресурсов можно задать время хранения (в днях).
+- [Потоковая передача журнала в концентратор событий](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) для приема сторонней службой или пользовательским аналитическим решением, например PowerBI.
+- [Записывается в журналы Azure Monitor](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
 
 ## <a name="log-categories"></a>Категории журналов
 
@@ -197,16 +197,16 @@ az monitor diagnostic-settings create \
 
 ## <a name="view-and-analyze-logs"></a>Просмотр и анализ журналов
 
-Сведения о просмотре данных журнала ресурсов см. в статье [Общие сведения о журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Если данные диагностики отправляются в:
+Сведения о просмотре данных журнала ресурсов см. в статье [Общие сведения о журналах платформы Azure](../azure-monitor/essentials/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Если данные диагностики отправляются в:
 - **Журналы Azure Monitor**. Вы можете использовать решение для [анализа групп безопасности сети](../azure-monitor/insights/azure-networking-analytics.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-network-security-group-analytics-solution-in-azure-monitor
 ) для получения расширенных сведений. Это решение наглядно представляет правила NSG, которые разрешают или запрещают трафик по MAC-адресу сетевого интерфейса в виртуальной машине.
 - **учетную запись хранения**, то данные записываются в файл PT1H.json. Расположение журналов:
   - журнал событий: `insights-logs-networksecuritygroupevent/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`
   - журнал счетчика правил: `insights-logs-networksecuritygrouprulecounter/resourceId=/SUBSCRIPTIONS/[ID]/RESOURCEGROUPS/[RESOURCE-GROUP-NAME-FOR-NSG]/PROVIDERS/MICROSOFT.NETWORK/NETWORKSECURITYGROUPS/[NSG NAME]/y=[YEAR]/m=[MONTH/d=[DAY]/h=[HOUR]/m=[MINUTE]`
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о [ведении журнала действий](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Ведение журнала действий включено по умолчанию для всех создаваемых NSG, независимо от модели развертывания Azure. Чтобы определить в журнале активности, какие операции были выполнены с группами безопасности сети, найдите записи, содержащие следующие типы ресурсов:
+- Дополнительные сведения о [ведении журнала действий](../azure-monitor/essentials/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Ведение журнала действий включено по умолчанию для всех создаваемых NSG, независимо от модели развертывания Azure. Чтобы определить в журнале активности, какие операции были выполнены с группами безопасности сети, найдите записи, содержащие следующие типы ресурсов:
   - Microsoft.ClassicNetwork/networkSecurityGroups
   - Microsoft.ClassicNetwork/networkSecurityGroups/securityRules
   - Microsoft.Network/networkSecurityGroups

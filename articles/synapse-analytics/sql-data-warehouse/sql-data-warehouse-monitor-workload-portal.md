@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3334c5ca300b6dbeb0ad055c7dbd2c15e1c5481a
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2a2161fd24ccde596630549163a631626a961773
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98677127"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596661"
 ---
 # <a name="monitor-workload---azure-portal"></a>Мониторинг рабочей нагрузки — портал Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "98677127"
 - Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 - Пул SQL. Мы будем собирать журналы для пула SQL. Если у вас нет подготовленного пула SQL, см. инструкции в разделе [Создание пула SQL](./load-data-from-azure-blob-storage-using-copy.md).
 
-## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
+## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
 Перейдите в колонку "Обзор" для Log Analytics рабочих областей и создайте рабочую область.
 
@@ -36,7 +36,7 @@ ms.locfileid: "98677127"
 
 ![На снимке экрана показана Log Analytics Рабочая область, в которую можно ввести значения.](./media/sql-data-warehouse-monitor-workload-portal/add_analytics_workspace_2.png)
 
-Дополнительные сведения о рабочих областях см. в следующей [документации](../../azure-monitor/learn/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace).
+Дополнительные сведения о рабочих областях см. в следующей [документации](../../azure-monitor/logs/quick-create-workspace.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.jsond#create-a-workspace).
 
 ## <a name="turn-on-resource-logs"></a>Включить журналы ресурсов
 
@@ -95,6 +95,6 @@ AzureDiagnostics
 | summarize totalQueuedQueries = dcount(RequestId_s)
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, после настройки и настройки журналов Azure Monitor, [Настройте панели мониторинга Azure](../../azure-portal/azure-portal-dashboards.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) для совместного использования в команде.

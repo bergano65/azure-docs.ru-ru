@@ -4,16 +4,16 @@ description: Сведения о том, как получать события 
 ms.topic: article
 ms.date: 04/24/2020
 ms.author: msangapu
-ms.openlocfilehash: c5c84891187c540c0b24162cf5c8c7f96e9e731a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c20028a4f84dae9d292cf855a1e164bd69864909
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88962304"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574034"
 ---
 # <a name="get-resource-events-in-azure-app-service"></a>Получение событий ресурсов в Службе приложений Azure
 
-Служба приложений Azure предоставляет встроенные средства для мониторинга состояния и работоспособности ресурсов. События ресурсов помогают отслеживать изменения, внесенные в базовые ресурсы веб-приложения и предпринимать соответствующие действия. К таким событиям относятся: масштабирование экземпляров, обновление параметров приложения, перезапуск веб-приложения и многое другое. Из этой статьи вы узнаете, как просматривать [журналы действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log) и применять [Сетку событий](../event-grid/index.yml) для мониторинга событий ресурсов, связанных с веб-приложением Службы приложений.
+Служба приложений Azure предоставляет встроенные средства для мониторинга состояния и работоспособности ресурсов. События ресурсов помогают отслеживать изменения, внесенные в базовые ресурсы веб-приложения и предпринимать соответствующие действия. К таким событиям относятся: масштабирование экземпляров, обновление параметров приложения, перезапуск веб-приложения и многое другое. Из этой статьи вы узнаете, как просматривать [журналы действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log) и применять [Сетку событий](../event-grid/index.yml) для мониторинга событий ресурсов, связанных с веб-приложением Службы приложений.
 
 > [!NOTE]
 > Интеграция Службы приложений с Сеткой событий поддерживается в режиме **предварительной версии**. [Дополнительные сведения см. в объявлении](https://aka.ms/app-service-event-grid-announcement).
@@ -33,7 +33,7 @@ ms.locfileid: "88962304"
 
 Журналы действий Azure можно просматривать с помощью портала Azure, PowerShell, REST API или CLI. Журналы можно отправлять в учетную запись хранения, концентратор событий или службу Log Analytics. Их также можно анализировать в Power BI или создавать оповещения, чтобы получать актуальную информацию о событиях ресурсов.
 
-[Просмотр и извлечение событий из журнала действий Azure.](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+[Просмотр и извлечение событий из журнала действий Azure.](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 ## <a name="ship-activity-logs-to-event-grid"></a>Передача журналов действий в Сетку событий
 
@@ -44,7 +44,7 @@ ms.locfileid: "88962304"
 [Свойства и схема для событий Службы приложений Azure.](../event-grid/event-schema-app-service.md)
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Дальнейшие действия
-* [Запросы по журналам в Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Запросы по журналам в Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
 * [Troubleshoot an app in Azure App Service using Visual Studio](troubleshoot-dotnet-visual-studio.md) (Устранение неполадок приложения в Службе приложений Azure с помощью Visual Studio)
 * [Анализ журналов приложения в HDInsight](https://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

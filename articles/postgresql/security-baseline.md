@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 89296b3d0ee4e4339553d22d2ae53ee470ecad31
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d1ff047c44833a94ae9db0a410f501a1f23a369f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807586"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576235"
 ---
 # <a name="azure-security-baseline-for-azure-database-for-postgresql---single-server"></a>Базовый уровень безопасности Azure для базы данных Azure для PostgreSQL — один сервер
 
@@ -160,9 +160,9 @@ ms.locfileid: "99807586"
 
 **Руководство**: Используйте журнал действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений для сетевых ресурсов, связанных с экземплярами базы данных Azure для PostgreSQL. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -202,7 +202,7 @@ ms.locfileid: "99807586"
 
 - [Как настроить и получить доступ к журналам аудита для базы данных Azure для PostgreSQL](concepts-audit.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -220,9 +220,9 @@ ms.locfileid: "99807586"
 
 **Руководство**: В Azure Monitor для рабочей области Log Analytics, используемой для хранения журналов базы данных Azure для PostgreSQL, задайте срок хранения согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -234,9 +234,9 @@ ms.locfileid: "99807586"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Дополнительные сведения о Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Дополнительные сведения о Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -254,7 +254,7 @@ ms.locfileid: "99807586"
 
 - [Как настроить и получить доступ к журналам аудита для базы данных Azure для PostgreSQL](concepts-audit.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -588,7 +588,7 @@ AskAzureDBforPostgreSQL@service.microsoft.com.
 
 **Руководство**: Используйте Azure Monitor с журналом действий Azure для создания оповещений об изменениях на коммерческих экземплярах базы данных Azure для PostgreSQL и других важных и связанных с ними ресурсах.
 
-- [Как создать оповещения для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 

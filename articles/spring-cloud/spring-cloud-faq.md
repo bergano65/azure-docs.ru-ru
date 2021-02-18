@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 307afc8f1caafac1a511f0f9895cc73dd9b47eb4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 50c8a36b943abb24f2c31bfc2bc33e646a74524a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196050"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596612"
 ---
 # <a name="azure-spring-cloud-faq"></a>Вопросы и ответы по Azure весн Cloud
 
@@ -90,9 +90,9 @@ Azure Spring Cloud поддерживает Java 8 и 11. См. раздел [�
 
 ### <a name="where-can-i-view-my-spring-cloud-application-logs-and-metrics"></a>Где можно просматривать журналы и метрики приложений весны облака?
 
-Метрики находятся на вкладке "Обзор приложения" и [Azure Monitor](../azure-monitor/platform/data-platform-metrics.md#metrics-explorer).
+Метрики находятся на вкладке "Обзор приложения" и [Azure Monitor](../azure-monitor/essentials/data-platform-metrics.md#metrics-explorer).
 
-Azure Веснного облака поддерживает экспорт журналов облачных приложений и метрик в службу хранилища Azure, EventHub и [log Analytics](../azure-monitor/platform/data-platform-logs.md). Имя таблицы в Log Analytics — *аппплатформлогсфорспринг*. Сведения о том, как ее включить, см. в разделе [службы диагностики](diagnostic-services.md).
+Azure Веснного облака поддерживает экспорт журналов облачных приложений и метрик в службу хранилища Azure, EventHub и [log Analytics](../azure-monitor/logs/data-platform-logs.md). Имя таблицы в Log Analytics — *аппплатформлогсфорспринг*. Сведения о том, как ее включить, см. в разделе [службы диагностики](diagnostic-services.md).
 
 ### <a name="does-azure-spring-cloud-support-distributed-tracing"></a>Поддерживает ли Azure Spring Cloud распределенную трассировку?
 
@@ -241,6 +241,6 @@ RetryableEurekaHttpClient: Request execution failure with status code 401; retry
 Мы улучшаем эту часть и не будем использовать эту ошибку в приложениях пользователей в течение короткого будущего времени.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если у вас возникнут другие вопросы, см. [руководство по устранению неполадок в облаке Azure весны](spring-cloud-troubleshoot.md).

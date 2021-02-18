@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: tutorial
 ms.date: 09/10/2019
 ms.author: memildin
-ms.openlocfilehash: 1f5db17549c2b95d5dd0dd2f866ca1d1c0e7d8aa
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 0868c99a29b8da4376b639a54988fc821433e26d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965125"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576977"
 ---
 # <a name="planning-and-operations-guide"></a>Руководство по планированию и эксплуатации
 Это руководство предназначено для ИТ-специалистов, ИТ-архитекторов, аналитиков в сфере информационной безопасности и администраторов облака, которые планируют использовать Центр безопасности Azure.
@@ -135,7 +135,7 @@ ms.locfileid: "94965125"
 
 ### <a name="agent"></a>Агент
 
-После включения автоматической подготовки в политике безопасности агент Log Analytics (для [Windows](../azure-monitor/platform/agent-windows.md) или [Linux](../azure-monitor/learn/quick-collect-linux-computer.md)) будет установлен на всех имеющихся и создаваемых поддерживаемых виртуальных машинах Azure. Если на виртуальной машине или компьютере уже установлен агент Log Analytics, Центр безопасности Azure будет использовать установленный агент. Агент не мешает работе и минимально влияет на производительность виртуальной машины.
+После включения автоматической подготовки в политике безопасности агент Log Analytics (для [Windows](../azure-monitor/agents/agent-windows.md) или [Linux](../azure-monitor/vm/quick-collect-linux-computer.md)) будет установлен на всех имеющихся и создаваемых поддерживаемых виртуальных машинах Azure. Если на виртуальной машине или компьютере уже установлен агент Log Analytics, Центр безопасности Azure будет использовать установленный агент. Агент не мешает работе и минимально влияет на производительность виртуальной машины.
 
 Агенту Log Analytics для Windows требуется TCP-порт 443. Дополнительные сведения см. в статье [Руководство по устранению неполадок в центре безопасности Azure](security-center-troubleshooting-guide.md).
 
@@ -228,7 +228,7 @@ ms.locfileid: "94965125"
 >
 >
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этом документе описывается, как спланировать переход к использованию центра безопасности. Дополнительные сведения о Центре безопасности см. в следующих статьях:
 
 * [Управление оповещениями безопасности в Центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md)

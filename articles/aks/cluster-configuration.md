@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 02/09/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: 5519157b58268b30ecb7a1af7b86d13d587a23b8
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: eaf512915532b482c25e830cd9f2e01d61aa4524
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100519411"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572786"
 ---
 # <a name="configure-an-aks-cluster"></a>Настройка кластера AKS.
 
@@ -100,9 +100,9 @@ az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-gro
 * Для для `containerd` [`crictl`](https://kubernetes.io/docs/tasks/debug-application-cluster/crictl) **устранения неполадок** в Pod, контейнерах и образах контейнеров на узлах Kubernetes рекомендуется использовать в качестве замещающего интерфейса командной строки вместо DOCKER CLI (например, `crictl ps` ). 
    * Он не предоставляет полный набор функций интерфейса командной строки DOCKER. Он предназначен только для устранения неполадок.
    * `crictl` предлагает более kubernetes представление контейнеров с такими концепциями, как модули Pod и т. д.
-* `Containerd` Настраивает ведение журнала с использованием стандартизированного `cri` формата ведения журнала (который отличается от используемого в настоящее время драйвера JSON DOCKER). Ваше решение для ведения журнала должно поддерживать `cri` Формат ведения журнала (например, [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-enable-new-cluster.md)).
+* `Containerd` Настраивает ведение журнала с использованием стандартизированного `cri` формата ведения журнала (который отличается от используемого в настоящее время драйвера JSON DOCKER). Ваше решение для ведения журнала должно поддерживать `cri` Формат ведения журнала (например, [Azure Monitor для контейнеров](../azure-monitor/containers/container-insights-enable-new-cluster.md)).
 * Вы больше не можете получить доступ к подсистеме DOCKER `/var/run/docker.sock` или использовать DOCKER-in-DOCKER (динд).
-  * Если в данный момент вы извлечете журналы приложений или данные мониторинга из подсистемы DOCKER, используйте вместо них нечто вроде [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-enable-new-cluster.md) . Кроме того, AKS не поддерживает выполнение команд с использованием аппаратного контроллера управления на узлах агента, которые могут привести к нестабильной работе.
+  * Если в данный момент вы извлечете журналы приложений или данные мониторинга из подсистемы DOCKER, используйте вместо них нечто вроде [Azure Monitor для контейнеров](../azure-monitor/containers/container-insights-enable-new-cluster.md) . Кроме того, AKS не поддерживает выполнение команд с использованием аппаратного контроллера управления на узлах агента, которые могут привести к нестабильной работе.
   * Даже при использовании значок Кита/DOCKER создание образов и непосредственное использование подсистемы DOCKER с помощью приведенных выше методов настоятельно не рекомендуется. Kubernetes не полностью осведомлен о потребляемых ресурсах, и эти подходы представляют множество проблем, описанных [здесь](https://jpetazzo.github.io/2015/09/03/do-not-use-docker-in-docker-for-ci/) , и [здесь](https://securityboulevard.com/2018/05/escaping-the-whale-things-you-probably-shouldnt-do-with-docker-part-1/), например.
 * Создание образов. Вы можете продолжать использовать текущий рабочий процесс DOCKER Build в качестве обычного, если вы не создаете образы в кластере AKS. В этом случае рассмотрите возможность перехода на рекомендуемый подход к созданию образов с помощью [задач контроля](../container-registry/container-registry-quickstart-task-cli.md)доступа или более безопасного варианта в кластере, такого как [DOCKER буилдкс](https://github.com/docker/buildx).
 

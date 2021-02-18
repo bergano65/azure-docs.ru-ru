@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4f28665998dcac9f641d4142a0dea60707fb02e9
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 579baa611db47215c8ada554328d254ce99f17cf
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99805366"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579758"
 ---
 # <a name="azure-security-baseline-for-azure-application-gateway"></a>Базовый план безопасности Azure для шлюза приложений Azure
 
@@ -188,9 +188,9 @@ ms.locfileid: "99805366"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых параметров и ресурсов, связанных с развертываниями шлюза приложений Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых параметров или ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -216,7 +216,7 @@ ms.locfileid: "99805366"
 
 Шлюз приложений Azure также предлагает встроенную интеграцию с Azure Application Insights. Application Insights собирает данные журнала, производительности и ошибок. Application Insights автоматически обнаруживает аномалии производительности и включает мощные средства анализа, помогающие диагностировать проблемы и понять, как используются веб-приложения. Вы можете включить непрерывный экспорт для экспорта данных телеметрии из Application Insights в централизованное расположение, чтобы хранить данные дольше стандартного срока хранения.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Включение параметров диагностики для шлюза приложений Azure](./application-gateway-diagnostics.md)
 
@@ -236,7 +236,7 @@ ms.locfileid: "99805366"
 
 Шлюз приложений Azure также предлагает встроенную интеграцию с Azure Application Insights. Application Insights собирает данные журнала, производительности и ошибок. Application Insights автоматически обнаруживает аномалии производительности и включает мощные средства анализа, помогающие диагностировать проблемы и понять, как используются веб-приложения. Вы можете включить непрерывный экспорт для экспорта данных телеметрии из Application Insights в централизованное расположение, чтобы хранить данные дольше стандартного срока хранения.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Включение параметров диагностики для шлюза приложений Azure](./application-gateway-diagnostics.md)
 
@@ -260,7 +260,7 @@ ms.locfileid: "99805366"
 
 **Руководство**. В Azure Monitor задайте период хранения для рабочей области Log Analytics согласно нормативным требованиям вашей организации. Используйте учетные записи хранения Azure для долгосрочного и архивного хранения.
 
-* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Задание параметров хранения журналов для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -274,7 +274,7 @@ ms.locfileid: "99805366"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Включение параметров диагностики для шлюза приложений Azure](./application-gateway-diagnostics.md)
 
@@ -294,13 +294,13 @@ ms.locfileid: "99805366"
 
 * [Развертывание WAF Azure](../web-application-firewall/ag/create-waf-policy-ag.md)
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Включение параметров диагностики для шлюза приложений Azure](./application-gateway-diagnostics.md)
 
 * [Использование Azure Monitor для сетей](../azure-monitor/insights/network-insights-overview.md)
 
-* [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
+* [Создание оповещений в Azure](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -591,7 +591,7 @@ ms.locfileid: "99805366"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах шлюза приложений Azure, а также в других критически важных или связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

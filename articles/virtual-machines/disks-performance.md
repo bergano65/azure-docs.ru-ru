@@ -7,12 +7,12 @@ ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: 5e9f6ecc733eccf317e3013752ee2f5b0586ea78
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: d3a89e7733cc033792056b8de5232232b8327025
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98540764"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580403"
 ---
 # <a name="virtual-machine-and-disk-performance"></a>Производительность диска и виртуальной машины
 [!INCLUDE [VM and Disk Performance](../../includes/virtual-machine-disk-performance.md)]
@@ -22,6 +22,3 @@ ms.locfileid: "98540764"
 
 [!INCLUDE [VM and Disk Performance](../../includes/virtual-machine-disk-performance-2.md)]
 
-Давайте выполним тест производительности на этой виртуальной машине и в сочетании с дисками, создающими операции ввода-вывода. Дополнительные сведения о тестировании производительности операций ввода-вывода в Azure см. в разделе [Тестирование производительности приложения на хранилище дисков Azure](disks-benchmarks.md). В средстве тестирования производительности можно увидеть, что сочетание ВМ и диска может достигать 22 800 операций ввода-вывода в секунду:
-
-[!INCLUDE [VM and Disk Performance](../../includes/virtual-machine-disk-performance-3.md)]

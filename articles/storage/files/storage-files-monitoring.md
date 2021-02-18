@@ -10,12 +10,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: d71f3fa27dda9edc4c88ad9ed563e5c3a95ffa4b
-ms.sourcegitcommit: 1f1d29378424057338b246af1975643c2875e64d
+ms.openlocfilehash: e872d28063a3e0671558ee4d388cad280b94f45b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99574539"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596930"
 ---
 # <a name="monitoring-azure-files"></a>Мониторинг файлов Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "99574539"
 ## <a name="what-is-azure-monitor"></a>Общие сведения об Azure Monitor
 Служба "файлы Azure" создает данные мониторинга с помощью [Azure Monitor](../../azure-monitor/overview.md), которая представляет собой полную службу мониторинга стека в Azure. Azure Monitor предоставляет полный набор функций для мониторинга ресурсов Azure и ресурсов в других облаках, а также в локальной среде. 
 
-Начните с статьи [мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md), который описывает следующее:
+Начните с статьи [мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md), который описывает следующее:
 
 - Общие сведения об Azure Monitor
 - затраты, связанные с мониторингом;
@@ -40,7 +40,7 @@ ms.locfileid: "99574539"
 
 ## <a name="monitoring-data"></a>Данные мониторинга
 
-Служба файлов Azure собирает те же данные мониторинга, что и другие ресурсы Azure, которые описаны в разделе [мониторинг данных из ресурсов Azure](../../azure-monitor/insights/monitor-azure-resource.md#monitoring-data). 
+Служба файлов Azure собирает те же данные мониторинга, что и другие ресурсы Azure, которые описаны в разделе [мониторинг данных из ресурсов Azure](../../azure-monitor/essentials/monitor-azure-resource.md#monitoring-data). 
 
 Подробные сведения о метриках и журналах, созданных службой файлов Azure, см. в [справочнике по данным мониторинга файлов Azure](storage-files-monitoring-reference.md) .
 
@@ -67,7 +67,7 @@ ms.locfileid: "99574539"
 > [!NOTE]
 > Журналы службы хранилища Azure в Azure Monitor предоставляются в общедоступной предварительной версии. Они также доступны для предварительного тестирования во всех регионах общедоступного облака. Эта предварительная версия включает журналы для больших двоичных объектов (в том числе Azure Data Lake Storage 2-го поколения), файлов, очередей и таблиц. Эта функция доступна для всех учетных записей хранения, созданных с помощью модели развертывания Azure Resource Manager. См. раздел [Общие сведения об учетной записи хранения](../common/storage-account-overview.md).
 
-Общие рекомендации см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/platform/diagnostic-settings.md).
+Общие рекомендации см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../../azure-monitor/essentials/diagnostic-settings.md).
 
 ### <a name="azure-portal"></a>[Портал Azure](#tab/azure-portal)
 
@@ -106,7 +106,7 @@ ms.locfileid: "99574539"
 2. В раскрывающемся списке **учетная запись хранения** выберите учетную запись хранения, в которую нужно архивировать журналы, нажмите кнопку **ОК** , а затем нажмите кнопку **сохранить** .
 
    > [!NOTE]
-   > Перед тем как выбрать учетную запись хранения в качестве назначения экспорта, см. раздел [Архивация журналов ресурсов Azure](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) , чтобы ознакомиться с предварительными требованиями в учетной записи хранения.
+   > Перед тем как выбрать учетную запись хранения в качестве назначения экспорта, см. раздел [Архивация журналов ресурсов Azure](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) , чтобы ознакомиться с предварительными требованиями в учетной записи хранения.
 
 #### <a name="stream-logs-to-azure-event-hubs"></a>Потоковая передача журналов в концентраторы событий Azure
 
@@ -160,7 +160,7 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -StorageAccoun
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/fileServices/default -StorageAccountId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount -Enabled $true -Category StorageWrite,StorageDelete`
 
-Описание каждого параметра см. в разделе [Архивация журналов ресурсов Azure с помощью Azure PowerShell](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage).
+Описание каждого параметра см. в разделе [Архивация журналов ресурсов Azure с помощью Azure PowerShell](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
@@ -176,7 +176,7 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -EventHubAutho
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/fileServices/default -EventHubAuthorizationRuleId /subscriptions/20884142-a14v3-4234-5450-08b10c09f4/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey -Enabled $true -Category StorageDelete`
 
-Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий с помощью командлетов PowerShell](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs).
+Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий с помощью командлетов PowerShell](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs).
 
 #### <a name="send-logs-to-log-analytics"></a>Отправка журналов в Log Analytics
 
@@ -190,7 +190,7 @@ Set-AzDiagnosticSetting -ResourceId <storage-service-resource-id> -WorkspaceId <
 
 `Set-AzDiagnosticSetting -ResourceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/mystorageaccount/fileServices/default -WorkspaceId /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace -Enabled $true -Category StorageDelete`
 
-Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).
+Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace).
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -222,7 +222,7 @@ az monitor diagnostic-settings create --name <setting-name> --storage-account <s
 
 `az monitor diagnostic-settings create --name setting1 --storage-account mystorageaccount --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/fileServices/default --resource-group myresourcegroup --logs '[{"category": StorageWrite, "enabled": true, "retentionPolicy": {"days": 90, "enabled": true}}]'`
 
-Описание каждого параметра см. в разделе [Архивные журналы ресурсов с помощью Azure CLI](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage).
+Описание каждого параметра см. в разделе [Архивные журналы ресурсов с помощью Azure CLI](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage).
 
 #### <a name="stream-logs-to-an-event-hub"></a>Потоковая передача журналов в концентратор событий
 
@@ -238,7 +238,7 @@ az monitor diagnostic-settings create --name <setting-name> --event-hub <event-h
 
 `az monitor diagnostic-settings create --name setting1 --event-hub myeventhub --event-hub-rule /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.EventHub/namespaces/myeventhubnamespace/authorizationrules/RootManageSharedAccessKey --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/fileServices/default --logs '[{"category": StorageDelete, "enabled": true }]'`
 
-Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий через Azure CLI](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs).
+Описание каждого параметра см. в статье [потоковая передача данных в концентраторы событий через Azure CLI](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs).
 
 #### <a name="send-logs-to-log-analytics"></a>Отправка журналов в Log Analytics
 
@@ -252,24 +252,24 @@ az monitor diagnostic-settings create --name <setting-name> --workspace <log-ana
 
 `az monitor diagnostic-settings create --name setting1 --workspace /subscriptions/208841be-a4v3-4234-9450-08b90c09f4/resourceGroups/myresourcegroup/providers/Microsoft.OperationalInsights/workspaces/my-analytic-workspace --resource /subscriptions/938841be-a40c-4bf4-9210-08bcf06c09f9/resourceGroups/myresourcegroup/providers/Microsoft.Storage/storageAccounts/myloggingstorageaccount/fileServices/default --logs '[{"category": StorageDelete, "enabled": true ]'`
 
- Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).
+ Дополнительные сведения см. [в статье потоковая передача журналов ресурсов Azure в log Analytics рабочую область в Azure Monitor](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace).
 
 ### <a name="template"></a>[Шаблон](#tab/template)
 
-Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](../../azure-monitor/samples/resource-manager-diagnostic-settings.md#diagnostic-setting-for-azure-storage).
+Чтобы просмотреть шаблон Azure Resource Manager, который создает параметр диагностики, см. раздел [параметр диагностики для службы хранилища Azure](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md#diagnostic-setting-for-azure-storage).
 
 ---
 
 ## <a name="analyzing-metrics"></a>Анализ метрик
 
-Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/platform/metrics-getting-started.md). 
+Вы можете анализировать метрики для службы хранилища Azure с помощью метрик из других служб Azure, используя обозреватель метрик. Откройте обозреватель метрик, выбрав **Метрики** в меню **Azure Monitor**. Подробные сведения об использовании этого средства см. на странице [Начало работы с обозревателем метрик Azure](../../azure-monitor/essentials/metrics-getting-started.md). 
 
 Для метрик с поддержкой измерений можно выполнить фильтрацию по нужному значению измерения.  Полный список измерений, поддерживаемых службой хранилища Azure, см. в разделе [Измерения метрик](storage-files-monitoring-reference.md#metrics-dimensions). Метрики для службы файлов Azure находятся в следующих пространствах имен: 
 
 - Microsoft.Storage/storageAccounts
 - Microsoft.Storage/storageAccounts/fileServices
 
-Список всех метрик поддержки Azure Monitor, включая службы файлов Azure, см. в статье [Azure Monitor поддерживаемые метрики](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices).
+Список всех метрик поддержки Azure Monitor, включая службы файлов Azure, см. в статье [Azure Monitor поддерживаемые метрики](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsfileservices).
 
 ### <a name="accessing-metrics"></a>Доступ к метрикам
 
@@ -513,20 +513,20 @@ Azure Monitor предоставляет [пакет SDK для .NET](https://ww
 
 ![Журналы аудита](media/storage-files-monitoring/event-hub-log.png)
 
-Вы можете получать доступ к данным журнала, отправляемым в концентратор событий, и считывать их, используя сведения о безопасности, а также средства мониторинга и управления событиями. Дополнительные сведения см. на [этой странице](../../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+Вы можете получать доступ к данным журнала, отправляемым в концентратор событий, и считывать их, используя сведения о безопасности, а также средства мониторинга и управления событиями. Дополнительные сведения см. на [этой странице](../../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 
 ### <a name="accessing-logs-in-a-log-analytics-workspace"></a>Доступ к журналам в рабочей области Log Analytics
 
 Доступ к журналам, отправляемым в рабочую область Log Analytics, можно получить с помощью запросов журналов Azure Monitor. Данные хранятся в таблице **сторажефилелогс** . 
 
-Дополнительные сведения см. в разделе [log Analytics учебник](../../azure-monitor/log-query/log-analytics-tutorial.md).
+Дополнительные сведения см. в разделе [log Analytics учебник](../../azure-monitor/logs/log-analytics-tutorial.md).
 
 #### <a name="sample-kusto-queries"></a>Примеры запросов Kusto
 
-Ниже приведены некоторые запросы, которые можно ввести на панели **поиска журналов** , чтобы упростить мониторинг файлов Azure. Эти запросы поддерживают [новый язык](../../azure-monitor/log-query/log-query-overview.md).
+Ниже приведены некоторые запросы, которые можно ввести на панели **поиска журналов** , чтобы упростить мониторинг файлов Azure. Эти запросы поддерживают [новый язык](../../azure-monitor/logs/log-query-overview.md).
 
 > [!IMPORTANT]
-> При выборе **журналов** в меню группы ресурсов учетной записи хранения log Analytics открывается с областью запроса, заданной для текущей группы ресурсов. Это означает, что запросы журнала будут содержать только данные из этой группы ресурсов. Если требуется выполнить запрос, который включает данные из других ресурсов или данных из других служб Azure, выберите **журналы** в меню **Azure Monitor** . Подробные сведения см. в статье [Область запросов журнала и временной диапазон в Azure Monitor Log Analytics](../../azure-monitor/log-query/scope.md).
+> При выборе **журналов** в меню группы ресурсов учетной записи хранения log Analytics открывается с областью запроса, заданной для текущей группы ресурсов. Это означает, что запросы журнала будут содержать только данные из этой группы ресурсов. Если требуется выполнить запрос, который включает данные из других ресурсов или данных из других служб Azure, выберите **журналы** в меню **Azure Monitor** . Подробные сведения см. в статье [Область запросов журнала и временной диапазон в Azure Monitor Log Analytics](../../azure-monitor/logs/scope.md).
 
 Используйте эти запросы для мониторинга файловых ресурсов Azure:
 
@@ -567,11 +567,11 @@ StorageFileLogs
 
 Список имен и описаний столбцов для службы файлов Azure см. в разделе [сторажефилелогс](/azure/azure-monitor/reference/tables/storagefilelogs).
 
-Дополнительные сведения о написании запросов см. в разделе [log Analytics учебник](../../azure-monitor/log-query/log-analytics-tutorial.md).
+Дополнительные сведения о написании запросов см. в разделе [log Analytics учебник](../../azure-monitor/logs/log-analytics-tutorial.md).
 
 ## <a name="alerts"></a>видны узлы
 
-Оповещения Azure Monitor заблаговременно уведомляют вас при обнаружении важных условий в данных мониторинга. Они позволяют выявлять и устранять проблемы в системе до того, как ваши клиенты заметят их. Оповещения можно настроить для [метрик](../../azure-monitor/platform/alerts-metric-overview.md), [журналов](../../azure-monitor/platform/alerts-unified-log.md) и [журнала действий](../../azure-monitor/platform/activity-log-alerts.md). 
+Оповещения Azure Monitor заблаговременно уведомляют вас при обнаружении важных условий в данных мониторинга. Они позволяют выявлять и устранять проблемы в системе до того, как ваши клиенты заметят их. Оповещения можно настроить для [метрик](../../azure-monitor/alerts/alerts-metric-overview.md), [журналов](../../azure-monitor/alerts/alerts-unified-log.md) и [журнала действий](../../azure-monitor/alerts/activity-log-alerts.md). 
 
 В следующей таблице перечислены некоторые примеры сценариев для мониторинга и правильная метрика, используемая для оповещения.
 
@@ -686,10 +686,10 @@ StorageFileLogs
 12. Введите сведения о **предупреждении** , такие как имя, **Описание** и **серьезность** **правила оповещения**.
 13. Щелкните **создать правило генерации оповещений** , чтобы создать оповещение.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Справочник по данным мониторинга файлов Azure](storage-files-monitoring-reference.md)
-- [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md)
+- [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md)
 - [Миграция метрик службы хранилища Azure](../common/storage-metrics-migration.md)
 - [Планирование развертывания Файлов Azure](./storage-files-planning.md)
 - [Как развернуть службу файлов Azure](./storage-how-to-create-file-share.md)

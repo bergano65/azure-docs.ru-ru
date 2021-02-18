@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/31/2020
 ms.author: memildin
-ms.openlocfilehash: 31ff3620bcab6b10b59582daa255ff1f259ab0d3
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 4cc8130d34b5f51728fb2e7fb47c1fb0717d2138
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852648"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595125"
 ---
 # <a name="supported-platforms"></a>Поддерживаемые платформы 
 
@@ -37,10 +37,10 @@ ms.locfileid: "96852648"
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-Работа Центра безопасности зависит от [агента Log Analytics](../azure-monitor/platform/agents-overview.md#log-analytics-agent). Убедитесь, что компьютеры работают под управлением одной из операционных систем, поддерживаемых этим агентом, как описано на следующих страницах:
+Работа Центра безопасности зависит от [агента Log Analytics](../azure-monitor/agents/agents-overview.md#log-analytics-agent). Убедитесь, что компьютеры работают под управлением одной из операционных систем, поддерживаемых этим агентом, как описано на следующих страницах:
 
-* [Поддерживаемые операционные системы: Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
-* [Поддерживаемые операционные системы: Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Windows](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Linux](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
 
 Кроме того, убедитесь, что агент Log Analytics [правильно настроен для отправки данных в Центр безопасности](security-center-enable-data-collection.md#manual-agent).
 

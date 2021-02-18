@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 12/10/2020
 ms.topic: conceptual
-ms.openlocfilehash: 636dbf95567f761aee19bd567b0835173ce36ccc
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: dff314f3c9fb72c565a7c2d522694d533c487895
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093627"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572646"
 ---
 # <a name="manage-change-tracking-and-inventory"></a>Управление решением для отслеживания изменений и инвентаризации
 
@@ -164,10 +164,10 @@ ms.locfileid: "97093627"
 |`ConfigurationData`<br> &#124; `where ConfigDataType == "WindowsServices" and SvcStartupType == "Auto"`<br> &#124; `where SvcState == "Stopped"`<br> &#124; `summarize arg_max(TimeGenerated, *) by SoftwareName, Computer`         | Показывает самые последние записи инвентаризации для служб Майкрософт, для которых установлено значение "Автоматический" и которые были остановлены. Результаты ограничены самой последней записью для указанного имени программного обеспечения и компьютера.    |
 |`ConfigurationChange`<br> &#124; `where ConfigChangeType == "Software" and ChangeCategory == "Removed"`<br> &#124; `order by TimeGenerated desc`|Показывает записи об изменениях для удаленного программного обеспечения.|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Дополнительные сведения о конфигурациях областей см. в разделе [Limit отслеживание изменений и Inventory Deployment Scope](manage-scope-configurations.md).
-* Если необходимо выполнить поиск в журналах, хранящихся в журналах Azure Monitor, см. раздел [Поиск по журналам в Azure Monitor журналах](../../azure-monitor/log-query/log-query-overview.md).
+* Если необходимо выполнить поиск в журналах, хранящихся в журналах Azure Monitor, см. раздел [Поиск по журналам в Azure Monitor журналах](../../azure-monitor/logs/log-query-overview.md).
 * Если вы завершили развертывание, см. раздел [удаление отслеживание изменений и инвентаризации](remove-feature.md).
 * Сведения об удалении виртуальных машин из Отслеживание изменений и инвентаризации см. в статье [Удаление виртуальных машин из отслеживание изменений и инвентаризации](remove-vms-from-change-tracking.md).
 * Сведения об устранении ошибок функции см. в статье [Устранение неполадок с решением для отслеживания изменений и инвентаризации](../troubleshoot/change-tracking.md).

@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/05/2020
+ms.date: 02/16/2021
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1957adc0effd5b37d7aff3f813267da6ca065e0a
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 15e5aba2bad4cd7ae63ceb9c9f67f7e653a82a91
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100368971"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650156"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure Active Directory (Azure AD) Connect.
@@ -167,6 +167,17 @@ Azure AD Connect сервер должен рассматриваться как
     "SchUseStrongCrypto"=dword:00000001
     ```
 1. Если вы также хотите включить TLS 1,2 между сервером модуля синхронизации и удаленным SQL Server, убедитесь, что установлены требуемые версии для [поддержки TLS 1,2 для Microsoft SQL Server](https://support.microsoft.com/kb/3135244).
+
+### <a name="dcom-prerequisites-on-the-synchronization-server"></a>Необходимые компоненты DCOM на сервере синхронизации
+Во время установки службы синхронизации Azure AD Connect проверяет наличие следующего раздела реестра:
+
+- HKEY_LOCAL_MACHINE: Софтваре\микрософт\оле
+
+В этом разделе реестра Azure AD Connect проверит наличие и отсутствие повреждений следующих значений: 
+
+- [мачинеакцессрестриктион](https://docs.microsoft.com/windows/win32/com/machineaccessrestriction)
+- [мачинелаунчрестриктион](https://docs.microsoft.com/windows/win32/com/machinelaunchrestriction)
+- [дефаултлаунчпермиссион](https://docs.microsoft.com/windows/win32/com/defaultlaunchpermission)
 
 ## <a name="prerequisites-for-federation-installation-and-configuration"></a>Предварительные требования для установки и настройки федерации
 ### <a name="windows-remote-management"></a>Удаленное управление Windows

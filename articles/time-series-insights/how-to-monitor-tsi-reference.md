@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/10/2020
 ms.custom: lyrana
-ms.openlocfilehash: 0b564ddfdea2cf24b7f9b1bc608d47fa4cfe541b
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: bfd0d04313f0b519b4013a43e29d88400c73ea31
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632799"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591381"
 ---
 # <a name="monitoring-azure-time-series-insights-data-reference"></a>Мониторинг справочника по данным службы "аналитика временных рядов Azure"
 
@@ -23,12 +23,12 @@ ms.locfileid: "97632799"
 
 ## <a name="metrics"></a>Метрики
 
-В этом разделе перечислены все автоматически собранные метрики платформы, собранные для службы "аналитика временных рядов Azure". Список всех метрик поддержки Azure Monitor (включая службу "аналитика временных рядов Azure") см. в статье [Azure Monitor поддерживаемые метрики](../azure-monitor/platform/metrics-supported.md). Поставщик ресурсов для этих метрик — [Microsoft. TimeSeriesInsights/Environments/классов EventSource](../azure-monitor/platform/metrics-supported.md#microsofttimeseriesinsightsenvironmentseventsources) и [Microsoft. TimeSeriesInsights/](../azure-monitor/platform/metrics-supported.md#microsofttimeseriesinsightsenvironments)Environments.
+В этом разделе перечислены все автоматически собранные метрики платформы, собранные для службы "аналитика временных рядов Azure". Список всех метрик поддержки Azure Monitor (включая службу "аналитика временных рядов Azure") см. в статье [Azure Monitor поддерживаемые метрики](../azure-monitor/essentials/metrics-supported.md). Поставщик ресурсов для этих метрик — [Microsoft. TimeSeriesInsights/Environments/классов EventSource](../azure-monitor/essentials/metrics-supported.md#microsofttimeseriesinsightsenvironmentseventsources) и [Microsoft. TimeSeriesInsights/](../azure-monitor/essentials/metrics-supported.md#microsofttimeseriesinsightsenvironments)Environments.
 
 
 ### <a name="ingress"></a>Входящий трафик
  
-|Метрика|Отображаемое имя метрики|Единицы|Тип статистической обработки|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Тип статистической обработки|Описание|
 |---|---|---|---|---|
 |IngressReceivedBytes|Получено байт входящих данных|Байты|Итог|Количество байтов, считанных из источника событий|
 |IngressReceivedInvalidMessages|Получено недопустимых сообщений во входящих данных|Count|Итог|Количество недопустимых сообщений, считанных из источника событий|
@@ -38,9 +38,9 @@ ms.locfileid: "97632799"
 |IngressStoredBytes|Хранится байтов входящих данных|Байты|Итог|Общий размер событий, успешно обработанных и доступных для запросов|
 |IngressStoredEvents|Хранится событий входящих данных|Count|Итог|Количество сведенных событий, успешно обработанных и доступных для запросов|
 
-### <a name="storage"></a>Служба хранилища
+### <a name="storage"></a>Память
 
-|Метрика|Отображаемое имя метрики|Единицы|Тип статистической обработки|Описание|
+|Метрика|Отображаемое имя метрики|Unit|Тип статистической обработки|Описание|
 |---|---|---|---|---|
 |вармсторажемакспропертиес|Максимальное число свойств для горячего хранения|Count|Максимальная|Максимальное число свойств, разрешенное средой для SKU S1/S2, и максимальное количество свойств, разрешенных в "горячий" магазин для SKU PAYG|
 |вармсторажеуседпропертиес|Свойства использования теплого хранилища |Count|Максимальная|Число свойств, используемых средой для SKU S1/S2, и количество свойств, используемых в "горячем" магазине для SKU PAYG|
@@ -51,7 +51,7 @@ ms.locfileid: "97632799"
 
 | Категория | Отображаемое имя | Описание |
 |----- |----- |----- |
-| Входящий трафик | тсиингресс | Категория входящих данных отслеживает ошибки, происходящие в конвейере входящих данных. Эта категория включает ошибки, возникающие при получении событий (например, ошибок для подключения к источнику событий) и обработке событий (например, ошибок при анализе полезных данных события). |
+| Входящий трафик | TSIIngress | Категория входящих данных отслеживает ошибки, происходящие в конвейере входящих данных. Эта категория включает ошибки, возникающие при получении событий (например, ошибок для подключения к источнику событий) и обработке событий (например, ошибок при анализе полезных данных события). |
 
 ## <a name="schemas"></a>Схемы
 Следующие схемы используются службой "аналитика временных рядов Azure"

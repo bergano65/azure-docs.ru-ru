@@ -3,22 +3,22 @@ title: Студия машинного обучения (классическа�
 description: Описания наборов данных, используемых в примерах моделей, которые входят в состав Студии машинного обучения (классической). Эти наборы данных можно использовать для собственных экспериментов.
 services: machine-learning
 ms.service: machine-learning
-ms.subservice: studio
+ms.subservice: studio-classic
 ms.topic: sample
 author: likebupt
 ms.author: keli19
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 01/19/2018
-ms.openlocfilehash: 737c63c02ea852e8cf17e2d520ca91b05a5ba12b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 8a848f6589902c2eabf5b4e14a4d000dc4ed081e
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325609"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518442"
 ---
 # <a name="use-the-sample-datasets-in-azure-machine-learning-studio-classic"></a>Используйте примеры наборов данных в Студии машинного обучения Azure (классической)
 
-**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к. ](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
+**ПРИМЕНИМО К:**  ![Применимо к.](../../../includes/media/aml-applies-to-skus/yes.png)Студия машинного обучения (классическая)   ![Неприменимо к.](../../../includes/media/aml-applies-to-skus/no.png)[Машинное обучение Azure](../overview-what-is-machine-learning-studio.md#ml-studio-classic-vs-azure-machine-learning-studio)
 
 
 [top]: #machine-learning-sample-datasets

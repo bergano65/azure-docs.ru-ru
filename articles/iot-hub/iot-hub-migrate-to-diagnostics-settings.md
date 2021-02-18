@@ -8,16 +8,16 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: kgremban
-ms.openlocfilehash: dfd819d82f5e35183802e33e5d423cad4de36c38
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 48b646881b12047b28490999a96326f6076af2c1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461594"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591848"
 ---
 # <a name="migrate-your-iot-hub-from-operations-monitoring-to-azure-monitor-resource-logs"></a>Перенос центра Интернета вещей из мониторинга операций в Azure Monitor журналы ресурсов
 
-Клиенты, использующие [мониторинг операций](iot-hub-operations-monitoring.md) для отслеживания состояния операций в центре Интернета вещей, могут перенести этот рабочий процесс в [Azure Monitor журналы ресурсов](../azure-monitor/platform/platform-logs-overview.md)— функцию Azure Monitor. Журналы ресурсов предоставляют диагностические сведения на уровне ресурсов для многих служб Azure.
+Клиенты, использующие [мониторинг операций](iot-hub-operations-monitoring.md) для отслеживания состояния операций в центре Интернета вещей, могут перенести этот рабочий процесс в [Azure Monitor журналы ресурсов](../azure-monitor/essentials/platform-logs-overview.md)— функцию Azure Monitor. Журналы ресурсов предоставляют диагностические сведения на уровне ресурсов для многих служб Azure.
 
 **Функции наблюдения за операциями центра Интернета вещей являются устаревшими** и были удалены с портала. В этой статье приведены шаги по перемещению рабочих нагрузок из мониторинга операций в Azure Monitor журналы ресурсов. Дополнительные сведения о графике удаления функции см. в статье [Monitor your Azure IoT solutions with Azure Monitor and Azure Resource Health](https://azure.microsoft.com/blog/monitor-your-azure-iot-solutions-with-azure-monitor-and-azure-resource-health/) (Мониторинг решений Интернета вещей Azure с помощью служб Azure Monitor и "Работоспособность ресурсов Azure").
 
@@ -49,9 +49,9 @@ ms.locfileid: "96461594"
 
 1. Нажмите кнопку **Сохранить**, чтобы сохранить параметры.
 
-Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся в настроенном месте назначения. Дополнительные сведения о настройке диагностики см. в статье [Получение и использование данных журнала из ресурсов Azure](../azure-monitor/platform/platform-logs-overview.md).
+Новые параметры вступят в силу в течение 10 минут. После этого журналы отобразятся в настроенном месте назначения. Дополнительные сведения о настройке диагностики см. в статье [Получение и использование данных журнала из ресурсов Azure](../azure-monitor/essentials/platform-logs-overview.md).
 
-Более подробные сведения о создании параметров диагностики, включая PowerShell и Azure CLI, см. в разделе [параметры диагностики](../azure-monitor/platform/diagnostic-settings.md) в документации по Azure Monitor.
+Более подробные сведения о создании параметров диагностики, включая PowerShell и Azure CLI, см. в разделе [параметры диагностики](../azure-monitor/essentials/diagnostic-settings.md) в документации по Azure Monitor.
 
 ### <a name="turn-off-operations-monitoring"></a>Отключение мониторинга операций
 
@@ -84,6 +84,6 @@ ms.locfileid: "96461594"
 
 Чтобы отслеживать события подключения и отключения устройств в рабочей среде, мы рекомендуем подписаться на [событие **отключено устройство**](iot-hub-event-grid.md#event-types) в службе "Сетка событий", чтобы получать оповещения и отслеживать состояние подключения устройства. Используйте это [руководство](iot-hub-how-to-order-connection-state-events.md), чтобы узнать, как интегрировать события подключения и отключения устройства из Центра Интернета вещей в решение Интернета вещей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Мониторинг Центра Интернета вещей](monitor-iot-hub.md)

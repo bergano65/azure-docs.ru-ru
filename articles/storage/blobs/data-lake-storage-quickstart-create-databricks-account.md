@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 06/12/2020
 ms.reviewer: jeking
-ms.openlocfilehash: e289bea6b1a23f1622ced62656164d9865303298
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0d712dc0ebe91ea8815adf235e02b8945e0dea84
+ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912830"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100518867"
 ---
 # <a name="quickstart-analyze-data-with-databricks"></a>Краткое руководство. Анализ данных с помощью Databricks
 
@@ -76,7 +76,7 @@ ms.locfileid: "95912830"
 
 4. Выберите **Create cluster** (Создать кластер). После запуска кластера можно вложить записные книжки в кластер и запустить задания Spark.
 
-Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](https://docs.azuredatabricks.net/user-guide/clusters/create.html).
+Дополнительные сведения о создании кластеров см. в статье [о создании кластера Spark в Azure Databricks](/azure/databricks/clusters/create).
 
 ## <a name="create-notebook"></a>Создание записной книжки
 
@@ -149,7 +149,7 @@ dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<st
 
     После успешного выполнения команды все данные из файла JSON будут отображаться в виде таблицы в кластере Databricks.
 
-    Волшебная команда языка `%sql` позволяет выполнить код SQL из записной книжки, даже если записная книжка другого типа. Дополнительные сведения см. в статье об [объединении языков программирования в записной книжке](https://docs.azuredatabricks.net/user-guide/notebooks/index.html#mixing-languages-in-a-notebook).
+    Волшебная команда языка `%sql` позволяет выполнить код SQL из записной книжки, даже если записная книжка другого типа. Дополнительные сведения см. в статье об [объединении языков программирования в записной книжке](/azure/databricks/notebooks/notebooks-use#mix-languages).
 
 2. Рассмотрим моментальный снимок примера данных JSON, чтобы лучше ознакомиться с запросом, который вы выполняете. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT + ВВОД**.
 
@@ -200,6 +200,6 @@ dbutils.fs.cp("file:///tmp/small_radio_json.json", "abfss://<container-name>@<st
 > [!div class="nextstepaction"]
 >[Извлечение, преобразование и загрузка данных с помощью Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse)
 
-- Чтобы узнать, как импортировать данные из других источников данных в Azure Databricks, см. статью об [источниках данных Spark](https://docs.azuredatabricks.net/spark/latest/data-sources/index.html).
+- Чтобы узнать, как импортировать данные из других источников данных в Azure Databricks, см. статью об [источниках данных Spark](/azure/databricks/data/data-sources/).
 
-- Дополнительные сведения о других способах доступа к Azure Data Lake Storage 2-го поколения из рабочей области Azure Databricks см. в [этой статье](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html).
+- Дополнительные сведения о других способах доступа к Azure Data Lake Storage 2-го поколения из рабочей области Azure Databricks см. в [этой статье](/azure/databricks/data/data-sources/azure/azure-datalake-gen2).

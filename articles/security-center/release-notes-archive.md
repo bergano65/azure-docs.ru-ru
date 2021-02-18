@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/02/2020
 ms.author: memildin
-ms.openlocfilehash: b7cb6edf825519bb3048de7a8c5326842f2db097
-ms.sourcegitcommit: ea822acf5b7141d26a3776d7ed59630bf7ac9532
+ms.openlocfilehash: f24785336642570ae3f21d96462317890526a4c9
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99524299"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578960"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Архив новых возможностей Центра безопасности Azure
 
@@ -296,7 +296,7 @@ ms.locfileid: "99524299"
 
 ### <a name="two-new-recommendations-to-deploy-the-log-analytics-agent-to-azure-arc-machines-preview"></a>Две новые рекомендации по развертыванию агента Log Analytics на компьютерах Azure Arc (предварительная версия)
 
-Добавлены две новые рекомендации, которые помогают развернуть [агент Log Analytics](../azure-monitor/platform/log-analytics-agent.md) на компьютерах Azure Arc и обеспечить их защиту с помощью Центра безопасности Azure:
+Добавлены две новые рекомендации, которые помогают развернуть [агент Log Analytics](../azure-monitor/agents/log-analytics-agent.md) на компьютерах Azure Arc и обеспечить их защиту с помощью Центра безопасности Azure:
 
 - **На виртуальных машинах Windows с Azure Arc должен быть установлен агент Log Analytics (предварительная версия)** ;
 - **На виртуальных машинах Linux с Azure Arc должен быть установлен агент Log Analytics (предварительная версия)** .
@@ -651,7 +651,7 @@ Kubernetes — известная платформа с открытым код
 
 
 
-## <a name="november-2019"></a>Ноябрь 2019 г.
+## <a name="november-2019"></a>Ноябрь 2019 г.
 
 В ноябре добавлены следующие обновления:
  - [Защита от угроз для Azure Key Vault в Северная Америка регионах (Предварительная версия)](#threat-protection-for-azure-key-vault-in-north-america-regions-preview)

@@ -3,21 +3,21 @@ title: Список обновлений для гостевой ОС Azure | Д
 description: В этой статье перечислены обновления центра Microsoft Security Response Center, применяемые к разным гостевым ОС Azure. Узнайте, относится ли обновление к используемой гостевой ОС.
 services: cloud-services
 documentationcenter: na
-author: yohaddad
+author: gunnarcms
 editor: ''
 ms.assetid: d0a272a9-ed01-4f4c-a0b3-bd5e841bdd77
 ms.service: cloud-services
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: tbd
-ms.date: 2/9/2021
+ms.date: 2/17/2021
 ms.author: gunnarcms
-ms.openlocfilehash: 63aa13c178acd0b560c2bbd9cbc8873464062488
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 1a77ab15bc4d1095f47d9d411b5a0fd64bb568de
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100580647"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650802"
 ---
 # <a name="azure-guest-os"></a>Гостевая ОС Azure
 В следующей таблице приведены обновления Microsoft Security Response Center (MSRC) для гостевой ОС Azure. Выполните поиск по этой статье, чтобы определить, применяется ли какое-либо конкретное обновление к используемой гостевой ОС. Обновления всегда переносятся для того [семейства][family-explain], в котором они были введены.

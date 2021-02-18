@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: bbe683f1ec7dac1960395dd3d30fb36c70a1d6c9
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: a73602c565392ae050ac2a13961113b12d67abfd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806195"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593262"
 ---
 # <a name="azure-security-baseline-for-expressroute"></a>Базовый план безопасности Azure для ExpressRoute
 
@@ -128,9 +128,9 @@ ms.locfileid: "99806195"
 
 * [Включение аудита в Azure Sentinel](../sentinel/resources.md)
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -152,7 +152,7 @@ ms.locfileid: "99806195"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в ресурсах Azure ExpressRoute на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для ресурсов ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -162,7 +162,7 @@ ms.locfileid: "99806195"
 
 **Руководство**. Включите параметры диагностики журнала действий Azure и отправьте журналы в рабочую область Log Analytics, концентратор событий Azure или учетную запись хранения Azure для архивации. Журналы действий позволяют получить представление об операциях, выполненных в ресурсах Azure ExpressRoute на уровне плоскости управления. С помощью данных журнала действий Azure можно определить "что, кто и когда" для любых операций записи (размещение, публикация, удаление), выполненных на уровне плоскости управления для ресурсов ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -180,7 +180,7 @@ ms.locfileid: "99806195"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для log Analytics рабочих областей, связанных с ресурсами Azure ExpressRoute, в соответствии с нормативными требованиями Организации.
 
-* [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -190,9 +190,9 @@ ms.locfileid: "99806195"
 
 **Руководство**. Включение параметров диагностики журнала действий Azure и отправка журналов в рабочую область log Analytics. Выполнение запросов в Log Analytics для поиска терминов, выявления тенденций, анализа закономерностей и предоставления многих других аналитических сведений на основе данных журнала действий, которые могли быть собраны для Azure ExpressRoute.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
-* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../azure-monitor/platform/activity-log.md)
+* [Получение и анализ журналов действий Azure в Log Analytics рабочей области в Azure Monitor](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -499,7 +499,7 @@ Azure ExpressRoute также имеет роли пользователя "вл
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах Azure ExpressRoute и других критических или связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
