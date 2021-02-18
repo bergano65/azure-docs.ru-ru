@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 42d4467a6441e517ef3194f701eb47e7e68505b1
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: cc5b3b85d6d13fda532da0993fa7f733126b8eae
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99806313"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591873"
 ---
 # <a name="view-and-configure-ddos-diagnostic-logging"></a>Просмотр и настройка журнала диагностики атак DDoS
 
@@ -57,9 +57,9 @@ ms.locfileid: "99806313"
 
 7. В разделе **сведения о назначении** выберите столько из следующих параметров, сколько требуется:
 
-    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
-    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
-    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace).
+    - **Archive to a storage account** (Архивация в учетную запись хранения). Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [архивирование журналов ресурсов](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
+    - **Stream to an event hub** (Потоковая передача в концентратор событий). Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в статье [потоковая передача журналов ресурсов в концентратор событий](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
+    - **Send to log Analytics**: записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. [в разделе Получение журналов для использования в журналах Azure Monitor](../azure-monitor/essentials/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-log-analytics-workspace).
 
 ### <a name="log-schemas"></a>Схемы журналов
 
@@ -73,7 +73,7 @@ ms.locfileid: "99806313"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для уведомлений это будет `DDoSProtectionNotifications` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
+| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для уведомлений это будет `DDoSProtectionNotifications` .  |
@@ -89,7 +89,7 @@ ms.locfileid: "99806313"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для журналов потоков это будет `DDoSMitigationFlowLogs` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
+| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для журналов потоков это будет `DDoSMitigationFlowLogs` . |
@@ -108,7 +108,7 @@ ms.locfileid: "99806313"
 | **ResourceId** | Идентификатор ресурса общедоступного IP-адреса. |
 | **Категория** | Для уведомлений это будет `DDoSProtectionNotifications` .|
 | **ResourceGroup** | Группа ресурсов, содержащая общедоступный IP-адрес и виртуальную сеть. |
-| **SubscriptionId** | Идентификатор подписки плана защиты от атак DDoS. |
+| **Подписки** | Идентификатор подписки плана защиты от атак DDoS. |
 | **Ресурс** | Имя общедоступного IP-адреса. |
 | **ResourceType** | Это всегда будет `PUBLICIPADDRESS` . |
 | **OperationName** | Для отчетов об устранении рисков это будет `DDoSMitigationReports` . |

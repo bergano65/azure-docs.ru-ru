@@ -9,12 +9,12 @@ ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
 ms.custom: seodec18
-ms.openlocfilehash: 5659f3b2d020a97ed2460c55283bb41f2f7606cc
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 16c18d8f86890baaf1882c532c19ff32ab2017da
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98943732"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592665"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство по Создание бюджетов Azure и управление ими
 
@@ -140,7 +140,7 @@ ms.locfileid: "98943732"
 
 ## <a name="trigger-an-action-group"></a>Активация группы действий
 
-При создании или изменении бюджета для области подписки или группы ресурсов ее можно настроить для вызова группы действий. При достижении порогового значения бюджета группа действий может выполнять различные действия. Группы действий в настоящее время поддерживаются только для областей подписок и групп ресурсов. Дополнительные сведения о группах действия см. в статье [Create and manage action groups in the Azure portal](../../azure-monitor/platform/action-groups.md) (Создание групп действий и управление ими на портале Azure). Дополнительные сведения об использовании автоматизации на основе бюджета с группами действий см. в статье [Manage costs with Azure budgets](../manage/cost-management-budget-scenario.md) (Управление затратами с помощью бюджетов Azure).
+При создании или изменении бюджета для области подписки или группы ресурсов ее можно настроить для вызова группы действий. При достижении порогового значения бюджета группа действий может выполнять различные действия. Группы действий в настоящее время поддерживаются только для областей подписок и групп ресурсов. Дополнительные сведения о группах действия см. в статье [Create and manage action groups in the Azure portal](../../azure-monitor/alerts/action-groups.md) (Создание групп действий и управление ими на портале Azure). Дополнительные сведения об использовании автоматизации на основе бюджета с группами действий см. в статье [Manage costs with Azure budgets](../manage/cost-management-budget-scenario.md) (Управление затратами с помощью бюджетов Azure).
 
 Чтобы создать или обновить группы действий, выберите **Управление группами действий** во время создания или изменения бюджета.
 
@@ -160,7 +160,7 @@ ms.locfileid: "98943732"
 
 ![Пример, в котором показаны условия предупреждений, настроенные с различными группами и типами действий](./media/tutorial-acm-create-budgets/manage-action-groups04.png)
 
-Интеграция бюджета с группами действий работает только для групп действий, для которых отключена общая схема предупреждений. Дополнительные сведения об отключении схемы см. в разделе [How do I enable the common alert schema?](../../azure-monitor/platform/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) (Как включить общую схему оповещений?)
+Интеграция бюджета с группами действий работает только для групп действий, для которых отключена общая схема предупреждений. Дополнительные сведения об отключении схемы см. в разделе [How do I enable the common alert schema?](../../azure-monitor/alerts/alerts-common-schema.md#how-do-i-enable-the-common-alert-schema) (Как включить общую схему оповещений?)
 
 ## <a name="create-and-edit-budgets-with-powershell"></a>Создание и изменение бюджетов с помощью PowerShell
 

@@ -11,14 +11,14 @@ ms.topic: conceptual
 author: DavidTrigano
 ms.author: datrigan
 ms.reviewer: vanto
-ms.date: 02/11/2021
+ms.date: 02/17/2021
 tags: azure-synapse
-ms.openlocfilehash: 254d69c723a97d9007a1f6c0f0eb7b34bcfe3c4e
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: fee285aa3beb308f5e6b3b233d40597c2a287eb7
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392771"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651975"
 ---
 # <a name="data-discovery--classification"></a>Обнаружение и классификация данных
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -195,3 +195,4 @@ T-SQL можно использовать для добавления или у�
 
 - Рассмотрите возможность настройки [аудита SQL Azure](../../azure-sql/database/auditing-overview.md) для мониторинга и аудита доступа к секретным конфиденциальным данным.
 - Для презентаций, включающих & классификацию данных, см. статью обнаружение [, классификация, маркировка & защита данных SQL | Предоставленные данные](https://www.youtube.com/watch?v=itVi9bkJUNc).
+- Сведения о классификации баз данных SQL Azure и Azure синапсе Analytics с метками зрения Azure с помощью команд T-SQL см. в статье [классификация данных SQL Azure с помощью меток зрения Azure](https://docs.microsoft.com/azure/sql-database/scripts/sql-database-import-purview-labels).

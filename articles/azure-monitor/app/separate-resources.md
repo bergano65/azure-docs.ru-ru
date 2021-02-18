@@ -3,12 +3,12 @@ title: Выбор архитектуры для развертывания Appli
 description: Отправка телеметрии к различным ресурсам для меток разработки, тестирования и эксплуатации.
 ms.topic: conceptual
 ms.date: 05/11/2020
-ms.openlocfilehash: 49e9b8920af7333e0d95e23e6e5cf0828d448609
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 3964cddcf27a4b2c7397b508ccb3cc8928bd04ad
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536359"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589539"
 ---
 # <a name="how-many-application-insights-resources-should-i-deploy"></a>Выбор количества ресурсов Application Insights для развертывания
 
@@ -86,7 +86,7 @@ var appInsights = window.appInsights || function(config){ ...
 ## <a name="filter-on-build-number"></a>Фильтрация по номеру сборки
 При публикации новой версии приложения имеет смысл отделить телеметрию от других сборок.
 
-Для этого можно настроить свойство "Версия приложения" для фильтрации результатов [поиска](../../azure-monitor/app/diagnostic-search.md) и [обозревателя метрик](../../azure-monitor/platform/metrics-charts.md).
+Для этого можно настроить свойство "Версия приложения" для фильтрации результатов [поиска](../../azure-monitor/app/diagnostic-search.md) и [обозревателя метрик](../../azure-monitor/essentials/metrics-charts.md).
 
 Свойство "Версия приложения" можно настроить различными способами.
 
@@ -132,7 +132,7 @@ var appInsights = window.appInsights || function(config){ ...
 </PropertyGroup>
 ```
 
-При наличии данных сборки веб-модуль Application Insights автоматически добавляет **версию приложения** как свойство для каждого элемента телеметрии. Это позволяет применить фильтр по версии при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md) или [изучении метрик](../../azure-monitor/platform/metrics-charts.md).
+При наличии данных сборки веб-модуль Application Insights автоматически добавляет **версию приложения** как свойство для каждого элемента телеметрии. Это позволяет применить фильтр по версии при [диагностическом поиске](../../azure-monitor/app/diagnostic-search.md) или [изучении метрик](../../azure-monitor/essentials/metrics-charts.md).
 
 Обратите внимание, что номер версии сборки создается только в Microsoft Build Engine, но не в процессе сборки из Visual Studio.
 

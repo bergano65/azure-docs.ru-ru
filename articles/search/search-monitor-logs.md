@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/30/2020
-ms.openlocfilehash: e6fcf5980cf64b5fc088dfa295ef6221ffda6de9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: e29e20d071e992b941b2f6bd803c8dade044fbfd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499940"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592475"
 ---
 # <a name="collect-and-analyze-log-data-for-azure-cognitive-search"></a>Собирайте и анализируйте данные журналов для Когнитивный поиск Azure
 
@@ -25,7 +25,7 @@ ms.locfileid: "96499940"
 
 | Ресурс | Назначение |
 |----------|----------|
-| [Отправка в рабочую область Log Analytics](../azure-monitor/learn/tutorial-resource-logs.md) | События и метрики отправляются в рабочую область Log Analytics, которая может быть запрошена на портале для получения подробных сведений. Общие сведения см. в статье Начало [работы с журналами Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md) . |
+| [Отправка в рабочую область Log Analytics](../azure-monitor/essentials/tutorial-resource-logs.md) | События и метрики отправляются в рабочую область Log Analytics, которая может быть запрошена на портале для получения подробных сведений. Общие сведения см. в статье Начало [работы с журналами Azure Monitor](../azure-monitor/logs/log-analytics-tutorial.md) . |
 | [Архив с хранилищем BLOB-объектов](../storage/blobs/storage-blobs-overview.md) | События и метрики архивируются в контейнер больших двоичных объектов и хранятся в JSON-файлах. Журналы могут быть достаточно детализированы (час в минуту), что полезно для повторного поиска конкретного инцидента, но не для исследования с открытым окончанием. Используйте редактор JSON для просмотра необработанного файла журнала или Power BI для агрегирования и визуализации данных журнала.|
 | [Поток в концентратор событий](../event-hubs/index.yml) | События и метрики передаются в поток в службе концентраторов событий Azure. Выберите этот вариант в качестве альтернативной службы сбора данных для очень больших журналов. |
 
@@ -33,7 +33,7 @@ ms.locfileid: "96499940"
 
 Создавайте ресурсы заранее, чтобы при настройке ведения журнала диагностики можно было выбрать один или несколько ресурсов.
 
-+ [Создание рабочей области log Analytics](../azure-monitor/learn/quick-create-workspace.md)
++ [Создание рабочей области log Analytics](../azure-monitor/logs/quick-create-workspace.md)
 
 + [создать учетную запись хранения;](../storage/common/storage-account-create.md)
 
@@ -138,7 +138,7 @@ AzureDiagnostics
 
 В следующей таблице приведен неполный список полей, общих для ведения журнала ресурсов.
 
-| Название | Тип | Пример | Примечания |
+| Имя | Тип | Пример | Примечания |
 | --- | --- | --- | --- |
 | timeGenerated |DATETIME |"2018-12-07T00:00:43.6872559Z" |Метка времени операции |
 | resourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
@@ -154,7 +154,7 @@ AzureDiagnostics
 
 Ниже перечислены свойства, характерные для Azure Когнитивный поиск.
 
-| Название | Тип | Пример | Примечания |
+| Имя | Тип | Пример | Примечания |
 | --- | --- | --- | --- |
 | Description_s |строка |"GET /indexes('content')/docs" |Конечная точка операции |
 | Documents_d |INT |42 |Количество обработанных документов |
@@ -165,7 +165,7 @@ AzureDiagnostics
 
 Метрики записываются для запросов запросов и измеряются через одну минуту. Каждая метрика отражает минимальное, максимальное и среднее значения за минуту. Дополнительные сведения см. в разделе [мониторинг запросов запросов](search-monitor-queries.md).
 
-| Название | Тип | Пример | Примечания |
+| Имя | Тип | Пример | Примечания |
 | --- | --- | --- | --- |
 | resourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор ресурса |
 | metricName |строка |"Latency" |имя метрики |
@@ -195,7 +195,7 @@ AzureDiagnostics
 
 Откройте скачанный файл в редакторе JSON, чтобы просмотреть содержимое.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вы еще не сделали этого, ознакомьтесь с основами мониторинга службы поиска, чтобы узнать о полном диапазоне возможностей.
 

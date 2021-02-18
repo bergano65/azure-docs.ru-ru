@@ -1,24 +1,24 @@
 ---
 title: Обновление кластера Azure Red Hat OpenShift
 description: Узнайте, как обновить кластер Azure Red Hat OpenShift, работающий под OpenShift 4
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: article
 ms.date: 1/10/2021
 author: sakthi-vetrivel
 ms.author: suvetriv
 keywords: aro, openshift, az aro, red hat, cli
-ms.openlocfilehash: 98ab8ff1e321929a9007c28f487d5861f6ac9930
-ms.sourcegitcommit: 1a98b3f91663484920a747d75500f6d70a6cb2ba
+ms.openlocfilehash: 2c2c8607374493aa4e1135bbef0156b9c0b66fa6
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99063963"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634981"
 ---
 # <a name="upgrade-an-azure-red-hat-openshift-aro-cluster"></a>Обновление кластера Azure Red Hat OpenShift (АТО)
 
 В рамках жизненного цикла кластера АТО выполняется периодическое обновление до последней версии OpenShift. Важно установить последние версии системы безопасности или обновить, чтобы получить новейшие функции. В этой статье показано, как обновить все компоненты в кластере OpenShift с помощью веб-консоли OpenShift.
 
-## <a name="before-you-begin"></a>Перед началом работы
+## <a name="before-you-begin"></a>Подготовка к работе
 
 В этой статье предполагается, что вы используете Azure CLI версии 2.0.65 более поздней. Чтобы узнать, какая версия используется сейчас, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, ознакомьтесь со статьей [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli).
 

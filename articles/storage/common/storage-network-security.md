@@ -9,12 +9,12 @@ ms.date: 01/27/2021
 ms.author: normesta
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: 5e08af509487188245b0fad9ba2d0f490944868f
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 17a2d04fd6519dfdaf3c97c4ef56e87e162c9e9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100371793"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591576"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -94,7 +94,7 @@ ms.locfileid: "100371793"
     Update-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -Name "mystorageaccount" -DefaultAction Allow
     ```
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -202,7 +202,7 @@ ms.locfileid: "100371793"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -324,7 +324,7 @@ ms.locfileid: "100371793"
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе сетевые правила не будут действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
@@ -479,7 +479,7 @@ $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName
 $rule.ResourceAccessRules 
 ```
 
-### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Для добавления или удаления правил сети ресурсов можно использовать команды Azure CLI.
 
@@ -567,7 +567,7 @@ az storage account network-rule list \
 | Служба синхронизации файлов Azure          | Microsoft.StorageSync      | Позволяет преобразовать локальный файловый сервер в кэш для общих папок Azure. Таким образом создается возможность многосайтовой синхронизации, быстрого аварийного восстановления и резервного копирования на стороне облака. [Дополнительные сведения](../files/storage-sync-files-planning.md) |
 | Azure HDInsight          | Microsoft.HDInsight        | Подготавливает начальное содержимое файловой системы по умолчанию для нового кластера HDInsight. [Подробнее](../../hdinsight/hdinsight-hadoop-use-blob-storage.md). |
 | Импорт и экспорт Azure      | Microsoft.ImportExport     | Позволяет импортировать данные в службу хранилища Azure или экспортировать данные из хранилища Azure с помощью службы импорта и экспорта хранилища Azure. [Подробнее](../../import-export/storage-import-export-service.md).  |
-| Azure Monitor            | Microsoft.Insights         | Позволяет записывать в защищенную учетную запись хранения данные мониторинга, в том числе журналы ресурсов, журналы входа и аудита Azure Active Directory, а также журналы Microsoft Intune. [Подробнее](../../azure-monitor/platform/roles-permissions-security.md). |
+| Azure Monitor            | Microsoft.Insights         | Позволяет записывать в защищенную учетную запись хранения данные мониторинга, в том числе журналы ресурсов, журналы входа и аудита Azure Active Directory, а также журналы Microsoft Intune. [Подробнее](../../azure-monitor/roles-permissions-security.md). |
 | Сеть Azure         | Microsoft.Network.          | Хранение и анализ журналов сетевого трафика, в том числе с помощью наблюдателя за сетями и служб Аналитика трафика. [Подробнее](../../network-watcher/network-watcher-nsg-flow-logging-overview.md). |
 | Azure Site Recovery      | Microsoft.SiteRecovery     | Включение репликации для аварийного восстановления виртуальных машин IaaS Azure при использовании кэша, источника или целевых учетных записей хранения с поддержкой брандмауэра.  [Подробнее](../../site-recovery/azure-to-azure-tutorial-enable-replication.md). |
 
@@ -583,7 +583,7 @@ az storage account network-rule list \
 
 | Служба                        | Имя поставщика ресурсов                 | Назначение            |
 | :----------------------------- | :------------------------------------- | :----------------- |
-| Служба управления Azure API           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
+| Служба "Управление API Azure"           | Microsoft.ApiManagement/service        | Включает доступ службы управления API к учетным записям хранения за брандмауэром с помощью политик. [Подробнее](../../api-management/api-management-authentication-policies.md#use-managed-identity-in-send-request-policy). |
 | Когнитивный поиск Azure         | Microsoft.Search/searchServices        | Разрешает службам Когнитивного поиска доступ к учетным записям хранения для индексирования, обработки и выполнения запросов. |
 | Azure Cognitive Services       | Microsoft. Когнитивесервице/учетные записи    | Разрешает Cognitive Services доступ к учетным записям хранения. |
 | Задачи Реестра контейнеров Azure | Microsoft.ContainerRegistry/registries | Задачи Реестра контейнеров Azure могут получать доступ к учетным записям хранения при создании образов контейнеров. |
@@ -650,7 +650,7 @@ az storage account network-rule list \
 > [!IMPORTANT]
 > Обязательно [укажите для правила по умолчанию](#change-the-default-network-access-rule) значение **deny**, иначе исключение не будет действовать.
 
-#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli);
+#### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 

@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: monitoring
-ms.openlocfilehash: 3a3f4faf8278553153ae2186ea74d20702c603b3
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 4575709a4fa7067b02228036fb2e2b4a60844e21
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780932"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592327"
 ---
 # <a name="azure-files-monitoring-data-reference"></a>Справочник по данным мониторинга файлов Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "96780932"
 
 #### <a name="azure-files"></a>Файлы Azure
 
-В этой таблице показаны [метрики службы файлов Azure](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices).
+В этой таблице показаны [метрики службы файлов Azure](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsfileservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
@@ -85,7 +85,7 @@ ms.locfileid: "96780932"
 
 [!INCLUDE [Account level capacity metrics](../../../includes/azure-storage-logs-properties-service.md)]
 
-## <a name="see-also"></a>См. также раздел
+## <a name="see-also"></a>См. также
 
 - Описание мониторинга службы хранилища Azure см. в статье [мониторинг файлов Azure](storage-files-monitoring-reference.md) .
-- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md).
+- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md).

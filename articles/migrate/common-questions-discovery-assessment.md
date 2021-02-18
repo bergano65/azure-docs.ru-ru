@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 944d867ef888e70faa659adcc0e2d4c02f003c97
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 40afa1d743b8d074fa46dde46163f6479ebf87c2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567413"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589078"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Обнаружение, оценка и анализ зависимостей — распространенные вопросы
 
@@ -36,7 +36,7 @@ ms.locfileid: "98567413"
 
 - Используйте **оценку виртуальных машин Azure** , если вы хотите оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md), [виртуальные машины Hyper-V](how-to-set-up-appliance-hyper-v.md)и [физические серверы](how-to-set-up-appliance-physical.md) для миграции на виртуальные машины Azure. [Подробнее](concepts-assessment-calculation.md)
 
-- Используйте оценки **решения Azure VMware (AVS)** , если хотите оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в [решение Azure VMware (AVS)](../azure-vmware/introduction.md) с помощью этого типа оценки. [Дополнительные сведения](concepts-azure-vmware-solution-assessment-calculation.md)
+- Используйте оценки **решения Azure VMware (AVS)** , если хотите оценить локальные [виртуальные машины VMware](how-to-set-up-appliance-vmware.md) для миграции в [решение Azure VMware (AVS)](../azure-vmware/introduction.md) с помощью этого типа оценки. [Подробнее](concepts-azure-vmware-solution-assessment-calculation.md)
 
 - Вы можете использовать общую группу с виртуальными машинами VMware только для выполнения обоих типов оценок. Обратите внимание, что если вы впервые используете оценки AVS в службе "Миграция Azure", рекомендуется создать новую группу виртуальных машин VMware.
  
@@ -138,7 +138,7 @@ ms.locfileid: "98567413"
 
 ## <a name="what-is-dependency-visualization"></a>Что такое визуализация зависимостей?
 
-Визуализация зависимостей помогает оценить группы виртуальных машин, которые будут переноситься с большей достоверностью. Визуализация зависимостей перекрестно проверяет зависимости компьютера перед выполнением оценки. Это гарантирует, что ничего не останется, и это помогает избежать непредвиденных простоев при миграции в Azure. Служба "Миграция Azure" использует решение "Сопоставление служб" в Azure Monitor для визуализации зависимостей. [Подробнее.](concepts-dependency-visualization.md)
+Визуализация зависимостей помогает оценить группы виртуальных машин, которые будут переноситься с большей достоверностью. Визуализация зависимостей перекрестно проверяет зависимости компьютера перед выполнением оценки. Это гарантирует, что ничего не останется, и это помогает избежать непредвиденных простоев при миграции в Azure. Служба "Миграция Azure" использует решение "Сопоставление служб" в Azure Monitor для визуализации зависимостей. [Подробнее](concepts-dependency-visualization.md).
 
 > [!NOTE]
 > Анализ зависимостей на основе агента недоступен в Azure для государственных организаций. Можно использовать анализ зависимостей без агента.
@@ -150,9 +150,9 @@ ms.locfileid: "98567413"
 **Требование** | **Безагентное** | **На основе агентов**
 --- | --- | ---
 Поддержка | Сейчас этот параметр находится на этапе предварительной версии и доступен только для виртуальных машин VMware. [Ознакомьтесь](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) с поддерживаемыми операционными системами. | В общем доступе (GA).
-Агент | Нет необходимости устанавливать агенты на компьютерах, которые требуется перекрестно проверить. | Агенты, которые будут установлены на каждом локальном компьютере, который необходимо проанализировать: [Microsoft Monitoring Agent (MMA)](../azure-monitor/platform/agent-windows.md)и [Агент зависимостей](../azure-monitor/platform/agents-overview.md#dependency-agent). 
+Агент | Нет необходимости устанавливать агенты на компьютерах, которые требуется перекрестно проверить. | Агенты, которые будут установлены на каждом локальном компьютере, который необходимо проанализировать: [Microsoft Monitoring Agent (MMA)](../azure-monitor/agents/agent-windows.md)и [Агент зависимостей](../azure-monitor/agents/agents-overview.md#dependency-agent). 
 Предварительные требования | [Ознакомьтесь](concepts-dependency-visualization.md#agentless-analysis) с требованиями к развертыванию и предварительным требованиям. | [Ознакомьтесь](concepts-dependency-visualization.md#agent-based-analysis) с требованиями к развертыванию и предварительным требованиям.
-Log Analytics | Не требуется. | Служба "Миграция Azure" использует решение [Сопоставление служб](../azure-monitor/insights/service-map.md) в [журналах Azure Monitor](../azure-monitor/log-query/log-query-overview.md) для визуализации зависимостей. [Подробнее.](concepts-dependency-visualization.md#agent-based-analysis)
+Log Analytics | Не требуется. | Служба "Миграция Azure" использует решение [Сопоставление служб](../azure-monitor/vm/service-map.md) в [журналах Azure Monitor](../azure-monitor/logs/log-query-overview.md) для визуализации зависимостей. [Подробнее](concepts-dependency-visualization.md#agent-based-analysis).
 Принцип работы | Захватывает данные подключения TCP на компьютерах, включенных для визуализации зависимостей. После обнаружения он собирает данные через пять минут. | Сопоставление служб агенты, установленные на компьютере, собирают данные о TCP-процессах и входящих и исходящих подключениях для каждого процесса.
 Данные | Имя сервера исходного компьютера, процесс, имя приложения.<br/><br/> Имя сервера конечного компьютера, процесс, имя приложения и порт. | Имя сервера исходного компьютера, процесс, имя приложения.<br/><br/> Имя сервера конечного компьютера, процесс, имя приложения и порт.<br/><br/> Количество соединений, задержка и сведения о передачи данных собираются и доступны для запросов Log Analytics. 
 Визуализация | Карту зависимостей отдельного сервера можно просмотреть в течение одного часа до 30 дней. | Схема зависимостей одного сервера.<br/><br/> Карту можно просматривать только в течение часа.<br/><br/> Схема зависимостей группы серверов.<br/><br/> Добавление и удаление серверов в группе из представления карт.
@@ -171,8 +171,8 @@ Log Analytics | Не требуется. | Служба "Миграция Azure"
 
 Чтобы использовать визуализацию зависимостей на основе агента, скачайте и установите агенты на каждом локальном компьютере, который необходимо оценить.
 
-- [Microsoft Monitoring Agent (MMA)](../azure-monitor/platform/agent-windows.md)
-- [Агент зависимостей](../azure-monitor/platform/agents-overview.md#dependency-agent)
+- [Microsoft Monitoring Agent (MMA)](../azure-monitor/agents/agent-windows.md)
+- [Агент зависимостей](../azure-monitor/agents/agents-overview.md#dependency-agent)
 - Если у вас есть компьютеры без подключения к Интернету, скачайте и установите на них шлюз Log Analytics.
 
 Эти агенты необходимы, только если используется Визуализация зависимостей на основе агента.
@@ -189,14 +189,14 @@ Log Analytics | Не требуется. | Служба "Миграция Azure"
 
 Для визуализации зависимостей на основе агента:
 
-- Используйте [скрипт для установки агента зависимостей](../azure-monitor/insights/vminsights-enable-hybrid.md#dependency-agent).
-- Для MMA [используйте командную строку или автоматизацию](../azure-monitor/platform/log-analytics-agent.md#installation-options)или используйте [Скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
+- Используйте [скрипт для установки агента зависимостей](../azure-monitor/vm/vminsights-enable-hybrid.md#dependency-agent).
+- Для MMA [используйте командную строку или автоматизацию](../azure-monitor/agents/log-analytics-agent.md#installation-options)или используйте [Скрипт](https://gallery.technet.microsoft.com/scriptcenter/Install-OMS-Agent-with-2c9c99ab).
 - В дополнение к сценариям для развертывания агентов можно использовать средства развертывания, такие как Microsoft Endpoint Configuration Manager и [Intigua](https://www.intigua.com/intigua-for-azure-migration) .
 
 ## <a name="what-operating-systems-does-mma-support"></a>Какие операционные системы поддерживает MMA?
 
-- Просмотрите список [операционных систем Windows, ПОДДЕРЖИВАЕМЫХ MMA](../azure-monitor/platform/log-analytics-agent.md#installation-options).
-- Просмотрите список [операционных систем Linux, ПОДДЕРЖИВАЕМЫХ MMA](../azure-monitor/platform/log-analytics-agent.md#installation-options).
+- Просмотрите список [операционных систем Windows, ПОДДЕРЖИВАЕМЫХ MMA](../azure-monitor/agents/log-analytics-agent.md#installation-options).
+- Просмотрите список [операционных систем Linux, ПОДДЕРЖИВАЕМЫХ MMA](../azure-monitor/agents/log-analytics-agent.md#installation-options).
 
 ## <a name="can-i-visualize-dependencies-for-more-than-one-hour"></a>Можно ли визуализировать зависимости более одного часа?
 
@@ -208,6 +208,6 @@ Log Analytics | Не требуется. | Служба "Миграция Azure"
 
 Можно [визуализировать зависимости](./how-to-create-a-group.md#refine-a-group-with-dependency-mapping) для групп, имеющих до 10 виртуальных машин. Если у вас есть группа, которая содержит более 10 виртуальных машин, рекомендуется разбить группу на группы меньшего размера, а затем визуализировать зависимости.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с [обзором службы "миграция Azure](migrate-services-overview.md)".

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: update-management
 ms.date: 09/24/2020
 ms.topic: conceptual
-ms.openlocfilehash: 833e2f7808b4b8efa210bc6a903ed30fe9ac53e0
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.openlocfilehash: 5eb0c7d72896cc9a27907743b1b9c3d5a40614dd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222571"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592856"
 ---
 # <a name="query-update-management-logs"></a>Запрос на получение журналов Управления обновлениями
 
@@ -195,7 +195,7 @@ Heartbeat
 
 1. Откройте журнал событий Windows. Перейдите к **журналам приложения и служб или Operations Manager** и выполните поиск идентификатора события 3000 или 5002 в исходном **соединителе службы**. Эти события указывают, что компьютер был зарегистрирован для рабочей области Log Analytics и получает конфигурации.
 
-Если агент не может взаимодействовать с журналами Azure Monitor и настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, подтвердите корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../../azure-monitor/platform/agent-windows.md) или [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../../azure-monitor/learn/quick-collect-linux-computer.md).
+Если агент не может взаимодействовать с журналами Azure Monitor и настроен на взаимодействие с Интернетом через брандмауэр или прокси-сервер, подтвердите корректную настройку брандмауэра или прокси-сервера. Чтобы узнать, как проверить это, ознакомьтесь со статьей [Подключение компьютеров Windows к службе Log Analytics в Azure](../../azure-monitor/agents/agent-windows.md) или [Настройка агента Log Analytics для компьютеров Linux в гибридной среде](../../azure-monitor/vm/quick-collect-linux-computer.md).
 
 > [!NOTE]
 > Если при включении Управления обновлениями системы Linux настроены для взаимодействия с прокси-сервером или шлюзом Log Analytics, обновите разрешения `proxy.conf`, чтобы предоставить группе omiuser разрешение на чтение файла. Для этого выполните следующие команды.
@@ -205,7 +205,7 @@ Heartbeat
 
 Добавленные агенты Linux отобразят состояние **обновления** после оценки. Этот процесс может занять до 6 часов.
 
-Сведения о том, как подтвердить, что группа управления Operations Manager взаимодействует с журналами Azure Monitor, см. в разделе [Проверка интеграции Operations Manager с журналами Azure Monitor](../../azure-monitor/platform/om-agents.md#validate-operations-manager-integration-with-azure-monitor).
+Сведения о том, как подтвердить, что группа управления Operations Manager взаимодействует с журналами Azure Monitor, см. в разделе [Проверка интеграции Operations Manager с журналами Azure Monitor](../../azure-monitor/agents/om-agents.md#validate-operations-manager-integration-with-azure-monitor).
 
 ### <a name="single-azure-vm-assessment-queries-windows"></a>Запросы оценки одной виртуальной машины Azure (Windows)
 
@@ -410,5 +410,5 @@ Update
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения о журналах Azure Monitor см. в статье [Журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md).
+* Дополнительные сведения о журналах Azure Monitor см. в статье [Журналы Azure Monitor](../../azure-monitor/logs/log-query-overview.md).
 * Справку по оповещениям см. в статье [Настройка оповещений](configure-alerts.md).

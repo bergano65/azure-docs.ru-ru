@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 04/06/2020
-ms.openlocfilehash: 999bb83af6937d4a7b3d7ee8207e2fd689a23d35
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1de2c1ff02c799d04f2ab2c81e83dda5001a531f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96490845"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592729"
 ---
 # <a name="configure-streaming-export-of-azure-sql-database-and-sql-managed-instance-diagnostic-telemetry"></a>Настройка потокового экспорта для базы данных SQL Azure и телеметрии диагностики SQL Управляемый экземпляр
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -58,17 +58,17 @@ ms.locfileid: "96490845"
 
 - **[Рабочая область log Analytics](#stream-into-sql-analytics)**:
 
-  [SQL Analytics](../../azure-monitor/insights/azure-sql.md)может использовать данные, потоковые в [log Analytics рабочей области](../../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace) . SQL Analytics — это облачное решение мониторинга, которое обеспечивает интеллектуальный Мониторинг баз данных, включая отчеты о производительности, предупреждения и рекомендации по устранению рисков. Потоки данных, переданные в рабочую область Log Analytics, можно анализировать с помощью собранных данных мониторинга, а также использовать другие функции Azure Monitor, такие как оповещения и визуализации.
+  [SQL Analytics](../../azure-monitor/insights/azure-sql.md)может использовать данные, потоковые в [log Analytics рабочей области](../../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace) . SQL Analytics — это облачное решение мониторинга, которое обеспечивает интеллектуальный Мониторинг баз данных, включая отчеты о производительности, предупреждения и рекомендации по устранению рисков. Потоки данных, переданные в рабочую область Log Analytics, можно анализировать с помощью собранных данных мониторинга, а также использовать другие функции Azure Monitor, такие как оповещения и визуализации.
 - **[Концентраторы событий Azure](#stream-into-event-hubs)**:
 
-  Потоковая передача данных в [концентратор событий Azure](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs)обеспечивает следующие функциональные возможности.
+  Потоковая передача данных в [концентратор событий Azure](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs)обеспечивает следующие функциональные возможности.
 
   - **Потоковая передача журналов в сторонние системы ведения журналов и телеметрии**. потоковая передача всех метрик и журналов ресурсов в один концентратор событий для передачи данных журнала в СТОРОННИЕ средства SIEM или log Analytics.
   - **Создание настраиваемой платформы для телеметрии и ведения журналов**. Благодаря высоко масштабируемой природе концентраторов событий "публикация — подписка" можно гибко принимать метрики и журналы ресурсов в настраиваемую платформу телеметрии. Дополнительные сведения см. в статье [Разработка и изменение размера платформы телеметрии глобальной шкалы в концентраторах событий Azure](https://azure.microsoft.com/documentation/videos/build-2015-designing-and-sizing-a-global-scale-telemetry-platform-on-azure-event-Hubs/) .
   - **Просмотр сведений о работоспособности службы путем потоковой передачи данных в Power BI**: использование концентраторов событий, Stream Analytics и Power BI для преобразования диагностических данных в практически в реальном времени аналитические сведения о службах Azure. Дополнительные сведения об этом решении см. в разделе [Stream Analytics и Power BI. панель мониторинга для потоковой передачи данных в режиме реального времени](../../stream-analytics/stream-analytics-power-bi-dashboard.md) .
 - Служба **[хранилища Azure](#stream-into-azure-storage)**:
 
-  Потоковая передача данных в службу [хранилища Azure](../../azure-monitor/platform/resource-logs.md#send-to-azure-storage) позволяет архивировать огромные объемы телеметрии диагностики в течение доли стоимости предыдущих двух вариантов потоковой передачи.
+  Потоковая передача данных в службу [хранилища Azure](../../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) позволяет архивировать огромные объемы телеметрии диагностики в течение доли стоимости предыдущих двух вариантов потоковой передачи.
 
 Это диагностическая данные телеметрии, переданные в одно из этих назначений, можно использовать для оценки статистики использования ресурсов и выполнения запросов для упрощения мониторинга производительности.
 
@@ -89,7 +89,7 @@ ms.locfileid: "96490845"
 
 ## <a name="configure-the-streaming-export-of-diagnostic-telemetry"></a>Настройка потокового экспорта телеметрии диагностики
 
-Для включения и настройки потоковой передачи диагностических данных диагностики можно использовать меню " **параметры диагностики** " портал Azure. Кроме того, можно использовать PowerShell, Azure CLI, шаблоны [REST API](/rest/api/monitor/diagnosticsettings)и [Диспетчер ресурсов](../../azure-monitor/samples/resource-manager-diagnostic-settings.md) для настройки потоковой передачи диагностических данных диагностики. Вы можете задать следующие назначения для потоковой передачи диагностических данных диагностики: служба хранилища Azure, концентраторы событий Azure и журналы Azure Monitor.
+Для включения и настройки потоковой передачи диагностических данных диагностики можно использовать меню " **параметры диагностики** " портал Azure. Кроме того, можно использовать PowerShell, Azure CLI, шаблоны [REST API](/rest/api/monitor/diagnosticsettings)и [Диспетчер ресурсов](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md) для настройки потоковой передачи диагностических данных диагностики. Вы можете задать следующие назначения для потоковой передачи диагностических данных диагностики: служба хранилища Azure, концентраторы событий Azure и журналы Azure Monitor.
 
 > [!IMPORTANT]
 > Потоковая передача телеметрии диагностики по умолчанию отключена.
@@ -127,7 +127,7 @@ ms.locfileid: "96490845"
 7. Установите флажок для телеметрии диагностики эластичного пула: **основные** метрики.
    ![Настройка диагностики для эластичных пулов](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-elasticpool-selection.png)
 
-8. Щелкните **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 9. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных в эластичном пуле, который необходимо отслеживать, выполнив действия, описанные в следующем разделе.
 
 > [!IMPORTANT]
@@ -156,7 +156,7 @@ ms.locfileid: "96490845"
 8. Чтобы получить дополнительные возможности мониторинга на основе одной минуты, установите флажок для **основных** метрик.
 
    ![Настройка диагностики для базы данных SQL Azure](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-sql-selection.png)
-9. Щелкните **Сохранить**.
+9. Нажмите кнопку **Сохранить**.
 10. Повторите эти действия для каждой базы данных, которую необходимо отслеживать.
 
 > [!TIP]
@@ -168,7 +168,7 @@ ms.locfileid: "96490845"
 
 | Ресурс | Мониторинг телеметрии |
 | :------------------- | ------------------- |
-| **Управляемый экземпляр** | [ResourceUsageStats](#resource-usage-stats-for-managed-instances) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
+| **управляемый экземпляр** | [ResourceUsageStats](#resource-usage-stats-for-managed-instances) содержит количество виртуальных ядер, средний процент использования ЦП, а также сведения о запросах ввода-вывода, прочитанных и записанных байтах, зарезервированном и используемом дисковом пространстве. |
 
 Чтобы настроить потоковую передачу телеметрии для управляемых экземпляров и баз данных экземпляров, необходимо отдельно настроить каждую из них:
 
@@ -192,7 +192,7 @@ ms.locfileid: "96490845"
 
    ![Настройка диагностики для управляемого экземпляра](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-container-mi-selection.png)
 
-8. Щелкните **Сохранить**.
+8. Нажмите кнопку **Сохранить**.
 9. Кроме того, настройте потоковую передачу телеметрии диагностики для каждой базы данных экземпляра в управляемом экземпляре, за которым вы хотите наблюдать, выполнив действия, описанные в следующем разделе.
 
 > [!IMPORTANT]
@@ -220,7 +220,7 @@ ms.locfileid: "96490845"
 5. Выберите целевой ресурс для данных диагностики потоковой передачи: **архивировать в учетную запись хранения**, **передавать в концентратор событий** или **отправить в log Analytics**.
 6. Установите флажки для телеметрии диагностики базы данных: **SQLInsights**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics** и **Errors**.
    ![Настройка диагностики для баз данных экземпляров](./media/metrics-diagnostic-telemetry-logging-streaming-export-configure/diagnostics-settings-database-mi-selection.png)
-7. Щелкните **Сохранить**.
+7. Нажмите кнопку **Сохранить**.
 8. Повторите эти действия для каждой базы данных экземпляра, которую необходимо отслеживать.
 
 > [!TIP]
@@ -335,7 +335,7 @@ ms.locfileid: "96490845"
 2. Создайте рабочую область Log Analytics в решении.
 3. Настройте для баз данных потоковую передачу телеметрии диагностики в рабочую область.
 
-Потоковую передачу данных телеметрии диагностики можно настроить с помощью встроенного параметра **Send to log Analytics** на вкладке параметры диагностики в портал Azure. Вы также можете включить потоковую передачу в рабочую область Log Analytics, используя параметры диагностики с помощью [командлетов PowerShell](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-powershell#configure-the-streaming-export-of-diagnostic-telemetry), [Azure CLI](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-cli#configure-the-streaming-export-of-diagnostic-telemetry), [Azure Monitor REST API](/rest/api/monitor/diagnosticsettings)или [шаблонов диспетчер ресурсов](../../azure-monitor/samples/resource-manager-diagnostic-settings.md).
+Потоковую передачу данных телеметрии диагностики можно настроить с помощью встроенного параметра **Send to log Analytics** на вкладке параметры диагностики в портал Azure. Вы также можете включить потоковую передачу в рабочую область Log Analytics, используя параметры диагностики с помощью [командлетов PowerShell](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-powershell#configure-the-streaming-export-of-diagnostic-telemetry), [Azure CLI](metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-cli#configure-the-streaming-export-of-diagnostic-telemetry), [Azure Monitor REST API](/rest/api/monitor/diagnosticsettings)или [шаблонов диспетчер ресурсов](../../azure-monitor/essentials/resource-manager-diagnostic-settings.md).
 
 ### <a name="create-an-azure-sql-analytics-resource"></a>Создание ресурса Аналитика SQL Azure
 
@@ -428,7 +428,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 ## <a name="metrics-and-logs-available"></a>Доступные метрики и журналы
 
-В этом разделе статьи описывается отслеживание телеметрии для отдельных баз данных, баз данных в составе пула, эластичных пулов, управляемых экземпляров и баз данных экземпляров. Собранные данные телеметрии мониторинга в SQL Analytics можно использовать для собственного пользовательского анализа и разработки приложений с помощью [Azure Monitor языка запросов журналов](../../azure-monitor/log-query/get-started-queries.md) .
+В этом разделе статьи описывается отслеживание телеметрии для отдельных баз данных, баз данных в составе пула, эластичных пулов, управляемых экземпляров и баз данных экземпляров. Собранные данные телеметрии мониторинга в SQL Analytics можно использовать для собственного пользовательского анализа и разработки приложений с помощью [Azure Monitor языка запросов журналов](../../azure-monitor/logs/get-started-queries.md) .
 
 ### <a name="basic-metrics"></a>Основные метрики
 
@@ -476,7 +476,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure.|
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: ResourceUsageStats |
 |Ресурс|Имя ресурса. |
@@ -501,7 +501,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreRuntimeStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreRuntimeStatisticsEvent. |
@@ -552,7 +552,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: QueryStoreWaitStatistics. |
 |OperationName|Имя операции. Всегда: QueryStoreWaitStatisticsEvent. |
@@ -590,7 +590,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Errors. |
 |OperationName|Имя операции. Всегда: ErrorEvent. |
@@ -619,7 +619,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: DatabaseWaitStatistics. |
 |OperationName|Имя операции. Всегда: DatabaseWaitStatisticsEvent. |
@@ -648,7 +648,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Timeouts. |
 |OperationName|Имя операции. Всегда: TimeoutEvent. |
@@ -671,7 +671,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Blocks. |
 |OperationName|Имя операции. Всегда: BlockEvent. |
@@ -695,7 +695,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC] |Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: Deadlocks. |
 |OperationName|Имя операции. Всегда: DeadlockEvent. |
@@ -716,7 +716,7 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 |TenantId|Идентификатор клиента |
 |SourceSystem|Всегда: Azure. |
 |TimeGenerated [UTC]|Метка времени, когда был записан журнал |
-|Тип|Всегда: AzureDiagnostics. |
+|Type|Всегда: AzureDiagnostics. |
 |ResourceProvider|Имя поставщика ресурсов. Всегда: MICROSOFT.SQL. |
 |Категория|Имя категории. Всегда: AutomaticTuning. |
 |Ресурс|Имя ресурса. |
@@ -743,12 +743,12 @@ insights-{metrics|logs}-{category name}/resourceId=/SUBSCRIPTIONS/{subscription 
 
 Дополнительные сведения о [формате журнала Intelligent Insights](intelligent-insights-use-diagnostics-log.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы научиться включать ведение журнала и узнать, какие метрики и категории журналов поддерживаются различными службами Azure, ознакомьтесь со следующими статьями:
 
-- [Общие сведения о метриках в Microsoft Azure](../../azure-monitor/platform/data-platform.md)
-- [Общие сведения о журналах платформы Azure](../../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о метриках в Microsoft Azure](../../azure-monitor/data-platform.md)
+- [Общие сведения о журналах платформы Azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
 Дополнительные сведения о Центрах событий см. в статье:
 
