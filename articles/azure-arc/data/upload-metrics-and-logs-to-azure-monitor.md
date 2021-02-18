@@ -10,12 +10,12 @@ ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
 zone_pivot_groups: client-operating-system-macos-and-linux-windows-powershell
-ms.openlocfilehash: ac9c8efbe29bf1420a94d486b650758cc22bec2f
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 61ac4c979445ef48b5986ec3793a9880cedc837a
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100575757"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650258"
 ---
 # <a name="upload-usage-data-metrics-and-logs-to-azure-monitor"></a>Передача данных об использовании, метрик и журналов в Azure Monitor
 
@@ -29,7 +29,7 @@ ms.locfileid: "100575757"
 Перед отправкой данных об использовании, метрик или журналов необходимо выполнить следующие действия.
 
 * Средства установки 
-* [Регистрация `Microsoft.AzureData` поставщика ресурсов](#register-the-resource-provider) 
+* [Регистрация `Microsoft.AzureArcData` поставщика ресурсов](#register-the-resource-provider) 
 * [Создание субъекта-службы](#create-service-principal)
 
 ## <a name="install-tools"></a>Средства установки
@@ -195,7 +195,7 @@ az role assignment create --assignee <appId> --role 'Contributor' --scope subscr
 
 Для отправки метрик Azure Monitor принимает только последние 30 минут данных (дополнительные[сведения](../../azure-monitor/essentials/metrics-store-custom-rest-api.md#troubleshooting)). Рекомендации по передаче метрик можно передать сразу после создания файла экспорта, чтобы вы могли просмотреть весь набор данных в портал Azure. Например, если вы экспортировали метрики в 2:00 PM и выполнили команду upload в 2:50 РМ. Поскольку Azure Monitor принимает данные только за последние 30 минут, на портале могут не отображаться данные. 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Дополнительные сведения о субъектах-службах](/powershell/azure/azurerm/create-azure-service-principal-azureps#what-is-a-service-principal)
 

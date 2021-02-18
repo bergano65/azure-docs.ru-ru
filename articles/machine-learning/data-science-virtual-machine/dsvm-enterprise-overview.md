@@ -4,18 +4,17 @@ titleSuffix: Azure Data Science Virtual Machine
 description: Шаблоны для развертывания виртуальной машины для обработки и анализа данных в качестве корпоративной командной среды.
 keywords: deep learning, AI, data science tools, data science virtual machine, geospatial analytics, team data science process
 services: machine-learning
-ms.service: machine-learning
-ms.subservice: data-science-vm
+ms.service: data-science-vm
 author: vijetajo
 ms.author: vijetaj
 ms.topic: overview
 ms.date: 05/08/2018
-ms.openlocfilehash: 9126dbcfbfe9e3a94514ebf45685bdfc55dd0306
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 28dea7c28f47a9850486877571672cbd717e9f1f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462993"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596781"
 ---
 # <a name="data-science-virtual-machine-based-team-analytics-and-ai-environment"></a>Командная среда аналитики и искусственного интеллекта на базе виртуальной машины для обработки и анализа данных 
 [Виртуальная машина для обработки и анализа данных](overview.md) (DSVM) предоставляет среду с широкими возможностями на платформе Azure с предварительно созданным программным обеспечением для задач искусственного интеллекта и аналитики данных.
@@ -38,7 +37,7 @@ ms.locfileid: "96462993"
 В этой серии представлены указания и рекомендации по каждой из указанных выше тем. В ней не рассматриваются все рекомендации и требования, актуальные при развертывании DSVM на крупном предприятии. Ниже указаны некоторые другие ресурсы Azure, сведения из которых можно применить при внедрении экземпляров DSVM на вашем предприятии:
 
 * [Безопасность сети](../../security/fundamentals/network-overview.md)
-* [Мониторинг](../../azure-monitor/insights/monitor-vm-azure.md) и [управление](../../virtual-machines/maintenance-and-updates.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json%252c%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json%253ftoc%253d%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* [Мониторинг](../../azure-monitor/vm/monitor-vm-azure.md) и [управление](../../virtual-machines/maintenance-and-updates.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json%252c%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json%253ftoc%253d%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
 * [Ведение журналов и аудит](../../security/fundamentals/log-audit.md)
 * [Управление доступом Azure на основе ролей (Azure RBAC)](../../role-based-access-control/overview.md)
 * [Настройка и применение политик](../../governance/policy/overview.md)

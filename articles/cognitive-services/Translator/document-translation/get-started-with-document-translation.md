@@ -6,12 +6,12 @@ manager: nitinme
 ms.author: lajanuar
 author: laujan
 ms.date: 02/11/2021
-ms.openlocfilehash: f6b68ea756253a30f006983c214e287c75637278
-ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
+ms.openlocfilehash: 5508ffc758b08642b05b1f77b66c9f29be1c85a2
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "100642444"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650785"
 ---
 # <a name="get-started-with-document-translation-preview"></a>Начало работы с переводом документа (Предварительная версия)
 
@@ -108,7 +108,7 @@ https://<NAME-OF-YOUR-RESOURCE>.cognitiveservices.azure.com/translator/text/batc
 * Скопируйте и вставьте код из одного из примеров в проект.
 * Задайте значения конечная точка, ключ подписки и URL-адрес контейнера.
 * Запустите программу. Например: `python translate.py`.
-  
+
 ### <a name="java"></a>[Java](#tab/java)
 
 * Создайте рабочий каталог для своего проекта. Пример.
@@ -127,7 +127,7 @@ mkdir sample-project
 mkdir -p src/main/java/
 ```
 
-* Исходные файлы Java (например, _Sample. Java_) в режиме «src/Main/**Java**».
+**Примечание**. исходные файлы Java (например, _Sample. Java_) в режиме «src/Main/**Java**».
 
 * В корневом каталоге (например, *Sample-Project*) инициализируйте проект с помощью Gradle:
 
@@ -136,6 +136,7 @@ gradle init --type basic
 ```
 
 * Когда появится запрос на выбор **предметно-ориентированного языка**, выберите **Kotlin**.
+
 * Обновите `build.gradle.kts`  файл. Помните, что вам потребуется обновить в `mainClassName` зависимости от примера:
 
   ```java
@@ -155,7 +156,8 @@ gradle init --type basic
   ```
 
 * Создайте файл Java в каталоге **Java** и скопируйте и вставьте код из предоставленного примера. Не забудьте добавить ключ и конечную точку подписки.
-**Выполните сборку и запустите пример из корневого каталога**:
+
+* **Выполните сборку и запустите пример из корневого каталога**:
 
 ```powershell
 gradle build
@@ -172,7 +174,7 @@ gradle run
 * Скомпилируйте файл, например "go build example-code.go".
 * Запустите файл, например "example-code".
 
----
+ ---
 
 ## <a name="make-document-translation-requests"></a>Создание запросов на перевод документов
 
