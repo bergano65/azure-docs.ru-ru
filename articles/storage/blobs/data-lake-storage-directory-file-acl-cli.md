@@ -1,34 +1,37 @@
 ---
-title: Использование Azure CLI для файлов и ACL в Azure Data Lake Storage 2-го поколения
-description: Использование Azure CLI для управления каталогами, файлами и списком управления доступом (ACL) каталога в учетных записях хранения с иерархическим пространством имен.
+title: Использование Azure CLI для управления данными (Azure Data Lake Storage 2-го поколения)
+description: Используйте Azure CLI для управления каталогами и файлами в учетных записях хранения, имеющих иерархическое пространство имен.
 services: storage
 author: normesta
 ms.service: storage
 ms.subservice: data-lake-storage-gen2
 ms.topic: how-to
-ms.date: 05/18/2020
+ms.date: 02/17/2021
 ms.author: normesta
 ms.reviewer: prishet
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 42359eb8a2bfdad23589e0302b80e7806b388510
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3e9afd4617eb7445ba83948d46eef0890832e2be
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913612"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650360"
 ---
-# <a name="use-azure-cli-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Использование Azure CLI для управления каталогами, файлами и списками ACL в Azure Data Lake Storage 2-го поколения
+# <a name="use-azure-cli-to-manage-directories-and-files-in-azure-data-lake-storage-gen2"></a>Использование Azure CLI для управления каталогами и файлами в Azure Data Lake Storage 2-го поколения
 
-В этой статье показано, как использовать [интерфейс командной строки Azure (CLI)](/cli/azure/) для создания каталогов, файлов и разрешений в учетных записях хранения с иерархическим пространством имен, а также управления ими. 
+В этой статье показано, как использовать [интерфейс Azure Command-Line](/cli/azure/) для создания каталогов и файлов в учетных записях хранения с иерархическим пространством имен и управления ими.
+
+Дополнительные сведения о получении, установке и обновлении списков управления доступом (ACL) для каталогов и файлов см. в разделе [использование Azure CLI для управления списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-acl-cli.md).
 
 [Примеры](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)  |  [Отправить отзыв](https://github.com/Azure/azure-cli-extensions/issues)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-> [!div class="checklist"]
-> * Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-> * В учетной записи хранения включено иерархическое пространство имен. Выполните [эти](../common/storage-account-create.md) инструкции, чтобы создать учетную запись.
-> * Azure CLI версии`2.6.0` или выше.
+- Подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
+
+- Учетная запись хранения с включенным иерархическим пространством имен. Выполните [эти](create-data-lake-storage-account.md) инструкции, чтобы создать учетную запись.
+
+- Azure CLI версии`2.6.0` или выше.
 
 ## <a name="ensure-that-you-have-the-correct-version-of-azure-cli-installed"></a>Убедитесь, что у вас установлена правильная версия Azure CLI
 
@@ -39,6 +42,7 @@ ms.locfileid: "95913612"
    ```azurecli
     az --version
    ```
+
    Если ваша версия Azure CLI ниже чем `2.6.0`, установите более позднюю версию. Подробнее см. статью [Установка Azure CLI](/cli/azure/install-azure-cli).
 
 ## <a name="connect-to-the-account"></a>Подключение к учетной записи
@@ -64,7 +68,7 @@ ms.locfileid: "95913612"
    Замените значение заполнителя `<subscription-id>` идентификатором своей подписки.
 
 > [!NOTE]
-> В примере этой статьи показана авторизация Azure Active Directory. Дополнительные сведения о методах аутентификации см. на странице [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](./authorize-data-operations-cli.md).
+> В примере, приведенном в этой статье, показана авторизация Azure Active Directory (Azure AD). Дополнительные сведения о методах аутентификации см. на странице [Авторизация доступа к данным BLOB-объектов или очередей с помощью Azure CLI](./authorize-data-operations-cli.md).
 
 ## <a name="create-a-container"></a>Создание контейнера
 
@@ -216,106 +220,9 @@ az storage fs file move -p my-file.txt -f my-file-system --new-path my-file-syst
 az storage fs file delete -p my-directory/my-file.txt -f my-file-system  --account-name mystorageaccount --auth-mode login 
 ```
 
-## <a name="manage-access-control-lists-acls"></a>Управление списками управления доступом (ACL)
+## <a name="see-also"></a>См. также
 
-Вы можете получать, задавать и обновлять разрешения на доступ к каталогам и файлам.
-
-> [!NOTE]
-> Если вы используете Azure Active Directory для авторизации команд, убедитесь, что субъекту безопасности назначена [роль владельца данных BLOB-объектов хранилища](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner). Дополнительные сведения о применении разрешений ACL и последствиях их изменения см. на странице [Контроль доступа в Azure Data Lake Storage 2-го поколения](./data-lake-storage-access-control.md).
-
-### <a name="get-an-acl"></a>Получение списка ACL
-
-Получите список ACL для **каталога** с помощью команды `az storage fs access show`.
-
-В этом примере список ACL сначала извлекается для каталога, а затем выводится на консоль.
-
-```azurecli
-az storage fs access show -p my-directory -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-Получите права доступа к **файлу** с помощью команды `az storage fs access show`. 
-
-В этом примере список ACL сначала извлекается для файла, а затем выводится на консоль.
-
-```azurecli
-az storage fs access show -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-На следующем изображении показаны выходные данные после получения списка ACL для каталога.
-
-![Получение выходных данных ACL](./media/data-lake-storage-directory-file-acl-cli/get-acl.png)
-
-В этом примере владелец имеет разрешения на чтение, запись и выполнение. Группа-владелец имеет разрешения только на чтение и выполнение. Дополнительные сведения о списках управления доступом в Azure Data Lake Storage 2-го поколения см. на [этой странице](data-lake-storage-access-control.md).
-
-### <a name="set-an-acl"></a>Настройка списка ACL
-
-Используйте команду `az storage fs access set`, чтобы задать список ACL для **каталога**. 
-
-В этом примере список ACL задается для каталога владельца, группы-владельца или других пользователей, а затем выводится на консоль.
-
-```azurecli
-az storage fs access set --acl "user::rw-,group::rw-,other::-wx" -p my-directory -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-В этом примере список ACL *по умолчанию* задается в каталоге для владельца, группы-владельца или других пользователей, а затем выводится на консоль.
-
-```azurecli
-az storage fs access set --acl "default:user::rw-,group::rw-,other::-wx" -p my-directory -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-Используйте команду `az storage fs access set`, чтобы задать список ACL для **файла**. 
-
-В этом примере список ACL задается для файла владельца, группы-владельца или других пользователей, а затем выводится на консоль.
-
-```azurecli
-az storage fs access set --acl "user::rw-,group::rw-,other::-wx" -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-На следующем изображении показаны выходные данные после установки списка ACL для файла.
-
-![Получить выходные данные ACL 2](./media/data-lake-storage-directory-file-acl-cli/set-acl-file.png)
-
-В этом примере владелец и группа-владелец имеют разрешения только на чтение и запись. У всех остальных пользователей есть разрешения на запись и выполнение. Дополнительные сведения о списках управления доступом в Azure Data Lake Storage 2-го поколения см. на [этой странице](data-lake-storage-access-control.md).
-
-### <a name="update-an-acl"></a>Обновление списка ACL
-
-Другим способом установки этого разрешения является использование команды `az storage fs access set`. 
-
-Обновите список ACL для каталога или файла, установив параметр `-permissions` в краткой форме ACL.
-
-В этом примере список ACL обновляется для **каталога**.
-
-```azurecli
-az storage fs access set --permissions rwxrwxrwx -p my-directory -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-В этом примере список ACL обновляется для **файла**.
-
-```azurecli
-az storage fs access set --permissions rwxrwxrwx -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-Вы также можете сделать обновление для владельца и группы каталога или файла, установив параметры `--owner` или `group` для пользовательского имени субъекта-пользователя или идентификатора сущности. 
-
-В этом примере изменяется владелец каталога. 
-
-```azurecli
-az storage fs access set --owner xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p my-directory -f my-file-system --account-name mystorageaccount --auth-mode login
-```
-
-В этом примере изменяется владелец файла. 
-
-```azurecli
-az storage fs access set --owner xxxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p my-directory/upload.txt -f my-file-system --account-name mystorageaccount --auth-mode login
-
-```
-
-### <a name="set-an-acl-recursively"></a>Рекурсивное задание списка ACL
-
-Можно рекурсивно добавлять, обновлять и удалять списки управления доступом для существующих дочерних элементов родительского каталога без необходимости вносить эти изменения отдельно для каждого дочернего элемента. Дополнительные сведения см. в разделе [Настройка списков управления доступом (ACL) рекурсивно для Azure Data Lake Storage 2-го поколения](recursive-access-control-lists.md).
-
-## <a name="see-also"></a>См. также раздел
-
-* [Примеры](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)
-* [Отправка отзывов](https://github.com/Azure/azure-cli-extensions/issues)
-* [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+- [Примеры](https://github.com/Azure/azure-cli/blob/dev/src/azure-cli/azure/cli/command_modules/storage/docs/ADLS%20Gen2.md)
+- [Отправка отзывов](https://github.com/Azure/azure-cli-extensions/issues)
+- [Известные проблемы](data-lake-storage-known-issues.md#api-scope-data-lake-client-library)
+- [Использование Azure CLI для управления списками ACL в Azure Data Lake Storage 2-го поколения](data-lake-storage-acl-cli.md)

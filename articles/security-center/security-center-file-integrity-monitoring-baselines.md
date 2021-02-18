@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 89230b6aca9e225c28a1efd0b99476b35f4d8db0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f160948a06d8a3175158e0100345ee2a330048c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91439561"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634714"
 ---
 # <a name="compare-baselines-using-file-integrity-monitoring-fim"></a>Сравнение базовых показателей с помощью мониторинга целостности файлов
 
@@ -62,23 +62,22 @@ ms.locfileid: "91439561"
 > [!NOTE]
 > Дополнительные сведения о параметрах реестра, поддерживаемых различными версиями операционных систем, см. в [справочной таблице по параметрам групповая политика](https://www.microsoft.com/download/confirmation.aspx?id=25250).
 
-*Настройка FIM для мониторинга базовых показателей реестра:*
+Настройка FIM для мониторинга базовых показателей реестра:
 
-1. В окне **Добавление реестра Windows для отслеживание изменений** в текстовом поле раздел **реестра Windows** введите раздел реестра.
+1. В окне **Добавление реестра Windows для отслеживание изменений** в текстовом поле раздел **реестра Windows** введите следующий раздел реестра:
 
-    <code>
-
+    ```
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters
-    </code>
+    ```
 
-      ![Включение FIM в реестре](./media/security-center-file-integrity-monitoring-baselines/baselines-add-registry.png)
+    :::image type="content" source="./media/security-center-file-integrity-monitoring-baselines/baselines-add-registry.png" alt-text="Включение FIM в реестре":::
 
 ## <a name="track-changes-to-windows-files"></a>Отслеживание изменений в файлах Windows
 
 1. В окне **Добавление файла Windows для отслеживание изменений** в текстовом поле **введите путь** введите папку, содержащую файлы, которые необходимо отвестить. В примере на следующем рисунке **веб-приложение Contoso** находится в D:\ диск в структуре папок **контосвебапп** .  
 1. Создайте настраиваемую запись файла Windows, указав имя класса параметров, включив рекурсию и указав верхнюю папку с суффиксом-шаблоном (*).
 
-    ![Включение FIM для файла](./media/security-center-file-integrity-monitoring-baselines/baselines-add-file.png)
+    :::image type="content" source="./media/security-center-file-integrity-monitoring-baselines/baselines-add-file.png" alt-text="Включение FIM для файла":::
 
 ## <a name="retrieve-change-data"></a>Получение данных изменений
 

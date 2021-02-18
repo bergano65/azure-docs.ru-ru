@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/25/2020
-ms.openlocfilehash: d4bf635c57bcef41cd0f3285d8a91bae4b3e0415
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 1a3f2ae4829c7f4ae41d31e2a2fc35d79adf3d4c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752028"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596711"
 ---
 # <a name="set-up-dependency-visualization"></a>Настройка визуализации зависимостей
 
@@ -30,11 +30,11 @@ ms.locfileid: "96752028"
         - [VMware](how-to-set-up-appliance-vmware.md) Машины.
         - [Hyper-V](how-to-set-up-appliance-hyper-v.md) Машины.
         - [Физические серверы](how-to-set-up-appliance-physical.md).
-- Чтобы использовать визуализацию зависимостей, вы связываете [рабочую область log Analytics](../azure-monitor/platform/manage-access.md) с проектом службы "миграция Azure":
+- Чтобы использовать визуализацию зависимостей, вы связываете [рабочую область log Analytics](../azure-monitor/logs/manage-access.md) с проектом службы "миграция Azure":
     - Вы можете подключить рабочую область только после настройки устройства "миграция Azure" и обнаружения компьютеров в проекте "миграция Azure".
     - Убедитесь, что у вас есть рабочая область в подписке, которая содержит проект службы "миграция Azure".
     - Рабочая область должна находиться в следующих регионах: Восточная часть США, Юго-Восточная Азия или Западная Европа. Рабочие области в других регионах не могут быть связаны с проектом.
-    - Рабочая область должна находиться в регионе, в котором [поддерживается Сопоставление служб](../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions).
+    - Рабочая область должна находиться в регионе, в котором [поддерживается Сопоставление служб](../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
     - Вы можете связать новую или существующую рабочую область Log Analytics с проектом службы "миграция Azure".
     - Вы подключаете рабочую область при первой настройке визуализации зависимостей для компьютера. Рабочую область для проекта Миграции Azure нельзя изменить после добавления.
     - В Log Analytics рабочая область, связанная с Миграцией Azure, помечается ключом проекта миграции и именем проекта.
@@ -60,7 +60,7 @@ ms.locfileid: "96752028"
 На каждом компьютере, который необходимо проанализировать, установите агенты.
 
 > [!NOTE]
-> Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, не нужно устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager. [Следуйте](../azure-monitor/insights/service-map-scom.md#prerequisites) рекомендациям по интеграции.
+> Для компьютеров, отслеживаемых System Center Operations Manager 2012 R2 или более поздней версии, не нужно устанавливать агент MMA. Сопоставление служб интегрируется с Operations Manager. [Следуйте](../azure-monitor/vm/service-map-scom.md#prerequisites) рекомендациям по интеграции.
 
 1. В **службе "миграция Azure": Оценка сервера** щелкните **обнаруженные серверы**.
 2. Для каждого компьютера, который необходимо проанализировать с помощью визуализации зависимостей, в столбце **зависимости** щелкните **требуется установка агента**.
@@ -85,9 +85,9 @@ ms.locfileid: "96752028"
 5. Щелкните **Добавить**, чтобы добавить новую рабочую область Log Analytics. Вставьте идентификатор и ключ рабочей области, скопированные на портале. Щелкните **Далее**.
 
 Агент можно установить из командной строки или с помощью автоматизированного метода, такого как Configuration Manager или [Intigua](https://www.intigua.com/intigua-for-azure-migration).
-- Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](../azure-monitor/platform/log-analytics-agent.md#installation-options).
+- Дополнительные сведения об использовании этих методов для установки агента MMA см. в разделе [Установка и настройка агента](../azure-monitor/agents/log-analytics-agent.md#installation-options).
 - Кроме того, агент MMA можно установить с помощью этого [скрипта](https://github.com/brianbar-MSFT/Install-MMA).
-- Дополнительные [сведения](../azure-monitor/platform/agents-overview.md#supported-operating-systems) о операционных системах Windows, поддерживаемых MMA.
+- Дополнительные [сведения](../azure-monitor/agents/agents-overview.md#supported-operating-systems) о операционных системах Windows, поддерживаемых MMA.
 
 ### <a name="install-mma-on-a-linux-machine"></a>Установка MMA на компьютере Linux
 
@@ -98,7 +98,7 @@ ms.locfileid: "96752028"
 
     ```sudo sh ./omsagent-<version>.universal.x64.sh --install -w <workspace id> -s <workspace key>```
 
-[Дополнительные сведения](../azure-monitor/platform/agents-overview.md#supported-operating-systems) о списке операционных систем Linux, поддерживаемых MMA. 
+[Дополнительные сведения](../azure-monitor/agents/agents-overview.md#supported-operating-systems) о списке операционных систем Linux, поддерживаемых MMA. 
 
 ## <a name="install-the-dependency-agent"></a>Установка агента зависимостей
 
@@ -107,8 +107,8 @@ ms.locfileid: "96752028"
 
     ```sh InstallDependencyAgent-Linux64.bin```
 
-- [Узнайте больше](../azure-monitor/insights/vminsights-enable-hybrid.md#dependency-agent) о том, как установить агент зависимостей с помощью скриптов.
-- Дополнительные [сведения](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) об операционных системах, поддерживаемых агентом зависимостей.
+- [Узнайте больше](../azure-monitor/vm/vminsights-enable-hybrid.md#dependency-agent) о том, как установить агент зависимостей с помощью скриптов.
+- Дополнительные [сведения](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) об операционных системах, поддерживаемых агентом зависимостей.
 
 
 ## <a name="create-a-group-using-dependency-visualization"></a>Создание группы с помощью визуализации зависимостей
@@ -149,8 +149,8 @@ ms.locfileid: "96752028"
 
 Вы можете запрашивать данные зависимостей, захваченные Сопоставление служб в рабочей области Log Analytics, связанной с проектом службы "миграция Azure". Log Analytics используется для записи и выполнения запросов Azure Monitor журналов.
 
-- [Узнайте, как](../azure-monitor/insights/service-map.md#log-analytics-records) искать данные Сопоставление служб в log Analytics.
-- [Общие сведения о](../azure-monitor/log-query/get-started-queries.md)  написании запросов журналов в [log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md).
+- [Узнайте, как](../azure-monitor/vm/service-map.md#log-analytics-records) искать данные Сопоставление служб в log Analytics.
+- [Общие сведения о](../azure-monitor/logs/get-started-queries.md)  написании запросов журналов в [log Analytics](../azure-monitor/logs/log-analytics-tutorial.md).
 
 Выполните запрос для данных зависимостей следующим образом:
 
@@ -165,8 +165,8 @@ ms.locfileid: "96752028"
 Ниже приведено несколько примеров запросов, которые можно использовать для извлечения данных зависимостей.
 
 - Вы можете изменить запросы, чтобы извлечь предпочтительные точки данных.
-- [Ознакомьтесь](../azure-monitor/insights/service-map.md#log-analytics-records) с полным списком записей данных о зависимостях.
-- [Ознакомьтесь](../azure-monitor/insights/service-map.md#sample-log-searches) с дополнительными примерами запросов.
+- [Ознакомьтесь](../azure-monitor/vm/service-map.md#log-analytics-records) с полным списком записей данных о зависимостях.
+- [Ознакомьтесь](../azure-monitor/vm/service-map.md#sample-log-searches) с дополнительными примерами запросов.
 
 #### <a name="sample-review-inbound-connections"></a>Пример: проверка входящих подключений
 
@@ -174,7 +174,7 @@ ms.locfileid: "96752028"
 
 - Записи в таблице для метрик подключения (Вмконнектион) не представляют отдельные физические сетевые подключения.
 - Система группирует несколько физических сетевых подключений в логическое подключение.
-- Дополнительные [сведения](../azure-monitor/insights/service-map.md#connections) о статистической обработке данных физического сетевого подключения в вмконнектион.
+- Дополнительные [сведения](../azure-monitor/vm/service-map.md#connections) о статистической обработке данных физического сетевого подключения в вмконнектион.
 
 ```
 // the machines of interest
@@ -208,6 +208,6 @@ VMConnection
 | summarize sum(BytesSent), sum(BytesReceived) by Computer, Direction, SourceIp, DestinationIp, DestinationPort
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание оценки](how-to-create-assessment.md) для группы.

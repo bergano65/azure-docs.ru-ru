@@ -11,18 +11,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: d42e0f5594fdde55f1b4183a806e388658e86dc3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 5070b64c3900aa4ee1cf51519c7b64362ac37413
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222944"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596672"
 ---
 # <a name="create-change-or-delete-a-network-security-group"></a>Создание, изменение и удаление группы безопасности сети
 
 Правила безопасности в группах безопасности сети позволяют фильтровать различный сетевой трафик, который может проходить из подсетей виртуальной сети и сетевых интерфейсов или в них. Дополнительные сведения о группах безопасности сети см. [в этой статье](./network-security-groups-overview.md). Затем выполните инструкции из руководства по [фильтрации сетевого трафика](tutorial-filter-network-traffic.md) , чтобы получить некоторые возможности групп безопасности сети.
 
-## <a name="before-you-begin"></a>Перед началом
+## <a name="before-you-begin"></a>Подготовка к работе
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -65,7 +65,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg create](/cli/azure/network/nsg#az-network-nsg-create) |
 | PowerShell | [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup) |
@@ -76,7 +76,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG List](/cli/azure/network/nsg#az-network-nsg-list) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -93,7 +93,7 @@ ms.locfileid: "98222944"
 
 Дополнительные сведения о перечисленных общих параметрах Azure доступны в следующих статьях:
 
-- [Журнал действий](../azure-monitor/platform/platform-logs-overview.md)
+- [Журнал действий](../azure-monitor/essentials/platform-logs-overview.md)
 - [Управление доступом (IAM)](../role-based-access-control/overview.md)
 - [Теги](../azure-resource-manager/management/tag-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Блокировки](../azure-resource-manager/management/lock-resources.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -101,7 +101,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG показывать](/cli/azure/network/nsg#az-network-nsg-show) |
 | PowerShell | [Get-AzNetworkSecurityGroup](/powershell/module/az.network/get-aznetworksecuritygroup) |
@@ -116,7 +116,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG обновление](/cli/azure/network/nsg#az-network-nsg-update) |
 | PowerShell | [Set-AzNetworkSecurityGroup](/powershell/module/az.network/set-aznetworksecuritygroup) |
@@ -137,7 +137,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG Delete](/cli/azure/network/nsg#az-network-nsg-delete) |
 | PowerShell | [Remove-Азнетворксекуритиграуп](/powershell/module/az.network/remove-aznetworksecuritygroup) |
@@ -180,7 +180,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule create](/cli/azure/network/nsg/rule#az-network-nsg-rule-create) |
 | PowerShell | [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig) |
@@ -199,7 +199,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule list](/cli/azure/network/nsg/rule#az-network-nsg-rule-list) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -219,7 +219,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG, отображение правила](/cli/azure/network/nsg/rule#az-network-nsg-rule-show) |
 | PowerShell | [Get-Азнетворксекуритирулеконфиг](/powershell/module/az.network/get-aznetworksecurityruleconfig) |
@@ -235,7 +235,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [az network nsg rule update](/cli/azure/network/nsg/rule#az-network-nsg-rule-update) |
 | PowerShell | [Set-AzNetworkSecurityRuleConfig.](/powershell/module/az.network/set-aznetworksecurityruleconfig) |
@@ -251,7 +251,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network NSG правило Delete](/cli/azure/network/nsg/rule#az-network-nsg-rule-delete) |
 | PowerShell | [Remove-Азнетворксекуритирулеконфиг](/powershell/module/az.network/remove-aznetworksecurityruleconfig) |
@@ -283,7 +283,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG CREATE](/cli/azure/network/asg#az-network-asg-create) |
 | PowerShell | [New-Азаппликатионсекуритиграуп](/powershell/module/az.network/new-azapplicationsecuritygroup) |
@@ -294,7 +294,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG List](/cli/azure/network/asg#az-network-asg-list) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -307,7 +307,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG показывать](/cli/azure/network/asg#az-network-asg-show) |
 | PowerShell | [Get-Азаппликатионсекуритиграуп](/powershell/module/az.network/get-azapplicationsecuritygroup) |
@@ -327,7 +327,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG обновление](/cli/azure/network/asg#az-network-asg-update) |
 | PowerShell | Нет командлета PowerShell |
@@ -344,7 +344,7 @@ ms.locfileid: "98222944"
 
 #### <a name="commands"></a>Команды
 
-| Средство | Команда |
+| Средство | Get-Help |
 | ---- | ------- |
 | Azure CLI | [AZ Network ASG Delete](/cli/azure/network/asg#az-network-asg-delete) |
 | PowerShell | [Remove-Азаппликатионсекуритиграуп](/powershell/module/az.network/remove-azapplicationsecuritygroup) |
@@ -380,7 +380,7 @@ ms.locfileid: "98222944"
 | Microsoft.Network/applicationSecurityGroups/write                          | Создание или обновление группы безопасности приложений.           |
 | Microsoft.Network/applicationSecurityGroups/delete                         | Удаление группы безопасности приложений                     |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Создание сети или группы безопасности приложений с помощью [PowerShell](powershell-samples.md) или [Azure CLI](cli-samples.md) примеров сценариев или шаблонов Azure [Диспетчер ресурсов](template-samples.md)
 - Создание и назначение [определений политик Azure](./policy-reference.md) для виртуальных сетей

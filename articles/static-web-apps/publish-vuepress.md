@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/08/2020
 ms.author: aapowell
 ms.custom: devx-track-js
-ms.openlocfilehash: 72b1bd4d46b0b04364b25a8460361d6a008d42a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6f0616df885a7f8fcd76337c810bc368aa02f3c8
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91250136"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650457"
 ---
 # <a name="tutorial-publish-a-vuepress-site-to-azure-static-web-apps-preview"></a>Руководство по Публикация сайта VuePress в предварительной версии службы "Статические веб-приложения Azure"
 
@@ -100,7 +100,7 @@ ms.locfileid: "91250136"
 1. Отправьте локальный репозиторий на сайт GitHub.
 
    ```bash
-   git push --set-upstream origin master
+   git push --set-upstream origin main
    ```
 
 ## <a name="deploy-your-web-app"></a>Развертывание веб-приложения
@@ -123,11 +123,11 @@ ms.locfileid: "91250136"
 
 1. В поле **Имя** введите имя приложения. Допустимые символы: `a-z`, `A-Z`, `0-9` и `-`.
 
-1. В поле _Регион_выберите ближайший доступный регион.
+1. В поле _Регион_ выберите ближайший доступный регион.
 
 1. В поле _Номер SKU_ выберите **Бесплатный**.
 
-   :::image type="content" source="./media/publish-vuepress/basic-app-details.png" alt-text="Создание ресурса Статические веб-приложения (предварительная версия) на портале":::
+   :::image type="content" source="./media/publish-vuepress/basic-app-details.png" alt-text="Заполненные сведениями поля":::
 
 1. Нажмите кнопку **Войти по учетным данным GitHub**.
 
@@ -135,9 +135,9 @@ ms.locfileid: "91250136"
 
 1. Выберите **vuepress-static-app** в качестве _репозитория_.
 
-1. В поле _Ветвь_ выберите **главная**.
+1. В поле _Ветвь_ выберите **main**.
 
-   :::image type="content" source="./media/publish-vuepress/completed-github-info.png" alt-text="Создание ресурса Статические веб-приложения (предварительная версия) на портале":::
+   :::image type="content" source="./media/publish-vuepress/completed-github-info.png" alt-text="Поля, заполненные сведениями о GitHub":::
 
 ### <a name="build"></a>Сборка
 
@@ -151,7 +151,7 @@ ms.locfileid: "91250136"
 
 Поле _API location_ (Расположения API) заполнять не требуется, так как вы в данный момент не развертываете API.
 
-   :::image type="content" source="./media/publish-vuepress/build-details.png" alt-text="Создание ресурса Статические веб-приложения (предварительная версия) на портале":::
+   :::image type="content" source="./media/publish-vuepress/build-details.png" alt-text="Параметры сборки":::
 
 ### <a name="review-and-create"></a>Просмотр и создание
 
@@ -163,7 +163,7 @@ ms.locfileid: "91250136"
 
 1. На экране ресурсов щелкните ссылку на _URL-адрес_, чтобы открыть развернутое приложение. Для завершения действия GitHub может потребоваться подождать одну или две минуты.
 
-   :::image type="content" source="./media/publish-vuepress/deployed-app.png" alt-text="Создание ресурса Статические веб-приложения (предварительная версия) на портале":::
+   :::image type="content" source="./media/publish-vuepress/deployed-app.png" alt-text="Развернутое приложение":::
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
