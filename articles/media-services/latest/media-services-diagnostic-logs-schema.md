@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 8cfbe26458de630aaf411aade4a31cb4e9c72b17
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8015f610dfd9404810a1fa19c951078ebb45ac4f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295433"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588502"
 ---
 # <a name="diagnostic-logs-schemas"></a>Схемы для журналов диагностики
 
@@ -26,13 +26,13 @@ ms.locfileid: "89295433"
 
 [Azure Monitor](../../azure-monitor/overview.md) позволяет отслеживать метрики и журналы диагностики, которые помогут понять, как работают приложения. Вы можете отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для собранных метрик и журналов. Вы можете отправить журналы в службу [хранилища Azure](https://azure.microsoft.com/services/storage/), выполнить их потоковую передачу в [концентраторы событий Azure](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в [log Analytics](https://azure.microsoft.com/services/log-analytics/)или использовать сторонние службы.
 
-Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/platform/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/platform/platform-logs-overview.md).
+Подробные сведения см. в разделе [метрики Azure Monitor](../../azure-monitor/data-platform.md) и [Azure Monitor журналов диагностики](../../azure-monitor/essentials/platform-logs-overview.md).
 
 В этой статье описываются схемы журналов диагностики служб мультимедиа.
 
 ## <a name="top-level-diagnostic-logs-schema"></a>Схема журналов диагностики верхнего уровня
 
-Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/platform/resource-logs-schema.md).
+Подробное описание схемы журналов диагностики верхнего уровня см. в статье [Поддерживаемые службы, схемы и категории для журналов диагностики Azure](../../azure-monitor/essentials/resource-logs-schema.md).
 
 ## <a name="key-delivery-log-schema"></a>Схема журнала доставки ключей
 

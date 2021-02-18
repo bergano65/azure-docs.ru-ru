@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 345748380479d81f1ea0df9ecf327200482a6cd7
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 58aabd52b8c5493671e0a76d0032a6d7c3081f40
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98937174"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582048"
 ---
 # <a name="azure-security-baseline-for-azure-data-share"></a>Базовый план безопасности Azure для общей папки данных Azure
 
@@ -34,7 +34,7 @@ ms.locfileid: "98937174"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
@@ -48,11 +48,11 @@ ms.locfileid: "98937174"
 
 Включите журналы диагностики для общей папки данных Azure, в частности журналы диагностики для Микрософтдаташаресентшареснапшотслог &amp; микрософтдаташаререцеиведшареснапшотслог. Эти журналы позволяют записывать ключевые сведения, такие как время начала синхронизации, время окончания, состояние и другие сведения. Эти журналы могут быть критически важными для дальнейшего изучения инцидентов безопасности и проведения судебных упражнений.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Настройка параметров диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -62,9 +62,9 @@ ms.locfileid: "98937174"
 
 **Руководство**. Убедитесь, что для всех учетных записей хранения log Analytics или рабочих областей, используемых для хранения журналов общего доступа к данным Azure, задан срок хранения журнала в соответствии с нормативными требованиями вашей организации.
 
-- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
+- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -78,9 +78,9 @@ ms.locfileid: "98937174"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md) 
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -94,7 +94,7 @@ ms.locfileid: "98937174"
 
 - [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md) 
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md) 
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -209,7 +209,7 @@ ms.locfileid: "98937174"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания Azure Monitor оповещений о том, когда изменения выполняются с важными ресурсами Azure.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md) 
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md) 
 
 **Мониторинг Центра безопасности Azure**: Да
 

@@ -6,12 +6,12 @@ ms.author: lufittl
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 2ae3c538c78be8af0fa4569592ac60547e7f5912
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 621d5a6a91a8c22c52e6febc7c2638571f5bf113
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92481301"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595809"
 ---
 # <a name="logs-in-azure-database-for-postgresql---single-server"></a>Журналы в базе данных Azure для PostgreSQL — один сервер
 
@@ -68,13 +68,13 @@ ms.locfileid: "92481301"
    5. Выберите тип журнала **постгрескллогс**.
    7. Сохраните вашу настройку.
 
-Чтобы включить журналы ресурсов с помощью PowerShell, CLI или REST API, см. статью [параметры диагностики](../azure-monitor/platform/diagnostic-settings.md) .
+Чтобы включить журналы ресурсов с помощью PowerShell, CLI или REST API, см. статью [параметры диагностики](../azure-monitor/essentials/diagnostic-settings.md) .
 
 ### <a name="access-resource-logs"></a>Доступ к журналам ресурсов
 
-Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/platform/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs) .
+Способ доступа к журналам зависит от выбранной конечной точки. Сведения о службе хранилища Azure см. в статье [учетная запись хранения журналов](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage) . Сведения о концентраторах событий см. в статье [Streaming Azure Logs](../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs) .
 
-Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/log-query/log-query-overview.md) .
+Для журналов Azure Monitor журналы отправляются в выбранную рабочую область. Журналы postgres используют режим сбора **AzureDiagnostics** , поэтому их можно запрашивать из таблицы AzureDiagnostics. Поля в таблице описаны ниже. Дополнительные сведения о запросах и предупреждениях см. в статье о [запросах Azure Monitor журналов](../azure-monitor/logs/log-query-overview.md) .
 
 Ниже приведены запросы, которые можно попытаться приступить к работе. Можно настроить оповещения на основе запросов.
 
@@ -103,7 +103,7 @@ AzureDiagnostics
 | TenantId | Идентификатор клиента |
 | SourceSystem | `Azure` |
 | TimeGenerated [UTC] | Метка времени, когда журнал был записан в формате UTC |
-| Тип | Тип журнала Всегда `AzureDiagnostics`. |
+| Type | Тип журнала Всегда `AzureDiagnostics`. |
 | SubscriptionId | Идентификатор GUID для подписки, принадлежащей серверу |
 | ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
 | ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL`. |
@@ -124,7 +124,7 @@ AzureDiagnostics
 | Prefix | Префикс строки журнала |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о доступе к журналам см. в статье [Настройка журналов сервера и получение к ним доступа с помощью портала Azure](howto-configure-server-logs-in-portal.md) или [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-using-cli.md).
 - Дополнительные сведения о [ценах на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 - Дополнительные сведения о [журналах аудита](concepts-audit.md)

@@ -8,12 +8,12 @@ ms.author: tagore
 author: tanmaygore
 ms.reviewer: mimckitt
 ms.custom: ''
-ms.openlocfilehash: c5dd09292897d69f90606e8661b4e6cb28090612
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 04a30a2446061df75d133bdbd088b7e71c59cade
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98742596"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578226"
 ---
 # <a name="configuration-and-management-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Проблемы настройки и управления для облачных служб Azure (классическая модель): часто задаваемые вопросы
 
@@ -240,9 +240,9 @@ Windows 10 и Windows Server 2016 в стандартной конфигурац
 
 Чтобы обойти эту проблему, используйте Application Insights. Автомасштабирование поддерживает Application Insights в качестве источника метрик и позволяет изменять число экземпляров роли по любой гостевой метрике, в том числе "Память".  Чтобы реализовать такой механизм, настройте параметры для Application Insights в файле пакета для проекта облачной службы (\*.CSPKG) и включите для службы расширение диагностики Azure.
 
-Дополнительные сведения о применении пользовательских метрик Application Insights для автомасштабирования облачных служб вы найдете в статье [Get started with auto scale by custom metric in Azure](../azure-monitor/platform/autoscale-custom-metric.md) (Начало работы с автомасштабированием в Azure по пользовательским метрикам).
+Дополнительные сведения о применении пользовательских метрик Application Insights для автомасштабирования облачных служб вы найдете в статье [Get started with auto scale by custom metric in Azure](../azure-monitor/autoscale/autoscale-custom-metric.md) (Начало работы с автомасштабированием в Azure по пользовательским метрикам).
 
-Дополнительные сведения о том, как интегрировать систему диагностики Azure с Application Insights для облачных служб, см. в статье [Send Cloud Service, Virtual Machine, or Service Fabric diagnostic data to Application Insights](../azure-monitor/platform/diagnostics-extension-to-application-insights.md) (Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric).
+Дополнительные сведения о том, как интегрировать систему диагностики Azure с Application Insights для облачных служб, см. в статье [Send Cloud Service, Virtual Machine, or Service Fabric diagnostic data to Application Insights](../azure-monitor/agents/diagnostics-extension-to-application-insights.md) (Отправка в Application Insights диагностических данных облачной службы, виртуальной машины или Service Fabric).
 
 Дополнительные сведения о том, как включить Application Insights для облачных служб, см. в статье [Application Insights для облачных служб Azure](../azure-monitor/app/cloudservices.md).
 

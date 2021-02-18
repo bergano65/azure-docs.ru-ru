@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/15/2020
+ms.date: 02/17/2021
 ms.author: memildin
-ms.openlocfilehash: 598c13b0434a364e73471b53c82663b94fb42f4e
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 3bdc0af2ea581954cb5edd2c7d00d286f814506c
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560107"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633603"
 ---
 # <a name="alert-validation-in-azure-security-center"></a>Проверка предупреждений в центре безопасности Azure
 Этот документ содержит информацию о том, как убедиться, что ваша система правильно настроена для оповещений центра безопасности Azure.
@@ -28,7 +28,7 @@ ms.locfileid: "97560107"
 Дополнительные сведения см. в статьях [оповещения системы безопасности в центре безопасности](security-center-alerts-overview.md) и [Управление оповещениями системы безопасности и реагирование на них](security-center-managing-and-responding-alerts.md) .
 
 
-## <a name="generate-sample-azure-defender-alerts"></a>Создание примера оповещений защитника Azure
+## <a name="generate-sample-azure-defender-alerts"></a>Создание примера оповещения Azure Defender
 
 Если вы используете новые возможности, предварительные действия с предупреждениями, как описано в статье [Управление оповещениями безопасности в центре безопасности Azure и реагирование на них](security-center-managing-and-responding-alerts.md), можно создать примеры оповещений, выполнив несколько щелчков на странице оповещения системы безопасности в портал Azure.
 
@@ -36,11 +36,6 @@ ms.locfileid: "97560107"
 
 - Оценка ценности и возможностей защитника Azure
 - Проверка всех конфигураций, созданных для оповещений системы безопасности (например, интеграции SIEM, автоматизации рабочих процессов и уведомлений по электронной почте).
-
-> [!NOTE]
-> Для этой процедуры требуется новое (Предварительная версия) оповещение, доступное в баннере в верхней части страницы **оповещения системы безопасности** .
->
-> :::image type="content" source="media/security-center-managing-and-responding-alerts/preview-alerts-experience-banner.png" alt-text="Баннер со ссылкой на новый интерфейс предварительного просмотра оповещений":::
 
 Для создания образцов оповещений:
 
@@ -97,7 +92,7 @@ ms.locfileid: "97560107"
 
 Дополнительные сведения о защите узлов и кластеров Kubernetes см. [в статье Введение в защитник Azure для Kubernetes](defender-for-kubernetes-introduction.md) .
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен процесс проверки оповещений. Теперь, когда вы знакомы с проверкой, ознакомьтесь с такими статьями:
 
 * [Проверка обнаружения угроз Azure Key Vault в Центре безопасности Azure](https://techcommunity.microsoft.com/t5/azure-security-center/validating-azure-key-vault-threat-detection-in-azure-security/ba-p/1220336)

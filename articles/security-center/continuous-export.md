@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: 226ca943554ca24f3332f24f5a9baf571b432917
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 9b8dc635781c96dcbd7aa423c77f60ff0556bd71
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100590622"
+ms.locfileid: "100634074"
 ---
 # <a name="continuously-export-security-center-data"></a>Непрерывный экспорт данных Центра безопасности
 
@@ -210,7 +210,7 @@ Azure Monitor предоставляет унифицированный инте
 
 Чтобы скачать отчет в формате CSV для оповещений или рекомендаций, откройте страницу **оповещения системы безопасности** или **рекомендации** и нажмите кнопку **скачать отчет в формате CSV** .
 
-[![Скачивание данных оповещений в виде CSV-файла](media/continuous-export/download-alerts-csv.png)](media/continuous-export/download-alerts-csv.png#lightbox)
+:::image type="content" source="./media/continuous-export/download-alerts-csv.png" alt-text="Скачивание данных оповещений в виде CSV-файла" lightbox="./media/continuous-export/download-alerts-csv.png":::
 
 > [!NOTE]
 > Эти отчеты содержат оповещения и рекомендации для ресурсов из выбранных в настоящее время подписок.
@@ -255,7 +255,7 @@ Azure Monitor предоставляет унифицированный инте
 
 
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этой статье вы узнали, как настроить непрерывный экспорт рекомендаций и оповещений. Вы также узнали, как загружать данные оповещений в виде CSV-файла. 
 

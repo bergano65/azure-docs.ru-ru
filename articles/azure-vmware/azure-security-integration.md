@@ -3,12 +3,12 @@ title: Защита виртуальных машин решения Azure VMwar
 description: Защитите свои виртуальные машины Azure VMware с помощью собственных средств безопасности Azure на панели мониторинга центра безопасности Azure.
 ms.topic: how-to
 ms.date: 02/12/2021
-ms.openlocfilehash: b37d09d6e8f239586a18c0fa3b1dcd7bfee98102
-ms.sourcegitcommit: e972837797dbad9dbaa01df93abd745cb357cde1
+ms.openlocfilehash: 7292ea4486a61f5b0cfd8f656d2763a3ce655e79
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100516368"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578257"
 ---
 # <a name="protect-your-azure-vmware-solution-vms-with-azure-security-center-integration"></a>Защита виртуальных машин решения Azure VMware с помощью интеграции с центром безопасности Azure
 
@@ -50,7 +50,7 @@ ms.locfileid: "100516368"
 
 ## <a name="create-a-log-analytics-workspace"></a>Создание рабочей области Log Analytics
 
-Для получения данных из различных источников потребуется Рабочая область Log Analytics. Дополнительные сведения см. в статье [создание log Analytics рабочей области из портал Azure](../azure-monitor/learn/quick-create-workspace.md). 
+Для получения данных из различных источников потребуется Рабочая область Log Analytics. Дополнительные сведения см. в статье [создание log Analytics рабочей области из портал Azure](../azure-monitor/logs/quick-create-workspace.md). 
 
 ## <a name="deploy-security-center-and-configure-azure-vmware-solution-vms"></a>Развертывание центра безопасности и настройка виртуальных машин решения VMware для Azure
 
@@ -162,7 +162,7 @@ Azure Sentinel построен на основе рабочей области 
     - Имя
     - Описание
     - Тактика
-    - Severity
+    - Статус
     - Состояние
 
     Нажмите кнопку **Далее: Задайте логику правила >**.
@@ -236,12 +236,12 @@ Azure Sentinel построен на основе рабочей области 
     - Введите сопоставление
     - Тактика
     
-3. Щелкните **Создать**. Затем можно выбрать созданный запрос, **выполнить запрос** и **Просмотреть результаты**.
+3. Нажмите кнопку **создания**. Затем можно выбрать созданный запрос, **выполнить запрос** и **Просмотреть результаты**.
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
 Теперь, когда вы узнали, как защитить виртуальные машины решения Azure VMware, вы можете узнать о следующих возможностях:
 
 - С помощью [панели мониторинга защитника Azure](../security-center/azure-defender-dashboard.md).
-- [Расширенное обнаружение атак многоступенчатых в Azure Sentinel](../azure-monitor/learn/quick-create-workspace.md).
+- [Расширенное обнаружение атак многоступенчатых в Azure Sentinel](../azure-monitor/logs/quick-create-workspace.md).
 - [Управление жизненным циклом виртуальных машин Azure VMware](lifecycle-management-of-azure-vmware-solution-vms.md).

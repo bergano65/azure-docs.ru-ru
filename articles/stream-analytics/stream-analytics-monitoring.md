@@ -7,12 +7,12 @@ ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 06/21/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5141c7fcfe1128574145930548f41731529c2ad8
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 484e8853d02aa68c8a8695ba7cc724adb5a8766a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98012467"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572969"
 ---
 # <a name="understand-stream-analytics-job-monitoring-and-how-to-monitor-queries"></a>Основные сведения о мониторинге заданий Stream Analytics и порядок мониторинга запросов
 
@@ -48,7 +48,7 @@ ms.locfileid: "98012467"
 Можно использовать эти метрики для [мониторинга выполнения задания Stream Analytics](./stream-analytics-set-up-alerts.md#scenarios-to-monitor). 
 
 ## <a name="customizing-monitoring-in-the-azure-portal"></a>Настройка мониторинга на портале Azure
-Вы можете изменить тип диаграммы, отображаемые метрики и временной диапазон на экране "Редактирование диаграммы". Дополнительные сведения см. в статье [Настройка мониторинга](../azure-monitor/platform/data-platform.md).
+Вы можете изменить тип диаграммы, отображаемые метрики и временной диапазон на экране "Редактирование диаграммы". Дополнительные сведения см. в статье [Настройка мониторинга](../azure-monitor/data-platform.md).
 
   ![Диаграмма значений времени в мониторе запросов Stream Analytics](./media/stream-analytics-monitoring/08-stream-analytics-monitoring.png)  
 

@@ -12,12 +12,12 @@ author: urosmil
 ms.author: urmilano
 ms.reviewer: sstein, bonova, MashaMSFT
 ms.date: 09/03/2020
-ms.openlocfilehash: 0f76d2079b7ed5aacbf835540ea92febd034e2d0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 6cdd3137798e221974dadda78dd55b6ae944bc78
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782456"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589349"
 ---
 # <a name="monitoring-azure-sql-managed-instance-management-operations"></a>Мониторинг операций управления Управляемый экземпляр SQL Azure
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -37,13 +37,13 @@ ms.locfileid: "92782456"
 Существует несколько способов мониторинга операций управления управляемыми экземплярами.
 
 - [Развертывания группы ресурсов](../../azure-resource-manager/templates/deployment-history.md)
-- [Журнал действий](../../azure-monitor/platform/activity-log.md)
+- [Журнал действий](../../azure-monitor/essentials/activity-log.md)
 - [API операций управляемого экземпляра](#managed-instance-operations-api)
 
 
 В следующей таблице сравниваются параметры мониторинга операции управления. 
 
-| Параметр | Сохранение | Поддержка отмены | Создание | Update | DELETE | Отмена | Шаги |
+| Параметр | Сохранение | Поддержка отмены | Создать | Update | DELETE | Отменить | Шаги |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Развертывания группы ресурсов | Бесконечно<sup>1</sup> | Нет<sup>2</sup> | Видимый | Видимый | Не отображается. | Видимый | Не отображается. |
 | Журнал действий | 90 дней | Нет | Видимый | Видимый | Видимый | Видимый |  Не отображается. |

@@ -7,12 +7,12 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 3/16/2020
-ms.openlocfilehash: 73705434aef3ee438c02fbfd6502d30e7620b695
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f5557140d77865a6d4c44316cecd512f877736e0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026460"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577085"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-postgresql---hyperscale-citus"></a>Использование портал Azure для настройки оповещений в метриках для базы данных Azure для PostgreSQL-Scale (Цитус)
 
@@ -26,8 +26,8 @@ ms.locfileid: "95026460"
 * вызов веб-перехватчика.
 
 Для настройки правил генерации оповещений и получения сведений о них можно использовать:
-* [Портал Azure](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
-* [Azure CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
+* [Портал Azure](../azure-monitor/alerts/alerts-metric.md#create-with-azure-portal)
+* [Azure CLI](../azure-monitor/alerts/alerts-metric.md#with-azure-cli)
 * [REST API Azure Monitor](/rest/api/monitor/metricalerts)
 
 ## <a name="create-an-alert-rule-on-a-metric-from-the-azure-portal"></a>Создание правила генерации оповещений на основе метрики на портале Azure
@@ -108,6 +108,6 @@ ms.locfileid: "95026460"
 
 Наблюдение за использованием ЦП полезно для создания базовых показателей производительности. Например, вы можете заметить, что загрузка ЦП обычно составляет около 40-60%. Если загрузка ЦП внезапно начинает навести указатель на 95%, можно распознать аномалию. Использование ЦП может отражать приростства, но может также обнаружить недопустимый запрос. При создании предупреждения о ЦП задайте большую степень гранулярности статистической обработки для перехвата длительных увеличений и пропуска пиковых скачков.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/platform/alerts-webhooks.md).
-* Прочитайте [обзор сбора метрики](../azure-monitor/platform/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.
+## <a name="next-steps"></a>Дальнейшие шаги
+* Узнайте больше о [настройке веб-перехватчиков webhook в оповещениях](../azure-monitor/alerts/alerts-webhooks.md).
+* Прочитайте [обзор сбора метрики](../azure-monitor/data-platform.md) и узнайте, как можно обеспечить, чтобы служба была доступна и отвечала на запросы.

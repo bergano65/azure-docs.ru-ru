@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4cf623ed960fd2efe6fdf506751858796008cef4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8e86679e7531bb70d6d4f1a27718c2fc8f0e8a9c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202034"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578538"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Базовый план безопасности Azure для службы Kubernetes Azure
 
@@ -196,9 +196,9 @@ ms.locfileid: "98202034"
 
 Используйте журналы Azure Monitor, чтобы включить и запросить журналы из AKS основных компонентов, KUBE-аписервер и KUBE-Controller-Manager. Создание и администрирование узлов, на которых выполняется kubelet с помощью среды выполнения контейнеров, и развертывание приложений с помощью управляемого сервера API Kubernetes. 
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Enable and review Kubernetes master node logs in Azure Kubernetes Service (AKS)](view-master-logs.md) (Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS))
 
@@ -240,9 +240,9 @@ ms.locfileid: "98202034"
 
 - [Ознакомьтесь со схемой журнала, включая роли журнала.](view-master-logs.md)
 
-- [Общие сведения о Azure Monitor контейнерах](../azure-monitor/insights/container-insights-overview.md)
+- [Общие сведения о Azure Monitor контейнерах](../azure-monitor/containers/container-insights-overview.md)
 
-- [Включение Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-onboard.md)
+- [Включение Azure Monitor для контейнеров](../azure-monitor/containers/container-insights-onboard.md)
 
 - [Enable and review Kubernetes master node logs in Azure Kubernetes Service (AKS)](view-master-logs.md) (Включение и просмотр журналов главного узла Kubernetes в Службе Azure Kubernetes (AKS))
 
@@ -294,7 +294,7 @@ ms.locfileid: "98202034"
 
 **Руководство**. Подключение экземпляров службы Azure Kubernetes Service (AKS) к Azure Monitor и настройка соответствующего срока хранения для рабочей области Azure log Analytics в соответствии с требованиями вашей организации к соответствию. 
 
-- [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -312,7 +312,7 @@ ms.locfileid: "98202034"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -422,7 +422,7 @@ ms.locfileid: "98202034"
 
 **Руководство**. Использование единого входа для службы Azure Kubernetes Service (AKS) с интегрированной проверкой подлинности Azure Active Directory (Azure AD) для кластера AKS.
 
-- [Просмотр журналов Kubernetes, событий и метрик Pod в режиме реального времени](../azure-monitor/insights/container-insights-livedata-overview.md)
+- [Просмотр журналов Kubernetes, событий и метрик Pod в режиме реального времени](../azure-monitor/containers/container-insights-livedata-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -518,7 +518,7 @@ ms.locfileid: "98202034"
 **Руководство**. Интеграция проверки подлинности пользователей для службы Azure KUBERNETES (AKS) с Azure Active Directory (Azure AD). Создайте параметры диагностики для Azure AD, отправив журналы аудита и входа в рабочую область Azure Log Analytics. Настройте нужные оповещения (например, когда деактивированная учетная запись пытается войти в систему) в рабочей области Azure Log Analytics.
 - [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-- [Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor](../azure-monitor/platform/alerts-log.md)
+- [Создание, просмотр и Управление оповещениями журнала с помощью Azure Monitor](../azure-monitor/alerts/alerts-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -673,11 +673,11 @@ ms.locfileid: "98202034"
 
 Используйте журнал действий Azure для мониторинга кластеров AKS и связанных ресурсов на высоком уровне. Интегрируйтесь с Prometheus для просмотра метрик приложений и рабочих нагрузок, собираемых из узлов, и Kubernetes с помощью запросов для создания настраиваемых оповещений, панелей мониторинга и подробного анализа.
 
-- [Общие сведения о Azure Monitor контейнерах](../azure-monitor/insights/container-insights-overview.md)
+- [Общие сведения о Azure Monitor контейнерах](../azure-monitor/containers/container-insights-overview.md)
 
-- [Включение Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-onboard.md)
+- [Включение Azure Monitor для контейнеров](../azure-monitor/containers/container-insights-onboard.md)
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -1235,7 +1235,7 @@ security-hardened-vm-host-image.md
 
 Выполняйте регулярное автоматическое резервное копирование Key Vault сертификатов, ключей, управляемых учетных записей хранения и секретов с помощью команд PowerShell. 
 
-Пример:
+Пример.
 
 Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorageAccount Backup-AzKeyVaultSecret
 
@@ -1259,7 +1259,7 @@ Backup-AzKeyVaultCertificate Backup-AzKeyVaultKey Backup-AzKeyVaultManagedStorag
 
 Периодически выполняйте восстановление данных Key Vault сертификатов, ключей, управляемых учетных записей хранения и секретов с помощью команд PowerShell. 
 
-Пример:
+Пример.
 
 Restore-AzKeyVaultCertificate Restore-AzKeyVaultKey Restore-AzKeyVaultManagedStorageAccount Restore-AzKeyVaultSecret
 

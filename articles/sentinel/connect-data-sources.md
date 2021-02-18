@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: c3bb05af3e0a24ebb10dc98b9174cfb235ddda13
-ms.sourcegitcommit: f82e290076298b25a85e979a101753f9f16b720c
+ms.openlocfilehash: aeb92dce41c12ada41175964835d9c89a634a6e3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "99555933"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590257"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -66,7 +66,7 @@ Azure Sentinel поддерживает следующие методы подк
 
 - **Внешние решения через API**. Некоторые источники данных подключены с помощью интерфейсов API, предоставляемых подключенным источником данных. Как правило, большинство технологий безопасности предоставляют набор API, с помощью которых можно получить журналы событий. API подключаются к Azure Sentinel и собирают определенные типы данных, а затем отправляют их в Azure Log Analytics. Устройства, подключенные с помощью API:
     
-    - [Защита от фишинга и защиты торговой марки Агари](connect-agari-phishing-defense.md)
+    - [Agari Phishing Defense and Brand Protection](connect-agari-phishing-defense.md)
     - [Alcide kAudit](connect-alcide-kaudit.md)
     - [Barracuda WAF](connect-barracuda.md)
     - [Barracuda CloudGen Firewall](connect-barracuda-cloudgen-firewall.md)
@@ -97,7 +97,7 @@ Azure Sentinel поддерживает следующие методы подк
 
     - **Брандмауэры, прокси-серверы и конечные точки — CEF:**
         - [Vectra AI Detect](connect-ai-vectra-detect.md)
-        - [События безопасности Akamai](connect-akamai-security-events.md)
+        - [Akamai Security Events](connect-akamai-security-events.md)
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
         - [Citrix WAF](connect-citrix-waf.md)
@@ -107,7 +107,7 @@ Azure Sentinel поддерживает следующие методы подк
         - [Продукты Forcepoint](connect-forcepoint-casb-ngfw.md)
         - [Fortinet](connect-fortinet.md)
         - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
-        - [Шлюз WAF Imperva](connect-imperva-waf-gateway.md)
+        - [Imperva WAF Gateway](connect-imperva-waf-gateway.md)
         - [One Identity Safeguard](connect-one-identity.md)
         - [Palo Alto Networks](connect-paloalto.md)
         - [Thycotic Secret Server](connect-thycotic-secret-server.md)
@@ -117,7 +117,7 @@ Azure Sentinel поддерживает следующие методы подк
         - [Zscaler](connect-zscaler.md)
         - [Другие устройства на основе CEF](connect-common-event-format.md)
     - **Брандмауэры, прокси-серверы и конечные точки — syslog:**
-        - [Алсид для Active Directory](connect-alsid-active-directory.md)
+        - [Alsid for Active Directory](connect-alsid-active-directory.md)
         - [Унифицированная вычислительная система Cisco (UCS)](connect-cisco-ucs.md)
         - [Infoblox NIOS](connect-infoblox.md)
         - [Juniper SRX](connect-juniper-srx.md)
@@ -151,7 +151,7 @@ Azure Sentinel поддерживает следующие методы подк
 | **Data type** | **Инструкции по подключению** | **Соединитель данных?** | **Комментарии** |
 |------|---------|-------------|------|
 | AWSCloudTrail | [Подключение AWS](connect-aws.md) | &#10003; | |
-| AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/platform/platform-logs-overview.md)| &#10003; | |
+| AzureActivity | [Подключение действий Azure](connect-azure-activity.md) и [обзора журналов действий](../azure-monitor/essentials/platform-logs-overview.md)| &#10003; | |
 | AuditLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | &#10003; | |
 | SigninLogs | [Подключение Azure AD](connect-azure-active-directory.md)  | &#10003; | |
 | AzureFirewall |[Система диагностики Azure](../firewall/firewall-diagnostics.md) | &#10003; | |
@@ -164,9 +164,9 @@ Azure Sentinel поддерживает следующие методы подк
 | Брандмауэр веб-приложений Майкрософт (WAF) – (AzureDiagnostics) |[Подключение брандмауэра веб-приложений Майкрософт](./connect-azure-waf.md) | &#10003; | |
 | SymantecICDx_CL | [Подключение Symantec](connect-symantec.md) | &#10003; | |
 | ThreatIntelligenceIndicator  | [Подключение аналитики угроз](connect-threat-intelligence.md)  | &#10003; | |
-| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Схема службы Azure Monitor](../azure-monitor/insights/service-map.md)<br>[Подключение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Включение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/insights/vminsights-enable-overview.md) <br> [Подключение одиночной виртуальной машины](../azure-monitor/insights/vminsights-enable-portal.md)<br>  [Использование подключения через политику](../azure-monitor/insights/vminsights-enable-policy.md)| &#10007; | Книга аналитики виртуальных машин  |
+| VMConnection <br> ServiceMapComputer_CL<br> ServiceMapProcess_CL|  [Схема службы Azure Monitor](../azure-monitor/vm/service-map.md)<br>[Подключение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/vm/vminsights-enable-overview.md) <br> [Включение аналитических сведений для виртуальных машин Azure Monitor](../azure-monitor/vm/vminsights-enable-overview.md) <br> [Подключение одиночной виртуальной машины](../azure-monitor/vm/vminsights-enable-portal.md)<br>  [Использование подключения через политику](../azure-monitor/vm/vminsights-enable-policy.md)| &#10007; | Книга аналитики виртуальных машин  |
 | DnsEvents | [Подключение DNS](connect-dns.md) | &#10003; | |
-| W3CIISLog | [Подключение журналов IIS](../azure-monitor/platform/data-sources-iis-logs.md)  | &#10007; | |
+| W3CIISLog | [Подключение журналов IIS](../azure-monitor/agents/data-sources-iis-logs.md)  | &#10007; | |
 | Данные передачи | [Подключение передаваемых данных](../azure-monitor/insights/wire-data.md) | &#10007; | |
 | WindowsFirewall | [Подключение брандмауэра Windows](connect-windows-firewall.md) | &#10003; | |
 | SecurityAlert службы "Защита идентификации Azure AD"  | [Подключения Защиты идентификации Azure AD](connect-azure-ad-identity-protection.md)  | &#10003; | |
@@ -174,7 +174,7 @@ Azure Sentinel поддерживает следующие методы подк
 | SecurityAlert сертификатов службы приложений  | [Подключение оповещений защитника Azure](connect-azure-security-center.md) из центра безопасности Azure  | &#10003; | |
 | MCAS SecurityAlert  | [Подключение Microsoft Cloud App Security](connect-cloud-app-security.md)  | &#10003; | |
 | SecurityAlert | | | |
-| Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/platform/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](/sysinternals/downloads/sysmon). |
+| Sysmon (событие) | [Подключение Sysmon](https://azure.microsoft.com/blog/detecting-in-memory-attacks-with-sysmon-and-azure-security-center)<br> [Подключение событий Windows](../azure-monitor/agents/data-sources-windows-events.md) <br> [Получение средства синтаксического анализа Sysmon](https://github.com/Azure/Azure-Sentinel/blob/master/Parsers/Sysmon/Sysmon-v10.42-Parser.txt)| &#10007; | По умолчанию на виртуальных машинах не установлена коллекция Sysmon. Дополнительные сведения об установке агента Sysmon см. в разделе [Sysmon](/sysinternals/downloads/sysmon). |
 | ConfigurationData  | [Автоматизация учета виртуальной машины](../automation/change-tracking/overview.md)| &#10007; | |
 | ConfigurationChange  | [Автоматизация отслеживания виртуальной машины](../automation/change-tracking/overview.md) | &#10007; | |
 | F5 BIG-IP | [Подключение F5 BIG-IP](https://devcentral.f5.com/s/articles/Integrating-the-F5-BIGIP-with-Azure-Sentinel)  | &#10007; | |

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 07/15/2020
 ms.author: allensu
-ms.openlocfilehash: fdb609a243656e2c75159cd2d4e70e2f965ae896
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 96e80de5b8b5ab0a046913ce40ca2d7254dd0133
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352122"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573226"
 ---
 # <a name="diagnostic-logs---azure-content-delivery-network"></a>Журналы диагностики — сеть доставки содержимого Azure
 
@@ -71,14 +71,14 @@ ms.locfileid: "96352122"
 
     :::image type="content" source="./media/cdn-diagnostics-log/04_diagnostics-logs-storage.png" alt-text="Журналы диагностики — хранилище." border="true":::
 
-3. Щелкните **Сохранить**.
+3. Нажмите кнопку **Сохранить**.
 
 ### <a name="send-to-log-analytics"></a>Отправка в Log Analytics
 
 Чтобы использовать Log Analytics для журналов, выполните следующие действия.
 
 >[!NOTE] 
->Для выполнения этих действий требуется рабочая область log Analytics. Дополнительные сведения см. в разделе **[создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md)** .
+>Для выполнения этих действий требуется рабочая область log Analytics. Дополнительные сведения см. в разделе **[создание log Analytics рабочей области на портал Azure](../azure-monitor/logs/quick-create-workspace.md)** .
     
 1. В качестве **имени параметра диагностики** введите имя для параметров журнала диагностики.
 
@@ -88,7 +88,7 @@ ms.locfileid: "96352122"
 
    :::image type="content" source="./media/cdn-diagnostics-log/05-la-workspace.png" alt-text="Журналы диагностики — Log Analytics." border="true":::
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 ### <a name="stream-to-an-event-hub"></a>"Передать в концентратор событий";
 
@@ -105,7 +105,7 @@ ms.locfileid: "96352122"
 
    :::image type="content" source="./media/cdn-diagnostics-log/06-eventhub-namespace.png" alt-text="Журналы диагностики — концентратор событий." border="true":::
 
-4. Щелкните **Сохранить**.
+4. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="enable-logging-with-powershell"></a>Включение ведения журнала с помощью PowerShell
@@ -116,7 +116,7 @@ ms.locfileid: "96352122"
 
 ### <a name="enable-diagnostic-logs-in-a-storage-account"></a>Включение журналов диагностики в учетной записи хранения
 
-1. Войдите в Azure PowerShell:
+1. Войдите в Azure PowerShell.
 
     ```azurepowershell-interactive
     Connect-AzAccount 
@@ -140,7 +140,7 @@ ms.locfileid: "96352122"
 
 ### <a name="enable-diagnostics-logs-for-log-analytics-workspace"></a>Включение журналов диагностики для рабочей области Log Analytics
 
-1. Войдите в Azure PowerShell:
+1. Войдите в Azure PowerShell.
 
     ```azurepowershell-interactive
     Connect-AzAccount 
@@ -162,7 +162,7 @@ ms.locfileid: "96352122"
     ```
 ### <a name="enable-diagnostics-logs-for-event-hub-namespace"></a>Включение журналов диагностики для пространства имен концентратора событий
 
-1. Войдите в Azure PowerShell:
+1. Войдите в Azure PowerShell.
 
     ```azurepowershell-interactive
     Connect-AzAccount 
@@ -249,7 +249,7 @@ ms.locfileid: "96352122"
 Не все метрики доступны у всех поставщиков, хотя различия минимальны. В этой таблице также есть сведения о доступности метрик у определенных поставщиков. Метрики доступны только для конечных точек CDN, на которых зарегистрирован трафик.
 
 
-|Metric                     | Описание | Microsoft | Verizon | Akamai |
+|Метрика                     | Описание | Microsoft | Verizon | Akamai |
 |---------------------------|-------------|-----------|---------|--------|
 | RequestCountTotal         | Общее количество запросов за этот период. | Да | Да |Да |
 | RequestCountHttpStatus2xx | Количество запросов, на которые возвращены ответы с кодами HTTP 2xx (200, 202 и т. д.). | Да | Да |Да |
@@ -369,7 +369,7 @@ ms.locfileid: "96352122"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Журналы диагностики Azure](../azure-monitor/platform/platform-logs-overview.md)
+* [Журналы диагностики Azure](../azure-monitor/essentials/platform-logs-overview.md)
 * [Анализ вариантов использования CDN Azure](./cdn-analyze-usage-patterns.md)
-* [Журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Журналы Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Log Analytics REST API Reference](/rest/api/loganalytics) (Справочник по REST API Log Analytics)

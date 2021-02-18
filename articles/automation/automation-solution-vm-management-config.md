@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 06/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: 552cac01cd492229a19bdbc297665eb7d3ccb401
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: b52b51133f059f028baf470515e886d17077af6a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751297"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593936"
 ---
 # <a name="configure-startstop-vms-during-off-hours"></a>Настройка запуска и остановки виртуальных машин в нерабочее время
 
@@ -145,7 +145,7 @@ ms.locfileid: "96751297"
 
     :::image type="content" source="media/automation-solution-vm-management/change-email.png" alt-text="Снимок экрана: страница электронной почты, SMS/Push/Voice с примером обновленного адреса электронной почты.":::
 
-    Кроме того, можно добавить дополнительные действия в группу действий. Дополнительные сведения о группах действий см. в статье [Группы действий](../azure-monitor/platform/action-groups.md)
+    Кроме того, можно добавить дополнительные действия в группу действий. Дополнительные сведения о группах действий см. в статье [Группы действий](../azure-monitor/alerts/action-groups.md)
 
 Ниже приведен пример сообщения электронной почты, которое отправляется, когда функция завершает работу виртуальных машин.
 

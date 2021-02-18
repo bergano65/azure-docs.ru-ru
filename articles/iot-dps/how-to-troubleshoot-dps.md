@@ -8,12 +8,12 @@ services: iot-dps
 ms.topic: conceptual
 ms.date: 09/09/2019
 ms.author: xujing
-ms.openlocfilehash: 2d68314aab636180ff17e330c49c9859b8851b06
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2d27c4eb1ea4586e0f2eac48930d86217052b2d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94950692"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585459"
 ---
 # <a name="troubleshooting-with-azure-iot-hub-device-provisioning-service"></a>Устранение неполадок с помощью службы подготовки устройств для центра Интернета вещей Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "94950692"
 
 7. Выберите **Добавить условие**, затем выберите нужную метрику и пороговое значение, следуя инструкциям.
 
-Дополнительные сведения см [. в разделе что такое классические оповещения в Microsoft Azure?](../azure-monitor/platform/alerts-overview.md)
+Дополнительные сведения см [. в разделе что такое классические оповещения в Microsoft Azure?](../azure-monitor/alerts/alerts-overview.md)
 
 ## <a name="using-log-analytic-to-view-and-resolve-errors"></a>Использование аналитики журналов для просмотра и устранения ошибок
 
@@ -82,4 +82,4 @@ ms.locfileid: "94950692"
 | 404 | Экземпляр службы подготовки устройств или ресурс (например, регистрация) не существует. |404 — не найдено |
 | 412 | ETag в запросе не совпадает с ETag существующего ресурса согласно RFC7232). | 412. предусловие не выполнено |
 | 429 | Операции регулируется службой. Конкретные ограничения службы см. в разделе [ограничения службы подготовки устройств](../azure-resource-manager/management/azure-subscription-service-limits.md#iot-hub-device-provisioning-service-limits)к добавлению в центр Интернета вещей. | 429. слишком много запросов |
-| 500 | Произошла внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|
+| 500 | Внутренняя ошибка. | 500 Internal Server Error (внутренняя ошибка сервера)|

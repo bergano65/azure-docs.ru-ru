@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: d2b77708609f61eeb4ce33148f020027d646836b
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 30cb023b8ca78f252dbf087a604a61b8aa5c6659
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97813604"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100577389"
 ---
 # <a name="communication-services-notifications"></a>Уведомления в Службах коммуникации
 
@@ -91,7 +91,7 @@ armclient POST /subscriptions/<sub_id>/resourceGroups/<resource_group>/providers
 
 Возможные причины потери уведомлений в первой области (Службы коммуникации — Центры уведомлений) рассмотрены ниже, а на в двух других — в статье [Диагностика причин потери уведомлений в Центрах уведомлений Azure](../../notification-hubs/notification-hubs-push-notification-fixer.md).
 
-Один из способов проверить, отправляет ли ресурс Служб коммуникации уведомления в Центры уведомлений, — проверить метрику `incoming messages` в [метриках связанного центра уведомлений](../../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs).
+Один из способов проверить, отправляет ли ресурс Служб коммуникации уведомления в Центры уведомлений, — проверить метрику `incoming messages` в [метриках связанного центра уведомлений](../../azure-monitor/essentials/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs).
 
 Ниже перечислены некоторые распространенные ошибки конфигурации, из-за которых уведомления не поступают из Служб коммуникации в связанный центр уведомлений.
 
