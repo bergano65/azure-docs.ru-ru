@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: f66aef64d68bd5d99d7a27d1382306d9202bd350
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: 25572a4cc342277289459891c9bee2fa7f1cccd7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100388062"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589086"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Создание и администрирование проектов Миграции Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "100388062"
     - География используется только для хранения метаданных, собранных с локальных компьютеров. Можно выбрать любой целевой регион для миграции. 
     - Просмотрите список поддерживаемых регионов для [общедоступного](migrate-support-matrix.md#supported-geographies-public-cloud) облака и облака для [государственных организаций](migrate-support-matrix.md#supported-geographies-azure-government).
 
-8. Щелкните **Создать**.
+8. Нажмите кнопку **создания**.
 
    ![Страница с параметрами входного проекта](./media/create-manage-projects/project-details.png)
 
@@ -127,8 +127,8 @@ PUT /subscriptions/<subid>/resourceGroups/<rg>/providers/Microsoft.Migrate/Migra
        
     - Если вы уже удалили проект "миграция Azure", выберите **группы ресурсов** в левой области портал Azure и найдите рабочую область.
        
-2. [Следуйте инструкциям](../azure-monitor/platform/delete-workspace.md) , чтобы удалить рабочую область.
+2. [Следуйте инструкциям](../azure-monitor/logs/delete-workspace.md) , чтобы удалить рабочую область.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Добавление средств [оценки](how-to-assess.md) или [миграции](how-to-migrate.md) в проекты службы "миграция Azure".

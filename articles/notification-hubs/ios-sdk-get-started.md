@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.service: notification-hubs
 ms.reviewer: thsomasu
 ms.lastreviewed: 06/01/2020
-ms.openlocfilehash: c920c9b3b28df7f5bf3bf169ef88ab967f23649e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: c18814230eda6624e8ab1040797c66108f630e30
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96001326"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581746"
 ---
 # <a name="tutorial-send-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 
@@ -309,4 +309,4 @@ ms.locfileid: "96001326"
 
 В рамках этого учебника вы создали и настроили центр уведомлений в Azure, а также настроили его для отправки уведомлений в приложение через Службу push-уведомлений Apple (APNS). Далее мы создадим пример приложения для iOS и интегрируем пакет средств разработки Центров уведомлений Azure, чтобы он мог получать push-уведомления, отправленные через портал Azure. Перейдите к следующему учебнику в зависимости от выбранного языка:
 
-- [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](ios-sdk-300.md)
+- [Руководство по отправке push-уведомлений в приложения iOS с помощью Центров уведомлений Azure](ios-sdk-current.md)

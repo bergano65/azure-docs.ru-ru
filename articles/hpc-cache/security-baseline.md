@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 850171a4f1f303ef344fa5007325093c6363615b
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: ac2982b021172893e4aabe0f21c7077115684eff
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98789083"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592630"
 ---
 # <a name="azure-security-baseline-for-azure-hpc-cache"></a>Базовый уровень безопасности Azure для кэша HPC Azure
 
@@ -613,9 +613,9 @@ Azure AD поддерживает строгое управление прове
 
 Вы также можете использовать центр безопасности Azure и политику Azure, чтобы включить журналы ресурсов Azure для кэша HPC, а также для сбора и регистрации данных. Эти журналы могут быть критически важными для дальнейшего изучения инцидентов безопасности и проведения судебных упражнений.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md) 
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md) 
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md)
 
@@ -633,7 +633,7 @@ Azure AD поддерживает строгое управление прове
 
 Многие организации предпочитают использовать метку Azure для "горячих" данных, которые часто используются, а служба хранилища Azure — для "холодного" данных, которые используются реже.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -812,7 +812,7 @@ Azure Sentinel предоставляет широкие возможности 
 
 - [Общие сведения о средствах безопасности в Azure Backup](../backup/security-overview.md) 
 
-- [Шифрование данных резервных копий с помощью управляемых клиентом ключей](../backup/encryption-at-rest-with-cmk.md)  
+- [Шифрование данных резервного копирования с использованием ключей, управляемых клиентом](../backup/encryption-at-rest-with-cmk.md)  
 
 - [Как создавать резервные копии ключей Key Vault в Azure](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-5.1.0)
 

@@ -3,12 +3,12 @@ title: Управление расширениями виртуальных ма
 description: Серверы с поддержкой Arc Azure могут управлять развертыванием расширений виртуальных машин, которые обеспечивают настройку и задачи автоматизации после развертывания с помощью виртуальных машин, не относящихся к Azure.
 ms.date: 01/07/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5430b1c1318747cccfb95f031700fddaad716284
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: b39149eb7ac572ac3bd50bb6303f28d2340f387d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020627"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580857"
 ---
 # <a name="virtual-machine-extension-management-with-azure-arc-enabled-servers"></a>Управление расширениями виртуальных машин с помощью серверов с поддержкой Azure Arc
 
@@ -27,9 +27,9 @@ ms.locfileid: "98020627"
 
 - Используйте [конфигурацию состояния службы автоматизации Azure](../../automation/automation-dsc-overview.md) для централизованного хранения конфигураций и поддержки требуемого состояния гибридных подключенных компьютеров, включенных с помощью расширения ВИРТУАЛЬНОЙ машины DSC.
 
-- Собирайте данные журналов для анализа с помощью [журналов в Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) , включенных с помощью расширения виртуальной машины агента log Analytics. Это полезно для выполнения сложного анализа данных из различных типов источников.
+- Собирайте данные журналов для анализа с помощью [журналов в Azure Monitor](../../azure-monitor/logs/data-platform-logs.md) , включенных с помощью расширения виртуальной машины агента log Analytics. Это полезно для выполнения сложного анализа данных из различных типов источников.
 
-- С помощью [Azure Monitor для виртуальных машин](../../azure-monitor/insights/vminsights-overview.md)анализирует производительность виртуальных машин Windows и Linux и отслеживает их процессы и зависимости от других ресурсов и внешних процессов. Это достигается благодаря включению как агента Log Analytics, так и расширений виртуальной машины агента зависимостей.
+- С помощью [Azure Monitor для виртуальных машин](../../azure-monitor/vm/vminsights-overview.md)анализирует производительность виртуальных машин Windows и Linux и отслеживает их процессы и зависимости от других ресурсов и внешних процессов. Это достигается благодаря включению как агента Log Analytics, так и расширений виртуальной машины агента зависимостей.
 
 - Скачайте и выполните скрипты на гибридных подключенных компьютерах с помощью расширения пользовательских сценариев. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления.
 
@@ -47,7 +47,7 @@ ms.locfileid: "98020627"
 
 ### <a name="windows-extensions"></a>Расширения Windows
 
-|Расширение |Publisher |Тип |Дополнительные сведения |
+|Расширение |Publisher |Type |Дополнительные сведения |
 |----------|----------|-----|-----------------------|
 |Средство проверки уязвимостей, интегрированное с защитником Azure |Qualys |Виндовсажент. Азуресекуритицентер |[Решение для оценки уязвимости в интегрированной службе "защитник Azure" для Azure и гибридных компьютеров](../../security-center/deploy-vulnerability-assessment-vm.md)|
 |Расширение пользовательских сценариев |Microsoft.Compute; | CustomScriptExtension |[Расширение пользовательских сценариев Windows](../../virtual-machines/extensions/custom-script-windows.md)|
@@ -55,11 +55,11 @@ ms.locfileid: "98020627"
 |Агент Log Analytics |Microsoft.EnterpriseCloud.Monitoring |MicrosoftMonitoringAgent |[Расширение виртуальной машины Log Analytics для Windows](../../virtual-machines/extensions/oms-windows.md)|
 |Azure Monitor для виртуальных машин (аналитика) |Microsoft.Azure.Monitoring.DependencyAgent |депенденциажентвиндовс | [Расширение виртуальной машины агента зависимостей для Windows](../../virtual-machines/extensions/agent-dependency-windows.md)|
 |Azure Key Vault синхронизации сертификатов | Microsoft. Azure. key. Vault |KeyVaultForWindows | [Расширение виртуальной машины Key Vault для Windows](../../virtual-machines/extensions/key-vault-windows.md) |
-|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторвиндовсажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторвиндовсажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/agents/azure-monitor-agent-install.md) |
 
 ### <a name="linux-extensions"></a>Расширения Linux
 
-|Расширение |Publisher |Тип |Дополнительные сведения |
+|Расширение |Publisher |Type |Дополнительные сведения |
 |----------|----------|-----|-----------------------|
 |Средство проверки уязвимостей, интегрированное с защитником Azure |Qualys |Линуксажент. Азуресекуритицентер |[Решение для оценки уязвимости в интегрированной службе "защитник Azure" для Azure и гибридных компьютеров](../../security-center/deploy-vulnerability-assessment-vm.md)|
 |Расширение пользовательских сценариев |Microsoft. Azure. Extensions |CustomScript |[Расширение пользовательских сценариев Linux версии 2](../../virtual-machines/extensions/custom-script-linux.md) |
@@ -67,7 +67,7 @@ ms.locfileid: "98020627"
 |Агент Log Analytics |Microsoft.EnterpriseCloud.Monitoring |OmsAgentForLinux |[Расширение виртуальной машины Log Analytics для Linux](../../virtual-machines/extensions/oms-linux.md) |
 |Azure Monitor для виртуальных машин (аналитика) |Microsoft.Azure.Monitoring.DependencyAgent |DependencyAgentLinux |[Расширение виртуальной машины агента зависимостей для Linux](../../virtual-machines/extensions/agent-dependency-linux.md) |
 |Azure Key Vault синхронизации сертификатов | Microsoft. Azure. key. Vault |KeyVaultForLinux | [Расширение виртуальной машины Key Vault для Linux](../../virtual-machines/extensions/key-vault-linux.md) |
-|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторлинуксажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/platform/azure-monitor-agent-install.md) |
+|Агент Azure Monitor |Microsoft. Azure. Monitor |азуремониторлинуксажент |[Установка агента Azure Monitor (Предварительная версия)](../../azure-monitor/agents/azure-monitor-agent-install.md) |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -112,6 +112,6 @@ ms.locfileid: "98020627"
 
 Сведения об обновлении компьютера до версии, необходимой для агента, см. в разделе [Upgrade Agent](manage-agent.md#upgrading-agent).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью [Azure CLI](manage-vm-extensions-cli.md), [Azure PowerShell](manage-vm-extensions-powershell.md), из [портал Azure](manage-vm-extensions-portal.md)или [шаблонов Azure Resource Manager](manage-vm-extensions-template.md).

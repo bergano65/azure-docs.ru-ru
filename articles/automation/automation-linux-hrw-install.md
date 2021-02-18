@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 11/23/2020
 ms.topic: conceptual
-ms.openlocfilehash: 20683808c81b32560170b175edf1c37c332f47ad
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 58c340c97bd8e46c5a588b4bf0ba2673712ffb95
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183623"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581193"
 ---
 # <a name="deploy-a-linux-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Linux
 
@@ -24,15 +24,15 @@ ms.locfileid: "96183623"
 
 Прежде чем начать, убедитесь, что у вас есть следующее.
 
-### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics
+### <a name="a-log-analytics-workspace"></a>Рабочая область Log Analytics .
 
-Гибридная Рабочая роль Runbook зависит от Azure Monitor Log Analytics рабочей области для установки и настройки роли. Его можно создать с помощью [Azure Resource Manager](../azure-monitor/samples/resource-manager-workspace.md#create-a-log-analytics-workspace), с помощью [PowerShell](../azure-monitor/scripts/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)или в [портал Azure](../azure-monitor/learn/quick-create-workspace.md).
+Гибридная Рабочая роль Runbook зависит от Azure Monitor Log Analytics рабочей области для установки и настройки роли. Его можно создать с помощью [Azure Resource Manager](../azure-monitor/logs/resource-manager-workspace.md#create-a-log-analytics-workspace), с помощью [PowerShell](../azure-monitor/logs/powershell-sample-create-workspace.md?toc=/powershell/module/toc.json)или в [портал Azure](../azure-monitor/logs/quick-create-workspace.md).
 
-Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/platform/design-logs-deployment.md) перед созданием рабочей области.
+Если у вас нет рабочей области Log Analytics Azure Monitor, ознакомьтесь с [руководством по проектированию журналов Azure Monitor](../azure-monitor/logs/design-logs-deployment.md) перед созданием рабочей области.
 
 ### <a name="log-analytics-agent"></a>Агент Log Analytics
 
-Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/platform/log-analytics-agent.md) для поддерживаемой операционной системы Linux. Для серверов или компьютеров, размещенных за пределами Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md).
+Для работы гибридной рабочей роли Runbook требуется [агент log Analytics](../azure-monitor/agents/log-analytics-agent.md) для поддерживаемой операционной системы Linux. Для серверов или компьютеров, размещенных за пределами Azure, можно установить агент Log Analytics с помощью [серверов с поддержкой Arc Azure](../azure-arc/servers/overview.md).
 
 >[!NOTE]
 >После установки агента Log Analytics для Linux не следует изменять разрешения `sudoers.d` папки или ее владельца. Для учетной записи **нксаутоматион** требуется разрешение sudo, то есть пользовательский контекст, в котором выполняется Гибридная Рабочая роль Runbook. Не следует удалять разрешения. Это может привести к критическим изменениям в определенных папках или командах.

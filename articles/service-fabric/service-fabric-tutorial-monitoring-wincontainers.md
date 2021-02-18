@@ -4,12 +4,12 @@ description: В этом руководстве вы настроите журн
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc
-ms.openlocfilehash: cf14cce631a505a951ec4d9c0955431b9a98527e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7689d6e259055137a8d1d3c61552790ab9f28d3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840682"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588245"
 ---
 # <a name="tutorial-monitor-windows-containers-on-service-fabric-using-azure-monitor-logs"></a>Руководство по Мониторинг контейнеров Windows в Service Fabric с помощью журналов Azure Monitor
 
@@ -230,6 +230,6 @@ ms.locfileid: "91840682"
 Теперь, когда вы настроили мониторинг для контейнерного приложения, попробуйте выполнить следующее:
 
 * настройте журналы Azure Monitor для кластера Linux, выполнив действия, аналогичные приведенным выше. Используйте в качестве образца [этот шаблон](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Ubuntu-1-NodeType-Secure-OMS), чтобы внести изменения в шаблон Resource Manager.
-* В журналах Azure Monitor настройте [автоматические оповещения](../azure-monitor/platform/alerts-overview.md), которые помогут выполнять обнаружение и диагностику.
+* В журналах Azure Monitor настройте [автоматические оповещения](../azure-monitor/alerts/alerts-overview.md), которые помогут выполнять обнаружение и диагностику.
 * Просмотрите список [рекомендуемых счетчиков производительности](service-fabric-diagnostics-event-generation-perf.md) Service Fabric, которые можно настроить для кластеров.
-* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/log-query/log-query-overview.md), которые являются частью журналов Azure Monitor.
+* Ознакомьтесь с функциями [поиска по журналам и запросов к журналам](../azure-monitor/logs/log-query-overview.md), которые являются частью журналов Azure Monitor.

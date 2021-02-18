@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5b38da5539cb80110b2a769a219213a5c74e1506
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b57de23bf59f1b9c84674fe95495f980c4594e2a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98198561"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587612"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Базовый план безопасности Azure для функций Azure
 
@@ -207,9 +207,9 @@ ms.locfileid: "98198561"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых параметров и ресурсов, связанных с развертываниями функций Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых параметров или ресурсов. 
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -237,7 +237,7 @@ ms.locfileid: "98198561"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Как настроить функции Azure с помощью Azure Application Insights](./functions-monitoring.md)
 
@@ -255,7 +255,7 @@ ms.locfileid: "98198561"
 
 Если в приложении-функции имеется встроенное настраиваемое ведение журнала безопасности или аудита, включите параметр диагностики "Функтионапплогс" и отправьте журналы в рабочую область Log Analytics, в концентратор событий Azure или в учетную запись хранения Azure для архивации. 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Как включить параметры диагностики (созданные пользователем журналы) для функций Azure](./functions-monitor-log-analytics.md)
 
@@ -275,7 +275,7 @@ ms.locfileid: "98198561"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с приложениями функций в соответствии с нормативными требованиями Организации.
 
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -291,7 +291,7 @@ ms.locfileid: "98198561"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Включение параметров диагностики для функций Azure](./functions-monitor-log-analytics.md)
 
@@ -311,13 +311,13 @@ ms.locfileid: "98198561"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM. 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Включение параметров диагностики для функций Azure](./functions-monitor-log-analytics.md)
 
 - [Включение Application Insights для функций Azure](./configure-monitoring.md#enable-application-insights-integration)
 
-- [Создание оповещений в Azure](../azure-monitor/learn/tutorial-response.md)
+- [Создание оповещений в Azure](../azure-monitor/alerts/tutorial-response.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -631,7 +631,7 @@ ms.locfileid: "98198561"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих приложениях функций, а также в других критических или связанных ресурсах.
 
-- [Как создать оповещения для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 

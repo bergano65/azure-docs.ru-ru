@@ -7,12 +7,12 @@ author: cweining
 ms.author: cweining
 ms.date: 08/06/2018
 ms.reviewer: mbullwin
-ms.openlocfilehash: 317c02fe03a56ea3cd3a98b00f8a0080b3917108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 67e7765a1f46c2be5790c11687e06ea624702b9b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88930287"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589558"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
@@ -27,9 +27,9 @@ Application Insights Profiler поставляется в комплекте с 
 
 Чтобы настроить среду, выполните следующие действия.
 
-1. Profiler поддерживает .NET Framework и .Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС является `Windows Server 2012 R2` или более поздней. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
+1. Profiler поддерживает платформа .NET Framework и .Net Core. Если вы используете платформа .NET Framework, убедитесь, что вы используете [платформа .NET Framework 4.6.1](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно подтвердить, что развернутая ОС является `Windows Server 2012 R2` или более поздней. Profiler поддерживает приложения .NET Core 2,1 и более поздние версии.
 
-1. Найдите расширение [системы диагностики Azure](../platform/diagnostics-extension-overview.md) в файле шаблона развертывания.
+1. Найдите расширение [системы диагностики Azure](../agents/diagnostics-extension-overview.md) в файле шаблона развертывания.
 
 1. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`. Замените значение свойства `ApplicationInsightsProfiler` собственным ключом инструментирования Application Insights:  
 

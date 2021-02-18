@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 02/03/2021
 ms.custom: azure-synapse, sqldbrb=1
-ms.openlocfilehash: e96aa32c6b67290fc4b4ee62ae98c4e72399fd4b
-ms.sourcegitcommit: b85ce02785edc13d7fb8eba29ea8027e614c52a2
+ms.openlocfilehash: 0e85019c8f02b8a4a97426d50a30d047b95378a1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99509593"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572293"
 ---
 # <a name="auditing-for-azure-sql-database-and-azure-synapse-analytics"></a>Аудит для базы данных SQL Azure и Azure синапсе Analytics
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -94,7 +94,7 @@ ms.locfileid: "99509593"
   > [!NOTE]
   > Включение аудита в приостановленном выделенном пуле SQL невозможно. Чтобы включить аудит, отмените приостановку выделенного пула SQL. Дополнительные сведения о [выделенном пуле SQL](../..//synapse-analytics/sql/best-practices-sql-pool.md).
 
-1. Перейдите на [портал Azure](https://portal.azure.com).
+1. Перейдите на [портал Microsoft Azure](https://portal.azure.com).
 2. Перейдите к разделу **Аудит** под заголовком безопасность в **базе данных SQL** или в области **SQL Server** .
 3. Если необходимо настроить политику аудита сервера, выберите ссылку **Просмотреть параметры сервера** на странице аудита базы данных. Вы можете затем просмотреть или изменить параметры аудита сервера. Политики аудита сервера применяются ко всем существующим и вновь созданным базам данных на этом сервере.
 
@@ -139,7 +139,7 @@ AzureDiagnostics
 
    ![LogAnalyticsworkspace](./media/auditing-overview/auditing_select_oms.png)
 
-Дополнительные сведения о Azure Monitor Log Analytics рабочей области см. в статье [Разработка развертывания журналов Azure Monitor](../../azure-monitor/platform/design-logs-deployment.md) .
+Дополнительные сведения о Azure Monitor Log Analytics рабочей области см. в статье [Разработка развертывания журналов Azure Monitor](../../azure-monitor/logs/design-logs-deployment.md) .
    
 ### <a name="audit-to-event-hub-destination"></a><a id="audit-event-hub-destination"></a>Запись журналов аудита в назначение концентратора событий
 
@@ -170,7 +170,7 @@ AzureDiagnostics
     ![Аналитические сведения о безопасности в Log Analytics](media/auditing-overview/auditing-log-analytics-dashboard-data.png)
 
 - Кроме того, к журналам аудита также можно перейти в колонке Log Analytics. Откройте рабочую область Log Analytics и в разделе **General** (Общие сведения) щелкните **Журналы**. Вы можете начать с простого запроса, например *выполните поиск SQLSecurityAuditEvents*, чтобы просмотреть журналы аудита.
-    На этой странице можно также использовать [журналы Azure Monitor](../../azure-monitor/log-query/log-query-overview.md) для расширенного поиска по данным журналов аудита. Журналы Azure Monitor предоставляют аналитические сведения о работе систем в режиме реального времени. Вы можете использовать встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительные полезные сведения о языке и командах поиска по журналам Azure Monitor см. в [этой статье](../../azure-monitor/log-query/log-query-overview.md).
+    На этой странице можно также использовать [журналы Azure Monitor](../../azure-monitor/logs/log-query-overview.md) для расширенного поиска по данным журналов аудита. Журналы Azure Monitor предоставляют аналитические сведения о работе систем в режиме реального времени. Вы можете использовать встроенный поиск и настраиваемые панели мониторинга для быстрого анализа миллионов записей по всем рабочим нагрузкам и серверам. Дополнительные полезные сведения о языке и командах поиска по журналам Azure Monitor см. в [этой статье](../../azure-monitor/logs/log-query-overview.md).
 
 Если журналы аудита записываются в концентратор событий:
 

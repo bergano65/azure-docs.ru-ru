@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f13909d3835bdbd2931277a88244abfae3f80759
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 29c49ceb3647964030f53c94276e831dc0f648c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96467735"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576623"
 ---
 # <a name="azure-monitor-for-windows-virtual-desktop-preview-glossary"></a>Azure Monitor для глоссария виртуальных рабочих столов Windows (Предварительная версия)
 
@@ -24,7 +24,7 @@ ms.locfileid: "96467735"
 
 ## <a name="alerts"></a>видны узлы
 
-Все активные Azure Monitor оповещения, настроенные в подписке и классифицированные как [уровень серьезности 1](#severity-1-alerts) , будут отображаться на странице Обзор. Сведения о настройке оповещений см. в статье [реагирование на события с помощью оповещений Azure Monitor](../azure-monitor/learn/tutorial-response.md).
+Все активные Azure Monitor оповещения, настроенные в подписке и классифицированные как [уровень серьезности 1](#severity-1-alerts) , будут отображаться на странице Обзор. Сведения о настройке оповещений см. в статье [реагирование на события с помощью оповещений Azure Monitor](../azure-monitor/alerts/tutorial-response.md).
 
 ## <a name="available-sessions"></a>Доступные сеансы
 
@@ -128,7 +128,7 @@ ms.locfileid: "96467735"
 |\* \\ Текущий RTT-трафик сети RemoteFX ()|30 секунд|
 |\* \\ Текущая пропускная способность сети RemoteFX ()|30 секунд|
 
-Дополнительные сведения о чтении счетчиков производительности см. в разделе [Настройка счетчиков производительности](../azure-monitor/platform/data-sources-performance-counters.md).
+Дополнительные сведения о чтении счетчиков производительности см. в разделе [Настройка счетчиков производительности](../azure-monitor/agents/data-sources-performance-counters.md).
 
 Дополнительные сведения о счетчиках производительности задержки ввода см. в разделе [счетчики производительности задержки ввода данных пользователем](/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters/).
 
@@ -177,7 +177,7 @@ ms.locfileid: "96467735"
 
 В следующей таблице перечислены обязательные события Windows для Azure Monitor для виртуальных рабочих столов Windows.
 
-|Имя события|Тип события|
+|Имя события.|Тип события|
 |---|---|
 |Приложение|Ошибка и предупреждение|
 |Microsoft-Windows-Терминалсервицес-Ремотеконнектионманажер/администратор|Ошибка, предупреждение и сведения|
@@ -186,9 +186,9 @@ ms.locfileid: "96467735"
 | Microsoft-Фслогикс-Apps/эксплуатация|Ошибка, предупреждение и сведения|
 |Microsoft-Фслогикс-Apps/администратор|Ошибка, предупреждение и сведения|
 
-Дополнительные сведения о событиях Windows см. в разделе [свойства записей событий Windows](../azure-monitor/platform/data-sources-windows-events.md).
+Дополнительные сведения о событиях Windows см. в разделе [свойства записей событий Windows](../azure-monitor/agents/data-sources-windows-events.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы приступить к работе с Azure Monitor для виртуальных рабочих столов Windows, ознакомьтесь со следующими статьями:
 

@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: 730d12558e413d96909914d06187d0d5f89ec661
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: d9624fd899649f4e54c5bd509ed5961b862632dd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567532"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581581"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Шифрование данных с помощью управляемых клиентом ключей для отдельного сервера базы данных Azure для PostgreSQL
 
@@ -117,7 +117,7 @@ Key Vault — это облачная внешняя система управ
 * [Работоспособность ресурсов Azure](../service-health/resource-health-overview.md). Недоступная база данных, которая потеряла доступ к ключу клиента, отображается как недоступная после отклонения первого подключения к базе данных.
 * [Журнал действий](../service-health/alerts-activity-log-service-notifications-portal.md). В случае сбоя доступа к ключу клиента в управляемом клиентом Key Vault в журнал действий добавляются записи. Если для таких событий создать правила генерации оповещений, можно восстанавливать доступ максимально быстро.
 
-* [Группы действий](../azure-monitor/platform/action-groups.md). Определите эти группы для отправки уведомлений и оповещений в соответствии с вашими предпочтениями.
+* [Группы действий](../azure-monitor/alerts/action-groups.md). Определите эти группы для отправки уведомлений и оповещений в соответствии с вашими предпочтениями.
 
 ## <a name="restore-and-replicate-with-a-customers-managed-key-in-key-vault"></a>Восстановление и репликация с помощью управляемого клиентом ключа в Key Vault
 

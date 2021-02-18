@@ -15,12 +15,12 @@ ms.date: 02/12/2021
 ms.author: sethm
 ms.reviewer: thsomasu
 ms.lastreviewed: 11/13/2019
-ms.openlocfilehash: e34fbdca51e7680a80c768e49bae891cb56dfa9d
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: 0f79402956148c566bc34faa88e10895657883c2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100546454"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591734"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы об отправке push-уведомлений с помощью Центров уведомлений Azure
 
@@ -196,7 +196,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 
 - [Получение метрик Azure Monitor с помощью .NET](https://azure.microsoft.com/resources/samples/monitor-dotnet-metrics-api/). В этом примере используются имя пользователя и пароль. Чтобы использовать сертификат, перегрузите метод ФромсервицепринЦипал, чтобы предоставить сертификат, как показано в [этом примере](https://github.com/Azure/azure-libraries-for-net/blob/master/src/ResourceManagement/ResourceManager/Authentication/AzureCredentialsFactory.cs). 
 - [Получение метрик и журналов действий для ресурса](https://azure.microsoft.com/resources/samples/monitor-dotnet-query-metrics-activitylogs/)
-- [Пошаговое руководство по REST API Azure Monitor](../azure-monitor/platform/rest-api-walkthrough.md)
+- [Пошаговое руководство по REST API Azure Monitor](../azure-monitor/essentials/rest-api-walkthrough.md)
 
 > [!NOTE]
 > Успешные уведомления означают, что push-уведомления были доставлены внешнему PNSу (например, APNs для iOS и macOS или FCM для устройств Android). Службы PNS отвечают за доставку уведомлений на целевые устройства. Как правило, служба PNS не предоставляет метрики доставки третьим лицам.  
@@ -211,7 +211,7 @@ Push-уведомления поддерживаются для [iOS](ios-sdk-ge
 [Безопасность]: /previous-versions/azure/azure-services/dn495373(v=azure.100)
 [Безопасные push-уведомления посредством центров уведомлений Azure]: ./notification-hubs-aspnet-backend-ios-push-apple-apns-secure-notification.md
 [Центры уведомлений Azure — рекомендации по диагностике]: ./notification-hubs-push-notification-fixer.md
-[Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
+[Метрики]: ../azure-monitor/essentials/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
 [Экспорт и импорт регистраций]: ./export-modify-registrations-bulk.md
 [Портал Azure]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples

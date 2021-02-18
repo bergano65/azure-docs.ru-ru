@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: troubleshooting
 ms.date: 01/02/2020
-ms.openlocfilehash: cefcd4ce287eecfe2c764d88d5d2233cc8ac0a5c
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 4eeda2e4e418920522f7a65bef68928963c43ad4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753451"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581795"
 ---
 # <a name="troubleshoot-assessmentdependency-visualization"></a>Устранение неполадок с визуализацией оценок и зависимостей
 
@@ -75,7 +75,7 @@ ms.locfileid: "96753451"
 
 - Рекомендации по SKU виртуальной машины зависят от свойств оценки.
 - Это зависит от типа оценки, выполняемой при оценке сервера: на *основе производительности* или *в локальной среде*.
-- Для оценки на основе производительности в ходе оценки серверов учитываются данные об использовании локальных виртуальных машин (ЦП, памяти, диска и использования сети), чтобы определить правильный номер SKU целевой виртуальной машины для локальных виртуальных машин. Оно также добавляет фактор комфорта при определении эффективного использования.
+- При оценке на основе производительности средство оценки сервера обрабатывает данные об использовании локальных виртуальных машин (использование ЦП, памяти, а также дисков и сети) для определения соответствующего целевого номера SKU виртуальной машины для локальных виртуальных машин. Оно также добавляет фактор комфорта при определении эффективного использования.
 - Для локального изменения размера данные о производительности не учитываются, и рекомендуется использовать целевой номер SKU на основе локального выделения.
 
 Чтобы продемонстрировать, как это может повлиять на рекомендации, давайте рассмотрим пример.
@@ -160,12 +160,12 @@ ms.locfileid: "96753451"
 
     ![Состояние MMA](./media/troubleshoot-assessment/mma-properties.png)
 
-Для виртуальных машин Linux убедитесь, что команды установки для MMA и агент зависимостей были успешной. Дополнительные рекомендации по устранению неполадок см. [здесь](../azure-monitor/insights/service-map.md#post-installation-issues).
+Для виртуальных машин Linux убедитесь, что команды установки для MMA и агент зависимостей были успешной. Дополнительные рекомендации по устранению неполадок см. [здесь](../azure-monitor/vm/service-map.md#post-installation-issues).
 
 ## <a name="supported-operating-systems"></a>Поддерживаемые операционные системы
 
-- **MMS Agent**: Ознакомьтесь с поддерживаемыми операционными системами [Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)и [Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems) .
-- **Агент зависимостей**. Поддерживаемые операционные системы [Windows и Linux](../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) .
+- **MMS Agent**: Ознакомьтесь с поддерживаемыми операционными системами [Windows](../azure-monitor/agents/agents-overview.md#supported-operating-systems)и [Linux](../azure-monitor/agents/agents-overview.md#supported-operating-systems) .
+- **Агент зависимостей**. Поддерживаемые операционные системы [Windows и Linux](../azure-monitor/vm/vminsights-enable-overview.md#supported-operating-systems) .
 
 ## <a name="visualize-dependencies-for--hour"></a>Визуализировать зависимости для > часа
 
@@ -198,7 +198,7 @@ ms.locfileid: "96753451"
 
 Собирайте журналы сетевого трафика следующим образом:
 
-1. Войдите на [портал Microsoft Azure](https://portal.azure.com).
+1. Войдите на [портал Azure](https://portal.azure.com).
 2. Нажмите клавишу F12, чтобы запустить Средства для разработчиков. При необходимости снимите флажок  **Очистить записи в** параметрах навигации.
 3. Перейдите на вкладку **сеть** и запустите запись сетевого трафика.
    - В Chrome установите флажок **Preserve log** (Сохранить журнал). Запись должна начаться автоматически. Красный кружок означает, что трафик перехватывается. Если красный круг не отображается, выберите черный круг для начала.
@@ -221,6 +221,6 @@ ms.locfileid: "96753451"
 - Для виртуальных машин Hyper-V данные операционной системы собираются с узла Hyper-V.
 - Для физических серверов он извлекается с сервера.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Создание](how-to-create-assessment.md) или [Настройка](how-to-modify-assessment.md) оценки.

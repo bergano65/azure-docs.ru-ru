@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 01/22/2021
 ms.topic: conceptual
-ms.openlocfilehash: 7cf18b6b677daaf97d425c86a0cad91b3abcb225
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: c95ccb5ea1a23e8173d58bd3a18490e9b8e630e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896958"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581261"
 ---
 # <a name="hybrid-runbook-worker-overview"></a>Обзор гибридной рабочей роли Runbook
 
@@ -20,12 +20,12 @@ ms.locfileid: "98896958"
 
 Существует два типа рабочих ролей Runbook: система и пользователь. В следующей таблице описаны различия между ними.
 
-|Тип | Описание: |
+|Type | Описание: |
 |-----|-------------|
 |**Система** |Поддерживает набор скрытых модулей Runbook, используемых компонентом Управление обновлениями, предназначенным для установки указанных пользователем обновлений на компьютерах под управлением Windows и Linux.<br> Этот тип гибридной рабочей роли Runbook не является членом гибридной группы Runbook Worker, поэтому не выполняет модули Runbook, предназначенные для группы рабочей роли Runbook. |
 |**Пользователь** |Поддерживает пользовательские модули Runbook, предназначенные для непосредственного запуска на компьютере Windows и Linux, которые являются членами одной или нескольких групп Runbook Worker. |
 
-Гибридная Рабочая роль Runbook может запускаться в операционной системе Windows или Linux, и она полагается на [log Analytics агент](../azure-monitor/platform/log-analytics-agent.md) отчетов в [рабочую область Azure Monitor log Analytics](../azure-monitor/platform/design-logs-deployment.md). Рабочая область предназначена не только для наблюдения за машиной поддерживаемой операционной системы, но также для загрузки компонентов, необходимых для установки гибридной рабочей роли Runbook.
+Гибридная Рабочая роль Runbook может запускаться в операционной системе Windows или Linux, и она полагается на [log Analytics агент](../azure-monitor/agents/log-analytics-agent.md) отчетов в [рабочую область Azure Monitor log Analytics](../azure-monitor/logs/design-logs-deployment.md). Рабочая область предназначена не только для наблюдения за машиной поддерживаемой операционной системы, но также для загрузки компонентов, необходимых для установки гибридной рабочей роли Runbook.
 
 Если включена служба автоматизации Azure [Управление обновлениями](./update-management/overview.md) , любой компьютер, подключенный к рабочей области log Analytics, автоматически настраивается в качестве системы Гибридная Рабочая роль Runbook. Сведения о настройке в качестве пользователя гибридной рабочей роли Runbook для [Windows см.](automation-windows-hrw-install.md) в статье Развертывание гибридной [рабочей роли Runbook для Linux.](automation-linux-hrw-install.md)
 
@@ -62,7 +62,7 @@ ms.locfileid: "98896958"
 
 ### <a name="firewall-use"></a>Использование брандмауэра
 
-Если вы используете брандмауэр для ограничения доступа к Интернету, необходимо настроить брандмауэр для разрешения доступа. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей Runbook. См. статью [Настройка шлюза log Analytics для гибридных рабочих ролей Runbook службы автоматизации](../azure-monitor/platform/gateway.md).
+Если вы используете брандмауэр для ограничения доступа к Интернету, необходимо настроить брандмауэр для разрешения доступа. Если в качестве прокси-сервера используется шлюз Log Analytics, он должен быть настроен для гибридных рабочих ролей Runbook. См. статью [Настройка шлюза log Analytics для гибридных рабочих ролей Runbook службы автоматизации](../azure-monitor/agents/gateway.md).
 
 ### <a name="service-tags"></a>Теги служб
 

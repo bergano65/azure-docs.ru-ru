@@ -10,12 +10,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.custom: sqldbrb=1
 ms.date: 06/03/2020
-ms.openlocfilehash: f4da14c1fbdaf71018e62b0f97e288a66edef5c8
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f5c176db4f679c79bb42c6ceb46b3588e9440874
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92677277"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572222"
 ---
 # <a name="sql-database-audit-log-format"></a>Формат журнала аудита базы данных SQL
 
@@ -42,38 +42,38 @@ ms.locfileid: "92677277"
 
 ### <a name="log-analytics"></a>Log Analytics
 
-События аудита записываются в Log Analytics рабочую область, определенную во время настройки аудита, в `AzureDiagnostics` таблицу с категорией `SQLSecurityAuditEvents` . Дополнительную полезную информацию о языке поиска и командах Log Analytics см. в [документации по поиску Log Analytics](../../azure-monitor/log-query/log-query-overview.md).
+События аудита записываются в Log Analytics рабочую область, определенную во время настройки аудита, в `AzureDiagnostics` таблицу с категорией `SQLSecurityAuditEvents` . Дополнительную полезную информацию о языке поиска и командах Log Analytics см. в [документации по поиску Log Analytics](../../azure-monitor/logs/log-query-overview.md).
 
 ## <a name="audit-log-fields"></a><a id="subheading-1"></a>Поля журнала аудита
 
 | Имя (BLOB-объект) | Имя (концентраторы событий/Log Analytics) | Описание | Тип большого двоичного объекта | Тип концентраторов событий и Log Analytics |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
 | action_id | action_id_s | Идентификатор действия. | varchar(4) | строка |
-| action_name | action_name_s | Имя действия | Недоступно | строка |
+| action_name | action_name_s | Имя действия | Н/Д | строка |
 | additional_information | additional_information_s | Дополнительные сведения о событии, хранящиеся в формате XML | nvarchar(4000) | строка |
 | affected_rows | affected_rows_d | Число строк, затронутых запросом | BIGINT | INT |
 | application_name | application_name_s| Имя клиентского приложения | NVARCHAR(128) | строка |
 | audit_schema_version | audit_schema_version_d | Всегда 1 | INT | INT |
 | class_type | class_type_s | Тип проверяемой сущности, на которой выполняется аудит | varchar(2) | строка |
-| class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Недоступно | строка |
+| class_type_desc | class_type_description_s | Описание проверяемой сущности, на которой выполняется аудит | Н/Д | строка |
 | client_ip | client_ip_s | Исходный IP-адрес клиентского приложения | NVARCHAR(128) | строка |
-| connection_id | Недоступно | Идентификатор соединения на сервере | GUID | Недоступно |
+| connection_id | Н/Д | Идентификатор соединения на сервере | Идентификатор GUID | Н/Д |
 | data_sensitivity_information | data_sensitivity_information_s | Типы сведений и метки чувствительности, возвращаемые отслеживаемым запросом, на основе классифицированных столбцов в базе данных. Дополнительные сведения об [обнаружении и классификации данных в базе данных SQL Azure](data-discovery-and-classification-overview.md) | nvarchar(4000) | строка |
 | database_name | database_name_s | Контекст базы данных, в котором произошло действие | sysname | строка |
 | database_principal_id | database_principal_id_d | Идентификатор контекста пользователя базы данных, в котором выполняется действие | INT | INT |
 | database_principal_name | database_principal_name_s | Имя контекста пользователя базы данных, в котором выполняется действие | sysname | строка |
 | duration_milliseconds | duration_milliseconds_d | Длительность выполнения запроса в миллисекундах | BIGINT | INT |
 | event_time | event_time_t | Дата и время срабатывания проверяемого действия | datetime2 | DATETIME |
-| host_name | Недоступно | Имя узла клиента | строка | Недоступно |
+| host_name | Н/Д | Имя узла клиента | строка | Н/Д |
 | is_column_permission | is_column_permission_s | Флаг, обозначающий разрешение уровня столбца. 1 = true, 0 = false | bit | строка |
-| Недоступно | is_server_level_audit_s | Флаг, указывающий, что этот аудит находится на уровне сервера | Недоступно | строка |
+| Н/Д | is_server_level_audit_s | Флаг, указывающий, что этот аудит находится на уровне сервера | Н/Д | строка |
 | object_ id | object_id_d | Идентификатор сущности, над которой выполнен аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | INT | INT |
 | object_name | object_name_s | Имя сущности, для которой проводился аудит. К ним относятся: серверные объекты, базы данных, объекты базы данных и объекты схемы. 0, если сущность является самим сервером или если аудит не выполняется на уровне объектов | sysname | строка |
 | permission_bitmask | permission_bitmask_s | Когда применимо, отображаются предоставленные, запрещенные или отмененные разрешения. | varbinary (16) | строка |
 | response_rows | response_rows_d | Число строк, возвращенных в результирующем наборе | BIGINT | INT |
 | schema_name | schema_name_s | Контекст схемы, в котором выполнялось действие. Значение NULL для аудитов, происходящих за пределами схемы | sysname | строка |
-| Недоступно | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type аудита | Недоступно | строка |
-| sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | GUID |
+| Н/Д | securable_class_type_s | Защищаемый объект, сопоставляемый с class_type аудита | Н/Д | строка |
+| sequence_group_id | sequence_group_id_g | Уникальный идентификатор | varbinary | Идентификатор GUID |
 | sequence_number | sequence_number_d | Отслеживает последовательность записей в одной записи аудита, которая слишком велика для размещения в буфере записи для аудита | INT | INT |
 | server_instance_name | server_instance_name_s | Имя экземпляра сервера, на котором произошел аудит | sysname | строка |
 | server_principal_id | server_principal_id_d | Идентификатор контекста имени входа, в котором выполняется действие | INT | INT |
@@ -92,6 +92,6 @@ ms.locfileid: "92677277"
 | user_defined_event_id | user_defined_event_id_d | Определяемый пользователем идентификатор события, передаваемый в качестве аргумента для sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | smallint | INT |
 | user_defined_information | user_defined_information_s | Определяемые пользователем сведения, передаваемые в качестве аргумента для sp_audit_write. NULL для системных событий (по умолчанию) и ненулевое значение для определяемого пользователем события. Дополнительные сведения см. в разделе [sp_audit_write (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-audit-write-transact-sql) . | nvarchar(4000) | строка |
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об [аудите базы данных SQL Azure](auditing-overview.md).

@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 09/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 2e7e798967541748b5572994d48cb5bdf7474cb1
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4199c5576662eee1dd6cedc388440a71e21f8b74
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182875"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581208"
 ---
 # <a name="forward-azure-automation-job-data-to-azure-monitor-logs"></a>Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
 
@@ -72,7 +72,7 @@ ms.locfileid: "96182875"
 * дскнодестатус
 * Метрики — всего заданий, всего запущенных компьютеров развертывания обновлений, всего запусков развертывания обновлений
 
-Чтобы начать отправку журналов автоматизации в журналы Azure Monitor, ознакомьтесь с разделом [Создание параметров диагностики](../azure-monitor/platform/diagnostic-settings.md) , чтобы понять, какие функции и методы доступны для настройки параметров диагностики для отправки журналов платформы.
+Чтобы начать отправку журналов автоматизации в журналы Azure Monitor, ознакомьтесь с разделом [Создание параметров диагностики](../azure-monitor/essentials/diagnostic-settings.md) , чтобы понять, какие функции и методы доступны для настройки параметров диагностики для отправки журналов платформы.
 
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 
@@ -140,7 +140,7 @@ ms.locfileid: "96182875"
 
    Если вы настроили для рабочей области журналы из более чем одной учетной записи службы автоматизации или подписки, то можете группировать оповещения по подписке или учетной записи службы автоматизации. Имя учетной записи службы автоматизации можно найти в поле `Resource` в результатах поиска `JobLogs`.
 
-3. Чтобы открыть экран **Создание правила**, щелкните **Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/platform/alerts-unified-log.md).
+3. Чтобы открыть экран **Создание правила**, щелкните **Новое правило генерации оповещений** в верхней части страницы. Дополнительные сведения о параметрах настройки оповещения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../azure-monitor/alerts/alerts-unified-log.md).
 
 ### <a name="find-all-jobs-that-have-completed-with-errors"></a>Поиск всех заданий, завершенных с ошибками
 
@@ -192,8 +192,8 @@ AzureDiagnostics
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Чтобы узнать, как создавать поисковые запросы и просматривать журналы заданий службы автоматизации на платформе журналов Azure Monitor, ознакомьтесь со статьей [Поиск в журналах Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+* Чтобы узнать, как создавать поисковые запросы и просматривать журналы заданий службы автоматизации на платформе журналов Azure Monitor, ознакомьтесь со статьей [Поиск в журналах Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 * Чтобы узнать больше о создании и получении выходных данных и сообщений об ошибках для runbook, см. статью [Отслеживание выходных данных runbook](automation-runbook-output-and-messages.md).
 * Дополнительные сведения о выполнении runbook, отслеживании заданий runbook и другие технические подробности см. в статье [Выполнение runbook в службе автоматизации Azure](automation-runbook-execution.md).
-* Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, см. статью [Общие сведения о сборе данных службы хранилища Azure на платформе журналов Azure Monitor](../azure-monitor/platform/resource-logs.md#send-to-log-analytics-workspace).
-* В устранении неполадок с Log Analytics вам может помочь раздел [Почему Log Analytics больше не собирает данные](../azure-monitor/platform/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).
+* Чтобы узнать больше о журналах Azure Monitor и источниках сбора данных, см. статью [Общие сведения о сборе данных службы хранилища Azure на платформе журналов Azure Monitor](../azure-monitor/essentials/resource-logs.md#send-to-log-analytics-workspace).
+* В устранении неполадок с Log Analytics вам может помочь раздел [Почему Log Analytics больше не собирает данные](../azure-monitor/logs/manage-cost-storage.md#troubleshooting-why-log-analytics-is-no-longer-collecting-data).

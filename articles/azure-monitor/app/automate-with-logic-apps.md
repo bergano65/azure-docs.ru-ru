@@ -3,19 +3,19 @@ title: Автоматизация процессов Application Insights Azure 
 description: Узнайте, как можно быстро автоматизировать повторяющиеся процессы, добавив соединитель Application Insights в приложение логики.
 ms.topic: conceptual
 ms.date: 03/11/2019
-ms.openlocfilehash: f6406c2e6fb933c561a8ae54009499768c81a204
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d7ff75be3cb847235405a740df4a20803cdc87b3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90970863"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589924"
 ---
 # <a name="automate-application-insights-processes-by-using-logic-apps"></a>Автоматизация процессов Application Insights с помощью Logic Apps
 
 Постоянно выполняете одинаковые запросы к данным телеметрии, чтобы проверить, что ваша служба работает правильно? Хотите автоматизировать эти запросы для поиска тенденций и аномалий и создавать на их основе собственные рабочие процессы? Соединитель Azure Application Insights для Logic Apps — это подходящий инструмент для этой цели.
 
 > [!NOTE]
-> Соединитель Azure Application Insights был заменен [соединителем Azure Monitor](../platform/logicapp-flow-connector.md) , интегрированным с Azure Active Directory вместо использования ключа API, а также позволяет получать данные из log Analytics рабочей области.
+> Соединитель Azure Application Insights был заменен [соединителем Azure Monitor](../logs/logicapp-flow-connector.md) , интегрированным с Azure Active Directory вместо использования ключа API, а также позволяет получать данные из log Analytics рабочей области.
 
 Благодаря этой интеграции можно автоматизировать множество процессов, не написав ни строчки кода. Можно создать приложение логики с соединителем Application Insights, чтобы быстро автоматизировать любой процесс Application Insights. 
 
@@ -36,7 +36,7 @@ ms.locfileid: "90970863"
 
     ![Окно конструктора приложений логики](./media/automate-with-logic-apps/2logicappdesigner.png)
 
-1. В поле  **Interval (интервал** ) введите **1** , а затем — поле**Frequency (периодичность** ) и выберите Day ( **день**).
+1. В поле  **Interval (интервал** ) введите **1** , а затем — поле **Frequency (периодичность** ) и выберите Day ( **день**).
 
     ![Окно "Повторение" в конструкторе приложений логики](./media/automate-with-logic-apps/3recurrence.png)
 
@@ -45,7 +45,7 @@ ms.locfileid: "90970863"
 
 1. В поле поиска **Выберите действие** введите **Azure Application Insights**.
 
-1. В разделе **действия**щелкните **Azure Application Insights — визуализировать аналитический запрос**.
+1. В разделе **действия** щелкните **Azure Application Insights — визуализировать аналитический запрос**.
 
     ![Окно "Выберите действие" в конструкторе приложений логики](./media/automate-with-logic-apps/4visualize.png)
 
@@ -95,7 +95,7 @@ ms.locfileid: "90970863"
 
 1. В окне **Отправка сообщения электронной почты** выполните следующие действия:
 
-   a. Введите адрес электронной почты получателя.
+   а. Введите адрес электронной почты получателя.
 
    b. Введите тему сообщения.
 
@@ -109,7 +109,7 @@ ms.locfileid: "90970863"
 
 1. В меню динамического содержимого выполните следующее.
 
-    a. Выберите **Имя вложения**.
+    а. Выберите **Имя вложения**.
 
     b. Выберите **Содержимое вложения**.
     
@@ -130,7 +130,7 @@ ms.locfileid: "90970863"
 
 ## <a name="next-steps"></a>Дальнейшие шаги
 
-- Узнайте больше о создании [запросов Analytics](../log-query/get-started-queries.md).
+- Узнайте больше о создании [запросов Analytics](../logs/get-started-queries.md).
 - Дополнительные сведения о [Logic Apps](../../logic-apps/logic-apps-overview.md).
 
 

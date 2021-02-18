@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 4694b6ac829c42f20c6783810c248ee18d220433
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c3dcb4a7b92f5aab1336e49a7d299614855b48fd
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91965766"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591164"
 ---
 # <a name="understand-a-system-reboot-for-azure-vm"></a>Описание перезапуска системы для виртуальной машины Azure
 
@@ -64,7 +64,7 @@ Microsoft Azure периодически выполняет обновления
 
 ### <a name="user-initiated-reboot-or-shutdown-actions"></a>Перезапуск, инициированный пользователем, и действия по завершению работы
 
-Если выполнить перезагрузку из портал Azure, Azure PowerShell, интерфейса командной строки или REST API, это событие можно найти в [журнале действий Azure](../../azure-monitor/platform/platform-logs-overview.md).
+Если выполнить перезагрузку из портал Azure, Azure PowerShell, интерфейса командной строки или REST API, это событие можно найти в [журнале действий Azure](../../azure-monitor/essentials/platform-logs-overview.md).
 
 Если вы выполняете это действие из операционной системы виртуальной машины, это событие можно найти в журналах системы.
 

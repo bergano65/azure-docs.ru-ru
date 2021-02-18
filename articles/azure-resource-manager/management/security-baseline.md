@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/30/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b4f0c64abf150165e3239e78e8cf9b824b34eed6
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 5e44515c8ca71d115ced65c9123e2b1ae3bdf23a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202374"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578237"
 ---
 # <a name="azure-security-baseline-for-azure-resource-manager"></a>Базовый план безопасности Azure для Azure Resource Manager
 
@@ -31,9 +31,9 @@ ms.locfileid: "98202374"
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md) 
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../../azure-monitor/learn/quick-collect-azurevm.md) 
+- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../../azure-monitor/vm/quick-collect-azurevm.md) 
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -45,9 +45,9 @@ ms.locfileid: "98202374"
 
 **Руководство**. Azure Resource Manager использует журналы действий, которые включаются автоматически, для включения источника событий, даты, пользователя, метки времени, исходных адресов, адресов назначения и других полезных элементов.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../../azure-monitor/essentials/platform-logs-overview.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -61,9 +61,9 @@ ms.locfileid: "98202374"
 
 - [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md) 
 
-- [Приступая к работе с Log Analytics запросами](../../azure-monitor/log-query/log-analytics-tutorial.md) 
+- [Приступая к работе с Log Analytics запросами](../../azure-monitor/logs/log-analytics-tutorial.md) 
 
-- [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -77,7 +77,7 @@ ms.locfileid: "98202374"
 
 - [Управление оповещениями в центре безопасности Azure](../../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Как оповещать данные журнала Log Analytics](../../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -261,7 +261,7 @@ ms.locfileid: "98202374"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений при внесении изменений в критические ресурсы Azure.
 
-- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

@@ -6,12 +6,12 @@ ms.service: cache
 ms.topic: conceptual
 ms.date: 08/22/2017
 ms.author: yegu
-ms.openlocfilehash: c13821544ff9725a387534370fc716c70072bb85
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: ba021d280f71504ad5c1e1aea0dc1c8c6b507b1e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99831779"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581077"
 ---
 # <a name="how-to-configure-azure-cache-for-redis"></a>Настройка кэша Azure для Redis
 В этом разделе описаны конфигурации, доступные для экземпляров кэша Azure для Redis. В этом разделе также описывается конфигурация сервера Redis по умолчанию для экземпляров кэша Azure для Redis.
@@ -341,10 +341,10 @@ ms.locfileid: "99831779"
 
 ### <a name="diagnostics"></a>Диагностика
 
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/essentials/data-platform-metrics.md), а затем удаляются. Чтобы сохранить метрики кэша дольше, чем на 30 дней, щелкните **Диагностика**, чтобы [настроить учетную запись хранения](cache-how-to-monitor.md#export-cache-metrics), используемую для хранения диагностических данных кэша.
 
 >[!NOTE]
->Помимо архивации метрик кэша в хранилище, их также можно передать [в концентратор событий или отправить в журналы Azure Monitor](../azure-monitor/platform/stream-monitoring-data-event-hubs.md).
+>Помимо архивации метрик кэша в хранилище, их также можно передать [в концентратор событий или отправить в журналы Azure Monitor](../azure-monitor/essentials/stream-monitoring-data-event-hubs.md).
 >
 >
 
@@ -501,5 +501,5 @@ shard1>get myKey
 
 Сведения о перемещении ресурсов из одной группы ресурсов в другую, а также из одной подписки в другую см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/management/move-resource-group-and-subscription.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Дополнительные сведения о работе с командами Redis см. в разделе [как выполнять команды Redis?](cache-development-faq.md#how-can-i-run-redis-commands)

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 02/02/2021
 ms.author: alkohli
-ms.openlocfilehash: 171b4dbfb2a5852e270c483a28cad31f97dcb42b
-ms.sourcegitcommit: 740698a63c485390ebdd5e58bc41929ec0e4ed2d
+ms.openlocfilehash: 199ec8e2f1e8eb74d971286a4fc6180eb8b72f2a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/03/2021
-ms.locfileid: "99493918"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595980"
 ---
 # <a name="enable-azure-monitor-on-your-azure-stack-edge-pro-gpu-device"></a>Включение Azure Monitor на устройстве Azure Stackного графического процессора Pro
 
@@ -49,7 +49,7 @@ ms.locfileid: "99493918"
 
         ![Обзор и создание для Log Analytics рабочей области](media/azure-stack-edge-gpu-enable-azure-monitor/create-log-analytics-workspace-review-create-1.png)
 
-Дополнительные сведения см. в статье [создание log Analytics рабочей области с помощью портал Azure](../azure-monitor/learn/quick-create-workspace.md).
+Дополнительные сведения см. в статье [создание log Analytics рабочей области с помощью портал Azure](../azure-monitor/logs/quick-create-workspace.md).
 
 
 
@@ -57,7 +57,7 @@ ms.locfileid: "99493918"
 
 Чтобы включить аналитику контейнера в рабочей области, выполните следующие действия. 
 
-1. Выполните подробные инструкции по [добавлению решения Azure Monitor Containers](../azure-monitor/insights/container-insights-hybrid-setup.md#how-to-add-the-azure-monitor-containers-solution). Используйте следующий файл шаблона `containerSolution.json` :
+1. Выполните подробные инструкции по [добавлению решения Azure Monitor Containers](../azure-monitor/containers/container-insights-hybrid-setup.md#how-to-add-the-azure-monitor-containers-solution). Используйте следующий файл шаблона `containerSolution.json` :
 
     ```yml
     {
@@ -238,7 +238,7 @@ ms.locfileid: "99493918"
 
     ![Метрики в рабочей области Log Analytics](media/azure-stack-edge-gpu-enable-azure-monitor/log-analytics-workspace-metrics-1.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [отслеживать рабочие нагрузки Kubernetes с помощью панели мониторинга Kubernetes](azure-stack-edge-gpu-monitor-kubernetes-dashboard.md).
 - Узнайте, как [управлять уведомлениями о событиях устройств](azure-stack-edge-gpu-manage-device-event-alert-notifications.md). 

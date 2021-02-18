@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 05/04/2020
-ms.openlocfilehash: a85bf6510163c47fa39bdb28debff806e1812f58
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d37465223000399aa42895626c48426ddadc0c72
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499277"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592703"
 ---
 # <a name="create-alerts-for-azure-sql-managed-instance-using-the-azure-portal"></a>Создание оповещений для Управляемого экземпляра SQL на портале Azure.
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -41,7 +41,7 @@ ms.locfileid: "96499277"
 * Вызов Runbook Azure
 * Вызов внешней системы, совместимой с ITSM
 
-Вы можете настроить и получить сведения о правилах генерации оповещений с помощью [портал Azure, PowerShell или Azure CLI](../../azure-monitor/platform/alerts-classic-portal.md) или [Azure Monitor REST API](/rest/api/monitor/alertrules). 
+Вы можете настроить и получить сведения о правилах генерации оповещений с помощью [портал Azure, PowerShell или Azure CLI](../../azure-monitor/alerts/alerts-classic-portal.md) или [Azure Monitor REST API](/rest/api/monitor/alertrules). 
 
 ## <a name="alerting-metrics-available-for-managed-instance"></a>Метрики предупреждений, доступные для управляемого экземпляра
 
@@ -113,7 +113,7 @@ ms.locfileid: "96499277"
 ## <a name="verifying-alerts"></a>Проверка предупреждений
 
 > [!NOTE]
-> Сведения о том, как скрывать предупреждения, см. в разделе [интервал of Alerts using Rule Actions](../../azure-monitor/platform/alerts-action-rules.md#suppression-of-alerts).
+> Сведения о том, как скрывать предупреждения, см. в разделе [интервал of Alerts using Rule Actions](../../azure-monitor/alerts/alerts-action-rules.md#suppression-of-alerts).
 
 После настройки правила предупреждения убедитесь, что вы удовлетворены триггером предупреждения и его частотой. В примере, приведенном на этой странице, для настройки предупреждения об используемом пространстве хранилища, если параметр оповещения был электронной почтой, вы можете получить сообщение электронной почты, как показано ниже.
 
@@ -140,10 +140,10 @@ ms.locfileid: "96499277"
 
    Отобразится список существующих предупреждений. Выберите отдельное существующее правило генерации оповещений для управления. Существующие активные правила могут быть изменены и настроены в предпочтениях. Активные правила также могут быть приостановлены без удаления. 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
-* Дополнительные сведения о Azure Monitor системе предупреждений см. [в разделе Обзор оповещений в Microsoft Azure](../../azure-monitor/platform/alerts-overview.md)
-* Дополнительные сведения об оповещениях метрик см. в статье Общие сведения о [работе оповещений метрик в Azure Monitor](../../azure-monitor/platform/alerts-metric-overview.md)
-* Сведения о настройке веб-перехватчика в оповещениях см. в разделе [вызов веб-перехватчика с классическим оповещением метрики](../../azure-monitor/platform/alerts-webhooks.md) .
+* Дополнительные сведения о Azure Monitor системе предупреждений см. [в разделе Обзор оповещений в Microsoft Azure](../../azure-monitor/alerts/alerts-overview.md)
+* Дополнительные сведения об оповещениях метрик см. в статье Общие сведения о [работе оповещений метрик в Azure Monitor](../../azure-monitor/alerts/alerts-metric-overview.md)
+* Сведения о настройке веб-перехватчика в оповещениях см. в разделе [вызов веб-перехватчика с классическим оповещением метрики](../../azure-monitor/alerts/alerts-webhooks.md) .
 * Дополнительные сведения о настройке оповещений и управлении ими с помощью PowerShell см. в разделе [правила действий](/powershell/module/az.monitor/add-azmetricalertrulev2) .
 * Дополнительные сведения о настройке оповещений и управлении ими с помощью API см. в [справочнике по Azure Monitor REST API](/rest/api/monitor/)

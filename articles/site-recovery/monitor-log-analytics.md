@@ -7,16 +7,16 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/15/2019
 ms.author: raynew
-ms.openlocfilehash: e3d3ce8218030bc8ba6c59b26b7360bf2299e02a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 308e1bcf042feb15179d32844d8c569af6166619
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499821"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571673"
 ---
 # <a name="monitor-site-recovery-with-azure-monitor-logs"></a>Мониторинг Site Recovery с помощью журналов Azure Monitor
 
-В этой статье описывается мониторинг компьютеров, реплицированных с помощью Azure [Site Recovery](site-recovery-overview.md), с помощью [журналов Azure Monitor](../azure-monitor/platform/data-platform-logs.md)и [log Analytics](../azure-monitor/log-query/log-query-overview.md).
+В этой статье описывается мониторинг компьютеров, реплицированных с помощью Azure [Site Recovery](site-recovery-overview.md), с помощью [журналов Azure Monitor](../azure-monitor/logs/data-platform-logs.md)и [log Analytics](../azure-monitor/logs/log-query-overview.md).
 
 Журналы Azure Monitor предоставляют платформу данных журнала, которая собирает журналы действий и ресурсов, а также другие данные мониторинга. В журналах Azure Monitor используется Log Analytics для написания и тестирования запросов журналов, а также для интерактивного анализа данных журнала. Вы можете визуализировать и запрашивать результаты журнала, а также настраивать оповещения для выполнения действий на основе наблюдаемых данных.
 
@@ -35,8 +35,8 @@ ms.locfileid: "96499821"
 Вам потребуется следующее.
 
 - По крайней мере один компьютер, защищенный в хранилище служб восстановления.
-- Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/learn/quick-create-workspace.md) настройке рабочей области.
-- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/log-query/log-analytics-tutorial.md).
+- Рабочая область Log Analytics для хранения журналов Site Recovery. [Сведения о](../azure-monitor/logs/quick-create-workspace.md) настройке рабочей области.
+- Основные сведения о том, как писать, выполнять и анализировать запросы журналов в Log Analytics. [Подробнее](../azure-monitor/logs/log-analytics-tutorial.md).
 
 Перед началом работы рекомендуется ознакомиться с [общими вопросами мониторинга](monitoring-common-questions.md) .
 
@@ -62,9 +62,9 @@ ms.locfileid: "96499821"
 1. Перейдите в рабочую область Log Analytics и щелкните **Дополнительные параметры**.
 2. Щелкните страницу **подключенные источники** и выберите **серверы Windows**.
 3. Скачайте агент Windows (64 bit) на сервере обработки. 
-4. [Получение идентификатора и ключа рабочей области](../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key)
-5. [Настройка агента для использования TLS 1,2](../azure-monitor/platform/agent-windows.md#configure-agent-to-use-tls-12)
-6. [Завершите установку агента](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard) , указав полученный идентификатор и ключ рабочей области.
+4. [Получение идентификатора и ключа рабочей области](../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key)
+5. [Настройка агента для использования TLS 1,2](../azure-monitor/agents/agent-windows.md#configure-agent-to-use-tls-12)
+6. [Завершите установку агента](../azure-monitor/agents/agent-windows.md#install-agent-using-setup-wizard) , указав полученный идентификатор и ключ рабочей области.
 7. После завершения установки перейдите в Log Analytics рабочую область и щелкните **Дополнительные параметры**. Перейдите на страницу **данные** и щелкните **счетчики производительности Windows** еще больше. 
 8. Щелкните **"+"** , чтобы добавить следующие два счетчика с интервалом выборки в 300 секунд:
 
@@ -76,7 +76,7 @@ ms.locfileid: "96499821"
 
 ## <a name="query-the-logs---examples"></a>Запрос журналов — примеры
 
-Данные из журналов извлекаются с помощью запросов журналов, написанных на [языке запросов Kusto](../azure-monitor/log-query/get-started-queries.md). В этом разделе приводится несколько примеров распространенных запросов, которые можно использовать для мониторинга Site Recovery.
+Данные из журналов извлекаются с помощью запросов журналов, написанных на [языке запросов Kusto](../azure-monitor/logs/get-started-queries.md). В этом разделе приводится несколько примеров распространенных запросов, которые можно использовать для мониторинга Site Recovery.
 
 > [!NOTE]
 > В некоторых примерах используется **replicationProviderName_s** задано значение **A2A**. При этом будут извлечены виртуальные машины Azure, которые реплицируются в дополнительный регион Azure, с помощью Site Recovery. В этих примерах можно заменить **A2A** на **InMageAzureV2**, если вы хотите получить локальные виртуальные машины VMware или физические серверы, которые реплицируются в Azure с помощью Site Recovery.
@@ -252,7 +252,7 @@ AzureDiagnostics 
 
 ## <a name="set-up-alerts---examples"></a>Настройка оповещений — примеры
 
-Вы можете настроить Site Recovery оповещения на основе Azure Monitor данных. Дополнительные [сведения](../azure-monitor/platform/alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) о настройке оповещений журнала. 
+Вы можете настроить Site Recovery оповещения на основе Azure Monitor данных. Дополнительные [сведения](../azure-monitor/alerts/alerts-log.md#create-a-log-alert-rule-with-the-azure-portal) о настройке оповещений журнала. 
 
 > [!NOTE]
 > В некоторых примерах используется **replicationProviderName_s** задано значение **A2A**. Этот параметр задает оповещения для виртуальных машин Azure, которые реплицируются в дополнительный регион Azure. В этих примерах можно заменить **A2A** на **InMageAzureV2** , если вы хотите настроить оповещения для локальных виртуальных машин VMware или физических серверов, реплицированных в Azure.
@@ -359,6 +359,6 @@ AzureDiagnostics  
 
 Для предупреждения установите **пороговое значение** 1, а **период** — 1440 минут, чтобы проверить ошибки за последний день.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Дополнительные сведения о](site-recovery-monitor-and-troubleshoot.md) встроенном мониторинге Site Recovery.

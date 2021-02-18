@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 07/13/2017
-ms.openlocfilehash: ee5aec2e483f41c73d57fc1d91427e5657bda3e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9fce67c0ffe1951b0bfc325603b6d8f985dd804d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318000"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592193"
 ---
 # <a name="plan-hyper-v-virtual-machine-capacity-with-the-capacity-and-performance-solution-deprecated"></a>Планирование емкости виртуальных машин Hyper-V с помощью решения Емкость и производительность (не рекомендуется)
 
@@ -41,10 +41,10 @@ ms.locfileid: "87318000"
 
 | Подключенный источник | Поддержка | Описание |
 |---|---|---|
-| [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
-| [Группы управления SCOM](../platform/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
-| [Учетная запись хранения Azure](../platform/resource-logs.md#send-to-log-analytics-workspace) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
+| [Агенты Windows](../agents/agent-windows.md) | Да | Решение собирает сведения о емкости и производительности из агентов Windows. |
+| [Агенты Linux](../vm/quick-collect-linux-computer.md) | Нет    | Решение не собирает сведения о емкости и производительности из прямых агентов Linux.|
+| [Группы управления SCOM](../agents/om-agents.md) | Да |Решение собирает сведения о емкости и производительности из агентов в подключенной группе управления SCOM. Прямое подключение агента SCOM к Log Analytics не требуется.|
+| [Учетная запись хранения Azure](../essentials/resource-logs.md#send-to-log-analytics-workspace) | Нет | Служба хранилища Azure не содержит сведения о емкости и производительности.|
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -72,7 +72,7 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 
 При обновлении решения "Емкость и производительность" номер версии изменится.
 
-Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../platform/om-agents.md).
+Дополнительные сведения об обновлении пакетов управления для решений см. в статье [Подключение Operations Manager к Log Analytics](../agents/om-agents.md).
 
 ## <a name="using-the-solution"></a>Использование решения
 
@@ -128,6 +128,6 @@ New Management Pack with id:"Microsoft.IntelligencePacks.CapacityPerformance", v
 | Показатель общей задержки на всех общих томах кластера | Perf &#124; where ObjectName == "Capacity and Performance" and (CounterName == "CSV Read Latency" or CounterName == "CSV Write Latency") &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), CounterName, InstanceName |
 
 
-## <a name="next-steps"></a>Дальнейшие действия
-* Используйте [поиск по журналам в Log Analytics](../log-query/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.
+## <a name="next-steps"></a>Дальнейшие шаги
+* Используйте [поиск по журналам в Log Analytics](../logs/log-query-overview.md), чтобы просмотреть подробные сведения о емкости и производительности.
 

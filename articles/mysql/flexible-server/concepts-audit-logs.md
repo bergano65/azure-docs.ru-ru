@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 9/21/2020
-ms.openlocfilehash: 5aab78ad99b80ff1d7be92bd36847b01dbc0e33b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: d38a0ea7307584c25ddec9389feaef7518bcf925
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542224"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591756"
 ---
 # <a name="track-database-activity-with-audit-logs-in-azure-database-for-mysql-flexible-server"></a>Мониторинг активности базы данных с помощью журналов аудита в базе данных Azure для гибкого сервера MySQL
 
@@ -50,7 +50,7 @@ ms.locfileid: "94542224"
 
 ## <a name="access-audit-logs"></a>Доступ к журналам аудита
 
-Журналы аудита интегрируются с Azure Monitor параметрами диагностики. После включения журналов аудита на гибком сервере MySQL их можно отправить в журналы Azure Monitor, концентраторы событий или службу хранилища Azure. Дополнительные сведения о параметрах диагностики см. в [документации по журналам диагностики](../../azure-monitor/platform/platform-logs-overview.md). Дополнительные сведения о включении параметров диагностики в портал Azure см. в [статье о портале журналов аудита](how-to-configure-audit-logs-portal.md#set-up-diagnostics).
+Журналы аудита интегрируются с Azure Monitor параметрами диагностики. После включения журналов аудита на гибком сервере MySQL их можно отправить в журналы Azure Monitor, концентраторы событий или службу хранилища Azure. Дополнительные сведения о параметрах диагностики см. в [документации по журналам диагностики](../../azure-monitor/essentials/platform-logs-overview.md). Дополнительные сведения о включении параметров диагностики в портал Azure см. в [статье о портале журналов аудита](how-to-configure-audit-logs-portal.md#set-up-diagnostics).
 
 В следующих разделах описываются выходные данные журналов аудита MySQL на основе типа события. Порядок появления выбранных полей зависит от выбранного метода вывода.
 
@@ -80,7 +80,7 @@ ms.locfileid: "94542224"
 | `db_s` | Имя базы данных, подключенной к |
 | `\_ResourceId` | Универсальный код ресурса (URI) |
 
-### <a name="general"></a>Общее
+### <a name="general"></a>Общие сведения
 
 Приведенная ниже схема относится к типам событий GENERAL, DML_SELECT, DML_NONSELECT, DML, DDL, ДКЛ и ADMIN.
 
@@ -195,7 +195,7 @@ ms.locfileid: "94542224"
     | order by TimeGenerated asc nulls last
     ``` 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [журналах медленных запросов](concepts-slow-query-logs.md)
 - Настройка журналов запросов аудита из [портал Azure](how-to-configure-audit-logs-portal.md)
 <!-- - [How to configure audit logs in the Azure portal](howto-configure-audit-logs-portal.md)-->

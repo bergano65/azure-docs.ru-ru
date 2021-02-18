@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: ec605fd30252b9a0cfb80d0bc3ff145ed3b5a1d4
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: cde84a018d307bada6a6b6f3b5467b8addd007b1
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573315"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571436"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Устранение неполадок производительности виртуальных машин Azure в Linux или Windows
 
@@ -30,7 +30,7 @@ ms.locfileid: "98573315"
 
 ### <a name="azure-iaas-virtual-machine-monitoring"></a>Мониторинг виртуальных машин IAAS Azure
 
-Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](../../azure-monitor/learn/tutorial-resource-logs.md). Если вы видите следующее, скорее всего, диагностика не включена.
+Для мониторинга гостевой виртуальной машины используйте наблюдение за виртуальными машинами Azure, которое предупреждает вас о некоторых условиях высокого уровня ресурсов. Чтобы проверить, включена ли диагностика виртуальной машины, ознакомьтесь с [обзором журналов ресурсов Azure](../../azure-monitor/essentials/tutorial-resource-logs.md). Если вы видите следующее, скорее всего, диагностика не включена.
 
 ![Мониторинг не включен](media/troubleshoot-performance-virtual-machine-linux-windows/1-virtual-machines-monitoring-not-enabled.png)
  
@@ -101,7 +101,7 @@ ms.locfileid: "98573315"
 
 ### <a name="cpu-observe-trends"></a>Тенденции использования ЦП
 
-При рассмотрении проблем с производительностью учитывайте тенденции и выясните, повлияли ли они на вас. В следующих разделах мы будем использовать графы мониторинга с портала для отображения тенденций. Они также могут быть полезны при перекрестных ссылках на поведение ресурсов за тот же период времени. Чтобы настроить диаграммы, щелкните [Azure Monitor платформа данных](../../azure-monitor/platform/data-platform.md).
+При рассмотрении проблем с производительностью учитывайте тенденции и выясните, повлияли ли они на вас. В следующих разделах мы будем использовать графы мониторинга с портала для отображения тенденций. Они также могут быть полезны при перекрестных ссылках на поведение ресурсов за тот же период времени. Чтобы настроить диаграммы, щелкните [Azure Monitor платформа данных](../../azure-monitor/data-platform.md).
 
 Перегруженный — перегруженный может быть связан с запланированной задачей или известным событием. Если вы можете определить задачу, определите, выполняется ли задача с требуемым уровнем производительности. Если производительность приемлема, вам может не потребоваться увеличивать ресурсы.
 
@@ -248,7 +248,7 @@ AverageE2ELatency представляет задержку клиента. Пр
 
 * [Использование хранилища Azure класса Premium с SQL Server](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-server-premium-storage)
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Если вам нужна дополнительная помощь в любой момент в этой статье, обратитесь к экспертам по Azure на [форумах MSDN Azure и Stack overflow](https://azure.microsoft.com/support/forums/).
 

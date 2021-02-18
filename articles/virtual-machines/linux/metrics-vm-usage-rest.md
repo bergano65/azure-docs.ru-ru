@@ -8,12 +8,12 @@ ms.custom: REST
 ms.topic: how-to
 ms.date: 06/13/2018
 ms.author: routlaw
-ms.openlocfilehash: 9430eaeb3ba22bd0d9fc0675ab97c84944a0cf7c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: a7237bfc82a932b774b4b6ef293c242a84fd75af
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737852"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591211"
 ---
 # <a name="get-virtual-machine-usage-metrics-using-the-rest-api"></a>Получение метрик использования виртуальной машины с помощью REST API
 
@@ -23,7 +23,7 @@ ms.locfileid: "98737852"
 
 ## <a name="build-the-request"></a>Создание запроса
 
-Используйте следующий запрос GET для сбора с виртуальной машины [метрики ЦП в процентах](../../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines)
+Используйте следующий запрос GET для сбора с виртуальной машины [метрики ЦП в процентах](../../azure-monitor/essentials/metrics-supported.md#microsoftcomputevirtualmachines)
 
 ```http
 GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmname}/providers/microsoft.insights/metrics?api-version=2018-01-01&metricnames=Percentage%20CPU&timespan=2018-06-05T03:00:00Z/2018-06-07T03:00:00Z
@@ -50,7 +50,7 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 | Интервал времени | Строка, в следующем формате `startDateTime_ISO/endDateTime_ISO`, определяет диапазон времени для возвращаемых метрик. Этот необязательный параметр имеет значение для возврата суточных данных в примере. |
 | &nbsp; | &nbsp; |
 
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 
 Для этой операции текст запроса не требуется.
 

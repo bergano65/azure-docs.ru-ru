@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 2887b12e7ce24e9c5a881a2b3edeebb258532a49
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 36d5eba344906ca03b137efb220f54dc3a11eb6d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736496"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572807"
 ---
 # <a name="azure-security-baseline-for-azure-advisor"></a>Базовый план безопасности Azure для помощника по Azure
 
@@ -227,9 +227,9 @@ ms.locfileid: "98736496"
 
 Журналы действий можно использовать для поиска ошибок при устранении неполадок или для мониторинга того, как пользователь в вашей организации изменил ресурс.
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -243,7 +243,7 @@ ms.locfileid: "98736496"
 
 Кроме того, включите и подключите данные к Azure Sentinel или сторонним SIEM. Многие организации предпочитают использовать метку Azure для "горячих" данных, которые часто используются, а служба хранилища Azure — для "холодного" данных, которые используются реже.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -256,9 +256,9 @@ ms.locfileid: "98736496"
 **Руководство**. Убедитесь, что для всех учетных записей хранения log Analytics или рабочих областей, используемых для хранения журналов помощника по Azure, задан срок хранения журнала в соответствии с нормативными требованиями вашей организации.
 В Azure Monitor можно задать срок хранения Log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте службы хранилища Azure, Data Lake или Log Analytics учетные записи рабочих областей для долгосрочного и архивного хранения.
 
-- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md) 
+- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md) 
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
