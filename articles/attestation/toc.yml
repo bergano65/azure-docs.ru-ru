@@ -65,3 +65,6 @@
       href: troubleshoot-guide.md
     - name: Протокол аттестации VBS и TPM
       href: virtualization-based-security-protocol.md
+    - name: Встроенные компоненты Политики Azure
+      displayName: 'samples, policies, definitions'
+      href: ./policy-reference.md
