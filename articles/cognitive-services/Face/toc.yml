@@ -66,8 +66,8 @@
               href: build-enrollment-app.md
 - name: Справочник
   items:
-    - name: REST API
-      href: 'https://docs.microsoft.com/rest/api/face/'
+    - name: API Распознавания лиц
+      href: APIReference.md
     - name: Пакеты SDK
       items:
         - name: .NET
