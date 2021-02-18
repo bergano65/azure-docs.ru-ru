@@ -6,12 +6,12 @@ ms.author: panshar
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 10/22/2019
-ms.openlocfilehash: face3d02ee72d1e05c6c08330dae4fffc2fd0e0b
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: bfb4db5d3ebf69f9c7f552c175d33a8b817d1562
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754255"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595136"
 ---
 # <a name="delete-an-azure-migrate-project"></a>Удаление проекта службы "Миграция Azure"
 
@@ -27,7 +27,7 @@ ms.locfileid: "96754255"
     - Рабочая область не удаляется автоматически. Удалите ее вручную.
     - Прежде чем удалить рабочую область, убедитесь, что она используется. Ту же рабочую область Log Analytics можно использовать для нескольких сценариев.
     - Перед удалением проекта можно найти ссылку на рабочую область в разделе " **Миграция Azure — серверы**  >  **Миграция Azure — Оценка** серверов" в **рабочей области OMS**.
-    - Чтобы удалить рабочую область после удаления проекта, найдите рабочую область в соответствующей группе ресурсов и следуйте [этим инструкциям](../azure-monitor/platform/delete-workspace.md).
+    - Чтобы удалить рабочую область после удаления проекта, найдите рабочую область в соответствующей группе ресурсов и следуйте [этим инструкциям](../azure-monitor/logs/delete-workspace.md).
 
 
 ## <a name="delete-a-project"></a>Удаление проекта
@@ -76,6 +76,6 @@ HyperV * KV | Хранилище ключей
 "Имя_проекта" — Мигратеваулт-* | Хранилище Служб восстановления
 
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Узнайте, как добавить дополнительные средства [оценки](how-to-assess.md) и [миграции](how-to-migrate.md) . 

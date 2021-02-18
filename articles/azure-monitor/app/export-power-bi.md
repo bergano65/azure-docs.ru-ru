@@ -3,12 +3,12 @@ title: Экспорт в Power BI из Azure Application Insights | Докуме
 description: Аналитические запросы можно просматривать в Power BI.
 ms.topic: conceptual
 ms.date: 08/10/2018
-ms.openlocfilehash: 1e88d60cd9a9d0e6267998237b33a361b12ffd84
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4bdae09d193d5ae9c59fe9352e07b8219a76841d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187006"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584304"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
 [Power BI](https://www.powerbi.com/) — это набор бизнес-инструментов для анализа данных и обмена сведениями. На каждом устройстве доступны панели мониторинга с широкими возможностями. Вы можете объединять данные из различных источников, в том числе аналитические запросы из [ Application Insights](./app-insights-overview.md).
@@ -31,7 +31,7 @@ ms.locfileid: "96187006"
 Установите [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
 
 ### <a name="export-an-analytics-query"></a>Экспорт запроса аналитики
-1. [Откройте средство аналитики и напишите запрос](../log-query/log-analytics-tutorial.md).
+1. [Откройте средство аналитики и напишите запрос](../logs/log-analytics-tutorial.md).
 2. Протестируйте запрос и откорректируйте его до необходимой степени. Прежде чем экспортировать запрос, убедитесь, что он выполняется в Analytics надлежащим образом.
 3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)**. Сохраните текстовый файл.
    
@@ -144,6 +144,6 @@ ms.locfileid: "96187006"
 
 После первоначального импорта панель мониторинга и отчеты продолжают обновляться ежедневно. При этом можно управлять расписанием обновления для набора данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * [Дополнительные сведения о Power BI](https://www.powerbi.com/learning/)
-* [Руководство по аналитике](../log-query/log-analytics-tutorial.md)
+* [Руководство по аналитике](../logs/log-analytics-tutorial.md)

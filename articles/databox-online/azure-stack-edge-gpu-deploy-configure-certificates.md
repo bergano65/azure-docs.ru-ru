@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure certificates for Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 7854aff0b4194efae7c4df653dee18e2676fdd41
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8d21f9eea0258175195529c4d8b72ee9085dc77
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91446316"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546981"
 ---
 # <a name="tutorial-configure-certificates-for-your-azure-stack-edge-pro-with-gpu"></a>Руководство по настройке сертификатов для работы Azure Stack Edge Pro с GPU
 
@@ -35,10 +35,10 @@ ms.locfileid: "91446316"
 
 * Вы установили физическое устройство, как описано в статье [Установка Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-install.md).
 * Если вы планируете применить собственные сертификаты:
-    - эти сертификаты должны быть подготовлены в соответствующем формате, включая сертификат цепочки подписывания. Дополнительные сведения о сертификате см. в статье [Управление сертификатами](azure-stack-edge-j-series-manage-certificates.md).
+    - эти сертификаты должны быть подготовлены в соответствующем формате, включая сертификат цепочки подписывания. Дополнительные сведения о сертификате см. в статье [Управление сертификатами](azure-stack-edge-gpu-manage-certificates.md).
 
 <!--    - If your device is deployed in Azure Government or Azure Government Secret or Azure Government top secret cloud and not deployed in Azure public cloud, a signing chain certificate is required before you can activate your device. 
-    For details on certificate, go to [Manage certificates](azure-stack-edge-j-series-manage-certificates.md).-->
+    For details on certificate, go to [Manage certificates](azure-stack-edge-gpu-manage-certificates.md).-->
 
 
 ## <a name="configure-certificates-for-device"></a>Настройка сертификатов для устройства
@@ -120,13 +120,13 @@ ms.locfileid: "91446316"
 
 Их нужно установить в той клиентской системе, которую вы используете для доступа к конечным точкам на устройстве ASE. Эти сертификаты позволяют создать отношения доверия между клиентом и устройством.
 
-Чтобы импортировать и установить сертификат в клиентской системе, из которой будет выполняться доступ к устройству, выполните инструкции из раздела [Импорт сертификатов в клиент, обращающийся к устройству](azure-stack-edge-j-series-manage-certificates.md#import-certificates-on-the-client-accessing-the-device). 
+Чтобы импортировать и установить сертификат в клиентской системе, из которой будет выполняться доступ к устройству, выполните инструкции из раздела [Импорт сертификатов в клиент, обращающийся к устройству](azure-stack-edge-gpu-manage-certificates.md#import-certificates-on-the-client-accessing-the-device). 
 
 Если вы используете Обозреватель службы хранилища, сертификаты в клиенте нужно устанавливать в формате PEM. Для этого потребуется преобразовать в этот формат созданные устройством сертификаты. 
 
 > [!IMPORTANT]
 > - Ссылка для скачивания предоставляется только для созданных устройством сертификатов, но не для предоставленных вами собственных сертификатов.
-> - Вы можете произвольным образом сочетать созданные устройством сертификаты и собственные сертификаты, если соблюдаются все остальные требования к сертификатам. Дополнительные сведения о требованиях к сертификатам см. [здесь](azure-stack-edge-j-series-certificate-requirements.md).
+> - Вы можете произвольным образом сочетать созданные устройством сертификаты и собственные сертификаты, если соблюдаются все остальные требования к сертификатам. Дополнительные сведения о требованиях к сертификатам см. [здесь](azure-stack-edge-gpu-certificate-requirements.md).
     
 
 ### <a name="bring-your-own-certificates"></a>Использование собственных сертификатов

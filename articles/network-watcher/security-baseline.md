@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b7dc7a9f93d6d70abec57632ffc95aea8a6bc699
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 82e15712fe1e7a5791b1374e4aa4cd446f8f5e90
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804994"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574425"
 ---
 # <a name="azure-security-baseline-for-network-watcher"></a>Базовый план безопасности Azure для наблюдателя за сетями
 
@@ -118,9 +118,9 @@ ms.locfileid: "99804994"
 
 **Руководство**. Использование журнала действий Azure для отслеживания изменений, внесенных в наблюдатель за сетями Azure. Вы можете создавать оповещения в Azure Monitor, которые будут запускаться при внесении изменений.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -142,7 +142,7 @@ ms.locfileid: "99804994"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций и обнаружения изменений для экземпляров наблюдателя за сетями Azure. Кроме на плоскости управления (например, портал Azure), наблюдатель за сетями не создает журналы, связанные с сетевым трафиком. Наблюдатель за сетями предоставляет средства для мониторинга, диагностики, просмотра метрик, а также включения и отключения журналов для ресурсов в виртуальной сети Azure.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Знакомство с наблюдателем за сетями](./network-watcher-monitoring-overview.md)
 
@@ -154,7 +154,7 @@ ms.locfileid: "99804994"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций и обнаружения изменений для экземпляров наблюдателя за сетями Azure. В отличие от плоскости управления (например портал Azure), наблюдатель за сетями сам по себе не создает журналы аудита. Наблюдатель за сетями предоставляет средства для мониторинга, диагностики, просмотра метрик, а также включения и отключения журналов для ресурсов в виртуальной сети Azure.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Знакомство с наблюдателем за сетями](./network-watcher-monitoring-overview.md)
 
@@ -174,7 +174,7 @@ ms.locfileid: "99804994"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для log Analytics рабочих областей, связанных с наблюдателем за сетями Azure согласно нормативным требованиям Организации.
 
-* [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -184,7 +184,7 @@ ms.locfileid: "99804994"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций и обнаружения изменений для экземпляров наблюдателя за сетями Azure. Кроме на плоскости управления (например, портал Azure), наблюдатель за сетями не создает журналы, связанные с сетевым трафиком. Наблюдатель за сетями предоставляет средства для мониторинга, диагностики, просмотра метрик, а также включения и отключения журналов для ресурсов в виртуальной сети Azure.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Знакомство с наблюдателем за сетями](./network-watcher-monitoring-overview.md)
 
@@ -479,7 +479,7 @@ ms.locfileid: "99804994"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения перемещаются в наблюдатель за сетями Azure и другие критические или связанные ресурсы.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

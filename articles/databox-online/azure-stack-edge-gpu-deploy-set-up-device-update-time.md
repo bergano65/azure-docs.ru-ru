@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: dd4078d414048d858c46f6757daa0a87a698eaab
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: ceaa16ee2a54886cde45f37ea90ed617abafffc1
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976085"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546913"
 ---
 # <a name="tutorial-configure-the-device-settings-for-azure-stack-edge-pro-with-gpu"></a>Руководство по настройке параметров устройства для Azure Stack Edge Pro с GPU
 
@@ -82,7 +82,7 @@ ms.locfileid: "91976085"
         ![Страница "Сервер обновлений" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-gpu-deploy-set-up-device-update-time/update-3.png)
 
         > [!NOTE] 
-        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-j-series-manage-certificates.md). 
+        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-gpu-manage-certificates.md). 
 
 2. Нажмите кнопку **Применить**.
 3. После настройки сервера обновлений щелкните **Далее: Время**.

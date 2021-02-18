@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 08/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 025a94cf7d163d41486ef218e70d9eb48e93d31c
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 08aa69db90901447297e06cd111b6b0174e6637a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98881322"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575092"
 ---
 # <a name="azure-security-baseline-for-azure-machine-learning"></a>Базовый план безопасности Azure для Машинное обучение Azure
 
@@ -155,9 +155,9 @@ ms.locfileid: "98881322"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с машинное обучение Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -193,9 +193,9 @@ ms.locfileid: "98881322"
 
 Можно также сопоставить журналы операций службы Машинное обучение в целях обеспечения безопасности и соответствия.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 - [Включение ведения журнала в Машинное обучение Azure](./how-to-track-experiments.md)
 
@@ -211,7 +211,7 @@ ms.locfileid: "98881322"
 
 Машинное обучение Azure поддерживает различные ресурсы вычислений и даже собственные ресурсы вычислений. Для всех ресурсов вычислений, принадлежащих вашей организации, используйте центр безопасности Azure для мониторинга операционной системы. 
 
-- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+- [Как получить журналы внутреннего узла виртуальной машины Azure с помощью Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md)
 
@@ -223,7 +223,7 @@ ms.locfileid: "98881322"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с экземплярами машинное обучение Azure в соответствии с нормативными требованиями Организации.
 
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -241,9 +241,9 @@ ms.locfileid: "98881322"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-- [Приступая к работе с Log Analytics запросами](../azure-monitor/log-query/log-analytics-tutorial.md)
+- [Приступая к работе с Log Analytics запросами](../azure-monitor/logs/log-analytics-tutorial.md)
 
-- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+- [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 
@@ -257,7 +257,7 @@ ms.locfileid: "98881322"
 
 - [Дополнительные сведения об оповещениях Машинное обучение Azure](monitor-azure-machine-learning.md#alerts)
 
-- [Как оповещать данные журнала Log Analytics рабочей области](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics рабочей области](../azure-monitor/alerts/tutorial-response.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -565,7 +565,7 @@ ms.locfileid: "98881322"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в рабочих экземплярах машинное обучение Azure и других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг центра безопасности Azure**: неприменимо
 

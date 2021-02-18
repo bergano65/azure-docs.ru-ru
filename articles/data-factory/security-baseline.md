@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 387c5e70d50e53f922530cfb1fa91494fa7cc624
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: ab4f92c9723dc98d0b6c32d3a49df8d4f724ebfa
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100376315"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585460"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Базовый план безопасности Azure для фабрики данных Azure
 
@@ -175,9 +175,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций сетевых ресурсов и обнаружения изменений сетевых ресурсов, связанных с экземплярами фабрики данных Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических сетевых ресурсов.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -201,7 +201,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним инцидентам безопасности и управлению событиями (SIEM). Вы также можете интегрировать фабрику данных Azure с Git, чтобы использовать несколько преимуществ системы управления версиями, такие как возможность отслеживать изменения и проводить аудит изменений, а также возвратиться к изменениям, которые представляют ошибки.
 
-* [Как настроить параметры диагностики](../azure-monitor/platform/diagnostic-settings.md)
+* [Как настроить параметры диагностики](../azure-monitor/essentials/diagnostic-settings.md)
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -219,7 +219,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 Используйте параметры диагностики для настройки журналов диагностики для нерасчетных ресурсов в фабрике данных Azure, таких как метрики и конвейер — запуск данных. Фабрика данных Azure хранит данные о запуске конвейера в течение 45 дней. Чтобы сохранить эти данные в течение длительного периода времени, сохраните журналы диагностики в учетной записи хранения для аудита или проверки вручную и укажите время хранения в днях. Вы также можете выполнить потоковую передачу журналов в концентраторы событий Azure или отправить журналы в Log Analytics рабочую область для анализа.
 
-* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+* [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 * [Общие сведения о журналах диагностики фабрики данных Azure](./monitor-using-azure-monitor.md)
 
@@ -233,7 +233,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 Если ваша организация хочет сохранить данные журнала событий безопасности, она может храниться на уровне сбора данных, после чего их можно запросить в Log Analytics.
 
-* [Как выполнять получение данных из виртуальных машин Azure в Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+* [Как выполнять получение данных из виртуальных машин Azure в Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 * [Включение сбора данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
@@ -247,7 +247,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Как включить журналы диагностики в фабрике данных Azure](./monitor-using-azure-monitor.md)
 
-* [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Как задать параметры хранения журнала для рабочих областей Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**. Неприменимо
 
@@ -263,7 +263,7 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Схема Log Analytics](./monitor-using-azure-monitor.md#schema-of-logs-and-events)
 
-* [Как получить данные из виртуальной машины Azure с помощью Azure Monitor](../azure-monitor/learn/quick-collect-azurevm.md)
+* [Как получить данные из виртуальной машины Azure с помощью Azure Monitor](../azure-monitor/vm/quick-collect-azurevm.md)
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -281,9 +281,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 * [Оповещения в фабрике данных Azure](./monitor-visually.md#alerts)
 
-* [Страница «все поддерживаемые метрики»](../azure-monitor/platform/metrics-supported.md)
+* [Страница «все поддерживаемые метрики»](../azure-monitor/essentials/metrics-supported.md)
 
-* [Как настроить оповещения журнала в рабочей области Log Analytics](../azure-monitor/platform/alerts-log.md)
+* [Как настроить оповещения журнала в рабочей области Log Analytics](../azure-monitor/alerts/alerts-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -652,9 +652,9 @@ Self-Hosted IRs можно развернуть на локальном комп
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в фабрике данных Azure и связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Ведение журнала аналитики службы хранилища Azure](../storage/common/storage-analytics-logging.md)
 

@@ -5,12 +5,12 @@ author: msangapu-msft
 ms.author: msangapu
 ms.topic: tutorial
 ms.date: 06/20/2020
-ms.openlocfilehash: af2711a3d219bb472334ad61bad0b87f6c691dab
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: d45a8b8f426df32b9f5ac6f64237107083e0f9ab
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183206"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586286"
 ---
 # <a name="tutorial-troubleshoot-an-app-service-app-with-azure-monitor"></a>Руководство по Устранение неполадок с приложением Службы приложений с помощью Azure Monitor
 
@@ -78,7 +78,7 @@ az monitor log-analytics workspace create --resource-group myResourceGroup --wor
 Чтобы создать параметры диагностики для AppServiceConsoleLogs (стандартный поток вывода и ошибки) и AppServiceHTTPLogs (журналы веб-сервера), нужно выполнить следующие команды. Замените _\<app-name>_ и _\<workspace-name>_ собственными значениями. 
 
 > [!NOTE]
-> Первые две команды, `resourceID` и `workspaceID`, создают переменные для использования в команде `az monitor diagnostic-settings create`. Дополнительные сведения об этой команде см. в разделе [Создание параметров диагностики с помощью Azure CLI](../azure-monitor/platform/diagnostic-settings.md#create-using-azure-cli).
+> Первые две команды, `resourceID` и `workspaceID`, создают переменные для использования в команде `az monitor diagnostic-settings create`. Дополнительные сведения об этой команде см. в разделе [Создание параметров диагностики с помощью Azure CLI](../azure-monitor/essentials/diagnostic-settings.md#create-using-azure-cli).
 >
 
 ```bash
@@ -129,7 +129,7 @@ az monitor diagnostic-settings create --resource $resourceID \
 
 ### <a name="log-queries"></a>Запросы журнала
 
-Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Вы можете применять запросы по журналам, собранным в AppServiceHTTPLogs и AppServiceConsoleLogs. Дополнительные сведения о запросах по журналам см. в [этой обзорной статье](../azure-monitor/log-query/log-query-overview.md).
+Запросы по журналам позволяют с пользой применить все данные, собранные в журналах Azure Monitor. Вы можете применять запросы по журналам, собранным в AppServiceHTTPLogs и AppServiceConsoleLogs. Дополнительные сведения о запросах по журналам см. в [этой обзорной статье](../azure-monitor/logs/log-query-overview.md).
 
 ### <a name="view-appservicehttplogs-with-log-query"></a>Просмотр AppServiceHTTPLogs с помощью запросов по журналам
 
@@ -269,6 +269,6 @@ az monitor diagnostic-settings delete --resource $resourceID -n myMonitorLogs
 > * использование запросов по журналам для обнаружения и устранения ошибок в веб-приложениях.
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Дальнейшие действия
-* [Запросы по журналам в Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Запросы по журналам в Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Troubleshoot an app in Azure App Service using Visual Studio](troubleshoot-dotnet-visual-studio.md) (Устранение неполадок приложения в Службе приложений Azure с помощью Visual Studio)
 * [Анализ журналов приложения в HDInsight](https://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

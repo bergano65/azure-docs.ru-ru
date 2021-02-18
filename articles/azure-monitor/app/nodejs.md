@@ -4,12 +4,12 @@ description: Используйте Application Insights для монитори
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 0d414ce44a8d6ab308bd31f7372bb1c146fac9f5
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 9eba74bcf2b4b047b3ed881342db4f7b1011f928
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611021"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585761"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
@@ -383,7 +383,7 @@ appInsights.defaultClient.addTelemetryProcessor(removeStackTraces);
 
 Можно создать несколько Application Insights ресурсов и отправить каждому из них разные данные, используя соответствующие ключи инструментирования ("iKey").
 
- Пример:
+ Пример.
 
 ```javascript
 let appInsights = require("applicationinsights");
@@ -422,10 +422,10 @@ client.config.PROPERTYNAME = VALUE;
 | коррелатионидретринтервалмс    | Время ожидания перед повторной попыткой получения идентификатора для корреляции между компонентами (по умолчанию `30000` ).     |
 | коррелатионхеадерексклудеддомаинс| Список доменов, исключаемых из вставки заголовка корреляции между компонентами (по умолчанию см. [config. TS](https://github.com/Microsoft/ApplicationInsights-node.js/blob/develop/Library/Config.ts)).|
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Навигация и панели мониторинга на портале Application Insights](./overview-dashboard.md)
-* [Знакомство с аналитикой в Application Insights](../log-query/log-analytics-tutorial.md)
+* [Знакомство с аналитикой в Application Insights](../logs/log-analytics-tutorial.md)
 
 <!--references-->
 

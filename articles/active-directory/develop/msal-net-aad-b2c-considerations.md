@@ -13,12 +13,12 @@ ms.date: 05/07/2020
 ms.author: jeferrie
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: b28454e9b60654541d4f62ec1d8455b30cfc2906
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: bdb9e12fdf721204ce98d23e5d5aeea535ddf23d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99580833"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100574797"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использование MSAL.NET для входа пользователей с удостоверениями социальных сетей
 
@@ -67,31 +67,27 @@ application = PublicClientApplicationBuilder.Create(ClientID)
 Получение маркера для защищенного Azure AD B2C API в общедоступном клиентском приложении требует использования переопределений с центром сертификации:
 
 ```csharp
-IEnumerable<IAccount> accounts = await application.GetAccountsAsync();
-AuthenticationResult ar = await application.AcquireTokenInteractive(scopes)
-                                           .WithAccount(GetAccountByPolicy(accounts, policy))
-                                           .WithParentActivityOrWindow(ParentActivityOrWindow)
-                                           .ExecuteAsync();
+AuthenticationResult authResult = null;
+IEnumerable<IAccount> accounts = await application.GetAccountsAsync(policy);
+IAccount account = accounts.FirstOrDefault();
+try
+{
+    authResult = await application.AcquireTokenSilent(scopes, account)
+                      .ExecuteAsync();
+}
+catch (MsalUiRequiredException ex)
+{
+    authResult = await application.AcquireTokenInteractive(scopes)
+                        .WithAccount(account)
+                        .WithParentActivityOrWindow(ParentActivityOrWindow)
+                        .ExecuteAsync();
+}  
 ```
 
 В предыдущем фрагменте кода:
 
 - `policy` — Это строка, содержащая имя пользовательского потока Azure AD B2C или настраиваемой политики (например, `PolicySignUpSignIn` ).
 - `ParentActivityOrWindow` требуется для Android (действие) и является необязательным для других платформ, поддерживающих родительский пользовательский интерфейс, такой как Windows в Microsoft Windows и UIViewController в iOS. Дополнительные сведения о диалоговом окне пользовательского интерфейса см. в разделе [виспарентактивитйорвиндов](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Acquiring-tokens-interactively#withparentactivityorwindow) на вики-сайте MSAL.
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` метод, который находит учетную запись для заданной политики. Пример:
-
-  ```csharp
-  private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
-  {
-      foreach (var account in accounts)
-      {
-          string userIdentifier = account.HomeAccountId.ObjectId.Split('.')[0];
-          if (userIdentifier.EndsWith(policy.ToLower()))
-              return account;
-      }
-      return null;
-  }
-  ```
 
 Применение пользовательского потока или настраиваемой политики (например, предоставление пользователю возможности изменять свой профиль или сброс пароля) в настоящее время выполняется путем вызова `AcquireTokenInteractive` . Для этих двух политик не используется возвращаемый результат маркера или проверки подлинности.
 
@@ -104,16 +100,16 @@ AuthenticationResult ar = await application.AcquireTokenInteractive(scopes)
 ```csharp
 private async void EditProfileButton_Click(object sender, RoutedEventArgs e)
 {
-    IEnumerable<IAccount> accounts = await app.GetAccountsAsync();
+    IEnumerable<IAccount> accounts = await application.GetAccountsAsync(PolicyEditProfile);
+    IAccount account = accounts.FirstOrDefault();
     try
     {
-        var authResult = await app.AcquireToken(scopes:App.ApiScopes)
-                            .WithAccount(GetUserByPolicy(accounts, App.PolicyEditProfile)),
+        var authResult = await application.AcquireTokenInteractive(scopes)
                             .WithPrompt(Prompt.NoPrompt),
-                            .WithB2CAuthority(App.AuthorityEditProfile)
+                            .WithAccount(account)
+                            .WithB2CAuthority(AuthorityEditProfile)
                             .ExecuteAsync();
-        DisplayBasicTokenInfo(authResult);
-    }
+     }
     catch
     {
     }
@@ -190,10 +186,10 @@ MSAL.NET поддерживает [кэш маркеров](/dotnet/api/microsof
 
 Дополнительные сведения об указании утверждений, возвращаемых потоками пользователей, см. [в разделе Учебник. Создание пользовательских потоков в Azure AD B2C](../../active-directory-b2c/tutorial-create-user-flows.md).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для Azure AD B2C приложений приведены в следующем примере.
 
-| Пример | Платформа | Описание|
+| Образец | Платформа | Описание|
 |------ | -------- | -----------|
 |[Active-Directory-B2C-Xamarin-Native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, UWP | Приложение Xamarin Forms, использующее MSAL.NET для проверки подлинности пользователей с помощью Azure AD B2C и последующего доступа к веб-API с возвращаемыми маркерами.|

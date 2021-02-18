@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ef5cddc131e25a1966ca86c3c8650452f73be69e
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 5a9bc576541c5991bb5f9352dc41fb0cce99c601
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879686"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594271"
 ---
 # <a name="azure-security-baseline-for-windows-virtual-machines"></a>Базовый план безопасности Azure для Виртуальные машины Windows
 
@@ -174,9 +174,9 @@ ms.locfileid: "98879686"
 
 Используйте политику Azure для проверки (и/или исправьте) конфигурации сетевого ресурса, связанного с Виртуальные машины Windows.
 
-* [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
@@ -220,13 +220,13 @@ ms.locfileid: "98879686"
 
 Кроме того, включите Azure Monitor для доступа к журналам аудита и действий, в том числе источник событий, Дата, пользователь, метка времени, исходные адреса, адреса назначения и другие полезные элементы.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md)
 
-* [Обзор агента log Analytics](../../azure-monitor/platform/log-analytics-agent.md)
+* [Обзор агента log Analytics](../../azure-monitor/agents/log-analytics-agent.md)
 
 * [Расширение виртуальной машины log Analytics для Windows](../extensions/oms-windows.md)
 
-* [Просмотр и извлечение событий из журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Просмотр и извлечение событий из журнала действий Azure](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
 * [Общие сведения об Application Insights](../../azure-monitor/app/app-insights-overview.md)
 
@@ -242,7 +242,7 @@ ms.locfileid: "98879686"
 
 * [Сбор данных в центре безопасности Azure](../../security-center/security-center-enable-data-collection.md)
 
-* [Чтобы записать данные системного журнала для мониторинга, необходимо включить расширение Log Analytics](../../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
+* [Чтобы записать данные системного журнала для мониторинга, необходимо включить расширение Log Analytics](../../azure-monitor/vm/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -252,9 +252,9 @@ ms.locfileid: "98879686"
 
 **Руководство**. Убедитесь, что для всех учетных записей хранения log Analytics или рабочих областей, используемых для хранения журналов виртуальных машин, задан срок хранения журнала в соответствии с нормативными требованиями вашей организации.
 
-* [Мониторинг виртуальных машин в Azure](../../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../../azure-monitor/vm/monitor-vm-azure.md)
 
-* [Настройка срока хранения Log Analytics рабочей области](../../azure-monitor/platform/manage-cost-storage.md)
+* [Настройка срока хранения Log Analytics рабочей области](../../azure-monitor/logs/manage-cost-storage.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -268,15 +268,15 @@ ms.locfileid: "98879686"
 
 Кроме того, вы можете включить и подключить данные к Azure Sentinel или сторонним SIEM, чтобы отслеживать и просматривать журналы.
 
-* [Обзор агента log Analytics](../../azure-monitor/platform/log-analytics-agent.md)
+* [Обзор агента log Analytics](../../azure-monitor/agents/log-analytics-agent.md)
 
 * [Расширение виртуальной машины log Analytics для Windows](../extensions/oms-windows.md)
 
 * [Подключение к Azure Sentinel](../../sentinel/quickstart-onboard.md)
 
-* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -292,7 +292,7 @@ ms.locfileid: "98879686"
 
 * [Управление оповещениями в центре безопасности Azure](../../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Как оповещать данные журнала Log Analytics](../../azure-monitor/learn/tutorial-response.md)
+* [Как оповещать данные журнала Log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -410,7 +410,7 @@ ms.locfileid: "98879686"
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Настройка групп действий для настраиваемых оповещений и уведомлений](../../azure-monitor/platform/action-groups.md)
+* [Настройка групп действий для настраиваемых оповещений и уведомлений](../../azure-monitor/alerts/action-groups.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -452,13 +452,13 @@ ms.locfileid: "98879686"
 
 **Руководство**. Настройка параметров диагностики для Azure Active Directory, чтобы отправить журналы аудита и журналы входа в рабочую область log Analytics. Кроме того, используйте Azure Monitor для просмотра журналов и выполнения запросов к данным журналов из виртуальных машин Azure.
 
-* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../../azure-monitor/logs/log-analytics-tutorial.md)
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../../azure-monitor/logs/get-started-queries.md)
 
-* [Мониторинг виртуальных машин в Azure](../../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../../azure-monitor/vm/monitor-vm-azure.md)
 
 **Мониторинг центра безопасности Azure**: недоступен
 
@@ -592,9 +592,9 @@ ms.locfileid: "98879686"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются на виртуальных машинах и связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../../azure-monitor/alerts/alerts-activity-log.md)
 
-* [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Ведение журнала аналитики службы хранилища Azure](../../storage/common/storage-analytics-logging.md)
 

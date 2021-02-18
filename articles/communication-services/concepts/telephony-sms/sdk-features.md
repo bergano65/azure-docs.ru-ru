@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 6f0b5325ff95d2c2f34572239967151986621bcb
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 2448840fcbbea686972f8f948d428bda7b3c2bf2
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937191"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100391751"
 ---
 # <a name="sms-client-library-overview"></a>Общие сведения о клиентской библиотеке SMS
 
@@ -49,4 +49,4 @@ ms.locfileid: "96937191"
 
 - Знакомство с общими [понятиями обмена SMS](../telephony-sms/concepts.md)
 - Получение [номера телефона](../../quickstarts/telephony-sms/get-phone-number.md), поддерживающего обмен SMS
-- [Планирование реализации решения для обмена SMS](../telephony-sms/plan-solution.md)
+- [Типы телефонных номеров в Службах коммуникации Azure](../telephony-sms/plan-solution.md)
