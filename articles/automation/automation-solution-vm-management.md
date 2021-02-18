@@ -5,16 +5,16 @@ services: automation
 ms.subservice: process-automation
 ms.date: 02/04/2020
 ms.topic: conceptual
-ms.openlocfilehash: 991ef6e7ffc26294f75ba5bd2f24c62ea6e0b421
-ms.sourcegitcommit: 49ea056bbb5957b5443f035d28c1d8f84f5a407b
+ms.openlocfilehash: a521ca80039b68f93bf7c9d98e51d9846e96e985
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100007012"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593832"
 ---
 # <a name="startstop-vms-during-off-hours-overview"></a>Обзор функции "Запуск и остановка виртуальных машин в нерабочее время"
 
-Запуск и остановка виртуальных машин в нерабочее время функция запускает или останавливает включенные виртуальные машины Azure. Она запускает или останавливает компьютеры по заданному пользователем расписанию, предоставляет аналитические сведения через журналы Azure Monitor и отправляет дополнительные сообщения электронной почты с помощью [групп действий](../azure-monitor/platform/action-groups.md). В большинстве случаев она поддерживается как в Azure Resource Manager, так и на классических виртуальных машинах.
+Запуск и остановка виртуальных машин в нерабочее время функция запускает или останавливает включенные виртуальные машины Azure. Она запускает или останавливает компьютеры по заданному пользователем расписанию, предоставляет аналитические сведения через журналы Azure Monitor и отправляет дополнительные сообщения электронной почты с помощью [групп действий](../azure-monitor/alerts/action-groups.md). В большинстве случаев она поддерживается как в Azure Resource Manager, так и на классических виртуальных машинах. 
 
 Эта функция использует командлет [Start-AzVm](/powershell/module/az.compute/start-azvm) для запуска виртуальных машин. Для остановки виртуальных машин используется [остановить-AzVM](/powershell/module/az.compute/stop-azvm) .
 

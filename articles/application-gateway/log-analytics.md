@@ -8,16 +8,16 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 11/14/2019
 ms.author: victorh
-ms.openlocfilehash: 881dbd02a6bf069fbe68108cc6eab0cb6b909a13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6c7acdda3dce3b1338888cdf36f1623597c11fc3
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91362656"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586087"
 ---
 # <a name="use-log-analytics-to-examine-application-gateway-web-application-firewall-waf-logs"></a>Использование Log Analytics для проверки журналов брандмауэра веб-приложения шлюза приложений (WAF)
 
-После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/learn/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. в разделе [Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+После работоспособности WAF шлюза приложений можно включить журналы, чтобы проверить, что происходит с каждым запросом. Журналы брандмауэра дают представление об оценке, сопоставлении и блокировке WAF. С помощью Log Analytics можно просмотреть данные в журналах брандмауэра, чтобы получить еще больше ценных сведений. Дополнительные сведения о создании рабочей области Log Analytics см. в разделе [создание log Analytics рабочей области на портал Azure](../azure-monitor/logs/quick-create-workspace.md). Дополнительные сведения о запросах журналов см. в разделе [Общие сведения о запросах журналов в Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 
 ## <a name="import-waf-logs"></a>Импорт журналов WAF
 

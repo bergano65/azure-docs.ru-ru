@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 3678ead9f3e1ba2556fde3c2fbe30df4e7dc2225
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 96d1c4c0ad210352be94255609a3a373b408ed23
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737241"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593306"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Базовый план безопасности Azure для пакетной службы
 
@@ -142,7 +142,7 @@ ms.locfileid: "98737241"
 
 - [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log) 
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -200,7 +200,7 @@ ms.locfileid: "98737241"
 
 - [Настройка мониторинга и ведения журнала пакетной службы Azure](monitoring-overview.md)
 
-- [Настройка срока хранения для рабочей области Azure Log Analytics](../azure-monitor/platform/manage-cost-storage.md)
+- [Настройка срока хранения для рабочей области Azure Log Analytics](../azure-monitor/logs/manage-cost-storage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -514,7 +514,7 @@ ms.locfileid: "98737241"
 
 Настройте параметры диагностики для учетных записей хранения, связанных с пулом пакетной службы Azure, чтобы отслеживать и записывать в журнал все операции CRUD с данными пула.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Включение дополнительного ведения журнала и аудита для учетной записи хранения Azure](../storage/common/storage-monitor-storage-account.md)
 
@@ -992,7 +992,7 @@ ms.locfileid: "98737241"
 
 **Ответственность**: Совмещаемая блокировка
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. [Обзор Azure Security Benchmark версии 2](../security/benchmarks/overview.md)
 - Дополнительные сведения о [базовой конфигурации безопасности Azure](../security/benchmarks/security-baselines-overview.md).

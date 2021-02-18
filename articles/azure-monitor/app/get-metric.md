@@ -5,12 +5,12 @@ ms.service: azure-monitor
 ms.subservice: application-insights
 ms.topic: conceptual
 ms.date: 04/28/2020
-ms.openlocfilehash: 345d0d31528f7bdc40be4400e783ad5be45df72f
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: b4a255235b2c6d772ab9a05dffacd4574ddd3280
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930566"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100584199"
 ---
 # <a name="custom-metric-collection-in-net-and-net-core"></a>Настраиваемая коллекция метрик в .NET и .NET Core
 
@@ -109,7 +109,7 @@ Application Insights Telemetry: {"name":"Microsoft.ApplicationInsights.Dev.00000
 > [!NOTE]
 > Хотя Необработанный элемент телеметрии не содержал явно заданное свойство суммы или поле после получения, мы создаем его. В этом случае `value` и свойство, и `valueSum` представляют одно и то же.
 
-Вы также можете получить доступ к пользовательской телеметрии метрик в разделе [_метрик_](../platform/metrics-charts.md) на портале. В качестве [пользовательской метрики на основе журнала и](pre-aggregated-metrics-log-metrics.md). (На следующем снимке экрана показан пример на основе журнала.) ![Представление обозревателя метрик](./media/get-metric/metrics-explorer.png)
+Вы также можете получить доступ к пользовательской телеметрии метрик в разделе [_метрик_](../essentials/metrics-charts.md) на портале. В качестве [пользовательской метрики на основе журнала и](pre-aggregated-metrics-log-metrics.md). (На следующем снимке экрана показан пример на основе журнала.) ![Представление обозревателя метрик](./media/get-metric/metrics-explorer.png)
 
 ### <a name="caching-metric-reference-for-high-throughput-usage"></a>Кэширование ссылки на метрику для использования высокой пропускной способности
 
@@ -302,6 +302,6 @@ SeverityLevel.Error);
 
 * Дополнительные [сведения ](./worker-service.md)о мониторинге приложений службы рабочей роли.
 * Дополнительные сведения о [метриках на основе журналов и предварительно агрегированных](./pre-aggregated-metrics-log-metrics.md)данных.
-* [Обозреватель метрик](../platform/metrics-getting-started.md)
+* [Обозреватель метрик](../essentials/metrics-getting-started.md)
 * Включение Application Insights для [ASP.NET Core приложений](asp-net-core.md)
 * Включение Application Insights для [приложений ASP.NET](asp-net.md)

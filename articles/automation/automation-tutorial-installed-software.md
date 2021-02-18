@@ -7,12 +7,12 @@ ms.date: 04/11/2018
 ms.topic: tutorial
 ms.subservice: change-inventory-management
 ms.custom: mvc
-ms.openlocfilehash: 0c083f4576e123ea14d837ed3915c56d18d84623
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 8451067ae86e95269c0c2f22554e1654ac64c1e4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207569"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593776"
 ---
 # <a name="discover-what-software-is-installed-on-your-vms"></a>Получение данных об установленном программном обеспечении на виртуальных машинах
 
@@ -48,7 +48,7 @@ ms.locfileid: "92207569"
 
 1. Перейдите к своей учетной записи службы автоматизации и в разделе **Управление конфигурацией** выберите элемент **Инвентаризация** или **Отслеживание изменений**.
 
-2. Выберите рабочую область [Log Analytics](../azure-monitor/log-query/log-query-overview.md). Эта рабочая область собирает данные, создаваемые такими компонентами, как Отслеживание изменений и инвентаризация. Рабочая область предоставляет единое расположение для проверки и анализа данных из нескольких источников.
+2. Выберите рабочую область [Log Analytics](../azure-monitor/logs/log-query-overview.md). Эта рабочая область собирает данные, создаваемые такими компонентами, как Отслеживание изменений и инвентаризация. Рабочая область предоставляет единое расположение для проверки и анализа данных из нескольких источников.
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -80,7 +80,7 @@ ms.locfileid: "92207569"
 
 Чтобы включить для этой функции компьютеры, не связанные с Azure, выполните приведенные ниже действия.
 
-1. Установите [агент Log Analytics для Windows](../azure-monitor/platform/agent-windows.md) или [Log Analytics для Linux](automation-linux-hrw-install.md) в зависимости от операционной системы. 
+1. Установите [агент Log Analytics для Windows](../azure-monitor/agents/agent-windows.md) или [Log Analytics для Linux](automation-linux-hrw-install.md) в зависимости от операционной системы. 
 
 2. Перейдите к своей учетной записи службы автоматизации и в разделе **Управление конфигурацией** выберите элемент **Инвентаризация** или **Отслеживание изменений**. 
 
@@ -122,7 +122,7 @@ ConfigurationData
 | summarize arg_max(TimeGenerated, *) by SoftwareName, Computer
 ```
 
-Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 
 ## <a name="see-the-software-inventory-for-a-single-machine"></a>Просмотр результатов инвентаризации программного обеспечения для одного компьютера
 

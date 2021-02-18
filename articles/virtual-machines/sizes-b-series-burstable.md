@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 833d96b8ca252cff5384cde114390aba8c2f51c3
-ms.sourcegitcommit: b4e6b2627842a1183fce78bce6c6c7e088d6157b
+ms.openlocfilehash: e3a24e4c947afdc1970f6e624335ecc84dd8eff2
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2021
-ms.locfileid: "99097696"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594401"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Размеры виртуальных машин Azure серии B с накапливаемыми ресурсами
 
@@ -64,7 +64,7 @@ ms.locfileid: "99097696"
 
 ![Диаграмма данных о почасовом трафике](./media/b-series-burstable/office-workload.png)
 
-| Сценарий | Время | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
+| Сценарий | время; | Загрузка ЦП (%) | Накоплено кредитов<sup>1</sup> | Доступные кредиты |
 | --- | --- | --- | --- | --- |
 | Развертывание B16ms | Развертывание | Развертывание  | 480 (первоначальные кредиты) | 480 |
 | Нет трафика | 0:00 | 0 | 162 | 642 |
@@ -109,7 +109,7 @@ ms.locfileid: "99097696"
 
 Ответ. Метрика **кредита** позволяет просмотреть количество кредитов, которые были ЗАРЕГИСТРИРОВАНЫ в банке виртуальной машины, а метрика **ИСПОЛЬЗОВАННЫЙ кредит** показывает, сколько кредитов ЦП потребляет виртуальная машина в банке.    Вы сможете просмотреть эти метрики в области метрик на портале или использовать для просмотра программные средства в API-интерфейсах Azure Monitor.
 
-Дополнительные сведения о доступе к метрикам в Azure см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
+Дополнительные сведения о доступе к метрикам в Azure см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/data-platform.md).
 
 ### <a name="q-how-are-credits-accumulated-and-consumed"></a>Вопрос. как суммируются и потребляются кредиты?
 

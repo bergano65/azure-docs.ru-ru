@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/15/2020
 ms.author: memildin
-ms.openlocfilehash: 64fa6c72e3bc37276dd108e3981bbefb5a2021a7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 30744ab97549d585cb6893dc2e2e12009e8cd3fb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444524"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595770"
 ---
 # <a name="faq---questions-about-data-collection-agents-and-workspaces"></a>Вопросы и ответы — сбор данных, агенты и рабочие области
 
@@ -43,7 +43,7 @@ ms.locfileid: "96444524"
 
 ## <a name="what-is-the-log-analytics-agent"></a>Что такое агент Log Analytics?
 
-Чтобы отслеживать уязвимости и угрозы безопасности, центр безопасности Azure зависит от [агента log Analytics](../azure-monitor/platform/log-analytics-agent.md) — это тот же агент, который используется службой Azure Monitor. 
+Чтобы отслеживать уязвимости и угрозы безопасности, центр безопасности Azure зависит от [агента log Analytics](../azure-monitor/agents/log-analytics-agent.md) — это тот же агент, который используется службой Azure Monitor. 
 
 Агент иногда называют Microsoft Monitoring Agent (или "MMA"). 
 
@@ -51,9 +51,9 @@ ms.locfileid: "96444524"
 
 Убедитесь, что компьютеры работают под управлением одной из поддерживаемых операционных систем для агента, как описано на следующих страницах:
 
-* [Поддерживаемые операционные системы: Windows](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Windows](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
 
-* [Поддерживаемые операционные системы: Linux](../azure-monitor/platform/agents-overview.md#supported-operating-systems)
+* [Поддерживаемые операционные системы: Linux](../azure-monitor/agents/agents-overview.md#supported-operating-systems)
 
 Дополнительные сведения о [данных, собираемых агентом log Analytics](security-center-enable-data-collection.md).
 
@@ -110,7 +110,7 @@ ms.locfileid: "96444524"
 Чтобы выбрать имеющуюся рабочую область Log Analytics, сделайте следующее:
 
 1. В главном меню Центра безопасности выберите **Цены и параметры**.
-1. Выберите соответствующую подписку.
+1. Выберите нужную подписку.
 1. Открытие страницы **автоматической подготовки**
 1. Для Log Analytics агента выберите **изменить конфигурацию**. 
 
@@ -169,7 +169,7 @@ ms.locfileid: "96444524"
 Вы можете отключить автоматическую подготовку для ваших подписок в политике безопасности, но мы не рекомендуем делать это. Отключение автоматической подготовки ограничивает рекомендации и оповещения центра безопасности. Чтобы отключить автоматическую подготовку, сделайте следующее:
 
 1. В главном меню Центра безопасности выберите **Цены и параметры**.
-1. Выберите соответствующую подписку.
+1. Выберите нужную подписку.
 1. Если в вашей подписке включен Защитник Azure, откройте **планы защитника Azure** и выберите **отключить защитник Azure**.
 
     :::image type="content" source="./media/security-center-platform-migration-faq/pricing-tier.png" alt-text="Включение или отключение защитника Azure":::
@@ -178,7 +178,7 @@ ms.locfileid: "96444524"
 
     :::image type="content" source="./media/security-center-enable-data-collection/agent-toggles.png" alt-text="Включение автоматического развертывания для агента Log Analytics":::
 
-1. Щелкните **Сохранить**.
+1. Нажмите кнопку **Сохранить**.
 
 
 ## <a name="should-i-opt-out-of-the-automatic-agent-installation-and-workspace-creation"></a>Следует ли отказаться от автоматической установки агента и создания рабочей области?
@@ -255,7 +255,7 @@ ms.locfileid: "96444524"
 
 ## <a name="what-happens-when-data-collection-is-enabled"></a>Что происходит, когда сбор данных включен?
 
-Если автоматическая подготовка включена, Центр безопасности подготавливает агент Log Analytics на всех поддерживаемых существующих и создаваемых виртуальных машинах Azure. Хотя мы рекомендуем использовать автоматическую подготовку, вы также можете установить агент вручную. [Сведения об установке расширения агента Log Analytics](../azure-monitor/learn/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension). 
+Если автоматическая подготовка включена, Центр безопасности подготавливает агент Log Analytics на всех поддерживаемых существующих и создаваемых виртуальных машинах Azure. Хотя мы рекомендуем использовать автоматическую подготовку, вы также можете установить агент вручную. [Сведения об установке расширения агента Log Analytics](../azure-monitor/vm/quick-collect-azurevm.md#enable-the-log-analytics-vm-extension). 
 
 Агент включает событие создания процесса 4688 и поле *CommandLine* в событии 4688. Новые процессы, созданные на виртуальной машине, регистрируются в журнале событий и отслеживаются с помощью служб обнаружения Центра безопасности. Дополнительные сведения о том, что именно регистрируется для каждого нового процесса, см. в [описании полей события 4688](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4688#fields). Кроме того, агент собирает события 4688, созданные на виртуальной машине и сохраняет их для поиска.
 
@@ -267,7 +267,7 @@ ms.locfileid: "96444524"
 ## <a name="will-security-center-work-using-an-oms-gateway"></a>Будет ли центр безопасности работать с использованием шлюза OMS?
 
 Да. Центр безопасности Azure использует Azure Monitor для получения данных из виртуальных машин и серверов Azure с помощью агента Log Analytics.
-Для сбора данных каждая виртуальная машина и сервер должны подключаться к Интернету по протоколу HTTPS. Подключение может быть установлено напрямую, через прокси-сервер или через [шлюз OMS](../azure-monitor/platform/gateway.md).
+Для сбора данных каждая виртуальная машина и сервер должны подключаться к Интернету по протоколу HTTPS. Подключение может быть установлено напрямую, через прокси-сервер или через [шлюз OMS](../azure-monitor/agents/gateway.md).
 
 
 ## <a name="does-the-monitoring-agent-impact-the-performance-of-my-servers"></a>Влияет ли агент наблюдения на производительность серверов?

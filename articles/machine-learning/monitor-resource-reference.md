@@ -10,12 +10,12 @@ ms.author: aashishb
 author: aashishb
 ms.custom: subject-monitoring
 ms.date: 10/02/2020
-ms.openlocfilehash: 6da9c6775a6d5c96bc52183fefc3e5330272e9ff
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: f9f25ec2dd8fb8b859f7863c1e695e22cb9a9cec
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99585132"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575077"
 ---
 # <a name="monitoring-azure-machine-learning-data-reference"></a>Справочник по мониторингу данных машинного обучения Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "99585132"
 
 ## <a name="metrics"></a>Метрики
 
-В этом разделе перечислены все автоматически собранные метрики платформы, собранные для Машинное обучение Azure. Поставщик ресурсов для этих метрик — [Microsoft. мачинелеарнингсервицес/workspaces](../azure-monitor/platform/metrics-supported.md#microsoftmachinelearningservicesworkspaces).
+В этом разделе перечислены все автоматически собранные метрики платформы, собранные для Машинное обучение Azure. Поставщик ресурсов для этих метрик — [Microsoft. мачинелеарнингсервицес/workspaces](../azure-monitor/essentials/metrics-supported.md#microsoftmachinelearningservicesworkspaces).
 
 **Модель**
 
@@ -74,7 +74,7 @@ ms.locfileid: "99585132"
 
 ## <a name="metric-dimensions"></a>Измерения метрик
 
-Дополнительные сведения об измерениях метрик см. в разделе [Многомерные метрики](../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics).
+Дополнительные сведения об измерениях метрик см. в разделе [Многомерные метрики](../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics).
 
 Машинное обучение Azure имеет следующие измерения, связанные с метриками.
 
@@ -117,7 +117,7 @@ ms.locfileid: "99585132"
 
 В этом разделе перечислены типы журналов ресурсов, которые можно собираются для Машинное обучение Azure рабочей области.
 
-Поставщик ресурсов и тип: [Microsoft. мачинелеарнингсервицес/Workspace](../azure-monitor/platform/resource-logs-categories.md#microsoftmachinelearningservicesworkspaces).
+Поставщик ресурсов и тип: [Microsoft. мачинелеарнингсервицес/Workspace](../azure-monitor/essentials/resource-logs-categories.md#microsoftmachinelearningservicesworkspaces).
 
 | Категория | Отображаемое имя |
 | ----- | ----- |
@@ -182,7 +182,7 @@ ms.locfileid: "99585132"
 | Publisher | Издатель типа кластера |
 | ПРЕДЛОЖЕНИЕ | Предложение, с которым создается кластер |
 | Sku | Номер SKU узла или виртуальной машины, созданный в кластере |
-| Version | Версия образа, используемая при создании узла или виртуальной машины |
+| Версия | Версия образа, используемая при создании узла или виртуальной машины |
 | SubnetId | SubnetId кластера |
 | аллокатионстате | Состояние выделения кластера |
 | куррентнодекаунт | Текущее число узлов в кластере |
@@ -218,7 +218,7 @@ ms.locfileid: "99585132"
 | Publisher | Издатель образа виртуальной машины. Например, Microsoft-dsvm |
 | ПРЕДЛОЖЕНИЕ | Предложение, связанное с созданием виртуальной машины |
 | Sku | Номер SKU созданного узла или виртуальной машины |
-| Version | Версия образа, используемая при создании узла или виртуальной машины |
+| Версия | Версия образа, используемая при создании узла или виртуальной машины |
 | клустеркреатионтиме | Время создания кластера |
 | ресизестарттиме | Время, когда запускается масштабирование кластера |
 | ресизиндтиме | Время, когда заканчивается масштабирование кластера |
@@ -229,7 +229,7 @@ ms.locfileid: "99585132"
 | TotalE2ETimeInSeconds | Общее время активности узла |
 
 
-## <a name="see-also"></a>См. также статью
+## <a name="see-also"></a>См. также
 
 - Описание Машинное обучение Azure мониторинга см. в разделе [monitoring машинное обучение Azure](monitor-azure-machine-learning.md) .
-- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-azure-resource.md).
+- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../azure-monitor/essentials/monitor-azure-resource.md).

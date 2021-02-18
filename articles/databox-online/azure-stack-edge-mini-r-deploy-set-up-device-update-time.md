@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R  so I can use it to transfer data to Azure.
-ms.openlocfilehash: ee3805d128a7b6d122f93e692291db1a387cfcf5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e9f4d4f4ad27081bb105cdb1698438837fc2fe02
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464894"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546675"
 ---
 # <a name="tutorial-configure-the-device-settings-for-azure-stack-edge-mini-r"></a>Руководство по настройке параметров устройства для Azure Stack Edge Mini R
 
@@ -85,7 +85,7 @@ ms.locfileid: "96464894"
         ![Страница "Сервер обновлений" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-mini-r-deploy-set-up-device-update-time/update-server-2.png)
 
         > [!NOTE] 
-        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-j-series-manage-certificates.md). Для работы в режиме развертывания без подключения, например при распределении по уровням устройства Azure Stack Edge в Модульном центре обработки данных, включите параметр WSUS. Во время активации устройство проверяет наличие обновлений, и если сервер не настроен, то активация завершится ошибкой. 
+        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-gpu-manage-certificates.md). Для работы в режиме развертывания без подключения, например при распределении по уровням устройства Azure Stack Edge в Модульном центре обработки данных, включите параметр WSUS. Во время активации устройство проверяет наличие обновлений, и если сервер не настроен, то активация завершится ошибкой. 
 
 2. Нажмите кнопку **Применить**.
 3. После настройки сервера обновлений щелкните **Далее: Время**.

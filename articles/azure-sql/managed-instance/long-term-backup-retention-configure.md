@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 04/29/2020
-ms.openlocfilehash: a5a2ff85395a55bcd4e8405e2eb60c6a4645818c
-ms.sourcegitcommit: d1b0cf715a34dd9d89d3b72bb71815d5202d5b3a
+ms.openlocfilehash: bb74a2e271473666332c627f6ad4324ca597e40c
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "99833445"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593351"
 ---
 # <a name="manage-azure-sql-managed-instance-long-term-backup-retention-powershell"></a>Управление Azure SQL Управляемый экземпляр долгосрочного хранения резервных копий (PowerShell)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -195,7 +195,7 @@ Remove-AzSqlInstanceDatabaseLongTermRetentionBackup -ResourceId $ltrBackup.Resou
 ```
 
 > [!IMPORTANT]
-> Удаление резервной копии LTR отменить нельзя. Чтобы удалить резервную копию LTR после удаления экземпляра, необходимо иметь разрешение на область действия подписки. Вы можете настроить уведомления о каждом удалении в Azure Monitor путем фильтрации для операции "Удаление резервной копии долгосрочного хранения". В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md).
+> Удаление резервной копии LTR отменить нельзя. Чтобы удалить резервную копию LTR после удаления экземпляра, необходимо иметь разрешение на область действия подписки. Вы можете настроить уведомления о каждом удалении в Azure Monitor путем фильтрации для операции "Удаление резервной копии долгосрочного хранения". В журнале действий содержатся сведения о том, кто и когда выполнил запрос. Подробные сведения см. в статье [Создание, просмотр и управление оповещениями журнала действий с помощью Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md).
 
 ## <a name="restore-from-ltr-backups"></a>Восстановление из резервных копий LTR
 
@@ -227,7 +227,7 @@ Restore-AzSqlInstanceDatabase @RestoreLTRParam
 > [!NOTE]
 > Здесь вы можете подключиться к восстановленной базе данных с помощью SQL Server Management Studio и выполнить необходимые задания, например извлечь часть данных из восстановленной базы данных, чтобы скопировать их в имеющуюся базу данных или удалить имеющуюся базу данных и присвоить ее имя восстановленной базе данных. Ознакомьтесь с [восстановлением до точки во времени](../database/recovery-using-backups.md#point-in-time-restore).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Дополнительные сведения о резервных копиях базы данных, создаваемых автоматически службой, см. в [этой статье](../database/automated-backups-overview.md).
 - Дополнительные сведения о долгосрочном хранении резервных копий см. в статье [Хранение резервных копий базы данных SQL Azure до 10 лет](../database/long-term-retention-overview.md).

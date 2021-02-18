@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: 4a4624a94a27f00201c55a320f1745783b06d169
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ff4c3c5ae8629879fca6e9e683a9c77d0e2f144b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92781929"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596116"
 ---
 # <a name="transition-to-metrics-in-azure-monitor"></a>Переход к метрикам в Azure Monitor
 
@@ -35,7 +35,7 @@ ms.locfileid: "92781929"
    > [!NOTE]
    > Метрики в Azure Monitor включены по умолчанию, поэтому вам не нужно предпринимать никаких действий, чтобы начать сбор метрик. Однако для просмотра этих метрик необходимо создать диаграммы или панели мониторинга. 
  
-5. Если вы создали правила генерации оповещений, основанные на классических метриках хранилища, [Создайте правила генерации оповещений](../../azure-monitor/platform/alerts-overview.md) , основанные на метриках в Azure Monitor. 
+5. Если вы создали правила генерации оповещений, основанные на классических метриках хранилища, [Создайте правила генерации оповещений](../../azure-monitor/alerts/alerts-overview.md) , основанные на метриках в Azure Monitor. 
 
 6. После того как вы сможете увидеть все метрики в Azure Monitor, вы можете отключить классическое ведение журнала. 
 
@@ -53,7 +53,7 @@ ms.locfileid: "92781929"
 
 Если действие в учетной записи не запускает метрику, для этой метрики в классической метрике будет отображаться нулевое значение (0). Метрики в Azure Monitor будут полностью опускать данные, что ведет к очистке отчетов. Например, при использовании классической метрики, если ошибки времени ожидания сервера не выводятся, `ServerTimeoutError` значение в таблице метрик задается равным 0. Azure Monitor не возвращает никаких данных при запросе значения метрики `Transactions` с измерением, `ResponseType` равным `ServerTimeoutError` . 
 
-Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](../../azure-monitor/platform/data-platform-metrics.md).
+Дополнительные сведения о метриках в Azure Monitor см. в разделе [метрики в Azure Monitor](../../azure-monitor/essentials/data-platform-metrics.md).
 
 <a id="metrics-mapping-between-old-metrics-and-new-metrics"></a>
 

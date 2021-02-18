@@ -3,12 +3,12 @@ title: Включение расширения виртуальной машин
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, с помощью шаблона Azure Resource Manager.
 ms.date: 02/10/2021
 ms.topic: conceptual
-ms.openlocfilehash: 0115bda614133891275daff96c94dc4b1a680ccf
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: b84f9d4d13de3ce2d661e254528e1f0a304001f4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100555103"
+ms.locfileid: "100580920"
 ---
 # <a name="enable-azure-vm-extensions-by-using-arm-template"></a>Включение расширений виртуальной машины Azure с помощью шаблона ARM
 
@@ -545,7 +545,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 
 ## <a name="deploy-the-dependency-agent-extension"></a>Развертывание расширения агента зависимостей
 
-Чтобы использовать расширение агента зависимостей Azure Monitor, для работы в Windows и Linux предоставляется следующий пример. Если вы не знакомы с агентом зависимостей, см. раздел [Обзор агентов Azure Monitor](../../azure-monitor/platform/agents-overview.md#dependency-agent).
+Чтобы использовать расширение агента зависимостей Azure Monitor, для работы в Windows и Linux предоставляется следующий пример. Если вы не знакомы с агентом зависимостей, см. раздел [Обзор агентов Azure Monitor](../../azure-monitor/agents/agents-overview.md#dependency-agent).
 
 ### <a name="template-file-for-linux"></a>Файл шаблона для Linux
 
@@ -865,7 +865,7 @@ New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateF
 New-AzResourceGroupDeployment -ResourceGroupName "ContosoEngineering" -TemplateFile "D:\Azure\Templates\AzureDefenderScanner.json"
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью [Azure PowerShell](manage-vm-extensions-powershell.md), из [портал Azure](manage-vm-extensions-portal.md)или [Azure CLI](manage-vm-extensions-cli.md).
 

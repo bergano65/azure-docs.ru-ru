@@ -7,17 +7,17 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 01/06/2021
 ms.author: sngun
-ms.openlocfilehash: d78ddf983f1c8f2bfeaf733c273afc1cc98b1185
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 561375eb41600ba1404bba2bcbf15b6cbfc61851
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684864"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595352"
 ---
-# <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Мониторинг Azure Cosmos DB данных с помощью параметров диагностики в Azure
+# <a name="monitor-azure-cosmos-db-data-by-using-diagnostic-settings-in-azure"></a>Мониторинг данных Azure Cosmos DB с помощью параметров диагностики в Azure
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
 
-Параметры диагностики в Azure используются для получения журналов ресурсов. Журналы ресурсов Azure выдаются ресурсом и предоставляют обширные, часто встречающиеся данные о работе этого ресурса. Эти журналы фиксируются для каждого запроса, а также называются "журналами плоскости данных". Некоторые примеры операций с плоскостью данных включают удаление, вставку и readFeed. Содержимое этих журналов зависит от типа ресурса.
+Параметры диагностики в Azure используются для сбора журналов ресурсов. Журналы ресурсов Azure выдаются ресурсом и предоставляют обширные, часто встречающиеся данные о работе этого ресурса. Эти журналы фиксируются для каждого запроса, а также называются "журналами плоскости данных". Некоторые примеры операций с плоскостью данных включают удаление, вставку и readFeed. Содержимое этих журналов зависит от типа ресурса.
 
 Метрики платформы и журналы действий собираются автоматически, в то время как необходимо создать параметр диагностики для сбора журналов ресурсов или пересылки их за пределы Azure Monitor. Вы можете включить параметр диагностики для учетных записей Azure Cosmos, выполнив следующие действия.
 
@@ -103,7 +103,7 @@ ms.locfileid: "98684864"
 
 * **Запросы**. Выберите этот параметр, чтобы получать данные метрик из Azure Cosmos DB в целевые объекты в параметре диагностики. Это те же данные, собираемые автоматически в метриках Azure. Собирайте данные метрик с помощью журналов ресурсов для одновременного анализа обоих видов данных и отправки данных метрик за пределы Azure Monitor.
 
-Подробные сведения о создании параметров диагностики с помощью портал Azure, интерфейса командной строки или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/platform/diagnostic-settings.md) .
+Подробные сведения о создании параметров диагностики с помощью портал Azure, интерфейса командной строки или PowerShell см. в статье [Создание параметров диагностики для сбора журналов и метрик платформы в Azure](../azure-monitor/essentials/diagnostic-settings.md) .
 
 
 ## <a name="troubleshoot-issues-with-diagnostics-queries"></a><a id="diagnostic-queries"></a> Устранение неполадок с помощью диагностических запросов
@@ -273,7 +273,7 @@ ms.locfileid: "98684864"
    | summarize by OperationName 
    ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Azure Monitor для Azure Cosmos DB](../azure-monitor/insights/cosmosdb-insights-overview.md?toc=/azure/cosmos-db/toc.json)
 * [Monitor and debug with metrics in Azure Cosmos DB](use-metrics.md) (Мониторинг и отладка с помощью метрик в Azure Cosmos DB)

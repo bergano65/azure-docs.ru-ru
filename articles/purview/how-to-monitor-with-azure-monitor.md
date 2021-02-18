@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: 22c69288479e0247e499a33c2e818c19f7edb2ae
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: b13d03f05b7225a1c88f6b10b454749bd7b42477
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98879954"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100588336"
 ---
 # <a name="azure-purview-metrics-in-azure-monitor"></a>Метрики Azure зрения в Azure Monitor
 
@@ -24,7 +24,7 @@ ms.locfileid: "98879954"
 
 ## <a name="aggregated-metrics"></a>Агрегированные метрики
 
-Доступ к метрикам можно получить из портал Azure учетной записи зрения. Доступ к метрикам контролируется назначением роли учетной записи зрения. Чтобы увидеть метрики, пользователи должны быть частью роли "читатель мониторинга" в Azure зрения. Чтобы узнать больше о уровнях доступа к ролям, ознакомьтесь с [разрешениями наблюдения за ролью чтения](../azure-monitor/platform/roles-permissions-security.md#built-in-monitoring-roles) .
+Доступ к метрикам можно получить из портал Azure учетной записи зрения. Доступ к метрикам контролируется назначением роли учетной записи зрения. Чтобы увидеть метрики, пользователи должны быть частью роли "читатель мониторинга" в Azure зрения. Чтобы узнать больше о уровнях доступа к ролям, ознакомьтесь с [разрешениями наблюдения за ролью чтения](../azure-monitor/roles-permissions-security.md#built-in-monitoring-roles) .
 
 Пользователь, создавший учетную запись зрения, автоматически получает разрешения на просмотр метрик. Если кто угодно хочет просмотреть метрики, добавьте их в роль **читатель мониторинга** , выполнив следующие действия.
 
@@ -58,7 +58,7 @@ ms.locfileid: "98879954"
 
 ### <a name="available-metrics"></a>Доступные метрики
 
-Чтобы ознакомиться с использованием раздела "Метрика" в портал Azure заранее прочтите следующие два документа. Начало [работы с обозревателем метрик](../azure-monitor/platform/metrics-getting-started.md) и [дополнительными функциями обозревателя метрик](../azure-monitor/platform/metrics-charts.md).
+Чтобы ознакомиться с использованием раздела "Метрика" в портал Azure заранее прочтите следующие два документа. Начало [работы с обозревателем метрик](../azure-monitor/essentials/metrics-getting-started.md) и [дополнительными функциями обозревателя метрик](../azure-monitor/essentials/metrics-charts.md).
 
 В следующей таблице содержится список метрик, доступных для изучения в портал Azure.
 
@@ -75,7 +75,7 @@ ms.locfileid: "98879954"
 
 Выполните действия, чтобы создать параметр диагностики для учетной записи Azure зрения.
 
-1. Создайте новый параметр диагностики для сбора журналов и метрик платформы, следуя этой статье: [Создание параметров диагностики для отправки журналов платформы и метрик в разные места назначения](../azure-monitor/platform/diagnostic-settings.md). Выберите назначение только в качестве учетной записи хранения Azure.
+1. Создайте новый параметр диагностики для сбора журналов и метрик платформы, следуя этой статье: [Создание параметров диагностики для отправки журналов платформы и метрик в разные места назначения](../azure-monitor/essentials/diagnostic-settings.md). Выберите назначение только в качестве учетной записи хранения Azure.
 
    :::image type="content" source="./media/how-to-monitor-with-azure-monitor/step-one-diagnostic-setting.png" alt-text="Снимок экрана, показывающий создание журнала диагностики." lightbox="./media/how-to-monitor-with-azure-monitor/step-one-diagnostic-setting.png":::
 
@@ -154,6 +154,6 @@ ms.locfileid: "98879954"
 }
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 [Просмотреть Аналитику активов](asset-insights.md)
