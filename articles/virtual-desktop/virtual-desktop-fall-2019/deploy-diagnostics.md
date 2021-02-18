@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/15/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9672d18fe99d8baae3c73fa3782531eb84114713
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 05d312296b48f35ea87c5443cc587989e2d11fd5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97515632"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587962"
 ---
 # <a name="deploy-the-windows-virtual-desktop-classic-diagnostics-tool"></a>Развертывание средства диагностики виртуальных рабочих столов Windows (классическая модель)
 
@@ -116,7 +116,7 @@ ms.locfileid: "97515632"
     -   Сведения о процессоре ( \* ) \\ время процессора
     -   Максимальная задержка входных данных пользователя на сеанс ( \* ) \\
 
-Дополнительные сведения о счетчиках производительности в [источниках данных производительности Windows и Linux см. в Azure Monitor](../../azure-monitor/platform/data-sources-performance-counters.md).
+Дополнительные сведения о счетчиках производительности в [источниках данных производительности Windows и Linux см. в Azure Monitor](../../azure-monitor/agents/data-sources-performance-counters.md).
 
 >[!NOTE]
 >Все дополнительные счетчики, которые вы настраиваете, не отображаются в средстве диагностики. Чтобы сделать его отображаемым в средстве диагностики, необходимо настроить файл конфигурации этого средства. Инструкции по выполнению этого действия с расширенным администрированием будут доступны в GitHub позже.
@@ -199,7 +199,7 @@ ms.locfileid: "97515632"
 
 Прежде чем сделать средство диагностики доступным для пользователей, убедитесь, что у них есть следующие разрешения:
 
-- Пользователям требуется доступ на чтение для log Analytics. Дополнительные сведения см. в статье [Приступая к работе с ролями, разрешениями и безопасностью с помощью Azure Monitor](../../azure-monitor/platform/roles-permissions-security.md).
+- Пользователям требуется доступ на чтение для log Analytics. Дополнительные сведения см. в статье [Приступая к работе с ролями, разрешениями и безопасностью с помощью Azure Monitor](../../azure-monitor/roles-permissions-security.md).
 -  Пользователям также требуется доступ на чтение для клиента виртуальных рабочих столов Windows (роль RDS Reader). Дополнительные сведения см. [в статье делегированный доступ в виртуальном рабочем столе Windows](delegated-access-virtual-desktop-2019.md).
 
 Кроме того, необходимо предоставить пользователям следующие сведения:

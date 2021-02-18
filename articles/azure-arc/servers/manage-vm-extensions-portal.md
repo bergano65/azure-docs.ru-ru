@@ -3,12 +3,12 @@ title: Включение расширения виртуальной машин
 description: В этой статье описывается, как развернуть расширения виртуальной машины на серверах с поддержкой дуги Azure, работающих в гибридных облачных средах, из портал Azure.
 ms.date: 01/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 43bbcef28b77e7c7112880fdac1bbd4809791cef
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: b0e114b314179d42ccd47b7d7bd534d3a824a411
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728961"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587656"
 ---
 # <a name="enable-azure-vm-extensions-from-the-azure-portal"></a>Включение расширений виртуальной машины Azure из портал Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "98728961"
 
     ![Установка расширения Log Analytics VM](./media/manage-vm-extensions/mma-extension-config.png)
 
-    Чтобы завершить установку, необходимо указать идентификатор рабочей области и первичный ключ. Если вы не знакомы с поиском этих сведений, см. статью [Получение идентификатора и ключа рабочей области](../../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key).
+    Чтобы завершить установку, необходимо указать идентификатор рабочей области и первичный ключ. Если вы не знакомы с поиском этих сведений, см. статью [Получение идентификатора и ключа рабочей области](../../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key).
 
 4. После подтверждения требуемой информации выберите **создать**. Отобразится сводка развертывания, и вы сможете просмотреть состояние развертывания.
 
@@ -64,7 +64,7 @@ ms.locfileid: "98728961"
 
 4. Выберите **Удалить** и при появлении запроса на проверку выберите **Да** для продолжения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Расширения виртуальных машин можно развертывать, администрировать и удалять с помощью шаблонов [Azure CLI](manage-vm-extensions-cli.md), [PowerShell](manage-vm-extensions-powershell.md)или [Azure Resource Manager](manage-vm-extensions-template.md).
 

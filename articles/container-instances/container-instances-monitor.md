@@ -3,12 +3,12 @@ title: Мониторинг экземпляров контейнеров
 description: Как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
 ms.topic: article
 ms.date: 12/17/2020
-ms.openlocfilehash: 83a8a5ab2c8c49f4044564c2d899685914103b0b
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ae9725ffe66bebbed26745c311b2ada07d5d2c00
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916098"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589297"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -129,7 +129,7 @@ Timestamp            Name          Containername             Average
 2019-04-23 23:10:00  Memory Usage  aci-tutorial-sidecar  847872.0
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
 
@@ -146,6 +146,6 @@ Timestamp            Name          Containername             Average
 
 <!-- LINKS - Internal -->
 [azure-monitoring]: ../azure-monitor/overview.md
-[metric-alert]: ..//azure-monitor/platform/alerts-metric.md
-[monitor-dimension]: ../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics
-[supported-metrics]: ../azure-monitor/platform/metrics-supported.md#microsoftcontainerinstancecontainergroups
+[metric-alert]: ..//azure-monitor/alerts/alerts-metric.md
+[monitor-dimension]: ../azure-monitor/essentials/data-platform-metrics.md#multi-dimensional-metrics
+[supported-metrics]: ../azure-monitor/essentials/metrics-supported.md#microsoftcontainerinstancecontainergroups

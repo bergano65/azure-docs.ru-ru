@@ -4,19 +4,19 @@ description: Владельцы, участники и читатели Insights
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cd1e69ecd121380353ad6400d473d572b7b7bb3e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4254170ad100b634439cc846dc381e305ae71d1f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89076690"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589606"
 ---
 # <a name="resources-roles-and-access-control-in-application-insights"></a>Ресурсы, роли и контроль доступа в Application Insights
 
 Вы можете контролировать, кто имеет доступ к данным в Azure [Application Insights][start]для чтения и обновления, используя [Управление доступом на основе ролей Azure (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md).
 
 > [!IMPORTANT]
-> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее.](#access)
+> Вы также можете предоставлять доступ пользователям в **группе ресурсов или подписке** , к которым относится ресурс приложения, а не в самом ресурсе. Назначьте им роль **участника компонента Application Insights** . Это обеспечит универсальный контроль доступа к веб-тестам и оповещениям с помощью ресурса приложения. [Подробнее](#access).
 
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -54,7 +54,7 @@ ms.locfileid: "89076690"
 
 ![Снимок экрана кнопки управления доступом на портале Azure](./media/resources-roles-access-control/0001-access-control.png)
 
-Выберите **добавить назначение ролей**
+**Добавить назначение ролей**
 
 ![Снимок экрана меню управления доступом с кнопкой "Добавить", выделенной красным цветом](./media/resources-roles-access-control/0002-add.png)
 
@@ -76,7 +76,7 @@ ms.locfileid: "89076690"
 | [Читатель](../../role-based-access-control/built-in-roles.md#reader) |Может просматривать содержимое, но нельзя ничего изменять. |
 | [Отладчик моментальных снимков Application Insights](../../role-based-access-control/built-in-roles.md#application-insights-snapshot-debugger) | Предоставляет пользователю разрешение на использование функций Snapshot Debugger Application Insights. Обратите внимание на то, что эта роль не включает в себя ни роль "Владелец", ни роль "Участник". |
 | Участник управления выпусками развертывания служб Azure | Роль участника для развертывания служб с помощью функции развертывания служб Azure. |
-| [Средство очистки данных](../../role-based-access-control/built-in-roles.md#data-purger) | Специальная роль для очистки персональных данных. Дополнительные сведения см. в статье [Руководство по хранению персональных данных в Application Insights](../platform/personal-data-mgmt.md).   |
+| [Средство очистки данных](../../role-based-access-control/built-in-roles.md#data-purger) | Специальная роль для очистки персональных данных. Дополнительные сведения см. в статье [Руководство по хранению персональных данных в Application Insights](../logs/personal-data-mgmt.md).   |
 | Администратор ExpressRoute | Может создавать и удалять подключения ExpressRoute, а также управлять ими.|
 | [Участник Log Analytics](../../role-based-access-control/built-in-roles.md#log-analytics-contributor) | Участник Log Analytics может считывать все данные мониторинга и изменять параметры мониторинга. Изменение параметров мониторинга подразумевает добавление расширений в виртуальные машины, чтение ключей учетной записи хранения для настройки коллекции журналов в службе хранилища Azure, создание и настройку учетных записей службы автоматизации, добавление решений и настройку диагностики Azure во всех ресурсах Azure.  |
 | [Читатель Log Analytics](../../role-based-access-control/built-in-roles.md#log-analytics-reader) | Читатель Log Analytics может просматривать все данные мониторинга, выполнять по ним поиск и просматривать параметры мониторинга, в том числе конфигурацию системы диагностики Azure для всех ресурсов Azure. |
@@ -100,7 +100,7 @@ ms.locfileid: "89076690"
 Если в каталоге нет необходимого пользователя, вы можете пригласить любого пользователя с учетной записью Майкрософт
 (если он использует такие службы, как Outlook.com, OneDrive, Windows Phone или XBox Live, значит, у него есть учетная запись Майкрософт).
 
-## <a name="related-content"></a>См. также
+## <a name="related-content"></a>Связанная информация
 
 * [Управление доступом Azure на основе ролей (Azure RBAC)](../../role-based-access-control/role-assignments-portal.md)
 
