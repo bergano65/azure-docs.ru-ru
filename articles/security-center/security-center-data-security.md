@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/13/2020
 ms.author: memildin
-ms.openlocfilehash: 49533947ff01aea07eaacd9d761b6414fb672a1c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 0c21c916d152188031212b47704dfb41d3f64a82
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92339481"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596287"
 ---
 # <a name="azure-security-center-data-security"></a>Защита данных в Центре безопасности Azure
 
@@ -82,8 +82,8 @@ ms.locfileid: "92339481"
 
 | STREAM                                                                                | Типы данных                                                                                                                                                                                                          |
 |---------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Журнал действий Azure](../azure-monitor/platform/activity-log.md)                       | Все оповещения системы безопасности, утвержденные [JIT-запросы](security-center-just-in-time.md) на доступ к Центру безопасности и все оповещения, созданные [адаптивными элементами управления приложениями](security-center-adaptive-application.md).|
-| [Журналы Azure Monitor](../azure-monitor/platform/data-platform.md)                      | Все оповещения системы безопасности.                                                                                                                                                                                                |
+| [Журнал действий Azure](../azure-monitor/essentials/activity-log.md)                       | Все оповещения системы безопасности, утвержденные [JIT-запросы](security-center-just-in-time.md) на доступ к Центру безопасности и все оповещения, созданные [адаптивными элементами управления приложениями](security-center-adaptive-application.md).|
+| [Журналы Azure Monitor](../azure-monitor/data-platform.md)                      | Все оповещения системы безопасности.                                                                                                                                                                                                |
 | [Azure Resource Graph](../governance/resource-graph/overview.md)                      | Оповещения системы безопасности, рекомендации по обеспечению безопасности, результаты оценки уязвимостей, данные об оценке безопасности, состояние проверок соответствия и т. д.                                                                       |
 | [REST API для Центра безопасности Azure](/rest/api/securitycenter/) | Оповещения системы безопасности, рекомендации по обеспечению безопасности и т. д.                                                                                                                                                                |
 |                                                                                       |                                                                                                                                                                                                                     |

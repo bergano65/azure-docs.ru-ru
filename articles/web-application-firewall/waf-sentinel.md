@@ -7,12 +7,12 @@ ms.service: web-application-firewall
 ms.date: 10/12/2020
 ms.author: victorh
 ms.topic: how-to
-ms.openlocfilehash: 6e1d9b8a53eaf69c2294ab42dc0718863e6c1837
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 3d905dd1e6acab8f9f6d3885c882dd9c32133cb4
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99804943"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596425"
 ---
 # <a name="using-azure-sentinel-with-azure-web-application-firewall"></a>Использование Sentinel Azure с брандмауэром веб-приложения Azure
 
@@ -79,7 +79,7 @@ WAF log Analytics разделяется на следующие категор�
    :::image type="content" source="media//waf-sentinel/waf-workbooks.png" alt-text="Книги WAF":::
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - [Дополнительные сведения об Azure Sentinel](../sentinel/overview.md)
-- [Дополнительные сведения о Azure Monitor книгах](../azure-monitor/platform/workbooks-overview.md)
+- [Дополнительные сведения о Azure Monitor книгах](../azure-monitor/visualize/workbooks-overview.md)

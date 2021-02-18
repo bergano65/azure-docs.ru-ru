@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 03/30/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 257656a29733972672570648d4317b7847fedff1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bfe8026f099c341b68a1aa1fc5e3fac425e29403
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88997682"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578896"
 ---
 # <a name="use-log-analytics-for-the-diagnostics-feature-in-windows-virtual-desktop-classic"></a>Использование Log Analytics для компонента "Диагностика" в виртуальном рабочем столе Windows (классическая модель)
 
@@ -32,9 +32,9 @@ ms.locfileid: "88997682"
 
 ## <a name="before-you-get-started"></a>Необходимые условия
 
-Прежде чем можно будет использовать Log Analytics с функцией диагностики, необходимо [создать рабочую область](../../azure-monitor/learn/quick-collect-windows-computer.md#create-a-workspace).
+Прежде чем можно будет использовать Log Analytics с функцией диагностики, необходимо [создать рабочую область](../../azure-monitor/vm/quick-collect-windows-computer.md#create-a-workspace).
 
-После создания рабочей области следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](../../azure-monitor/platform/log-analytics-agent.md#workspace-id-and-key) , чтобы получить следующие сведения.
+После создания рабочей области следуйте инструкциям в статье [Подключение компьютеров Windows к Azure Monitor](../../azure-monitor/agents/log-analytics-agent.md#workspace-id-and-key) , чтобы получить следующие сведения.
 
 - ИДЕНТИФИКАТОР рабочей области
 - Первичный ключ рабочей области
@@ -132,6 +132,6 @@ Set-RdsTenant -Name <TenantName> -AzureSubscriptionId <SubscriptionID> -LogAnaly
 
 Этот командлет потребуется выполнить для каждого клиента, с которого необходимо запретить отправку данных.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Чтобы просмотреть распространенные сценарии ошибок, которые может определить функция диагностики, см. раздел [Определение и диагностика проблем](diagnostics-role-service-2019.md#common-error-scenarios).

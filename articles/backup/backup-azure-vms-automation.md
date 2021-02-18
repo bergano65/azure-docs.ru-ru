@@ -3,12 +3,12 @@ title: Резервное копирование и восстановление
 description: В этой статье описывается, как выполнять резервное копирование и восстановление виртуальных машин Azure с использованием Azure Backup с помощью PowerShell.
 ms.topic: conceptual
 ms.date: 09/11/2019
-ms.openlocfilehash: cbb962cd6ddde3d0ee8280c0a548067446a58d55
-ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
+ms.openlocfilehash: f59c18aecf577bc7f7d0b1360dd36504305af893
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/16/2021
-ms.locfileid: "100548579"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633195"
 ---
 # <a name="back-up-and-restore-azure-vms-with-powershell"></a>Резервное копирование и восстановление виртуальных машин Azure с помощью PowerShell
 
@@ -622,7 +622,7 @@ $details = Get-AzRecoveryServicesBackupJobDetails -Job $restorejob -VaultId $tar
 3. Разверните шаблон, чтобы создать новую виртуальную машину, как описано [здесь](../azure-resource-manager/templates/deploy-powershell.md).
 
     ```powershell
-    New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI -storageAccountType Standard_GRS
+    New-AzResourceGroupDeployment -Name ExampleDeployment -ResourceGroupName ExampleResourceGroup -TemplateUri $templateBlobFullURI
     ```
 
 ### <a name="create-a-vm-using-the-config-file"></a>Создание виртуальной машины с помощью файла конфигурации
@@ -940,6 +940,6 @@ Windows e3632984e51f496 V2VM_wus2_8287309959960546283_451516692429_cbd6061f7fc54
 Disable-AzRecoveryServicesBackupRPMountScript -RecoveryPoint $rp[0] -VaultId $targetVault.ID
 ```
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Если вы предпочитаете использовать PowerShell для взаимодействия с ресурсами Azure, см. статью [Развертывание резервного копирования в Azure для Windows Server или клиента Windows и управление им с помощью PowerShell](backup-client-automation.md). Сведения об управлении резервными копиями DPM см. в статье [Развертывание службы архивации для DPM и управление ею](backup-dpm-automation.md).

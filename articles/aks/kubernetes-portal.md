@@ -4,12 +4,12 @@ description: Узнайте, как взаимодействовать с рес
 services: container-service
 ms.topic: article
 ms.date: 12/16/2020
-ms.openlocfilehash: 4f34535f74de562c0a1b65c31f28476ca02e540f
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: ce5dc74dc3625b2b1fed447c4e6480308267d32a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631881"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100578684"
 ---
 # <a name="access-kubernetes-resources-from-the-azure-portal"></a>Доступ к ресурсам Kubernetes из портал Azure
 
@@ -88,7 +88,7 @@ az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/3
 
 ```
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этой статье показано, как получить доступ к ресурсам Kubernetes для кластера AKS. Дополнительные сведения о ресурсах кластера и файлах YAML, доступ к которым осуществляется с помощью средства просмотра ресурсов Kubernetes, см. в разделе [развертывания и манифесты YAML][deployments] .
 
@@ -99,5 +99,5 @@ az aks update -g $RG -n $AKSNAME --api-server-authorized-ip-ranges $CURRENT_IP/3
 [deployments]: concepts-clusters-workloads.md#deployments-and-yaml-manifests
 [aks-managed-aad]: managed-aad.md
 [cli-aad-upgrade]: managed-aad.md#upgrading-to-aks-managed-azure-ad-integration
-[enable-monitor]: ../azure-monitor/insights/container-insights-enable-existing-clusters.md
+[enable-monitor]: ../azure-monitor/containers/container-insights-enable-existing-clusters.md
 [portal-cluster]: kubernetes-walkthrough-portal.md

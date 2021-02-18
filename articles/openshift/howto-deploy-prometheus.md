@@ -3,16 +3,16 @@ title: Развертывание экземпляра Prometheus в класт�
 description: Создайте экземпляр Prometheus в кластере Azure Red Hat OpenShift, чтобы отслеживать метрики приложения.
 author: makdaam
 ms.author: b-lejaku
-ms.service: container-service
+ms.service: azure-redhat-openshift
 ms.topic: conceptual
 ms.date: 06/17/2019
 keywords: Prometheus, АТО, openshift, метрики, Red Hat
-ms.openlocfilehash: 42ed8c90b35eba57fdc3db1f0ed93d44cf9a5e41
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 974096e515401ab5e292dbad4c9beba7f1611a8a
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996854"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633450"
 ---
 # <a name="deploy-a-standalone-prometheus-instance-in-an-azure-red-hat-openshift-cluster"></a>Развертывание автономного экземпляра Prometheus в кластере Azure Red Hat OpenShift
 
@@ -211,7 +211,7 @@ oc new-app python:3.6~https://github.com/Makdaam/prometheus-example --name=examp
 > [!NOTE]
 > Для всех успешно бракованных целевых объектов Prometheus добавляет точку данных в метрику вверх. Выберите **Prometheus** в левом верхнем углу **, введите в** качестве выражения и нажмите кнопку **выполнить**.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 В приложения можно добавить настраиваемое инструментирование Prometheus. Клиентская библиотека Prometheus, которая упрощает подготовку метрик Prometheus, готова для разных языков программирования.
 
