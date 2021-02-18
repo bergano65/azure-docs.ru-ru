@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/23/2019
 ms.author: yelevin
-ms.openlocfilehash: 120f160e3c7bc7a9a0e81586ea4b97ee827dd33e
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: 5999e8da5dffce85dd12ecd01cd5991ea4abc098
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807434"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100590251"
 ---
 # <a name="connect-azure-stack-hub-virtual-machines-to-azure-sentinel"></a>Подключение виртуальных машин Azure Stack HUB к Azure Sentinel
 
@@ -50,9 +50,9 @@ ms.locfileid: "99807434"
 
 1. После завершения установки расширения его состояние отображается как **Подготовка выполнена**. Для отображения виртуальной машины на портале Sentinel Azure может потребоваться до одного часа.
 
-Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/platform/agent-windows.md#install-agent-using-setup-wizard).
+Дополнительные сведения об установке и настройке агента для Windows см. в разделе [Подключение компьютеров Windows](../azure-monitor/agents/agent-windows.md#install-agent-using-setup-wizard).
 
-Сведения об устранении неполадок с агентами Linux см. в статье [Устранение неполадок с агентом Log Analytics для Linux](../azure-monitor/platform/agent-linux-troubleshoot.md).
+Сведения об устранении неполадок с агентами Linux см. в статье [Устранение неполадок с агентом Log Analytics для Linux](../azure-monitor/agents/agent-linux-troubleshoot.md).
 
 На портале Sentinel Azure в Azure в разделе **виртуальные машины** представлены общие сведения обо всех виртуальных машинах и компьютерах, а также их состояние. 
 
@@ -70,7 +70,7 @@ ms.locfileid: "99807434"
 
 1. Щелкните **Удалить** и подтвердите выбор.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.
 

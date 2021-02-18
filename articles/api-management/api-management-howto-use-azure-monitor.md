@@ -8,12 +8,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 5e5c59d611cb7f4b5333b9919488e6fc083611cd
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 1cb902c4b59193c46dbeca47bb355f0695a0f2c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779249"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100572798"
 ---
 # <a name="tutorial-monitor-published-apis"></a>Руководство по Мониторинг опубликованных API-интерфейсов
 
@@ -39,7 +39,7 @@ ms.locfileid: "96779249"
 
 ## <a name="view-metrics-of-your-apis"></a>Просмотр метрик API
 
-Служба "Управление API" каждую минуту передает [метрики](../azure-monitor/platform/data-platform-metrics.md), позволяя отслеживать состояние и работоспособность API-интерфейсов практически в реальном времени. Ниже приведены две самые часто используемые метрики. Список всех доступных метрик см. в разделе со списком [поддерживаемых метрик](../azure-monitor/platform/metrics-supported.md#microsoftapimanagementservice).
+Служба "Управление API" каждую минуту передает [метрики](../azure-monitor/essentials/data-platform-metrics.md), позволяя отслеживать состояние и работоспособность API-интерфейсов практически в реальном времени. Ниже приведены две самые часто используемые метрики. Список всех доступных метрик см. в разделе со списком [поддерживаемых метрик](../azure-monitor/essentials/metrics-supported.md#microsoftapimanagementservice).
 
 * **Емкость**. Позволяет принимать решения о необходимости повышения или понижения уровня служб Управления API. Метрика отправляется каждую минуту и отражает емкость шлюза в момент создания отчета. Значение метрики колеблется в диапазоне от 0 до 100. Оно вычисляется на основе ресурсов шлюза, таких как загрузка центрального процессора и использование памяти.
 * **Запросы**. Помогает анализировать трафик API, проходящий через службы Управления API. Метрика отправляется каждую минуту и сообщает о количестве запросов к шлюзу с включением таких измерений, как коды ответа, расположение, имя узла и ошибки. 
@@ -62,7 +62,7 @@ ms.locfileid: "96779249"
 
 ## <a name="set-up-an-alert-rule"></a>Настройка правила оповещения 
 
-Вы можете получать [оповещения](../azure-monitor/platform/alerts-metric-overview.md) на основе метрик и журналов действий. Azure Monitor позволяет [настроить действие](../azure-monitor/platform/alerts-metric.md), выполняемое при активации оповещения:
+Вы можете получать [оповещения](../azure-monitor/alerts/alerts-metric-overview.md) на основе метрик и журналов действий. Azure Monitor позволяет [настроить действие](../azure-monitor/alerts/alerts-metric.md), выполняемое при активации оповещения:
 
 * Отправка уведомления по электронной почте.
 * Вызов webhook.
@@ -140,7 +140,7 @@ ms.locfileid: "96779249"
 
    Вы можете архивировать журналы ресурсов и метрики в учетную запись хранения, передать их потоком в концентратор событий или отправить в рабочую область Log Analytics. 
 
-Дополнительные сведения см. в статье [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](../azure-monitor/platform/diagnostic-settings.md).
+Дополнительные сведения см. в статье [Создание параметров диагностики для отправки журналов платформы и метрик в различные места назначения](../azure-monitor/essentials/diagnostic-settings.md).
 
 ## <a name="view-diagnostic-data-in-azure-monitor"></a>Просмотр диагностических данных в Azure Monitor
 
@@ -151,7 +151,7 @@ ms.locfileid: "96779249"
 
     :::image type="content" source="media/api-management-howto-use-azure-monitor/logs-menu-item.png" alt-text="Снимок экрана: элемент &quot;Журналы&quot; в меню &quot;Мониторинг&quot;":::
 
-Выполните запросы, чтобы просмотреть данные. Вы можете воспользоваться предоставленными [примерами запросов](../azure-monitor/log-query/example-queries.md) или выполнить собственный запрос. Например, следующий запрос получает данные из таблицы GatewayLogs за последние 24 часа:
+Выполните запросы, чтобы просмотреть данные. Вы можете воспользоваться предоставленными [примерами запросов](../azure-monitor/logs/example-queries.md) или выполнить собственный запрос. Например, следующий запрос получает данные из таблицы GatewayLogs за последние 24 часа:
 
 ```kusto
 ApiManagementGatewayLogs
@@ -160,9 +160,9 @@ ApiManagementGatewayLogs
 
 Дополнительные сведения об использовании журналов ресурсов для Управления API см. в следующих статьях:
 
-* [Начало работы со службой Log Analytics в Azure Monitor](../azure-monitor/log-query/log-analytics-tutorial.md). Вы также можете воспользоваться [демонстрационной средой Log Analytics](https://portal.loganalytics.io/demo).
+* [Начало работы со службой Log Analytics в Azure Monitor](../azure-monitor/logs/log-analytics-tutorial.md). Вы также можете воспользоваться [демонстрационной средой Log Analytics](https://portal.loganalytics.io/demo).
 
-* [Общие сведения о запросах к журналам в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+* [Общие сведения о запросах к журналам в Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 
 Следующий код JSON указывает пример записи в GatewayLogs для успешного запроса API. Дополнительные сведения см. в [справочнике по схеме](gateway-log-schema-reference.md). 
 

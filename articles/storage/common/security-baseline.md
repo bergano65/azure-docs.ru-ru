@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: f6825fee4cfb78ab54d782cd4d942bb994bedae9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: b484873f6c118c49712cbcd66eeb6a63d8aa05f6
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195727"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591559"
 ---
 # <a name="azure-security-baseline-for-azure-storage"></a>Базовые показатели безопасности Azure для службы хранилища Azure
 
@@ -158,7 +158,7 @@ ms.locfileid: "98195727"
 
 - [Настройка Политики Azure и управление ею](../../governance/policy/tutorials/create-and-manage.md)
 
-- [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -180,7 +180,7 @@ ms.locfileid: "98195727"
 
 **Рекомендации**. прием журналов с помощью Azure Monitor для агрегирования данных безопасности, создаваемых конечными точками, сетевыми ресурсами и другими системами безопасности. В Azure Monitor используйте рабочие области Log Analytics для запроса и выполнения анализа и используйте учетные записи хранения Azure для долгосрочного и архивного хранения, при необходимости используя такие функции безопасности, как неизменяемое хранилище и принудительное хранение.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../../azure-monitor/essentials/diagnostic-settings.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -210,7 +210,7 @@ ms.locfileid: "98195727"
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](./storage-monitor-storage-account.md#configure-logging)
 
-- [Изменение срока хранения данных в Log Analytics](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -238,7 +238,7 @@ ms.locfileid: "98195727"
 
 - [Управление оповещениями в центре безопасности Azure](../../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](../../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 - [Ведение журнала аналитики службы хранилища Azure](./storage-analytics-logging.md)
 
@@ -362,7 +362,7 @@ ms.locfileid: "98195727"
 
 - [Общие сведения об обнаружении рисков в Azure AD](../../active-directory/identity-protection/overview-identity-protection.md)
 
-- [Настройка групп действий для настраиваемых оповещений и уведомлений](../../azure-monitor/platform/action-groups.md)
+- [Настройка групп действий для настраиваемых оповещений и уведомлений](../../azure-monitor/alerts/action-groups.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -572,7 +572,7 @@ ms.locfileid: "98195727"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в ресурсах учетной записи хранения. Вы также можете включить ведение журнала службы хранилища Azure, чтобы отслеживание авторизации каждого запроса к службе хранилища Azure. Журналы указывают, был ли запрос анонимно, с помощью маркера OAuth 2,0, с помощью общего ключа или подписанного URL-адрес (SAS). Кроме того, используйте Azure Monitor, чтобы оповещать об анонимном доступе учетных записей хранения, используя условия анонимной проверки подлинности.
 
-- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Ведение журнала аналитики службы хранилища Azure](./storage-analytics-logging.md)
 
@@ -788,7 +788,7 @@ ms.locfileid: "98195727"
 Аудит неограниченного сетевого доступа к учетным записям хранения  
 Развертывание Расширенной защиты от угроз для учетных записей хранения  
 Необходимо перенести учетные записи хранения в новые ресурсы Azure Resource Manager.  
-Должно выполняться безопасное перемещение в учетные записи хранения.  
+Необходимо включить безопасную передачу данных в учетные записи хранения.  
 
 Используйте рекомендации из центра безопасности Azure в качестве защищенного шаблона базовой конфигурации для учетных записей хранения. 
 

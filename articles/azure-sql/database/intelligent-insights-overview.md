@@ -11,12 +11,12 @@ author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
 ms.date: 06/12/2020
-ms.openlocfilehash: 0f3dce3ca79b12b05325a1d8284dd3304653d5fa
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 61033e3eb8264c1e462faac3e4553a855a1d06c7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488873"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592075"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance-preview"></a>Intelligent Insights использование искусственного интеллекта для отслеживания и устранения неполадок производительности базы данных (Предварительная версия)
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -107,7 +107,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 ### <a name="set-up-with-event-hubs"></a>Настройка для использования с Центрами событий
 
-Чтобы использовать Intelligent Insights с концентраторами событий, настройте Intelligent Insights данные журнала для потоковой передачи в концентраторы событий, см. раздел [метрики и журнал диагностики](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) и [потоковая передача журналов диагностики Azure в концентраторы событий](../../azure-monitor/platform/resource-logs.md#send-to-azure-event-hubs).
+Чтобы использовать Intelligent Insights с концентраторами событий, настройте Intelligent Insights данные журнала для потоковой передачи в концентраторы событий, см. раздел [метрики и журнал диагностики](metrics-diagnostic-telemetry-logging-streaming-export-configure.md) и [потоковая передача журналов диагностики Azure в концентраторы событий](../../azure-monitor/essentials/resource-logs.md#send-to-azure-event-hubs).
 
 Сведения об использовании концентраторов событий для настройки настраиваемого мониторинга и оповещений см. в статье [что делать с метриками и журналами диагностики в концентраторах событий](metrics-diagnostic-telemetry-logging-streaming-export-configure.md#what-to-do-with-metrics-and-resource-logs-in-event-hubs).
 
@@ -164,7 +164,7 @@ Intelligent Insights неисправностей обнаружения и ус
 - достижение лимитов ресурсов эластичного пула;
 - чрезмерное количество рабочих потоков или потоков сеансов;
 - чрезмерная блокировка базы данных;
-- нехватка памяти;
+- Нехватка памяти
 - прочая статистика времени ожидания.
 
 Достижение лимитов ресурсов или лимитов ресурсов эластичных пулов означает, что потребление доступных ресурсов подписки или эластичного пула превысило абсолютный порог. Это является признаком снижения производительности рабочей нагрузки. Чрезмерное количество рабочих потоков или потоков сеансов указывает, что число инициализированных рабочих потоков или сеансов достигло абсолютного порога. Это является признаком снижения производительности рабочей нагрузки.
@@ -185,7 +185,7 @@ Intelligent Insights неисправностей обнаружения и ус
 
 Если какое-либо из отслеживаемых критических исключений превышает абсолютное пороговое значение, управляемое системой, создается ценная аналитика, содержащая сведения о критическом исключении.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Узнайте, как [осуществлять мониторинг баз данных с помощью SQL Analytics](../../azure-monitor/insights/azure-sql.md).
 - Узнайте, как [устранять проблемы с производительностью Intelligent Insights](intelligent-insights-troubleshoot-performance.md).

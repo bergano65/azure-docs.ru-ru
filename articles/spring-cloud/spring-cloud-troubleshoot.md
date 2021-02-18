@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 9350b5dbcedd2773e94ef9d35cfe26f97fbd97bc
-ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
+ms.openlocfilehash: 7c4dbeae0cfb76063fdca70b3ad1d264b59f9ace
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100571606"
+ms.locfileid: "100634249"
 ---
 # <a name="troubleshoot-common-azure-spring-cloud-issues"></a>Устранение распространенных проблем с пружинным облаком Azure
 
@@ -212,7 +212,7 @@ ms.locfileid: "100571606"
 
 Перейдите в раздел **Управление приложениями** , чтобы убедиться в том, что состояния приложения _выполняются и_ _работают_ .
 
-Проверьте, включена ли в пакете приложения Погода _JMX_ . Эту функцию можно включить с помощью свойства конфигурации `spring.jmx.enabled=true` .  
+Проверьте, включена ли _JMX_ в пакете приложения. Эту функцию можно включить с помощью свойства конфигурации `spring.jmx.enabled=true` .  
 
 Проверьте, включена ли в `spring-boot-actuator` пакете приложения зависимость, и что она успешно загружается.
 
@@ -225,6 +225,6 @@ ms.locfileid: "100571606"
 
 Если журналы приложения можно архивировать в учетную запись хранения, но не отправляются в Azure Log Analytics, проверьте, правильно ли [настроена Рабочая область](../azure-monitor/logs/quick-create-workspace.md). Если вы используете бесплатный уровень Log Analytics Azure, обратите внимание, что [уровень Free не обеспечивает соглашения об уровне обслуживания (SLA)](https://azure.microsoft.com/support/legal/sla/log-analytics/v1_3/).
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Самостоятельное устранение неполадок и решение проблем в Azure Веснного облака](spring-cloud-howto-self-diagnose-solve.md)

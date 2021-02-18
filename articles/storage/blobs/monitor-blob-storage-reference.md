@@ -9,12 +9,12 @@ ms.date: 10/02/2020
 ms.author: normesta
 ms.subservice: logs
 ms.custom: subject-monitoring
-ms.openlocfilehash: 6dd53358b67eef481948d3349afc07086ea26fcd
-ms.sourcegitcommit: 2817d7e0ab8d9354338d860de878dd6024e93c66
+ms.openlocfilehash: b37586f66106e33b2a8dad034a6e7c131484be73
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99584912"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571618"
 ---
 # <a name="azure-blob-storage-monitoring-data-reference"></a>Справочник по данным мониторинга хранилища BLOB-объектов Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "99584912"
 
 #### <a name="blob-storage"></a>Хранилище BLOB-объектов
 
-В этой таблице показаны [метрики хранилища BLOB-объектов](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsblobservices).
+В этой таблице показаны [метрики хранилища BLOB-объектов](../../azure-monitor/essentials/metrics-supported.md#microsoftstoragestorageaccountsblobservices).
 
 | Метрика | Описание |
 | ------------------- | ----------------- |
@@ -176,4 +176,4 @@ ms.locfileid: "99584912"
 ## <a name="see-also"></a>См. также раздел
 
 - Описание мониторинга службы хранилища Azure см. на [этой странице](monitor-blob-storage.md).
-- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md).
+- Подробные сведения о мониторинге ресурсов Azure см. в статье [Мониторинг ресурсов Azure с помощью Azure Monitor](../../azure-monitor/essentials/monitor-azure-resource.md).

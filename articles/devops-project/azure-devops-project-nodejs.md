@@ -3,22 +3,19 @@ title: Создание конвейера CI/CD для PWA с помощью Ga
 description: Узнайте, как создать прогрессивное веб-приложение (PWA) Node.js с помощью GatsbyJS и упрощенного интерфейса создания Azure DevOps Starter.
 ms.prod: devops
 ms.technology: devops-cicd
-services: vsts
 documentationcenter: vs-devops-build
-author: arob98
-manager: angrobe
+author: mijacobs
+ms.author: mijacobs
 ms.workload: web
-ms.tgt_pltfrm: na
 ms.topic: quickstart
 ms.date: 03/24/2020
-ms.author: angrobe
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 6cffa6065f0e1cefc31223553a42a7a78c1dbea8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d6d8a10dffa3801fe343b3b479265fac5612b021
+ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/08/2020
-ms.locfileid: "91856217"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100556568"
 ---
 # <a name="create-a-cicd-pipeline-in-azure-pipelines-for-nodejs-with-azure-devops-starter"></a>Создание конвейера CI/CD в Azure Pipelines для Node.js с помощью Azure DevOps Starter
 
@@ -73,7 +70,7 @@ DevOps Starter позволяет создать конвейер CI/CD в Azure
 
     ![Панели мониторинга Azure DevOps](_img/azure-devops-project-nodejs/devops-projects-dashboard.png) 
 
-1. На странице проекта Azure DevOps вы можете пригласить сотрудников для участия в проекте, а также создать канбан-доску для отслеживания выполняемых действий. Дополнительные сведения см. [здесь](/azure/devops/user-guide/what-is-azure-devops?view=azure-devops).
+1. На странице проекта Azure DevOps вы можете пригласить сотрудников для участия в проекте, а также создать канбан-доску для отслеживания выполняемых действий. Дополнительные сведения см. [здесь](/azure/devops/user-guide/what-is-azure-devops).
 
 ![Обзор Azure DevOps](_img/azure-devops-project-nodejs/azure-devops-overview.png)
 
@@ -195,4 +192,4 @@ DevOps Starter создает репозиторий git в Azure Repos или �
 После настройки процесса CI/CD конвейеры сборки и выпуска создаются автоматически. Вы можете изменить эти конвейеры сборки и выпуска в соответствии с требованиями вашей команды. См. дополнительные сведения о конвейере CI/CD:
 
 > [!div class="nextstepaction"]
-> [Define your multi-stage continuous deployment (CD) process](/azure/devops/pipelines/release/define-multistage-release-process?view=vsts) (Определение многоэтапного процесса непрерывного развертывания)
+> [Define your multi-stage continuous deployment (CD) process](/azure/devops/pipelines/release/define-multistage-release-process) (Определение многоэтапного процесса непрерывного развертывания)

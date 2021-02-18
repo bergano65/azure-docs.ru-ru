@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.author: ilahat
 author: ilahat
 ms.date: 11/01/2019
-ms.openlocfilehash: cec17b98daa8eca31cda076921288e2838960511
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: 2a2e9d429d494c35c49a5b0a3e10b291fd8f24a6
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96434538"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633943"
 ---
 # <a name="azure-managed-applications-with-notifications"></a>Управляемые приложения Azure с уведомлениями
 
@@ -69,13 +69,13 @@ ms.locfileid: "96434538"
 
 EventType | ProvisioningState | Триггер для уведомления
 ---|---|---
-PUT | Принято | Управляемая группа ресурсов создана и спроектирована успешно после размещения приложения (до начала развертывания в управляемой группе ресурсов).
-PUT | Выполнено | Полная подготовка управляемого приложения прошла удачно после размещения.
-PUT | Сбой | Сбой помещения подготовки экземпляра приложения в любой момент.
+ОТПРАВКА | Принято | Управляемая группа ресурсов создана и спроектирована успешно после размещения приложения (до начала развертывания в управляемой группе ресурсов).
+ОТПРАВКА | Выполнено | Полная подготовка управляемого приложения прошла удачно после размещения.
+ОТПРАВКА | Failed | Сбой помещения подготовки экземпляра приложения в любой момент.
 PATCH | Выполнено | После успешного исправления на экземпляре управляемого приложения для обновления тегов, политики JIT-доступа или управляемого удостоверения.
 DELETE | Удаление | Как только пользователь инициирует удаление экземпляра управляемого приложения.
 DELETE | Удаленная | После полного и успешного удаления управляемого приложения.
-DELETE | Сбой | После любой ошибки в процессе отмены инициализации, блокирующей удаление.
+DELETE | Failed | После любой ошибки в процессе отмены инициализации, блокирующей удаление.
 ## <a name="notification-schema"></a>Схема уведомления
 При перезапуске конечной точки веб-перехватчика для обработки уведомлений необходимо проанализировать полезные данные, чтобы получить важные свойства, которые затем будут действовать при уведомлении. Служба "Каталог услуг" и уведомления управляемого приложения Azure Marketplace предоставляют множество одинаковых свойств. В таблице ниже приведены два небольших различия.
 
@@ -86,10 +86,10 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Succeeded",
-    "applicationDefinitionId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>"    
+    "applicationDefinitionId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>"    
 }
 
 ```
@@ -104,7 +104,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
     "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Failed",
-    "applicationDefinitionId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>",
+    "applicationDefinitionId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applicationDefinitions/<appDefName>",
     "error": {
         "code": "ErrorCode",
         "message": "error message",
@@ -127,7 +127,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Succeeded",
     "billingDetails": {
@@ -150,7 +150,7 @@ POST https://{your_endpoint_URI}/resource?{optional_parameter}={optional_paramet
 
 {
     "eventType": "PUT",
-    "applicationId": "subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
+    "applicationId": "/subscriptions/<subId>/resourceGroups/<rgName>/providers/Microsoft.Solutions/applications/<applicationName>",
     "eventTime": "2019-08-14T19:20:08.1707163Z",
     "provisioningState": "Failed",
     "billingDetails": {
@@ -182,7 +182,7 @@ eventType | Тип события, вызвавшего уведомление. 
 applicationId | Полный идентификатор ресурса управляемого приложения, для которого было активировано уведомление.
 eventTime | Метка времени события, вызвавшего уведомление. (Дата и время в формате UTC 8601.)
 provisioningState | Состояние подготовки экземпляра управляемого приложения. (Например, успешно, сбой, удаление, удаление.)
-error | *Указывается только при сбое provisioningState*. Содержит код ошибки, сообщение и сведения о неполадке, которая привела к сбою.
+Ошибка | *Указывается только при сбое provisioningState*. Содержит код ошибки, сообщение и сведения о неполадке, которая привела к сбою.
 аппликатиондефинитионид | *Задается только для управляемых приложений каталога услуг*. Представляет полный идентификатор ресурса определения приложения, для которого была подготовлена инициализация экземпляра управляемого приложения.
 План | *Задается только для управляемых приложений Azure Marketplace*. Представляет издателя, предложение, номер SKU и версию управляемого экземпляра приложения.
 биллингдетаилс | *Задается только для управляемых приложений Azure Marketplace.* Сведения о выставлении счетов для экземпляра управляемого приложения. Содержит Ресаурцеусажеид, которые можно использовать для запроса сведений об использовании в Azure Marketplace.

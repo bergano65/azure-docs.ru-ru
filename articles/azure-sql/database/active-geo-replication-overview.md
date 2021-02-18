@@ -11,12 +11,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: mathoma, sstein
 ms.date: 08/27/2020
-ms.openlocfilehash: c7a24dbe93bf0096e327804be07acc3f67d2f03b
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 3a678f6280b5f2d0fd372e75bfbeb6eb2e9b1577
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94985762"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100634300"
 ---
 # <a name="creating-and-using-active-geo-replication---azure-sql-database"></a>Создание и использование активной георепликации в базе данных SQL Azure
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -25,6 +25,9 @@ ms.locfileid: "94985762"
 
 > [!NOTE]
 > Активная Георепликация не поддерживается Управляемый экземпляр Azure SQL. Для географической отработки отказа экземпляров SQL Управляемый экземпляр используйте [группы автоматической отработки отказа](auto-failover-group-overview.md).
+
+> [!NOTE]
+> Сведения о переносе баз данных SQL из Azure для Германии с помощью активной георепликации см. в статье [Миграция базы данных SQL с помощью активной георепликации](../../germany/germany-migration-databases.md#migrate-sql-database-using-active-geo-replication).
 
 Активная георепликация разработана в качестве решения для обеспечения непрерывности бизнес-процессов, которое позволяет приложению выполнять быстрое аварийное восстановление отдельных баз данных в случае регионального сбоя или сбоя масштабирования. Если георепликация включена, приложение может инициировать отработку отказа в базу данных-получатель в другом регионе Azure. В одном или разных регионах поддерживается до четырех баз данных-получателей, которые также можно использовать для запросов на доступ только для чтения. Отработка отказа должна инициироваться вручную приложением пользователя. После отработки отказа у новой базы данных-источника будет другая конечная точка подключения.
 
@@ -251,7 +254,7 @@ ms.locfileid: "94985762"
 > [!IMPORTANT]
 > Приведенные ниже команды Transact-SQL применяются только к активной георепликации — они неприменимы к группам отработки отказа. Таким образом, они также не применяются к экземплярам SQL Управляемый экземпляр, так как они поддерживают только группы отработки отказа.
 
-| Команда | Описание |
+| Get-Help | Описание |
 | --- | --- |
 | [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Используйте аргумент ADD SECONDARY ON SERVER, чтобы создать базу данных-получатель для существующей базы данных и начать репликацию данных. |
 | [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql?preserve-view=true&view=azuresqldb-current) |Используйте аргумент FAILOVER или FORCE_FAILOVER_ALLOW_DATA_LOSS, чтобы задать базу данных-получатель в качестве базы данных-источника для запуска отработки отказа. |
@@ -292,6 +295,9 @@ ms.locfileid: "94985762"
 | [Replication Links - List By Database](/rest/api/sql/replicationlinks/listbydatabase) (Ссылки для репликации: вывод списка по базе данных) | Возвращает все связи репликации для заданной базы данных в партнерстве георепликации. Извлекает сведения, отображаемые в представлении каталога sys.geo_replication_links. |
 | [Удаление связей репликации](/rest/api/sql/replicationlinks/delete) | Удаляет связь репликации базы данных. Невозможно выполнить во время отработки отказа. |
 |  | |
+
+
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

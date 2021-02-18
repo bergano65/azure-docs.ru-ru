@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 13bfd7c602389ff286a80f625829da5924a73bdf
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: e4043fd8b7c9571b62cbf65d7398754b27375efd
+ms.sourcegitcommit: 58ff80474cd8b3b30b0e29be78b8bf559ab0caa1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621901"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100633977"
 ---
 # <a name="publish-and-subscribe-with-azure-iot-edge"></a>Публикация и подписка с Azure IoT Edge
 
@@ -60,7 +60,7 @@ ms.locfileid: "98621901"
 
 Чтобы включить TLS, если клиент подключается через порт 8883 (МКТТС) к брокеру MQTT, будет инициирован канал TLS. Брокер отправляет свою цепочку сертификатов, которую клиент должен проверить. Чтобы проверить цепочку сертификатов, корневой сертификат брокера MQTT должен быть установлен в качестве доверенного сертификата на клиенте. Если корневой сертификат не является доверенным, клиентская библиотека будет отклонена брокером MQTT с ошибкой проверки сертификата. Шаги по установке этого корневого сертификата брокера на клиенте аналогичны действиям в случае с [прозрачным шлюзом](how-to-create-transparent-gateway.md) и описаны в документации [Подготовка подчиненного устройства](how-to-connect-downstream-device.md#prepare-a-downstream-device) .
 
-### <a name="authentication"></a>Проверка подлинности
+### <a name="authentication"></a>Аутентификация
 
 Чтобы клиент MQTT сам пропускал проверку подлинности, ему сначала нужно отправить пакет CONNECT в брокер MQTT, чтобы инициировать подключение в его имени. Этот пакет предоставляет три части сведений для проверки подлинности: a `client identifier` , а `username` и a `password` :
 
@@ -366,8 +366,8 @@ mosquitto_pub \
 
 Отправка данных телеметрии в центр Интернета вещей аналогична публикации в разделе, определяемом пользователем, но с помощью определенного раздела центра Интернета вещей:
 
-- Для устройства данные телеметрии отправляются в разделе: `devices/<device_name>/messages/events`
-- Для модуля данные телеметрии отправляются в разделе: `devices/<device_name>/<module_name>/messages/events`
+- Для устройства данные телеметрии отправляются в разделе: `devices/<device_name>/messages/events/`
+- Для модуля данные телеметрии отправляются в разделе: `devices/<device_name>/<module_name>/messages/events/`
 
 Кроме того, создайте маршрут, например, `FROM /messages/* INTO $upstream` для отправки данных телеметрии из брокера IOT Edge MQTT в центр Интернета вещей. Дополнительные сведения о маршрутизации см. в разделе [объявление маршрутов](module-composition.md#declare-routes).
 
@@ -440,6 +440,6 @@ mosquitto_pub \
 Другие примечания к мосту MQTT концентратора IoT Edge:
 - Протокол MQTT будет автоматически использоваться в качестве вышестоящего протокола при использовании брокера MQTT, а IoT Edge используется во вложенной конфигурации, например с `parent_hostname` указанным. Дополнительные сведения о вышестоящем протоколе см. в разделе [облачная связь](iot-edge-runtime.md#cloud-communication). Дополнительные сведения о вложенных конфигурациях см. в статье [Подключение подчиненного IOT Edge устройства к шлюзу Azure IOT Edge](how-to-connect-downstream-iot-edge-device.md#configure-iot-edge-on-devices).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Общие сведения о центре IoT Edge](iot-edge-runtime.md#iot-edge-hub)
