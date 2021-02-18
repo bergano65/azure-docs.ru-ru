@@ -6,12 +6,12 @@ ms.author: sunila
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 07/01/2020
-ms.openlocfilehash: 5dff78989eef17f95d8b8dd108baafc53a3f761a
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1779df1c5f9baf2aa46ff809ecae9ec5e3cd7adb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657028"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100581566"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
@@ -162,8 +162,8 @@ SELECT * FROM query_store.pgms_wait_sampling_view;
 | user_id | oid | pg_authid.oid | Идентификатор объекта пользователя, который выполнил инструкцию |
 | db_id | oid | pg_database.oid | Идентификатор объекта базы данных, в которой была выполнена инструкция |
 | query_id | BIGINT |  | Внутренний хэш-код, вычисляемый на основе дерева синтаксического анализа инструкции |
-| event_type | текст |  | Тип события, которого ожидает серверный компонент |
-| event | текст |  | Имя события ожидания, если серверный компонент сейчас находится в состоянии ожидания |
+| event_type | text |  | Тип события, которого ожидает серверный компонент |
+| event | text |  | Имя события ожидания, если серверный компонент сейчас находится в состоянии ожидания |
 | calls | Целое число |  | Число одинаковых записанных событий |
 
 ### <a name="functions"></a>Функции
@@ -178,7 +178,7 @@ Query_store.staging_data_reset() returns void
 
 
 ## <a name="azure-monitor"></a>Azure Monitor
-База данных Azure для PostgreSQL интегрирована с [параметрами диагностики Azure Monitor](../azure-monitor/platform/diagnostic-settings.md). Параметры диагностики позволяют отправлять журналы postgres в формате JSON, чтобы [Azure Monitor журналы](../azure-monitor/log-query/log-query-overview.md) для аналитики и оповещений, концентраторов событий для потоковой передачи и службу хранилища Azure для архивации.
+База данных Azure для PostgreSQL интегрирована с [параметрами диагностики Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md). Параметры диагностики позволяют отправлять журналы postgres в формате JSON, чтобы [Azure Monitor журналы](../azure-monitor/logs/log-query-overview.md) для аналитики и оповещений, концентраторов событий для потоковой передачи и службу хранилища Azure для архивации.
 
 >[!IMPORTANT]
 > Эта диагностическая функция для доступна только в ценовых категориях общего назначения и оптимизированных для памяти.
@@ -195,7 +195,7 @@ Query_store.staging_data_reset() returns void
 5. Выберите типы журналов **QueryStoreRuntimeStatistics** и **QueryStoreWaitStatistics**.
 6. Сохраните вашу настройку.
 
-Чтобы включить этот параметр с помощью PowerShell, CLI или REST API, см. [статью параметры диагностики](../azure-monitor/platform/diagnostic-settings.md).
+Чтобы включить этот параметр с помощью PowerShell, CLI или REST API, см. [статью параметры диагностики](../azure-monitor/essentials/diagnostic-settings.md).
 
 ### <a name="json-log-format"></a>Формат журнала JSON
 В следующих таблицах описываются поля для двух типов журналов. Порядок появления выбранных полей зависит от выбранной конечной точки вывода.
@@ -253,6 +253,6 @@ Query_store.staging_data_reset() returns void
 - [Чтение реплик](concepts-read-replicas.md) реплицирует данные хранилища запросов с сервера источника. Это означает, что хранилище запросов реплики чтения не предоставляет статистических данных о запросах, выполняемых в реплике чтения.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 - Дополнительные сведения о [ситуациях, в которых хранилище запросов может быть особенно полезным](concepts-query-store-scenarios.md).
 - Дополнительные сведения о [рекомендациях по работе с хранилищем запросов](concepts-query-store-best-practices.md).

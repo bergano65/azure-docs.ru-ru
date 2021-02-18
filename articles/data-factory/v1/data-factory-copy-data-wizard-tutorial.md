@@ -1,23 +1,18 @@
 ---
 title: 'Руководство по созданию конвейера с помощью мастера копирования '
 description: С помощью этого учебника вы создадите конвейер фабрики данных Azure с действием копирования при помощи мастера копирования, поддерживаемого фабрикой данных.
-services: data-factory
-documentationcenter: ''
 author: linda33wj
-manager: shwang
-ms.assetid: b87afb8e-53b7-4e1b-905b-0343dd096198
 ms.service: data-factory
-ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 93360e48dad13b9ec57175d31ecb61d32974f066
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 60a575fc211c512c8657bffd567c96f98cc3d69a
+ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93128408"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100377012"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-data-factory-copy-wizard"></a>Руководство по Создание конвейера с действием копирования с помощью мастера копирования фабрики данных
 > [!div class="op_single_selector"]
@@ -52,7 +47,7 @@ ms.locfileid: "93128408"
 2. В колонке **Создать фабрику данных** выполните следующие действия.
    
    1. Введите **ADFTutorialDataFactory** в поле **Имя**.
-       Имя фабрики данных Azure должно быть глобально уникальным. При возникновении ошибки `Data factory name “ADFTutorialDataFactory” is not available` измените имя фабрики данных (например, на ваше_имя_ADFTutorialDataFactoryYYYYMMDD) и попробуйте создать фабрику данных снова. Ознакомьтесь с разделом [Фабрика данных — правила именования](data-factory-naming-rules.md) , чтобы узнать о правилах именования артефактов фабрики данных.  
+       Имя фабрики данных Azure должно быть глобально уникальным. При возникновении ошибки `Data factory name "ADFTutorialDataFactory" is not available` измените имя фабрики данных (например, на ваше_имя_ADFTutorialDataFactoryYYYYMMDD) и попробуйте создать фабрику данных снова. Ознакомьтесь с разделом [Фабрика данных — правила именования](data-factory-naming-rules.md) , чтобы узнать о правилах именования артефактов фабрики данных.  
       
        ![Имя фабрики данных недоступно](./media/data-factory-copy-data-wizard-tutorial/getstarted-data-factory-not-available.png)    
    2. Выберите свою **подписку Azure**.

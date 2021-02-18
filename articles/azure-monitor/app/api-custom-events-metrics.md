@@ -4,12 +4,12 @@ description: Вставьте несколько строк кода в свое
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 72e79ff90422a6f055d5b883ba208555244687b3
-ms.sourcegitcommit: 2f9f306fa5224595fa5f8ec6af498a0df4de08a8
+ms.openlocfilehash: 881c657b25d04834d83221c738c578b8281752b7
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98927824"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593747"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -108,7 +108,7 @@ telemetry.getContext().getDevice().setId("...");
 
 ## <a name="trackevent"></a>TrackEvent (Отслеживание событий)
 
-В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../platform/metrics-charts.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](./diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
+В Application Insights *пользовательское событие* — это точка данных, которую можно отобразить как суммарное значение в [обозревателе метрик](../essentials/metrics-charts.md), а также как отдельные значения на вкладке [поиска по журналу диагностики](./diagnostic-search.md). (Оно не связано с MVC и другими "событиями" платформы.)
 
 Вставьте вызовы `TrackEvent` в код для подсчета различных событий: как часто пользователи выбирают определенный компонент, как часто они достигают определенных целей, а также как часто возникают те или иные ошибки.
 
@@ -146,7 +146,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="custom-events-in-analytics"></a>Пользовательские события в службе аналитики
 
-Данные телеметрии доступны в `customEvents` таблице на [вкладке Application Insights журналов](../log-query/log-query-overview.md) или в процессе [использования](usage-overview.md). События могут поступать `trackEvent(..)` или [щелкнуть подключаемый модуль автоматической коллекции аналитики](javascript-click-analytics-plugin.md).
+Данные телеметрии доступны в `customEvents` таблице на [вкладке Application Insights журналов](../logs/log-query-overview.md) или в процессе [использования](usage-overview.md). События могут поступать `trackEvent(..)` или [щелкнуть подключаемый модуль автоматической коллекции аналитики](javascript-click-analytics-plugin.md).
 
  
 
@@ -204,7 +204,7 @@ telemetry.trackMetric({name: "queueLength", value: 42.0});
 
 ### <a name="custom-metrics-in-analytics"></a>Настраиваемые метрики в аналитике
 
-Данные телеметрии доступны в таблице `customMetrics` в [службе аналитики Application Insights](../log-query/log-query-overview.md). Каждая строка представляет собой вызов `trackMetric(..)` в приложении.
+Данные телеметрии доступны в таблице `customMetrics` в [службе аналитики Application Insights](../logs/log-query-overview.md). Каждая строка представляет собой вызов `trackMetric(..)` в приложении.
 
 * `valueSum` — это сумма измерений. Чтобы получить среднее значение, разделите текущее значение на значение `valueCount`.
 * `valueCount` — число измерений, агрегированных в этот вызов `trackMetric(..)`.
@@ -274,7 +274,7 @@ appInsights.stopTrackPage("Page1", url, properties, measurements);
 
 ### <a name="page-telemetry-in-analytics"></a>Телеметрия страниц в службе аналитики
 
-В [службе аналитики](../log-query/log-query-overview.md) две таблицы содержат данные по операциям в браузере.
+В [службе аналитики](../logs/log-query-overview.md) две таблицы содержат данные по операциям в браузере.
 
 * Таблица `pageViews` содержит данные по URL-адресу и названию страницы.
 * Таблица `browserTimings` содержит данные по производительности клиента, например время, затраченное на обработку входящих данных.
@@ -310,7 +310,7 @@ TrackRequest используется в серверном пакете SDK, ч
 
 ## <a name="operation-context"></a>Контекст операции
 
-Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В службе [Поиск](./diagnostic-search.md) и службе [Analytics](../log-query/log-query-overview.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
+Вы можете коррелировать элементы телеметрии между собой. Для этого свяжите их с контекстом операции. Стандартный модуль отслеживания запросов делает это для исключений и других событий, отправляемых во время обработки HTTP-запроса. В службе [Поиск](./diagnostic-search.md) и службе [Analytics](../logs/log-query-overview.md) можно легко найти все события, связанные с запросом при помощи его идентификатора операции.
 
 Дополнительные сведения о корреляции см. в статье [Корреляция данных телеметрии в Application Insights](./correlation.md).
 
@@ -348,7 +348,7 @@ using (var operation = telemetryClient.StartOperation<RequestTelemetry>("operati
 
 ### <a name="requests-in-analytics"></a>Запросы в аналитике
 
-В [службе аналитики Application Insights](../log-query/log-query-overview.md) запросы приводятся в таблице `requests`.
+В [службе аналитики Application Insights](../logs/log-query-overview.md) запросы приводятся в таблице `requests`.
 
 Если действует [выборка](./sampling.md), свойство itemCount будет иметь значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackRequest() процесс выборки передал только один. Чтобы получить правильное число запросов и среднюю длительность, разбитую по именам запросов, используйте следующий код:
 
@@ -361,7 +361,7 @@ requests
 
 Отправляйте исключения в Application Insights, чтобы:
 
-* [определить их количество](../platform/metrics-charts.md) (для указания на частоту возникновения проблемы);
+* [определить их количество](../essentials/metrics-charts.md) (для указания на частоту возникновения проблемы);
 * [проверить отдельные значения.](./diagnostic-search.md)
 
 Отчеты содержат данные по трассировкам стеков.
@@ -430,7 +430,7 @@ catch (ex)
 
 ### <a name="exceptions-in-analytics"></a>Исключения в службе аналитики
 
-В [службе аналитики Application Insights](../log-query/log-query-overview.md) исключения приводятся в таблице `exceptions`.
+В [службе аналитики Application Insights](../logs/log-query-overview.md) исключения приводятся в таблице `exceptions`.
 
 Если действует [выборка](./sampling.md), свойство `itemCount` имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackException() процесс выборки передал только один. Чтобы получить правильное число исключений, разбитое по типам исключений, используйте следующий код:
 
@@ -525,7 +525,7 @@ telemetry.trackTrace("Slow Database response", SeverityLevel.Warning, properties
 
 ### <a name="traces-in-analytics"></a>Трассировки в службе аналитики
 
-В [службе аналитики Application Insights](../log-query/log-query-overview.md) вызовы TrackTrace приводятся в таблице `traces`.
+В [службе аналитики Application Insights](../logs/log-query-overview.md) вызовы TrackTrace приводятся в таблице `traces`.
 
 Если действует [выборка](./sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов `trackTrace()` процесс выборки передал только один. Чтобы получить правильное количество вызовов трассировки, следует использовать такой код, как `traces | summarize sum(itemCount)`.
 
@@ -607,7 +607,7 @@ finally
 
 ### <a name="dependencies-in-analytics"></a>Зависимости в службе аналитики
 
-В [службе аналитики Application Insights](../log-query/log-query-overview.md) вызовы trackDependency приводятся в таблице `dependencies`.
+В [службе аналитики Application Insights](../logs/log-query-overview.md) вызовы trackDependency приводятся в таблице `dependencies`.
 
 Если действует [выборка](./sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackDependency() процесс выборки передал только один. Чтобы получить правильное число зависимостей, разбитое по конечным компонентам, используйте следующий код:
 
@@ -695,7 +695,7 @@ function Authenticated(signInId) {
 appInsights.setAuthenticatedUserContext(validatedId, accountId);
 ```
 
-В [обозревателе метрик](../platform/metrics-charts.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
+В [обозревателе метрик](../essentials/metrics-charts.md) можно создать диаграмму для отображения количества **пользователей, прошедших проверку подлинности**, а также **учетных записей пользователей**.
 
 Кроме того, можно [выполнять поиск](./diagnostic-search.md) точек данных клиента с помощью конкретных имен пользователей и учетных записей.
 
@@ -816,7 +816,7 @@ telemetry.TrackEvent(event);
 
 ### <a name="custom-measurements-and-properties-in-analytics"></a>Пользовательские измерения и свойства в службе аналитики
 
-В [службе аналитики](../log-query/log-query-overview.md) пользовательские метрики и свойства приводятся в атрибутах `customMeasurements` и `customDimensions` каждой записи телеметрии.
+В [службе аналитики](../logs/log-query-overview.md) пользовательские метрики и свойства приводятся в атрибутах `customMeasurements` и `customDimensions` каждой записи телеметрии.
 
 Например, если вы добавили свойство game в телеметрию запросов, следующий запрос подсчитывает число различных значений свойства game и показывает среднее значение пользовательской метрики score:
 
@@ -1115,7 +1115,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 * *Какие исключения могут создаваться при вызовах Track_()?*
 
-    Нет. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
+    Отсутствует. Вам не нужно помещать их в предложения try-catch. Если пакет SDK сталкивается с проблемами, он добавляет в журнал сообщения, которые отображаются в консоли отладки и, если сообщения проходят, — в поиске по журналу диагностики.
 * *Существует ли REST API для получения данных из портала?*
 
     Да, [API доступа к данным](https://dev.applicationinsights.io/). К другим способам извлечения данных относятся [экспорт из Analytics в Power BI](./export-power-bi.md) и [непрерывный экспорт](./export-telemetry.md).

@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/11/2020
 ms.author: nikuklic
-ms.openlocfilehash: 2f884a09e6b51b1c72034a62eaea601a4e69ecd2
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 5c00e88e228bf752f18c51741b89463012510e4c
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98024321"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100551305"
 ---
 [!INCLUDE [Emergency Calling Notice](../../../includes/emergency-calling-notice-include.md)]
 ## <a name="prerequisites"></a>Предварительные требования
@@ -57,7 +57,7 @@ ms.locfileid: "98024321"
 
 ```javascript
 import { CallClient, CallAgent } from "@azure/communication-calling";
-import { AzureCommunicationUserCredential } from '@azure/communication-common';
+import { AzureCommunicationTokenCredential } from '@azure/communication-common';
 
 let call;
 let callAgent;
@@ -68,9 +68,9 @@ const hangUpPhoneButton = document.getElementById("hang-up-phone-button");
 
 async function init() {
     const callClient = new CallClient();
-    const tokenCredential = new AzureCommunicationUserCredential('your-token-here');
+    const tokenCredential = new AzureCommunicationTokenCredential('<USER ACCESS TOKEN with PSTN scope>');
     callAgent = await callClient.createCallAgent(tokenCredential);
-  //  callButton.disabled = false;
+  //  callPhoneButton.disabled = false;
 }
 
 init();
@@ -124,7 +124,7 @@ hangUpPhoneButton.addEventListener("click", () => {
 
 
 ```console
-npx webpack-dev-server --entry ./client.js --output bundle.js
+npx webpack-dev-server --entry ./client.js --output bundle.js --debug --devtool inline-source-map
 ```
 
 Откройте веб-браузер и перейдите по адресу `http://localhost:8080/`. Вы увидите следующее:

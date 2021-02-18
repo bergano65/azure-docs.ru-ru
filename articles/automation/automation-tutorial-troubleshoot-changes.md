@@ -7,12 +7,12 @@ keywords: изменение, отслеживание, отслеживание
 ms.date: 12/05/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 28c440f27dcbd4ac509adea83d5c3085488cb488
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: a223ac4296dd160bbdd904e1d3443552d4f49a23
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92204254"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587934"
 ---
 # <a name="troubleshoot-changes-on-an-azure-vm"></a>Устранение неполадок с изменениями на виртуальной машине Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "92204254"
 
     ![Изменение значений для включения функции](./media/automation-tutorial-troubleshoot-changes/enableinventory.png)
 
-3. Выберите рабочую область [Log Analytics](../azure-monitor/log-query/log-query-overview.md). Эта рабочая область собирает данные, создаваемые такими компонентами, как Отслеживание изменений и инвентаризация. Рабочая область предоставляет единое расположение для проверки и анализа данных из нескольких источников.
+3. Выберите рабочую область [Log Analytics](../azure-monitor/logs/log-query-overview.md). Эта рабочая область собирает данные, создаваемые такими компонентами, как Отслеживание изменений и инвентаризация. Рабочая область предоставляет единое расположение для проверки и анализа данных из нескольких источников.
 
     [!INCLUDE [azure-monitor-log-analytics-rebrand](../../includes/azure-monitor-log-analytics-rebrand.md)]
 
@@ -80,7 +80,7 @@ ConfigurationChange
 | where ConfigChangeType == "WindowsServices" and SvcState == "Stopped"
 ```
 
-Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/log-query/log-query-overview.md).
+Дополнительные сведения о поиске по файлам журналов в журналах Azure Monitor см. в статье [Анализ данных журнала в Azure Monitor](../azure-monitor/logs/log-query-overview.md).
 
 ## <a name="configure-change-tracking"></a>Настройка функции отслеживания изменений
 
@@ -198,7 +198,7 @@ ConfigurationChange
 
     ![Настройка логики сигналов](./media/automation-tutorial-troubleshoot-changes/configure-signal-logic.png)
 
-10. Выберите **Создать** в разделе **Группы действий**. Группа действий содержит действия, которые можно использовать для нескольких оповещений. Эти действия могут включать в себя уведомления электронной почты, модули Runbook, веб-перехватчики и многое другое, но не ограничиваются ими. Дополнительные сведения о группах действий см. в разделе [Создание групп действий и управление ими на портале Azure](../azure-monitor/platform/action-groups.md).
+10. Выберите **Создать** в разделе **Группы действий**. Группа действий содержит действия, которые можно использовать для нескольких оповещений. Эти действия могут включать в себя уведомления электронной почты, модули Runbook, веб-перехватчики и многое другое, но не ограничиваются ими. Дополнительные сведения о группах действий см. в разделе [Создание групп действий и управление ими на портале Azure](../azure-monitor/alerts/action-groups.md).
 
 11. В разделе **Подробности об оповещении** введите имя и описание для оповещения. 
 

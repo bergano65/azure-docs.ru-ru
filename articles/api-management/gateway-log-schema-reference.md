@@ -8,16 +8,16 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.date: 10/14/2020
 ms.author: apimpm
-ms.openlocfilehash: 064ac21e01239f7be3ddca9e48089ce880c6af58
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: df0018e323bc0c5725c9752b25b77612f035c196
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379997"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582495"
 ---
 # <a name="reference-api-management-resource-log-schema"></a>Справочные материалы. Схема журнала ресурсов Управления API
 
-Эта статья содержит справочник по схеме для журнала ресурсов GatewayLogs службы управления API Azure. В записях журнала также содержатся поля в [общей схеме верхнего уровня](../azure-monitor/platform/resource-logs-schema.md#top-level-common-schema).
+Эта статья содержит справочник по схеме для журнала ресурсов GatewayLogs службы управления API Azure. В записях журнала также содержатся поля в [общей схеме верхнего уровня](../azure-monitor/essentials/resource-logs-schema.md#top-level-common-schema).
 
 Сведения о включении сбора журнала ресурсов в Управлении API см. в разделе [Журналы ресурсов](api-management-howto-use-azure-monitor.md#resource-logs).
 
@@ -25,7 +25,7 @@ ms.locfileid: "93379997"
 
 Для каждого запроса API регистрируются следующие свойства:
 
-| Свойство  | Тип | Описание |
+| Свойство  | Type | Описание |
 | ------------- | ------------- | ------------- |
 | method | строка | Метод HTTP входящего запроса |
 | url | строка | URL-адрес входящего запроса |
@@ -49,5 +49,5 @@ ms.locfileid: "93379997"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об API для мониторинга в Управлении API см. в статье [Мониторинг опубликованных API-интерфейсов](api-management-howto-use-azure-monitor.md).
-* Дополнительные сведения об общей схеме и схеме для конкретных служб для журналов ресурсов Azure см. в [этой статье](../azure-monitor/platform/resource-logs-schema.md).
+* Дополнительные сведения об общей схеме и схеме для конкретных служб для журналов ресурсов Azure см. в [этой статье](../azure-monitor/essentials/resource-logs-schema.md).
 

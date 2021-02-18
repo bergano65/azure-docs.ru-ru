@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: 88c287c4aa87b4df41bfe6bbc1992262b21d07aa
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 190a9e431dedfb0f0fe6077e903174f253f5c773
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232766"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589114"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Использование аналитики для мониторинга и настройки Azure Load Balancer
 
@@ -40,7 +40,7 @@ ms.locfileid: "98232766"
 
 ## <a name="metrics-dashboard"></a>Панель мониторинга метрики
 
-В колонке аналитика Load Balancer можно выбрать более подробные метрики для просмотра предварительно настроенной [Azure Monitor книги](../azure-monitor/platform/workbooks-overview.md) , содержащей визуальные элементы метрик, относящиеся к конкретным аспектам Load Balancer. На этой панели мониторинга отображается состояние Load Balancer и ссылки на соответствующую документацию в верхней части страницы.
+В колонке аналитика Load Balancer можно выбрать более подробные метрики для просмотра предварительно настроенной [Azure Monitor книги](../azure-monitor/visualize/workbooks-overview.md) , содержащей визуальные элементы метрик, относящиеся к конкретным аспектам Load Balancer. На этой панели мониторинга отображается состояние Load Balancer и ссылки на соответствующую документацию в верхней части страницы.
 
 Сначала отобразится вкладка Обзор. Можно перемещаться по доступным вкладкам, которые содержат визуальные элементы, относящиеся к конкретному аспекту Load Balancer. Явное руководство для каждого из них доступно на панели мониторинга в нижней части каждой вкладки.
 
@@ -76,8 +76,8 @@ ms.locfileid: "98232766"
 ### <a name="metric-definitions"></a>Определения метрик
 На вкладке определения метрик содержатся все сведения, показанные в [статье многомерные метрики](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 * Проверьте панель мониторинга и оставьте отзыв, воспользовавшись приведенной ниже ссылкой, если есть все, что можно улучшить.
 * [Ознакомьтесь с документацией по метрикам, чтобы понять, как вычисляется Каждая метрика.](./load-balancer-standard-diagnostics.md#multi-dimensional-metrics)
 * [Создание мониторов подключения для Load Balancer](../network-watcher/connection-monitor.md)
-* [Создайте собственные книги](../azure-monitor/platform/workbooks-overview.md), нажав кнопку изменить на панели мониторинга подробной метрики.
+* [Создайте собственные книги](../azure-monitor/visualize/workbooks-overview.md), нажав кнопку изменить на панели мониторинга подробной метрики.

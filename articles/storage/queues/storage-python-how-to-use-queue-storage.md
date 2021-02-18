@@ -1,20 +1,20 @@
 ---
-title: Использование хранилища очередей Azure из Python в службе хранилища Azure
+title: Использование хранилища очередей Azure из Python
 description: Узнайте, как использовать хранилище очередей Azure из Python для создания и удаления очередей, а также для вставки, получения и удаления сообщений.
 author: mhopkins-msft
 ms.author: mhopkins
 ms.reviewer: dineshm
-ms.date: 01/19/2021
+ms.date: 02/16/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
 ms.custom: seo-javascript-october2019, devx-track-python
-ms.openlocfilehash: 82d18fd79b10a8500cfd9191f143438d69fda401
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 8c30d05cf49162155f84961e1fd8a32361444ba5
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600799"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100653267"
 ---
 # <a name="how-to-use-azure-queue-storage-from-python"></a>Использование хранилища очередей Azure из Python
 
@@ -22,9 +22,9 @@ ms.locfileid: "98600799"
 
 ## <a name="overview"></a>Обзор
 
-В этой статье описываются распространенные сценарии использования службы хранилища очередей Azure. В число рассматриваемых сценариев входят Вставка, просмотр, получение и удаление сообщений очереди. Также рассматривается код для создания и удаления очередей.
+В этой статье описываются распространенные сценарии использования службы хранилища очередей Azure. К рассматриваемым сценариям относятся Вставка, просмотр, получение и удаление сообщений очереди. Также рассматривается код для создания и удаления очередей.
 
-Примеры в этой статье написаны на языке Python и используют [клиентскую библиотеку хранилища очередей Azure для Python](https://github.com/Azure/Azure-SDK-for-Python/tree/master/sdk/storage/azure-storage-queue). Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
+Примеры в этой статье написаны на языке Python и используют [клиентскую библиотеку хранилища очередей Azure для Python](https://github.com/azure/azure-sdk-for-python/tree/master/sdk/storage/azure-storage-queue). Дополнительные сведения об очередях см. в разделе [Дальнейшие действия](#next-steps).
 
 [!INCLUDE [storage-queue-concepts-include](../../../includes/storage-queue-concepts-include.md)]
 
@@ -117,6 +117,26 @@ queue_service.create_queue(queue_name)
 
 ---
 
+Сообщения в очереди Azure хранятся в виде текста. Если вы хотите хранить двоичные данные, настройте функции кодирования и декодирования Base64 перед помещением сообщения в очередь.
+
+# <a name="python-v12"></a>[Python версии 12](#tab/python)
+
+Настройка функций кодирования и декодирования Base64 при создании клиентского объекта.
+
+:::code language="python" source="~/azure-storage-snippets/queues/howto/python/python-v12/python-howto-v12.py" id="Snippet_EncodeMessage":::
+
+# <a name="python-v2"></a>[Python v2](#tab/python2)
+
+Настройка функций кодирования и декодирования Base64 для объекта хранилища очередей.
+
+```python
+# Setup Base64 encoding and decoding functions
+queue_service.encode_function = QueueMessageFormat.binary_base64encode
+queue_service.decode_function = QueueMessageFormat.binary_base64decode
+```
+
+---
+
 ## <a name="insert-a-message-into-a-queue"></a>Вставка сообщения в очередь
 
 # <a name="python-v12"></a>[Python версии 12](#tab/python)
@@ -133,26 +153,6 @@ queue_service.create_queue(queue_name)
 message = u"Hello, World"
 print("Adding message: " + message)
 queue_service.put_message(queue_name, message)
-```
-
----
-
-Сообщения в очереди Azure хранятся в виде текста. Если вы хотите хранить двоичные данные, настройте функции кодирования и декодирования Base64 перед помещением сообщения в очередь.
-
-# <a name="python-v12"></a>[Python версии 12](#tab/python)
-
-Настройка функций кодирования и декодирования Base64 в клиентском объекте очереди.
-
-:::code language="python" source="~/azure-storage-snippets/queues/howto/python/python-v12/python-howto-v12.py" id="Snippet_EncodeMessage":::
-
-# <a name="python-v2"></a>[Python v2](#tab/python2)
-
-Настройка функций кодирования и декодирования Base64 для объекта хранилища очередей.
-
-```python
-# Setup Base64 encoding and decoding functions
-queue_service.encode_function = QueueMessageFormat.binary_base64encode
-queue_service.decode_function = QueueMessageFormat.binary_base64decode
 ```
 
 ---
@@ -293,7 +293,7 @@ queue_service.delete_queue(queue_name)
 
 [!INCLUDE [storage-try-azure-tools-queues](../../../includes/storage-try-azure-tools-queues.md)]
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы узнали основные сведения о хранилище очередей, воспользуйтесь следующими ссылками для получения дополнительных сведений.
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/14/2020
 ms.author: mbaldwin
 ms.custom: security-benchmark
-ms.openlocfilehash: 3a232f8e8c35e265a8243ac79e465c03f6b9650e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: cc52d1f6eec5f1aedb0db37b3945f7be6d9f62a8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487870"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595627"
 ---
 # <a name="security-control-network-security"></a>Управление безопасностью: Сетевая безопасность
 
@@ -20,7 +20,7 @@ ms.locfileid: "96487870"
 
 ## <a name="11-protect-azure-resources-within-virtual-networks"></a>1,1: защита ресурсов Azure в виртуальных сетях
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1,1 | 9,2, 9,4, 14,1, 14,2, 14,3 | Customer |
 
@@ -40,7 +40,7 @@ ms.locfileid: "96487870"
 
 ## <a name="12-monitor-and-log-the-configuration-and-traffic-of-virtual-networks-subnets-and-nics"></a>1,2. Мониторинг и запись конфигурации и трафика виртуальных сетей, подсетей и сетевых карт
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.2 | 9,3, 12,2, 12,8 | Customer |
 
@@ -54,7 +54,7 @@ ms.locfileid: "96487870"
 
 ## <a name="13-protect-critical-web-applications"></a>1.3. Защита критических веб-приложений
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1,3 | 9,5 | Customer |
 
@@ -64,7 +64,7 @@ ms.locfileid: "96487870"
 
 ## <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1.4. Запрет взаимодействия с известными опасными IP-адресами
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.4 | 12,3 | Customer |
 
@@ -88,7 +88,7 @@ ms.locfileid: "96487870"
 
 ## <a name="15-record-network-packets"></a>1,5: запись сетевых пакетов
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.5 | 12,5 | Customer |
 
@@ -98,7 +98,7 @@ ms.locfileid: "96487870"
 
 ## <a name="16-deploy-network-based-intrusion-detectionintrusion-prevention-systems-idsips"></a>1.6. Развертывание сетевых систем обнаружения и предотвращения вторжений (IDS/IPS)
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.6 | 12,6, 12,7 | Customer |
 
@@ -114,7 +114,7 @@ ms.locfileid: "96487870"
 
 ## <a name="17-manage-traffic-to-web-applications"></a>1.7. Управление трафиком к веб-приложениям
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.7 | 12,9, 12,10 | Customer |
 
@@ -128,7 +128,7 @@ ms.locfileid: "96487870"
 
 ## <a name="18-minimize-complexity-and-administrative-overhead-of-network-security-rules"></a>1.8. Уменьшение сложности и дополнительных затрат на администрирование в правилах безопасности сети
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.8 | 1.5 | Customer |
 
@@ -142,7 +142,7 @@ ms.locfileid: "96487870"
 
 ## <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1.9. Поддержание стандартных конфигураций безопасности для сетевых устройств
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1,9 | 11,1 | Customer |
 
@@ -158,7 +158,7 @@ ms.locfileid: "96487870"
 
 ## <a name="110-document-traffic-configuration-rules"></a>1.10. Документация по правилам конфигурации трафика
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1,10 | 11.2 | Customer |
 
@@ -176,16 +176,16 @@ ms.locfileid: "96487870"
 
 ## <a name="111-use-automated-tools-to-monitor-network-resource-configurations-and-detect-changes"></a>1.11. Использование автоматизированных средств для мониторинга конфигураций сетевых ресурсов и обнаружения изменений
 
-| Идентификатор Azure | Идентификаторы CIS | Несет |
+| Идентификатор Azure | Идентификаторы CIS | Обязательство |
 |--|--|--|
 | 1.11 | 11,3 | Customer |
 
 Используйте журнал действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах Azure. Создавайте оповещения в Azure Monitor, которые будут запускаться при изменении критических ресурсов.
 
-- [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - См. следующий контроль безопасности: [ведение журнала и мониторинг](security-control-logging-monitoring.md)

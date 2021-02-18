@@ -6,27 +6,27 @@ ms.topic: conceptual
 ms.date: 04/15/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 582dafba40012e9ff9c59bc09adb1a0831e999f5
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: b6ce9e77421df0563810fd7f8255720c1fd2d0c0
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94491228"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591073"
 ---
 # <a name="monitoring-azure-functions-with-azure-monitor-logs"></a>Мониторинг функций Azure с помощью журналов Azure Monitor
 
-Функции Azure предлагают интеграцию с [журналами Azure Monitor](../azure-monitor/platform/data-platform-logs.md) для мониторинга функций. В этой статье показано, как настроить функции Azure для отправки сформированных системой и созданных пользователем журналов в Azure Monitor журналы.
+Функции Azure предлагают интеграцию с [журналами Azure Monitor](../azure-monitor/logs/data-platform-logs.md) для мониторинга функций. В этой статье показано, как настроить функции Azure для отправки сформированных системой и созданных пользователем журналов в Azure Monitor журналы.
 
-Журналы Azure Monitor дают возможность консолидировать журналы из разных ресурсов в одной рабочей области, где их можно анализировать с помощью [запросов](../azure-monitor/log-query/log-query-overview.md) для быстрого извлечения, консолидации и анализа собранных данных.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](../azure-monitor/log-query/log-query-overview.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](../azure-monitor/visualizations.md) или [правилами генерации оповещений](../azure-monitor/platform/alerts-overview.md).
+Журналы Azure Monitor дают возможность консолидировать журналы из разных ресурсов в одной рабочей области, где их можно анализировать с помощью [запросов](../azure-monitor/logs/log-query-overview.md) для быстрого извлечения, консолидации и анализа собранных данных.  Вы можете создавать и тестировать запросы с помощью [Log Analytics](../azure-monitor/logs/log-query-overview.md) на портале Azure, а затем либо напрямую анализировать данные с помощью этих средств, либо сохранять запросы для использования с [визуализациями](../azure-monitor/visualizations.md) или [правилами генерации оповещений](../azure-monitor/alerts/alerts-overview.md).
 
-Azure Monitor использует версию [языка запросов Kusto](/azure/kusto/query/), который применяется в Azure Data Explorer. Он позволяет выполнять простые запросы к журналам, но также включает и расширенную функциональность, например функции агрегирования, объединения и интеллектуальную аналитику. Доступно [множество уроков](../azure-monitor/log-query/get-started-queries.md) для быстрого изучения этого языка.
+Azure Monitor использует версию [языка запросов Kusto](/azure/kusto/query/), который применяется в Azure Data Explorer. Он позволяет выполнять простые запросы к журналам, но также включает и расширенную функциональность, например функции агрегирования, объединения и интеллектуальную аналитику. Доступно [множество уроков](../azure-monitor/logs/get-started-queries.md) для быстрого изучения этого языка.
 
 > [!NOTE]
 > Интеграция с журналами Azure Monitor в настоящее время доступна в общедоступной предварительной версии для приложений-функций версии 2 и 3, работающих на основе использования Windows, Premium и специальных планов размещения.
 
 ## <a name="setting-up"></a>Настройка
 
-1. В разделе **мониторинг** приложения функции в [портал Azure](https://portal.azure.com)выберите **параметры диагностики** , а затем щелкните **Добавить параметр диагностики**.
+1. В разделе **мониторинг** приложения функции в [портал Azure](https://portal.azure.com)выберите **параметры диагностики**, а затем щелкните **Добавить параметр диагностики**.
 
    :::image type="content" source="media/functions-monitor-log-analytics/diagnostic-settings-add.png" alt-text="Выбор параметров диагностики":::
 
@@ -121,8 +121,8 @@ FunctionAppLogs
 
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 - Ознакомьтесь с [обзором функций Azure](functions-overview.md).
-- Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/platform/data-platform-logs.md).
-- Узнайте больше о [языке запросов](../azure-monitor/log-query/get-started-queries.md).
+- Дополнительные сведения о [журналах Azure Monitor](../azure-monitor/logs/data-platform-logs.md).
+- Узнайте больше о [языке запросов](../azure-monitor/logs/get-started-queries.md).

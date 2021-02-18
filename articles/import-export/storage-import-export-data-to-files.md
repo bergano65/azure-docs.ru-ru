@@ -5,16 +5,16 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 02/16/2021
 ms.author: alkohli
 ms.subservice: common
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: e038cdcb50c7ee15960c904c8e234d6917d02f3b
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 44473efbfb1c07c628c939fd05805ed92e691736
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98706870"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100651869"
 ---
 # <a name="use-azure-importexport-service-to-import-data-to-azure-files"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в службу "Файлы Azure"
 
@@ -22,7 +22,7 @@ ms.locfileid: "98706870"
 
 Служба "Импорт и экспорт Azure" поддерживает только импорт файлов Azure в службу хранилища Azure. Экспорт файлов Azure не поддерживается.
 
-## <a name="prerequisites"></a>Предварительные условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Перед созданием задания импорта для передачи данных в службу "Файлы Azure" внимательно просмотрите и выполните описанные ниже предварительные требования. Необходимо сделать следующее:
 
@@ -119,13 +119,13 @@ ms.locfileid: "98706870"
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 1. Войдите в систему по адресу https://portal.azure.com/.
-2. Выберите пункты **Все службы > Хранилище > Задания импорта и экспорта**.
+2. Выполните поиск **заданий импорта и экспорта**.
 
-    ![Перейдите к импорту и экспорту](./media/storage-import-export-data-to-blobs/import-to-blob1.png)
+    ![Поиск по заданиям импорта и экспорта](./media/storage-import-export-data-to-blobs/import-to-blob-1.png)
 
-3. Щелкните **создать задание импорта и экспорта**.
+3. Выберите **+ Создать**.
 
-    ![Щелкните "Задание импорта и экспорта"](./media/storage-import-export-data-to-blobs/import-to-blob2.png)
+    ![Выберите Создать, чтобы создать новый ](./media/storage-import-export-data-to-blobs/import-to-blob-2.png)
 
 4. В разделе **Основные сведения**:
 
@@ -136,7 +136,7 @@ ms.locfileid: "98706870"
     - Выберите подписку.
     - Выберите группу ресурсов.
 
-        ![Создание задания импорта — шаг 1](./media/storage-import-export-data-to-blobs/import-to-blob3.png)
+        ![Создание задания импорта — шаг 1](./media/storage-import-export-data-to-blobs/import-to-blob-3.png)
 
 3. В разделе **Сведения о задании** сделайте следующее:
 
@@ -144,7 +144,7 @@ ms.locfileid: "98706870"
     - Выберите учетную запись хранения, в которую будут импортированы данные.
     - Расположение места назначения автоматически заполняется с учетом выбранного региона учетной записи хранения.
 
-       ![Создание задания импорта — шаг 2](./media/storage-import-export-data-to-blobs/import-to-blob4.png)
+       ![Создание задания импорта — шаг 2](./media/storage-import-export-data-to-blobs/import-to-blob-4.png)
 
 4. В разделе **Сведения о возврате** сделайте следующее:
 
@@ -155,7 +155,7 @@ ms.locfileid: "98706870"
         > [!TIP]
         > Вместо указания адреса электронной почты для отдельного пользователя укажите электронную почту группы. Это гарантирует, что вы получите уведомления, даже если администратор уйдет.
 
-       ![Создание задание импорта – шаг 3](./media/storage-import-export-data-to-blobs/import-to-blob5.png)
+       ![Создание задание импорта – шаг 3](./media/storage-import-export-data-to-blobs/import-to-blob-5.png)
 
 
 5. В разделе **Сводка** сделайте следующее:
@@ -163,7 +163,7 @@ ms.locfileid: "98706870"
     - Укажите адрес центра обработки данных Azure для доставки дисков обратно в Azure. Убедитесь, что в метке доставки упомянуто имя задания и полный адрес.
     - Нажмите кнопку **ОК** для завершения создания задания импорта.
 
-        ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob6.png)
+        ![Создание задания импорта — шаг 4](./media/storage-import-export-data-to-blobs/import-to-blob-6.png)
 
 ### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
@@ -384,7 +384,7 @@ WAImportExport PrepImport /j:<JournalFile> /id:<SessionId> /j:<JournalFile> /id:
 WAImportExport.exe PrepImport /j:JournalTest.jrn /id:session#2  /DataSet:dataset-2.csv
 ```
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Просмотр состояния задания и диска](storage-import-export-view-drive-status.md)
 * [Сведения о требованиях службы "Импорт и экспорт"](storage-import-export-requirements.md)

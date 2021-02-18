@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Mini R so I can use it to transfer data to Azure.
-ms.openlocfilehash: 1cca747003a127371db7d110500e2b4168f10219
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: a202ee1d708feebc7643fa6f20aafa9d8603fc38
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594456"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100546777"
 ---
 # <a name="tutorial-configure-network-for-azure-stack-edge-mini-r"></a>Руководство по настройке параметров сети для Azure Stack Edge Mini R
 
@@ -50,7 +50,7 @@ ms.locfileid: "99594456"
 
 2. Если требуется обновление нулевого дня, можно настроить порт данных с проводным подключением. Дополнительные сведения о настройке проводного подключения для этого устройства см. в разделе [Подключение кабелей к устройству](azure-stack-edge-mini-r-deploy-install.md#cable-the-device). Когда обновление будет установлено, проводное подключение можно устранить.
 
-3. Создайте сертификаты для Wi-Fi и цепочки подписывания. Сертификаты как для цепочки подписывания, так и для Wi-Fi должны иметь формат DER и расширение файла *.cer*. Инструкции см. в статье о [создании сертификатов](azure-stack-edge-j-series-manage-certificates.md).
+3. Создайте сертификаты для Wi-Fi и цепочки подписывания. Сертификаты как для цепочки подписывания, так и для Wi-Fi должны иметь формат DER и расширение файла *.cer*. Инструкции см. в статье о [создании сертификатов](azure-stack-edge-gpu-manage-certificates.md).
 
 4. В локальном веб-интерфейсе перейдите к разделу **Get started** (Начало работы). На плитке **Security** (Безопасность) выберите элемент **Certificates** (Сертификаты), а затем — команду **Configure** (Настроить). 
 
