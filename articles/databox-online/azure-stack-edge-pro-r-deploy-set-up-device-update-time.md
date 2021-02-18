@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 10/18/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to connect and activate Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: a22d710f9e18dc98e9fe068abedd57152f4c755c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 095eb8c20830b9bfe27e26453567d3c25230f2ef
+ms.sourcegitcommit: 5a999764e98bd71653ad12918c09def7ecd92cf6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464554"
+ms.lasthandoff: 02/16/2021
+ms.locfileid: "100548120"
 ---
 # <a name="tutorial-configure-the-device-settings-for-azure-stack-edge-pro-r"></a>Руководство по настройке параметров устройства для Azure Stack Edge Pro R
 
@@ -82,7 +82,7 @@ ms.locfileid: "96464554"
         ![Страница "Сервер обновлений" в локальном пользовательском веб-интерфейсе (2)](./media/azure-stack-edge-pro-r-deploy-set-up-device-update-time/update-3.png)
 
         > [!NOTE] 
-        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-j-series-manage-certificates.md).         
+        > Если настроен отдельный сервер Центра обновления Windows и вы решили подключиться по протоколу *HTTPS* (вместо *HTTP*), для подключения к серверу обновления необходимо иметь сертификат цепочки подписывания. Сведения о создании и передаче сертификатов см. в статье об [управлении сертификатами](azure-stack-edge-gpu-manage-certificates.md).         
         > Для работы в режиме развертывания без подключения, например при распределении по уровням устройства Azure Stack Edge в Модульном центре обработки данных, включите параметр WSUS. Во время активации устройство проверяет наличие обновлений, и если сервер не настроен, то активация завершится ошибкой. 
 
 

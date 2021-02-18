@@ -3,18 +3,18 @@ title: Автоматизация Azure Application Insights с помощью P
 description: Автоматизация создания ресурсов, оповещений и тестов доступности и управления ими с помощью PowerShell и шаблона Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 05/02/2020
-ms.openlocfilehash: c380880845c162a1e8fb38e699a439ac04fb3b5a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c2e3d33be487b6a92cb7038d814e17fcd5a10064
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186292"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589805"
 ---
 #  <a name="manage-application-insights-resources-using-powershell"></a>Управление ресурсами Application Insights с помощью PowerShell
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-В этой статье показано, как автоматизировать создание и обновление ресурсов [Application Insights](./app-insights-overview.md) с помощью управления ресурсами Azure. Эту функцию можно использовать, например, в процессе сборки. Наряду с базовым ресурсом Application Insights можно создавать [веб-тесты доступности](./monitor-web-app-availability.md) и другие ресурсы Azure, а также настраивать [оповещения](../platform/alerts-log.md) и [схему цен](pricing.md).
+В этой статье показано, как автоматизировать создание и обновление ресурсов [Application Insights](./app-insights-overview.md) с помощью управления ресурсами Azure. Эту функцию можно использовать, например, в процессе сборки. Наряду с базовым ресурсом Application Insights можно создавать [веб-тесты доступности](./monitor-web-app-availability.md) и другие ресурсы Azure, а также настраивать [оповещения](../alerts/alerts-log.md) и [схему цен](pricing.md).
 
 Ключ к созданию этих ресурсов — шаблоны JSON для [диспетчера ресурсов Azure](../../azure-resource-manager/management/manage-resources-powershell.md). Базовая процедура: скачайте определения JSON существующих ресурсов, параметризуйте определенные значения (например, имена), выполните шаблон для создания нового ресурса. Несколько ресурсов можно объединить, чтобы создавать их одновременно, например, объединить монитор приложений с тестами доступности, оповещениями и хранилищем для непрерывного экспорта. С параметризацией некоторых значений связаны определенные тонкости, которые мы рассмотрим позднее.
 
@@ -404,12 +404,12 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 
 ## <a name="add-a-metric-alert"></a>Добавление оповещения метрики
 
-Сведения об автоматизации генерации оповещений по метрикам см. [здесь](../platform/alerts-metric-create-templates.md#template-for-a-simple-static-threshold-metric-alert).
+Сведения об автоматизации генерации оповещений по метрикам см. [здесь](../alerts/alerts-metric-create-templates.md#template-for-a-simple-static-threshold-metric-alert).
 
 
 ## <a name="add-an-availability-test"></a>Добавление теста доступности
 
-Сведения об автоматизации тестов доступности см. [здесь](../platform/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert).
+Сведения об автоматизации тестов доступности см. [здесь](../alerts/alerts-metric-create-templates.md#template-for-an-availability-test-along-with-a-metric-alert).
 
 ## <a name="add-more-resources"></a>Добавление дополнительных ресурсов
 
@@ -469,6 +469,6 @@ armclient PUT /subscriptions/00000000-0000-0000-0000-00000000000/resourceGroups/
 Другие статьи об автоматизации:
 
 * [Создание ресурса Application Insights](./create-new-resource.md#creating-a-resource-automatically) — быстрый метод без использования шаблона.
-* [Creating an Application Insights Web Test and Alert Programmatically](../samples/resource-manager-alerts-metric.md#availability-test-with-metric-alert)
+* [Creating an Application Insights Web Test and Alert Programmatically](../alerts/resource-manager-alerts-metric.md#availability-test-with-metric-alert)
 * [Отправка данных системы диагностики Azure в Application Insights](powershell-azure-diagnostics.md)
 * [Создание заметок выпуска](https://github.com/MohanGsk/ApplicationInsights-Home/blob/master/API/CreateReleaseAnnotation.ps1)

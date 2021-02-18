@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b5ce8e3d6482c13a8ba02065f2a97074610c25bb
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 2d902bbdc03596fe246fc36813895e72c53da05a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "98877720"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100571403"
 ---
 # <a name="azure-security-baseline-for-virtual-machine-scale-sets"></a>Базовый уровень безопасности Azure для масштабируемых наборов виртуальных машин
 
@@ -178,9 +178,9 @@ ms.locfileid: "98877720"
 
 Используйте политику Azure для проверки (и/или исправьте) конфигурации сетевого ресурса, связанного с масштабируемым набором виртуальных машин.
 
-* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Настройка Политики Azure и управление ею](../governance/policy/tutorials/create-and-manage.md)
 
@@ -216,7 +216,7 @@ ms.locfileid: "98877720"
 
 Если ваша организация хочет сохранить данные журнала событий безопасности с виртуальной машины, она может храниться в Log Analytics рабочей области на требуемом уровне сбора данных, настроенном в центре безопасности Azure.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -224,7 +224,7 @@ ms.locfileid: "98877720"
 
 * [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
-* [Мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../azure-monitor/vm/monitor-vm-azure.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -238,11 +238,11 @@ ms.locfileid: "98877720"
 
 Для расширенной видимости приложений и служб, поддерживаемых масштабируемым набором виртуальных машин Azure, можно включить как Azure Monitor для виртуальных машин, так и Application Insights. С помощью Application Insights можно отслеживать приложения и собирать данные телеметрии, такие как HTTP-запросы, исключения и т. д., что позволяет сопоставлять проблемы между виртуальными машинами и приложением.
 
-* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+* [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-* [Просмотр и извлечение событий из журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Просмотр и извлечение событий из журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../azure-monitor/vm/monitor-vm-azure.md)
 
 * [Общие сведения об Application Insights](../azure-monitor/app/app-insights-overview.md)
 
@@ -258,7 +258,7 @@ ms.locfileid: "98877720"
 
 * [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
-* [Мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../azure-monitor/vm/monitor-vm-azure.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -268,9 +268,9 @@ ms.locfileid: "98877720"
 
 **Руководство**. Убедитесь, что для всех учетных записей хранения log Analytics или рабочих областей, используемых для хранения журналов виртуальных машин, задан срок хранения журнала в соответствии с нормативными требованиями вашей организации.
 
-* [Мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../azure-monitor/vm/monitor-vm-azure.md)
 
-* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
+* [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -284,9 +284,9 @@ ms.locfileid: "98877720"
 
 * [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -302,7 +302,7 @@ ms.locfileid: "98877720"
 
 * [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-* [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+* [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -340,9 +340,9 @@ ms.locfileid: "98877720"
 
 * [Сбор данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md#data-collection-tier)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
-* [Источники данных системного журнала в Azure Monitor](../azure-monitor/platform/data-sources-syslog.md)
+* [Источники данных системного журнала в Azure Monitor](../azure-monitor/agents/data-sources-syslog.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -430,7 +430,7 @@ ms.locfileid: "98877720"
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Настройка групп действий для настраиваемых оповещений и уведомлений](../azure-monitor/platform/action-groups.md)
+* [Настройка групп действий для настраиваемых оповещений и уведомлений](../azure-monitor/alerts/action-groups.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -472,13 +472,13 @@ ms.locfileid: "98877720"
 
 **Руководство**. Настройка параметров диагностики для Azure Active Directory, чтобы отправить журналы аудита и журналы входа в рабочую область log Analytics. Кроме того, используйте Azure Monitor для просмотра журналов и выполнения запросов к данным журналов из виртуальных машин Azure.
 
-* [Общие сведения о рабочей области Log Analytics](../azure-monitor/log-query/log-analytics-tutorial.md)
+* [Общие сведения о рабочей области Log Analytics](../azure-monitor/logs/log-analytics-tutorial.md)
 
 * [Как интегрировать журналы действий Azure в Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
-* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/log-query/get-started-queries.md)
+* [Выполнение пользовательских запросов в Azure Monitor](../azure-monitor/logs/get-started-queries.md)
 
-* [Мониторинг виртуальных машин в Azure](../azure-monitor/insights/monitor-vm-azure.md)
+* [Мониторинг виртуальных машин в Azure](../azure-monitor/vm/monitor-vm-azure.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 
@@ -610,7 +610,7 @@ ms.locfileid: "98877720"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения выполняются в масштабируемых наборах виртуальных машин и связанных ресурсах.
 
-* [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+* [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 * [Ведение журнала аналитики службы хранилища Azure](../storage/common/storage-analytics-logging.md)
 

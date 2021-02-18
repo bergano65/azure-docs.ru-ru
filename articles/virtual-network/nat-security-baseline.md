@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9276ce07c68afa6f229dbc32198bc624d8887ace
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 887648526c8da5fc829abe48911fd6785c3d856f
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217827"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100576609"
 ---
 # <a name="azure-security-baseline-for-virtual-network-nat"></a>Базовый уровень безопасности Azure для NAT виртуальной сети
 
@@ -74,9 +74,9 @@ ms.locfileid: "98217827"
 
 **Руководство**. Использование журнала действий Azure для мониторинга конфигураций ресурсов и обнаружения изменений в ресурсах шлюза NAT и ресурсах виртуальной сети. Создайте оповещения в Azure Monitor, чтобы получать уведомления при изменении критических ресурсов.
 
-- [Просмотр и получение событий журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Просмотр и получение событий журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -94,7 +94,7 @@ ms.locfileid: "98217827"
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md) 
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
 - [Начало работы с Azure Monitor и интеграция SIEM стороннего производителя](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/)
 
@@ -106,9 +106,9 @@ ms.locfileid: "98217827"
 
 **Руководство**. журналы действий, которые автоматически доступны, содержат все операции записи (размещение, публикация, удаление) для ресурсов шлюза NAT, за исключением операций чтения (Get). Журналы действий можно использовать для поиска ошибок при устранении неполадок или для мониторинга того, как пользователь в вашей организации изменил ресурс.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md) 
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md) 
 
 В настоящее время NAT виртуальной сети не создает никаких дополнительных журналов диагностики, которые настраиваются клиентами.
 
@@ -124,7 +124,7 @@ ms.locfileid: "98217827"
 
 - [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md) 
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

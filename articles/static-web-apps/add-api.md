@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/29/2020
 ms.author: wachegha
 ms.custom: devx-track-js
-ms.openlocfilehash: 53be2ee9b6b3ab46f081747aec58b9c99fc54f0d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 8a42ca4cf69515c99bb2e0bd28bb62dfed0e18f8
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349962"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650695"
 ---
 # <a name="add-an-api-to-azure-static-web-apps-preview-with-azure-functions"></a>Добавление API в предварительную версию Статистического веб-приложения Azure с помощью Функций Azure
 
@@ -234,7 +234,7 @@ Visual Studio Code интегрируется с [Azure Functions Core Tools](..
 1. Нажмите кнопку **Войти по учетным данным GitHub** и выполните проверку подлинности с помощью GitHub.
 1. Выберите предпочитаемую _Организацию_.
 1. Выберите **my-vanilla-api** из раскрывающегося списка _Репозиторий_.
-1. Выберите **master** в раскрывающемся списке _Ветвь_.
+1. Выберите **main** в раскрывающемся списке _Ветвь_.
 1. Выберите выбранную платформу для конфигурации сборки из раскрывающегося списка " _предустановки сборки_ ".
 
  > Эти поля будут отражать структуру проекта по умолчанию для типа приложения. Измените значения в соответствии с вашими приложениями.

@@ -5,12 +5,12 @@ ms.topic: conceptual
 ms.date: 01/17/2020
 ms.reviewer: vitalyg
 ms.custom: fasttrack-edit
-ms.openlocfilehash: e9334d222d443679362514481ecd83b90bbda0ac
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 7b53b0bc8c7cc3df2123d327bf87a85081f88f50
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96855079"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100589556"
 ---
 # <a name="sampling-in-application-insights"></a>Выборка в Application Insights
 
@@ -33,12 +33,12 @@ ms.locfileid: "96855079"
 | Пакет SDK для Application Insights | Поддерживается Адаптивная выборка | Поддерживается выборка с фиксированной частотой | Поддерживается выборка приема |
 |-|-|-|-|
 | ASP.NET | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-applications) | Только если не действует ни одна другая выборка |
-| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
-| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | нет | Только если не действует ни одна другая выборка |
-| Java | нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
-| Node.JS | нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
-| Python | нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
-| Все остальные | нет | нет | [Да](#ingestion-sampling) |
+| ASP.NET Core | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-aspnet-core-applications) | [Да](#configuring-fixed-rate-sampling-for-aspnet-core-applications) | Только если не действует ни одна другая выборка |
+| Функции Azure | [Да (включено по умолчанию)](#configuring-adaptive-sampling-for-azure-functions) | Нет | Только если не действует ни одна другая выборка |
+| Java | Нет | [Да](#configuring-fixed-rate-sampling-for-java-applications) | Только если не действует ни одна другая выборка |
+| Node.JS | Нет | [Да](./nodejs.md#sampling) | Только если не действует ни одна другая выборка
+| Python | Нет | [Да](#configuring-fixed-rate-sampling-for-opencensus-python-applications) | Только если не действует ни одна другая выборка |
+| Все остальные | Нет | Нет | [Да](#ingestion-sampling) |
 
 > [!NOTE]
 > Сведения, приведенные на этой странице, относятся к текущим версиям пакетов SDK для Application Insights. Сведения о более ранних версиях пакетов SDK [см. в разделе ниже](#older-sdk-versions).
@@ -478,7 +478,7 @@ handler = AzureLogHandler(
 
 ## <a name="knowing-whether-sampling-is-in-operation"></a>Принцип работы выборки
 
-Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../log-query/log-query-overview.md) :
+Чтобы узнать фактическую частоту выборки (где бы она ни применялась), выполните такой [запрос аналитики](../logs/log-query-overview.md) :
 
 ```kusto
 union requests,dependencies,pageViews,browserTimings,exceptions,traces
@@ -580,7 +580,7 @@ union requests,dependencies,pageViews,browserTimings,exceptions,traces
 
 До версии 2.5.0-2 пакета SDK ASP.NET и v 2.2.0-beta3 ASP.NET Core SDK решение выборки было основано на хэш-коде пользователя для приложений, определяющих "User" (то есть наиболее типичных веб-приложений). Для типов приложений, не определяющих пользователей (например, веб-служб), решение выборки было основано на ИДЕНТИФИКАТОРе операции запроса. Последние версии пакетов SDK для ASP.NET и ASP.NET Core используют идентификатор операции для решения выборки.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 * [Фильтрация](./api-filtering-sampling.md) может обеспечивать более строгий контроль над данными, отправляемыми пакетом SDK.
 * Прочтите статью "сеть разработчика", чтобы [оптимизировать телеметрию с помощью Application Insights](/archive/msdn-magazine/2017/may/devops-optimize-telemetry-with-application-insights).

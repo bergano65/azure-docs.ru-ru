@@ -3,12 +3,12 @@ title: Введение
 description: Сведения о преимуществах и возможностях решения Azure VMware для развертывания рабочих нагрузок на основе VMware и управления ими в Azure.
 ms.topic: overview
 ms.date: 11/11/2020
-ms.openlocfilehash: 57edfc5786dfc95070b66eb9c8e2e038bafdcd35
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 255d3599385c60d3b13f4769796ced41a1177311
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94534659"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100579292"
 ---
 # <a name="what-is-azure-vmware-solution"></a>Что такое Решение Azure VMware?
 
@@ -48,12 +48,12 @@ ms.locfileid: "94534659"
 
 В частном облаке вы можете выполнять следующие действия:
 - собирать журналы на каждой виртуальной машине;
-- [скачивать и устанавливать агент MMA](../azure-monitor/platform/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows;
-- включать [расширение системы диагностики Azure](../azure-monitor/platform/diagnostics-extension-overview.md);
-- [создавать и выполнять новые запросы](../azure-monitor/platform/data-platform-logs.md#log-queries);
+- [скачивать и устанавливать агент MMA](../azure-monitor/agents/log-analytics-agent.md#installation-options) на виртуальных машинах Linux и Windows;
+- включать [расширение системы диагностики Azure](../azure-monitor/agents/diagnostics-extension-overview.md);
+- [создавать и выполнять новые запросы](../azure-monitor/logs/data-platform-logs.md#log-queries);
 - выполнять те же запросы, которые обычно выполняются на виртуальных машинах.
 
-Шаблоны мониторинга в Решении Azure VMware аналогичны шаблонам виртуальных машин Azure на платформе IaaS. Дополнительные сведения и практические руководства см. в статье [Мониторинг виртуальных машин Azure с помощью Azure Monitor](../azure-monitor/insights/monitor-vm-azure.md).
+Шаблоны мониторинга в Решении Azure VMware аналогичны шаблонам виртуальных машин Azure на платформе IaaS. Дополнительные сведения и практические руководства см. в статье [Мониторинг виртуальных машин Azure с помощью Azure Monitor](../azure-monitor/vm/monitor-vm-azure.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

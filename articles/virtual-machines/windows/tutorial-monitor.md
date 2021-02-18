@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 09/27/2018
 ms.author: magoedte
 ms.custom: mvc
-ms.openlocfilehash: 89b33a697e818539ab6666be33fc1542c5bdcc51
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 3e7d93d7a1d0e804f340a7ce785ccc1165e93ee5
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98736598"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100570090"
 ---
 # <a name="tutorial-monitor-a-windows-virtual-machine-in-azure"></a>Руководство по Мониторинг виртуальной машины Windows в Azure
 
@@ -86,18 +86,18 @@ Get-AzVMBootDiagnosticsData -ResourceGroupName "myResourceGroupMonitor" -Name "m
 
 3. На странице **Аналитические сведения (предварительная версия)** выберите **Попробовать**.
 
-    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/insights/media/vminsights-enable-single-vm/enable-vminsights-vm-portal.png)
+    ![Включение Azure Monitor для виртуальной машины](../../azure-monitor/vm/media/vminsights-enable-portal/enable-vminsights-vm-portal.png)
 
 4. Если имеющаяся рабочая область Log Analytics расположена в той же подписке, что и кластер, выберите ее из раскрывающегося списка на странице **Azure Monitor Insights Onboarding** (Подключение к службе аналитических сведений Azure Monitor).  
 
     В списке предварительно выбрана рабочая область по умолчанию и место развертывания виртуальной машины в подписке. 
 
     >[!NOTE]
-    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по [созданию рабочей области Log Analytics](../../azure-monitor/learn/quick-create-workspace.md). Эта рабочая область должна размещаться в одном из [поддерживаемых регионов](../../azure-monitor/insights/vminsights-configure-workspace.md#supported-regions).
+    >Чтобы создать новую рабочую область Log Analytics для хранения данных мониторинга с виртуальной машины, см. руководство по [созданию рабочей области Log Analytics](../../azure-monitor/logs/quick-create-workspace.md). Эта рабочая область должна размещаться в одном из [поддерживаемых регионов](../../azure-monitor/vm/vminsights-configure-workspace.md#supported-regions).
 
 После включения мониторинга может потребоваться подождать несколько минут, прежде чем можно будет просмотреть метрики производительности виртуальной машины.
 
-![Включение Azure Monitor для обработки развертывания мониторинга виртуальных машин](../../azure-monitor/insights/media/vminsights-enable-single-vm/onboard-vminsights-vm-portal-status.png)
+![Включение Azure Monitor для обработки развертывания мониторинга виртуальных машин](../../azure-monitor/vm/media/vminsights-enable-portal/onboard-vminsights-vm-portal-status.png)
 
 ## <a name="view-vm-performance-metrics"></a>Просмотр метрик производительности виртуальной машины
 

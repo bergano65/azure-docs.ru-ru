@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/11/2020
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 76482266f0bbb1f80c1699c736048c705b90b4dc
-ms.sourcegitcommit: 04297f0706b200af15d6d97bc6fc47788785950f
+ms.openlocfilehash: d894ce71e0ffa5a0894a1f6b0035efe66271ded8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "98986926"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100591461"
 ---
 # <a name="move-an-azure-storage-account-to-another-region"></a>Перемещение учетной записи хранения Azure в другой регион
 
@@ -39,7 +39,7 @@ ms.locfileid: "98986926"
 
 <a id="prepare"></a>
 
-## <a name="prepare"></a>Подготовка
+## <a name="prepare"></a>Подготовка.
 
 Чтобы приступить к работе, экспортируйте и измените шаблон диспетчер ресурсов. 
 
@@ -109,7 +109,7 @@ ms.locfileid: "98986926"
 
     ![Библиотека шаблонов Azure Resource Manager](./media/storage-account-move/azure-resource-manager-template-library.png)
 
-4. Нажмите кнопку **Создать**.
+4. Нажмите кнопку **создания**.
 
 5. Выберите **Создать собственный шаблон в редакторе**.
 
@@ -219,12 +219,12 @@ ms.locfileid: "98986926"
 
 В следующей таблице перечислены такие функции и приведены рекомендации по их добавлению в новую учетную запись хранения.
 
-| Компонент    | Руководство    |
+| Функция    | Руководство    |
 |--------|-----------|
 | **Политики управления жизненным циклом** | [Управление жизненным циклом хранилища BLOB-объектов Azure (предварительная версия)](../blobs/storage-lifecycle-management-concepts.md) |
 | **Статические веб-сайты** | [Размещение статического веб-сайта в службе хранилища Azure](../blobs/storage-blob-static-website-how-to.md) |
 | **Подписки на события** | [Reacting to Blob storage events (preview)](../blobs/storage-blob-event-overview.md) (Реагирование на события хранилища BLOB-объектов) |
-| **Оповещения** | [Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md) |
+| **Оповещения** | [Создание, просмотр оповещений журнала действий и управление ими с помощью Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md) |
 | **Сеть доставки содержимого (CDN)** | [Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN](../blobs/storage-https-custom-domain-cdn.md) |
 
 > [!NOTE] 
@@ -268,7 +268,7 @@ Remove-AzStorageAccount -ResourceGroupName  $resourceGroup -AccountName $storage
 ```
 ---
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 В этом руководстве вы переместили учетную запись хранения Azure из одного региона в другой и очистили исходные ресурсы.  Дополнительные сведения о перемещении ресурсов между регионами и аварийном восстановлении в Azure см. по следующей ссылке:
 

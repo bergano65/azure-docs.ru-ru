@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4fccb0b2e382e56e83fbbe54c0f0afa50a5c9590
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d63150fc1d929b899281cdd0ed7abae5e728b115
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202476"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595284"
 ---
 # <a name="azure-security-baseline-for-azure-firewall"></a>Базовый уровень безопасности Azure для брандмауэра Azure
 
@@ -92,9 +92,9 @@ ms.locfileid: "98202476"
 
 - [Мониторинг журналов и метрик Брандмауэра Azure](./firewall-diagnostics.md)
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md) 
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md) 
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -132,7 +132,7 @@ ms.locfileid: "98202476"
 
 Список действий с ресурсами в журналах действий: Azure Resource Manager операции поставщика ресурсов
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor ](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor ](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -174,7 +174,7 @@ ms.locfileid: "98202476"
 
 - [Журналы и метрики Брандмауэра Azure](logs-and-metrics.md)
 
-- [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md)
+- [Изменение срока хранения данных в Log Analytics](../azure-monitor/logs/manage-cost-storage.md)
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 
@@ -216,7 +216,7 @@ ms.locfileid: "98202476"
 
 - [Управление оповещениями в центре безопасности Azure](../security-center/security-center-managing-and-responding-alerts.md)
 
-- [Как оповещать данные журнала Log Analytics](../azure-monitor/learn/tutorial-response.md)
+- [Как оповещать данные журнала Log Analytics](../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -442,7 +442,7 @@ ms.locfileid: "98202476"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений о том, когда изменения происходят в брандмауэре Azure.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

@@ -10,12 +10,12 @@ ms.service: security-center
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: memildin
-ms.openlocfilehash: b26d42ca32f0048bb2bedcb5fef337c3ac1d7d65
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: a8cb997337d26a166b4c73d33965820da5ae2a86
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807230"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596314"
 ---
 # <a name="security-alerts-in-azure-security-center"></a>Оповещения безопасности в Центре безопасности Azure
 
@@ -98,4 +98,4 @@ ms.locfileid: "99807230"
 
 Из этой статьи вы узнали о различных типах оповещений в Центре безопасности. Дополнительные сведения см. в разделе:
 
-- **Оповещения системы безопасности в журнале действий Azure**. Помимо использования на портале Azure или в коде, оповещения системы безопасности и инциденты регистрируются как события в [журнале действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log). Дополнительные сведения о схеме событий см. в статье [Security Alerts in Azure Activity log](https://go.microsoft.com/fwlink/?linkid=2114113) (Оповещения системы безопасности в журнале действий Azure).
+- **Оповещения системы безопасности в журнале действий Azure**. Помимо использования на портале Azure или в коде, оповещения системы безопасности и инциденты регистрируются как события в [журнале действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log). Дополнительные сведения о схеме событий см. в статье [Security Alerts in Azure Activity log](https://go.microsoft.com/fwlink/?linkid=2114113) (Оповещения системы безопасности в журнале действий Azure).

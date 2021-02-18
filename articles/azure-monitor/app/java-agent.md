@@ -6,16 +6,18 @@ ms.date: 01/10/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 50c5a8a0c1e7c5d554e19ffcbc9a78bc0a385a5c
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: c753e4e254890f9198da9bc913b29bdaae335b78
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131735"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100573830"
 ---
 # <a name="monitor-dependencies-caught-exceptions-and-method-execution-times-in-java-web-apps"></a>Мониторинг зависимостей, перехваченных исключений и времени выполнения методов в веб-приложениях Java
 
 > [!IMPORTANT]
+> Подход, описанный в этом документе, больше не рекомендуется.
+>
 > Для мониторинга приложений Java рекомендуется использовать автоматическое инструментирование без изменения кода. Следуйте указаниям для [Application Insights агента Java 3,0](./java-in-process-agent.md).
 
 Если вы выполнили [Инструментирование веб-приложения Java с помощью пакета SDK для Application Insights][java], вы можете использовать агент Java для получения более подробных сведений, не внося изменения в код:
@@ -137,5 +139,5 @@ ms.locfileid: "98131735"
 [eclipse]: app-insights-java-eclipse.md
 [java]: java-get-started.md
 [javalogs]: java-trace-logs.md
-[metrics]: ../platform/metrics-charts.md
+[metrics]: ../essentials/metrics-charts.md
 

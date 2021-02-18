@@ -9,16 +9,16 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 08/28/2020
 ms.author: egeaney
-ms.openlocfilehash: 8c6f4f7db312355b719deb434bf6a46fa55eec9d
-ms.sourcegitcommit: 27d616319a4f57eb8188d1b9d9d793a14baadbc3
+ms.openlocfilehash: a46253e586aaf90a85bc10e2c62ab6eb238f2ead
+ms.sourcegitcommit: 227b9a1c120cd01f7a39479f20f883e75d86f062
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/15/2021
-ms.locfileid: "100524572"
+ms.lasthandoff: 02/18/2021
+ms.locfileid: "100650819"
 ---
 # <a name="face-service-encryption-of-data-at-rest"></a>Шифрование неактивных данных в службе распознавания лиц
 
-Служба распознавания лиц автоматически шифрует ваши данные при сохранении в облаке. Шифрование службы лиц защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации.
+Служба распознавания лиц автоматически шифрует данные при сохранении в облаке. Шифрование службы распознавания лиц защищает ваши данные и помогает удовлетворить ваши обязательства по обеспечению безопасности и соответствия требованиям Организации.
 
 [!INCLUDE [cognitive-services-about-encryption](../includes/cognitive-services-about-encryption.md)]
 
@@ -27,7 +27,7 @@ ms.locfileid: "100524572"
 
 [!INCLUDE [cognitive-services-cmk](../includes/configure-customer-managed-keys.md)]
 
-## <a name="next-steps"></a>Дальнейшие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Полный список служб, поддерживающих CMK, см. в разделе [управляемые клиентом ключи для Cognitive Services](../encryption/cognitive-services-encryption-keys-portal.md)
 * [Об Azure Key Vault](../../key-vault/general/overview.md)

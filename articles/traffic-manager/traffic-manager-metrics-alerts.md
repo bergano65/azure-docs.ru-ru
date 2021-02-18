@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: duau
-ms.openlocfilehash: bd3588c207fe8828744a665539830d81805bd7b3
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b18e0329aeb4e95e021c3326b6b428c10edc0c6e
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184277"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586419"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Метрики и оповещения диспетчера трафика
 
@@ -26,7 +26,7 @@ ms.locfileid: "98184277"
 Диспетчер трафика предоставляет следующие метрики на основе каждого профиля, с помощью которых клиенты могут понимать потребление диспетчера трафика, а также состояние конечных точек в профиле.  
 
 ### <a name="queries-by-endpoint-returned"></a>Запросы, выполняемые возвращаемой конечной точкой
-[Эта метрика](../azure-monitor/platform/metrics-supported.md) позволяет просмотреть количество запросов, обработанных профилем диспетчера трафика за указанный период. Вы также можете просмотреть эти сведения на уровне детализации конечной точки. Это поможет понять, сколько раз конечная точка возвращалась в ответах на запросы из диспетчера трафика.
+[Эта метрика](../azure-monitor/essentials/metrics-supported.md) позволяет просмотреть количество запросов, обработанных профилем диспетчера трафика за указанный период. Вы также можете просмотреть эти сведения на уровне детализации конечной точки. Это поможет понять, сколько раз конечная точка возвращалась в ответах на запросы из диспетчера трафика.
 
 В следующем примере (рис. 1) показаны все ответы на запросы, возвращенные профилем диспетчера трафика. 
 
@@ -42,7 +42,7 @@ ms.locfileid: "98184277"
 *Рис. 2. Разделенное представление всех запросов для возвращенной конечной точки*
 
 ## <a name="endpoint-status-by-endpoint"></a>Проверка состояния конечных точек
-[Эта метрика](../azure-monitor/platform/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
+[Эта метрика](../azure-monitor/essentials/metrics-supported.md#microsoftnetworktrafficmanagerprofiles) позволяет проверить состояние работоспособности конечных точек в профиле. Эта метрика имеет два значения:
  - используйте **1**, если конечная точка работает;
  - используйте **0**, если конечная точка не работает.
 
@@ -58,11 +58,11 @@ ms.locfileid: "98184277"
 
 *Рис. 4. Разделенное представление метрик состояния конечной точки*
 
-Вы можете использовать эти метрики на портале [службы Azure Monitor](../azure-monitor/platform/metrics-supported.md) с помощью [REST API](/rest/api/monitor/), [Azure CLI](/cli/azure/monitor) и [Azure PowerShell](/powershell/module/az.applicationinsights), а также в разделе метрики при работе на портале диспетчера трафика.
+Вы можете использовать эти метрики на портале [службы Azure Monitor](../azure-monitor/essentials/metrics-supported.md) с помощью [REST API](/rest/api/monitor/), [Azure CLI](/cli/azure/monitor) и [Azure PowerShell](/powershell/module/az.applicationinsights), а также в разделе метрики при работе на портале диспетчера трафика.
 
 ## <a name="alerts-on-traffic-manager-metrics"></a>Оповещения о метриках диспетчера трафика
-Помимо обработки и отображения метрик из диспетчера трафика, Azure Monitor позволяет клиентам настроить и получать оповещения, связанные с этими метриками. Вы можете выбрать для метрик условия, при выполнении которых будет отправляться оповещение, частоту мониторинга этих условий и способ отправки оповещений. Дополнительные сведения см. в [документации по оповещениям Azure Monitor](../azure-monitor/platform/alerts-metric.md).
+Помимо обработки и отображения метрик из диспетчера трафика, Azure Monitor позволяет клиентам настроить и получать оповещения, связанные с этими метриками. Вы можете выбрать для метрик условия, при выполнении которых будет отправляться оповещение, частоту мониторинга этих условий и способ отправки оповещений. Дополнительные сведения см. в [документации по оповещениям Azure Monitor](../azure-monitor/alerts/alerts-metric.md).
 
-## <a name="next-steps"></a>Дальнейшие действия
-- Узнайте больше о службе [Azure Monitor](../azure-monitor/platform/metrics-supported.md).
-- См. [здесь](../azure-monitor/platform/metrics-getting-started.md#create-your-first-metric-chart), чтобы узнать, как создать диаграмму с помощью Azure Monitor.
+## <a name="next-steps"></a>Дальнейшие шаги
+- Узнайте больше о службе [Azure Monitor](../azure-monitor/essentials/metrics-supported.md).
+- См. [здесь](../azure-monitor/essentials/metrics-getting-started.md#create-your-first-metric-chart), чтобы узнать, как создать диаграмму с помощью Azure Monitor.

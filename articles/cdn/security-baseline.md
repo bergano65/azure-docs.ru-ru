@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 184f42b6da0133068e0a0218353e49c37e3c8c47
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 0d98edb820e3a6d27f0a57bfde801f064a905a5b
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98730261"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100575407"
 ---
 # <a name="azure-security-baseline-for-content-delivery-network"></a>Базовый уровень безопасности Azure для сети доставки содержимого
 
@@ -182,9 +182,9 @@ ms.locfileid: "98730261"
 
 Включите журналы ресурсов Azure для CDN. с помощью центра безопасности Azure и политики Azure можно включить сбор журналов ресурсов и данных журналов. Эти журналы могут быть критически важными для дальнейшего изучения инцидентов безопасности и проведения судебных упражнений.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md) 
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md) 
 
 - [Общие сведения о сборе данных в центре безопасности Azure](../security-center/security-center-enable-data-collection.md)
 
