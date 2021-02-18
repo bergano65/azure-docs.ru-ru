@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: dd54459cef3d6f20180b4c7c41eefbdd42c6980c
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: b58d96adba690084580fe11b42253a1e77370379
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807926"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595602"
 ---
 # <a name="azure-security-baseline-for-customer-lockbox-for-microsoft-azure"></a>Базовый план безопасности Azure для защищенное хранилище для Microsoft Azure
 
@@ -164,7 +164,7 @@ ms.locfileid: "99807926"
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с защищенное хранилище в соответствии с правилами соответствия вашей организации.
 
-* [Настройка параметров хранения журнала](../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+* [Настройка параметров хранения журнала](../../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -186,7 +186,7 @@ ms.locfileid: "99807926"
 
 * [Журналы аудита в защищенное хранилище](./customer-lockbox-overview.md#auditing-logs)
 
-* [Как оповещать данные журнала Log Analytics](../../azure-monitor/learn/tutorial-response.md)
+* [Как оповещать данные журнала Log Analytics](../../azure-monitor/alerts/tutorial-response.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 
@@ -461,9 +461,9 @@ ms.locfileid: "99807926"
 
 * [Включение аудита в защищенное хранилище](./customer-lockbox-overview.md)
 
-* [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/platform/activity-log.md#view-the-activity-log)
+* [Как просматривать и извлекать события журнала действий Azure](../../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-* [Как создать оповещения в службе Azure Monitor](../../azure-monitor/platform/alerts-activity-log.md)
+* [Как создать оповещения в службе Azure Monitor](../../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: Да
 

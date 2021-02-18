@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/12/2021
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: d20a646eb7675efdab4cbdc5f13e929544dceaa3
-ms.sourcegitcommit: d4734bc680ea221ea80fdea67859d6d32241aefc
+ms.openlocfilehash: b8f0cfdf3ca6e3b0bb0b455a5690d6a2727786ce
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100392380"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586757"
 ---
 # <a name="azure-security-baseline-for-azure-bastion"></a>Базовый план безопасности Azure для Azure бастиона
 
@@ -376,9 +376,9 @@ Azure AD предоставляет следующие журналы польз
 
 **Руководство**. журналы действий, которые автоматически доступны, содержат все операции записи (размещение, публикация, удаление) для ресурсов Azure бастиона, за исключением операций чтения (Get). Журналы действий можно использовать для поиска ошибок при устранении неполадок или для мониторинга того, как пользователь в вашей организации изменил ресурс.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 - [Включение журналов ресурсов Azure для Azure бастиона](diagnostic-logs.md)
 
@@ -396,7 +396,7 @@ Azure AD предоставляет следующие журналы польз
 
 Многие организации предпочитают использовать метку Azure для "горячих" данных, которые часто используются, а служба хранилища Azure — для "холодного" данных, которые используются реже.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Подключение к Azure Sentinel](../sentinel/quickstart-onboard.md)
 
@@ -410,9 +410,9 @@ Azure AD предоставляет следующие журналы польз
 
 В Azure Monitor можно задать срок хранения Log Analytics рабочей области в соответствии с нормативными требованиями Организации.
 
-- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/platform/manage-cost-storage.md)
+- [Настройка срока хранения Log Analytics рабочей области](../azure-monitor/logs/manage-cost-storage.md)
 
-- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/platform/resource-logs.md#send-to-azure-storage)
+- [Хранение журналов ресурсов в учетной записи хранения Azure](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage)
 
 - [Включение и работа с журналами бастионами Azure](diagnostic-logs.md)
 

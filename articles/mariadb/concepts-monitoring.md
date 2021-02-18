@@ -3,22 +3,22 @@ title: Мониторинг — база данных Azure для MariaDB
 description: В этой статье описываются метрики для мониторинга и создания предупреждений в Базе данных Azure для MariaDB, включая ЦП, хранилище и статистику подключений.
 author: savjani
 ms.author: pariks
-ms.service: jroth
+ms.service: mariadb
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: 3d2cf88dba44a7f18f73fbafb66381d2ef8b29c5
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: f63b0b523184917097c73c852a7624b366fbbb24
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664288"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100595210"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MariaDB предоставляет различные метрики, позволяющие понять действия сервера.
 
 ## <a name="metrics"></a>Метрики
-Все метрики Azure записываются ежеминутно, и каждая из них предоставляет данные за последние 30 дней. Вы можете настроить оповещения на основе метрик. Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
+Все метрики Azure записываются ежеминутно, и каждая из них предоставляет данные за последние 30 дней. Вы можете настроить оповещения на основе метрик. Другие задачи включают настройку автоматических действий, выполнение расширенной аналитики и архивирование журнала. Дополнительные сведения см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/data-platform.md).
 
 Пошаговые инструкции см. в статье [Использование портала Azure для настройки оповещений на основе метрик для базы данных Azure для MySQL](howto-alert-metric.md).
 
@@ -65,8 +65,8 @@ ms.locfileid: "98664288"
 
 Дополнительные сведения о настройке уведомлений см. в документе [уведомления о запланированном обслуживании](./concepts-planned-maintenance-notification.md) .
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
-- Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/platform/data-platform.md).
+- Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../azure-monitor/data-platform.md).
 - См. рекомендации по созданию оповещений для метрики в статье [Как настраивать оповещения](howto-alert-metric.md).
 - Узнайте больше о [запланированных уведомлениях об обслуживании](./concepts-planned-maintenance-notification.md) в базе данных Azure для MariaDB.

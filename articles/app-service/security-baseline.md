@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/17/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 648e7991784212e4fe781efd5d9f01cb571c5012
-ms.sourcegitcommit: 8245325f9170371e08bbc66da7a6c292bbbd94cc
+ms.openlocfilehash: d7753de473d90c45fecb20403352a594ef52dafe
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2021
-ms.locfileid: "99807858"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586308"
 ---
 # <a name="azure-security-baseline-for-app-service"></a>Базовый план безопасности Azure для службы приложений
 
@@ -241,9 +241,9 @@ ms.locfileid: "99807858"
 
 Рекомендуется создать процесс с автоматизированными инструментами для мониторинга конфигураций сетевых ресурсов и быстрого обнаружения изменений.
 
-- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/platform/activity-log.md#view-the-activity-log)
+- [Как просматривать и извлекать события журнала действий Azure](../azure-monitor/essentials/activity-log.md#view-the-activity-log)
 
-- [Как создать оповещения в службе Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
+- [Как создать оповещения в службе Azure Monitor](../azure-monitor/alerts/alerts-activity-log.md)
 
 - [Экспорт оповещений о безопасности и рекомендаций](../security-center/continuous-export.md)
 
@@ -280,7 +280,7 @@ ms.locfileid: "99807858"
 
 Кроме того, Azure Key Vault обеспечивает централизованное управление секретами с помощью политик доступа и журнала аудита. 
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Включение параметров диагностики для службы приложений Azure](troubleshoot-diagnostic-logs.md)
 
@@ -293,7 +293,7 @@ ms.locfileid: "99807858"
 ### <a name="25-configure-security-log-storage-retention"></a>2.5. Настройка хранения журнала безопасности
 
 **Рекомендации**. в Azure Monitor задайте срок хранения журнала для рабочих областей log Analytics, связанных с ресурсами службы приложений, в соответствии с нормативными требованиями Организации.
-- [Настройка параметров хранения журнала](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Настройка параметров хранения журнала](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 **Мониторинг Центра безопасности Azure**: Неприменимо
 
@@ -309,7 +309,7 @@ ms.locfileid: "99807858"
 
 Используйте Azure Sentinel, масштабируемое и собственное облачное управление событиями безопасности (SIEM) для интеграции с различными источниками данных и соединителями в соответствии с требованиями. При необходимости включите и подключите данные к сторонним решениям для управления событиями безопасности в Azure Marketplace.
 
-- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/platform/activity-log.md)
+- [Как включить параметры диагностики для журнала действий Azure](../azure-monitor/essentials/activity-log.md)
 
 - [Включение Application Insights](../azure-monitor/app/app-insights-overview.md)
 
@@ -640,7 +640,7 @@ ms.locfileid: "99807858"
 
 **Руководство**. Использование Azure Monitor с журналом действий Azure для создания оповещений об изменениях в рабочих приложениях службы приложений и других критических или связанных ресурсах.
 
-- [Создание оповещений для событий журнала действий Azure](../azure-monitor/platform/alerts-activity-log.md)
+- [Создание оповещений для событий журнала действий Azure](../azure-monitor/alerts/alerts-activity-log.md)
 
 **Мониторинг Центра безопасности Azure**: в настоящее время недоступен.
 

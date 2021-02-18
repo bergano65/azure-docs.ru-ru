@@ -6,12 +6,12 @@ author: harelbr
 ms.author: harelbr
 ms.date: 03/13/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 63d1a0bf437df6bc0b68474e092ca23985493b24
-ms.sourcegitcommit: de98cb7b98eaab1b92aa6a378436d9d513494404
+ms.openlocfilehash: 0bf3a95814aadf687efcc27294b760e14f7d45d8
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 02/17/2021
-ms.locfileid: "100559596"
+ms.locfileid: "100585635"
 ---
 # <a name="smart-detection-e-mail-notification-change"></a>Изменение уведомлений по электронной почте для службы интеллектуального обнаружения
 
@@ -27,7 +27,7 @@ ms.locfileid: "100559596"
 
 * Правила интеллектуального обнаружения с пометкой предварительной версии. Такие правила интеллектуального обнаружения сейчас не поддерживают уведомления по электронной почте.
 
-* Правило аномальных сбоев. Это правило начнет срабатывать для новых ролей по умолчанию после переноса с платформы классических оповещений на платформу унифицированных оповещений (см. [дополнительные сведения](../platform/monitoring-classic-retirement.md)).
+* Правило аномальных сбоев. Это правило начнет срабатывать для новых ролей по умолчанию после переноса с платформы классических оповещений на платформу унифицированных оповещений (см. [дополнительные сведения](../alerts/monitoring-classic-retirement.md)).
 
 ## <a name="how-to-prepare-for-this-change"></a>Как подготовиться к этому изменению?
 
@@ -40,7 +40,7 @@ ms.locfileid: "100559596"
 
 Если у вас есть вопросы или замечания по этому изменению, [свяжитесь с нами](mailto:smart-alert-feedback@microsoft.com).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения об интеллектуальном обнаружении:
 

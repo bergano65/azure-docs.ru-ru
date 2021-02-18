@@ -5,12 +5,12 @@ ms.assetid: c9da27b2-47d4-4c33-a3cb-1819955ee43b
 ms.topic: article
 ms.date: 09/17/2019
 ms.custom: devx-track-csharp, seodec18
-ms.openlocfilehash: 8f3fb0be08bb806d74c689a7656c1c55019eb105
-ms.sourcegitcommit: 706e7d3eaa27f242312d3d8e3ff072d2ae685956
+ms.openlocfilehash: 5fa729ae68d091d9810430bdc0ea55ce1c876b25
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "99980615"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100586275"
 ---
 # <a name="enable-diagnostics-logging-for-apps-in-azure-app-service"></a>Включение ведения журнала диагностики для приложений в Службе приложений Azure
 ## <a name="overview"></a>Обзор
@@ -62,7 +62,7 @@ ms.locfileid: "99980615"
 
 | Уровень | Включаемые категории |
 |-|-|
-|**Отключено** | Отсутствуют |
+|**Отключено** | None |
 |**Ошибка** | "Ошибка", "Критические" |
 |**Предупреждение** | "Предупреждение", "Ошибка", "Критические"|
 |**Информация** | "Информация", "Предупреждение", "Ошибка", "Критические"|
@@ -108,9 +108,9 @@ ms.locfileid: "99980615"
 
 ## <a name="add-log-messages-in-code"></a>Добавление сообщений журнала в код
 
-В коде приложения для отправки сообщений журнала в журналы приложений используются обычные средства ведения журнала. Пример:
+В коде приложения для отправки сообщений журнала в журналы приложений используются обычные средства ведения журнала. Пример.
 
-- Приложения ASP.NET могут использовать класс [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace) для записи информации в журнал диагностики приложений. Пример:
+- Приложения ASP.NET могут использовать класс [System.Diagnostics.Trace](/dotnet/api/system.diagnostics.trace) для записи информации в журнал диагностики приложений. Пример.
 
     ```csharp
     System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
@@ -138,12 +138,12 @@ ms.locfileid: "99980615"
 az webapp log tail --name appname --resource-group myResourceGroup
 ```
 
-Чтобы отфильтровать определенные события, например ошибки, используйте параметр **--Filter** . Пример:
+Чтобы отфильтровать определенные события, например ошибки, используйте параметр **--Filter** . Пример.
 
 ```azurecli-interactive
 az webapp log tail --name appname --resource-group myResourceGroup --filter Error
 ```
-Чтобы отфильтровать определенные типы журналов, например HTTP, используйте параметр **--Path** . Пример:
+Чтобы отфильтровать определенные типы журналов, например HTTP, используйте параметр **--Path** . Пример.
 
 ```azurecli-interactive
 az webapp log tail --name appname --resource-group myResourceGroup --path http
@@ -200,7 +200,7 @@ az webapp log tail --name appname --resource-group myResourceGroup --path http
 <sup>1</sup> для приложений Java SE добавьте "$website _AZMON_PREVIEW_ENABLED" в параметры приложения и присвойте ему значение 1 или true.
 
 ## <a name="next-steps"></a><a name="nextsteps"></a> Дальнейшие действия
-* [Запросы по журналам в Azure Monitor](../azure-monitor/log-query/log-query-overview.md)
+* [Запросы по журналам в Azure Monitor](../azure-monitor/logs/log-query-overview.md)
 * [Мониторинг приложений в Службе приложений Azure](web-sites-monitor.md)
 * [Troubleshoot an app in Azure App Service using Visual Studio](troubleshoot-dotnet-visual-studio.md) (Устранение неполадок приложения в Службе приложений Azure с помощью Visual Studio)
 * [Анализ журналов приложения в HDInsight](https://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)

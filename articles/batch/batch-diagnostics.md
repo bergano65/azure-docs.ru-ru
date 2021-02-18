@@ -4,22 +4,22 @@ description: Запись и анализ событий журнала диаг
 ms.topic: how-to
 ms.date: 10/08/2020
 ms.custom: seodec18
-ms.openlocfilehash: fe2697c73f2a5f3f0b33cfb598f11f39420ed723
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 83411d7018155955f5be71bd41803e510edbc9da
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994117"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100592684"
 ---
 # <a name="batch-metrics-alerts-and-logs-for-diagnostic-evaluation-and-monitoring"></a>Метрики, оповещения и журналы пакетной службы для диагностики и мониторинга
 
-В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/platform/data-platform-metrics.md) и [журналы диагностики](../azure-monitor/platform/platform-logs-overview.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/platform/alerts-overview.md), чтобы получать уведомления о достижении определенных значений.
+В этой статье описывается, как выполнять мониторинг учетной записи пакетной службы с помощью функций [Azure Monitor](../azure-monitor/overview.md). Azure Monitor собирает [метрики](../azure-monitor/essentials/data-platform-metrics.md) и [журналы диагностики](../azure-monitor/essentials/platform-logs-overview.md) для ресурсов в учетной записи пакетной службы. Эти данные можно собирать и использовать разными способами. Они позволяют выполнять мониторинг и диагностику проблем для учетной записи пакетной службы. Вы также можете настроить [метрики оповещений](../azure-monitor/alerts/alerts-overview.md), чтобы получать уведомления о достижении определенных значений.
 
 ## <a name="batch-metrics"></a>Метрики пакетной службы
 
 Метрики — это данные телеметрии Azure (также называемые счетчиками производительности), которые создаются ресурсами Azure и потребляются службой Azure Monitor. Примерами метрик в учетной записи пакетной службы являются события создания пула, Low-Priority число узлов и события завершения задач.
 
-См. [полный список поддерживаемых метрик для пакетной службы](../azure-monitor/platform/metrics-supported.md#microsoftbatchbatchaccounts).
+См. [полный список поддерживаемых метрик для пакетной службы](../azure-monitor/essentials/metrics-supported.md#microsoftbatchbatchaccounts).
 
 Метрики:
 
@@ -68,9 +68,9 @@ ms.locfileid: "95994117"
 5. В разделе **сведения о правиле оповещения** введите имя и **Описание** **правила генерации оповещений** и выберите **уровень серьезности** .
 6. Выберите **Создать правило генерации оповещений**.
 
-Дополнительные сведения о создании оповещений метрик см. [в статьях понимание принципов работы оповещений метрик в Azure Monitor](../azure-monitor/platform/alerts-metric-overview.md) и [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../azure-monitor/platform/alerts-metric.md).
+Дополнительные сведения о создании оповещений метрик см. [в статьях понимание принципов работы оповещений метрик в Azure Monitor](../azure-monitor/alerts/alerts-metric-overview.md) и [Создание, Просмотр оповещений метрик и управление ими с помощью Azure Monitor](../azure-monitor/alerts/alerts-metric.md).
 
-Вы также можете настроить оповещение практически в реальном времени с помощью Azure Monitor [REST API](/rest/api/monitor/). Дополнительные сведения см. [в разделе Обзор оповещений в Microsoft Azure](../azure-monitor/platform/alerts-overview.md). Чтобы включить сведения о задании, задаче или пуле в оповещениях, ознакомьтесь со сведениями о поисковых запросах в [ответ на события с Azure Monitor предупреждениями](../azure-monitor/learn/tutorial-response.md).
+Вы также можете настроить оповещение практически в реальном времени с помощью Azure Monitor [REST API](/rest/api/monitor/). Дополнительные сведения см. [в разделе Обзор оповещений в Microsoft Azure](../azure-monitor/alerts/alerts-overview.md). Чтобы включить сведения о задании, задаче или пуле в оповещениях, ознакомьтесь со сведениями о поисковых запросах в [ответ на события с Azure Monitor предупреждениями](../azure-monitor/alerts/tutorial-response.md).
 
 ## <a name="batch-diagnostics"></a>Диагностика пакетной службы
 
@@ -88,7 +88,7 @@ ms.locfileid: "95994117"
 Кроме того, можно:
 
 - Потоковая передача событий журнала диагностики пакетной службы в [концентратор событий Azure](../event-hubs/event-hubs-about.md). Центры событий способны принимать миллионы событий в секунду, позволяя преобразовать и сохранять их с помощью любого поставщика аналитики в реальном времени.
-- Отправьте журналы диагностики в [журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md), где вы сможете проанализировать их или экспортировать для анализа в Power BI или Excel.
+- Отправьте журналы диагностики в [журналы Azure Monitor](../azure-monitor/logs/log-query-overview.md), где вы сможете проанализировать их или экспортировать для анализа в Power BI или Excel.
 
 > [!NOTE]
 > Хранение и (или) обработка данных журнала диагностики в службах Azure может повлечь дополнительные расходы.
@@ -105,7 +105,7 @@ ms.locfileid: "95994117"
 6. Выберите **сервицелог**, **аллметрикс** или оба.
 7. Выберите **сохранить** , чтобы создать параметр диагностики.
 
-Можно также [включить сбор с помощью Azure Monitor в портал Azure](../azure-monitor/platform/diagnostic-settings.md) для настройки параметров диагностики с помощью [шаблона диспетчер ресурсов](../azure-monitor/samples/resource-manager-diagnostic-settings.md)или с Azure PowerShell или Azure CLI. Дополнительные сведения см. в статье Общие сведения о [журналах платформы Azure](../azure-monitor/platform/platform-logs-overview.md).
+Можно также [включить сбор с помощью Azure Monitor в портал Azure](../azure-monitor/essentials/diagnostic-settings.md) для настройки параметров диагностики с помощью [шаблона диспетчер ресурсов](../azure-monitor/essentials/resource-manager-diagnostic-settings.md)или с Azure PowerShell или Azure CLI. Дополнительные сведения см. в статье Общие сведения о [журналах платформы Azure](../azure-monitor/essentials/platform-logs-overview.md).
 
 ### <a name="access-diagnostics-logs-in-storage"></a>Доступ к журналам диагностики в хранилище
 
@@ -119,7 +119,7 @@ m={two-digit numeric month}/d={two-digit numeric day}/
 h={two-digit 24-hour clock hour}/m=00/PT1H.json
 ```
 
-Пример:
+Пример.
 
 ```json
 insights-metrics-pt1m/resourceId=/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/
@@ -135,7 +135,7 @@ BATCHACCOUNTS/MYBATCHACCOUNT/y=2018/m=03/d=05/h=22/m=00/PT1H.json
 { "Tenant": "65298bc2729a4c93b11c00ad7e660501", "time": "2019-08-22T20:59:13.5698778Z", "resourceId": "/SUBSCRIPTIONS/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/RESOURCEGROUPS/MYRESOURCEGROUP/PROVIDERS/MICROSOFT.BATCH/BATCHACCOUNTS/MYBATCHACCOUNT/", "category": "ServiceLog", "operationName": "PoolResizeCompleteEvent", "operationVersion": "2017-06-01", "properties": {"id":"MYPOOLID","nodeDeallocationOption":"Requeue","currentDedicatedNodes":10,"targetDedicatedNodes":100,"currentLowPriorityNodes":0,"targetLowPriorityNodes":0,"enableAutoScale":false,"isAutoPool":false,"startTime":"2019-08-22 20:50:59.522","endTime":"2019-08-22 20:59:12.489","resultCode":"Success","resultMessage":"The operation succeeded"}}
 ```
 
-Дополнительные сведения о схеме журналов диагностики в учетной записи хранения см. в статье [Архивация журналов ресурсов Azure в учетную запись хранения](../azure-monitor/platform/resource-logs.md#send-to-azure-storage). Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища.
+Дополнительные сведения о схеме журналов диагностики в учетной записи хранения см. в статье [Архивация журналов ресурсов Azure в учетную запись хранения](../azure-monitor/essentials/resource-logs.md#send-to-azure-storage). Для программного доступа к журналам в учетной записи хранения используйте API-интерфейсы хранилища.
 
 ### <a name="service-log-events"></a>События журнала службы
 

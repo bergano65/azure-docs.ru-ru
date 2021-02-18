@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: cd43b6c7b11cde17bc9f9923374baf3416e5b370
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 449fc686fb30cde0d15759036b58fea3bcfc6723
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791868"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100596898"
 ---
 # <a name="azure-security-baseline-for-azure-lighthouse"></a>Базовый план безопасности Azure для Azure Лигхсаусе
 
@@ -360,9 +360,9 @@ Azure Active Directory (Azure AD) предоставляет следующие 
 
 Клиенты, у которых есть делегированные подписки на Azure Лигхсаусе, могут просматривать данные журнала действий Azure для просмотра всех выполненных действий. Это позволяет клиентам полностью видеть операции, выполняемые поставщиками служб, а также операции, выполняемые пользователями в собственном клиенте Azure Active Directory (Azure AD).
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md) 
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md) 
 
-- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/platform/platform-logs-overview.md)
+- [Общие сведения о ведении журналов и различных типах журналов в Azure](../azure-monitor/essentials/platform-logs-overview.md)
 
 - [Мониторинг делегированных ресурсов в масштабе](how-to/monitor-at-scale.md)
 
@@ -386,7 +386,7 @@ Azure Active Directory (Azure AD) предоставляет следующие 
 
 Многие организации предпочитают использовать метку Azure для "горячих" данных, которые часто используются, а служба хранилища Azure — для "холодного" данных, которые используются реже.
 
-- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/platform/diagnostic-settings.md)
+- [Как получить журналы и метрики платформы с помощью Azure Monitor](../azure-monitor/essentials/diagnostic-settings.md)
 
 - [Мониторинг делегированных ресурсов в масштабе](how-to/monitor-at-scale.md)
 
@@ -404,7 +404,7 @@ Azure Active Directory (Azure AD) предоставляет следующие 
 
 В Azure Monitor можно задать срок хранения Log Analytics рабочей области в соответствии с нормативными требованиями Организации. Используйте службы хранилища Azure, Data Lake или Log Analytics учетные записи рабочих областей для долгосрочного и архивного хранения.
 
-- [Изменение срока хранения данных в Log Analytics](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
+- [Изменение срока хранения данных в Log Analytics](../azure-monitor/logs/manage-cost-storage.md#change-the-data-retention-period)
 
 - [Настройка политики хранения для журналов учетных записей хранения Azure](../storage/common/storage-monitor-storage-account.md#configure-logging)
 

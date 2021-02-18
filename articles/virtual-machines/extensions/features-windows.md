@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: akjosh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 565f98126cea8cc03874bb4f83ecdc2c65f8d5fb
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 44d071c635967e4ce3078be8419414bc9ff0c653
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016460"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100580149"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -33,10 +33,10 @@ ms.locfileid: "96016460"
 
 ## <a name="use-cases-and-samples"></a>Варианты использования и примеры
 
-Существует несколько разных расширений ВМ Azure, которые используются в определенных сценариях. Ниже приведены некоторые примеры таких ситуаций.
+Существует несколько разных расширений ВМ Azure, которые используются в определенных сценариях. Некоторые примеры:
 
 - Применение к виртуальной машине конфигураций требуемого состояния PowerShell с помощью расширения DSC для Windows. Подробнее см. [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md);
-- Настройте мониторинг виртуальной машины с помощью расширения виртуальной машины агента Log Analytics. Дополнительные сведения см. [в статье подключение виртуальных машин Azure к Azure Monitor журналах](../../azure-monitor/learn/quick-collect-azurevm.md).
+- Настройте мониторинг виртуальной машины с помощью расширения виртуальной машины агента Log Analytics. Дополнительные сведения см. [в статье подключение виртуальных машин Azure к Azure Monitor журналах](../../azure-monitor/vm/quick-collect-azurevm.md).
 - Настройка виртуальной машины Azure с помощью Chef. Дополнительные сведения см. в статье [Автоматизация развертывания виртуальной машины Azure с помощью Chef](/azure/developer/chef/windows-vm-configure).
 - настройка мониторинга инфраструктуры Azure с помощью расширения Datadog. Дополнительную информацию см. в [блоге Datadog](https://www.datadoghq.com/blog/introducing-azure-monitoring-with-one-click-datadog-deployment/);
 
@@ -264,7 +264,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- Расширения
+- Модули
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -429,6 +429,6 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 | Расширение Диагностики Azure |Управляет системой диагностики Azure |[Расширение система диагностики Azure](https://azure.microsoft.com/blog/windows-azure-virtual-machine-monitoring-with-wad-extension/) |
 | Расширение Azure VM Access |Управляет пользователями и учетными данными. |[Расширение для доступа к виртуальной машине для Linux](https://azure.microsoft.com/blog/using-vmaccess-extension-to-reset-login-credentials-for-linux-vm/) |
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о расширениях виртуальных машин см. в статье c [обзором расширений и компонентов виртуальной машины Azure](overview.md).

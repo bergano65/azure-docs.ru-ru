@@ -6,12 +6,12 @@ ms.assetid: dea3f41e-cf35-481b-a6bc-33d7fc9d01b1
 ms.topic: article
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: a29d81be9b750d89230a180b8a7c786466d99bb8
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 6e5de3cdec7a9c503f4b7bf7056bd62f1ddf682d
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936436"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100594014"
 ---
 # <a name="azure-app-service-plan-overview"></a>Обзор планов службы приложений Azure
 
@@ -57,7 +57,7 @@ _Ценовая категория_ плана службы приложений
 
 В этом случае план службы приложений представляет собой единицу масштабирования приложений службы приложений. Если план настроен для запуска пяти экземпляров виртуальной машины, тогда все приложения в плане будут выполняться на всех пяти экземплярах. Если план настроен для автоматического масштабирования, то все приложения в плане совместно масштабируются на основе параметров автоматического масштабирования.
 
-Сведения о масштабировании приложений см. в статье [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/platform/autoscale-get-started.md).
+Сведения о масштабировании приложений см. в статье [Масштабирование числа экземпляров вручную или автоматически](../azure-monitor/autoscale/autoscale-get-started.md).
 
 <a name="cost"></a>
 

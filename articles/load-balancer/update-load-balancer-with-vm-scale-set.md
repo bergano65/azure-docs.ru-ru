@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 12/30/2020
+ms.date: 12/29/2020
 ms.author: irenehua
-ms.openlocfilehash: 0c491275f793ce2cd5e830ca6a3014dc45d6d509
-ms.sourcegitcommit: f377ba5ebd431e8c3579445ff588da664b00b36b
+ms.openlocfilehash: 1228462dc6437ecce7718c4747d2acb9ae7332cb
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "99594541"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100593030"
 ---
 # <a name="update-or-delete-a-load-balancer-used-by-virtual-machine-scale-sets"></a>Обновление или удаление подсистемы балансировки нагрузки, используемой масштабируемыми наборами виртуальных машин
 
@@ -83,14 +83,15 @@ az network lb inbound-nat-pool update
 
 ## <a name="delete-inbound-nat-rules"></a>Удаление правил NAT для входящего трафика
 
-Индивидуальные правила NAT для входящего трафика не могут быть удалены, но можно удалить весь набор правил NAT для входящего трафика.
+Индивидуальные правила NAT для входящего трафика не могут быть удалены, но можно удалить весь набор правил NAT для входящего трафика, удалив пул входящих подключений NAT.
 
-Чтобы удалить весь набор правил NAT для входящего трафика, используемый масштабируемым набором, сначала удалите пул NAT из масштабируемого набора. Полный пример использования CLI показан здесь:
-    
+Чтобы удалить пул NAT, сначала удалите его из масштабируемого набора. Полный пример использования CLI показан здесь:
+
 ```azurecli-interactive
     az vmss update
        --resource-group MyResourceGroup
        --name MyVMSS
+       --remove virtualMachineProfile.networkProfile.networkInterfaceConfigurations[0].ipConfigurations[0].loadBalancerInboundNatPools
      az vmss update-instances 
        --instance-ids "*" 
        --resource-group MyResourceGroup
@@ -141,7 +142,7 @@ az network lb inbound-nat-pool update
 ```
 Наконец, удалите ресурс балансировщика нагрузки.
  
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Дополнительные сведения о Azure Load Balancer и масштабируемых наборах виртуальных машин см. в статье о концепциях.
 

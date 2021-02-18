@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: lgayhardt
 ms.author: lagayhar
 ms.date: 05/11/2020
-ms.openlocfilehash: 47799898251923b327954c764dcccb8157ba5119
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 13c884d9f140fbd962bfa32ef2d853339aec325a
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208647"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100587362"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Мониторинг службы хранилища с помощью Azure Monitor для службы хранилища
 
@@ -266,8 +266,8 @@ Azure Monitor для хранилища обеспечивает комплек
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Настройте [оповещения метрики](../platform/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
+* Настройте [оповещения метрики](../alerts/alerts-metric.md) и [уведомления о работоспособности служб](../../service-health/alerts-activity-log-service-notifications-portal.md), чтобы получать автоматизированные оповещения для обнаружения проблем.
 
-* Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../platform/workbooks-overview.md).
+* Узнайте, в каких ситуациях применяются книги, как создавать и настраивать отчеты и многое другое, изучив статью [Создание интерактивных отчетов с использованием книг Azure Monitor](../visualize/workbooks-overview.md).
 
 * Дополнительные указания о функциях аналитики хранилища и других инструментах идентификации, диагностики и устранения неполадок, связанных со службой хранилища Azure, см. в статье [Мониторинг, диагностика и устранение неполадок службы хранилища Microsoft Azure](../../storage/common/storage-monitoring-diagnosing-troubleshooting.md).

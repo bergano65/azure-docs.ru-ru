@@ -5,12 +5,12 @@ services: automation
 ms.subservice: change-inventory-management
 ms.date: 10/14/2020
 ms.topic: conceptual
-ms.openlocfilehash: 64eace72b6ea203d4052c39404bcbd7ce4c4bfa0
-ms.sourcegitcommit: d1e56036f3ecb79bfbdb2d6a84e6932ee6a0830e
+ms.openlocfilehash: 32fb95c88d632cc2c51cd2390f0244e9c1927051
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "99055167"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100585892"
 ---
 # <a name="enable-change-tracking-and-inventory-from-an-automation-account"></a>Включение Отслеживания изменений и инвентаризации в учетной записи службы автоматизации
 
@@ -53,7 +53,7 @@ ms.locfileid: "99055167"
 
 1. В учетной записи службы автоматизации выберите **Инвентаризация** или **Отслеживание изменений** в разделе **Управление конфигурацией**.
 
-2. Щелкните **Добавить компьютер, не связанный с Azure**. Это действие открывает новое окно браузера с [инструкциями по установке и настройке агента Log Analytics для Windows](../../azure-monitor/platform/log-analytics-agent.md), чтобы компьютер мог сообщать об операциях Отслеживания изменений и инвентаризации. Для включения виртуальной машины, управляемой с помощью Operations Manager, новый агент не требуется. Сведения о рабочей области указываются в существующем агенте.
+2. Щелкните **Добавить компьютер, не связанный с Azure**. Это действие открывает новое окно браузера с [инструкциями по установке и настройке агента Log Analytics для Windows](../../azure-monitor/agents/log-analytics-agent.md), чтобы компьютер мог сообщать об операциях Отслеживания изменений и инвентаризации. Для включения виртуальной машины, управляемой с помощью Operations Manager, новый агент не требуется. Сведения о рабочей области указываются в существующем агенте.
 
 ## <a name="enable-machines-in-the-workspace"></a>Включение компьютеров в рабочей области
 

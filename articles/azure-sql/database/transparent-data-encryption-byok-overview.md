@@ -12,12 +12,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviewer: vanto
 ms.date: 02/01/2021
-ms.openlocfilehash: 74c0dbaaa511e2fd2f20a3c245a561a177dd2b9a
-ms.sourcegitcommit: 8c8c71a38b6ab2e8622698d4df60cb8a77aa9685
+ms.openlocfilehash: 62bdafd2dba31d875b0befccca0fb4a0e94f4e79
+ms.sourcegitcommit: e559daa1f7115d703bfa1b87da1cf267bf6ae9e8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2021
-ms.locfileid: "99223446"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "100582814"
 ---
 # <a name="azure-sql-transparent-data-encryption-with-customer-managed-key"></a>Прозрачное шифрование данных Azure SQL с ключом, управляемым клиентом
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -164,7 +164,7 @@ ms.locfileid: "99223446"
 
 - [Работоспособность ресурсов Azure](../../service-health/resource-health-overview.md). Недоступная база данных, которая потеряла доступ к предохранителю TDE, будет отображаться как "недоступно" после того, как было отказано в первом подключении к базе данных.
 - [Журнал действий](../../service-health/alerts-activity-log-service-notifications-portal.md) при сбое доступа к предохранителю TDE в хранилище ключей, управляемом клиентом, записи добавляются в журнал действий.  Создание оповещений для этих событий позволит возобновить доступ как можно скорее.
-- [Группы действий](../../azure-monitor/platform/action-groups.md) можно определить для отправки уведомлений и оповещений в зависимости от ваших предпочтений, например электронной почты, SMS, Push/Voice, приложения логики, веб-перехватчика, ITSM или Runbook службы автоматизации.
+- [Группы действий](../../azure-monitor/alerts/action-groups.md) можно определить для отправки уведомлений и оповещений в зависимости от ваших предпочтений, например электронной почты, SMS, Push/Voice, приложения логики, веб-перехватчика, ITSM или Runbook службы автоматизации.
 
 ## <a name="database-backup-and-restore-with-customer-managed-tde"></a>Резервное копирование и восстановление базы данных с помощью управляемого клиентом TDE
 
@@ -207,7 +207,7 @@ ms.locfileid: "99223446"
 
 Чтобы протестировать отработку отказа, выполните действия, описанные в разделе [Общие сведения об активной георепликации](active-geo-replication-overview.md). Тестирование отработки отказа должно выполняться регулярно, чтобы убедиться, что база данных SQL хранит разрешение на доступ к обоим хранилищам ключей.
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие шаги
 
 Вы также можете проверить следующие примеры сценариев PowerShell для распространенных операций с управляемыми клиентом TDE:
 
